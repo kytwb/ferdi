@@ -157,12 +157,12 @@ class AppLayout extends Component {
                     {intl.formatMessage(messages.servicesUpdated)}
                   </InfoBar>
                 )}
-                {appUpdateIsDownloaded && (
+                {/* appUpdateIsDownloaded && (
                   <AppUpdateInfoBar
                     nextAppReleaseVersion={nextAppReleaseVersion}
                     onInstallUpdate={installAppUpdate}
                   />
-                )}
+                ) */}
                 <BasicAuth />
                 <ShareFranz />
                 {services}

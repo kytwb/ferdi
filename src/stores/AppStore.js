@@ -1,6 +1,6 @@
 import { remote, ipcRenderer, shell } from 'electron';
 import {
-  action, computed, observable, reaction,
+ action, computed, observable, reaction 
 } from 'mobx';
 import moment from 'moment';
 import { getDoNotDisturb } from '@meetfranz/electron-notification-state';
@@ -18,7 +18,10 @@ import { gaEvent, gaPage, statsEvent } from '../lib/analytics';
 import { onVisibilityChange } from '../helpers/visibility-helper';
 import { getLocale } from '../helpers/i18n-helpers';
 
-import { getServiceIdsFromPartitions, removeServicePartitionDirectory } from '../helpers/service-helpers.js';
+import {
+  getServiceIdsFromPartitions,
+  removeServicePartitionDirectory,
+} from '../helpers/service-helpers.js';
 import { isValidExternalURL } from '../helpers/url-helpers';
 
 const debug = require('debug')('Franz:AppStore');
@@ -43,9 +46,15 @@ export default class AppStore extends Store {
 
   @observable healthCheckRequest = new Request(this.api.app, 'health');
 
-  @observable getAppCacheSizeRequest = new Request(this.api.local, 'getAppCacheSize');
+  @observable getAppCacheSizeRequest = new Request(
+    this.api.local,
+    'getAppCacheSize',
+  );
 
-  @observable clearAppCacheRequest = new Request(this.api.local, 'clearAppCache');
+  @observable clearAppCacheRequest = new Request(
+    this.api.local,
+    'clearAppCache',
+  );
 
   @observable autoLaunchOnStart = true;
 
@@ -79,9 +88,9 @@ export default class AppStore extends Store {
     this.actions.app.setBadge.listen(this._setBadge.bind(this));
     this.actions.app.launchOnStartup.listen(this._launchOnStartup.bind(this));
     this.actions.app.openExternalUrl.listen(this._openExternalUrl.bind(this));
-    this.actions.app.checkForUpdates.listen(this._checkForUpdates.bind(this));
-    this.actions.app.installUpdate.listen(this._installUpdate.bind(this));
-    this.actions.app.resetUpdateStatus.listen(this._resetUpdateStatus.bind(this));
+    // this.actions.app.checkForUpdates.listen(this._checkForUpdates.bind(this));
+    // this.actions.app.installUpdate.listen(this._installUpdate.bind(this));
+    // this.actions.app.resetUpdateStatus.listen(this._resetUpdateStatus.bind(this));
     this.actions.app.healthCheck.listen(this._healthCheck.bind(this));
     this.actions.app.muteApp.listen(this._muteApp.bind(this));
     this.actions.app.toggleMuteApp.listen(this._toggleMuteApp.bind(this));
@@ -100,12 +109,19 @@ export default class AppStore extends Store {
     window.addEventListener('focus', this.actions.service.focusActiveService);
 
     // Online/Offline handling
-    window.addEventListener('online', () => { this.isOnline = true; });
-    window.addEventListener('offline', () => { this.isOnline = false; });
+    window.addEventListener('online', () => {
+      this.isOnline = true;
+    });
+    window.addEventListener('offline', () => {
+      this.isOnline = false;
+    });
 
-    mainWindow.on('enter-full-screen', () => { this.isFullScreen = true; });
-    mainWindow.on('leave-full-screen', () => { this.isFullScreen = false; });
-
+    mainWindow.on('enter-full-screen', () => {
+      this.isFullScreen = true;
+    });
+    mainWindow.on('leave-full-screen', () => {
+      this.isFullScreen = false;
+    });
 
     this.isOnline = navigator.onLine;
 
@@ -119,9 +135,9 @@ export default class AppStore extends Store {
     setInterval(() => this._systemDND(), ms('5s'));
 
     // Check for updates once every 4 hours
-    setInterval(() => this._checkForUpdates(), CHECK_INTERVAL);
+    // setInterval(() => this._checkForUpdates(), CHECK_INTERVAL);
     // Check for an update in 30s (need a delay to prevent Squirrel Installer lock file issues)
-    setTimeout(() => this._checkForUpdates(), ms('30s'));
+    // setTimeout(() => this._checkForUpdates(), ms('30s'));
     ipcRenderer.on('autoUpdate', (event, data) => {
       if (data.available) {
         this.updateStatus = this.updateStatusTypes.AVAILABLE;
@@ -171,9 +187,12 @@ export default class AppStore extends Store {
     });
 
     // analytics autorun
-    reaction(() => this.stores.router.location.pathname, (pathname) => {
-      gaPage(pathname);
-    });
+    reaction(
+      () => this.stores.router.location.pathname,
+      (pathname) => {
+        gaPage(pathname);
+      },
+    );
 
     statsEvent('app-start');
   }
@@ -184,8 +203,8 @@ export default class AppStore extends Store {
 
   // Actions
   @action _notify({
-    title, options, notificationId, serviceId = null,
-  }) {
+ title, options, notificationId, serviceId = null 
+}) {
     if (this.stores.settings.all.app.isAppMuted) return;
 
     // TODO: is there a simple way to use blobs for notifications without storing them on disk?
@@ -222,7 +241,10 @@ export default class AppStore extends Store {
 
     if (indicator === 0 && unreadIndirectMessageCount !== 0) {
       indicator = '•';
-    } else if (unreadDirectMessageCount === 0 && unreadIndirectMessageCount === 0) {
+    } else if (
+      unreadDirectMessageCount === 0
+      && unreadIndirectMessageCount === 0
+    ) {
       indicator = 0;
     } else {
       indicator = parseInt(indicator, 10);
@@ -258,20 +280,20 @@ export default class AppStore extends Store {
     gaEvent('External URL', 'open', parsedUrl.host);
   }
 
-  @action _checkForUpdates() {
+  /* @action _checkForUpdates() {
     this.updateStatus = this.updateStatusTypes.CHECKING;
     ipcRenderer.send('autoUpdate', { action: 'check' });
 
     this.actions.recipe.update();
-  }
+  } */
 
-  @action _installUpdate() {
+  /* @action _installUpdate() {
     ipcRenderer.send('autoUpdate', { action: 'install' });
-  }
+  } */
 
-  @action _resetUpdateStatus() {
+  /* @action _resetUpdateStatus() {
     this.updateStatus = null;
-  }
+  } */
 
   @action _healthCheck() {
     this.healthCheckRequest.execute();
@@ -295,11 +317,17 @@ export default class AppStore extends Store {
     this.isClearingAllCache = true;
     const clearAppCache = this.clearAppCacheRequest.execute();
     const allServiceIds = await getServiceIdsFromPartitions();
-    const allOrphanedServiceIds = allServiceIds.filter(id => !this.stores.services.all.find(s => id.replace('service-', '') === s.id));
+    const allOrphanedServiceIds = allServiceIds.filter(
+      id => !this.stores.services.all.find(s => id.replace('service-', '') === s.id),
+    );
 
-    await Promise.all(allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)));
+    await Promise.all(
+      allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)),
+    );
 
-    await Promise.all(this.stores.services.all.map(s => this.actions.service.clearCache({ serviceId: s.id })));
+    await Promise.all(
+      this.stores.services.all.map(s => this.actions.service.clearCache({ serviceId: s.id }),),
+    );
 
     await clearAppCache._promise;
 
@@ -327,8 +355,11 @@ export default class AppStore extends Store {
       locale = this.stores.user.data.locale;
     }
 
-
-    if (locale && Object.prototype.hasOwnProperty.call(locales, locale) && locale !== this.locale) {
+    if (
+      locale
+      && Object.prototype.hasOwnProperty.call(locales, locale)
+      && locale !== this.locale
+    ) {
       this.locale = locale;
     } else if (!locale) {
       this.locale = this._getDefaultLocale();
@@ -347,10 +378,14 @@ export default class AppStore extends Store {
   }
 
   _muteAppHandler() {
-    const showMessageBadgesEvenWhenMuted = this.stores.ui.showMessageBadgesEvenWhenMuted;
+    const showMessageBadgesEvenWhenMuted = this.stores.ui
+      .showMessageBadgesEvenWhenMuted;
 
     if (!showMessageBadgesEvenWhenMuted) {
-      this.actions.app.setBadge({ unreadDirectMessageCount: 0, unreadIndirectMessageCount: 0 });
+      this.actions.app.setBadge({
+        unreadDirectMessageCount: 0,
+        unreadIndirectMessageCount: 0,
+      });
     }
   }
 
@@ -381,7 +416,10 @@ export default class AppStore extends Store {
 
   _systemDND() {
     const dnd = getDoNotDisturb();
-    if (dnd !== this.stores.settings.all.app.isAppMuted && !this.isSystemMuteOverridden) {
+    if (
+      dnd !== this.stores.settings.all.app.isAppMuted
+      && !this.isSystemMuteOverridden
+    ) {
       this.actions.app.muteApp({
         isMuted: dnd,
         overrideSystemMute: false,
