@@ -226,7 +226,7 @@
   "settings.app.form.enableSpellchecking": "Activer la vérification orthographique",
   "settings.app.form.enableSystemTray": "Afficher Ferdi dans la barre d'état système",
   "settings.app.form.enableTodos": "Activer Ferdi Todos",
-  "settings.app.form.hibernate": "Activer le service hibernation",
+  "settings.app.form.hibernate": "Activer le service d'hibernation",
   "settings.app.form.keepAllWorkspacesLoaded": "Garder tous les espaces de travail charger",
   "settings.app.form.language": "Langue",
   "settings.app.form.lockPassword": "Mot de passe de verrouillage de Ferdi",
