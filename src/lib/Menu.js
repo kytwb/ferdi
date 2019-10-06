@@ -871,7 +871,7 @@ export default class FranzMenu {
           type: 'info',
           title: 'Franz Ferdinand',
           message: 'Ferdi',
-          detail: `Version: ${remote.app.getVersion()}\nElectron: ${process.versions.electron} / ${process.platform} / ${process.arch}`,
+          detail: `Version: ${remote.app.getVersion()} (${process.arch})\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}`,
         });
       },
     };
