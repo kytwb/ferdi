@@ -255,9 +255,9 @@ const buildMenuTpl = (props, suggestions, isSpellcheckEnabled, defaultSpellcheck
       },
       {
         id: 'resetToDefault',
-        label: `Reset to system default (${SPELLCHECKER_LOCALES[defaultSpellcheckerLanguage]})`,
+        label: `Reset to system default (${defaultSpellcheckerLanguage === 'automatic' ? 'Automatic' : SPELLCHECKER_LOCALES[defaultSpellcheckerLanguage]})`,
         type: 'radio',
-        visible: defaultSpellcheckerLanguage !== spellcheckerLanguage,
+        visible: defaultSpellcheckerLanguage !== spellcheckerLanguage || (defaultSpellcheckerLanguage !== 'automatic' && spellcheckerLanguage === 'automatic'),
         click() {
           debug('Resetting service spellchecker to system default');
           ipcRenderer.sendToHost('set-service-spellchecker-language', 'reset');
@@ -297,12 +297,13 @@ const buildMenuTpl = (props, suggestions, isSpellcheckEnabled, defaultSpellcheck
 };
 
 export default function contextMenu(spellcheckProvider, isSpellcheckEnabled, getDefaultSpellcheckerLanguage, getSpellcheckerLanguage) {
-  webContents.on('context-menu', (e, props) => {
+  webContents.on('context-menu', async (e, props) => {
     e.preventDefault();
 
     let suggestions = [];
     if (spellcheckProvider && props.misspelledWord) {
-      suggestions = spellcheckProvider.getSuggestion(props.misspelledWord);
+      debug('Mispelled word', props.misspelledWord);
+      suggestions = await spellcheckProvider.getSuggestion(props.misspelledWord);
 
       debug('Suggestions', suggestions);
     }

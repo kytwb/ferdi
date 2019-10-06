@@ -22,6 +22,7 @@ import { getLocale } from '../helpers/i18n-helpers';
 
 import { getServiceIdsFromPartitions, removeServicePartitionDirectory } from '../helpers/service-helpers.js';
 import { isValidExternalURL } from '../helpers/url-helpers';
+import { sleep } from '../helpers/async-helpers';
 
 const debug = require('debug')('Ferdi:AppStore');
 
@@ -316,6 +317,8 @@ export default class AppStore extends Store {
     await Promise.all(this.stores.services.all.map(s => this.actions.service.clearCache({ serviceId: s.id })));
 
     await clearAppCache._promise;
+
+    await sleep(ms('1s'));
 
     this.getAppCacheSizeRequest.execute();
 

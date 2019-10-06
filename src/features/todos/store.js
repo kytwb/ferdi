@@ -162,6 +162,10 @@ export default class TodoStore extends FeatureStore {
         theme: isDarkThemeActive ? ThemeType.dark : ThemeType.default,
       },
     });
+
+    this.webview.addEventListener('new-window', ({ url }) => {
+      this.actions.app.openExternalUrl({ url });
+    });
   };
 
   _goToService = ({ url, serviceId }) => {

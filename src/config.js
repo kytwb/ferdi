@@ -34,6 +34,16 @@ export const GA_ID = !isDevMode ? 'UA-74126766-10' : 'UA-74126766-12';
 export const DEFAULT_LOCK_PASSWORD = 'ferdi';
 export const KEEP_WS_LOADED_USID = '0a0aa000-0a0a-49a0-a000-a0a0a0a0a0a0';
 
+export const HIBERNATION_STRATEGIES = {
+  10: 'Extemely Fast Hibernation (10sec)',
+  30: 'Very Fast Hibernation (30sec)',
+  60: 'Fast Hibernation (1min)',
+  300: 'Normal Hibernation (5min)',
+  600: 'Slow Hibernation (10min)',
+  1800: 'Very Slow Hibernation (30min)',
+  3600: 'Extemely Slow Hibernation (1hour)',
+};
+
 export const DEFAULT_APP_SETTINGS = {
   autoLaunchInBackground: false,
   runInBackground: true,
@@ -63,6 +73,7 @@ export const DEFAULT_APP_SETTINGS = {
   scheduledDNDStart: '17:00',
   scheduledDNDEnd: '09:00',
   hibernate: false,
+  hibernationStrategy: 300,
   noUpdates: false,
 };
 

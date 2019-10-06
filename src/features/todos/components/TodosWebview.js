@@ -37,9 +37,6 @@ const styles = theme => ({
 
     transform: ({ isVisible, width }) => `translateX(${isVisible ? 0 : width}px)`,
 
-    '&:hover $closeTodosButton': {
-      opacity: 1,
-    },
     '& webview': {
       height: '100%',
     },

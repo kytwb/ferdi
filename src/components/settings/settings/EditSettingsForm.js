@@ -31,6 +31,10 @@ const messages = defineMessages({
     id: 'settings.app.headlineGeneral',
     defaultMessage: '!!!General',
   },
+  hibernateInfo: {
+    id: 'settings.app.hibernateInfo',
+    defaultMessage: '!!!By default, Ferdi will keep all your services open and loaded in the background so they are ready when you want to use them. Service Hibernation will unload your services after a specified amount. This is useful to save RAM or keeping services from slowing down your computer.',
+  },
   serverInfo: {
     id: 'settings.app.serverInfo',
     defaultMessage: '!!!We advice you to logout after changing your server as your settings might not be saved otherwise.',
@@ -147,6 +151,8 @@ export default @observer class EditSettingsForm extends Component {
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     server: PropTypes.string.isRequired,
     noUpdates: PropTypes.bool.isRequired,
+    hibernationEnabled: PropTypes.bool.isRequired,
+    openProcessManager: PropTypes.func.isRequired,
   };
 
   static contextTypes = {
@@ -181,6 +187,8 @@ export default @observer class EditSettingsForm extends Component {
       isWorkspaceEnabled,
       server,
       noUpdates,
+      hibernationEnabled,
+      openProcessManager,
     } = this.props;
     const { intl } = this.context;
 
@@ -218,6 +226,19 @@ export default @observer class EditSettingsForm extends Component {
             <Toggle field={form.$('enableSystemTray')} />
             <Toggle field={form.$('privateNotifications')} />
             <Toggle field={form.$('hibernate')} />
+            {hibernationEnabled && (
+              <Select field={form.$('hibernationStrategy')} />
+            )}
+            <p
+              className="settings__message"
+              style={{
+                borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+              }}
+            >
+              <span>
+                { intl.formatMessage(messages.hibernateInfo) }
+              </span>
+            </p>
             {process.platform === 'win32' && (
               <Toggle field={form.$('minimizeToSystemTray')} />
             )}
@@ -400,6 +421,16 @@ export default @observer class EditSettingsForm extends Component {
                   loaded={!isClearingAllCache}
                 />
               </p>
+              <div style={{
+                marginTop: 20,
+              }}
+              >
+                <Button
+                  buttonType="secondary"
+                  label="Open Process Manager"
+                  onClick={openProcessManager}
+                />
+              </div>
             </div>
 
             {/* Updates */}

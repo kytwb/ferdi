@@ -36,6 +36,8 @@ export default class Recipe {
 
   message = '';
 
+  disablewebsecurity = false;
+
   constructor(data) {
     if (!data) {
       throw Error('Recipe config not valid');
@@ -73,6 +75,8 @@ export default class Recipe {
 
     this.urlInputPrefix = data.config.urlInputPrefix || this.urlInputPrefix;
     this.urlInputSuffix = data.config.urlInputSuffix || this.urlInputSuffix;
+
+    this.disablewebsecurity = data.config.disablewebsecurity || this.disablewebsecurity;
 
     this.message = data.config.message || this.message;
   }

@@ -134,6 +134,9 @@ export default class Service {
       id: this.id,
       spellcheckerLanguage: this.spellcheckerLanguage,
       isDarkModeEnabled: this.isDarkModeEnabled,
+      team: this.team,
+      url: this.url,
+      hasCustomIcon: this.hasCustomIcon,
     };
   }
 

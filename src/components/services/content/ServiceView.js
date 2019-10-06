@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { autorun, reaction } from 'mobx';
 import { observer, inject } from 'mobx-react';
 import classnames from 'classnames';
-import ms from 'ms';
 
 import ServiceModel from '../../../models/Service';
 import StatusBarTargetUrl from '../../ui/StatusBarTargetUrl';
@@ -13,6 +12,7 @@ import WebviewErrorHandler from './ErrorHandlers/WebviewErrorHandler';
 import ServiceDisabled from './ServiceDisabled';
 import ServiceWebview from './ServiceWebview';
 import SettingsStore from '../../../stores/SettingsStore';
+import WebControlsScreen from '../../../features/webControls/containers/WebControlsScreen';
 
 export default @observer @inject('stores') class ServiceView extends Component {
   static propTypes = {
@@ -103,11 +103,13 @@ export default @observer @inject('stores') class ServiceView extends Component {
   };
 
   startHibernationTimer() {
+    const timerDuration = (Number(this.props.stores.settings.all.app.hibernationStrategy) || 300) * 1000;
+
     const hibernationTimer = setTimeout(() => {
       this.setState({
         hibernate: true,
       });
-    }, ms('5m'));
+    }, timerDuration);
 
     this.setState({
       hibernationTimer,
@@ -177,6 +179,9 @@ export default @observer @inject('stores') class ServiceView extends Component {
           </Fragment>
         ) : (
           <>
+            {service.recipe.id === 'franz-custom-website' && (
+              <WebControlsScreen service={service} />
+            )}
             {!this.state.hibernate ? (
               <ServiceWebview
                 service={service}
@@ -187,7 +192,7 @@ export default @observer @inject('stores') class ServiceView extends Component {
               <div>
                 <span role="img" aria-label="Sleeping Emoji">😴</span>
                 {' '}
-This service is currently hibernating. If this page doesn&#x27;t close soon, please try reloading Ferdi.
+                This service is currently hibernating. If this page doesn&#x27;t close soon, please try reloading Ferdi.
               </div>
             )}
           </>

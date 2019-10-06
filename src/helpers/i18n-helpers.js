@@ -28,7 +28,9 @@ export function getLocale({
   return localeStr;
 }
 
-export function getSelectOptions({ locales, resetToDefaultText = '', automaticDetectionText = '' }) {
+export function getSelectOptions({
+  locales, resetToDefaultText = '', automaticDetectionText = '', sort = true,
+}) {
   const options = [];
 
   if (resetToDefaultText) {
@@ -55,7 +57,11 @@ export function getSelectOptions({ locales, resetToDefaultText = '', automaticDe
     disabled: true,
   });
 
-  Object.keys(locales).sort(Intl.Collator().compare).forEach((key) => {
+  let keys = Object.keys(locales);
+  if (sort) {
+    keys = keys.sort(Intl.Collator().compare);
+  }
+  keys.forEach((key) => {
     options.push({
       value: key,
       label: locales[key],

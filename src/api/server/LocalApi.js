@@ -45,13 +45,13 @@ export default class LocalApi {
     const s = session.fromPartition(`persist:service-${serviceId}`);
 
     debug('LocalApi::clearCache resolves', serviceId);
-    return new Promise(resolve => s.clearCache(resolve));
+    return s.clearCache();
   }
 
   async clearAppCache() {
     const s = session.defaultSession;
 
     debug('LocalApi::clearCache clearAppCache');
-    return new Promise(resolve => s.clearCache(resolve));
+    return s.clearCache();
   }
 }

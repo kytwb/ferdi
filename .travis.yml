@@ -1,16 +1,17 @@
 matrix:
   include:
-    - os: linux
-      dist: xenial
-      addons:
-        apt:
-          packages:
-            - libx11-dev
-            - libxext-dev
-            - libxss-dev
-            - libxkbfile-dev
-    - os: osx
-      osx_image: xcode10.3
+  - os: linux
+    dist: xenial
+    addons:
+      apt:
+        packages:
+        - libx11-dev
+        - libxext-dev
+        - libxss-dev
+        - libxkbfile-dev
+  - os: osx
+    osx_image: xcode11
+
 language: node_js
 install:
   - echo do nothing
