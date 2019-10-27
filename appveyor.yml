@@ -22,6 +22,9 @@ before_build:
 build_script:
   - npm run build
 
+on_success:
+  - ps: Get-ChildItem .\out\*.exe | % { Push-AppveyorArtifact $_.FullName }
+
 branches:
   except:
     - i18n
