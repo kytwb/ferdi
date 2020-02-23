@@ -8,6 +8,7 @@ import isDevMode from 'electron-is-dev';
 import fs from 'fs-extra';
 import path from 'path';
 import windowStateKeeper from 'electron-window-state';
+import electronDL from 'electron-dl';
 
 // Set app directory before loading user modules
 if (process.env.FERDI_APPDATA_DIR != null) {
@@ -74,6 +75,11 @@ fs.ensureFileSync(path.join(app.getPath('userData'), 'window-state.json'));
 if (isWindows) {
   app.setAppUserModelId(appId);
 }
+
+// Initialize better Electron Downloads
+electronDL({
+  saveAs: true,
+});
 
 // Initialize Settings
 const settings = new Settings('app', DEFAULT_APP_SETTINGS);
