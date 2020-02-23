@@ -99,6 +99,31 @@ class RecipeController {
     } catch (err) {
       console.error('Recipe initialization failed', err);
     }
+
+    this.loadUserFiles(recipe, config);
+  }
+
+  async loadUserFiles(recipe, config) {
+    const userCss = path.join(recipe.path, 'user.css');
+    if (await fs.exists(userCss)) {
+      const data = await fs.readFile(userCss);
+      const styles = document.createElement('style');
+      styles.innerHTML = data.toString();
+
+      document.querySelector('head').appendChild(styles);
+    }
+
+    const userJs = path.join(recipe.path, 'user.js');
+    if (await fs.exists(userJs)) {
+      window.addEventListener('DOMContentLoaded', () => {
+        // eslint-disable-next-line
+        const userJsModule = require(userJs);
+
+        if (typeof userJsModule === 'function') {
+          userJsModule(config);
+        }
+      });
+    }
   }
 
   update() {

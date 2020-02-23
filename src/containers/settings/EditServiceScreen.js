@@ -92,10 +92,6 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
     intl: intlShape,
   };
 
-  state = {
-    isOpeningDarkModeCss: false,
-  }
-
   onSubmit(data) {
     const { action } = this.props.router.params;
     const { recipes, services } = this.props.stores;
@@ -282,25 +278,16 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
     }
   }
 
-  openDarkmodeCss() {
-    const { openDarkmodeCss } = this.props.actions.service;
+  openRecipeFile(file) {
+    const { openRecipeFile } = this.props.actions.service;
     const { action } = this.props.router.params;
 
     if (action === 'edit') {
-      this.setState({
-        isOpeningDarkModeCss: true,
-      });
-
       const { activeSettings: service } = this.props.stores.services;
-      openDarkmodeCss({
+      openRecipeFile({
         recipe: service.recipe.id,
+        file,
       });
-
-      setTimeout(() => {
-        this.setState({
-          isOpeningDarkModeCss: false,
-        });
-      }, 2500);
     }
   }
 
@@ -355,8 +342,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           isDeleting={services.deleteServiceRequest.isExecuting}
           onSubmit={d => this.onSubmit(d)}
           onDelete={() => this.deleteService()}
-          openDarkmodeCss={() => this.openDarkmodeCss()}
-          isOpeningDarkModeCss={this.state.isOpeningDarkModeCss}
+          openRecipeFile={file => this.openRecipeFile(file)}
           isProxyFeatureEnabled={proxyFeature.isEnabled}
           isServiceProxyIncludedInCurrentPlan={proxyFeature.isIncludedInCurrentPlan}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerFeature.isIncludedInCurrentPlan}
@@ -384,7 +370,7 @@ EditServiceScreen.wrappedComponent.propTypes = {
       createService: PropTypes.func.isRequired,
       updateService: PropTypes.func.isRequired,
       deleteService: PropTypes.func.isRequired,
-      openDarkmodeCss: PropTypes.func.isRequired,
+      openRecipeFile: PropTypes.func.isRequired,
     }).isRequired,
     // settings: PropTypes.shape({
     //   update: PropTypes.func.isRequred,

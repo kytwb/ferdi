@@ -33,6 +33,18 @@ const messages = defineMessages({
     id: 'settings.service.form.openDarkmodeCss',
     defaultMessage: '!!!Open darkmode.css',
   },
+  openUserCss: {
+    id: 'settings.service.form.openUserCss',
+    defaultMessage: '!!!Open user.css',
+  },
+  openUserJs: {
+    id: 'settings.service.form.openUserJs',
+    defaultMessage: '!!!Open user.js',
+  },
+  recipeFileInfo: {
+    id: 'settings.service.form.recipeFileInfo',
+    defaultMessage: '!!!Your user files will be inserted into the webpage so you can customize services in any way you like. User files are only stored locally and are not transferred to other computers using the same account.',
+  },
   availableServices: {
     id: 'settings.service.form.availableServices',
     defaultMessage: '!!!Available services',
@@ -131,8 +143,7 @@ export default @observer class EditServiceForm extends Component {
     form: PropTypes.instanceOf(Form).isRequired,
     onSubmit: PropTypes.func.isRequired,
     onDelete: PropTypes.func.isRequired,
-    openDarkmodeCss: PropTypes.func.isRequired,
-    isOpeningDarkModeCss: PropTypes.bool.isRequired,
+    openRecipeFile: PropTypes.func.isRequired,
     isSaving: PropTypes.bool.isRequired,
     isDeleting: PropTypes.bool.isRequired,
     isProxyFeatureEnabled: PropTypes.bool.isRequired,
@@ -199,8 +210,7 @@ export default @observer class EditServiceForm extends Component {
       isSaving,
       isDeleting,
       onDelete,
-      openDarkmodeCss,
-      isOpeningDarkModeCss,
+      openRecipeFile,
       isProxyFeatureEnabled,
       isServiceProxyIncludedInCurrentPlan,
       isSpellcheckerIncludedInCurrentPlan,
@@ -223,23 +233,6 @@ export default @observer class EditServiceForm extends Component {
         label={intl.formatMessage(messages.deleteService)}
         className="settings__delete-button"
         onClick={onDelete}
-      />
-    );
-
-    const openDarkmodeCssButton = isOpeningDarkModeCss ? (
-      <Button
-        label={intl.formatMessage(messages.openDarkmodeCss)}
-        loaded={false}
-        buttonType="secondary"
-        className="settings__open-dark-mode-button"
-        disabled
-      />
-    ) : (
-      <Button
-        buttonType="secondary"
-        label={intl.formatMessage(messages.openDarkmodeCss)}
-        className="settings__open-dark-mode-button"
-        onClick={openDarkmodeCss}
       />
     );
 
@@ -430,11 +423,39 @@ export default @observer class EditServiceForm extends Component {
               </PremiumFeatureContainer>
             )}
           </form>
+
+          {action === 'edit' && (
+            <>
+              <div className="settings__open-recipe-file-container">
+                <Button
+                  buttonType="secondary"
+                  label={intl.formatMessage(messages.openDarkmodeCss)}
+                  className="settings__open-recipe-file-button"
+                  onClick={() => openRecipeFile('darkmode.css')}
+                />
+                <Button
+                  buttonType="secondary"
+                  label={intl.formatMessage(messages.openUserCss)}
+                  className="settings__open-recipe-file-button"
+                  onClick={() => openRecipeFile('user.css')}
+                />
+                <Button
+                  buttonType="secondary"
+                  label={intl.formatMessage(messages.openUserJs)}
+                  className="settings__open-recipe-file-button"
+                  onClick={() => openRecipeFile('user.js')}
+                />
+              </div>
+              <p style={{ marginTop: 10 }}>
+                <span className="mdi mdi-information" />
+                {intl.formatMessage(messages.recipeFileInfo)}
+              </p>
+            </>
+          )}
         </div>
         <div className="settings__controls">
           {/* Delete Button */}
           {action === 'edit' && deleteButton}
-          {action === 'edit' && openDarkmodeCssButton}
 
           {/* Save Button */}
           {isSaving || isValidatingCustomUrl ? (

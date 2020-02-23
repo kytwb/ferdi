@@ -2143,263 +2143,302 @@
         }
       },
       {
-        "defaultMessage": "!!!Available services",
+        "defaultMessage": "!!!Open user.css",
         "end": {
           "column": 3,
           "line": 39
         },
         "file": "src/components/settings/services/EditServiceForm.js",
+        "id": "settings.service.form.openUserCss",
+        "start": {
+          "column": 15,
+          "line": 36
+        }
+      },
+      {
+        "defaultMessage": "!!!Open user.js",
+        "end": {
+          "column": 3,
+          "line": 43
+        },
+        "file": "src/components/settings/services/EditServiceForm.js",
+        "id": "settings.service.form.openUserJs",
+        "start": {
+          "column": 14,
+          "line": 40
+        }
+      },
+      {
+        "defaultMessage": "!!!Your user files will be inserted into the webpage so you can customize services in any way you like. User files are only stored locally and are not transferred to other computers using the same account.",
+        "end": {
+          "column": 3,
+          "line": 47
+        },
+        "file": "src/components/settings/services/EditServiceForm.js",
+        "id": "settings.service.form.recipeFileInfo",
+        "start": {
+          "column": 18,
+          "line": 44
+        }
+      },
+      {
+        "defaultMessage": "!!!Available services",
+        "end": {
+          "column": 3,
+          "line": 51
+        },
+        "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.availableServices",
         "start": {
           "column": 21,
-          "line": 36
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Your services",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 55
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.yourServices",
         "start": {
           "column": 16,
-          "line": 40
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Add {name}",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 59
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.addServiceHeadline",
         "start": {
           "column": 22,
-          "line": 44
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Edit {name}",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 63
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.editServiceHeadline",
         "start": {
           "column": 23,
-          "line": 48
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Hosted",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 67
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.tabHosted",
         "start": {
           "column": 13,
-          "line": 52
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Self hosted ⭐️",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 71
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.tabOnPremise",
         "start": {
           "column": 16,
-          "line": 56
+          "line": 68
         }
       },
       {
         "defaultMessage": "!!!Use the hosted {name} service.",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 75
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.useHostedService",
         "start": {
           "column": 20,
-          "line": 60
+          "line": 72
         }
       },
       {
         "defaultMessage": "!!!Could not validate custom {name} server.",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 79
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlValidationError",
         "start": {
           "column": 28,
-          "line": 64
+          "line": 76
         }
       },
       {
         "defaultMessage": "!!!To add self hosted services, you need a Ferdi Premium Supporter Account.",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 83
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlPremiumInfo",
         "start": {
           "column": 24,
-          "line": 68
+          "line": 80
         }
       },
       {
         "defaultMessage": "!!!Upgrade your account",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 87
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.customUrlUpgradeAccount",
         "start": {
           "column": 27,
-          "line": 72
+          "line": 84
         }
       },
       {
         "defaultMessage": "!!!You will be notified about all new messages in a channel, not just @username, @channel, @here, ...",
         "end": {
           "column": 3,
-          "line": 79
+          "line": 91
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.indirectMessageInfo",
         "start": {
           "column": 23,
-          "line": 76
+          "line": 88
         }
       },
       {
         "defaultMessage": "!!!When disabled, all notification sounds and audio playback are muted",
         "end": {
           "column": 3,
-          "line": 83
+          "line": 95
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.isMutedInfo",
         "start": {
           "column": 15,
-          "line": 80
+          "line": 92
         }
       },
       {
         "defaultMessage": "!!!Notifications",
         "end": {
           "column": 3,
-          "line": 87
+          "line": 99
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineNotifications",
         "start": {
           "column": 25,
-          "line": 84
+          "line": 96
         }
       },
       {
         "defaultMessage": "!!!Unread message badges",
         "end": {
           "column": 3,
-          "line": 91
+          "line": 103
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineBadges",
         "start": {
           "column": 18,
-          "line": 88
+          "line": 100
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 95
+          "line": 107
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 92
+          "line": 104
         }
       },
       {
         "defaultMessage": "!!!Delete",
         "end": {
           "column": 3,
-          "line": 99
+          "line": 111
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.iconDelete",
         "start": {
           "column": 14,
-          "line": 96
+          "line": 108
         }
       },
       {
         "defaultMessage": "!!!Drop your image, or click here",
         "end": {
           "column": 3,
-          "line": 103
+          "line": 115
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.iconUpload",
         "start": {
           "column": 14,
-          "line": 100
+          "line": 112
         }
       },
       {
         "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
         "end": {
           "column": 3,
-          "line": 107
+          "line": 119
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.headline",
         "start": {
           "column": 17,
-          "line": 104
+          "line": 116
         }
       },
       {
         "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
         "end": {
           "column": 3,
-          "line": 111
+          "line": 123
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.restartInfo",
         "start": {
           "column": 20,
-          "line": 108
+          "line": 120
         }
       },
       {
         "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
         "end": {
           "column": 3,
-          "line": 115
+          "line": 127
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.info",
         "start": {
           "column": 13,
-          "line": 112
+          "line": 124
         }
       }
     ],

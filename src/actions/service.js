@@ -28,8 +28,9 @@ export default {
     serviceId: PropTypes.string.isRequired,
     redirect: PropTypes.string,
   },
-  openDarkmodeCss: {
+  openRecipeFile: {
     recipe: PropTypes.string.isRequired,
+    file: PropTypes.string.isRequired,
   },
   clearCache: {
     serviceId: PropTypes.string.isRequired,

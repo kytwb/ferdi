@@ -58,7 +58,7 @@ export default class ServicesStore extends Store {
     this.actions.service.createFromLegacyService.listen(this._createFromLegacyService.bind(this));
     this.actions.service.updateService.listen(this._updateService.bind(this));
     this.actions.service.deleteService.listen(this._deleteService.bind(this));
-    this.actions.service.openDarkmodeCss.listen(this._openDarkmodeCss.bind(this));
+    this.actions.service.openRecipeFile.listen(this._openRecipeFile.bind(this));
     this.actions.service.clearCache.listen(this._clearCache.bind(this));
     this.actions.service.setWebviewReference.listen(this._setWebviewReference.bind(this));
     this.actions.service.detachService.listen(this._detachService.bind(this));
@@ -334,7 +334,7 @@ export default class ServicesStore extends Store {
     this.actionStatus = request.result.status;
   }
 
-  @action async _openDarkmodeCss({ recipe }) {
+  @action async _openRecipeFile({ recipe, file }) {
     // Get directory for recipe
     const normalDirectory = getRecipeDirectory(recipe);
     const devDirectory = getDevRecipeDirectory(recipe);
@@ -349,10 +349,10 @@ export default class ServicesStore extends Store {
       return;
     }
 
-    // Create and open darkmode.css
-    const file = path.join(directory, 'darkmode.css');
-    await fs.ensureFile(file);
-    shell.showItemInFolder(file);
+    // Create and open file
+    const filePath = path.join(directory, file);
+    await fs.ensureFile(filePath);
+    shell.showItemInFolder(filePath);
   }
 
   @action async _clearCache({ serviceId }) {

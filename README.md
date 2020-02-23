@@ -112,6 +112,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Add Process Manager to find services using a lot of resources
 - [x] Add "npm run prepare-code" command for development to lint and beautify code
 - [x] Add button to open darkmode.css for a service
+- [x] [Add `user.css` and `user.js` that allows users to inject custom code into services](https://github.com/getferdi/ferdi/wiki/Using-user.css-and-user.js) ([#83](https://github.com/getferdi/ferdi/issues/83))
 - [x] Allow SVGs for service custom icon
 - [x] Switch to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Improve "About Ferdi" screen to better display versions
