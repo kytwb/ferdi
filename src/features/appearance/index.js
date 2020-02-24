@@ -1,6 +1,6 @@
 import { reaction } from 'mobx';
 import themeInfo from '../../assets/themeInfo.json';
-import { DEFAULT_APP_SETTINGS } from '../../config';
+import { DEFAULT_APP_SETTINGS, iconSizeBias } from '../../config';
 
 const STYLE_ELEMENT_ID = 'custom-appearance-style';
 
@@ -42,17 +42,23 @@ function generateAccentStyle(color) {
   return style;
 }
 
-function generateServiceRibbonWidthStyle(width) {
+function generateServiceRibbonWidthStyle(widthStr, iconSizeStr) {
+  const width = Number(widthStr);
+  const iconSize = Number(iconSizeStr) - iconSizeBias;
+
   return `
     .sidebar {
       width: ${width}px !important;
     }
     .tab-item {
       width: ${width - 2}px !important;
-      height: ${width - 5}px !important;
+      height: ${width - 5 + iconSize}px !important;
     }
     .tab-item .tab-item__icon {
-      width: ${width / 2}px !important;
+      width: ${(width / 2) + iconSize}px !important;
+    }
+    .sidebar__button {
+      font-size: ${width / 3}px !important;
     }
   `;
 }
@@ -63,13 +69,15 @@ function generateStyle(settings) {
   const {
     accentColor,
     serviceRibbonWidth,
+    iconSize,
   } = settings;
 
   if (accentColor !== DEFAULT_APP_SETTINGS.accentColor) {
     style += generateAccentStyle(accentColor);
   }
-  if (serviceRibbonWidth !== DEFAULT_APP_SETTINGS.serviceRibbonWidth) {
-    style += generateServiceRibbonWidthStyle(serviceRibbonWidth);
+  if (serviceRibbonWidth !== DEFAULT_APP_SETTINGS.serviceRibbonWidth
+      || iconSize !== DEFAULT_APP_SETTINGS.iconSize) {
+    style += generateServiceRibbonWidthStyle(serviceRibbonWidth, iconSize);
   }
 
   return style;
@@ -99,6 +107,15 @@ export default function initAppearance(stores) {
   reaction(
     () => (
       settings.all.app.serviceRibbonWidth
+    ),
+    () => {
+      updateStyle(settings.all.app);
+    },
+  );
+  // Update icon size
+  reaction(
+    () => (
+      settings.all.app.iconSize
     ),
     () => {
       updateStyle(settings.all.app);

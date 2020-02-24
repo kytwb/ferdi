@@ -468,6 +468,12 @@ export default @observer class EditSettingsForm extends Component {
 
             <Hr />
 
+            <Select field={form.$('serviceRibbonWidth')} />
+
+            <Select field={form.$('iconSize')} />
+
+            <Hr />
+
             <Input
               placeholder="Accent Color"
               onChange={e => this.submit(e)}

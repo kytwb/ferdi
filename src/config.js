@@ -45,6 +45,28 @@ export const HIBERNATION_STRATEGIES = {
   3600: 'Extemely Slow Hibernation (1hour)',
 };
 
+export const SIDEBAR_WIDTH = {
+  35: 'Extemely slim sidebar',
+  45: 'Very slim sidebar',
+  55: 'Slim sidebar',
+  68: 'Normal sidebar',
+  80: 'Wide sidebar',
+  90: 'Very wide sidebar',
+  100: 'Extemely wide sidebar',
+};
+
+export const ICON_SIZES = {
+  0: 'Very small icons',
+  10: 'Small icons',
+  20: 'Normal icons',
+  30: 'Large icons',
+  40: 'Very large icons',
+};
+// We need a bias to push all icon sizes into positive numbers
+// otherwise the settings screen won't sort the sizes correctly.
+// The bias should always be the "Normal icons" value
+export const iconSizeBias = 20;
+
 export const DEFAULT_APP_SETTINGS = {
   autoLaunchInBackground: false,
   runInBackground: true,
@@ -83,6 +105,7 @@ export const DEFAULT_APP_SETTINGS = {
   adaptableDarkMode: true,
   accentColor: '#7367f0',
   serviceRibbonWidth: 68,
+  iconSize: iconSizeBias,
   sentry: false,
 };
 

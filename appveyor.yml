@@ -23,3 +23,7 @@ branches:
     - i18n
     - l10n_master
     - l10n_develop
+
+skip_commits:
+  files:
+    - src/i18n/locales/*.json

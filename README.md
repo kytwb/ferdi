@@ -57,8 +57,8 @@ Ferdi is a messaging browser that allows you to combine your favorite messaging 
 <em>"Keep all your messaging services in one place."</em>
 <img alt="Order your services with Ferdi Workspaces." src="./branding/screenshots/workspaces.png">
 <em>"Order your services with Ferdi Workspaces."</em>
-<img alt="Always keep your Todo list open with Ferdi Todos." src="./branding/screenshots/todos.png">
-<em>"Always keep your Todo list open with Ferdi Todos."</em>
+<img alt="Always keep your Todos list open with Ferdi Todos." src="./branding/screenshots/todos.png">
+<em>"Always keep your Todos list open with Ferdi Todos."</em>
 <img alt="Supporting all your services." src="./branding/screenshots/service-store.png">
 <em>"Supporting all your services."</em>
 </p>
@@ -117,7 +117,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Switch to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Improve "About Ferdi" screen to better display versions
 - [x] Minifying build files to improve app size
-- [x] [Makes it possible to edit the "Franz Todo" server](https://github.com/getferdi/ferdi/wiki/Custom-Todo)
+- [x] [Makes it possible to edit the "Franz Todos" service](https://github.com/getferdi/ferdi/wiki/Custom-Todo) (e.g. Todoist via https://todoist.com/app)
 - [x] Makes RocketChat self-hosted generally available ([#6](https://github.com/getferdi/ferdi/issues/6))
 - [x] Comes with a custom branding proper to Ferdi
 - [x] UI improvements
