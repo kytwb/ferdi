@@ -115,14 +115,22 @@ class RecipeController {
 
     const userJs = path.join(recipe.path, 'user.js');
     if (await fs.exists(userJs)) {
-      window.addEventListener('DOMContentLoaded', () => {
+      const loadUserJs = () => {
         // eslint-disable-next-line
         const userJsModule = require(userJs);
 
         if (typeof userJsModule === 'function') {
           userJsModule(config);
         }
-      });
+      };
+
+      if (document.readyState !== 'loading') {
+        loadUserJs();
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          loadUserJs();
+        });
+      }
     }
   }
 
