@@ -313,7 +313,7 @@
   .settings__open-recipe-file-container {
     margin-top: 20px;
     display: flex;
-    height: auto;
+    height: auto !important;
   }
 
   .settings__empty-state {
