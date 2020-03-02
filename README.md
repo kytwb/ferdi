@@ -40,7 +40,7 @@
     - [Start development app](#start-development-app)
     - [Packaging](#packaging)
     - [Release](#release)
-  - [Contributors ✨](#contributors-%e2%9c%a8)
+  - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
 </details>
@@ -67,7 +67,7 @@ Ferdi is a messaging browser that allows you to combine your favorite messaging 
 
 ## Download Ferdi
 
-You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](https://getferdi.com/download) or you can find all variants in the [latest stable release](https://github.com/getferdi/ferdi/releases/latest) assets and [all the other release here](https://github.com/getferdi/ferdi/releases).
+You can find the installers in the [latest stable release](https://github.com/getferdi/ferdi/releases/latest) assets and [all the other release here](https://github.com/getferdi/ferdi/releases).
 
 ### Or use homebrew (macOS only)
 
@@ -81,11 +81,6 @@ Ferdi has three seperate AUR packages you can use:
 - **[ferdi](https://aur.archlinux.org/packages/ferdi/)**: Uses your system electron version to run the latest release
 - **[ferdi-bin](https://aur.archlinux.org/packages/ferdi-bin/)**: Uses the latest Fedora release and extracts it to Arch
 - **[ferdi-git](https://aur.archlinux.org/packages/ferdi-git/)**: Uses your system electron version to run the latest commit from the develop branch
-
-We suggest using the `ferdi` package first as it will work best on most systems.
-Some systems may have an incompatible Electron version installed so if you are experiencing problems with `ferdi`, please use `ferdi-bin` instead.
-
-`ferdi-git` will use the latest Git commit and thus may be unstable but may also give you features that are not yet available in other versions. Please only use `ferdi-git` if you accept these risks.
 
 If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
