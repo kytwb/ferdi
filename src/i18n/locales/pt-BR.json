@@ -284,7 +284,7 @@
   "settings.app.form.language": "Idioma",
   "settings.app.form.lockPassword": "Senha",
   "settings.app.form.minimizeToSystemTray": "Minimizar o Ferdi para a barra do sistema",
-  "settings.app.form.navigationBarBehaviour": "Navigation bar behaviour",
+  "settings.app.form.navigationBarBehaviour": "Comportamento da barra de navegação",
   "settings.app.form.noUpdates": "Desativar atualizações",
   "settings.app.form.privateNotifications": "Não mostrar o conteúdo das mensagens nas notificações",
   "settings.app.form.runInBackground": "Manter o Ferdi em segundo plano ao fechar a janela",
