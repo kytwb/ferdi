@@ -9,7 +9,7 @@
   "imageSize": 40,
   "commit": true,
   "commitConvention": "none",
-  "badgeTemplate": "<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-<%= contributors.length %>-default.svg?logo=github' alt='Contributors'/></a>",
+  "badgeTemplate": "<a href='#contributors-' style='width:25%'><img src='https://img.shields.io/badge/contributors-<%= contributors.length %>-default.svg?logo=github' alt='Contributors'/></a>",
   "contributors": [
     {
       "login": "vantezzen",
@@ -402,6 +402,6 @@
       ]
     }
   ],
-  "contributorsPerLine": 4,
+  "contributorsPerLine": 6,
   "skipCi": true
 }
