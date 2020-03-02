@@ -64,6 +64,7 @@ const infoPath = path.join(__dirname, '../../.all-contributorsrc');
   const info = await fs.readJSON(infoPath);
 
   for (const user of list) {
+    // eslint-disable-next-line no-await-in-loop
     info.contributors = await allContributors.addContributorWithDetails({
       ...user,
       contributions: ['translation'],
