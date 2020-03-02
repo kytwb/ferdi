@@ -33,6 +33,29 @@
       ]
     },
     {
+      "login": "kytwb",
+      "name": "Amine Mouafik",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/412895?v=4",
+      "profile": "https://twitter.com/kytwb",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "ideas",
+        "bug",
+        "content",
+        "infra",
+        "userTesting",
+        "question",
+        "projectManagement",
+        "review",
+        "maintenance",
+        "platform",
+        "fundingFinding",
+        "blog"
+      ]
+    },
+    {
       "login": "adlk",
       "name": "Stefan Malzner",
       "avatar_url": "https://avatars1.githubusercontent.com/u/3265004?v=4",
@@ -50,22 +73,17 @@
       ]
     },
     {
-      "login": "kytwb",
-      "name": "Amine Mouafik",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/412895?v=4",
-      "profile": "https://twitter.com/kytwb",
+      "login": "Makazzz",
+      "name": "Makazzz",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/49844464?v=4",
+      "profile": "https://github.com/Makazzz",
       "contributions": [
-        "question",
+        "bug",
         "code",
+        "translation",
+        "content",
         "doc",
-        "ideas",
-        "maintenance",
-        "platform",
-        "projectManagement",
-        "review",
-        "infra",
-        "fundingFinding",
-        "blog"
+        "platform"
       ]
     },
     {
@@ -149,20 +167,6 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/7844066?v=4",
       "profile": "https://github.com/AGCaesar",
       "contributions": [
-        "platform"
-      ]
-    },
-    {
-      "login": "Makazzz",
-      "name": "Makazzz",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/49844464?v=4",
-      "profile": "https://github.com/Makazzz",
-      "contributions": [
-        "bug",
-        "code",
-        "translation",
-        "content",
-        "doc",
         "platform"
       ]
     },
@@ -297,8 +301,107 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Ali_Shiple",
+      "name": "Ali M. Shiple",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/12895436/small/00917d09ca1b4b6d8e0ef36af07ecf6b.jpg",
+      "profile": "https://crowdin.com/profile/Ali_Shiple",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "elviseras",
+      "name": "elviseras",
+      "avatar_url": "https://www.gravatar.com/avatar/25c2cf0d8cb4a4141e71c3b8a2e9324f",
+      "profile": "https://crowdin.com/profile/elviseras",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "J370",
+      "name": "J370",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14141203/small/7b12b5db419d8796450221c2eaaf6003.png",
+      "profile": "https://crowdin.com/profile/J370",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "keunes",
+      "name": "Koen",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/13018172/small/829115c606347b10218f34c637a2100c.png",
+      "profile": "https://crowdin.com/profile/keunes",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "leandrogehlen",
+      "name": "Leandro Gehlen",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14099621/small/1d9503523839c310dbce0af3c226e894.jpeg",
+      "profile": "https://crowdin.com/profile/leandrogehlen",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Matthieu42",
+      "name": "Matthieu42",
+      "avatar_url": "https://www.gravatar.com/avatar/735217ccccf11ba97573deee517ddb19",
+      "profile": "https://crowdin.com/profile/Matthieu42",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "nicky18013",
+      "name": "Nikita Bibanaev",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/13468928/small/2b31e7ac19645d950a79b33ffd5721b8.png",
+      "profile": "https://crowdin.com/profile/nicky18013",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Tatjana1998",
+      "name": "Tatjana1998",
+      "avatar_url": "https://www.gravatar.com/avatar/ade202a04fcbb2c177e4f1d9936af29e",
+      "profile": "https://crowdin.com/profile/Tatjana1998",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "seayko",
+      "name": "tinect",
+      "avatar_url": "https://www.gravatar.com/avatar/65e2aef738ddf828f822d8463fd04918",
+      "profile": "https://crowdin.com/profile/seayko",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Pusnow",
+      "name": "Wonsup Yoon",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/13514833/small/65f0b45587cc7e34f2827830cd324b16.jpeg",
+      "profile": "https://crowdin.com/profile/Pusnow",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "zutt",
+      "name": "zutt",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/13320003/small/50fdf9f8c7e54a446925bd79696ea625.JPG",
+      "profile": "https://crowdin.com/profile/zutt",
+      "contributions": [
+        "translation"
+      ]
     }
   ],
-  "contributorsPerLine": 6,
+  "contributorsPerLine": 4,
   "skipCi": true
 }
