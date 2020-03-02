@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Locked",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 14,
+      "line": 19,
       "column": 12
     },
     "end": {
-      "line": 17,
+      "line": 22,
       "column": 3
     }
   },
@@ -17,11 +17,24 @@
     "defaultMessage": "!!!Ferdi is currently locked. Please unlock Ferdi with your password to see your messages.",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 18,
+      "line": 23,
       "column": 8
     },
     "end": {
-      "line": 21,
+      "line": 26,
+      "column": 3
+    }
+  },
+  {
+    "id": "locked.touchId",
+    "defaultMessage": "!!!Use TouchID to unlock",
+    "file": "src/components/auth/Locked.js",
+    "start": {
+      "line": 27,
+      "column": 11
+    },
+    "end": {
+      "line": 30,
       "column": 3
     }
   },
@@ -30,11 +43,11 @@
     "defaultMessage": "!!!Password",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 22,
+      "line": 31,
       "column": 17
     },
     "end": {
-      "line": 25,
+      "line": 34,
       "column": 3
     }
   },
@@ -43,11 +56,11 @@
     "defaultMessage": "!!!Unlock",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 26,
+      "line": 35,
       "column": 21
     },
     "end": {
-      "line": 29,
+      "line": 38,
       "column": 3
     }
   },
@@ -56,11 +69,11 @@
     "defaultMessage": "!!!Password invalid",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 30,
+      "line": 39,
       "column": 22
     },
     "end": {
-      "line": 33,
+      "line": 42,
       "column": 3
     }
   }

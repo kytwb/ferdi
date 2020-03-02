@@ -88,6 +88,10 @@ const messages = defineMessages({
     id: 'settings.app.form.lockPassword',
     defaultMessage: '!!!Password',
   },
+  useTouchIdToUnlock: {
+    id: 'settings.app.form.useTouchIdToUnlock',
+    defaultMessage: '!!!Allow using TouchID to unlock Ferdi',
+  },
   inactivityLock: {
     id: 'settings.app.form.inactivityLock',
     defaultMessage: '!!!Lock after inactivity',
@@ -202,6 +206,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         todoServer: settingsData.todoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
         lockedPassword: settingsData.lockedPassword,
+        useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
         inactivityLock: settingsData.inactivityLock,
         scheduledDNDEnabled: settingsData.scheduledDNDEnabled,
         scheduledDNDStart: settingsData.scheduledDNDStart,
@@ -364,6 +369,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.lockedPassword,
           default: '',
           type: 'password',
+        },
+        useTouchIdToUnlock: {
+          label: intl.formatMessage(messages.useTouchIdToUnlock),
+          value: settings.all.app.useTouchIdToUnlock,
+          default: DEFAULT_APP_SETTINGS.useTouchIdToUnlock,
         },
         inactivityLock: {
           label: intl.formatMessage(messages.inactivityLock),

@@ -19,6 +19,7 @@ export default @inject('stores', 'actions') @observer class LockedScreen extends
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.unlock = this.unlock.bind(this);
   }
 
   onSubmit(values) {
@@ -45,11 +46,24 @@ export default @inject('stores', 'actions') @observer class LockedScreen extends
     }
   }
 
+  unlock() {
+    this.props.actions.settings.update({
+      type: 'app',
+      data: {
+        locked: false,
+      },
+    });
+  }
+
   render() {
     const { stores, error } = this.props;
+    const { useTouchIdToUnlock } = this.props.stores.settings.all.app;
+
     return (
       <Locked
         onSubmit={this.onSubmit}
+        unlock={this.unlock}
+        useTouchIdToUnlock={useTouchIdToUnlock}
         isSubmitting={stores.user.loginRequest.isExecuting}
         error={this.state.error || error}
       />

@@ -1,3 +1,4 @@
+import { remote } from 'electron';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
@@ -10,6 +11,10 @@ import Infobox from '../ui/Infobox';
 
 import { globalError as globalErrorPropType } from '../../prop-types';
 
+const {
+  systemPreferences,
+} = remote;
+
 const messages = defineMessages({
   headline: {
     id: 'locked.headline',
@@ -18,6 +23,10 @@ const messages = defineMessages({
   info: {
     id: 'locked.info',
     defaultMessage: '!!!Ferdi is currently locked. Please unlock Ferdi with your password to see your messages.',
+  },
+  touchId: {
+    id: 'locked.touchId',
+    defaultMessage: '!!!Use TouchID to unlock',
   },
   passwordLabel: {
     id: 'locked.password.label',
@@ -36,7 +45,9 @@ const messages = defineMessages({
 export default @observer class Locked extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    unlock: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
+    useTouchIdToUnlock: PropTypes.bool.isRequired,
     error: globalErrorPropType.isRequired,
   };
 
@@ -64,12 +75,19 @@ export default @observer class Locked extends Component {
     });
   }
 
+  touchIdUnlock() {
+    systemPreferences.promptTouchID('to unlock Ferdi').then(() => {
+      this.props.unlock();
+    });
+  }
+
   render() {
     const { form } = this;
     const { intl } = this.context;
     const {
       isSubmitting,
       error,
+      useTouchIdToUnlock,
     } = this.props;
 
     return (
@@ -84,6 +102,16 @@ export default @observer class Locked extends Component {
           <Infobox type="warning">
             {intl.formatMessage(messages.info)}
           </Infobox>
+
+          {useTouchIdToUnlock && systemPreferences.canPromptTouchID() && (
+            <Button
+              className="auth__button touchid__button"
+              label={intl.formatMessage(messages.touchId)}
+              onClick={() => this.touchIdUnlock()}
+              type="button"
+            />
+          )}
+
           <Input
             field={form.$('password')}
             showPasswordToggle

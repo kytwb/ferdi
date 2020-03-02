@@ -76,6 +76,10 @@
     &.auth__button--skip { margin: 10px auto 0; }
   }
 
+  .touchid__button {
+    margin-bottom: 25px;
+  }
+
   .auth__links {
     background: $theme-gray-lighter;
     border-bottom-left-radius: $theme-border-radius;
