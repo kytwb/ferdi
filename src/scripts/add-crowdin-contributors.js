@@ -1,11 +1,11 @@
 /**
  * Add CrowdIn Contributors to AllContributors list
- * 
+ *
  * This script will add CrowdIn Contributors to the list of all contributors.
  * As the CrowdIn API doesn't give good access to the data needed, this script
  * requires you to manually execute a script on the members page of CrowdIn
  * and paste its output into this script.
- * 
+ *
  * Usage:
  * 1. Open https://crowdin.com/project/getferdi/settings#members
  * 2. Open the console and execute the script below:
@@ -52,7 +52,7 @@ console.log(JSON.stringify(members));
  * 5. Regenerate the README table using the CLI ('all-contributors generate')
  * Please check if the generated data is ok and no data is lost.
 */
-const list = [ /* PASTE THE CONSOLE OUTPUT INTO HERE */ ];
+const list = [];
 
 const fs = require('fs-extra');
 const path = require('path');
@@ -61,16 +61,16 @@ const allContributors = require('all-contributors-cli');
 const infoPath = path.join(__dirname, '../../.all-contributorsrc');
 
 (async () => {
-  let info = await fs.readJSON(infoPath);
+  const info = await fs.readJSON(infoPath);
 
-  for(const user of list) {
+  for (const user of list) {
     info.contributors = await allContributors.addContributorWithDetails({
       ...user,
       contributions: ['translation'],
       profile: `https://crowdin.com/profile/${user.login}`,
       options: {
         contributors: info.contributors,
-      }
+      },
     });
   }
 
