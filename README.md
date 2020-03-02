@@ -1,5 +1,12 @@
 <p align="center">
-    <img src="./build-helpers/images/icon.png" alt="" width="200"/>
+    <a href="https://getferdi.com">
+      <img src="./build-helpers/images/icon.png" alt="" width="250"/>
+    </a>
+</p>
+<p align="center">
+    <a href="https://getferdi.com/download">
+      <img src="./branding/download.png" alt="Download" width="150"/>
+    </a>
 </p>
 
 # Ferdi
