@@ -86,6 +86,7 @@
   "locked.password.label": "Password",
   "locked.submit.label": "Unlock",
   "locked.touchId": "Use Touch ID to unlock",
+  "locked.touchIdPrompt": "unlock via Touch ID",
   "login.changeServer": "Change server",
   "login.customServerQuestion": "Using a Franz account to log in?",
   "login.customServerSuggestion": "Try importing your Franz account into Ferdi",

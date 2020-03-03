@@ -28,6 +28,10 @@ const messages = defineMessages({
     id: 'locked.touchId',
     defaultMessage: '!!!Use Touch ID to unlock',
   },
+  touchIdPrompt: {
+    id: 'locked.touchIdPrompt',
+    defaultMessage: '!!!unlock via Touch ID',
+  },
   passwordLabel: {
     id: 'locked.password.label',
     defaultMessage: '!!!Password',
@@ -76,7 +80,7 @@ export default @observer class Locked extends Component {
   }
 
   touchIdUnlock() {
-    systemPreferences.promptTouchID('to unlock Ferdi').then(() => {
+    systemPreferences.promptTouchID(messages.touchIdPrompt).then(() => {
       this.props.unlock();
     });
   }

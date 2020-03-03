@@ -238,42 +238,55 @@
         }
       },
       {
-        "defaultMessage": "!!!Password",
+        "defaultMessage": "!!!unlock via Touch ID",
         "end": {
           "column": 3,
           "line": 34
         },
         "file": "src/components/auth/Locked.js",
-        "id": "locked.password.label",
+        "id": "locked.touchIdPrompt",
         "start": {
           "column": 17,
           "line": 31
         }
       },
       {
-        "defaultMessage": "!!!Unlock",
+        "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
           "line": 38
         },
         "file": "src/components/auth/Locked.js",
+        "id": "locked.password.label",
+        "start": {
+          "column": 17,
+          "line": 35
+        }
+      },
+      {
+        "defaultMessage": "!!!Unlock",
+        "end": {
+          "column": 3,
+          "line": 42
+        },
+        "file": "src/components/auth/Locked.js",
         "id": "locked.submit.label",
         "start": {
           "column": 21,
-          "line": 35
+          "line": 39
         }
       },
       {
         "defaultMessage": "!!!Password invalid",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 46
         },
         "file": "src/components/auth/Locked.js",
         "id": "locked.invalidCredentials",
         "start": {
           "column": 22,
-          "line": 39
+          "line": 43
         }
       }
     ],
