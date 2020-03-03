@@ -26,7 +26,7 @@ const messages = defineMessages({
   },
   touchId: {
     id: 'locked.touchId',
-    defaultMessage: '!!!Use Touch ID to unlock',
+    defaultMessage: '!!!Unlock with Touch ID',
   },
   touchIdPrompt: {
     id: 'locked.touchIdPrompt',
@@ -39,6 +39,10 @@ const messages = defineMessages({
   submitButtonLabel: {
     id: 'locked.submit.label',
     defaultMessage: '!!!Unlock',
+  },
+  unlockWithPassword: {
+    id: 'locked.unlockWithPassword',
+    defaultMessage: '!!!Unlock with Password',
   },
   invalidCredentials: {
     id: 'locked.invalidCredentials',
@@ -80,7 +84,9 @@ export default @observer class Locked extends Component {
   }
 
   touchIdUnlock() {
-    systemPreferences.promptTouchID(messages.touchIdPrompt).then(() => {
+    const { intl } = this.context;
+
+    systemPreferences.promptTouchID(intl.formatMessage(messages.touchIdPrompt)).then(() => {
       this.props.unlock();
     });
   }
@@ -93,6 +99,9 @@ export default @observer class Locked extends Component {
       error,
       useTouchIdToUnlock,
     } = this.props;
+
+    const touchIdEnabled = useTouchIdToUnlock && systemPreferences.canPromptTouchID();
+    const submitButtonLabel = touchIdEnabled ? intl.formatMessage(messages.unlockWithPassword) : intl.formatMessage(messages.submitButtonLabel);
 
     return (
       <div className="auth__container">
@@ -107,13 +116,16 @@ export default @observer class Locked extends Component {
             {intl.formatMessage(messages.info)}
           </Infobox>
 
-          {useTouchIdToUnlock && systemPreferences.canPromptTouchID() && (
-            <Button
-              className="auth__button touchid__button"
-              label={intl.formatMessage(messages.touchId)}
-              onClick={() => this.touchIdUnlock()}
-              type="button"
-            />
+          {touchIdEnabled && (
+            <>
+              <Button
+                className="auth__button touchid__button"
+                label={intl.formatMessage(messages.touchId)}
+                onClick={() => this.touchIdUnlock()}
+                type="button"
+              />
+              <hr className="locked__or_line" />
+            </>
           )}
 
           <Input
@@ -128,7 +140,7 @@ export default @observer class Locked extends Component {
             <Button
               className="auth__button is-loading"
               buttonType="secondary"
-              label={`${intl.formatMessage(messages.submitButtonLabel)} ...`}
+              label={`${submitButtonLabel} ...`}
               loaded={false}
               disabled
             />
@@ -136,7 +148,7 @@ export default @observer class Locked extends Component {
             <Button
               type="submit"
               className="auth__button"
-              label={intl.formatMessage(messages.submitButtonLabel)}
+              label={submitButtonLabel}
             />
           )}
         </form>

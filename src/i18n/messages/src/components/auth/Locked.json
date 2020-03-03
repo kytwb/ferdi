@@ -27,7 +27,7 @@
   },
   {
     "id": "locked.touchId",
-    "defaultMessage": "!!!Use Touch ID to unlock",
+    "defaultMessage": "!!!Unlock with Touch ID",
     "file": "src/components/auth/Locked.js",
     "start": {
       "line": 27,
@@ -78,8 +78,8 @@
     }
   },
   {
-    "id": "locked.invalidCredentials",
-    "defaultMessage": "!!!Password invalid",
+    "id": "locked.unlockWithPassword",
+    "defaultMessage": "!!!Unlock with Password",
     "file": "src/components/auth/Locked.js",
     "start": {
       "line": 43,
@@ -87,6 +87,19 @@
     },
     "end": {
       "line": 46,
+      "column": 3
+    }
+  },
+  {
+    "id": "locked.invalidCredentials",
+    "defaultMessage": "!!!Password invalid",
+    "file": "src/components/auth/Locked.js",
+    "start": {
+      "line": 47,
+      "column": 22
+    },
+    "end": {
+      "line": 50,
       "column": 3
     }
   }

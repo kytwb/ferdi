@@ -10,8 +10,7 @@ import { CUSTOM_WEBSITE_ID } from '../features/webControls/constants';
 import { workspaceActions } from '../features/workspaces/actions';
 import { workspaceStore } from '../features/workspaces/index';
 
-
-const { app, Menu, dialog } = remote;
+const { app, Menu, dialog, systemPreferences } = remote;
 
 const menuItems = defineMessages({
   edit: {
@@ -165,6 +164,14 @@ const menuItems = defineMessages({
   debugInfoCopiedBody: {
     id: 'menu.help.debugInfoCopiedBody',
     defaultMessage: '!!!Your Debug Information has been copied to your clipboard.',
+  },
+  touchId: {
+    id: 'locked.touchId',
+    defaultMessage: '!!!Unlock with Touch ID',
+  },
+  touchIdPrompt: {
+    id: 'locked.touchIdPrompt',
+    defaultMessage: '!!!unlock via Touch ID',
   },
   tos: {
     id: 'menu.help.tos',
@@ -833,6 +840,24 @@ export default class FranzMenu {
       if (todosStore.isFeatureEnabled) {
         tpl[5].submenu = this.todosMenu();
       }
+    } else {
+      const touchIdEnabled = this.stores.settings.app.useTouchIdToUnlock && systemPreferences.canPromptTouchID();
+
+      tpl[0].submenu.unshift({
+        label: intl.formatMessage(menuItems.touchId),
+        accelerator: 'CmdOrCtrl+Shift+L',
+        visible: touchIdEnabled,
+        click() {
+          systemPreferences.promptTouchID(intl.formatMessage(menuItems.touchIdPrompt)).then(() => {
+            actions.settings.update({
+              type: 'app',
+              data: {
+                locked: false,
+              },
+            });
+          });
+        },
+      });
     }
 
     tpl.unshift({

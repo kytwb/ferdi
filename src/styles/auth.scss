@@ -24,6 +24,15 @@
 
     a { color: $dark-theme-gray-lightest; }
   }
+
+  .locked__or_line {
+    border-top: 2px solid $dark-theme-text-color;
+    color: $dark-theme-text-color;
+
+    &:after {
+      background: $dark-theme-gray-darker;
+    }
+  }
 }
 
 .auth {
@@ -78,6 +87,24 @@
 
   .touchid__button {
     margin-bottom: 25px;
+  }
+
+  .locked__or_line {
+    border: none;
+    border-top: 2px solid $theme-gray;
+    color: $theme-gray;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    margin-bottom: 20px;
+
+    &:after {
+        background: #FFF;
+        content: 'or';
+        padding: 0 10px;
+        position: relative;
+        top: -9px;
+    }
   }
 
   .auth__links {
