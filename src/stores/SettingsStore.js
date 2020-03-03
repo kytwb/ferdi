@@ -1,5 +1,7 @@
 import { ipcRenderer, remote } from 'electron';
-import { action, computed, observable, reaction } from 'mobx';
+import {
+  action, computed, observable, reaction,
+} from 'mobx';
 import localStorage from 'mobx-localstorage';
 import { DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER } from '../config';
 import { API } from '../environment';
@@ -12,6 +14,7 @@ const debug = require('debug')('Ferdi:SettingsStore');
 
 export default class SettingsStore extends Store {
   @observable updateAppSettingsRequest = new Request(this.api.local, 'updateAppSettings');
+
   startup = true;
 
   fileSystemSettingsTypes = FILE_SYSTEM_SETTINGS_TYPES;
@@ -103,7 +106,7 @@ export default class SettingsStore extends Store {
             // So we lock manually
             window.ferdi.stores.router.push('/auth/locked');
           }
-        })
+        });
       }
       debug('Get appSettings resolves', resp.type, resp.data);
       Object.assign(this._fileSystemSettingsCache[resp.type], resp.data);

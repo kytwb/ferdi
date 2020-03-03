@@ -819,7 +819,7 @@ export default class FranzMenu {
               locked: true,
             },
           });
-        }
+        },
       });
 
       if (serviceTpl.length > 0) {

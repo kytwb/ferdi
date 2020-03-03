@@ -1,13 +1,12 @@
 import { webFrame } from 'electron';
-import { SpellCheckHandler, ContextMenuListener, ContextMenuBuilder } from 'electron-spellchecker';
-
+import { SpellCheckHandler } from 'electron-spellchecker';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
+import setupContextMenu from './contextMenu';
 
 const debug = require('debug')('Franz:spellchecker');
 
 let handler;
 let currentDict;
-let contextMenuBuilder;
 let _isEnabled = false;
 
 export async function switchDict(locale) {
@@ -46,12 +45,7 @@ export default async function initialize(languageCode = 'en-us') {
     debug('Init spellchecker');
 
     switchDict(locale);
-
-    contextMenuBuilder = new ContextMenuBuilder(handler);
-    // eslint-disable-next-line no-new
-    new ContextMenuListener((info) => {
-      contextMenuBuilder.showPopupMenu(info);
-    });
+    setupContextMenu(handler);
 
     return handler;
   } catch (err) {

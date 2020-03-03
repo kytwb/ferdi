@@ -23,7 +23,6 @@ import RecipeWebview from './lib/RecipeWebview';
 
 import spellchecker, { switchDict, disable as disableSpellchecker, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
-import contextMenu from './contextMenu';
 import './notifications';
 
 import { DEFAULT_APP_SETTINGS } from '../config';
@@ -72,15 +71,7 @@ class RecipeController {
 
     debug('Send "hello" to host');
     setTimeout(() => ipcRenderer.sendToHost('hello'), 100);
-
-    this.spellcheckingProvider = await spellchecker();
-    contextMenu(
-      this.spellcheckingProvider,
-      () => this.settings.app.enableSpellchecking,
-      () => this.settings.app.spellcheckerLanguage,
-      () => this.spellcheckerLanguage,
-    );
-
+    await spellchecker();
     autorun(() => this.update());
   }
 
