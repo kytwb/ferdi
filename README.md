@@ -48,7 +48,7 @@
     - [Start development app](#start-development-app)
     - [Packaging](#packaging)
     - [Release](#release)
-  - [Contributors ✨](#contributors-%e2%9c%a8)
+  - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
 </details>
@@ -86,14 +86,9 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 ### Or use AUR (Arch Linux)
 
 Ferdi has three seperate AUR packages you can use:
-- **[ferdi](https://aur.archlinux.org/packages/ferdi/)**: Uses your system electron version to run the latest release
-- **[ferdi-bin](https://aur.archlinux.org/packages/ferdi-bin/)**: Uses the latest Fedora release and extracts it to Arch
-- **[ferdi-git](https://aur.archlinux.org/packages/ferdi-git/)**: Uses your system electron version to run the latest commit from the develop branch
-
-We suggest using the `ferdi` package first as it will work best on most systems.
-Some systems may have an incompatible Electron version installed so if you are experiencing problems with `ferdi`, please use `ferdi-bin` instead.
-
-`ferdi-git` will use the latest Git commit and thus may be unstable but may also give you features that are not yet available in other versions. Please only use `ferdi-git` if you accept these risks.
+- **[ferdi](https://aur.archlinux.org/packages/ferdi/)**: Uses your system electron version to run the latest release - this version will work best on most systems.
+- **[ferdi-bin](https://aur.archlinux.org/packages/ferdi-bin/)**: Uses the latest Fedora release and extracts it to Arch. Use this version if you are having trouble with the `ferdi` package.
+- **[ferdi-git](https://aur.archlinux.org/packages/ferdi-git/)**: Uses your system electron version to run the latest commit from the develop branch and may be unstable but may also give you features that are not yet available in other versions. Please only use `ferdi-git` if you accept these risks.
 
 If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
