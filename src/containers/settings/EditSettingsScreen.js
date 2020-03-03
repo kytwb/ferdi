@@ -90,7 +90,7 @@ const messages = defineMessages({
   },
   useTouchIdToUnlock: {
     id: 'settings.app.form.useTouchIdToUnlock',
-    defaultMessage: '!!!Allow using TouchID to unlock Ferdi',
+    defaultMessage: '!!!Allow using Touch ID to unlock',
   },
   inactivityLock: {
     id: 'settings.app.form.inactivityLock',

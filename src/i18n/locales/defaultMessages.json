@@ -225,7 +225,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Use TouchID to unlock",
+        "defaultMessage": "!!!Use Touch ID to unlock",
         "end": {
           "column": 3,
           "line": 30
@@ -4331,7 +4331,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Allow using TouchID to unlock Ferdi",
+        "defaultMessage": "!!!Allow using Touch ID to unlock",
         "end": {
           "column": 3,
           "line": 94

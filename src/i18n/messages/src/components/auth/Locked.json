@@ -27,7 +27,7 @@
   },
   {
     "id": "locked.touchId",
-    "defaultMessage": "!!!Use TouchID to unlock",
+    "defaultMessage": "!!!Use Touch ID to unlock",
     "file": "src/components/auth/Locked.js",
     "start": {
       "line": 27,

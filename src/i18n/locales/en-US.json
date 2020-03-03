@@ -85,7 +85,7 @@
   "locked.invalidCredentials": "Password invalid",
   "locked.password.label": "Password",
   "locked.submit.label": "Unlock",
-  "locked.touchId": "Use TouchID to unlock",
+  "locked.touchId": "Use Touch ID to unlock",
   "login.changeServer": "Change server",
   "login.customServerQuestion": "Using a Franz account to log in?",
   "login.customServerSuggestion": "Try importing your Franz account into Ferdi",

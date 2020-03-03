@@ -196,7 +196,7 @@
   },
   {
     "id": "settings.app.form.useTouchIdToUnlock",
-    "defaultMessage": "!!!Allow using TouchID to unlock Ferdi",
+    "defaultMessage": "!!!Allow using Touch ID to unlock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 91,

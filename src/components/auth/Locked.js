@@ -26,7 +26,7 @@ const messages = defineMessages({
   },
   touchId: {
     id: 'locked.touchId',
-    defaultMessage: '!!!Use TouchID to unlock',
+    defaultMessage: '!!!Use Touch ID to unlock',
   },
   passwordLabel: {
     id: 'locked.password.label',
