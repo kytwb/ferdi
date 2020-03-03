@@ -859,6 +859,9 @@ export default class FranzMenu {
             });
           });
         },
+      }, {
+        type: 'separator',
+        visible: touchIdEnabled
       });
     }
 
