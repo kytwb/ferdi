@@ -10,7 +10,9 @@ import { CUSTOM_WEBSITE_ID } from '../features/webControls/constants';
 import { workspaceActions } from '../features/workspaces/actions';
 import { workspaceStore } from '../features/workspaces/index';
 
-const { app, Menu, dialog, systemPreferences } = remote;
+const {
+  app, Menu, dialog, systemPreferences,
+} = remote;
 
 const menuItems = defineMessages({
   edit: {
