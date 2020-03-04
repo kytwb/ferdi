@@ -155,7 +155,7 @@
   "menu.view.resetZoom": "Taille actuelle",
   "menu.view.toggleDevTools": "Activer les outils de développeur",
   "menu.view.toggleFullScreen": "Activer le mode plein écran",
-  "menu.view.toggleServiceDevTools": "Activer les outils de développement WebKit",
+  "menu.view.toggleServiceDevTools": "Activer les outils de développeur du service",
   "menu.view.toggleTodosDevTools": "Activer les outils de développeur Todos",
   "menu.view.zoomIn": "Zoom Avant",
   "menu.view.zoomOut": "Zoom Arrière",
