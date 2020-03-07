@@ -393,7 +393,7 @@ const _templateFactory = (intl, locked) => [
           window.ferdi.actions.service.sendIPCMessage({
             serviceId: currentService,
             channel: 'find-in-page',
-            args: [],
+            args: {},
           });
         },
       },
@@ -622,7 +622,7 @@ const _titleBarTemplateFactory = (intl, locked) => [
           window.ferdi.actions.service.sendIPCMessage({
             serviceId: currentService,
             channel: 'find-in-page',
-            args: [],
+            args: {},
           });
         },
       },
