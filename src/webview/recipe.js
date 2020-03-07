@@ -52,6 +52,7 @@ class RecipeController {
   universalDarkModeInjected = false;
 
   recipe = null;
+
   hasUpdatedBeforeRecipeLoaded = false;
 
   constructor() {

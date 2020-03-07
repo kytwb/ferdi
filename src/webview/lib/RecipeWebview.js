@@ -18,6 +18,7 @@ class RecipeWebview {
   }
 
   loopFunc = () => null;
+
   darkModeHandler = false;
 
   /**
@@ -81,8 +82,8 @@ class RecipeWebview {
 
   /**
    * Set a custom handler for turning on and off dark mode
-   * 
-   * @param {function} handler 
+   *
+   * @param {function} handler
    */
   handleDarkMode(handler) {
     this.darkModeHandler = handler;
