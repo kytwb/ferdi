@@ -69,6 +69,7 @@
     "du": "^0.1.0",
     "electron-dl": "1.14.0",
     "electron-fetch": "1.4.0",
+    "electron-find": "1.0.6",
     "electron-hunspell": "1.1.1",
     "electron-is-dev": "1.1.0",
     "electron-process-manager": "git+https://git@github.com/dizer/electron-process-manager.git",

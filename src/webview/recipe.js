@@ -1,10 +1,11 @@
 /* eslint-disable import/first */
-import { ipcRenderer } from 'electron';
+import { ipcRenderer, remote } from 'electron';
 import path from 'path';
 import { autorun, computed, observable } from 'mobx';
 import fs from 'fs-extra';
 import { loadModule } from 'cld3-asm';
 import { debounce } from 'lodash';
+import { FindInPage } from 'electron-find';
 
 // For some services darkreader tries to use the chrome extension message API
 // This will cause the service to fail loading
@@ -47,6 +48,7 @@ class RecipeController {
     'settings-update': 'updateAppSettings',
     'service-settings-update': 'updateServiceSettings',
     'get-service-id': 'serviceIdEcho',
+    'find-in-page': 'openFindInPage',
   };
 
   universalDarkModeInjected = false;
@@ -61,6 +63,8 @@ class RecipeController {
 
   cldIdentifier = null;
 
+  findInPage = null;
+
   async initialize() {
     Object.keys(this.ipcEvents).forEach((channel) => {
       ipcRenderer.on(channel, (...args) => {
@@ -73,6 +77,10 @@ class RecipeController {
     setTimeout(() => ipcRenderer.sendToHost('hello'), 100);
     await spellchecker();
     autorun(() => this.update());
+
+    document.addEventListener('DOMContentLoaded', () => {
+      this.findInPage = new FindInPage(remote.getCurrentWebContents());
+    });
   }
 
   loadRecipeModule(event, config, recipe) {
@@ -123,6 +131,10 @@ class RecipeController {
         });
       }
     }
+  }
+
+  openFindInPage() {
+    this.findInPage.openFindWindow();
   }
 
   update() {

@@ -51,6 +51,10 @@ const menuItems = defineMessages({
     id: 'menu.edit.selectAll',
     defaultMessage: '!!!Select All',
   },
+  findInPage: {
+    id: 'menu.edit.findInPage',
+    defaultMessage: '!!!Find in Page',
+  },
   speech: {
     id: 'menu.edit.speech',
     defaultMessage: '!!!Speech',
@@ -376,6 +380,27 @@ const _templateFactory = (intl, locked) => [
         type: 'separator',
       },
       {
+        label: intl.formatMessage(menuItems.findInPage),
+        accelerator: 'CmdOrCtrl+F',
+        click() {
+          // Check if there is a service active
+          if (!window.ferdi.stores.services.active) return;
+
+          // Focus webview so find in page popup gets focused
+          window.ferdi.stores.services.active.webview.focus();
+
+          const currentService = window.ferdi.stores.services.active.id;
+          window.ferdi.actions.service.sendIPCMessage({
+            serviceId: currentService,
+            channel: 'find-in-page',
+            args: [],
+          });
+        },
+      },
+      {
+        type: 'separator',
+      },
+      {
         label: intl.formatMessage(menuItems.back),
         accelerator: 'CmdOrCtrl+Left',
         click() {
@@ -578,6 +603,27 @@ const _titleBarTemplateFactory = (intl, locked) => [
         accelerator: 'CmdOrCtrl+S',
         click() {
           window.ferdi.features.quickSwitch.state.isModalVisible = true;
+        },
+      },
+      {
+        type: 'separator',
+      },
+      {
+        label: intl.formatMessage(menuItems.findInPage),
+        accelerator: 'CmdOrCtrl+F',
+        click() {
+          // Check if there is a service active
+          if (!window.ferdi.stores.services.active) return;
+
+          // Focus webview so find in page popup gets focused
+          window.ferdi.stores.services.active.webview.focus();
+
+          const currentService = window.ferdi.stores.services.active.id;
+          window.ferdi.actions.service.sendIPCMessage({
+            serviceId: currentService,
+            channel: 'find-in-page',
+            args: [],
+          });
         },
       },
       {
@@ -861,7 +907,7 @@ export default class FranzMenu {
         },
       }, {
         type: 'separator',
-        visible: touchIdEnabled
+        visible: touchIdEnabled,
       });
     }
 
