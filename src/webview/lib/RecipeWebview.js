@@ -18,6 +18,7 @@ class RecipeWebview {
   }
 
   loopFunc = () => null;
+  darkModeHandler = false;
 
   /**
    * Initialize the loop
@@ -76,6 +77,15 @@ class RecipeWebview {
 
       debug('Append styles', styles);
     });
+  }
+
+  /**
+   * Set a custom handler for turning on and off dark mode
+   * 
+   * @param {function} handler 
+   */
+  handleDarkMode(handler) {
+    this.darkModeHandler = handler;
   }
 
   onNotify(fn) {

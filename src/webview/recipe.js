@@ -51,6 +51,9 @@ class RecipeController {
 
   universalDarkModeInjected = false;
 
+  recipe = null;
+  hasUpdatedBeforeRecipeLoaded = false;
+
   constructor() {
     this.initialize();
   }
@@ -82,11 +85,15 @@ class RecipeController {
     // Delete module from cache
     delete require.cache[require.resolve(modulePath)];
     try {
+      this.recipe = new RecipeWebview();
       // eslint-disable-next-line
-      require(modulePath)(new RecipeWebview(), {...config, recipe,});
+      require(modulePath)(this.recipe, {...config, recipe,});
       debug('Initialize Recipe', config, recipe);
 
       this.settings.service = Object.assign(config, { recipe });
+
+      // Make sure to update the WebView, otherwise the custom darkmode handler may not be used
+      this.update();
     } catch (err) {
       console.error('Recipe initialization failed', err);
     }
@@ -151,12 +158,25 @@ class RecipeController {
       }
     }
 
+    if (!this.recipe) {
+      this.hasUpdatedBeforeRecipeLoaded = true;
+    }
+
     console.log(
       'Darkmode enabled?',
       this.settings.service.isDarkModeEnabled,
       'Dark theme active?',
       this.settings.app.isDarkThemeActive,
     );
+
+    const handlerConfig = {
+      removeDarkModeStyle,
+      disableDarkMode,
+      enableDarkMode,
+      injectDarkModeStyle: () => injectDarkModeStyle(this.settings.service.recipe.path),
+      isDarkModeStyleInjected,
+    };
+
     if (this.settings.service.isDarkModeEnabled && this.settings.app.isDarkThemeActive !== false) {
       debug('Enable dark mode');
 
@@ -166,7 +186,19 @@ class RecipeController {
 
       console.log('darkmode.css exists? ', darkModeExists ? 'Yes' : 'No');
 
-      if (darkModeExists) {
+      // Check if recipe has a custom dark mode handler
+      if (this.recipe && this.recipe.darkModeHandler) {
+        console.log('Using custom dark mode handler');
+
+        // Remove other dark mode styles if they were already loaded
+        if (this.hasUpdatedBeforeRecipeLoaded) {
+          this.hasUpdatedBeforeRecipeLoaded = false;
+          removeDarkModeStyle();
+          disableDarkMode();
+        }
+
+        this.recipe.darkModeHandler(true, handlerConfig);
+      } else if (darkModeExists) {
         console.log('Injecting darkmode.css');
         injectDarkModeStyle(this.settings.service.recipe.path);
 
@@ -186,7 +218,16 @@ class RecipeController {
       debug('Remove dark mode');
       console.log('DarkMode disabled - removing remaining styles');
 
-      if (isDarkModeStyleInjected()) {
+      if (this.recipe && this.recipe.darkModeHandler) {
+        // Remove other dark mode styles if they were already loaded
+        if (this.hasUpdatedBeforeRecipeLoaded) {
+          this.hasUpdatedBeforeRecipeLoaded = false;
+          removeDarkModeStyle();
+          disableDarkMode();
+        }
+
+        this.recipe.darkModeHandler(false, handlerConfig);
+      } else if (isDarkModeStyleInjected()) {
         console.log('Removing injected darkmode.css');
         removeDarkModeStyle();
       } else {
