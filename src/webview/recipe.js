@@ -79,7 +79,10 @@ class RecipeController {
     autorun(() => this.update());
 
     document.addEventListener('DOMContentLoaded', () => {
-      this.findInPage = new FindInPage(remote.getCurrentWebContents());
+      this.findInPage = new FindInPage(remote.getCurrentWebContents(), {
+        inputFocusColor: '#CE9FFC',
+        textColor: '#212121',
+      });
     });
   }
 
