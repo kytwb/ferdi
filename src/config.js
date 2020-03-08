@@ -76,6 +76,7 @@ export const iconSizeBias = 20;
 export const DEFAULT_APP_SETTINGS = {
   autoLaunchInBackground: false,
   runInBackground: true,
+  reloadAfterResume: true,
   enableSystemTray: true,
   startMinimized: false,
   minimizeToSystemTray: false,

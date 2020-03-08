@@ -202,7 +202,7 @@ export default class AppStore extends Store {
     powerMonitor.on('resume', () => {
       debug('System resumed, last suspended on', this.timeSuspensionStart.toString());
 
-      if (this.timeSuspensionStart.add(10, 'm').isBefore(moment())) {
+      if (this.timeSuspensionStart.add(10, 'm').isBefore(moment()) && this.stores.settings.app.get('reloadAfterResume')) {
         debug('Reloading services, user info and features');
 
         setTimeout(() => {

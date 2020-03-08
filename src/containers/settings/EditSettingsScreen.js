@@ -48,6 +48,10 @@ const messages = defineMessages({
     id: 'settings.app.form.enableSystemTray',
     defaultMessage: '!!!Always show Ferdi in system tray',
   },
+  reloadAfterResume: {
+    id: 'settings.app.form.reloadAfterResume',
+    defaultMessage: '!!!Reload Ferdi after system resume',
+  },
   minimizeToSystemTray: {
     id: 'settings.app.form.minimizeToSystemTray',
     defaultMessage: '!!!Minimize Ferdi to system tray',
@@ -195,6 +199,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       data: {
         runInBackground: settingsData.runInBackground,
         enableSystemTray: settingsData.enableSystemTray,
+        reloadAfterResume: settingsData.reloadAfterResume,
         startMinimized: settingsData.startMinimized,
         minimizeToSystemTray: settingsData.minimizeToSystemTray,
         privateNotifications: settingsData.privateNotifications,
@@ -316,6 +321,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.enableSystemTray),
           value: settings.all.app.enableSystemTray,
           default: DEFAULT_APP_SETTINGS.enableSystemTray,
+        },
+        reloadAfterResume: {
+          label: intl.formatMessage(messages.reloadAfterResume),
+          value: settings.all.app.reloadAfterResume,
+          default: DEFAULT_APP_SETTINGS.reloadAfterResume,
         },
         minimizeToSystemTray: {
           label: intl.formatMessage(messages.minimizeToSystemTray),
@@ -537,6 +547,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
+          isReloadAfterResumeEnabled={this.props.stores.settings.app.isReloadAfterResumeEnabled}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           openProcessManager={() => this.openProcessManager()}
         />
