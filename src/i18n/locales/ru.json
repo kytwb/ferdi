@@ -116,6 +116,7 @@
   "menu.edit.cut": "Вырезать",
   "menu.edit.delete": "Удалить",
   "menu.edit.emojiSymbols": "Эмодзи и символы",
+  "menu.edit.findInPage": "Find in Page",
   "menu.edit.paste": "Вставить",
   "menu.edit.pasteAndMatchStyle": "Вставить с соблюдением стиля",
   "menu.edit.redo": "Вернуть",
