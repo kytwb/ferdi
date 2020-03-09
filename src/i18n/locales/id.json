@@ -290,6 +290,7 @@
   "settings.app.form.navigationBarBehaviour": "Navigation bar behaviour",
   "settings.app.form.noUpdates": "Disable updates",
   "settings.app.form.privateNotifications": "Don't show message content in notifications",
+  "settings.app.form.reloadAfterResume": "Reload Ferdi after system resume",
   "settings.app.form.runInBackground": "Tetap jalankan Ferdi di latar belakang saat menutup jendela",
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
   "settings.app.form.scheduledDNDEnd": "To",
