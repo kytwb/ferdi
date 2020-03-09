@@ -290,6 +290,7 @@
   "settings.app.form.navigationBarBehaviour": "Comportement de la barre de navigation",
   "settings.app.form.noUpdates": "Désactiver les mises à jours",
   "settings.app.form.privateNotifications": "Ne pas afficher le contenu des notifications",
+  "settings.app.form.reloadAfterResume": "Reload Ferdi after system resume",
   "settings.app.form.runInBackground": "Garder Ferdi ouvert en arrière-plan à la fermeture de la fenêtre",
   "settings.app.form.scheduledDNDEnabled": "Activer Ne-pas-Déranger",
   "settings.app.form.scheduledDNDEnd": "À",
