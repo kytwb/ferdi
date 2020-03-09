@@ -116,6 +116,7 @@
   "menu.edit.cut": "切り取り",
   "menu.edit.delete": "削除",
   "menu.edit.emojiSymbols": "絵文字とシンボル",
+  "menu.edit.findInPage": "Find in Page",
   "menu.edit.paste": "貼り付け",
   "menu.edit.pasteAndMatchStyle": "書式を統一して貼り付け",
   "menu.edit.redo": "やり直し",
