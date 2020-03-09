@@ -400,6 +400,15 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "n0emis",
+      "name": "n0emis",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22817873?v=4",
+      "profile": "http://twitter.com/noemis_exec",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
