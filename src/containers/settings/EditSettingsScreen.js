@@ -547,7 +547,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
-          isReloadAfterResumeEnabled={this.props.stores.settings.app.isReloadAfterResumeEnabled}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           openProcessManager={() => this.openProcessManager()}
         />
