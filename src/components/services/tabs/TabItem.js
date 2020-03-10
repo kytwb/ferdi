@@ -154,6 +154,10 @@ class TabItem extends Component {
       );
     }
 
+    if (service.isActive) {
+      document.title = "Ferdi - " + service.name;
+    }
+
     return (
       <li
         className={classnames({
