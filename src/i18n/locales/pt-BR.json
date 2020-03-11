@@ -352,7 +352,7 @@
   "settings.recipes.mostPopular": "Os mais populares",
   "settings.recipes.nothingFound": "Lamentamos, nenhum serviço corresponde ao termo pesquisado.",
   "settings.recipes.servicesSuccessfulAddedInfo": "Serviço adicionado com sucesso",
-  "settings.searchService": "Pesquisar erviço",
+  "settings.searchService": "Pesquisar serviço",
   "settings.service.error.goBack": "Voltar aos serviços",
   "settings.service.error.headline": "Erro",
   "settings.service.error.message": "Não foi possível carregar a receita do serviço.",
