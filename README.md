@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-39-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-40-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -289,6 +289,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://crowdin.com/profile/Pusnow"><img src="https://crowdin-static.downloads.crowdin.com/avatar/13514833/small/65f0b45587cc7e34f2827830cd324b16.jpeg" width="40px;" alt=""/><br /><sub><b>Wonsup Yoon</b></sub></a><br /><a href="#translation-Pusnow" title="Translation">🌍</a></td>
     <td align="center"><a href="https://crowdin.com/profile/zutt"><img src="https://crowdin-static.downloads.crowdin.com/avatar/13320003/small/50fdf9f8c7e54a446925bd79696ea625.JPG" width="40px;" alt=""/><br /><sub><b>zutt</b></sub></a><br /><a href="#translation-zutt" title="Translation">🌍</a></td>
     <td align="center"><a href="http://twitter.com/noemis_exec"><img src="https://avatars3.githubusercontent.com/u/22817873?v=4" width="40px;" alt=""/><br /><sub><b>n0emis</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=n0emis" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.monke-agency.com/equipe.html"><img src="https://avatars2.githubusercontent.com/u/3405028?v=4" width="40px;" alt=""/><br /><sub><b>gmarec</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=gmarec" title="Code">💻</a></td>
   </tr>
 </table>
 
