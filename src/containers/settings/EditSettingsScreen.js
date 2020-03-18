@@ -11,7 +11,7 @@ import TodosStore from '../../features/todos/store';
 import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
-  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS,
+  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APP,
 } from '../../config';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
@@ -280,6 +280,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       sort: false,
     });
 
+    const todoApp = getSelectOptions({
+      locales: TODO_APP,
+      sort: false,
+    });
+
     const sidebarWidth = getSelectOptions({
       locales: SIDEBAR_WIDTH,
       sort: false,
@@ -367,7 +372,8 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         todoServer: {
           label: intl.formatMessage(messages.todoServer),
           value: settings.all.app.todoServer,
-          default: TODOS_FRONTEND,
+          default: DEFAULT_APP_SETTINGS.todoServer,
+          options: todoApp,
         },
         lockingFeatureEnabled: {
           label: intl.formatMessage(messages.enableLock),

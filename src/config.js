@@ -47,8 +47,13 @@ export const HIBERNATION_STRATEGIES = {
 
 export const NAVIGATION_BAR_BEHAVIOURS = {
   custom: 'Show navigation bar on custom websites only',
-  always: 'Show navigation yoyo bar on all services',
+  always: 'Show navigation bar on all services',
   never: 'Never show navigation bar',
+};
+
+export const TODO_APP = {
+  1: 'Todoist',
+  2: 'Franz todo',
 };
 
 export const SIDEBAR_WIDTH = {
@@ -95,7 +100,7 @@ export const DEFAULT_APP_SETTINGS = {
 
   // Ferdi specific options
   server: LIVE_API,
-  todoServer: PRODUCTION_TODOS_FRONTEND_URL,
+  todoServer: 1,
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
   locked: false,

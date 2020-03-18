@@ -333,40 +333,15 @@ export default @observer class EditSettingsForm extends Component {
               <Toggle field={form.$('keepAllWorkspacesLoaded')} />
             )}
 
-
             <Hr />
-
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
                 {form.$('enableTodos').value && (
-                <div>
-                  <Input  
-                    placeholder="Todo Server"
-                    onChange={e => this.submit(e)}
-                    field={form.$('todoServer')}
-                  />
-                  <p
-                    className="settings__message"
-                    style={{
-                      borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                    }}
-                  >
-                    { intl.formatMessage(messages.todoServerInfo) }
-                  </p>
-                </div>  
+                <Select field={form.$('todoServer')} />  
                 )}
               </>
             )}
-
-               <Fragment>
-                <Toggle
-                  field={form.$('enableSpellchecking')}
-                />
-                {form.$('enableSpellchecking').value && (
-                  <Select field={form.$('spellcheckerLanguage')} />
-                )}
-              </Fragment>
 
             <Hr />
 
