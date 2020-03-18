@@ -334,11 +334,12 @@ export default @observer class EditSettingsForm extends Component {
             )}
 
             <Hr />
+
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
                 {form.$('enableTodos').value && (
-                <Select field={form.$('todoServer')} />  
+                <Select field={form.$('todoServer')} />
                 )}
               </>
             )}

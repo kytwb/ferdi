@@ -11,7 +11,7 @@ import TodosStore from '../../features/todos/store';
 import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
-  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APP,
+  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APPS,
 } from '../../config';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
@@ -20,7 +20,7 @@ import { getSelectOptions } from '../../helpers/i18n-helpers';
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
 
-import { API, TODOS_FRONTEND } from '../../environment';
+import { API } from '../../environment';
 
 import globalMessages from '../../i18n/globalMessages';
 import { DEFAULT_IS_FEATURE_ENABLED_BY_USER } from '../../features/todos';
@@ -30,7 +30,7 @@ import { DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED } from '../../features/works
 const messages = defineMessages({
   autoLaunchOnStart: {
     id: 'settings.app.form.autoLaunchOnStart',
-    defaultMessage: '!!!Launch yoyo Ferdi on start',
+    defaultMessage: '!!!Launch Ferdi on start',
   },
   autoLaunchInBackground: {
     id: 'settings.app.form.autoLaunchInBackground',
@@ -281,7 +281,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
     });
 
     const todoApp = getSelectOptions({
-      locales: TODO_APP,
+      locales: TODO_APPS,
       sort: false,
     });
 
