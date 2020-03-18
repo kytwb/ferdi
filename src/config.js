@@ -54,6 +54,12 @@ export const NAVIGATION_BAR_BEHAVIOURS = {
 export const TODO_APPS = {
   'https://todoist.com/app': 'Todoist',
   'https://app.franztodos.com': 'Franz Todo',
+  'https://ticktick.com/signin': 'TickTick',
+  'https://todo.microsoft.com/?app#': 'Microsoft To Do',
+  'https://habitica.com/login': 'Habitica',
+  'https://app.nozbe.com/#login': 'Nozbe',
+  'https://www.rememberthemilk.com/login/': 'Remember The Milk',
+  'https://desktop.any.do/': 'Any.do',
 };
 
 export const SIDEBAR_WIDTH = {
