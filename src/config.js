@@ -47,7 +47,7 @@ export const HIBERNATION_STRATEGIES = {
 
 export const NAVIGATION_BAR_BEHAVIOURS = {
   custom: 'Show navigation bar on custom websites only',
-  always: 'Show navigation bar on all services',
+  always: 'Show navigation yoyo bar on all services',
   never: 'Never show navigation bar',
 };
 

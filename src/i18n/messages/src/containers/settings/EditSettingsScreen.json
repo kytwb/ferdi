@@ -1,7 +1,7 @@
 [
   {
     "id": "settings.app.form.autoLaunchOnStart",
-    "defaultMessage": "!!!Launch Ferdi on start",
+    "defaultMessage": "!!!Launch yoyo Ferdi on start",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 31,

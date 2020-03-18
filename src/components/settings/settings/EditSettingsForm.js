@@ -34,7 +34,7 @@ const messages = defineMessages({
   },
   headlineGeneral: {
     id: 'settings.app.headlineGeneral',
-    defaultMessage: '!!!General',
+    defaultMessage: '!!!Generadddl',
   },
   sentryInfo: {
     id: 'settings.app.sentryInfo',
@@ -339,21 +339,34 @@ export default @observer class EditSettingsForm extends Component {
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
-                <Input
-                  placeholder="Todo Server"
-                  onChange={e => this.submit(e)}
-                  field={form.$('todoServer')}
-                />
-                <p
-                  className="settings__message"
-                  style={{
-                    borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                  }}
-                >
-                  { intl.formatMessage(messages.todoServerInfo) }
-                </p>
+                {form.$('enableTodos').value && (
+                <div>
+                  <Input  
+                    placeholder="Todo Server"
+                    onChange={e => this.submit(e)}
+                    field={form.$('todoServer')}
+                  />
+                  <p
+                    className="settings__message"
+                    style={{
+                      borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                    }}
+                  >
+                    { intl.formatMessage(messages.todoServerInfo) }
+                  </p>
+                </div>  
+                )}
               </>
             )}
+
+               <Fragment>
+                <Toggle
+                  field={form.$('enableSpellchecking')}
+                />
+                {form.$('enableSpellchecking').value && (
+                  <Select field={form.$('spellcheckerLanguage')} />
+                )}
+              </Fragment>
 
             <Hr />
 

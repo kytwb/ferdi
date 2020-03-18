@@ -30,7 +30,7 @@ import { DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED } from '../../features/works
 const messages = defineMessages({
   autoLaunchOnStart: {
     id: 'settings.app.form.autoLaunchOnStart',
-    defaultMessage: '!!!Launch Ferdi on start',
+    defaultMessage: '!!!Launch yoyo Ferdi on start',
   },
   autoLaunchInBackground: {
     id: 'settings.app.form.autoLaunchInBackground',
