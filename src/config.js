@@ -60,6 +60,7 @@ export const TODO_APPS = {
   'https://app.nozbe.com/#login': 'Nozbe',
   'https://www.rememberthemilk.com/login/': 'Remember The Milk',
   'https://desktop.any.do/': 'Any.do',
+  otherService: 'Other service'
 };
 
 export const SIDEBAR_WIDTH = {

@@ -324,7 +324,7 @@
   "settings.app.serverInfo": "We advice you to logout after changing your server as your settings might not be saved otherwise.",
   "settings.app.serverMoneyInfo": "You are using the official Franz Server for Ferdi.\nWe know that Ferdi allows you to use all its features for free but you are still using Franz's server resources - which Franz's creator has to pay for.\nPlease still consider [Link 1]paying for a Franz account[/Link] or [Link 2]using a self-hosted ferdi-server[/Link] (if you have the knowledge and resources to do so). \nBy using Ferdi, you still profit greatly from Franz's recipe store, server resources and its development.",
   "settings.app.subheadlineCache": "Cache",
-  "settings.app.todoServerInfo": "This server will be used for the \"Ferdi Todo\" feature. (default: https://app.franztodos.com)",
+  "settings.app.todoServerInfo": "This server will be used for the \"Ferdi Todo\" feature.",
   "settings.app.translationHelp": "Help us to translate Ferdi into your language.",
   "settings.app.universalDarkModeInfo": "Universal Dark Mode tries to dynamically generate dark mode styles for services that are otherwise not currently supported.",
   "settings.app.updateStatusAvailable": "Update available, downloading...",
