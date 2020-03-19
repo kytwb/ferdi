@@ -339,14 +339,14 @@ export default @observer class EditSettingsForm extends Component {
               <>
                 <Toggle field={form.$('enableTodos')} />
                 {form.$('enableTodos').value && (
-                  < div>
+                  <div>
                     <Select field={form.$('todoServer')} />
                     {form.$('todoServer').value === 'otherService' && (
-                      < div >
-                        <Input  
-                        placeholder="Todo Server"
-                        onChange={e => this.submit(e)}
-                        field={form.$('todoServer')}
+                      <div>
+                        <Input
+                          placeholder="Todo Server"
+                          onChange={e => this.submit(e)}
+                          field={form.$('todoServer')}
                         />
                         <p
                           className="settings__message"
@@ -358,11 +358,11 @@ export default @observer class EditSettingsForm extends Component {
                         </p>
                       </div>
                     )}
-                </div>
+                  </div>
                 )}
               </>
             )}
-       
+
 
             <Hr />
 
