@@ -517,10 +517,8 @@ export default class ServicesStore extends Store {
         });
       }
     } else if (channel === 'service-window') {
-      
       const event = args[0];
       this.actions.app.openServiceUrl({ event });
-
     } else if (channel === 'avatar') {
       const url = args[0];
       if (service.iconUrl !== url && !service.hasCustomUploadedIcon) {
@@ -561,7 +559,7 @@ export default class ServicesStore extends Store {
     const currentURL = service.webview.getURL();
     if (args && args.url && service.webview && args.url !== currentURL) {
       service.webview.loadURL(args.url);
-    } 
+    }
     if (service.webview) {
       service.webview.send(channel, args);
     }

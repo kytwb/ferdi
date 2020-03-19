@@ -340,7 +340,6 @@ export default class AppStore extends Store {
 
   @action _openServiceUrl({ event }) {
     const serviceId = event.serviceId;
-    const parsedUrl = new URL(event.url);
     const notificationId = uuid();
     this.actions.service.sendIPCMessage({
       channel: `notification-onclick:${notificationId}`,
