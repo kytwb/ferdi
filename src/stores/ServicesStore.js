@@ -516,6 +516,11 @@ export default class ServicesStore extends Store {
           serviceId,
         });
       }
+    } else if (channel === 'service-window') {
+      
+      const event = args[0];
+      this.actions.app.openServiceUrl({ event });
+
     } else if (channel === 'avatar') {
       const url = args[0];
       if (service.iconUrl !== url && !service.hasCustomUploadedIcon) {
@@ -553,7 +558,10 @@ export default class ServicesStore extends Store {
 
   @action _sendIPCMessage({ serviceId, channel, args }) {
     const service = this.one(serviceId);
-
+    const currentURL = service.webview.getURL();
+    if (args && args.url && service.webview && args.url !== currentURL) {
+      service.webview.loadURL(args.url);
+    } 
     if (service.webview) {
       service.webview.send(channel, args);
     }

@@ -16,6 +16,9 @@ export default {
   openExternalUrl: {
     url: PropTypes.string.isRequired,
   },
+  openServiceUrl: {
+    event: PropTypes.object.isRequired,
+  },
   checkForUpdates: {},
   resetUpdateStatus: {},
   installUpdate: {},

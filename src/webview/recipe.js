@@ -355,6 +355,14 @@ window.open = (url, frameName, features) => {
     return ipcRenderer.sendToHost('new-window', url);
   }
 
+  if (frameName && frameName.includes('Ferdi:')) {
+    const event = {};
+    event.url = url;
+    event.frameName = frameName;
+    event.serviceId = features;
+    return ipcRenderer.sendToHost('service-window', event);
+  }
+
   if (url) {
     return originalWindowOpen(url, frameName, features);
   }

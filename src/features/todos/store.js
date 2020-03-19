@@ -166,6 +166,10 @@ export default class TodoStore extends FeatureStore {
     this.webview.addEventListener('new-window', ({ url }) => {
       this.actions.app.openExternalUrl({ url });
     });
+    this.webview.addEventListener('service-window', ({ event, serviceId }) => {
+      event.serviceId = serviceId;
+      this.actions.app.openServiceUrl({ event });
+    });
   };
 
   _goToService = ({ url, serviceId }) => {
