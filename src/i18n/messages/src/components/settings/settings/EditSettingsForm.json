@@ -14,7 +14,7 @@
   },
   {
     "id": "settings.app.headlineGeneral",
-    "defaultMessage": "!!!Generadddl",
+    "defaultMessage": "!!!General",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
       "line": 35,

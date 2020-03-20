@@ -272,7 +272,7 @@
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Open in background",
-  "settings.app.form.autoLaunchOnStart": "Launch sdfsdf Ferdi on start",
+  "settings.app.form.autoLaunchOnStart": "Launch Ferdi on start",
   "settings.app.form.beta": "Include beta versions",
   "settings.app.form.darkMode": "Enable dark mode",
   "settings.app.form.enableGPUAcceleration": "Enable GPU Acceleration",

@@ -34,7 +34,7 @@ const messages = defineMessages({
   },
   headlineGeneral: {
     id: 'settings.app.headlineGeneral',
-    defaultMessage: '!!!Generadddl',
+    defaultMessage: '!!!General',
   },
   sentryInfo: {
     id: 'settings.app.sentryInfo',
