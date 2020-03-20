@@ -516,6 +516,21 @@ export default class ServicesStore extends Store {
           serviceId,
         });
       }
+    } else if (channel === 'service-window') {
+      const event = args[0];
+      const url = args[0].url;
+      let searchServiceId = 'not-found';
+      this.allDisplayed.forEach((s) => {
+        if (s.name === event.serviceName) {
+          searchServiceId = s.id;
+        }
+      });
+      if (searchServiceId === 'not-found') {
+        this.actions.app.openExternalUrl({ url });
+      } else {
+        event.serviceId = searchServiceId;
+        this.actions.app.openServiceUrl({ event });
+      }
     } else if (channel === 'avatar') {
       const url = args[0];
       if (service.iconUrl !== url && !service.hasCustomUploadedIcon) {
@@ -553,7 +568,10 @@ export default class ServicesStore extends Store {
 
   @action _sendIPCMessage({ serviceId, channel, args }) {
     const service = this.one(serviceId);
-
+    const currentURL = service.webview.getURL();
+    if (args && args.url && service.webview && args.url !== currentURL) {
+      service.webview.loadURL(args.url);
+    }
     if (service.webview) {
       service.webview.send(channel, args);
     }

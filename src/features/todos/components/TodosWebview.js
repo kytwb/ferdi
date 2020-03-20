@@ -176,6 +176,16 @@ class TodosWebview extends Component {
     const { handleClientMessage } = this.props;
     if (!this.webview) return;
     this.webview.addEventListener('ipc-message', e => handleClientMessage(e.args[0]));
+    this.webview.addEventListener('new-window', (e) => {
+      if (e.frameName && e.frameName.includes('Ferdi:')) {
+        const message = {};
+        message.action = 'todos:goToService';
+        message.data = {};
+        message.data.url = e.url;
+        message.data.serviceName = e.frameName.split('Ferdi: ')[1];
+        handleClientMessage(message);
+      }
+    });
   }
 
   render() {

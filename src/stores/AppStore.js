@@ -24,6 +24,8 @@ import { getServiceIdsFromPartitions, removeServicePartitionDirectory } from '..
 import { isValidExternalURL } from '../helpers/url-helpers';
 import { sleep } from '../helpers/async-helpers';
 
+const uuid = require('uuid/v4');
+
 const debug = require('debug')('Ferdi:AppStore');
 
 const {
@@ -92,6 +94,7 @@ export default class AppStore extends Store {
     this.actions.app.setBadge.listen(this._setBadge.bind(this));
     this.actions.app.launchOnStartup.listen(this._launchOnStartup.bind(this));
     this.actions.app.openExternalUrl.listen(this._openExternalUrl.bind(this));
+    this.actions.app.openServiceUrl.listen(this._openServiceUrl.bind(this));
     this.actions.app.checkForUpdates.listen(this._checkForUpdates.bind(this));
     this.actions.app.installUpdate.listen(this._installUpdate.bind(this));
     this.actions.app.resetUpdateStatus.listen(this._resetUpdateStatus.bind(this));
@@ -333,6 +336,17 @@ export default class AppStore extends Store {
     if (isValidExternalURL(url)) {
       shell.openExternal(url);
     }
+  }
+
+  @action _openServiceUrl({ event }) {
+    const serviceId = event.serviceId;
+    const notificationId = uuid();
+    this.actions.service.sendIPCMessage({
+      channel: `notification-onclick:${notificationId}`,
+      args: event,
+      serviceId,
+    });
+    this.actions.service.setActive({ serviceId });
   }
 
   @action _checkForUpdates() {

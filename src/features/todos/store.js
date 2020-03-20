@@ -168,11 +168,26 @@ export default class TodoStore extends FeatureStore {
     });
   };
 
-  _goToService = ({ url, serviceId }) => {
-    if (url) {
-      this.stores.services.one(serviceId).webview.loadURL(url);
+  _goToService = ({ url, serviceId, serviceName }) => {
+    if (serviceId) {
+      if (url) {
+        this.stores.services.one(serviceId).webview.loadURL(url);
+      }
+      this.actions.service.setActive({ serviceId });
+    } else if (serviceName) {
+      let searchServiceId = 'not-found';
+      this.stores.services.allDisplayed.forEach((s) => {
+        if (s.name === serviceName) {
+          searchServiceId = s.id;
+        }
+      });
+      if (searchServiceId !== 'not-found') {
+        if (url) {
+          this.stores.services.one(searchServiceId).webview.loadURL(url);
+        }
+        this.actions.service.setActive({ searchServiceId });
+      }
     }
-    this.actions.service.setActive({ serviceId });
   };
 
   // Reactions

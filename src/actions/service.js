@@ -70,6 +70,10 @@ export default {
   openWindow: {
     event: PropTypes.object.isRequired,
   },
+  openServiceWindow: {
+    event: PropTypes.object.isRequired,
+    serviceId: PropTypes.string.isRequired,
+  },
   reload: {
     serviceId: PropTypes.string.isRequired,
   },
