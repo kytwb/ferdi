@@ -359,7 +359,7 @@ window.open = (url, frameName, features) => {
     const event = {};
     event.url = url;
     event.frameName = frameName;
-    event.serviceId = features;
+    event.serviceName = features;
     return ipcRenderer.sendToHost('service-window', event);
   }
 

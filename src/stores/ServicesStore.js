@@ -518,7 +518,20 @@ export default class ServicesStore extends Store {
       }
     } else if (channel === 'service-window') {
       const event = args[0];
-      this.actions.app.openServiceUrl({ event });
+      const url = args[0].url;
+      let serviceId = 'not-found';
+      this.allDisplayed.forEach((s) => {
+        if (s.name === event.serviceName) {
+          serviceId = s.id;
+        }
+      });
+      if (serviceId === 'not-found') {
+        this.actions.app.openExternalUrl({ url });
+      } else {
+        event.serviceId = serviceId;
+        console.log(serviceId);
+        this.actions.app.openServiceUrl({ event });
+      }
     } else if (channel === 'avatar') {
       const url = args[0];
       if (service.iconUrl !== url && !service.hasCustomUploadedIcon) {
