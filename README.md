@@ -30,11 +30,12 @@
 - [Ferdi](#ferdi)
     - [Table of contents](#table-of-contents)
     - [What is Ferdi?](#what-is-ferdi)
+    - [Features](#features)
     - [What does Ferdi look like?](#what-does-ferdi-look-like)
   - [Download Ferdi](#download-ferdi)
     - [Or use homebrew (macOS only)](#or-use-homebrew-macos-only)
     - [Or use AUR (Arch Linux)](#or-use-aur-arch-linux)
-  - [Ferdi-specific Features](#ferdi-specific-features)
+  - [What makes Ferdi different from Franz?](#what-makes-ferdi-different-from-franz)
   - [Development](#development)
     - [Install OS dependencies](#install-os-dependencies)
       - [Node.js](#nodejs)
@@ -56,6 +57,21 @@
 ### What is Ferdi?
 
 Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdi gives you many additonal features and doesn't restrict its usage! Ferdi is compatible with your existing Franz account so you can continue right where you left off. Find out more about Ferdi and its features on [getferdi.com](https://getferdi.com).
+
+## Features
+- [x] Ferdi puts all your messaging services into one place
+- [x] Native support for 100+ services
+- [x] Workspaces to keep your personal and work life seperated
+- [x] Support for multiple accounts on any service
+- [x] Dark Mode support for all of your services
+- [x] Optional cloud sync to keep your services synchronized between devices
+- [x] Better control over when you get which notifications
+- [x] Cross-platform so you can view your services on all your computers
+- [x] Full proxy support to work in every network environment
+- [x] Ferdi speaks your language: Support for 20+ languages
+
+...and best of all:
+- [x] Its completely free! There are no features hidden behind a paywall
 
 ### What does Ferdi look like?
 
@@ -92,7 +108,7 @@ Ferdi has three seperate AUR packages you can use:
 
 If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
-## Ferdi-specific Features
+## What makes Ferdi different from Franz?
 
 ### Removed unproductive paywalls and other other interruptions
 - [x] Removes the counter-productive fullscreen app delay inviting users to upgrade
