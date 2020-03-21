@@ -94,42 +94,77 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 ## Ferdi-specific Features
 
+### Removed unproductive paywalls and other other interruptions
 - [x] Removes the counter-productive fullscreen app delay inviting users to upgrade
 - [x] Removes pages begging you to donate after registration
 - [x] Remove "Franz is better together" popup
-- [x] Remove bug that would incorrectly display unread messages count on some services (more info in [7566ccd](https://github.com/getferdi/ferdi/commit/7566ccd))
 - [x] Makes all users Premium by default ([#15](https://github.com/getferdi/ferdi/issues/15))
-- [x] Using the Ferdi API instead of Franz's servers
-- [x] Upgrading to Electron 7
-- [x] Add several new services
+
+### Added features to increase your productivity
+- [x] Add 30+ new services
+- [x] Add "Find in Page" feature ([#67](https://github.com/getferdi/ferdi/issues/67))
+- [x] Add an option to keep individual workspaces always loaded ([#37](https://github.com/getferdi/ferdi/issues/37))
+- [x] Add "Quick Switch" feature to help you navigate a long list of services (similar to Rambox's [Quick Switcher](https://rambox.pro/#feature-details/quick_switcher))
+- [x] Add "Service Hibernation" that will automatically unload services when they are unused to keep your computer running fast
+- [x] [Add `user.css` and `user.js` that allows users to inject custom code into services](https://github.com/getferdi/ferdi/wiki/Using-user.css-and-user.js) ([#83](https://github.com/getferdi/ferdi/issues/83))
+- [x] Add Process Manager to find services using a lot of resources
+- [x] Add CTRL+← and CTRL+→ shortcuts and menu options to go back and forward in the service browsing history([#39](https://github.com/getferdi/ferdi/issues/39))
+- [x] Add "Scheduled Do-not-Disturb" feature in which you won't get notifications (similar to Rambox's [Work Hours](https://rambox.pro/#feature-details/work_hours))
+- [x] [Use any Todo service inside "Franz Todo" panel](https://github.com/getferdi/ferdi/wiki/Custom-Todo) (e.g. Todoist via https://todoist.com/app) instead of being limited to using Franz Todo
+
+### Added features to improve your privacy
 - [x] [Add option to change server to a custom](https://github.com/getferdi/ferdi/wiki/Custom-Server) [ferdi-server](https://github.com/getferdi/server)
 - [x] Add option to use Ferdi without an account ([#5](https://github.com/getferdi/ferdi/issues/5))
+- [x] Using the Ferdi API instead of Franz's servers
 - [x] Add "Private Notification"-Mode, that hides message content from notifications ([franz#879](https://github.com/meetfranz/franz/issues/879))
 - [x] Add Password Lock feature to keep your messages protected ([#41](https://github.com/getferdi/ferdi/issues/41), [franz#810](https://github.com/meetfranz/franz/issues/810), [franz#950](https://github.com/meetfranz/franz/issues/950), [franz#1430](https://github.com/meetfranz/franz/issues/1430))
-- [x] Add an option to keep individual workspaces always loaded ([#37](https://github.com/getferdi/ferdi/issues/37))
+- [x] Add support for unlocking with Touch ID ([#367](https://github.com/getferdi/ferdi/issues/367))
+- [x] Add inactivity lock that automatically locks Ferdi after a specified amount of time ([#179](https://github.com/getferdi/ferdi/issues/179))
+- [x] Add local [recipe repository](https://github.com/getferdi/recipes) that removes the need of downloading recipes from a remote server
+
+### Added features to improve your experience using Ferdi
 - [x] Add Universal Dark Mode via the [DarkReader extension](https://github.com/darkreader/darkreader) ([#71](https://github.com/getferdi/ferdi/issues/71))
 - [x] Add adaptable Dark Mode that will respect the system's Dark Mode setting ([#173](https://github.com/getferdi/ferdi/issues/173))
+- [x] Add ability to change the services icons size and sidebar width ([#153](https://github.com/getferdi/ferdi/issues/153))
 - [x] Add an option to auto-hide the menubar ([#7](https://github.com/getferdi/ferdi/issues/7), [franz#833](https://github.com/meetfranz/franz/issues/833))
-- [x] Add "Quick Switch" feature to help you navigate a long list of services (similar to Rambox's [Quick Switcher](https://rambox.pro/#feature-details/quick_switcher))
-- [x] Add "Service Hibernation" that will automatically unload services when they are unused
-- [x] Add "Scheduled Do-not-Disturb" feature in which you won't get notifications (similar to Rambox's [Work Hours](https://rambox.pro/#feature-details/work_hours))
-- [x] Add CTRL+← and CTRL+→ shortcuts and menu options to go back and forward in the service browsing history([#39](https://github.com/getferdi/ferdi/issues/39))
+- [x] Enhance system tray icon behaviour ([#307](https://github.com/getferdi/ferdi/issues/307))
 - [x] Add option to show a browser-like navigation bar on all services
 - [x] Add option to change accent color
-- [x] Add local [recipe repository](https://github.com/getferdi/recipes) that removes the need of downloading recipes from a remote server
-- [x] Add portable version for Windows
-- [x] Add Process Manager to find services using a lot of resources
-- [x] Add "npm run prepare-code" command for development to lint and beautify code
-- [x] Add button to open darkmode.css for a service
-- [x] [Add `user.css` and `user.js` that allows users to inject custom code into services](https://github.com/getferdi/ferdi/wiki/Using-user.css-and-user.js) ([#83](https://github.com/getferdi/ferdi/issues/83))
+- [x] Reflecting your currently opened service name to the window title to improve support for Password Managers ([#213](https://github.com/getferdi/ferdi/issues/213))
 - [x] Allow SVGs for service custom icon
-- [x] Switch to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
+- [x] Add button to open darkmode.css for a service
 - [x] Improve "About Ferdi" screen to better display versions
-- [x] Minifying build files to improve app size
-- [x] [Makes it possible to edit the "Franz Todos" service](https://github.com/getferdi/ferdi/wiki/Custom-Todo) (e.g. Todoist via https://todoist.com/app)
-- [x] Makes RocketChat self-hosted generally available ([#6](https://github.com/getferdi/ferdi/issues/6))
+- [x] Add option to start Ferdi in system tray ([#331](https://github.com/getferdi/ferdi/issues/331))
+- [x] Fix and enhance context menu (#357 #413 #452 #354 #227)
+- [x] Add better support for macOS dark mode
+- [x] Add option to disable reload of services after resuming Ferdi ([#442](https://github.com/getferdi/ferdi/issues/442))
 - [x] Comes with a custom branding proper to Ferdi
-- [x] UI improvements
+- [x] Add better seperation in settings
+- [x] Other UI improvements
+- [x] Improved documentation of development so more developers can help making Ferdi even better
+
+### Removed bugs
+- [x] Remove bug that would incorrectly display unread messages count on some services (more info in [7566ccd](https://github.com/getferdi/ferdi/commit/7566ccd))
+- [x] Fixed zooming
+- [x] Fix login problems in Google services
+- [x] Fixed missing Slack services custom icons ([#290](https://github.com/getferdi/ferdi/issues/290))
+- [x] Remove bug that marked valid domains as invalid ([#276](https://github.com/getferdi/ferdi/issues/276))
+- [x] Fix microphone/camera access on some versions of macOS ([#193](https://github.com/getferdi/ferdi/issues/193))
+
+### Added new platforms
+- [x] Add portable version for Windows so you can use Ferdi without even installing it
+- [x] Releasing Arch Linux AUR packages
+- [x] Releasing Ferdi as a Flatpak on Flathub ([#323](https://github.com/getferdi/ferdi/issues/323))
+
+### Internal changes
+- [x] Upgrading to Electron 8
+- [x] Switch to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
+- [x] Minifying build files to improve app size
+- [x] Add "npm run prepare-code" command for development to lint and beautify code
+- [x] Fix incorrect body closing tag ([#330](https://github.com/getferdi/ferdi/issues/330))
+- [x] Using CrowdIn to improve i18n
+
+> Thank you to all contributors who helped realizing all these amazing features! You can find a list of our contributors below.
 
 ## Development
 
