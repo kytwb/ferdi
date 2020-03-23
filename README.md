@@ -66,7 +66,7 @@ Ferdi is a messaging browser that allows you to combine your favorite messaging 
 - [x] Ferdi speaks your language: Support for 20+ languages
 
 ...and best of all:
-- [x] Its completely free! There are no features hidden behind a paywall
+- [x] Its completely free! There are no restrictions on features, no paywalls
 
 ### What does Ferdi look like?
 
