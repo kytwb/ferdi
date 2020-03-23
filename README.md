@@ -105,7 +105,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 ## What makes Ferdi different from Franz?
 
-### Removed unproductive paywalls and other other interruptions
+### Removes unproductive paywalls and other other interruptions
 - [x] Removes the counter-productive fullscreen app delay inviting users to upgrade
 - [x] Removes pages begging you to donate after registration
 - [x] Removes "Franz is better together" popup
