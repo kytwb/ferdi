@@ -41,7 +41,7 @@ const paths = {
   tmp: '.tmp',
   package: `out/${config.version}`,
   recipes: {
-    src: 'recipes/*.tar.gz',
+    src: 'recipes/archives/*.tar.gz',
     dest: 'build/recipes/',
   },
   recipeInfo: {
