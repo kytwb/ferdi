@@ -182,7 +182,6 @@ export default @observer class EditSettingsForm extends Component {
     isTrayEnabled: PropTypes.bool.isRequired,
     isAdaptableDarkModeEnabled: PropTypes.bool.isRequired,
     openProcessManager: PropTypes.func.isRequired,
-    isUsingCustomTodoService: PropTypes.bool.isRequired,
   };
 
   static contextTypes = {
