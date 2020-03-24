@@ -78,6 +78,7 @@ export default @inject('actions') @observer class Login extends Component {
     isServerLogout: PropTypes.bool.isRequired,
     signupRoute: PropTypes.string.isRequired,
     passwordRoute: PropTypes.string.isRequired,
+    changeServerRoute: PropTypes.string.isRequired,
     error: globalErrorPropType.isRequired,
     actions: PropTypes.object.isRequired,
   };
@@ -127,6 +128,7 @@ export default @inject('actions') @observer class Login extends Component {
       isServerLogout,
       signupRoute,
       passwordRoute,
+      changeServerRoute,
       error,
     } = this.props;
 
@@ -194,7 +196,7 @@ export default @inject('actions') @observer class Login extends Component {
           )}
         </form>
         <div className="auth__links">
-          <Link to="/settings/app">{intl.formatMessage(messages.changeServer)}</Link>
+          <Link to={changeServerRoute}>{intl.formatMessage(messages.changeServer)}</Link>
           <a onClick={this.useLocalServer.bind(this)}>{intl.formatMessage(messages.serverless)}</a>
           <Link to={signupRoute}>{intl.formatMessage(messages.signupLink)}</Link>
           <Link to={passwordRoute}>{intl.formatMessage(messages.passwordLink)}</Link>

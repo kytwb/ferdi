@@ -21,6 +21,7 @@ export default @inject('stores', 'actions') @observer class LoginScreen extends 
         isServerLogout={stores.user.logoutReason === stores.user.logoutReasonTypes.SERVER}
         signupRoute={stores.user.signupRoute}
         passwordRoute={stores.user.passwordRoute}
+        changeServerRoute={stores.user.changeServerRoute}
         error={error}
       />
     );

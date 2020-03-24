@@ -26,6 +26,7 @@ export default @inject('actions') @observer class Login extends Component {
   static propTypes = {
     loginRoute: PropTypes.string.isRequired,
     signupRoute: PropTypes.string.isRequired,
+    changeServerRoute: PropTypes.string.isRequired,
     recipes: MobxPropTypes.arrayOrObservableArray.isRequired,
     actions: PropTypes.object.isRequired,
   };
@@ -43,6 +44,7 @@ export default @inject('actions') @observer class Login extends Component {
     const {
       loginRoute,
       signupRoute,
+      changeServerRoute,
       recipes,
     } = this.props;
 
@@ -71,7 +73,7 @@ export default @inject('actions') @observer class Login extends Component {
           <br />
 
 
-          <Link to="settings/app">
+          <Link to={changeServerRoute}>
             <span style={{
               textAlign: 'center',
               width: '100%',

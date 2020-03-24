@@ -46,6 +46,50 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Change server",
+        "end": {
+          "column": 3,
+          "line": 14
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.headline",
+        "start": {
+          "column": 12,
+          "line": 11
+        }
+      },
+      {
+        "defaultMessage": "!!!Server",
+        "end": {
+          "column": 3,
+          "line": 18
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.label",
+        "start": {
+          "column": 9,
+          "line": 15
+        }
+      },
+      {
+        "defaultMessage": "!!!Submit",
+        "end": {
+          "column": 3,
+          "line": 22
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.submit",
+        "start": {
+          "column": 10,
+          "line": 19
+        }
+      }
+    ],
+    "path": "src/components/auth/ChangeServer.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!Import your Ferdi 4 services",
         "end": {
           "column": 3,

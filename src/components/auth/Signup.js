@@ -79,6 +79,7 @@ export default @inject('actions') @observer class Signup extends Component {
     onSubmit: PropTypes.func.isRequired,
     isSubmitting: PropTypes.bool.isRequired,
     loginRoute: PropTypes.string.isRequired,
+    changeServerRoute: PropTypes.string.isRequired,
     error: globalErrorPropType.isRequired,
     actions: PropTypes.object.isRequired,
   };
@@ -130,7 +131,9 @@ export default @inject('actions') @observer class Signup extends Component {
   render() {
     const { form } = this;
     const { intl } = this.context;
-    const { isSubmitting, loginRoute, error } = this.props;
+    const {
+      isSubmitting, loginRoute, error, changeServerRoute,
+    } = this.props;
 
     const termsBase = window.ferdi.stores.settings.all.app.server !== 'https://api.franzinfra.com' ? window.ferdi.stores.settings.all.app.server : 'https://meetfranz.com';
 
@@ -198,7 +201,7 @@ export default @inject('actions') @observer class Signup extends Component {
             </p>
           </form>
           <div className="auth__links">
-            <Link to="/settings/app">{intl.formatMessage(messages.changeServer)}</Link>
+            <Link to={changeServerRoute}>{intl.formatMessage(messages.changeServer)}</Link>
             <a onClick={this.useLocalServer.bind(this)}>{intl.formatMessage(messages.serverless)}</a>
             <Link to={loginRoute}>{intl.formatMessage(messages.loginLink)}</Link>
           </div>
