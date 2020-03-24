@@ -84,6 +84,10 @@ const messages = defineMessages({
     id: 'settings.app.form.todoServer',
     defaultMessage: '!!!Todo Server',
   },
+  customTodoServer: {
+    id: 'settings.app.form.customTodoServer',
+    defaultMessage: '!!!Custom TodoServer',
+  },
   enableLock: {
     id: 'settings.app.form.enableLock',
     defaultMessage: '!!!Enable Password Lock',
@@ -209,6 +213,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         hibernationStrategy: settingsData.hibernationStrategy,
         server: settingsData.server,
         todoServer: settingsData.todoServer,
+        customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
         lockedPassword: settingsData.lockedPassword,
         useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
@@ -374,6 +379,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.todoServer,
           default: DEFAULT_APP_SETTINGS.todoServer,
           options: todoApp,
+        },
+        customTodoServer: {
+          label: intl.formatMessage(messages.customTodoServer),
+          value: settings.all.app.customTodoServer,
+          default: DEFAULT_APP_SETTINGS.customTodoServer,
         },
         lockingFeatureEnabled: {
           label: intl.formatMessage(messages.enableLock),
@@ -554,6 +564,8 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
+          isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
+          isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
           openProcessManager={() => this.openProcessManager()}
         />
       </ErrorBoundary>

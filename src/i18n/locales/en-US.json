@@ -303,6 +303,7 @@
   "settings.app.form.showMessagesBadgesWhenMuted": "Show unread message badge when notifications are disabled",
   "settings.app.form.startMinimized": "Start minimized in tray",
   "settings.app.form.todoServer": "Todo Server",
+  "settings.app.form.customTodoServer": "Custom Todo Server",
   "settings.app.form.universalDarkMode": "Enable universal Dark Mode",
   "settings.app.form.useTouchIdToUnlock": "Allow using TouchID to unlock Ferdi",
   "settings.app.headline": "Settings",

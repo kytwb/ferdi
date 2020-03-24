@@ -223,7 +223,7 @@ class TodosWebview extends Component {
             partition="persist:todos"
             preload="./features/todos/preload.js"
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
-            src={stores.settings.all.app.todoServer || environment.TODOS_FRONTEND}
+            src={stores.settings.all.app.todoServer !== 'isUsingCustomTodoService' ? stores.settings.all.app.todoServer : stores.settings.all.app.customTodoServer}
           />
         ) : (
           <Appear>

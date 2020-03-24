@@ -220,6 +220,8 @@ export default @observer class EditSettingsForm extends Component {
       isDarkmodeEnabled,
       isTrayEnabled,
       openProcessManager,
+      isTodosActivated,
+      isUsingCustomTodoService,
     } = this.props;
     const { intl } = this.context;
 
@@ -338,15 +340,15 @@ export default @observer class EditSettingsForm extends Component {
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
-                {form.$('enableTodos').value && (
+                {isTodosActivated && (
                   <div>
                     <Select field={form.$('todoServer')} />
-                    {form.$('todoServer').value === 'otherService' && (
+                    {form.$('todoServer').value === 'isUsingCustomTodoService' && (
                       <div>
                         <Input
                           placeholder="Todo Server"
                           onChange={e => this.submit(e)}
-                          field={form.$('todoServer')}
+                          field={form.$('customTodoServer')}
                         />
                         <p
                           className="settings__message"
