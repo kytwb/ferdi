@@ -173,6 +173,7 @@ export default @observer class EditSettingsForm extends Component {
     cacheSize: PropTypes.string.isRequired,
     isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isTodosEnabled: PropTypes.bool.isRequired,
+    isTodosActivated: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     server: PropTypes.string.isRequired,
     noUpdates: PropTypes.bool.isRequired,
@@ -181,6 +182,7 @@ export default @observer class EditSettingsForm extends Component {
     isTrayEnabled: PropTypes.bool.isRequired,
     isAdaptableDarkModeEnabled: PropTypes.bool.isRequired,
     openProcessManager: PropTypes.func.isRequired,
+    isUsingCustomTodoService: PropTypes.bool.isRequired,
   };
 
   static contextTypes = {
@@ -221,7 +223,6 @@ export default @observer class EditSettingsForm extends Component {
       isTrayEnabled,
       openProcessManager,
       isTodosActivated,
-      isUsingCustomTodoService,
     } = this.props;
     const { intl } = this.context;
 
