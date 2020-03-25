@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Volver a cargar",
   "app.errorHandler.headline": "Algo salió mal.",
+  "changeserver.headline": "Cambiar servidor",
+  "changeserver.label": "Servidor",
+  "changeserver.submit": "Enviar",
   "feature.announcements.changelog.headline": "Cambios en Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Por favor compra una Licencia de Soporte de Ferdi para omitir la espera",
