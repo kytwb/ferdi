@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Yenile",
   "app.errorHandler.headline": "Bir terslik çıktı",
+  "changeserver.headline": "Sunucuyu değiştir",
+  "changeserver.label": "Sunucu",
+  "changeserver.submit": "Gönder",
   "feature.announcements.changelog.headline": "Ferdi {version} Sürümündeki Değişiklikler",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Beklememek için Ferdi Destek Lisansı'nı satın alın",
