@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "새로고침",
   "app.errorHandler.headline": "문제가 발생했습니다.",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Submit",
   "feature.announcements.changelog.headline": "Ferdi {version} 변경점",
   "feature.debugger.title": "디버깅 정보 공개",
   "feature.delayApp.headline": "Ferdi Supporter License를 구매하여 대기시간을 스킵하세요.",
