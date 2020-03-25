@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Herladen",
   "app.errorHandler.headline": "Er is iets mis gegaan",
+  "changeserver.headline": "Server wijzigen",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Verzenden",
   "feature.announcements.changelog.headline": "Wijzigingen in Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Sponsor Ferdi om wachten over te slaan",
