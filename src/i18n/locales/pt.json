@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Actualizar",
   "app.errorHandler.headline": "Uoops! Algo correu mal",
+  "changeserver.headline": "Alterar servidor",
+  "changeserver.label": "Servidor",
+  "changeserver.submit": "Enviar",
   "feature.announcements.changelog.headline": "Alterações no Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Por favor, adquira uma licença Ferdi para não ter tempo de espera",
