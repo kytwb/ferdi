@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Перезавантажити",
   "app.errorHandler.headline": "Щось пішло не так",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Подати",
   "feature.announcements.changelog.headline": "Зміни у Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Будь ласка, придбайте ліцензію Ferdi Supporter аби пропустити очікування",
