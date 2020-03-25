@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Actualiser",
   "app.errorHandler.headline": "On dirait que quelque chose ne va pas",
+  "changeserver.headline": "Changer de serveur",
+  "changeserver.label": "Serveur",
+  "changeserver.submit": "Soumettre",
   "feature.announcements.changelog.headline": "Les nouveaux changements dans Ferdi {version}",
   "feature.debugger.title": "Publier les informations de débogage",
   "feature.delayApp.headline": "Achetez la licence Ferdi pour ne plus avoir de temps d'attente",
