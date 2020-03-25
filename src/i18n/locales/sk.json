@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Obnoviť",
   "app.errorHandler.headline": "Niečo sa pokazilo",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Odoslať",
   "feature.announcements.changelog.headline": "Zmeny vo Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Prosím, kúp si licenciu Ferdi Supporter a nebudeš musieť čakať",
