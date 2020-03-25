@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Recarrega",
   "app.errorHandler.headline": "Quelcom ha anat malament",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Enviar",
   "feature.announcements.changelog.headline": "Canvis en Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Si us plau, compra una llicència de suport per a Ferdi per saltar l'espera",
