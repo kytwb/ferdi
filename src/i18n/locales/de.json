@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Neu laden",
   "app.errorHandler.headline": "Es ist ein Fehler aufgetreten",
+  "changeserver.headline": "Server wechseln",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Absenden",
   "feature.announcements.changelog.headline": "Was ist neu in Ferdi {version}",
   "feature.debugger.title": "Debug-Informationen veröffentlichen",
   "feature.delayApp.headline": "Bitte kaufe eine Ferdi Supporter Lizenz, um das Warten zu überspringen",
