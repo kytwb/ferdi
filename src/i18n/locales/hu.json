@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Újratöltés",
   "app.errorHandler.headline": "Valami nem jött össze",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Küldés",
   "feature.announcements.changelog.headline": "Ferdi {version} változásai",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Kérjük vásárolj egy Franc Támogatói Liszencet a várakozás átugrásához",
