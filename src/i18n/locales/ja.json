@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "再読み込み",
   "app.errorHandler.headline": "間違えている部分があります",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "送信",
   "feature.announcements.changelog.headline": "Changes in Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Ferdiをすぐに起動するには、Ferdi サポーターライセンスを購入してください。",
