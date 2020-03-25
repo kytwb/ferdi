@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Ladda om",
   "app.errorHandler.headline": "Någonting gick snett",
+  "changeserver.headline": "Byt server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Skicka",
   "feature.announcements.changelog.headline": "Ändringar i Ferdi {version}",
   "feature.debugger.title": "Skicka felsökningsinformation",
   "feature.delayApp.headline": "Vänligen köp en Ferdi Supporter-licens för att slippa vänta",
