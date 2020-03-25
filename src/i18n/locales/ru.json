@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Перезагрузить",
   "app.errorHandler.headline": "Что-то пошло не так",
+  "changeserver.headline": "Изменить сервер",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Принять",
   "feature.announcements.changelog.headline": "Изменения в версии Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Пожалуйста приобретите лицензию Ferdi Supporter чтобы убрать ожидание",
