@@ -1,6 +1,9 @@
 {
   "app.errorHandler.action": "Ponovno učitavanje",
   "app.errorHandler.headline": "Something went wrong",
+  "changeserver.headline": "Change server",
+  "changeserver.label": "Server",
+  "changeserver.submit": "Pošalji",
   "feature.announcements.changelog.headline": "Changes in Ferdi {version}",
   "feature.debugger.title": "Publish debugging information",
   "feature.delayApp.headline": "Please purchase a Ferdi Supporter License to skip waiting",
