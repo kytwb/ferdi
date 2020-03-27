@@ -193,6 +193,26 @@ class TodosWebview extends Component {
 
     const { intl } = this.context;
 
+    const isUsingPredefinedTodoServer = stores.settings.all.app.predefinedTodoServer !== 'isUsingCustomTodoService';
+    const todoUrl = isUsingPredefinedTodoServer 
+      ? stores.settings.all.app.predefinedTodoServer
+      : stores.settings.all.app.customTodoServer;
+    let isTodoUrlValid = true;
+    if (isUsingPredefinedTodoServer === false){
+        function validURL(str) {
+          var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+          return !!pattern.test(str);
+        }
+        isTodoUrlValid = validURL(todoUrl);
+    }
+    
+
+
     return (
       <div
         className={classes.root}
@@ -212,6 +232,7 @@ class TodosWebview extends Component {
           />
         )}
         {isTodosIncludedInCurrentPlan ? (
+          isTodoUrlValid && 
           <Webview
             className={classes.webview}
             onDidAttach={() => {
@@ -222,7 +243,7 @@ class TodosWebview extends Component {
             partition="persist:todos"
             preload="./features/todos/preload.js"
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
-            src={stores.settings.all.app.todoServer !== 'isUsingCustomTodoService' ? stores.settings.all.app.todoServer : stores.settings.all.app.customTodoServer}
+            src={todoUrl}
           />
         ) : (
           <Appear>

@@ -107,7 +107,7 @@ export const DEFAULT_APP_SETTINGS = {
 
   // Ferdi specific options
   server: LIVE_API,
-  todoServer: 'https://app.franztodos.com',
+  predefinedTodoServer: 'https://app.franztodos.com',
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
   locked: false,

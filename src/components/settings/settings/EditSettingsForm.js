@@ -342,8 +342,8 @@ export default @observer class EditSettingsForm extends Component {
                 <Toggle field={form.$('enableTodos')} />
                 {isTodosActivated && (
                   <div>
-                    <Select field={form.$('todoServer')} />
-                    {form.$('todoServer').value === 'isUsingCustomTodoService' && (
+                    <Select field={form.$('predefinedTodoServer')} />
+                    {form.$('predefinedTodoServer').value === 'isUsingCustomTodoService' && (
                       <div>
                         <Input
                           placeholder="Todo Server"

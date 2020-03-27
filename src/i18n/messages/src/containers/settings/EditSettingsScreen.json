@@ -169,12 +169,12 @@
     }
   },
   {
-    "id": "settings.app.form.todoServer",
+    "id": "settings.app.form.predefinedTodoServer",
     "defaultMessage": "!!!Todo Server",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 83,
-      "column": 14
+      "column": 24
     },
     "end": {
       "line": 86,

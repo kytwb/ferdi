@@ -80,8 +80,8 @@ const messages = defineMessages({
     id: 'settings.app.form.server',
     defaultMessage: '!!!Server',
   },
-  todoServer: {
-    id: 'settings.app.form.todoServer',
+  predefinedTodoServer: {
+    id: 'settings.app.form.predefinedTodoServer',
     defaultMessage: '!!!Todo Server',
   },
   customTodoServer: {
@@ -212,7 +212,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         hibernate: settingsData.hibernate,
         hibernationStrategy: settingsData.hibernationStrategy,
         server: settingsData.server,
-        todoServer: settingsData.todoServer,
+        predefinedTodoServer: settingsData.predefinedTodoServer,
         customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
         lockedPassword: settingsData.lockedPassword,
@@ -374,10 +374,10 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.server || API,
           default: API,
         },
-        todoServer: {
-          label: intl.formatMessage(messages.todoServer),
-          value: settings.all.app.todoServer,
-          default: DEFAULT_APP_SETTINGS.todoServer,
+        predefinedTodoServer: {
+          label: intl.formatMessage(messages.predefinedTodoServer),
+          value: settings.all.app.predefinedTodoServer,
+          default: DEFAULT_APP_SETTINGS.predefinedTodoServer,
           options: todoApp,
         },
         customTodoServer: {
