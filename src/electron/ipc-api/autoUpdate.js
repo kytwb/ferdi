@@ -4,14 +4,14 @@ import { autoUpdater } from 'electron-updater';
 const debug = require('debug')('Ferdi:ipcApi:autoUpdate');
 
 export default (params) => {
-  const disableUpdates = Boolean(params.settings.app.get('noUpdates'));
+  const disableUpdates = Boolean(params.settings.app.get('automaticUpdates'));
 
   if (disableUpdates) {
     autoUpdater.autoInstallOnAppQuit = false;
     autoUpdater.autoDownload = false;
   } else if (process.platform === 'darwin' || process.platform === 'win32' || process.env.APPIMAGE) {
     ipcMain.on('autoUpdate', (event, args) => {
-      const enableUpdate = !params.settings.app.get('noUpdates');
+      const enableUpdate = !params.settings.app.get('automaticUpdates');
 
       if (enableUpdate) {
         try {
@@ -42,7 +42,7 @@ export default (params) => {
     autoUpdater.on('update-available', (event) => {
       debug('update-available');
 
-      const enableUpdate = !params.settings.app.get('noUpdates');
+      const enableUpdate = !params.settings.app.get('automaticUpdates');
       if (enableUpdate) {
         params.mainWindow.webContents.send('autoUpdate', {
           version: event.version,

@@ -429,12 +429,12 @@
     }
   },
   {
-    "id": "settings.app.form.noUpdates",
+    "id": "settings.app.form.automaticUpdates",
     "defaultMessage": "!!!Disable updates",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 163,
-      "column": 13
+      "column": 20
     },
     "end": {
       "line": 166,

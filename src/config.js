@@ -107,7 +107,7 @@ export const DEFAULT_APP_SETTINGS = {
   hibernate: false,
   hibernationStrategy: 300,
   inactivityLock: 0,
-  noUpdates: false,
+  automaticUpdates: false,
   showServiceNavigationBar: false,
   universalDarkMode: true,
   adaptableDarkMode: true,

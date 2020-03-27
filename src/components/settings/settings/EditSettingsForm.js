@@ -175,7 +175,7 @@ export default @observer class EditSettingsForm extends Component {
     isTodosEnabled: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     server: PropTypes.string.isRequired,
-    noUpdates: PropTypes.bool.isRequired,
+    automaticUpdates: PropTypes.bool.isRequired,
     hibernationEnabled: PropTypes.bool.isRequired,
     isDarkmodeEnabled: PropTypes.bool.isRequired,
     isTrayEnabled: PropTypes.bool.isRequired,
@@ -215,7 +215,7 @@ export default @observer class EditSettingsForm extends Component {
       isTodosEnabled,
       isWorkspaceEnabled,
       server,
-      noUpdates,
+      automaticUpdates,
       hibernationEnabled,
       isDarkmodeEnabled,
       isTrayEnabled,
@@ -555,7 +555,7 @@ export default @observer class EditSettingsForm extends Component {
 
             {/* Updates */}
             <h2 id="updates">{intl.formatMessage(messages.headlineUpdates)}</h2>
-            <Toggle field={form.$('noUpdates')} />
+            <Toggle field={form.$('automaticUpdates')} />
             <Toggle field={form.$('beta')} />
             {updateIsReadyToInstall ? (
               <Button
@@ -567,7 +567,7 @@ export default @observer class EditSettingsForm extends Component {
                 buttonType="secondary"
                 label={intl.formatMessage(updateButtonLabelMessage)}
                 onClick={checkForUpdates}
-                disabled={noUpdates || isCheckingForUpdates || isUpdateAvailable}
+                disabled={automaticUpdates || isCheckingForUpdates || isUpdateAvailable}
                 loaded={!isCheckingForUpdates || !isUpdateAvailable}
               />
             )}
