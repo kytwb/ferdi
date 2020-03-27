@@ -12,6 +12,17 @@ import SettingsStore from '../../../stores/SettingsStore';
 import Appear from '../../../components/ui/effects/Appear';
 import UpgradeButton from '../../../components/ui/UpgradeButton';
 
+// NOTE: https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+function validURL(str) {
+  const pattern = new RegExp('^(https?:\\/\\/)?' // protocol
+      + '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' // domain name
+      + '((\\d{1,3}\\.){3}\\d{1,3}))' // OR ip (v4) address
+      + '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' // port and path
+      + '(\\?[;&a-z\\d%_.~+=-]*)?' // query string
+      + '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+  return !!pattern.test(str);
+}
+
 const messages = defineMessages({
   premiumInfo: {
     id: 'feature.todos.premium.info',
@@ -194,24 +205,14 @@ class TodosWebview extends Component {
     const { intl } = this.context;
 
     const isUsingPredefinedTodoServer = stores.settings.all.app.predefinedTodoServer !== 'isUsingCustomTodoService';
-    const todoUrl = isUsingPredefinedTodoServer 
+    const todoUrl = isUsingPredefinedTodoServer
       ? stores.settings.all.app.predefinedTodoServer
       : stores.settings.all.app.customTodoServer;
     let isTodoUrlValid = true;
-    if (isUsingPredefinedTodoServer === false){
-        // NOTE: https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
-        function validURL(str) {
-          var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-          return !!pattern.test(str);
-        }
-        isTodoUrlValid = validURL(todoUrl);
+    if (isUsingPredefinedTodoServer === false) {
+      
+      isTodoUrlValid = validURL(todoUrl);
     }
-    
 
 
     return (
@@ -233,7 +234,8 @@ class TodosWebview extends Component {
           />
         )}
         {isTodosIncludedInCurrentPlan ? (
-          isTodoUrlValid && 
+          isTodoUrlValid
+          && (
           <Webview
             className={classes.webview}
             onDidAttach={() => {
@@ -246,6 +248,7 @@ class TodosWebview extends Component {
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
             src={todoUrl}
           />
+          )
         ) : (
           <Appear>
             <div className={classes.premiumContainer}>
