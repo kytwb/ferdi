@@ -555,6 +555,8 @@ export default @observer class EditSettingsForm extends Component {
 
             {/* Updates */}
             <h2 id="updates">{intl.formatMessage(messages.headlineUpdates)}</h2>
+            <Toggle field={form.$('noUpdates')} />
+            <Toggle field={form.$('beta')} />
             {updateIsReadyToInstall ? (
               <Button
                 label={intl.formatMessage(messages.buttonInstallUpdate)}
@@ -570,8 +572,6 @@ export default @observer class EditSettingsForm extends Component {
               />
             )}
             <br />
-            <Toggle field={form.$('beta')} />
-            <Toggle field={form.$('noUpdates')} />
             {intl.formatMessage(messages.currentVersion)}
             {' '}
             {remote.app.getVersion()}
