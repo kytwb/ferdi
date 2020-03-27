@@ -289,7 +289,7 @@
   "settings.app.form.lockPassword": "Password",
   "settings.app.form.minimizeToSystemTray": "Minimize Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "Navigation bar behaviour",
-  "settings.app.form.noUpdates": "Disable updates",
+  "settings.app.form.noUpdates": "Enable automatic updates",
   "settings.app.form.privateNotifications": "Don't show message content in notifications",
   "settings.app.form.reloadAfterResume": "Reload Ferdi after system resume",
   "settings.app.form.runInBackground": "Keep Ferdi in background when closing the window",
