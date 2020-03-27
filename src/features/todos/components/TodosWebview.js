@@ -210,7 +210,6 @@ class TodosWebview extends Component {
       : stores.settings.all.app.customTodoServer;
     let isTodoUrlValid = true;
     if (isUsingPredefinedTodoServer === false) {
-      
       isTodoUrlValid = validURL(todoUrl);
     }
 
