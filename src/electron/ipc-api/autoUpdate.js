@@ -6,14 +6,13 @@ const debug = require('debug')('Ferdi:ipcApi:autoUpdate');
 export default (params) => {
   const enableUpdate = Boolean(params.settings.app.get('automaticUpdates'));
 
-  if (enableUpdate) {
+  if (!enableUpdate) {
     autoUpdater.autoInstallOnAppQuit = false;
     autoUpdater.autoDownload = false;
   } else if (process.platform === 'darwin' || process.platform === 'win32' || process.env.APPIMAGE) {
     ipcMain.on('autoUpdate', (event, args) => {
-      const disableUpdate = !params.settings.app.get('automaticUpdates');
 
-      if (disableUpdate) {
+      if (!enableUpdate) {
         try {
           autoUpdater.autoInstallOnAppQuit = false;
           autoUpdater.allowPrerelease = Boolean(params.settings.app.get('beta'));
@@ -42,8 +41,7 @@ export default (params) => {
     autoUpdater.on('update-available', (event) => {
       debug('update-available');
 
-      const disableUpdate = !params.settings.app.get('automaticUpdates');
-      if (disableUpdate) {
+      if (enableUpdate) {
         params.mainWindow.webContents.send('autoUpdate', {
           version: event.version,
           available: true,
