@@ -11,7 +11,7 @@ export default (params) => {
     autoUpdater.autoDownload = false;
   } else if (process.platform === 'darwin' || process.platform === 'win32' || process.env.APPIMAGE) {
     ipcMain.on('autoUpdate', (event, args) => {
-      if (!enableUpdate) {
+      if (enableUpdate) {
         try {
           autoUpdater.autoInstallOnAppQuit = false;
           autoUpdater.allowPrerelease = Boolean(params.settings.app.get('beta'));
