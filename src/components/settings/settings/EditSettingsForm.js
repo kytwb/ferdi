@@ -558,21 +558,21 @@ export default @observer class EditSettingsForm extends Component {
             <Toggle field={form.$('automaticUpdates')} />
             {automaticUpdates && (
               <div>
-              <Toggle field={form.$('beta')} />
-              {updateIsReadyToInstall ? (
-                <Button
-                  label={intl.formatMessage(messages.buttonInstallUpdate)}
-                  onClick={installUpdate}
-                />
-              ) : (
-                <Button
-                  buttonType="secondary"
-                  label={intl.formatMessage(updateButtonLabelMessage)}
-                  onClick={checkForUpdates}
-                  disabled={automaticUpdates || isCheckingForUpdates || isUpdateAvailable}
-                  loaded={!isCheckingForUpdates || !isUpdateAvailable}
-                />
-              )}
+                <Toggle field={form.$('beta')} />
+                {updateIsReadyToInstall ? (
+                  <Button
+                    label={intl.formatMessage(messages.buttonInstallUpdate)}
+                    onClick={installUpdate}
+                  />
+                ) : (
+                  <Button
+                    buttonType="secondary"
+                    label={intl.formatMessage(updateButtonLabelMessage)}
+                    onClick={checkForUpdates}
+                    disabled={automaticUpdates || isCheckingForUpdates || isUpdateAvailable}
+                    loaded={!isCheckingForUpdates || !isUpdateAvailable}
+                  />
+                )}
               </div>
             )}
             <br />

@@ -292,7 +292,7 @@ const createWindow = () => {
   });
 
   mainWindow.on('show', () => {
-    debug('Skip taskbar: false');
+    debug('Skip taskbar: true');
     mainWindow.setSkipTaskbar(false);
   });
 
