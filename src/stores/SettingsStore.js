@@ -263,5 +263,24 @@ export default class SettingsStore extends Store {
         },
       });
     }
+
+    if (!this.all.migration['5.4.4-beta.4-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          todoServer: 'isUsingCustomTodoService',
+          customTodoServer: legacySettings.todoServer,
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.4.4-beta.4-settings': true,
+        },
+      });
+      
+      debug('Migrated old todo setting to new custom todo setting');
+    }
   }
 }
