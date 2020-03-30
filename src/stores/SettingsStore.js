@@ -279,7 +279,7 @@ export default class SettingsStore extends Store {
           '5.4.4-beta.4-settings': true,
         },
       });
-      
+
       debug('Migrated old todo setting to new custom todo setting');
     }
   }
