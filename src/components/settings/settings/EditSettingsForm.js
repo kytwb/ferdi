@@ -156,6 +156,7 @@ export default @observer class EditSettingsForm extends Component {
     cacheSize: PropTypes.string.isRequired,
     isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isTodosEnabled: PropTypes.bool.isRequired,
+    isTodosActivated: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     noUpdates: PropTypes.bool.isRequired,
     hibernationEnabled: PropTypes.bool.isRequired,
@@ -201,6 +202,7 @@ export default @observer class EditSettingsForm extends Component {
       isDarkmodeEnabled,
       isTrayEnabled,
       openProcessManager,
+      isTodosActivated,
     } = this.props;
     const { intl } = this.context;
 
@@ -275,21 +277,31 @@ export default @observer class EditSettingsForm extends Component {
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
-                <Input
-                  placeholder="Todo Server"
-                  onChange={e => this.submit(e)}
-                  field={form.$('todoServer')}
-                />
-                <p
-                  className="settings__message"
-                  style={{
-                    borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                  }}
-                >
-                  { intl.formatMessage(messages.todoServerInfo) }
-                </p>
+                {isTodosActivated && (
+                  <div>
+                    <Select field={form.$('predefinedTodoServer')} />
+                    {form.$('predefinedTodoServer').value === 'isUsingCustomTodoService' && (
+                      <div>
+                        <Input
+                          placeholder="Todo Server"
+                          onChange={e => this.submit(e)}
+                          field={form.$('customTodoServer')}
+                        />
+                        <p
+                          className="settings__message"
+                          style={{
+                            borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                          }}
+                        >
+                          { intl.formatMessage(messages.todoServerInfo) }
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
               </>
             )}
+
 
             <Hr />
 
