@@ -447,6 +447,24 @@
       "contributions": [
         "translation"
       ]
+    },
+    {
+      "login": "mrassili",
+      "name": "Marouane R",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/25288435?v=4",
+      "profile": "https://mrassili.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "yourcontact",
+      "name": "Roman",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/46404814?v=4",
+      "profile": "https://github.com/yourcontact",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,

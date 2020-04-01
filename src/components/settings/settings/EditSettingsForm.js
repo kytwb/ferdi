@@ -18,15 +18,6 @@ const {
   systemPreferences,
 } = remote;
 
-function escapeHtml(unsafe) {
-  return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
-
 const messages = defineMessages({
   headline: {
     id: 'settings.app.headline',
@@ -47,14 +38,6 @@ const messages = defineMessages({
   inactivityLockInfo: {
     id: 'settings.app.inactivityLockInfo',
     defaultMessage: '!!!Minutes of inactivity, after which Ferdi should automatically lock. Use 0 to disable',
-  },
-  serverInfo: {
-    id: 'settings.app.serverInfo',
-    defaultMessage: '!!!We advice you to logout after changing your server as your settings might not be saved otherwise.',
-  },
-  serverMoneyInfo: {
-    id: 'settings.app.serverMoneyInfo',
-    defaultMessage: '!!!You are using the official Franz Server for Ferdi.\nWe know that Ferdi allows you to use all its features for free but you are still using Franz\'s server resources - which Franz\'s creator has to pay for.\nPlease still consider [Link 1]paying for a Franz account[/Link] or [Link 2]using a self-hosted ferdi-server[/Link] (if you have the knowledge and resources to do so). \nBy using Ferdi, you still profit greatly from Franz\'s recipe store, server resources and its development.',
   },
   todoServerInfo: {
     id: 'settings.app.todoServerInfo',
@@ -173,6 +156,7 @@ export default @observer class EditSettingsForm extends Component {
     cacheSize: PropTypes.string.isRequired,
     isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isTodosEnabled: PropTypes.bool.isRequired,
+    isTodosActivated: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     server: PropTypes.string.isRequired,
     automaticUpdates: PropTypes.bool.isRequired,
@@ -220,6 +204,7 @@ export default @observer class EditSettingsForm extends Component {
       isDarkmodeEnabled,
       isTrayEnabled,
       openProcessManager,
+      isTodosActivated,
     } = this.props;
     const { intl } = this.context;
 
@@ -231,8 +216,6 @@ export default @observer class EditSettingsForm extends Component {
     } else {
       updateButtonLabelMessage = messages.buttonSearchForUpdate;
     }
-
-    const isLoggedIn = Boolean(localStorage.getItem('authToken'));
 
     const {
       lockingFeatureEnabled,
@@ -287,73 +270,40 @@ export default @observer class EditSettingsForm extends Component {
 
             <Hr />
 
-            <Input
-              placeholder="Server"
-              onChange={e => this.submit(e)}
-              field={form.$('server')}
-              autoFocus
-            />
-            {isLoggedIn && (
-              <p
-                className="settings__message"
-                style={{
-                  borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                }}
-              >
-                { intl.formatMessage(messages.serverInfo) }
-              </p>
-            )}
-            {server === 'https://api.franzinfra.com' && (
-              <p
-                className="settings__message"
-                style={{
-                  borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                }}
-              >
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html:
-                  // Needed to make links work
-                  escapeHtml(
-                    intl.formatMessage(messages.serverMoneyInfo),
-                  ).replace('[Link 1]', '<a href="https://www.meetfranz.com/pricing" target="_blank">')
-                    .replace('[Link 2]', '<a href="https://github.com/getferdi/server" target="_blank">')
-                    .replace(/\[\/Link]/g, '</a>'),
-                  }}
-                  style={{
-                    whiteSpace: 'pre-wrap',
-                  }}
-                />
-              </p>
-            )}
-
-            <Hr />
-
             {isWorkspaceEnabled && (
               <Toggle field={form.$('keepAllWorkspacesLoaded')} />
             )}
-
 
             <Hr />
 
             {isTodosEnabled && (
               <>
                 <Toggle field={form.$('enableTodos')} />
-                <Input
-                  placeholder="Todo Server"
-                  onChange={e => this.submit(e)}
-                  field={form.$('todoServer')}
-                />
-                <p
-                  className="settings__message"
-                  style={{
-                    borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                  }}
-                >
-                  { intl.formatMessage(messages.todoServerInfo) }
-                </p>
+                {isTodosActivated && (
+                  <div>
+                    <Select field={form.$('predefinedTodoServer')} />
+                    {form.$('predefinedTodoServer').value === 'isUsingCustomTodoService' && (
+                      <div>
+                        <Input
+                          placeholder="Todo Server"
+                          onChange={e => this.submit(e)}
+                          field={form.$('customTodoServer')}
+                        />
+                        <p
+                          className="settings__message"
+                          style={{
+                            borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                          }}
+                        >
+                          { intl.formatMessage(messages.todoServerInfo) }
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
               </>
             )}
+
 
             <Hr />
 

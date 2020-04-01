@@ -76,7 +76,7 @@
     "electron-process-reporter": "git+https://git@github.com/dizer/electron-process-reporter.git",
     "electron-react-titlebar": "0.8.2",
     "electron-spellchecker": "2.2.1",
-    "electron-updater": "4.2.0",
+    "electron-updater": "4.2.5",
     "electron-window-state": "5.0.3",
     "fs-extra": "7.0.1",
     "gulp-csso": "3.0.1",
@@ -154,8 +154,8 @@
     "cross-env": "^5.0.5",
     "cz-conventional-changelog": "2.1.0",
     "dotenv": "^4.0.0",
-    "electron": "8.0.0",
-    "electron-builder": "21.2.0",
+    "electron": "8.1.1",
+    "electron-builder": "22.4.1",
     "electron-notarize": "0.2.1",
     "electron-rebuild": "1.10.0",
     "eslint": "5.10.0",
@@ -203,7 +203,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm run reformat-files && npm run manage-translations && npm run apply-branding"
+      "pre-commit": "npm run lint && npm run reformat-files && npm run manage-translations && npm run apply-branding"
     }
   }
 }

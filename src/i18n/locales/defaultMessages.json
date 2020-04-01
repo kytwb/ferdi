@@ -46,6 +46,50 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Change server",
+        "end": {
+          "column": 3,
+          "line": 14
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.headline",
+        "start": {
+          "column": 12,
+          "line": 11
+        }
+      },
+      {
+        "defaultMessage": "!!!Server",
+        "end": {
+          "column": 3,
+          "line": 18
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.label",
+        "start": {
+          "column": 9,
+          "line": 15
+        }
+      },
+      {
+        "defaultMessage": "!!!Submit",
+        "end": {
+          "column": 3,
+          "line": 22
+        },
+        "file": "src/components/auth/ChangeServer.js",
+        "id": "changeserver.submit",
+        "start": {
+          "column": 10,
+          "line": 19
+        }
+      }
+    ],
+    "path": "src/components/auth/ChangeServer.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!Import your Ferdi 4 services",
         "end": {
           "column": 3,
@@ -2712,403 +2756,377 @@
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 25
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headline",
         "start": {
           "column": 12,
-          "line": 31
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 29
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 35
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!Sending telemetry data allows us to find errors in Ferdi - we will not send any personal information like your message data! Changing this option requires you to restart Ferdi.",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 33
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.sentryInfo",
         "start": {
           "column": 14,
-          "line": 39
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!By default, Ferdi will keep all your services open and loaded in the background so they are ready when you want to use them. Service Hibernation will unload your services after a specified amount. This is useful to save RAM or keeping services from slowing down your computer.",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 37
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.hibernateInfo",
         "start": {
           "column": 17,
-          "line": 43
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Minutes of inactivity, after which Ferdi should automatically lock. Use 0 to disable",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 41
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.inactivityLockInfo",
         "start": {
           "column": 22,
-          "line": 47
-        }
-      },
-      {
-        "defaultMessage": "!!!We advice you to logout after changing your server as your settings might not be saved otherwise.",
-        "end": {
-          "column": 3,
-          "line": 54
-        },
-        "file": "src/components/settings/settings/EditSettingsForm.js",
-        "id": "settings.app.serverInfo",
-        "start": {
-          "column": 14,
-          "line": 51
-        }
-      },
-      {
-        "defaultMessage": "!!!You are using the official Franz Server for Ferdi.\nWe know that Ferdi allows you to use all its features for free but you are still using Franz's server resources - which Franz's creator has to pay for.\nPlease still consider [Link 1]paying for a Franz account[/Link] or [Link 2]using a self-hosted ferdi-server[/Link] (if you have the knowledge and resources to do so). \nBy using Ferdi, you still profit greatly from Franz's recipe store, server resources and its development.",
-        "end": {
-          "column": 3,
-          "line": 58
-        },
-        "file": "src/components/settings/settings/EditSettingsForm.js",
-        "id": "settings.app.serverMoneyInfo",
-        "start": {
-          "column": 19,
-          "line": 55
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!This server will be used for the \"Franz Todo\" feature. (default: https://app.franztodos.com)",
         "end": {
           "column": 3,
-          "line": 62
+          "line": 45
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.todoServerInfo",
         "start": {
           "column": 18,
-          "line": 59
+          "line": 42
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 66
+          "line": 49
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPassword",
         "start": {
           "column": 18,
-          "line": 63
+          "line": 46
         }
       },
       {
         "defaultMessage": "!!!Please make sure to set a password you'll remember.\nIf you loose this password, you will have to reinstall Ferdi.",
         "end": {
           "column": 3,
-          "line": 70
+          "line": 53
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPasswordInfo",
         "start": {
           "column": 22,
-          "line": 67
+          "line": 50
         }
       },
       {
         "defaultMessage": "!!!Password Lock allows you to keep your messages protected.\nUsing Password Lock, you will be prompted to enter your password everytime you start Ferdi or lock Ferdi yourself using the lock symbol in the bottom left corner or the shortcut CMD/CTRL+Shift+L.",
         "end": {
           "column": 3,
-          "line": 74
+          "line": 57
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockInfo",
         "start": {
           "column": 12,
-          "line": 71
+          "line": 54
         }
       },
       {
         "defaultMessage": "!!!Times in 24-Hour-Format. End time can be before start time (e.g. start 17:00, end 09:00) to enable Do-not-Disturb overnight.",
         "end": {
           "column": 3,
-          "line": 78
+          "line": 61
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDTimeInfo",
         "start": {
           "column": 24,
-          "line": 75
+          "line": 58
         }
       },
       {
         "defaultMessage": "!!!Scheduled Do-not-Disturb allows you to define a period of time in which you do not want to get Notifications from Ferdi.",
         "end": {
           "column": 3,
-          "line": 82
+          "line": 65
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDInfo",
         "start": {
           "column": 20,
-          "line": 79
+          "line": 62
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 86
+          "line": 69
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineLanguage",
         "start": {
           "column": 20,
-          "line": 83
+          "line": 66
         }
       },
       {
         "defaultMessage": "!!!Updates",
         "end": {
           "column": 3,
-          "line": 90
+          "line": 73
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineUpdates",
         "start": {
           "column": 19,
-          "line": 87
+          "line": 70
         }
       },
       {
         "defaultMessage": "!!!Appearance",
         "end": {
           "column": 3,
-          "line": 94
+          "line": 77
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAppearance",
         "start": {
           "column": 22,
-          "line": 91
+          "line": 74
         }
       },
       {
         "defaultMessage": "!!!Universal Dark Mode tries to dynamically generate dark mode styles for services that are otherwise not currently supported.",
         "end": {
           "column": 3,
-          "line": 98
+          "line": 81
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.universalDarkModeInfo",
         "start": {
           "column": 25,
-          "line": 95
+          "line": 78
         }
       },
       {
         "defaultMessage": "!!!Write your accent color in a CSS-compatible format. (Default: #7367f0)",
         "end": {
           "column": 3,
-          "line": 102
+          "line": 85
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.accentColorInfo",
         "start": {
           "column": 19,
-          "line": 99
+          "line": 82
         }
       },
       {
         "defaultMessage": "!!!Advanced",
         "end": {
           "column": 3,
-          "line": 106
+          "line": 89
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAdvanced",
         "start": {
           "column": 20,
-          "line": 103
+          "line": 86
         }
       },
       {
         "defaultMessage": "!!!Help us to translate Ferdi into your language.",
         "end": {
           "column": 3,
-          "line": 110
+          "line": 93
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.translationHelp",
         "start": {
           "column": 19,
-          "line": 107
+          "line": 90
         }
       },
       {
         "defaultMessage": "!!!Cache",
         "end": {
           "column": 3,
-          "line": 114
+          "line": 97
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.subheadlineCache",
         "start": {
           "column": 20,
-          "line": 111
+          "line": 94
         }
       },
       {
         "defaultMessage": "!!!Ferdi cache is currently using {size} of disk space.",
         "end": {
           "column": 3,
-          "line": 118
+          "line": 101
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheInfo",
         "start": {
           "column": 13,
-          "line": 115
+          "line": 98
         }
       },
       {
         "defaultMessage": "!!!Clear cache",
         "end": {
           "column": 3,
-          "line": 122
+          "line": 105
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonClearAllCache",
         "start": {
           "column": 23,
-          "line": 119
+          "line": 102
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 126
+          "line": 109
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonSearchForUpdate",
         "start": {
           "column": 25,
-          "line": 123
+          "line": 106
         }
       },
       {
         "defaultMessage": "!!!Restart & install update",
         "end": {
           "column": 3,
-          "line": 130
+          "line": 113
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonInstallUpdate",
         "start": {
           "column": 23,
-          "line": 127
+          "line": 110
         }
       },
       {
         "defaultMessage": "!!!Is searching for update",
         "end": {
           "column": 3,
-          "line": 134
+          "line": 117
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusSearching",
         "start": {
           "column": 25,
-          "line": 131
+          "line": 114
         }
       },
       {
         "defaultMessage": "!!!Update available, downloading...",
         "end": {
           "column": 3,
-          "line": 138
+          "line": 121
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusAvailable",
         "start": {
           "column": 25,
-          "line": 135
+          "line": 118
         }
       },
       {
         "defaultMessage": "!!!You are using the latest version of Ferdi",
         "end": {
           "column": 3,
-          "line": 142
+          "line": 125
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusUpToDate",
         "start": {
           "column": 24,
-          "line": 139
+          "line": 122
         }
       },
       {
         "defaultMessage": "!!!Current version:",
         "end": {
           "column": 3,
-          "line": 146
+          "line": 129
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.currentVersion",
         "start": {
           "column": 18,
-          "line": 143
+          "line": 126
         }
       },
       {
         "defaultMessage": "!!!Changes require restart",
         "end": {
           "column": 3,
-          "line": 150
+          "line": 133
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.restartRequired",
         "start": {
           "column": 29,
-          "line": 147
+          "line": 130
         }
       },
       {
         "defaultMessage": "!!!Official translations are English & German. All other languages are community based translations.",
         "end": {
           "column": 3,
-          "line": 154
+          "line": 137
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.languageDisclaimer",
         "start": {
           "column": 22,
-          "line": 151
+          "line": 134
         }
       }
     ],
@@ -3200,7 +3218,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Ferdi for Teams",
+        "defaultMessage": "!!!Franz Team Management",
         "end": {
           "column": 3,
           "line": 24
@@ -3213,7 +3231,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You and your team use Franz? You can now manage Premium subscriptions for as many colleagues, friends or family members as you want, all from within one account.",
+        "defaultMessage": "!!!Your are currently using Franz Servers, which is why you have access to Team Management.",
         "end": {
           "column": 3,
           "line": 28
@@ -3226,7 +3244,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Ferdi for Teams gives you the option to invite co-workers to your team by sending them email invitations and manage their subscriptions in your account’s preferences. Don’t waste time setting up subscriptions for every team member individually, forget about multiple invoices and different billing cycles - one team to rule them all!",
+        "defaultMessage": "!!!Franz's Team Management allows you to manage Franz Subscriptions for multiple users. Please keep in mind that having a Franz Premium subscription will give you no advantages in using Ferdi: The only reason you still have access to Team Management is so you can manage your legacy Franz Teams and so that you don't loose any functionality in managing your account.",
         "end": {
           "column": 3,
           "line": 32
@@ -4318,283 +4336,283 @@
         }
       },
       {
-        "defaultMessage": "!!!Server",
+        "defaultMessage": "!!!Todo Server",
         "end": {
           "column": 3,
           "line": 82
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.server",
+        "id": "settings.app.form.predefinedTodoServer",
         "start": {
-          "column": 10,
+          "column": 14,
           "line": 79
         }
       },
       {
-        "defaultMessage": "!!!Todo Server",
+        "defaultMessage": "!!!Custom Todo Server",
         "end": {
           "column": 3,
-          "line": 86
+          "line": 82
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.todoServer",
+        "id": "settings.app.form.customTodoServer",
         "start": {
           "column": 14,
-          "line": 83
+          "line": 79
         }
       },
       {
         "defaultMessage": "!!!Enable Password Lock",
         "end": {
           "column": 3,
-          "line": 90
+          "line": 86
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableLock",
         "start": {
           "column": 14,
-          "line": 87
+          "line": 83
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 94
+          "line": 90
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.lockPassword",
         "start": {
           "column": 16,
-          "line": 91
+          "line": 87
         }
       },
       {
         "defaultMessage": "!!!Allow using Touch ID to unlock",
         "end": {
           "column": 3,
-          "line": 98
+          "line": 94
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.useTouchIdToUnlock",
         "start": {
           "column": 22,
-          "line": 95
+          "line": 91
         }
       },
       {
         "defaultMessage": "!!!Lock after inactivity",
         "end": {
           "column": 3,
-          "line": 102
+          "line": 98
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.inactivityLock",
         "start": {
           "column": 18,
-          "line": 99
+          "line": 95
         }
       },
       {
         "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
         "end": {
           "column": 3,
-          "line": 106
+          "line": 102
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnabled",
         "start": {
           "column": 23,
-          "line": 103
+          "line": 99
         }
       },
       {
         "defaultMessage": "!!!From",
         "end": {
           "column": 3,
-          "line": 110
+          "line": 106
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDStart",
         "start": {
           "column": 21,
-          "line": 107
+          "line": 103
         }
       },
       {
         "defaultMessage": "!!!To",
         "end": {
           "column": 3,
-          "line": 114
+          "line": 110
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnd",
         "start": {
           "column": 19,
-          "line": 111
+          "line": 107
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 118
+          "line": 114
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.language",
         "start": {
           "column": 12,
-          "line": 115
+          "line": 111
         }
       },
       {
         "defaultMessage": "!!!Dark Mode",
         "end": {
           "column": 3,
-          "line": 122
+          "line": 118
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.darkMode",
         "start": {
           "column": 12,
-          "line": 119
+          "line": 115
         }
       },
       {
         "defaultMessage": "!!!Synchronize dark mode with my Mac's dark mode setting",
         "end": {
           "column": 3,
-          "line": 126
+          "line": 122
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.adaptableDarkMode",
         "start": {
           "column": 21,
-          "line": 123
+          "line": 119
         }
       },
       {
         "defaultMessage": "!!!Enable universal Dark Mode",
         "end": {
           "column": 3,
-          "line": 130
+          "line": 126
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.universalDarkMode",
         "start": {
           "column": 21,
-          "line": 127
+          "line": 123
         }
       },
       {
         "defaultMessage": "!!!Sidebar width",
         "end": {
           "column": 3,
-          "line": 134
+          "line": 130
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.serviceRibbonWidth",
         "start": {
           "column": 22,
-          "line": 131
+          "line": 127
         }
       },
       {
         "defaultMessage": "!!!Service icon size",
         "end": {
           "column": 3,
-          "line": 138
+          "line": 134
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.iconSize",
         "start": {
           "column": 12,
-          "line": 135
+          "line": 131
         }
       },
       {
         "defaultMessage": "!!!Accent color",
         "end": {
           "column": 3,
-          "line": 142
+          "line": 138
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.accentColor",
         "start": {
           "column": 15,
-          "line": 139
+          "line": 135
         }
       },
       {
         "defaultMessage": "!!!Display disabled services tabs",
         "end": {
           "column": 3,
-          "line": 146
+          "line": 142
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDisabledServices",
         "start": {
           "column": 24,
-          "line": 143
+          "line": 139
         }
       },
       {
         "defaultMessage": "!!!Show unread message badge when notifications are disabled",
         "end": {
           "column": 3,
-          "line": 150
+          "line": 146
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showMessagesBadgesWhenMuted",
         "start": {
           "column": 29,
-          "line": 147
+          "line": 143
         }
       },
       {
         "defaultMessage": "!!!Enable spell checking",
         "end": {
           "column": 3,
-          "line": 154
+          "line": 150
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSpellchecking",
         "start": {
           "column": 23,
-          "line": 151
+          "line": 147
         }
       },
       {
         "defaultMessage": "!!!Enable GPU Acceleration",
         "end": {
           "column": 3,
-          "line": 158
+          "line": 154
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableGPUAcceleration",
         "start": {
           "column": 25,
-          "line": 155
+          "line": 151
         }
       },
       {
         "defaultMessage": "!!!Include beta versions",
         "end": {
           "column": 3,
-          "line": 162
+          "line": 158
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.beta",
         "start": {
           "column": 8,
-          "line": 159
+          "line": 155
         }
       },
       {
         "defaultMessage": "!!!Disable updates",
         "end": {
           "column": 3,
-          "line": 166
+          "line": 162
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
@@ -4607,26 +4625,26 @@
         "defaultMessage": "!!!Enable Franz Todos",
         "end": {
           "column": 3,
-          "line": 170
+          "line": 166
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableTodos",
         "start": {
           "column": 15,
-          "line": 167
+          "line": 163
         }
       },
       {
         "defaultMessage": "!!!Keep all workspaces loaded",
         "end": {
           "column": 3,
-          "line": 174
+          "line": 170
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.keepAllWorkspacesLoaded",
         "start": {
           "column": 27,
-          "line": 171
+          "line": 167
         }
       }
     ],
@@ -5444,39 +5462,39 @@
         "defaultMessage": "!!!Franz Todos are available to premium users now!",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 30
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.info",
         "start": {
           "column": 15,
-          "line": 17
+          "line": 27
         }
       },
       {
         "defaultMessage": "!!!Upgrade Account",
         "end": {
           "column": 3,
-          "line": 24
+          "line": 34
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.upgrade",
         "start": {
           "column": 14,
-          "line": 21
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Everyone else will have to wait a little longer.",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 38
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.rollout",
         "start": {
           "column": 15,
-          "line": 25
+          "line": 35
         }
       }
     ],

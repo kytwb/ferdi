@@ -1,0 +1,41 @@
+[
+  {
+    "id": "changeserver.headline",
+    "defaultMessage": "!!!Change server",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 11,
+      "column": 12
+    },
+    "end": {
+      "line": 14,
+      "column": 3
+    }
+  },
+  {
+    "id": "changeserver.label",
+    "defaultMessage": "!!!Server",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 15,
+      "column": 9
+    },
+    "end": {
+      "line": 18,
+      "column": 3
+    }
+  },
+  {
+    "id": "changeserver.submit",
+    "defaultMessage": "!!!Submit",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 19,
+      "column": 10
+    },
+    "end": {
+      "line": 22,
+      "column": 3
+    }
+  }
+]

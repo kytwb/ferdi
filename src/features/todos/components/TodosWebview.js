@@ -9,9 +9,19 @@ import { defineMessages, intlShape } from 'react-intl';
 import { mdiCheckAll } from '@mdi/js';
 import SettingsStore from '../../../stores/SettingsStore';
 
-import * as environment from '../../../environment';
 import Appear from '../../../components/ui/effects/Appear';
 import UpgradeButton from '../../../components/ui/UpgradeButton';
+
+// NOTE: https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
+function validURL(str) {
+  const pattern = new RegExp('^(https?:\\/\\/)?' // protocol
+      + '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' // domain name
+      + '((\\d{1,3}\\.){3}\\d{1,3}))' // OR ip (v4) address
+      + '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' // port and path
+      + '(\\?[;&a-z\\d%_.~+=-]*)?' // query string
+      + '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+  return !!pattern.test(str);
+}
 
 const messages = defineMessages({
   premiumInfo: {
@@ -194,6 +204,16 @@ class TodosWebview extends Component {
 
     const { intl } = this.context;
 
+    const isUsingPredefinedTodoServer = stores.settings.all.app.predefinedTodoServer !== 'isUsingCustomTodoService';
+    const todoUrl = isUsingPredefinedTodoServer
+      ? stores.settings.all.app.predefinedTodoServer
+      : stores.settings.all.app.customTodoServer;
+    let isTodoUrlValid = true;
+    if (isUsingPredefinedTodoServer === false) {
+      isTodoUrlValid = validURL(todoUrl);
+    }
+
+
     return (
       <div
         className={classes.root}
@@ -213,6 +233,8 @@ class TodosWebview extends Component {
           />
         )}
         {isTodosIncludedInCurrentPlan ? (
+          isTodoUrlValid
+          && (
           <Webview
             className={classes.webview}
             onDidAttach={() => {
@@ -223,8 +245,9 @@ class TodosWebview extends Component {
             partition="persist:todos"
             preload="./features/todos/preload.js"
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
-            src={stores.settings.all.app.todoServer || environment.TODOS_FRONTEND}
+            src={todoUrl}
           />
+          )
         ) : (
           <Appear>
             <div className={classes.premiumContainer}>

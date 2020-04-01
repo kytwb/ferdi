@@ -20,15 +20,15 @@ const messages = defineMessages({
   },
   contentHeadline: {
     id: 'settings.team.contentHeadline',
-    defaultMessage: '!!!Ferdi for Teams',
+    defaultMessage: '!!!Franz Team Management',
   },
   intro: {
     id: 'settings.team.intro',
-    defaultMessage: '!!!You and your team use Franz? You can now manage Premium subscriptions for as many colleagues, friends or family members as you want, all from within one account.',
+    defaultMessage: '!!!Your are currently using Franz Servers, which is why you have access to Team Management.',
   },
   copy: {
     id: 'settings.team.copy',
-    defaultMessage: '!!!Ferdi for Teams gives you the option to invite co-workers to your team by sending them email invitations and manage their subscriptions in your account’s preferences. Don’t waste time setting up subscriptions for every team member individually, forget about multiple invoices and different billing cycles - one team to rule them all!',
+    defaultMessage: '!!!Franz\'s Team Management allows you to manage Franz Subscriptions for multiple users. Please keep in mind that having a Franz Premium subscription will give you no advantages in using Ferdi: The only reason you still have access to Team Management is so you can manage your legacy Franz Teams and so that you don\'t loose any functionality in managing your account.',
   },
   manageButton: {
     id: 'settings.team.manageAction',

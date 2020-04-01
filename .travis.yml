@@ -23,10 +23,10 @@ before_install:
 install:
   - echo do nothing
 before_script:
-  - npx lerna bootstrap
-  - npm install node-sass -g
+  - travis_retry npx lerna bootstrap
+  - travis_retry npm install node-sass -g
 script:
-  - travis_wait 100 npm run build
+  - travis_retry travis_wait 100 npm run build
 cache: npm
 
 branches:

@@ -51,6 +51,18 @@ export const NAVIGATION_BAR_BEHAVIOURS = {
   never: 'Never show navigation bar',
 };
 
+export const TODO_APPS = {
+  'https://todoist.com/app': 'Todoist',
+  'https://app.franztodos.com': 'Franz Todo',
+  'https://ticktick.com/signin': 'TickTick',
+  'https://todo.microsoft.com/?app#': 'Microsoft To Do',
+  'https://habitica.com/login': 'Habitica',
+  'https://app.nozbe.com/#login': 'Nozbe',
+  'https://www.rememberthemilk.com/login/': 'Remember The Milk',
+  'https://desktop.any.do/': 'Any.do',
+  isUsingCustomTodoService: 'Other service',
+};
+
 export const SIDEBAR_WIDTH = {
   35: 'Extemely slim sidebar',
   45: 'Very slim sidebar',
@@ -95,7 +107,7 @@ export const DEFAULT_APP_SETTINGS = {
 
   // Ferdi specific options
   server: LIVE_API,
-  todoServer: PRODUCTION_TODOS_FRONTEND_URL,
+  predefinedTodoServer: 'https://app.franztodos.com',
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
   locked: false,

@@ -34,6 +34,8 @@ export default class UserStore extends Store {
 
   PASSWORD_ROUTE = `${this.BASE_ROUTE}/password`;
 
+  CHANGE_SERVER_ROUTE = `${this.BASE_ROUTE}/server`;
+
   @observable loginRequest = new Request(this.api.user, 'login');
 
   @observable signupRequest = new Request(this.api.user, 'signup');
@@ -97,7 +99,7 @@ export default class UserStore extends Store {
 
     // Reactions
     this.registerReactions([
-      // this._requireAuthenticatedUser,
+      this._requireAuthenticatedUser,
       this._getUserData.bind(this),
       this._resetTrialActivationState.bind(this),
     ]);
@@ -135,6 +137,10 @@ export default class UserStore extends Store {
 
   get passwordRoute() {
     return this.PASSWORD_ROUTE;
+  }
+
+  get changeServerRoute() {
+    return this.CHANGE_SERVER_ROUTE;
   }
 
   // Data

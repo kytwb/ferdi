@@ -11,7 +11,7 @@ import TodosStore from '../../features/todos/store';
 import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
-  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS,
+  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APPS,
 } from '../../config';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
@@ -19,8 +19,6 @@ import { getSelectOptions } from '../../helpers/i18n-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-
-import { API, TODOS_FRONTEND } from '../../environment';
 
 import globalMessages from '../../i18n/globalMessages';
 import { DEFAULT_IS_FEATURE_ENABLED_BY_USER } from '../../features/todos';
@@ -76,13 +74,13 @@ const messages = defineMessages({
     id: 'settings.app.form.hibernationStrategy',
     defaultMessage: '!!!Hibernation strategy',
   },
-  server: {
-    id: 'settings.app.form.server',
-    defaultMessage: '!!!Server',
-  },
-  todoServer: {
-    id: 'settings.app.form.todoServer',
+  predefinedTodoServer: {
+    id: 'settings.app.form.predefinedTodoServer',
     defaultMessage: '!!!Todo Server',
+  },
+  customTodoServer: {
+    id: 'settings.app.form.customTodoServer',
+    defaultMessage: '!!!Custom TodoServer',
   },
   enableLock: {
     id: 'settings.app.form.enableLock',
@@ -207,8 +205,8 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
         hibernationStrategy: settingsData.hibernationStrategy,
-        server: settingsData.server,
-        todoServer: settingsData.todoServer,
+        predefinedTodoServer: settingsData.predefinedTodoServer,
+        customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
         lockedPassword: settingsData.lockedPassword,
         useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
@@ -277,6 +275,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
 
     const hibernationStrategies = getSelectOptions({
       locales: HIBERNATION_STRATEGIES,
+      sort: false,
+    });
+
+    const todoApp = getSelectOptions({
+      locales: TODO_APPS,
       sort: false,
     });
 
@@ -359,15 +362,16 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           options: hibernationStrategies,
           default: DEFAULT_APP_SETTINGS.hibernationStrategy,
         },
-        server: {
-          label: intl.formatMessage(messages.server),
-          value: settings.all.app.server || API,
-          default: API,
+        predefinedTodoServer: {
+          label: intl.formatMessage(messages.predefinedTodoServer),
+          value: settings.all.app.predefinedTodoServer,
+          default: DEFAULT_APP_SETTINGS.predefinedTodoServer,
+          options: todoApp,
         },
-        todoServer: {
-          label: intl.formatMessage(messages.todoServer),
-          value: settings.all.app.todoServer,
-          default: TODOS_FRONTEND,
+        customTodoServer: {
+          label: intl.formatMessage(messages.customTodoServer),
+          value: settings.all.app.customTodoServer,
+          default: DEFAULT_APP_SETTINGS.customTodoServer,
         },
         lockingFeatureEnabled: {
           label: intl.formatMessage(messages.enableLock),
@@ -541,13 +545,14 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isSpellcheckerIncludedInCurrentPlan={spellcheckerConfig.isIncludedInCurrentPlan}
           isTodosEnabled={todos.isFeatureActive}
           isWorkspaceEnabled={workspaces.isFeatureActive}
-          server={this.props.stores.settings.app.server}
           lockingFeatureEnabled={lockingFeatureEnabled}
           automaticUpdates={this.props.stores.settings.app.automaticUpdates}
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
+          isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
+          isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
           openProcessManager={() => this.openProcessManager()}
         />
       </ErrorBoundary>

@@ -156,12 +156,12 @@
     }
   },
   {
-    "id": "settings.app.form.server",
-    "defaultMessage": "!!!Server",
+    "id": "settings.app.form.predefinedTodoServer",
+    "defaultMessage": "!!!Todo Server",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 79,
-      "column": 10
+      "column": 14
     },
     "end": {
       "line": 82,
@@ -169,8 +169,21 @@
     }
   },
   {
-    "id": "settings.app.form.todoServer",
-    "defaultMessage": "!!!Todo Server",
+    "id": "settings.app.form.customTodoServer",
+    "defaultMessage": "!!!Custom Todo Server",
+    "file": "src/containers/settings/EditSettingsScreen.js",
+    "start": {
+      "line": 79,
+      "column": 14
+    },
+    "end": {
+      "line": 82,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.app.form.enableLock",
+    "defaultMessage": "!!!Enable Password Lock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 83,
@@ -182,28 +195,15 @@
     }
   },
   {
-    "id": "settings.app.form.enableLock",
-    "defaultMessage": "!!!Enable Password Lock",
-    "file": "src/containers/settings/EditSettingsScreen.js",
-    "start": {
-      "line": 87,
-      "column": 14
-    },
-    "end": {
-      "line": 90,
-      "column": 3
-    }
-  },
-  {
     "id": "settings.app.form.lockPassword",
     "defaultMessage": "!!!Password",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 91,
+      "line": 87,
       "column": 16
     },
     "end": {
-      "line": 94,
+      "line": 90,
       "column": 3
     }
   },
@@ -212,11 +212,11 @@
     "defaultMessage": "!!!Allow using Touch ID to unlock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 95,
+      "line": 91,
       "column": 22
     },
     "end": {
-      "line": 98,
+      "line": 94,
       "column": 3
     }
   },
@@ -225,11 +225,11 @@
     "defaultMessage": "!!!Lock after inactivity",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 99,
+      "line": 95,
       "column": 18
     },
     "end": {
-      "line": 102,
+      "line": 98,
       "column": 3
     }
   },
@@ -238,11 +238,11 @@
     "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 103,
+      "line": 99,
       "column": 23
     },
     "end": {
-      "line": 106,
+      "line": 102,
       "column": 3
     }
   },
@@ -251,11 +251,11 @@
     "defaultMessage": "!!!From",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 107,
+      "line": 103,
       "column": 21
     },
     "end": {
-      "line": 110,
+      "line": 106,
       "column": 3
     }
   },
@@ -264,8 +264,21 @@
     "defaultMessage": "!!!To",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 111,
+      "line": 107,
       "column": 19
+    },
+    "end": {
+      "line": 110,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.app.form.language",
+    "defaultMessage": "!!!Language",
+    "file": "src/containers/settings/EditSettingsScreen.js",
+    "start": {
+      "line": 111,
+      "column": 12
     },
     "end": {
       "line": 114,
@@ -273,8 +286,8 @@
     }
   },
   {
-    "id": "settings.app.form.language",
-    "defaultMessage": "!!!Language",
+    "id": "settings.app.form.darkMode",
+    "defaultMessage": "!!!Dark Mode",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 115,
@@ -286,12 +299,12 @@
     }
   },
   {
-    "id": "settings.app.form.darkMode",
-    "defaultMessage": "!!!Dark Mode",
+    "id": "settings.app.form.adaptableDarkMode",
+    "defaultMessage": "!!!Synchronize dark mode with my Mac's dark mode setting",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 119,
-      "column": 12
+      "column": 21
     },
     "end": {
       "line": 122,
@@ -299,8 +312,8 @@
     }
   },
   {
-    "id": "settings.app.form.adaptableDarkMode",
-    "defaultMessage": "!!!Synchronize dark mode with my Mac's dark mode setting",
+    "id": "settings.app.form.universalDarkMode",
+    "defaultMessage": "!!!Enable universal Dark Mode",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 123,
@@ -312,28 +325,15 @@
     }
   },
   {
-    "id": "settings.app.form.universalDarkMode",
-    "defaultMessage": "!!!Enable universal Dark Mode",
-    "file": "src/containers/settings/EditSettingsScreen.js",
-    "start": {
-      "line": 127,
-      "column": 21
-    },
-    "end": {
-      "line": 130,
-      "column": 3
-    }
-  },
-  {
     "id": "settings.app.form.serviceRibbonWidth",
     "defaultMessage": "!!!Sidebar width",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 131,
+      "line": 127,
       "column": 22
     },
     "end": {
-      "line": 134,
+      "line": 130,
       "column": 3
     }
   },
@@ -342,11 +342,11 @@
     "defaultMessage": "!!!Service icon size",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 135,
+      "line": 131,
       "column": 12
     },
     "end": {
-      "line": 138,
+      "line": 134,
       "column": 3
     }
   },
@@ -355,11 +355,11 @@
     "defaultMessage": "!!!Accent color",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 139,
+      "line": 135,
       "column": 15
     },
     "end": {
-      "line": 142,
+      "line": 138,
       "column": 3
     }
   },
@@ -368,11 +368,11 @@
     "defaultMessage": "!!!Display disabled services tabs",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 143,
+      "line": 139,
       "column": 24
     },
     "end": {
-      "line": 146,
+      "line": 142,
       "column": 3
     }
   },
@@ -381,11 +381,11 @@
     "defaultMessage": "!!!Show unread message badge when notifications are disabled",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 147,
+      "line": 143,
       "column": 29
     },
     "end": {
-      "line": 150,
+      "line": 146,
       "column": 3
     }
   },
@@ -394,11 +394,11 @@
     "defaultMessage": "!!!Enable spell checking",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 151,
+      "line": 147,
       "column": 23
     },
     "end": {
-      "line": 154,
+      "line": 150,
       "column": 3
     }
   },
@@ -407,11 +407,11 @@
     "defaultMessage": "!!!Enable GPU Acceleration",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 155,
+      "line": 151,
       "column": 25
     },
     "end": {
-      "line": 158,
+      "line": 154,
       "column": 3
     }
   },
@@ -420,11 +420,11 @@
     "defaultMessage": "!!!Include beta versions",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 159,
+      "line": 155,
       "column": 8
     },
     "end": {
-      "line": 162,
+      "line": 158,
       "column": 3
     }
   },
@@ -437,7 +437,7 @@
       "column": 20
     },
     "end": {
-      "line": 166,
+      "line": 162,
       "column": 3
     }
   },
@@ -446,11 +446,11 @@
     "defaultMessage": "!!!Enable Franz Todos",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 167,
+      "line": 163,
       "column": 15
     },
     "end": {
-      "line": 170,
+      "line": 166,
       "column": 3
     }
   },
@@ -459,11 +459,11 @@
     "defaultMessage": "!!!Keep all workspaces loaded",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 171,
+      "line": 167,
       "column": 27
     },
     "end": {
-      "line": 174,
+      "line": 170,
       "column": 3
     }
   }
