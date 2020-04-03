@@ -160,7 +160,7 @@ const messages = defineMessages({
   },
   automaticUpdates: {
     id: 'settings.app.form.automaticUpdates',
-    defaultMessage: '!!!Disable updates',
+    defaultMessage: '!!!Enable updates',
   },
   enableTodos: {
     id: 'settings.app.form.enableTodos',
