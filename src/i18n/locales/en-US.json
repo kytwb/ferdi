@@ -276,7 +276,7 @@
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Open in background",
   "settings.app.form.autoLaunchOnStart": "Launch Ferdi on start",
-  "settings.app.form.automaticUpdates": "Enable automatic updates",
+  "settings.app.form.automaticUpdates": "Enable updates",
   "settings.app.form.beta": "Include beta versions",
   "settings.app.form.customTodoServer": "Custom Todo Server",
   "settings.app.form.darkMode": "Enable dark mode",
