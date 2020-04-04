@@ -111,6 +111,10 @@ const menuItems = defineMessages({
     id: 'menu.view.toggleFullScreen',
     defaultMessage: '!!!Toggle Full Screen',
   },
+  toggleDarkMode: {
+    id: 'menu.view.toggleDarkMode',
+    defaultMessage: '!!!Toggle Dark Mode',
+  },
   toggleDevTools: {
     id: 'menu.view.toggleDevTools',
     defaultMessage: '!!!Toggle Developer Tools',
@@ -457,6 +461,20 @@ const _templateFactory = (intl, locked) => [
           : intl.formatMessage(menuItems.enterFullScreen),
         role: 'togglefullscreen',
       },
+      {
+        label: intl.formatMessage(menuItems.toggleDarkMode),
+        type: 'checkbox',
+        accelerator: `${cmdKey}+Shift+D`,
+        checked: window.ferdi.stores.settings.app.darkMode,
+        click: () => {
+          window.ferdi.actions.settings.update({
+            type: 'app',
+            data: {
+              darkMode: !window.ferdi.stores.settings.app.darkMode,
+            },
+          });
+        },
+      },
     ],
   },
   {
@@ -687,6 +705,20 @@ const _titleBarTemplateFactory = (intl, locked) => [
         accelerator: 'F11',
         click(menuItem, browserWindow) {
           browserWindow.setFullScreen(!browserWindow.isFullScreen());
+        },
+      },
+      {
+        label: intl.formatMessage(menuItems.toggleDarkMode),
+        type: 'checkbox',
+        accelerator: `${cmdKey}+Shift+D`,
+        checked: window.ferdi.stores.settings.app.darkMode,
+        click: () => {
+          window.ferdi.actions.settings.update({
+            type: 'app',
+            data: {
+              darkMode: !window.ferdi.stores.settings.app.darkMode,
+            },
+          });
         },
       },
       {

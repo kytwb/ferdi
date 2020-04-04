@@ -116,6 +116,7 @@
   "menu.view.reloadService": "Athlódáil seirbhís",
   "menu.view.resetZoom": "Fíormhéid",
   "menu.view.toggleDevTools": "Scoránaigh uirlis forbróra",
+  "menu.view.toggleDarkMode": "Toggle Dark Mode",
   "menu.view.toggleFullScreen": "Scoránaigh mód lánscáileáin",
   "menu.view.toggleServiceDevTools": "Scoránaigh uirlis forbróra seirbhíse",
   "menu.view.toggleTodosDevTools": "Toggle Todos Developer Tools",

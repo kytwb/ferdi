@@ -155,6 +155,7 @@
   "menu.view.reloadService": "Reload Service",
   "menu.view.resetZoom": "Actual Size",
   "menu.view.toggleDevTools": "Toggle Developer Tools",
+  "menu.view.toggleDarkMode": "Toggle Dark Mode",
   "menu.view.toggleFullScreen": "Toggle Full Screen",
   "menu.view.toggleServiceDevTools": "Toggle Service Developer Tools",
   "menu.view.toggleTodosDevTools": "Toggle Todos Developer Tools",
