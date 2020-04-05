@@ -4570,19 +4570,6 @@
         }
       },
       {
-        "defaultMessage": "!!!Show draggable area on window",
-        "end": {
-          "column": 3,
-          "line": 152
-        },
-        "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.showDragArea",
-        "start": {
-          "column": 16,
-          "line": 149
-        }
-      },
-      {
         "defaultMessage": "!!!Enable spell checking",
         "end": {
           "column": 3,
