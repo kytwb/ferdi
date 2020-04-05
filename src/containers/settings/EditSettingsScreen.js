@@ -40,7 +40,7 @@ const messages = defineMessages({
   },
   startMinimized: {
     id: 'settings.app.form.startMinimized',
-    defaultMessage: '!!!Start minimized in tray',
+    defaultMessage: '!!!Start minimized',
   },
   enableSystemTray: {
     id: 'settings.app.form.enableSystemTray',
@@ -559,7 +559,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           noUpdates={this.props.stores.settings.app.noUpdates}
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
-          isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
           isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}

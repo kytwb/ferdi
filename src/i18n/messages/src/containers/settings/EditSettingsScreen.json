@@ -40,7 +40,7 @@
   },
   {
     "id": "settings.app.form.startMinimized",
-    "defaultMessage": "!!!Start minimized in tray",
+    "defaultMessage": "!!!Start minimized",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 41,
@@ -407,11 +407,11 @@
     "defaultMessage": "!!!Enable spell checking",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 153,
+      "line": 149,
       "column": 23
     },
     "end": {
-      "line": 156,
+      "line": 152,
       "column": 3
     }
   },
@@ -420,11 +420,11 @@
     "defaultMessage": "!!!Enable GPU Acceleration",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 157,
+      "line": 153,
       "column": 25
     },
     "end": {
-      "line": 160,
+      "line": 156,
       "column": 3
     }
   },
@@ -433,11 +433,11 @@
     "defaultMessage": "!!!Include beta versions",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 161,
+      "line": 157,
       "column": 8
     },
     "end": {
-      "line": 164,
+      "line": 160,
       "column": 3
     }
   },
@@ -446,11 +446,11 @@
     "defaultMessage": "!!!Disable updates",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 165,
+      "line": 161,
       "column": 13
     },
     "end": {
-      "line": 168,
+      "line": 164,
       "column": 3
     }
   },
@@ -459,11 +459,11 @@
     "defaultMessage": "!!!Enable Franz Todos",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 169,
+      "line": 165,
       "column": 15
     },
     "end": {
-      "line": 172,
+      "line": 168,
       "column": 3
     }
   },
@@ -472,11 +472,11 @@
     "defaultMessage": "!!!Keep all workspaces loaded",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 173,
+      "line": 169,
       "column": 27
     },
     "end": {
-      "line": 176,
+      "line": 172,
       "column": 3
     }
   }
