@@ -4609,7 +4609,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Disable updates",
+        "defaultMessage": "!!!Enable updates",
         "end": {
           "column": 3,
           "line": 164
