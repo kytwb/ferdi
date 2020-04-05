@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-45-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-46-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -343,6 +343,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://crowdin.com/profile/johanengstrand"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14152801/small/fd395f120efca971ca9b34c57fd02cca.png" width="40px;" alt=""/><br /><sub><b>Johan Engstrand</b></sub></a><br /><a href="#translation-johanengstrand" title="Translation">🌍</a></td>
     <td align="center"><a href="https://mrassili.com"><img src="https://avatars0.githubusercontent.com/u/25288435?v=4" width="40px;" alt=""/><br /><sub><b>Marouane R</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mrassili" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/yourcontact"><img src="https://avatars2.githubusercontent.com/u/46404814?v=4" width="40px;" alt=""/><br /><sub><b>Roman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=yourcontact" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a></td>
   </tr>
 </table>
 
