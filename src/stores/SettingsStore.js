@@ -282,5 +282,23 @@ export default class SettingsStore extends Store {
 
       debug('Migrated old todo setting to new custom todo setting');
     }
+
+    if (!this.all.migration['5.4.4-beta.4-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          automaticUpdates: !(legacySettings.noUpdates),
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.4.4-beta.4-settings': true,
+        },
+      });
+
+      debug('Migrated updates settings');
+    }
   }
 }
