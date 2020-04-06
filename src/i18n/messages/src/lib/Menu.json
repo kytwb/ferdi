@@ -325,6 +325,19 @@
     }
   },
   {
+    "id": "menu.view.toggleDarkMode",
+    "defaultMessage": "!!!Toggle Dark Mode",
+    "file": "src/lib/Menu.js",
+    "start": {
+      "line": 114,
+      "column": 18
+    },
+    "end": {
+      "line": 117,
+      "column": 3
+    }
+  },
+  {
     "id": "menu.view.toggleTodosDevTools",
     "defaultMessage": "!!!Toggle Todos Developer Tools",
     "file": "src/lib/Menu.js",

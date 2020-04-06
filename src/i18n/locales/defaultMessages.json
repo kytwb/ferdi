@@ -4219,7 +4219,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Start minimized in tray",
+        "defaultMessage": "!!!Start minimized",
         "end": {
           "column": 3,
           "line": 44
@@ -4617,6 +4617,7 @@
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
+
           "column": 20,
           "line": 161
         }
@@ -6719,6 +6720,19 @@
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleDevTools",
+        "start": {
+          "column": 18,
+          "line": 114
+        }
+      },
+      {
+        "defaultMessage": "!!!Toggle Dark Mode",
+        "end": {
+          "column": 3,
+          "line": 117
+        },
+        "file": "src/lib/Menu.js",
+        "id": "menu.view.toggleDarkMode",
         "start": {
           "column": 18,
           "line": 114

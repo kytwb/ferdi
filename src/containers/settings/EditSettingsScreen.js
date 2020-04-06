@@ -40,7 +40,7 @@ const messages = defineMessages({
   },
   startMinimized: {
     id: 'settings.app.form.startMinimized',
-    defaultMessage: '!!!Start minimized in tray',
+    defaultMessage: '!!!Start minimized',
   },
   enableSystemTray: {
     id: 'settings.app.form.enableSystemTray',
@@ -146,6 +146,10 @@ const messages = defineMessages({
     id: 'settings.app.form.showMessagesBadgesWhenMuted',
     defaultMessage: '!!!Show unread message badge when notifications are disabled',
   },
+  showDragArea: {
+    id: 'settings.app.form.showDragArea',
+    defaultMessage: '!!!Show draggable area on window',
+  },
   enableSpellchecking: {
     id: 'settings.app.form.enableSpellchecking',
     defaultMessage: '!!!Enable spell checking',
@@ -223,6 +227,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         iconSize: settingsData.iconSize,
         accentColor: settingsData.accentColor,
         showMessageBadgeWhenMuted: settingsData.showMessageBadgeWhenMuted,
+        showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
         spellcheckerLanguage: settingsData.spellcheckerLanguage,
         beta: settingsData.beta, // we need this info in the main process as well
@@ -422,6 +427,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.showMessageBadgeWhenMuted,
           default: DEFAULT_APP_SETTINGS.showMessageBadgeWhenMuted,
         },
+        showDragArea: {
+          label: intl.formatMessage(messages.showDragArea),
+          value: settings.all.app.showDragArea,
+          default: DEFAULT_APP_SETTINGS.showDragArea,
+        },
         enableSpellchecking: {
           label: intl.formatMessage(messages.enableSpellchecking),
           value: !this.props.stores.user.data.isPremium && !spellcheckerConfig.isIncludedInCurrentPlan ? false : settings.all.app.enableSpellchecking,
@@ -549,7 +559,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           automaticUpdates={this.props.stores.settings.app.automaticUpdates}
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
-          isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
           isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}

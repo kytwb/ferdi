@@ -40,7 +40,7 @@
   },
   {
     "id": "settings.app.form.startMinimized",
-    "defaultMessage": "!!!Start minimized in tray",
+    "defaultMessage": "!!!Start minimized",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 41,
