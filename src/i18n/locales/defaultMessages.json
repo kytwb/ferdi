@@ -4617,7 +4617,6 @@
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
-
           "column": 20,
           "line": 161
         }
