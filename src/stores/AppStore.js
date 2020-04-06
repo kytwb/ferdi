@@ -179,7 +179,7 @@ export default class AppStore extends Store {
       this.stores.router.push(url);
     });
 
-    ipcRenderer.on('muteApp', (event, args) => {
+    ipcRenderer.on('muteApp', () => {
       this._toggleMuteApp();
     });
 

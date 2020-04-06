@@ -1,5 +1,5 @@
 import {
-  app, Menu, nativeImage, nativeTheme, systemPreferences, Tray, ipcMain
+  app, Menu, nativeImage, nativeTheme, systemPreferences, Tray, ipcMain,
 } from 'electron';
 import path from 'path';
 
@@ -13,7 +13,9 @@ export default class TrayIcon {
   indicator = 0;
 
   themeChangeSubscriberId = null;
+
   trayMenu = null;
+
   trayMenuTemplate = [
     {
       label: 'Show Ferdi',
@@ -24,12 +26,12 @@ export default class TrayIcon {
         app.mainWindow.show();
         app.mainWindow.focus();
       },
-    }, 
+    },
     {
       label: 'Disable Notifications & Audio',
       click() {
-        app.mainWindow.webContents.send('muteApp', '.');
-      }
+        app.mainWindow.webContents.send('muteApp');
+      },
     },
     {
       label: 'Quit Ferdi',
