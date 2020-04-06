@@ -521,9 +521,9 @@ export default @observer class EditSettingsForm extends Component {
                     loaded={!isCheckingForUpdates || !isUpdateAvailable}
                   />
                 )}
+                <br />
               </div>
             )}
-            <br />
             {intl.formatMessage(messages.currentVersion)}
             {' '}
             {remote.app.getVersion()}
