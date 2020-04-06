@@ -146,6 +146,10 @@ const messages = defineMessages({
     id: 'settings.app.form.showMessagesBadgesWhenMuted',
     defaultMessage: '!!!Show unread message badge when notifications are disabled',
   },
+  showDragArea: {
+    id: 'settings.app.form.showDragArea',
+    defaultMessage: '!!!Show draggable area on window',
+  },
   enableSpellchecking: {
     id: 'settings.app.form.enableSpellchecking',
     defaultMessage: '!!!Enable spell checking',
@@ -223,6 +227,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         iconSize: settingsData.iconSize,
         accentColor: settingsData.accentColor,
         showMessageBadgeWhenMuted: settingsData.showMessageBadgeWhenMuted,
+        showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
         spellcheckerLanguage: settingsData.spellcheckerLanguage,
         beta: settingsData.beta, // we need this info in the main process as well
@@ -421,6 +426,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.showMessageBadgeWhenMuted),
           value: settings.all.app.showMessageBadgeWhenMuted,
           default: DEFAULT_APP_SETTINGS.showMessageBadgeWhenMuted,
+        },
+        showDragArea: {
+          label: intl.formatMessage(messages.showDragArea),
+          value: settings.all.app.showDragArea,
+          default: DEFAULT_APP_SETTINGS.showDragArea,
         },
         enableSpellchecking: {
           label: intl.formatMessage(messages.enableSpellchecking),

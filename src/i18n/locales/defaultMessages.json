@@ -6725,6 +6725,19 @@
         }
       },
       {
+        "defaultMessage": "!!!Toggle Dark Mode",
+        "end": {
+          "column": 3,
+          "line": 117
+        },
+        "file": "src/lib/Menu.js",
+        "id": "menu.view.toggleDarkMode",
+        "start": {
+          "column": 18,
+          "line": 114
+        }
+      },
+      {
         "defaultMessage": "!!!Toggle Todos Developer Tools",
         "end": {
           "column": 3,
