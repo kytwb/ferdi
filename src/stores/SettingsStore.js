@@ -110,6 +110,7 @@ export default class SettingsStore extends Store {
       }
       debug('Get appSettings resolves', resp.type, resp.data);
       Object.assign(this._fileSystemSettingsCache[resp.type], resp.data);
+      ipcRenderer.send('initialAppSettings', resp);
     });
 
     this.fileSystemSettingsTypes.forEach((type) => {
