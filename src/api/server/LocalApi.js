@@ -42,24 +42,17 @@ export default class LocalApi {
   }
 
   async clearCache(serviceId) {
-    const s = session.fromPartition(`persist:service-${serviceId}`);
+    const s = serviceId ? session.fromPartition(`persist:service-${serviceId}`) : session.defaultSession;
 
-    debug('LocalApi::clearCache resolves', serviceId);
+    debug('LocalApi::clearCache resolves', (serviceId || 'clearAppCache'));
     await s.clearStorageData({
       storages: ['appcache', 'cookies', 'filesystem', 'indexdb', 'localstorage', 'shadercache', 'websql', 'serviceworkers', 'cachestorage'],
-      quotas: ['temporary', 'persistent', 'syncable']                
+      quotas: ['temporary', 'persistent', 'syncable'],
     });
     return s.clearCache();
   }
 
   async clearAppCache() {
-    const s = session.defaultSession;
-
-    debug('LocalApi::clearCache clearAppCache');
-    await s.clearStorageData({
-      storages: ['appcache', 'cookies', 'filesystem', 'indexdb', 'localstorage', 'shadercache', 'websql', 'serviceworkers', 'cachestorage'],
-      quotas: ['temporary', 'persistent', 'syncable']                
-    });
-    return s.clearCache();
+    return this.clearCache();
   }
 }
