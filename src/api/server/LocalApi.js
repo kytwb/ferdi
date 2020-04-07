@@ -41,7 +41,7 @@ export default class LocalApi {
     });
   }
 
-  async clearCache(serviceId) {
+  async clearCache(serviceId = null) {
     const s = serviceId ? session.fromPartition(`persist:service-${serviceId}`) : session.defaultSession;
 
     debug('LocalApi::clearCache resolves', (serviceId || 'clearAppCache'));
@@ -50,9 +50,5 @@ export default class LocalApi {
       quotas: ['temporary', 'persistent', 'syncable'],
     });
     return s.clearCache();
-  }
-
-  async clearAppCache() {
-    return this.clearCache();
   }
 }
