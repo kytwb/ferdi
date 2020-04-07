@@ -374,8 +374,11 @@ export default class AppStore extends Store {
     const allServiceIds = await getServiceIdsFromPartitions();
     const allOrphanedServiceIds = allServiceIds.filter(id => !this.stores.services.all.find(s => id.replace('service-', '') === s.id));
 
-    await Promise.all(allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)));
-
+    try {
+      await Promise.all(allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)));
+    } catch (ex) {
+      console.log('Error while deleting service partition directory - ', ex);
+    }
     await Promise.all(this.stores.services.all.map(s => this.actions.service.clearCache({ serviceId: s.id })));
 
     await clearAppCache._promise;
