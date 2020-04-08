@@ -120,7 +120,7 @@ const messages = defineMessages({
   },
   adaptableDarkMode: {
     id: 'settings.app.form.adaptableDarkMode',
-    defaultMessage: '!!!Synchronize dark mode with my Mac\'s dark mode setting',
+    defaultMessage: '!!!Synchronize dark mode with my OS\'s dark mode setting',
   },
   universalDarkMode: {
     id: 'settings.app.form.universalDarkMode',

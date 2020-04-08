@@ -270,7 +270,7 @@
   "settings.app.cacheInfo": "Ferdi predmemorija trenutno koristi {size} prostora na disku",
   "settings.app.currentVersion": "Trenutna verzija:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Otvori u pozadini",
   "settings.app.form.autoLaunchOnStart": "Pokreni Ferdi sa sistemom",
   "settings.app.form.beta": "Obuhvati i beta verzije",

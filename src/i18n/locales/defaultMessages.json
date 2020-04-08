@@ -4479,7 +4479,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Synchronize dark mode with my Mac's dark mode setting",
+        "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
         "end": {
           "column": 3,
           "line": 124

@@ -270,7 +270,7 @@
   "settings.app.cacheInfo": "Ferdi cache is currently using {size} of disk space.",
   "settings.app.currentVersion": "ამჟამინდელი ვერსია:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "გახსენით ფონზე",
   "settings.app.form.autoLaunchOnStart": "გაეშვას Ferdi სისტემის ჩატვირთვისას",
   "settings.app.form.beta": "ჩართეთ ბეტა ვერსიები",

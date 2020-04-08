@@ -5,14 +5,14 @@ import { theme } from '@meetfranz/theme';
 import { remote } from 'electron';
 
 import Store from './lib/Store';
-import { isMac } from '../environment';
+import { isMac, isWindows } from '../environment';
 
 const { nativeTheme, systemPreferences } = remote;
 
 export default class UIStore extends Store {
   @observable showServicesUpdatedInfoBar = false;
 
-  @observable isOsDarkThemeActive = isMac
+  @observable isOsDarkThemeActive = (isMac || isWindows)
     ? nativeTheme.shouldUseDarkColors
     : false;
 
@@ -36,6 +36,13 @@ export default class UIStore extends Store {
         },
       );
     }
+
+    if (isWindows) {
+      nativeTheme.on('updated', () => {
+        this.isOsDarkThemeActive = nativeTheme.shouldUseDarkColors;
+        this.actions.service.shareSettingsWithServiceProcess();
+      });
+    }
   }
 
   setup() {
@@ -56,16 +63,16 @@ export default class UIStore extends Store {
   }
 
   @computed get isDarkThemeActive() {
-    const isMacWithAdaptableInDarkMode = isMac
+    const isMacOrWindowsWithAdaptableInDarkMode = (isMac || isWindows)
       && this.stores.settings.all.app.adaptableDarkMode
       && this.isOsDarkThemeActive;
-    const isMacWithoutAdaptableInDarkMode = isMac
+    const isMacOrWindowsWithoutAdaptableInDarkMode = (isMac || isWindows)
       && this.stores.settings.all.app.darkMode
       && !this.stores.settings.all.app.adaptableDarkMode;
-    const isNotMacInDarkMode = !isMac && this.stores.settings.all.app.darkMode;
-    return !!(isMacWithAdaptableInDarkMode
-      || isMacWithoutAdaptableInDarkMode
-      || isNotMacInDarkMode);
+    const isMacOrWindowsNotInDarkMode = !(isMac || isWindows) && this.stores.settings.all.app.darkMode;
+    return !!(isMacOrWindowsWithAdaptableInDarkMode
+      || isMacOrWindowsWithoutAdaptableInDarkMode
+      || isMacOrWindowsNotInDarkMode);
   }
 
   @computed get theme() {

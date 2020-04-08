@@ -270,7 +270,7 @@
   "settings.app.cacheInfo": "Singgahan Ferdi sedang menggunakan ruang disk {size}.",
   "settings.app.currentVersion": "Versi saat ini:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Buka di latar belakang",
   "settings.app.form.autoLaunchOnStart": "Jalankan Ferdi saat komputer dimulai",
   "settings.app.form.beta": "Sertakan versi beta",

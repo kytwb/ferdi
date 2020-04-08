@@ -12,7 +12,7 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
 import { FRANZ_TRANSLATION } from '../../../config';
-import { isMac } from '../../../environment';
+import { isMac, isWindows } from '../../../environment';
 
 const {
   systemPreferences,
@@ -405,8 +405,8 @@ export default @observer class EditSettingsForm extends Component {
 
             <Hr />
 
-            {isMac && <Toggle field={form.$('adaptableDarkMode')} />}
-            {!(isMac && isAdaptableDarkModeEnabled) && <Toggle field={form.$('darkMode')} />}
+            {(isMac || isWindows) && <Toggle field={form.$('adaptableDarkMode')} />}
+            {!((isMac || isWindows) && isAdaptableDarkModeEnabled) && <Toggle field={form.$('darkMode')} />}
             {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
               <>
                 <Toggle field={form.$('universalDarkMode')} />
@@ -530,9 +530,11 @@ export default @observer class EditSettingsForm extends Component {
 
               <span className="mdi mdi-github-face" />
               <span>
+
                 Ferdi is based on
                 {' '}
                 <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
+
                 , a project published
                 under the
                 {' '}
