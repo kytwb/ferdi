@@ -390,15 +390,28 @@
     }
   },
   {
+    "id": "settings.app.form.showDragArea",
+    "defaultMessage": "!!!Show draggable area on window",
+    "file": "src/containers/settings/EditSettingsScreen.js",
+    "start": {
+      "line": 149,
+      "column": 16
+    },
+    "end": {
+      "line": 152,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.app.form.enableSpellchecking",
     "defaultMessage": "!!!Enable spell checking",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 149,
+      "line": 153,
       "column": 23
     },
     "end": {
-      "line": 152,
+      "line": 156,
       "column": 3
     }
   },
@@ -407,11 +420,11 @@
     "defaultMessage": "!!!Enable GPU Acceleration",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 153,
+      "line": 157,
       "column": 25
     },
     "end": {
-      "line": 156,
+      "line": 160,
       "column": 3
     }
   },
@@ -420,11 +433,11 @@
     "defaultMessage": "!!!Include beta versions",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 157,
+      "line": 161,
       "column": 8
     },
     "end": {
-      "line": 160,
+      "line": 164,
       "column": 3
     }
   },
@@ -433,11 +446,11 @@
     "defaultMessage": "!!!Enable updates",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 161,
+      "line": 165,
       "column": 20
     },
     "end": {
-      "line": 164,
+      "line": 168,
       "column": 3
     }
   },
@@ -446,11 +459,11 @@
     "defaultMessage": "!!!Enable Franz Todos",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 165,
+      "line": 169,
       "column": 15
     },
     "end": {
-      "line": 168,
+      "line": 172,
       "column": 3
     }
   },
@@ -459,11 +472,11 @@
     "defaultMessage": "!!!Keep all workspaces loaded",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 169,
+      "line": 173,
       "column": 27
     },
     "end": {
-      "line": 172,
+      "line": 176,
       "column": 3
     }
   }

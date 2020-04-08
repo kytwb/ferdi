@@ -4570,81 +4570,94 @@
         }
       },
       {
-        "defaultMessage": "!!!Enable spell checking",
+        "defaultMessage": "!!!Show draggable area on window",
         "end": {
           "column": 3,
           "line": 152
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.showDragArea",
+        "start": {
+          "column": 16,
+          "line": 149
+        }
+      },
+      {
+        "defaultMessage": "!!!Enable spell checking",
+        "end": {
+          "column": 3,
+          "line": 156
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSpellchecking",
         "start": {
           "column": 23,
-          "line": 149
+          "line": 153
         }
       },
       {
         "defaultMessage": "!!!Enable GPU Acceleration",
         "end": {
           "column": 3,
-          "line": 156
+          "line": 160
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableGPUAcceleration",
         "start": {
           "column": 25,
-          "line": 153
+          "line": 157
         }
       },
       {
         "defaultMessage": "!!!Include beta versions",
         "end": {
           "column": 3,
-          "line": 160
+          "line": 164
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.beta",
         "start": {
           "column": 8,
-          "line": 157
+          "line": 161
         }
       },
       {
         "defaultMessage": "!!!Enable updates",
         "end": {
           "column": 3,
-          "line": 164
+          "line": 168
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
           "column": 20,
-          "line": 161
+          "line": 165
         }
       },
       {
         "defaultMessage": "!!!Enable Franz Todos",
         "end": {
           "column": 3,
-          "line": 168
+          "line": 172
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableTodos",
         "start": {
           "column": 15,
-          "line": 165
+          "line": 169
         }
       },
       {
         "defaultMessage": "!!!Keep all workspaces loaded",
         "end": {
           "column": 3,
-          "line": 172
+          "line": 176
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.keepAllWorkspacesLoaded",
         "start": {
           "column": 27,
-          "line": 169
+          "line": 173
         }
       }
     ],
