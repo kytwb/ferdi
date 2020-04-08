@@ -527,11 +527,15 @@ export default @observer class EditSettingsForm extends Component {
             {intl.formatMessage(messages.currentVersion)}
             {' '}
             {remote.app.getVersion()}
-            <br />
-            <br />
-            {noUpdateAvailable && intl.formatMessage(messages.updateStatusUpToDate)}
+            {noUpdateAvailable && (
+              <>
+                <br />
+                <br />
+                {intl.formatMessage(messages.updateStatusUpToDate)}
+              </>
+            )
+            }
             <p className="settings__message">
-
               <span className="mdi mdi-github-face" />
               <span>
                 Ferdi is based on
