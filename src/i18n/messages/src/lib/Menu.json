@@ -312,19 +312,6 @@
     }
   },
   {
-    "id": "menu.view.toggleDevTools",
-    "defaultMessage": "!!!Toggle Developer Tools",
-    "file": "src/lib/Menu.js",
-    "start": {
-      "line": 114,
-      "column": 18
-    },
-    "end": {
-      "line": 117,
-      "column": 3
-    }
-  },
-  {
     "id": "menu.view.toggleDarkMode",
     "defaultMessage": "!!!Toggle Dark Mode",
     "file": "src/lib/Menu.js",
@@ -338,15 +325,28 @@
     }
   },
   {
+    "id": "menu.view.toggleDevTools",
+    "defaultMessage": "!!!Toggle Developer Tools",
+    "file": "src/lib/Menu.js",
+    "start": {
+      "line": 118,
+      "column": 18
+    },
+    "end": {
+      "line": 121,
+      "column": 3
+    }
+  },
+  {
     "id": "menu.view.toggleTodosDevTools",
     "defaultMessage": "!!!Toggle Todos Developer Tools",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 118,
+      "line": 122,
       "column": 23
     },
     "end": {
-      "line": 121,
+      "line": 125,
       "column": 3
     }
   },
@@ -355,11 +355,11 @@
     "defaultMessage": "!!!Toggle Service Developer Tools",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 122,
+      "line": 126,
       "column": 25
     },
     "end": {
-      "line": 125,
+      "line": 129,
       "column": 3
     }
   },
@@ -368,11 +368,11 @@
     "defaultMessage": "!!!Reload Service",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 126,
+      "line": 130,
       "column": 17
     },
     "end": {
-      "line": 129,
+      "line": 133,
       "column": 3
     }
   },
@@ -381,11 +381,11 @@
     "defaultMessage": "!!!Reload Ferdi",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 130,
+      "line": 134,
       "column": 15
     },
     "end": {
-      "line": 133,
+      "line": 137,
       "column": 3
     }
   },
@@ -394,11 +394,11 @@
     "defaultMessage": "!!!Lock Ferdi",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 134,
+      "line": 138,
       "column": 13
     },
     "end": {
-      "line": 137,
+      "line": 141,
       "column": 3
     }
   },
@@ -407,11 +407,11 @@
     "defaultMessage": "!!!Minimize",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 138,
+      "line": 142,
       "column": 12
     },
     "end": {
-      "line": 141,
+      "line": 145,
       "column": 3
     }
   },
@@ -420,21 +420,8 @@
     "defaultMessage": "!!!Close",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 142,
-      "column": 9
-    },
-    "end": {
-      "line": 145,
-      "column": 3
-    }
-  },
-  {
-    "id": "menu.help.learnMore",
-    "defaultMessage": "!!!Learn More",
-    "file": "src/lib/Menu.js",
-    "start": {
       "line": 146,
-      "column": 13
+      "column": 9
     },
     "end": {
       "line": 149,
@@ -442,8 +429,8 @@
     }
   },
   {
-    "id": "menu.help.changelog",
-    "defaultMessage": "!!!Changelog",
+    "id": "menu.help.learnMore",
+    "defaultMessage": "!!!Learn More",
     "file": "src/lib/Menu.js",
     "start": {
       "line": 150,
@@ -455,15 +442,28 @@
     }
   },
   {
+    "id": "menu.help.changelog",
+    "defaultMessage": "!!!Changelog",
+    "file": "src/lib/Menu.js",
+    "start": {
+      "line": 154,
+      "column": 13
+    },
+    "end": {
+      "line": 157,
+      "column": 3
+    }
+  },
+  {
     "id": "menu.help.support",
     "defaultMessage": "!!!Support",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 154,
+      "line": 158,
       "column": 11
     },
     "end": {
-      "line": 157,
+      "line": 161,
       "column": 3
     }
   },
@@ -472,11 +472,11 @@
     "defaultMessage": "!!!Copy Debug Information",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 158,
+      "line": 162,
       "column": 13
     },
     "end": {
-      "line": 161,
+      "line": 165,
       "column": 3
     }
   },
@@ -485,11 +485,11 @@
     "defaultMessage": "!!!Publish Debug Information",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 162,
+      "line": 166,
       "column": 20
     },
     "end": {
-      "line": 165,
+      "line": 169,
       "column": 3
     }
   },
@@ -498,11 +498,11 @@
     "defaultMessage": "!!!Ferdi Debug Information",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 166,
+      "line": 170,
       "column": 27
     },
     "end": {
-      "line": 169,
+      "line": 173,
       "column": 3
     }
   },
@@ -511,11 +511,11 @@
     "defaultMessage": "!!!Your Debug Information has been copied to your clipboard.",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 170,
+      "line": 174,
       "column": 23
     },
     "end": {
-      "line": 173,
+      "line": 177,
       "column": 3
     }
   },
@@ -524,11 +524,11 @@
     "defaultMessage": "!!!Unlock with Touch ID",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 174,
+      "line": 178,
       "column": 11
     },
     "end": {
-      "line": 177,
+      "line": 181,
       "column": 3
     }
   },
@@ -537,11 +537,11 @@
     "defaultMessage": "!!!unlock via Touch ID",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 178,
+      "line": 182,
       "column": 17
     },
     "end": {
-      "line": 181,
+      "line": 185,
       "column": 3
     }
   },
@@ -550,11 +550,11 @@
     "defaultMessage": "!!!Terms of Service",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 182,
+      "line": 186,
       "column": 7
     },
     "end": {
-      "line": 185,
+      "line": 189,
       "column": 3
     }
   },
@@ -563,21 +563,8 @@
     "defaultMessage": "!!!Privacy Statement",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 186,
-      "column": 11
-    },
-    "end": {
-      "line": 189,
-      "column": 3
-    }
-  },
-  {
-    "id": "menu.file",
-    "defaultMessage": "!!!File",
-    "file": "src/lib/Menu.js",
-    "start": {
       "line": 190,
-      "column": 8
+      "column": 11
     },
     "end": {
       "line": 193,
@@ -585,8 +572,8 @@
     }
   },
   {
-    "id": "menu.view",
-    "defaultMessage": "!!!View",
+    "id": "menu.file",
+    "defaultMessage": "!!!File",
     "file": "src/lib/Menu.js",
     "start": {
       "line": 194,
@@ -598,15 +585,28 @@
     }
   },
   {
+    "id": "menu.view",
+    "defaultMessage": "!!!View",
+    "file": "src/lib/Menu.js",
+    "start": {
+      "line": 198,
+      "column": 8
+    },
+    "end": {
+      "line": 201,
+      "column": 3
+    }
+  },
+  {
     "id": "menu.services",
     "defaultMessage": "!!!Services",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 198,
+      "line": 202,
       "column": 12
     },
     "end": {
-      "line": 201,
+      "line": 205,
       "column": 3
     }
   },
@@ -615,11 +615,11 @@
     "defaultMessage": "!!!Window",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 202,
+      "line": 206,
       "column": 10
     },
     "end": {
-      "line": 205,
+      "line": 209,
       "column": 3
     }
   },
@@ -628,11 +628,11 @@
     "defaultMessage": "!!!Help",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 206,
+      "line": 210,
       "column": 8
     },
     "end": {
-      "line": 209,
+      "line": 213,
       "column": 3
     }
   },
@@ -641,11 +641,11 @@
     "defaultMessage": "!!!About Ferdi",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 210,
+      "line": 214,
       "column": 9
     },
     "end": {
-      "line": 213,
+      "line": 217,
       "column": 3
     }
   },
@@ -654,11 +654,11 @@
     "defaultMessage": "!!!What's new?",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 214,
+      "line": 218,
       "column": 16
     },
     "end": {
-      "line": 217,
+      "line": 221,
       "column": 3
     }
   },
@@ -667,11 +667,11 @@
     "defaultMessage": "!!!Settings",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 218,
+      "line": 222,
       "column": 12
     },
     "end": {
-      "line": 221,
+      "line": 225,
       "column": 3
     }
   },
@@ -680,11 +680,11 @@
     "defaultMessage": "!!!Check for updates",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 222,
+      "line": 226,
       "column": 19
     },
     "end": {
-      "line": 225,
+      "line": 229,
       "column": 3
     }
   },
@@ -693,11 +693,11 @@
     "defaultMessage": "!!!Hide",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 226,
+      "line": 230,
       "column": 8
     },
     "end": {
-      "line": 229,
+      "line": 233,
       "column": 3
     }
   },
@@ -706,11 +706,11 @@
     "defaultMessage": "!!!Hide Others",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 230,
+      "line": 234,
       "column": 14
     },
     "end": {
-      "line": 233,
+      "line": 237,
       "column": 3
     }
   },
@@ -719,11 +719,11 @@
     "defaultMessage": "!!!Unhide",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 234,
+      "line": 238,
       "column": 10
     },
     "end": {
-      "line": 237,
+      "line": 241,
       "column": 3
     }
   },
@@ -732,11 +732,11 @@
     "defaultMessage": "!!!Auto-hide menu bar",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 238,
+      "line": 242,
       "column": 19
     },
     "end": {
-      "line": 241,
+      "line": 245,
       "column": 3
     }
   },
@@ -745,11 +745,11 @@
     "defaultMessage": "!!!Quit",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 242,
+      "line": 246,
       "column": 8
     },
     "end": {
-      "line": 245,
+      "line": 249,
       "column": 3
     }
   },
@@ -758,11 +758,11 @@
     "defaultMessage": "!!!Add New Service...",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 246,
+      "line": 250,
       "column": 17
     },
     "end": {
-      "line": 249,
+      "line": 253,
       "column": 3
     }
   },
@@ -771,11 +771,11 @@
     "defaultMessage": "!!!Add New Workspace...",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 250,
+      "line": 254,
       "column": 19
     },
     "end": {
-      "line": 253,
+      "line": 257,
       "column": 3
     }
   },
@@ -784,11 +784,11 @@
     "defaultMessage": "!!!Open workspace drawer",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 254,
+      "line": 258,
       "column": 23
     },
     "end": {
-      "line": 257,
+      "line": 261,
       "column": 3
     }
   },
@@ -797,11 +797,11 @@
     "defaultMessage": "!!!Close workspace drawer",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 258,
+      "line": 262,
       "column": 24
     },
     "end": {
-      "line": 261,
+      "line": 265,
       "column": 3
     }
   },
@@ -810,11 +810,11 @@
     "defaultMessage": "!!!Activate next service...",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 262,
+      "line": 266,
       "column": 23
     },
     "end": {
-      "line": 265,
+      "line": 269,
       "column": 3
     }
   },
@@ -823,11 +823,11 @@
     "defaultMessage": "!!!Activate previous service...",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 266,
+      "line": 270,
       "column": 27
     },
     "end": {
-      "line": 269,
+      "line": 273,
       "column": 3
     }
   },
@@ -836,11 +836,11 @@
     "defaultMessage": "!!!Disable notifications & audio",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 270,
+      "line": 274,
       "column": 11
     },
     "end": {
-      "line": 273,
+      "line": 277,
       "column": 3
     }
   },
@@ -849,11 +849,11 @@
     "defaultMessage": "!!!Enable notifications & audio",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 274,
+      "line": 278,
       "column": 13
     },
     "end": {
-      "line": 277,
+      "line": 281,
       "column": 3
     }
   },
@@ -862,11 +862,11 @@
     "defaultMessage": "!!!Workspaces",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 278,
+      "line": 282,
       "column": 14
     },
     "end": {
-      "line": 281,
+      "line": 285,
       "column": 3
     }
   },
@@ -875,11 +875,11 @@
     "defaultMessage": "!!!Default",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 282,
+      "line": 286,
       "column": 20
     },
     "end": {
-      "line": 285,
+      "line": 289,
       "column": 3
     }
   },
@@ -888,11 +888,11 @@
     "defaultMessage": "!!!Todos",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 286,
+      "line": 290,
       "column": 9
     },
     "end": {
-      "line": 289,
+      "line": 293,
       "column": 3
     }
   },
@@ -901,11 +901,11 @@
     "defaultMessage": "!!!Open Todos drawer",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 290,
+      "line": 294,
       "column": 19
     },
     "end": {
-      "line": 293,
+      "line": 297,
       "column": 3
     }
   },
@@ -914,11 +914,11 @@
     "defaultMessage": "!!!Close Todos drawer",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 294,
+      "line": 298,
       "column": 20
     },
     "end": {
-      "line": 297,
+      "line": 301,
       "column": 3
     }
   },
@@ -927,11 +927,11 @@
     "defaultMessage": "!!!Enable Todos",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 298,
+      "line": 302,
       "column": 15
     },
     "end": {
-      "line": 301,
+      "line": 305,
       "column": 3
     }
   },
@@ -940,11 +940,11 @@
     "defaultMessage": "!!!Home",
     "file": "src/lib/Menu.js",
     "start": {
-      "line": 302,
+      "line": 306,
       "column": 17
     },
     "end": {
-      "line": 305,
+      "line": 309,
       "column": 3
     }
   }
