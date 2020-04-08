@@ -528,7 +528,6 @@ export default @observer class EditSettingsForm extends Component {
             {' '}
             {remote.app.getVersion()}
             {noUpdateAvailable && (
-
               <>
                 <br />
                 <br />
