@@ -305,6 +305,7 @@
   "settings.app.form.sentry": "Send telemetry data",
   "settings.app.form.serviceRibbonWidth": "Sidebar width",
   "settings.app.form.showDisabledServices": "Display disabled services tabs",
+  "settings.app.form.showDragArea": "Show draggable area on window",
   "settings.app.form.showMessagesBadgesWhenMuted": "Show unread message badge when notifications are disabled",
   "settings.app.form.startMinimized": "Start minimized",
   "settings.app.form.universalDarkMode": "Enable universal Dark Mode",
