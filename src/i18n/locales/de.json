@@ -274,7 +274,7 @@
   "settings.app.cacheInfo": "Der Ferdi Cache belegt derzeit {size}.",
   "settings.app.currentVersion": "Aktuelle Version:",
   "settings.app.form.accentColor": "Akzentfarbe",
-  "settings.app.form.adaptableDarkMode": "Synchronisiere den Dunkelmodus mit dem Dunkelmodus meines Macs",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Im Hintergrund öffnen",
   "settings.app.form.autoLaunchOnStart": "Ferdi beim Systemstart ausführen",
   "settings.app.form.beta": "Beta-Versionen einbeziehen",
