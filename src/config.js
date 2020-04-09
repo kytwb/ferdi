@@ -36,13 +36,13 @@ export const GA_ID = !isDevMode ? 'UA-74126766-10' : 'UA-74126766-12';
 export const KEEP_WS_LOADED_USID = '0a0aa000-0a0a-49a0-a000-a0a0a0a0a0a0';
 
 export const HIBERNATION_STRATEGIES = {
-  10: 'Extemely Fast Hibernation (10sec)',
+  10: 'Extremely Fast Hibernation (10sec)',
   30: 'Very Fast Hibernation (30sec)',
   60: 'Fast Hibernation (1min)',
   300: 'Normal Hibernation (5min)',
   600: 'Slow Hibernation (10min)',
   1800: 'Very Slow Hibernation (30min)',
-  3600: 'Extemely Slow Hibernation (1hour)',
+  3600: 'Extremely Slow Hibernation (1hour)',
 };
 
 export const NAVIGATION_BAR_BEHAVIOURS = {
@@ -64,13 +64,13 @@ export const TODO_APPS = {
 };
 
 export const SIDEBAR_WIDTH = {
-  35: 'Extemely slim sidebar',
+  35: 'Extremely slim sidebar',
   45: 'Very slim sidebar',
   55: 'Slim sidebar',
   68: 'Normal sidebar',
   80: 'Wide sidebar',
   90: 'Very wide sidebar',
-  100: 'Extemely wide sidebar',
+  100: 'Extremely wide sidebar',
 };
 
 export const ICON_SIZES = {
@@ -179,7 +179,7 @@ if (process.env.FERDI_APPDATA_DIR != null) {
 
 export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
 
-// Replacing app.asar is not beautiful but unforunately necessary
+// Replacing app.asar is not beautiful but unfortunately necessary
 export const RECIPES_PATH = asarPath(path.join(__dirname, 'recipes'));
 
 export const ALLOWED_PROTOCOLS = [

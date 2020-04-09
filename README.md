@@ -53,12 +53,12 @@
 
 ### What is Ferdi?
 
-Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdi gives you many additonal features and doesn't restrict its usage! Ferdi is compatible with your existing Franz account so you can continue right where you left off. Find out more about Ferdi and its features on [getferdi.com](https://getferdi.com).
+Ferdi is a messaging browser that allows you to combine your favorite messaging services into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdi gives you many additional features and doesn't restrict its usage! Ferdi is compatible with your existing Franz account so you can continue right where you left off. Find out more about Ferdi and its features on [getferdi.com](https://getferdi.com).
 
 ## Features
 - [x] Ferdi puts all your messaging services into one place
 - [x] Native support for 100+ services
-- [x] Workspaces to keep your personal and work life seperated
+- [x] Workspaces to keep your personal and work life separated
 - [x] Support for multiple accounts on any service
 - [x] Dark Mode support for all of your services
 - [x] Optional cloud sync to keep your services synchronized between devices
@@ -98,7 +98,7 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 
 ### Or use AUR (Arch Linux)
 
-Ferdi has three seperate AUR packages you can use:
+Ferdi has three separate AUR packages you can use:
 - **[ferdi](https://aur.archlinux.org/packages/ferdi/)**: Uses your system electron version to run the latest release - this version will work best on most systems.
 - **[ferdi-bin](https://aur.archlinux.org/packages/ferdi-bin/)**: Uses the latest Fedora release and extracts it to Arch. Use this version if you are having trouble with the `ferdi` package.
 - **[ferdi-git](https://aur.archlinux.org/packages/ferdi-git/)**: Uses your system electron version to run the latest commit from the develop branch and may be unstable but may also give you features that are not yet available in other versions. Please only use `ferdi-git` if you accept these risks.
@@ -152,7 +152,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds better support for macOS dark mode
 - [x] Adds option to disable reload of services after resuming Ferdi ([#442](https://github.com/getferdi/ferdi/issues/442))
 - [x] Comes with a custom branding proper to Ferdi
-- [x] Adds better seperation in settings
+- [x] Adds better separation in settings
 - [x] Adds various other UI improvements
 - [x] Improves documentation of development so more developers can help making Ferdi even better
 

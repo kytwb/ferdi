@@ -22,7 +22,7 @@ membersEl.forEach((el) => {
   let picture = el.querySelector('img').getAttribute('src');
   picture = picture.replace(/\?.+/, '');
 
-  // Check if the text includes a seperate username
+  // Check if the text includes a separate username
   if (text.includes('(')) {
     const username = /(?<=\()\w*(?=\))/.exec(text)[0];
     const name = /^.*(?= \()/.exec(text)[0];
