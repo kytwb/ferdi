@@ -274,7 +274,7 @@
   "settings.app.cacheInfo": "Ferdi momentálně používá {size} místa na disku.",
   "settings.app.currentVersion": "Aktuální verze:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Spustit na pozadí",
   "settings.app.form.autoLaunchOnStart": "Spustit Ferdi při startu",
   "settings.app.form.beta": "Zahrnout beta verze",
