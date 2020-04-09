@@ -274,7 +274,7 @@
   "settings.app.cacheInfo": "Кэш занимает {size} на диске.",
   "settings.app.currentVersion": "Текущая версия:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Открывать в фоне",
   "settings.app.form.autoLaunchOnStart": "Запускать Ferdi при старте",
   "settings.app.form.beta": "Включая бета версии",
