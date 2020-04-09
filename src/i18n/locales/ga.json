@@ -274,7 +274,7 @@
   "settings.app.cacheInfo": "Tá taisce Ferdi ag baint úsáid as {size} den spás diosca.",
   "settings.app.currentVersion": "Leagan reatha:",
   "settings.app.form.accentColor": "Accent color",
-  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my Mac's dark mode setting",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Oscail sa chúlra",
   "settings.app.form.autoLaunchOnStart": "Láinseáil Ferdi ón tús",
   "settings.app.form.beta": "Cuir leagain béite san áireamh",
