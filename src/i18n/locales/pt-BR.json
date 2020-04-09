@@ -274,7 +274,7 @@
   "settings.app.cacheInfo": "A cache do Ferdi está a usar {size} de espaço em disco.",
   "settings.app.currentVersion": "Versão atual",
   "settings.app.form.accentColor": "Cor de destaque",
-  "settings.app.form.adaptableDarkMode": "Sincronizar modo noturno com as configurações do Mac",
+  "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
   "settings.app.form.autoLaunchInBackground": "Abrir em segundo plano",
   "settings.app.form.autoLaunchOnStart": "Iniciar o Ferdi após iniciar o computador",
   "settings.app.form.beta": "Incluir versões instáveis (beta)",
