@@ -154,6 +154,7 @@ class AccountDashboard extends Component {
     }
 
     const isUsingWithoutAccount = server === LOCAL_SERVER;
+    const isUsingFranzServer = server === 'https://api.franzinfra.com';
 
     return (
       <div className="settings__main">
@@ -208,7 +209,7 @@ class AccountDashboard extends Component {
                           </div>
                           <div className="account__info">
                             <H1>
-                              <span className="username">{`${user.firstname} ${user.lastname}`}</span>
+                              <span className="username">{`${user.firstname} ${isUsingFranzServer ? user.lastname : ''}`}</span>
                               {user.isPremium && (
                                 <>
                                   {' '}
@@ -243,7 +244,7 @@ class AccountDashboard extends Component {
                           )}
                         </div>
                       </div>
-                      {user.isPremium && user.isSubscriptionOwner && (
+                      {user.isPremium && user.isSubscriptionOwner && isUsingFranzServer && (
                         <div className="account">
                           <div className="account__box">
                             <H2>{intl.formatMessage(messages.yourLicense)}</H2>
@@ -322,25 +323,27 @@ class AccountDashboard extends Component {
                     </>
                   )}
 
-                  <div className="account franz-form">
-                    <div className="account__box">
-                      <H2>{intl.formatMessage(messages.headlineDangerZone)}</H2>
-                      {!isDeleteAccountSuccessful && (
-                        <div className="account__subscription">
-                          <p>{intl.formatMessage(messages.deleteInfo)}</p>
-                          <Button
-                            label={intl.formatMessage(messages.deleteAccount)}
-                            buttonType="danger"
-                            onClick={() => deleteAccount()}
-                            loaded={!isLoadingDeleteAccount}
-                          />
-                        </div>
-                      )}
-                      {isDeleteAccountSuccessful && (
-                        <p>{intl.formatMessage(messages.deleteEmailSent)}</p>
-                      )}
+                  {isUsingFranzServer && (
+                    <div className="account franz-form">
+                      <div className="account__box">
+                        <H2>{intl.formatMessage(messages.headlineDangerZone)}</H2>
+                        {!isDeleteAccountSuccessful && (
+                          <div className="account__subscription">
+                            <p>{intl.formatMessage(messages.deleteInfo)}</p>
+                            <Button
+                              label={intl.formatMessage(messages.deleteAccount)}
+                              buttonType="danger"
+                              onClick={() => deleteAccount()}
+                              loaded={!isLoadingDeleteAccount}
+                            />
+                          </div>
+                        )}
+                        {isDeleteAccountSuccessful && (
+                          <p>{intl.formatMessage(messages.deleteEmailSent)}</p>
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </>
               )}
             </>

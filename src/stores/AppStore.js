@@ -52,7 +52,7 @@ export default class AppStore extends Store {
 
   @observable getAppCacheSizeRequest = new Request(this.api.local, 'getAppCacheSize');
 
-  @observable clearAppCacheRequest = new Request(this.api.local, 'clearAppCache');
+  @observable clearAppCacheRequest = new Request(this.api.local, 'clearCache');
 
   @observable autoLaunchOnStart = true;
 
@@ -177,6 +177,10 @@ export default class AppStore extends Store {
       url = url.replace(/\/$/, '');
 
       this.stores.router.push(url);
+    });
+
+    ipcRenderer.on('muteApp', () => {
+      this._toggleMuteApp();
     });
 
     this.locale = this._getDefaultLocale();
@@ -374,8 +378,11 @@ export default class AppStore extends Store {
     const allServiceIds = await getServiceIdsFromPartitions();
     const allOrphanedServiceIds = allServiceIds.filter(id => !this.stores.services.all.find(s => id.replace('service-', '') === s.id));
 
-    await Promise.all(allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)));
-
+    try {
+      await Promise.all(allOrphanedServiceIds.map(id => removeServicePartitionDirectory(id)));
+    } catch (ex) {
+      console.log('Error while deleting service partition directory - ', ex);
+    }
     await Promise.all(this.stores.services.all.map(s => this.actions.service.clearCache({ serviceId: s.id })));
 
     await clearAppCache._promise;

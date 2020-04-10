@@ -16,7 +16,7 @@ export default class LocalApi {
     return this.local.getAppCacheSize();
   }
 
-  clearAppCache() {
-    return this.local.clearAppCache();
+  clearCache() {
+    return this.local.clearCache();
   }
 }

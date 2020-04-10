@@ -13,6 +13,10 @@ const ignore = [
   'settings.app.todoServerInfo',
   'settings.app.serverMoneyInfo',
   'settings.team.teamsUnavailableInfo',
+  'settings.team.contentHeadline',
+  'settings.team.intro',
+  'settings.team.copy',
+  'settings.team.manageAction',
   'settings.app.serverMoneyInfo',
 ];
 

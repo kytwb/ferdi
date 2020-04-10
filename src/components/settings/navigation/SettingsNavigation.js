@@ -105,6 +105,7 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
     const { intl } = this.context;
     const isLoggedIn = Boolean(localStorage.getItem('authToken'));
     const isUsingWithoutAccount = stores.settings.app.server === LOCAL_SERVER;
+    const isUsingFranzServer = stores.settings.app.server === 'https://api.franzinfra.com';
 
     return (
       <div className="settings-navigation">
@@ -154,17 +155,19 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
         >
           {intl.formatMessage(messages.account)}
         </Link>
-        <Link
-          to="/settings/team"
-          className="settings-navigation__link"
-          activeClassName="is-active"
-          disabled={!isLoggedIn}
-        >
-          {intl.formatMessage(messages.team)}
-          {!user.data.isPremium && (
-            <ProBadge inverted={!isDarkThemeActive && router.location.pathname === '/settings/team'} />
-          )}
-        </Link>
+        {isUsingFranzServer && (
+          <Link
+            to="/settings/team"
+            className="settings-navigation__link"
+            activeClassName="is-active"
+            disabled={!isLoggedIn}
+          >
+            {intl.formatMessage(messages.team)}
+            {!user.data.isPremium && (
+              <ProBadge inverted={!isDarkThemeActive && router.location.pathname === '/settings/team'} />
+            )}
+          </Link>
+        )}
         <Link
           to="/settings/app"
           className="settings-navigation__link"

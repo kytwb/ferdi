@@ -36,13 +36,13 @@ export const GA_ID = !isDevMode ? 'UA-74126766-10' : 'UA-74126766-12';
 export const KEEP_WS_LOADED_USID = '0a0aa000-0a0a-49a0-a000-a0a0a0a0a0a0';
 
 export const HIBERNATION_STRATEGIES = {
-  10: 'Extemely Fast Hibernation (10sec)',
+  10: 'Extremely Fast Hibernation (10sec)',
   30: 'Very Fast Hibernation (30sec)',
   60: 'Fast Hibernation (1min)',
   300: 'Normal Hibernation (5min)',
   600: 'Slow Hibernation (10min)',
   1800: 'Very Slow Hibernation (30min)',
-  3600: 'Extemely Slow Hibernation (1hour)',
+  3600: 'Extremely Slow Hibernation (1hour)',
 };
 
 export const NAVIGATION_BAR_BEHAVIOURS = {
@@ -51,14 +51,26 @@ export const NAVIGATION_BAR_BEHAVIOURS = {
   never: 'Never show navigation bar',
 };
 
+export const TODO_APPS = {
+  'https://todoist.com/app': 'Todoist',
+  'https://app.franztodos.com': 'Franz Todo',
+  'https://ticktick.com/signin': 'TickTick',
+  'https://todo.microsoft.com/?app#': 'Microsoft To Do',
+  'https://habitica.com/login': 'Habitica',
+  'https://app.nozbe.com/#login': 'Nozbe',
+  'https://www.rememberthemilk.com/login/': 'Remember The Milk',
+  'https://desktop.any.do/': 'Any.do',
+  isUsingCustomTodoService: 'Other service',
+};
+
 export const SIDEBAR_WIDTH = {
-  35: 'Extemely slim sidebar',
+  35: 'Extremely slim sidebar',
   45: 'Very slim sidebar',
   55: 'Slim sidebar',
   68: 'Normal sidebar',
   80: 'Wide sidebar',
   90: 'Very wide sidebar',
-  100: 'Extemely wide sidebar',
+  100: 'Extremely wide sidebar',
 };
 
 export const ICON_SIZES = {
@@ -83,6 +95,7 @@ export const DEFAULT_APP_SETTINGS = {
   privateNotifications: false,
   showDisabledServices: true,
   showMessageBadgeWhenMuted: true,
+  showDragArea: false,
   enableSpellchecking: true,
   spellcheckerLanguage: 'en-us',
   darkMode: process.platform === 'darwin' ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
@@ -95,7 +108,7 @@ export const DEFAULT_APP_SETTINGS = {
 
   // Ferdi specific options
   server: LIVE_API,
-  todoServer: PRODUCTION_TODOS_FRONTEND_URL,
+  predefinedTodoServer: 'https://app.franztodos.com',
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
   locked: false,
@@ -107,7 +120,7 @@ export const DEFAULT_APP_SETTINGS = {
   hibernate: false,
   hibernationStrategy: 300,
   inactivityLock: 0,
-  noUpdates: false,
+  automaticUpdates: true,
   showServiceNavigationBar: false,
   universalDarkMode: true,
   adaptableDarkMode: true,
@@ -166,7 +179,7 @@ if (process.env.FERDI_APPDATA_DIR != null) {
 
 export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
 
-// Replacing app.asar is not beautiful but unforunately necessary
+// Replacing app.asar is not beautiful but unfortunately necessary
 export const RECIPES_PATH = asarPath(path.join(__dirname, 'recipes'));
 
 export const ALLOWED_PROTOCOLS = [

@@ -8,13 +8,12 @@ import SettingsStore from '../../stores/SettingsStore';
 
 import TeamDashboard from '../../components/settings/team/TeamDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-import { WEBSITE } from '../../environment';
 
 export default @inject('stores', 'actions') @observer class TeamScreen extends Component {
   handleWebsiteLink(route) {
     const { actions, stores } = this.props;
 
-    const url = `${WEBSITE}${route}?authToken=${stores.user.authToken}&utm_source=app&utm_medium=account_dashboard`;
+    const url = `https://meetfranz.com/${route}?authToken=${stores.user.authToken}&utm_source=app&utm_medium=account_dashboard`;
 
     actions.app.openExternalUrl({ url });
   }

@@ -63,6 +63,22 @@ function generateServiceRibbonWidthStyle(widthStr, iconSizeStr) {
   `;
 }
 
+function generateShowDragAreaStyle(accentColor) {
+  return `
+    .sidebar {
+      padding-top: 0px !important;
+    }
+    .window-draggable {
+      position: initial;
+      background-color: ${accentColor};
+    }
+    #root {
+      /** Remove 22px from app height, otherwise the page will be to high */
+      height: calc(100% - 22px);
+    }
+  `;
+}
+
 function generateStyle(settings) {
   let style = '';
 
@@ -70,6 +86,7 @@ function generateStyle(settings) {
     accentColor,
     serviceRibbonWidth,
     iconSize,
+    showDragArea,
   } = settings;
 
   if (accentColor !== DEFAULT_APP_SETTINGS.accentColor) {
@@ -78,6 +95,9 @@ function generateStyle(settings) {
   if (serviceRibbonWidth !== DEFAULT_APP_SETTINGS.serviceRibbonWidth
       || iconSize !== DEFAULT_APP_SETTINGS.iconSize) {
     style += generateServiceRibbonWidthStyle(serviceRibbonWidth, iconSize);
+  }
+  if (showDragArea) {
+    style += generateShowDragAreaStyle(accentColor);
   }
 
   return style;
@@ -116,6 +136,15 @@ export default function initAppearance(stores) {
   reaction(
     () => (
       settings.all.app.iconSize
+    ),
+    () => {
+      updateStyle(settings.all.app);
+    },
+  );
+  // Update draggable area
+  reaction(
+    () => (
+      settings.all.app.showDragArea
     ),
     () => {
       updateStyle(settings.all.app);

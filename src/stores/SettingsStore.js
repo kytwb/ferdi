@@ -110,6 +110,7 @@ export default class SettingsStore extends Store {
       }
       debug('Get appSettings resolves', resp.type, resp.data);
       Object.assign(this._fileSystemSettingsCache[resp.type], resp.data);
+      ipcRenderer.send('initialAppSettings', resp);
     });
 
     this.fileSystemSettingsTypes.forEach((type) => {
@@ -262,6 +263,43 @@ export default class SettingsStore extends Store {
           '5.4.4-beta.2-settings': true,
         },
       });
+    }
+
+    if (!this.all.migration['5.4.4-beta.4-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          todoServer: 'isUsingCustomTodoService',
+          customTodoServer: legacySettings.todoServer,
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.4.4-beta.4-settings': true,
+        },
+      });
+
+      debug('Migrated old todo setting to new custom todo setting');
+    }
+
+    if (!this.all.migration['5.4.4-beta.4-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          automaticUpdates: !(legacySettings.noUpdates),
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.4.4-beta.4-settings': true,
+        },
+      });
+
+      debug('Migrated updates settings');
     }
   }
 }

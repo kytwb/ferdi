@@ -35,6 +35,7 @@ import WelcomeScreen from './containers/auth/WelcomeScreen';
 import LoginScreen from './containers/auth/LoginScreen';
 import LockedScreen from './containers/auth/LockedScreen';
 import PasswordScreen from './containers/auth/PasswordScreen';
+import ChangeServerScreen from './containers/auth/ChangeServerScreen';
 import SignupScreen from './containers/auth/SignupScreen';
 import ImportScreen from './containers/auth/ImportScreen';
 import PricingScreen from './containers/auth/PricingScreen';
@@ -97,6 +98,7 @@ window.addEventListener('load', () => {
                 <Route path="/auth/welcome" component={WelcomeScreen} />
                 <Route path="/auth/login" component={LoginScreen} />
                 <Route path="/auth/locked" component={LockedScreen} />
+                <Route path="/auth/server" component={ChangeServerScreen} />
                 <Route path="/auth/signup">
                   <IndexRedirect to="/auth/signup/form" />
                   <Route path="/auth/signup/form" component={SignupScreen} />

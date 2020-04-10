@@ -11,7 +11,7 @@ import TodosStore from '../../features/todos/store';
 import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
-  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS,
+  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APPS,
 } from '../../config';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
@@ -19,8 +19,6 @@ import { getSelectOptions } from '../../helpers/i18n-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-
-import { API, TODOS_FRONTEND } from '../../environment';
 
 import globalMessages from '../../i18n/globalMessages';
 import { DEFAULT_IS_FEATURE_ENABLED_BY_USER } from '../../features/todos';
@@ -42,7 +40,7 @@ const messages = defineMessages({
   },
   startMinimized: {
     id: 'settings.app.form.startMinimized',
-    defaultMessage: '!!!Start minimized in tray',
+    defaultMessage: '!!!Start minimized',
   },
   enableSystemTray: {
     id: 'settings.app.form.enableSystemTray',
@@ -76,13 +74,13 @@ const messages = defineMessages({
     id: 'settings.app.form.hibernationStrategy',
     defaultMessage: '!!!Hibernation strategy',
   },
-  server: {
-    id: 'settings.app.form.server',
-    defaultMessage: '!!!Server',
-  },
-  todoServer: {
-    id: 'settings.app.form.todoServer',
+  predefinedTodoServer: {
+    id: 'settings.app.form.predefinedTodoServer',
     defaultMessage: '!!!Todo Server',
+  },
+  customTodoServer: {
+    id: 'settings.app.form.customTodoServer',
+    defaultMessage: '!!!Custom TodoServer',
   },
   enableLock: {
     id: 'settings.app.form.enableLock',
@@ -122,7 +120,7 @@ const messages = defineMessages({
   },
   adaptableDarkMode: {
     id: 'settings.app.form.adaptableDarkMode',
-    defaultMessage: '!!!Synchronize dark mode with my Mac\'s dark mode setting',
+    defaultMessage: '!!!Synchronize dark mode with my OS\'s dark mode setting',
   },
   universalDarkMode: {
     id: 'settings.app.form.universalDarkMode',
@@ -148,6 +146,10 @@ const messages = defineMessages({
     id: 'settings.app.form.showMessagesBadgesWhenMuted',
     defaultMessage: '!!!Show unread message badge when notifications are disabled',
   },
+  showDragArea: {
+    id: 'settings.app.form.showDragArea',
+    defaultMessage: '!!!Show draggable area on window',
+  },
   enableSpellchecking: {
     id: 'settings.app.form.enableSpellchecking',
     defaultMessage: '!!!Enable spell checking',
@@ -160,9 +162,9 @@ const messages = defineMessages({
     id: 'settings.app.form.beta',
     defaultMessage: '!!!Include beta versions',
   },
-  noUpdates: {
-    id: 'settings.app.form.noUpdates',
-    defaultMessage: '!!!Disable updates',
+  automaticUpdates: {
+    id: 'settings.app.form.automaticUpdates',
+    defaultMessage: '!!!Enable updates',
   },
   enableTodos: {
     id: 'settings.app.form.enableTodos',
@@ -207,8 +209,8 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
         hibernationStrategy: settingsData.hibernationStrategy,
-        server: settingsData.server,
-        todoServer: settingsData.todoServer,
+        predefinedTodoServer: settingsData.predefinedTodoServer,
+        customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
         lockedPassword: settingsData.lockedPassword,
         useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
@@ -225,17 +227,18 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         iconSize: settingsData.iconSize,
         accentColor: settingsData.accentColor,
         showMessageBadgeWhenMuted: settingsData.showMessageBadgeWhenMuted,
+        showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
         spellcheckerLanguage: settingsData.spellcheckerLanguage,
         beta: settingsData.beta, // we need this info in the main process as well
-        noUpdates: settingsData.noUpdates, // we need this info in the main process as well
+        automaticUpdates: settingsData.automaticUpdates, // we need this info in the main process as well
         locale: settingsData.locale, // we need this info in the main process as well
       },
     });
 
     user.update({
       userData: {
-        noUpdates: settingsData.noUpdates,
+        automaticUpdates: settingsData.automaticUpdates,
         beta: settingsData.beta,
         locale: settingsData.locale,
       },
@@ -277,6 +280,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
 
     const hibernationStrategies = getSelectOptions({
       locales: HIBERNATION_STRATEGIES,
+      sort: false,
+    });
+
+    const todoApp = getSelectOptions({
+      locales: TODO_APPS,
       sort: false,
     });
 
@@ -359,15 +367,16 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           options: hibernationStrategies,
           default: DEFAULT_APP_SETTINGS.hibernationStrategy,
         },
-        server: {
-          label: intl.formatMessage(messages.server),
-          value: settings.all.app.server || API,
-          default: API,
+        predefinedTodoServer: {
+          label: intl.formatMessage(messages.predefinedTodoServer),
+          value: settings.all.app.predefinedTodoServer,
+          default: DEFAULT_APP_SETTINGS.predefinedTodoServer,
+          options: todoApp,
         },
-        todoServer: {
-          label: intl.formatMessage(messages.todoServer),
-          value: settings.all.app.todoServer,
-          default: TODOS_FRONTEND,
+        customTodoServer: {
+          label: intl.formatMessage(messages.customTodoServer),
+          value: settings.all.app.customTodoServer,
+          default: DEFAULT_APP_SETTINGS.customTodoServer,
         },
         lockingFeatureEnabled: {
           label: intl.formatMessage(messages.enableLock),
@@ -417,6 +426,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.showMessageBadgeWhenMuted),
           value: settings.all.app.showMessageBadgeWhenMuted,
           default: DEFAULT_APP_SETTINGS.showMessageBadgeWhenMuted,
+        },
+        showDragArea: {
+          label: intl.formatMessage(messages.showDragArea),
+          value: settings.all.app.showDragArea,
+          default: DEFAULT_APP_SETTINGS.showDragArea,
         },
         enableSpellchecking: {
           label: intl.formatMessage(messages.enableSpellchecking),
@@ -477,10 +491,10 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: user.data.beta,
           default: DEFAULT_APP_SETTINGS.beta,
         },
-        noUpdates: {
-          label: intl.formatMessage(messages.noUpdates),
-          value: settings.app.noUpdates,
-          default: DEFAULT_APP_SETTINGS.noUpdates,
+        automaticUpdates: {
+          label: intl.formatMessage(messages.automaticUpdates),
+          value: settings.app.automaticUpdates,
+          default: DEFAULT_APP_SETTINGS.automaticUpdates,
         },
       },
     };
@@ -541,13 +555,13 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isSpellcheckerIncludedInCurrentPlan={spellcheckerConfig.isIncludedInCurrentPlan}
           isTodosEnabled={todos.isFeatureActive}
           isWorkspaceEnabled={workspaces.isFeatureActive}
-          server={this.props.stores.settings.app.server}
           lockingFeatureEnabled={lockingFeatureEnabled}
-          noUpdates={this.props.stores.settings.app.noUpdates}
+          automaticUpdates={this.props.stores.settings.app.automaticUpdates}
           hibernationEnabled={this.props.stores.settings.app.hibernate}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
-          isTrayEnabled={this.props.stores.settings.app.enableSystemTray}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
+          isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
+          isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
           openProcessManager={() => this.openProcessManager()}
         />
       </ErrorBoundary>

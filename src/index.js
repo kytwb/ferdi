@@ -292,7 +292,7 @@ const createWindow = () => {
   });
 
   mainWindow.on('show', () => {
-    debug('Skip taskbar: false');
+    debug('Skip taskbar: true');
     mainWindow.setSkipTaskbar(false);
   });
 
@@ -308,7 +308,9 @@ const createWindow = () => {
     }
   });
 
-  if (!(settings.get('enableSystemTray') && settings.get('startMinimized'))) {
+  if (settings.get('startMinimized')) {
+    mainWindow.hide();
+  } else {
     mainWindow.show();
   }
 };
