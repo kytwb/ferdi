@@ -474,6 +474,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "JakeSteam",
+      "name": "Jake Lee",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12380876?v=4",
+      "profile": "https://jakelee.co.uk",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 6,
