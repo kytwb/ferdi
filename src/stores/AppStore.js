@@ -52,7 +52,7 @@ export default class AppStore extends Store {
 
   @observable getAppCacheSizeRequest = new Request(this.api.local, 'getAppCacheSize');
 
-  @observable clearAppCacheRequest = new Request(this.api.local, 'clearAppCache');
+  @observable clearAppCacheRequest = new Request(this.api.local, 'clearCache');
 
   @observable autoLaunchOnStart = true;
 
