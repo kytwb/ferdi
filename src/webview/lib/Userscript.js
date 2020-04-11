@@ -120,4 +120,13 @@ export default class Userscript {
   externalOpen(url) {
     ipcRenderer.sendToHost('new-window', url);
   }
+
+  /**
+   * Open a URL in the current service
+   * 
+   * @param {*} url 
+   */
+  internalOpen(url) {
+    window.location.href = url;
+  }
 }
