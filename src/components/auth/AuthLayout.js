@@ -27,6 +27,10 @@ export default @observer class AuthLayout extends Component {
     appUpdateIsDownloaded: PropTypes.bool.isRequired,
   };
 
+  state = {
+    shouldShowAppUpdateInfoBar: true,
+  }
+
   static defaultProps = {
     nextAppReleaseVersion: null,
   };
@@ -62,10 +66,13 @@ export default @observer class AuthLayout extends Component {
               {intl.formatMessage(globalMessages.notConnectedToTheInternet)}
             </InfoBar>
           )}
-          {appUpdateIsDownloaded && (
+          {appUpdateIsDownloaded && this.state.shouldShowAppUpdateInfoBar && (
             <AppUpdateInfoBar
               nextAppReleaseVersion={nextAppReleaseVersion}
               onInstallUpdate={installAppUpdate}
+              onHide={() => {
+                this.setState({ shouldShowAppUpdateInfoBar: false });
+              }}
             />
           )}
           {isOnline && !isAPIHealthy && (

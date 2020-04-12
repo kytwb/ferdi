@@ -81,6 +81,10 @@ class AppLayout extends Component {
     hasActivatedTrial: PropTypes.bool.isRequired,
   };
 
+  state = {
+    shouldShowAppUpdateInfoBar: true,
+  }
+
   static defaultProps = {
     children: [],
     nextAppReleaseVersion: null,
@@ -181,10 +185,13 @@ class AppLayout extends Component {
                   {intl.formatMessage(messages.servicesUpdated)}
                 </InfoBar>
               )}
-              {appUpdateIsDownloaded && (
+              { appUpdateIsDownloaded && this.state.shouldShowAppUpdateInfoBar && (
                 <AppUpdateInfoBar
                   nextAppReleaseVersion={nextAppReleaseVersion}
                   onInstallUpdate={installAppUpdate}
+                  onHide={() => {
+                    this.setState({ shouldShowAppUpdateInfoBar: false });
+                  }}
                 />
               )}
               <BasicAuth />
