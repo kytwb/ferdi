@@ -353,8 +353,7 @@ export default class ServicesStore extends Store {
     const filePath = path.join(directory, file);
     if (file === 'user.js') {
       if (!await fs.exists(filePath)) {
-        await fs.writeFile(filePath, `
-module.exports = (config, Ferdi) => {
+        await fs.writeFile(filePath, `module.exports = (config, Ferdi) => {
   // Write your scripts here
   console.log("Hello, World!", config);
 }
