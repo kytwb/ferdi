@@ -123,8 +123,8 @@ export default class Userscript {
 
   /**
    * Open a URL in the current service
-   * 
-   * @param {*} url 
+   *
+   * @param {*} url
    */
   internalOpen(url) {
     window.location.href = url;
