@@ -65,6 +65,18 @@ const messages = defineMessages({
     id: 'settings.service.form.enableDarkMode',
     defaultMessage: '!!!Enable Dark Mode',
   },
+  darkReaderBrightness: {
+    id: 'settings.service.form.darkReaderBrightness',
+    defaultMessage: '!!!Darkreader Brightness',
+  },
+  darkReaderContrast: {
+    id: 'settings.service.form.darkReaderContrast',
+    defaultMessage: '!!!Darkreader Contrast',
+  },
+  darkReaderSepia: {
+    id: 'settings.service.form.darkReaderSepia',
+    defaultMessage: '!!!Darkreader Sepia',
+  },
   enableProxy: {
     id: 'settings.service.form.proxy.isEnabled',
     defaultMessage: '!!!Use Proxy',
@@ -96,9 +108,18 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
     const { action } = this.props.router.params;
     const { recipes, services } = this.props.stores;
     const { createService, updateService } = this.props.actions.service;
+    data.darkReaderSettings = {
+      brightness: data.darkReaderBrightness,
+      contrast: data.darkReaderContrast,
+      sepia: data.darkReaderSepia
+    };
+    delete data.darkReaderBrightness;
+    delete data.darkReaderContrast;
+    delete data.darkReaderSepia;
 
     const serviceData = data;
     serviceData.isMuted = !serviceData.isMuted;
+    console.log('Service data - ', serviceData);
 
     if (action === 'edit') {
       updateService({ serviceId: services.activeSettings.id, serviceData });
@@ -165,6 +186,21 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.enableDarkMode),
           value: service.isDarkModeEnabled,
           default: stores.settings.app.darkMode,
+        },
+        darkReaderBrightness: {
+          label: intl.formatMessage(messages.darkReaderBrightness),
+          value: service.darkReaderSettings.brightness,
+          default: 100
+        },
+        darkReaderContrast: {
+          label: intl.formatMessage(messages.darkReaderContrast),
+          value: service.darkReaderSettings.contrast,
+          default: 90
+        },
+        darkReaderSepia: {
+          label: intl.formatMessage(messages.darkReaderSepia),
+          value: service.darkReaderSettings.sepia,
+          default: 10
         },
         spellcheckerLanguage: {
           label: intl.formatMessage(globalMessages.spellcheckerLanguage),
@@ -346,6 +382,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           isProxyFeatureEnabled={proxyFeature.isEnabled}
           isServiceProxyIncludedInCurrentPlan={proxyFeature.isIncludedInCurrentPlan}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerFeature.isIncludedInCurrentPlan}
+          isDarkModeEnabled={service.isDarkModeEnabled}
         />
       </ErrorBoundary>
     );

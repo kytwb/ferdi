@@ -1,0 +1,54 @@
+@import './config.scss';
+
+.theme__dark .franz-form .franz-form__slider-wrapper .slider {
+  border: 1px solid $dark-theme-gray;
+  background: $dark-theme-gray;
+
+}
+
+
+.franz-form {
+  .franz-form__slider-wrapper { 
+    display: flex;
+    flex-direction: row;
+
+    .franz-form__label { margin-left: 20px; }
+
+    .slider-container {
+      width: 100%; /* Width of the outside container */ 
+    }
+      
+    /* The slider itself */
+    .slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 14px;
+      border-radius: $theme-border-radius;  
+      background: $theme-gray-lighter;
+      outline: none;
+      opacity: 1.0;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%; 
+      background: $theme-brand-primary;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: $theme-brand-primary;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+      cursor: pointer;
+    }
+    }
+}
