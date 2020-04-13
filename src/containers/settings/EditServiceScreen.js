@@ -188,17 +188,17 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
         },
         darkReaderBrightness: {
           label: intl.formatMessage(messages.darkReaderBrightness),
-          value: service.darkReaderSettings.brightness,
+          value: service.darkReaderSettings ? service.darkReaderSettings.brightness : 100,
           default: 100,
         },
         darkReaderContrast: {
           label: intl.formatMessage(messages.darkReaderContrast),
-          value: service.darkReaderSettings.contrast,
+          value: service.darkReaderSettings ? service.darkReaderSettings.contrast : 90,
           default: 90,
         },
         darkReaderSepia: {
           label: intl.formatMessage(messages.darkReaderSepia),
-          value: service.darkReaderSettings.sepia,
+          value: service.darkReaderSettings ? service.darkReaderSettings.sepia : 10,
           default: 10,
         },
         spellcheckerLanguage: {
@@ -381,7 +381,6 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           isProxyFeatureEnabled={proxyFeature.isEnabled}
           isServiceProxyIncludedInCurrentPlan={proxyFeature.isIncludedInCurrentPlan}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerFeature.isIncludedInCurrentPlan}
-          isDarkModeEnabled={service.isDarkModeEnabled}
         />
       </ErrorBoundary>
     );
