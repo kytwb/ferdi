@@ -11,19 +11,19 @@ export default @observer class Slider extends Component {
       showLabel: PropTypes.bool,
       disabled: PropTypes.bool,
     };
-  
+
     static defaultProps = {
       className: '',
       showLabel: true,
       disabled: false,
     };
-  
+
     onChange(e) {
       const { field } = this.props;
-  
+
       field.onChange(e);
     }
-  
+
     render() {
       const {
         field,
@@ -31,11 +31,11 @@ export default @observer class Slider extends Component {
         showLabel,
         disabled,
       } = this.props;
-  
+
       if (field.value === '' && field.default !== '') {
         field.value = field.default;
       }
-  
+
       return (
         <div
           className={classnames([
@@ -44,14 +44,15 @@ export default @observer class Slider extends Component {
             className,
           ])}
         >
-         <div className='slider-container'>
+          <div className="slider-container">
             <input
               className="slider"
               type="range"
               id={field.id}
               name={field.name}
               value={field.value}
-              min="1" max="100"
+              min="1"
+              max="100"
               onChange={e => (!disabled ? this.onChange(e) : null)}
             />
           </div>
@@ -61,5 +62,4 @@ export default @observer class Slider extends Component {
         </div>
       );
     }
-  }
-  
+}

@@ -111,7 +111,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
     data.darkReaderSettings = {
       brightness: data.darkReaderBrightness,
       contrast: data.darkReaderContrast,
-      sepia: data.darkReaderSepia
+      sepia: data.darkReaderSepia,
     };
     delete data.darkReaderBrightness;
     delete data.darkReaderContrast;
@@ -119,7 +119,6 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
 
     const serviceData = data;
     serviceData.isMuted = !serviceData.isMuted;
-    console.log('Service data - ', serviceData);
 
     if (action === 'edit') {
       updateService({ serviceId: services.activeSettings.id, serviceData });
@@ -190,17 +189,17 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
         darkReaderBrightness: {
           label: intl.formatMessage(messages.darkReaderBrightness),
           value: service.darkReaderSettings.brightness,
-          default: 100
+          default: 100,
         },
         darkReaderContrast: {
           label: intl.formatMessage(messages.darkReaderContrast),
           value: service.darkReaderSettings.contrast,
-          default: 90
+          default: 90,
         },
         darkReaderSepia: {
           label: intl.formatMessage(messages.darkReaderSepia),
           value: service.darkReaderSettings.sepia,
-          default: 10
+          default: 10,
         },
         spellcheckerLanguage: {
           label: intl.formatMessage(globalMessages.spellcheckerLanguage),

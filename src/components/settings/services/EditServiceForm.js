@@ -108,7 +108,7 @@ const messages = defineMessages({
   },
   headlineDarkReaderSettings: {
     id: 'settings.service.form.headlineDarkReaderSettings',
-    defaultMessage: '!!!DarkReader Settings'
+    defaultMessage: '!!!DarkReader Settings',
   },
   iconDelete: {
     id: 'settings.service.form.iconDelete',
@@ -366,13 +366,13 @@ export default @observer class EditServiceForm extends Component {
                   <h3>{intl.formatMessage(messages.headlineGeneral)}</h3>
                   <Toggle field={form.$('isEnabled')} />
                   <Toggle field={form.$('isDarkModeEnabled')} />
-                  {form.$('isDarkModeEnabled').value && 
-                    (
+                  {form.$('isDarkModeEnabled').value
+                    && (
                       <>
-                      <h3>{intl.formatMessage(messages.headlineDarkReaderSettings)}</h3>
-                      <Slider field={form.$('darkReaderBrightness')} />
-                      <Slider field={form.$('darkReaderContrast')} />
-                      <Slider field={form.$('darkReaderSepia')} />
+                        <h3>{intl.formatMessage(messages.headlineDarkReaderSettings)}</h3>
+                        <Slider field={form.$('darkReaderBrightness')} />
+                        <Slider field={form.$('darkReaderContrast')} />
+                        <Slider field={form.$('darkReaderSepia')} />
                       </>
                     )
                   }

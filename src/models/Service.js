@@ -56,7 +56,7 @@ export default class Service {
 
   @observable isDarkModeEnabled = false;
 
-  @observable darkReaderSettings = {brightness: 100, contrast: 90, sepia: 10}
+  @observable darkReaderSettings = { brightness: 100, contrast: 90, sepia: 10 }
 
   @observable spellcheckerLanguage = null;
 

@@ -226,8 +226,8 @@ class RecipeController {
         console.log('Injecting DarkReader');
 
         // Use darkreader instead
-        const {brightness, contrast, sepia} = this.settings.service.darkReaderSettings;
-        enableDarkMode({brightness, contrast, sepia}, {
+        const { brightness, contrast, sepia } = this.settings.service.darkReaderSettings;
+        enableDarkMode({ brightness, contrast, sepia }, {
           css: customDarkModeCss[window.location.host] || '',
         });
         this.universalDarkModeInjected = true;
