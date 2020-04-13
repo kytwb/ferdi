@@ -24,6 +24,7 @@ class AppUpdateInfoBar extends Component {
   static propTypes = {
     onInstallUpdate: PropTypes.func.isRequired,
     nextAppReleaseVersion: PropTypes.string,
+    onHide: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -39,6 +40,7 @@ class AppUpdateInfoBar extends Component {
     const {
       onInstallUpdate,
       nextAppReleaseVersion,
+      onHide,
     } = this.props;
 
     return (
@@ -46,7 +48,7 @@ class AppUpdateInfoBar extends Component {
         type="primary"
         ctaLabel={intl.formatMessage(messages.buttonInstallUpdate)}
         onClick={onInstallUpdate}
-        sticky
+        onHide={onHide}
       >
         <span className="mdi mdi-information" />
         {intl.formatMessage(messages.updateAvailable)}

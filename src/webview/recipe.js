@@ -21,6 +21,7 @@ import ignoreList from './darkmode/ignore';
 import customDarkModeCss from './darkmode/custom';
 
 import RecipeWebview from './lib/RecipeWebview';
+import Userscript from './lib/Userscript';
 
 import spellchecker, { switchDict, disable as disableSpellchecker, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
@@ -54,6 +55,8 @@ class RecipeController {
   universalDarkModeInjected = false;
 
   recipe = null;
+
+  userscript = null;
 
   hasUpdatedBeforeRecipeLoaded = false;
 
@@ -130,7 +133,8 @@ class RecipeController {
         const userJsModule = require(userJs);
 
         if (typeof userJsModule === 'function') {
-          userJsModule(config);
+          this.userscript = new Userscript(this.recipe, this, config);
+          userJsModule(config, this.userscript);
         }
       };
 
@@ -154,6 +158,10 @@ class RecipeController {
     debug('System spellcheckerLanguage', this.settings.app.spellcheckerLanguage);
     debug('Service spellcheckerLanguage', this.settings.service.spellcheckerLanguage);
     debug('darkReaderSettigs', this.settings.service.darkReaderSettings);
+
+    if (this.userscript && this.userscript.internal_setSettings) {
+      this.userscript.internal_setSettings(this.settings);
+    }
 
     if (this.settings.app.enableSpellchecking) {
       debug('Setting spellchecker language to', this.spellcheckerLanguage);
@@ -323,7 +331,6 @@ new RecipeController();
 
 // Patching window.open
 const originalWindowOpen = window.open;
-
 
 window.open = (url, frameName, features) => {
   if (!url && !frameName && !features) {

@@ -351,7 +351,17 @@ export default class ServicesStore extends Store {
 
     // Create and open file
     const filePath = path.join(directory, file);
-    await fs.ensureFile(filePath);
+    if (file === 'user.js') {
+      if (!await fs.exists(filePath)) {
+        await fs.writeFile(filePath, `module.exports = (config, Ferdi) => {
+  // Write your scripts here
+  console.log("Hello, World!", config);
+}
+`);
+      }
+    } else {
+      await fs.ensureFile(filePath);
+    }
     shell.showItemInFolder(filePath);
   }
 
