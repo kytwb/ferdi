@@ -188,17 +188,17 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
         },
         darkReaderBrightness: {
           label: intl.formatMessage(messages.darkReaderBrightness),
-          value: service.darkReaderSettings ? service.darkReaderSettings.brightness : 100,
+          value: service.darkReaderSettings ? service.darkReaderSettings.brightness : undefined,
           default: 100,
         },
         darkReaderContrast: {
           label: intl.formatMessage(messages.darkReaderContrast),
-          value: service.darkReaderSettings ? service.darkReaderSettings.contrast : 90,
+          value: service.darkReaderSettings ? service.darkReaderSettings.contrast : undefined,
           default: 90,
         },
         darkReaderSepia: {
           label: intl.formatMessage(messages.darkReaderSepia),
-          value: service.darkReaderSettings ? service.darkReaderSettings.sepia : 10,
+          value: service.darkReaderSettings ? service.darkReaderSettings.sepia : undefined,
           default: 10,
         },
         spellcheckerLanguage: {
