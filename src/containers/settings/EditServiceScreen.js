@@ -113,8 +113,8 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
       contrast: data.darkReaderContrast,
       sepia: data.darkReaderSepia,
     };
-    delete data.darkReaderBrightness;
     delete data.darkReaderContrast;
+    delete data.darkReaderBrightness;
     delete data.darkReaderSepia;
 
     const serviceData = data;
