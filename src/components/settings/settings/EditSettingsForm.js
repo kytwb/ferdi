@@ -230,12 +230,12 @@ export default @observer class EditSettingsForm extends Component {
             id="form"
           >
             {/* Titles */}
-            <div >
-             <h2 id="general" className="settings_titles">{intl.formatMessage(messages.headlineGeneral)}</h2>
+            <div className="recipes__navigation">
+              <h2 id="general" className="badge">{intl.formatMessage(messages.headlineGeneral)}</h2>
              &nbsp;&nbsp;
-             <h2 id="apperance" className="settings_titles">{intl.formatMessage(messages.headlineAppearance)}</h2>
-            </div> 
-          
+              <h2 id="apperance" className="badge">{intl.formatMessage(messages.headlineAppearance)}</h2>
+            </div>
+
             {/* General */}
             <Toggle field={form.$('autoLaunchOnStart')} />
             <Toggle field={form.$('runInBackground')} />
@@ -403,7 +403,6 @@ export default @observer class EditSettingsForm extends Component {
 
 
             {/* Appearance */}
-            
             <Toggle field={form.$('showDisabledServices')} />
             <Toggle field={form.$('showMessageBadgeWhenMuted')} />
 
