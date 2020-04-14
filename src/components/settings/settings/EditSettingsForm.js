@@ -232,8 +232,14 @@ export default @observer class EditSettingsForm extends Component {
             {/* Titles */}
             <div className="recipes__navigation">
               <h2 id="general" className="badge">{intl.formatMessage(messages.headlineGeneral)}</h2>
-             &nbsp;&nbsp;
+                &nbsp;&nbsp;
               <h2 id="apperance" className="badge">{intl.formatMessage(messages.headlineAppearance)}</h2>
+                &nbsp;&nbsp;
+              <h2 id="language" className="badge">{intl.formatMessage(messages.headlineLanguage)}</h2>
+                &nbsp;&nbsp;
+              <h2 id="advanced">{intl.formatMessage(messages.headlineAdvanced)}</h2>
+                &nbsp;&nbsp;
+              <h2 id="updates" className="badge">{intl.formatMessage(messages.headlineUpdates)}</h2>
             </div>
 
             {/* General */}
@@ -444,7 +450,6 @@ export default @observer class EditSettingsForm extends Component {
             <p>{intl.formatMessage(messages.accentColorInfo)}</p>
 
             {/* Language */}
-            <h2 id="language">{intl.formatMessage(messages.headlineLanguage)}</h2>
             <Select field={form.$('locale')} showLabel={false} />
 
             <Hr />
@@ -473,7 +478,6 @@ export default @observer class EditSettingsForm extends Component {
             </a>
 
             {/* Advanced */}
-            <h2 id="advanced">{intl.formatMessage(messages.headlineAdvanced)}</h2>
             <Toggle field={form.$('enableGPUAcceleration')} />
             <p className="settings__help">{intl.formatMessage(messages.enableGPUAccelerationInfo)}</p>
             <div className="settings__settings-group">
@@ -507,7 +511,6 @@ export default @observer class EditSettingsForm extends Component {
             </div>
 
             {/* Updates */}
-            <h2 id="updates">{intl.formatMessage(messages.headlineUpdates)}</h2>
             <Toggle field={form.$('automaticUpdates')} />
             {automaticUpdates && (
               <div>
