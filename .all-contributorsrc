@@ -492,6 +492,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "saruwman",
+      "name": "saruwman",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/41330038?v=4",
+      "profile": "https://github.com/saruwman",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 6,
