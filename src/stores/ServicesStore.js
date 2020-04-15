@@ -602,7 +602,8 @@ export default class ServicesStore extends Store {
     service.resetMessageCount();
 
     // service.webview.loadURL(service.url);
-    service.webview.reload();
+    //service.webview.reload();
+    service.webview.goToIndex(0);
   }
 
   @action _reloadActive() {
