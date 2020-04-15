@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-48-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-49-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -346,6 +346,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a></td>
     <td align="center"><a href="https://jakelee.co.uk"><img src="https://avatars2.githubusercontent.com/u/12380876?v=4" width="40px;" alt=""/><br /><sub><b>Jake Lee</b></sub></a><br /><a href="#content-JakeSteam" title="Content">🖋</a></td>
     <td align="center"><a href="https://github.com/sampathBlam"><img src="https://avatars1.githubusercontent.com/u/17728976?v=4" width="40px;" alt=""/><br /><sub><b>Sampath Kumar Krishnan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/saruwman"><img src="https://avatars2.githubusercontent.com/u/41330038?v=4" width="40px;" alt=""/><br /><sub><b>saruwman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Documentation">📖</a></td>
   </tr>
 </table>
 
