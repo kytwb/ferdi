@@ -70,6 +70,10 @@ const messages = defineMessages({
     id: 'settings.app.form.hibernate',
     defaultMessage: '!!!Enable service hibernation',
   },
+  hibernateOnStartup: {
+    id: 'settings.app.form.hibernateOnStartup',
+    defaultMessage: '!!!Keep services in hibernation on startup',
+  },
   hibernationStrategy: {
     id: 'settings.app.form.hibernationStrategy',
     defaultMessage: '!!!Hibernation strategy',
@@ -208,6 +212,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
+        hibernateOnStartup: settingsData.hibernateOnStartup,
         hibernationStrategy: settingsData.hibernationStrategy,
         predefinedTodoServer: settingsData.predefinedTodoServer,
         customTodoServer: settingsData.customTodoServer,
@@ -360,6 +365,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.hibernate),
           value: settings.all.app.hibernate,
           default: DEFAULT_APP_SETTINGS.hibernate,
+        },
+        hibernateOnStartup: {
+          label: intl.formatMessage(messages.hibernateOnStartup),
+          value: settings.all.app.hibernateOnStartup,
+          default: DEFAULT_APP_SETTINGS.hibernateOnStartup,
         },
         hibernationStrategy: {
           label: intl.formatMessage(messages.hibernationStrategy),
