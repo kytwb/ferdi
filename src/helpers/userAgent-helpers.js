@@ -1,9 +1,11 @@
-import { remote } from 'electron';
+import { remote, app } from 'electron';
 import os from 'os';
 import macosVersion from 'macos-version';
 import { isMac, isWindows } from '../environment';
 
-const { app } = remote;
+// This helper gets included from the backend and frontend but we only need to use "remote"
+// if we are in the frontend
+const ferdiVersion = remote && remote.app ? remote.app.getVersion() : app.getVersion();
 
 function macOS() {
   const version = macosVersion();
@@ -34,7 +36,7 @@ export default function userAgent(removeChromeVersion = false) {
 
   let applicationString = '';
   if (!removeChromeVersion) {
-    applicationString = ` Ferdi/${app.getVersion()} (Electron ${process.versions.electron})`;
+    applicationString = ` Ferdi/${ferdiVersion} (Electron ${process.versions.electron})`;
   }
 
   // TODO: Update AppleWebKit and Safari version after electron update
