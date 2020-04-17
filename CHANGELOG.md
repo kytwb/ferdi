@@ -8,6 +8,7 @@
 - Add support for Adaptable Dark Mode on Windows (#548), 💖 @Room4O4 & @mahadevans87
 - Add notification & audio toggle action in tray context menu (#542), 💖 @Room4O4 & @mahadevans87
 - Add Dark Reader settings (#531, #568), 💖 @Room4O4 & @mahadevans87
+- Add support for 11 new services and improve existing ones, 💖 @rctneil @JakeSteam @sampathBlam @tpopela @RoiArthurB
 
 ### Minor changes
 - Improve user onboarding (#493)
