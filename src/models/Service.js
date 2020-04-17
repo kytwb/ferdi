@@ -126,7 +126,7 @@ export default class Service {
       hibernate,
       hibernateOnStartup,
     } = window.ferdi.stores.settings.app;
-    // Stores are probably not loaded yet so we need to use localStorage data to get active service
+    // The service store is probably not loaded yet so we need to use localStorage data to get active service
     const isActive = window.localStorage.service && JSON.parse(window.localStorage.service).activeService === this.id;
     if (hibernate && hibernateOnStartup && !isActive) {
       this.isHibernating = true;
