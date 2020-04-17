@@ -1,4 +1,60 @@
-## [5.4.4-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.4.4-gm) (2020-04-15)
+# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0) (2020-04-17)
+### Features
+- Merge Franz 5.5.0-beta.2
+- Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
+- Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
+- Add option to start Ferdi minimized (#490, #534)
+- Add option to show draggable window area on macOS (#304, #532)
+- Add support for Adaptable Dark Mode on Windows (#548), 💖 @Room4O4 & @mahadevans87
+- Add notification & audio toggle action in tray context menu (#542), 💖 @Room4O4 & @mahadevans87
+- Add Dark Reader settings (#531, #568), 💖 @Room4O4 & @mahadevans87
+- Add support for 11 new services and improve existing ones, 💖 @rctneil @JakeSteam @sampathBlam @tpopela @RoiArthurB
+- Add support for unlocking with Touch ID (#367)
+- Add find in page feature (#67) (#432)
+- Add custom dark mode handler support (#445)
+- Add option to disable reload after resume (#442), 💖 @n0emis
+- Add custom JS/CSS to services (#83)
+- Add ability to change the services icons size and sidebar width (#153)
+
+### Minor changes
+- Improve user onboarding (#493)
+- Improve "Updates" section in settings (#506), 💖 @yourcontact
+- Improve information about Franz Premium and Teams
+- Hide user lastname on Ferdi servers as it is not stored
+- Improve draggable window area height for macOS (#304, #479)
+- Remove server setting from settings screen (#516), 💖 @mrassili
+- Update Electron to 8.1.1 (#480)
+- Window title now reflects service name (#213), 💖 @gmarec
+- Improve system tray icon behaviour (#307)
+- Improve navigation bar behaviour setting (#270)
+- Ferdi is now available as Flatpak on Flathub (#323), 💖 @lhw
+- Add automatic local recipe updates
+- Add option to start Ferdi in system tray (#331), 💖 @jereksel 
+- Add better support for macOS dark mode
+- Add better seperation in settings
+- Change Sentry telemetry to be opt-in only (#160)
+
+### Bug fixes
+- Fix cache clearing not working in Windows 10 (#541, #544), 💖 @Room4O4 & @mahadevans87
+- Fix Home button in navigation bar not correctly navigating (#571, #573), 💖 @Room4O4 & @mahadevans87
+- Fix and enhance context menu (#357) (#413) (#452) (#354) (#227)
+- Fix regresssion around muting services (#428), 💖 @dpeukert
+- Fix app unusable without an account on Windows since v5.4.0 (#253)
+- Fix services URL validation/harmonization (#276)
+- Fix app failing to properly lock itself at startup resulting in shortcuts not working (#377) (#362)
+- Fix shortcuts not working when locked (#404)
+- Fix missing Slack services custom icons (#290)
+- Fix app possibly unusable when using faulty translations (#340)
+- Fix Dark Mode setting on Windows (#347)
+- Fix login problems in Google services
+- Fix DarkReader blocking services from loading (#285)
+- Fix incorrect body closing tag (#330), 💖 @jereksel
+
+### Build changes
+- Add retry commands to flaky build steps (#498)
+- Run utility scripts pre-commit instead of pre-push (#515)
+
+## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-15)
 ### Features
 - Merge Franz 5.5.0-beta.2
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
