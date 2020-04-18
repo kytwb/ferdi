@@ -251,7 +251,10 @@ export default @observer class EditSettingsForm extends Component {
 
             <Toggle field={form.$('hibernate')} />
             {hibernationEnabled && (
-              <Select field={form.$('hibernationStrategy')} />
+              <>
+                <Select field={form.$('hibernationStrategy')} />
+                <Toggle field={form.$('hibernateOnStartup')} />
+              </>
             )}
             <p
               className="settings__message"

@@ -60,4 +60,5 @@ protocols:
 
 asarUnpack:
   - ./recipes
+  - ./node_modules/mac-screen-capture-permissions
   - ./assets/images/taskbar

@@ -145,7 +145,7 @@ class TabItem extends Component {
                 •
             </span>
           )}
-          {service.isHibernating && (
+          {service.isHibernating && !service.disableHibernation && (
             <span className="tab-item__message-count hibernating">
               •
             </span>

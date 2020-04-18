@@ -234,15 +234,28 @@
     }
   },
   {
+    "id": "settings.service.form.disableHibernationInfo",
+    "defaultMessage": "!!!You currently have hibernation enabled but you can disable hibernation for individual services using this option.",
+    "file": "src/components/settings/services/EditServiceForm.js",
+    "start": {
+      "line": 96,
+      "column": 26
+    },
+    "end": {
+      "line": 99,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.service.form.headlineNotifications",
     "defaultMessage": "!!!Notifications",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 96,
+      "line": 100,
       "column": 25
     },
     "end": {
-      "line": 99,
+      "line": 103,
       "column": 3
     }
   },
@@ -251,11 +264,11 @@
     "defaultMessage": "!!!Unread message badges",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 100,
+      "line": 104,
       "column": 18
     },
     "end": {
-      "line": 103,
+      "line": 107,
       "column": 3
     }
   },
@@ -264,21 +277,8 @@
     "defaultMessage": "!!!General",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 104,
-      "column": 19
-    },
-    "end": {
-      "line": 107,
-      "column": 3
-    }
-  },
-  {
-    "id": "settings.service.form.iconDelete",
-    "defaultMessage": "!!!Delete",
-    "file": "src/components/settings/services/EditServiceForm.js",
-    "start": {
       "line": 108,
-      "column": 14
+      "column": 19
     },
     "end": {
       "line": 111,
@@ -286,8 +286,8 @@
     }
   },
   {
-    "id": "settings.service.form.iconUpload",
-    "defaultMessage": "!!!Drop your image, or click here",
+    "id": "settings.service.form.iconDelete",
+    "defaultMessage": "!!!Delete",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
       "line": 112,
@@ -299,15 +299,28 @@
     }
   },
   {
+    "id": "settings.service.form.iconUpload",
+    "defaultMessage": "!!!Drop your image, or click here",
+    "file": "src/components/settings/services/EditServiceForm.js",
+    "start": {
+      "line": 116,
+      "column": 14
+    },
+    "end": {
+      "line": 119,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.service.form.proxy.headline",
     "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 116,
+      "line": 120,
       "column": 17
     },
     "end": {
-      "line": 119,
+      "line": 123,
       "column": 3
     }
   },
@@ -316,11 +329,11 @@
     "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 120,
+      "line": 124,
       "column": 20
     },
     "end": {
-      "line": 123,
+      "line": 127,
       "column": 3
     }
   },
@@ -329,11 +342,11 @@
     "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 124,
+      "line": 128,
       "column": 13
     },
     "end": {
-      "line": 127,
+      "line": 131,
       "column": 3
     }
   }

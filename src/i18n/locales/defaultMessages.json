@@ -1193,6 +1193,190 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Home",
+        "end": {
+          "column": 3,
+          "line": 16
+        },
+        "file": "src/components/services/content/ConnectionBanner.js",
+        "id": "webControls.goHome",
+        "start": {
+          "column": 10,
+          "line": 13
+        }
+      },
+      {
+        "defaultMessage": "!!!Open in Browser",
+        "end": {
+          "column": 3,
+          "line": 20
+        },
+        "file": "src/components/services/content/ConnectionBanner.js",
+        "id": "webControls.openInBrowser",
+        "start": {
+          "column": 17,
+          "line": 17
+        }
+      },
+      {
+        "defaultMessage": "!!!Back",
+        "end": {
+          "column": 3,
+          "line": 24
+        },
+        "file": "src/components/services/content/ConnectionBanner.js",
+        "id": "webControls.back",
+        "start": {
+          "column": 8,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!Forward",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/components/services/content/ConnectionBanner.js",
+        "id": "webControls.forward",
+        "start": {
+          "column": 11,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/components/services/content/ConnectionBanner.js",
+        "id": "webControls.reload",
+        "start": {
+          "column": 10,
+          "line": 29
+        }
+      }
+    ],
+    "path": "src/components/services/content/ConnectionBanner.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Home",
+        "end": {
+          "column": 3,
+          "line": 16
+        },
+        "file": "src/components/services/content/ConnectionLost.js",
+        "id": "webControls.goHome",
+        "start": {
+          "column": 10,
+          "line": 13
+        }
+      },
+      {
+        "defaultMessage": "!!!Open in Browser",
+        "end": {
+          "column": 3,
+          "line": 20
+        },
+        "file": "src/components/services/content/ConnectionLost.js",
+        "id": "webControls.openInBrowser",
+        "start": {
+          "column": 17,
+          "line": 17
+        }
+      },
+      {
+        "defaultMessage": "!!!Back",
+        "end": {
+          "column": 3,
+          "line": 24
+        },
+        "file": "src/components/services/content/ConnectionLost.js",
+        "id": "webControls.back",
+        "start": {
+          "column": 8,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!Forward",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/components/services/content/ConnectionLost.js",
+        "id": "webControls.forward",
+        "start": {
+          "column": 11,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/components/services/content/ConnectionLost.js",
+        "id": "webControls.reload",
+        "start": {
+          "column": 10,
+          "line": 29
+        }
+      }
+    ],
+    "path": "src/components/services/content/ConnectionLost.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Oh no! Franz lost the connection to {name}.",
+        "end": {
+          "column": 3,
+          "line": 18
+        },
+        "file": "src/components/services/content/ConnectionLostBanner.js",
+        "id": "connectionLostBanner.message",
+        "start": {
+          "column": 8,
+          "line": 15
+        }
+      },
+      {
+        "defaultMessage": "!!!What happened?",
+        "end": {
+          "column": 3,
+          "line": 22
+        },
+        "file": "src/components/services/content/ConnectionLostBanner.js",
+        "id": "connectionLostBanner.informationLink",
+        "start": {
+          "column": 19,
+          "line": 19
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload Service",
+        "end": {
+          "column": 3,
+          "line": 26
+        },
+        "file": "src/components/services/content/ConnectionLostBanner.js",
+        "id": "connectionLostBanner.cta",
+        "start": {
+          "column": 7,
+          "line": 23
+        }
+      }
+    ],
+    "path": "src/components/services/content/ConnectionLostBanner.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!Oh no!",
         "end": {
           "column": 3,
@@ -1430,6 +1614,76 @@
       }
     ],
     "path": "src/components/services/content/Services.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Home",
+        "end": {
+          "column": 3,
+          "line": 16
+        },
+        "file": "src/components/services/content/WebControls.js",
+        "id": "webControls.goHome",
+        "start": {
+          "column": 10,
+          "line": 13
+        }
+      },
+      {
+        "defaultMessage": "!!!Open in Browser",
+        "end": {
+          "column": 3,
+          "line": 20
+        },
+        "file": "src/components/services/content/WebControls.js",
+        "id": "webControls.openInBrowser",
+        "start": {
+          "column": 17,
+          "line": 17
+        }
+      },
+      {
+        "defaultMessage": "!!!Back",
+        "end": {
+          "column": 3,
+          "line": 24
+        },
+        "file": "src/components/services/content/WebControls.js",
+        "id": "webControls.back",
+        "start": {
+          "column": 8,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!Forward",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/components/services/content/WebControls.js",
+        "id": "webControls.forward",
+        "start": {
+          "column": 11,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/components/services/content/WebControls.js",
+        "id": "webControls.reload",
+        "start": {
+          "column": 10,
+          "line": 29
+        }
+      }
+    ],
+    "path": "src/components/services/content/WebControls.json"
   },
   {
     "descriptors": [
@@ -2421,107 +2675,120 @@
         }
       },
       {
-        "defaultMessage": "!!!Notifications",
+        "defaultMessage": "!!!You currently have hibernation enabled but you can disable hibernation for individual services using this option.",
         "end": {
           "column": 3,
           "line": 99
         },
         "file": "src/components/settings/services/EditServiceForm.js",
+        "id": "settings.service.form.disableHibernationInfo",
+        "start": {
+          "column": 26,
+          "line": 96
+        }
+      },
+      {
+        "defaultMessage": "!!!Notifications",
+        "end": {
+          "column": 3,
+          "line": 103
+        },
+        "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineNotifications",
         "start": {
           "column": 25,
-          "line": 96
+          "line": 100
         }
       },
       {
         "defaultMessage": "!!!Unread message badges",
         "end": {
           "column": 3,
-          "line": 103
+          "line": 107
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineBadges",
         "start": {
           "column": 18,
-          "line": 100
+          "line": 104
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 107
+          "line": 111
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 104
+          "line": 108
         }
       },
       {
         "defaultMessage": "!!!Delete",
         "end": {
           "column": 3,
-          "line": 111
-        },
-        "file": "src/components/settings/services/EditServiceForm.js",
-        "id": "settings.service.form.iconDelete",
-        "start": {
-          "column": 14,
-          "line": 108
-        }
-      },
-      {
-        "defaultMessage": "!!!Drop your image, or click here",
-        "end": {
-          "column": 3,
           "line": 115
         },
         "file": "src/components/settings/services/EditServiceForm.js",
-        "id": "settings.service.form.iconUpload",
+        "id": "settings.service.form.iconDelete",
         "start": {
           "column": 14,
           "line": 112
         }
       },
       {
-        "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
+        "defaultMessage": "!!!Drop your image, or click here",
         "end": {
           "column": 3,
           "line": 119
         },
         "file": "src/components/settings/services/EditServiceForm.js",
+        "id": "settings.service.form.iconUpload",
+        "start": {
+          "column": 14,
+          "line": 116
+        }
+      },
+      {
+        "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
+        "end": {
+          "column": 3,
+          "line": 123
+        },
+        "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.headline",
         "start": {
           "column": 17,
-          "line": 116
+          "line": 120
         }
       },
       {
         "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
         "end": {
           "column": 3,
-          "line": 123
+          "line": 127
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.restartInfo",
         "start": {
           "column": 20,
-          "line": 120
+          "line": 124
         }
       },
       {
         "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
         "end": {
           "column": 3,
-          "line": 127
+          "line": 131
         },
         "file": "src/components/settings/services/EditServiceForm.js",
         "id": "settings.service.form.proxy.info",
         "start": {
           "column": 13,
-          "line": 124
+          "line": 128
         }
       }
     ],
@@ -3888,6 +4155,19 @@
           "column": 10,
           "line": 65
         }
+      },
+      {
+        "defaultMessage": "!!!Occasional Waiting Screens",
+        "end": {
+          "column": 3,
+          "line": 72
+        },
+        "file": "src/components/ui/FeatureList.js",
+        "id": "pricing.features.appDelaysEnabled",
+        "start": {
+          "column": 19,
+          "line": 69
+        }
       }
     ],
     "path": "src/components/ui/FeatureList.json"
@@ -4006,172 +4286,185 @@
         }
       },
       {
-        "defaultMessage": "!!!Enable Notifications",
+        "defaultMessage": "!!!Disable hibernation",
         "end": {
           "column": 3,
           "line": 39
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.enableNotification",
+        "id": "settings.service.form.disableHibernation",
         "start": {
           "column": 22,
           "line": 36
         }
       },
       {
-        "defaultMessage": "!!!Show unread message badges",
+        "defaultMessage": "!!!Enable Notifications",
         "end": {
           "column": 3,
           "line": 43
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.enableBadge",
+        "id": "settings.service.form.enableNotification",
         "start": {
-          "column": 15,
+          "column": 22,
           "line": 40
         }
       },
       {
-        "defaultMessage": "!!!Enable audio",
+        "defaultMessage": "!!!Show unread message badges",
         "end": {
           "column": 3,
           "line": 47
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.enableAudio",
+        "id": "settings.service.form.enableBadge",
         "start": {
           "column": 15,
           "line": 44
         }
       },
       {
-        "defaultMessage": "!!!Team",
+        "defaultMessage": "!!!Enable audio",
         "end": {
           "column": 3,
           "line": 51
         },
         "file": "src/containers/settings/EditServiceScreen.js",
+        "id": "settings.service.form.enableAudio",
+        "start": {
+          "column": 15,
+          "line": 48
+        }
+      },
+      {
+        "defaultMessage": "!!!Team",
+        "end": {
+          "column": 3,
+          "line": 55
+        },
+        "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.team",
         "start": {
           "column": 8,
-          "line": 48
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Service URL",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 59
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.customUrl",
         "start": {
           "column": 13,
-          "line": 52
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Show message badge for all new messages",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 63
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.indirectMessages",
         "start": {
           "column": 20,
-          "line": 56
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Custom icon",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 67
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.icon",
         "start": {
           "column": 8,
-          "line": 60
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Enable Dark Mode",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 71
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableDarkMode",
         "start": {
           "column": 18,
-          "line": 64
+          "line": 68
         }
       },
       {
         "defaultMessage": "!!!Use Proxy",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 75
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.isEnabled",
         "start": {
           "column": 15,
-          "line": 68
+          "line": 72
         }
       },
       {
         "defaultMessage": "!!!Proxy Host/IP",
         "end": {
           "column": 3,
-          "line": 75
-        },
-        "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.proxy.host",
-        "start": {
-          "column": 13,
-          "line": 72
-        }
-      },
-      {
-        "defaultMessage": "!!!Port",
-        "end": {
-          "column": 3,
           "line": 79
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.proxy.port",
+        "id": "settings.service.form.proxy.host",
         "start": {
           "column": 13,
           "line": 76
         }
       },
       {
-        "defaultMessage": "!!!User",
+        "defaultMessage": "!!!Port",
         "end": {
           "column": 3,
           "line": 83
         },
         "file": "src/containers/settings/EditServiceScreen.js",
-        "id": "settings.service.form.proxy.user",
+        "id": "settings.service.form.proxy.port",
         "start": {
           "column": 13,
           "line": 80
         }
       },
       {
-        "defaultMessage": "!!!Password",
+        "defaultMessage": "!!!User",
         "end": {
           "column": 3,
           "line": 87
         },
         "file": "src/containers/settings/EditServiceScreen.js",
+        "id": "settings.service.form.proxy.user",
+        "start": {
+          "column": 13,
+          "line": 84
+        }
+      },
+      {
+        "defaultMessage": "!!!Password",
+        "end": {
+          "column": 3,
+          "line": 91
+        },
+        "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.password",
         "start": {
           "column": 17,
-          "line": 84
+          "line": 88
         }
       }
     ],
@@ -5323,6 +5616,76 @@
       }
     ],
     "path": "src/features/quickSwitch/Component.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Home",
+        "end": {
+          "column": 3,
+          "line": 16
+        },
+        "file": "src/features/recipeConnectionLost/components/WebControls.js",
+        "id": "webControls.goHome",
+        "start": {
+          "column": 10,
+          "line": 13
+        }
+      },
+      {
+        "defaultMessage": "!!!Open in Browser",
+        "end": {
+          "column": 3,
+          "line": 20
+        },
+        "file": "src/features/recipeConnectionLost/components/WebControls.js",
+        "id": "webControls.openInBrowser",
+        "start": {
+          "column": 17,
+          "line": 17
+        }
+      },
+      {
+        "defaultMessage": "!!!Back",
+        "end": {
+          "column": 3,
+          "line": 24
+        },
+        "file": "src/features/recipeConnectionLost/components/WebControls.js",
+        "id": "webControls.back",
+        "start": {
+          "column": 8,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!Forward",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/features/recipeConnectionLost/components/WebControls.js",
+        "id": "webControls.forward",
+        "start": {
+          "column": 11,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!Reload",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/features/recipeConnectionLost/components/WebControls.js",
+        "id": "webControls.reload",
+        "start": {
+          "column": 10,
+          "line": 29
+        }
+      }
+    ],
+    "path": "src/features/recipeConnectionLost/components/WebControls.json"
   },
   {
     "descriptors": [

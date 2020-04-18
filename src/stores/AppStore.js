@@ -218,13 +218,16 @@ export default class AppStore extends Store {
     // macOS catalina notifications hack
     // notifications got stuck after upgrade but forcing a notification
     // via `new Notification` triggered the permission request
-    if (isMac && !localStorage.getItem(CATALINA_NOTIFICATION_HACK_KEY)) {
-      // eslint-disable-next-line no-new
-      new window.Notification('Welcome to Franz 5', {
-        body: 'Have a wonderful day & happy messaging.',
-      });
+    if (isMac) {
+      if (!localStorage.getItem(CATALINA_NOTIFICATION_HACK_KEY)) {
+        debug('Triggering macOS Catalina notification permission trigger');
+        // eslint-disable-next-line no-new
+        new window.Notification('Welcome to Franz 5', {
+          body: 'Have a wonderful day & happy messaging.',
+        });
 
-      localStorage.setItem(CATALINA_NOTIFICATION_HACK_KEY, true);
+        localStorage.setItem(CATALINA_NOTIFICATION_HACK_KEY, true);
+      }
     }
   }
 
