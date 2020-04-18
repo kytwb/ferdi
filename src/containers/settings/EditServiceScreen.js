@@ -71,15 +71,15 @@ const messages = defineMessages({
   },
   darkReaderBrightness: {
     id: 'settings.service.form.darkReaderBrightness',
-    defaultMessage: '!!!Darkreader Brightness',
+    defaultMessage: '!!!Dark Reader Brightness',
   },
   darkReaderContrast: {
     id: 'settings.service.form.darkReaderContrast',
-    defaultMessage: '!!!Darkreader Contrast',
+    defaultMessage: '!!!Dark Reader Contrast',
   },
   darkReaderSepia: {
     id: 'settings.service.form.darkReaderSepia',
-    defaultMessage: '!!!Darkreader Sepia',
+    defaultMessage: '!!!Dark Reader Sepia',
   },
   enableProxy: {
     id: 'settings.service.form.proxy.isEnabled',

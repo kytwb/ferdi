@@ -4276,247 +4276,247 @@
         "defaultMessage": "!!!Name",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 31
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.name",
         "start": {
           "column": 8,
-          "line": 22
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Enable service",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 35
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableService",
         "start": {
           "column": 17,
-          "line": 26
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Disable hibernation",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 39
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.disableHibernation",
         "start": {
           "column": 22,
-          "line": 30
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Enable Notifications",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 43
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableNotification",
         "start": {
           "column": 22,
-          "line": 34
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Show unread message badges",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 47
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableBadge",
         "start": {
           "column": 15,
-          "line": 38
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Enable audio",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 51
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableAudio",
         "start": {
           "column": 15,
-          "line": 42
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Team",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 55
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.team",
         "start": {
           "column": 8,
-          "line": 46
+          "line": 52
         }
       },
       {
         "defaultMessage": "!!!Service URL",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 59
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.customUrl",
         "start": {
           "column": 13,
-          "line": 50
+          "line": 56
         }
       },
       {
         "defaultMessage": "!!!Show message badge for all new messages",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 63
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.indirectMessages",
         "start": {
           "column": 20,
-          "line": 54
+          "line": 60
         }
       },
       {
         "defaultMessage": "!!!Custom icon",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 67
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.icon",
         "start": {
           "column": 8,
-          "line": 58
+          "line": 64
         }
       },
       {
         "defaultMessage": "!!!Enable Dark Mode",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 71
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableDarkMode",
         "start": {
           "column": 18,
-          "line": 62
+          "line": 68
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Brightness",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 75
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderBrightness",
         "start": {
           "column": 24,
-          "line": 66
+          "line": 72
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Contrast",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 79
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderContrast",
         "start": {
           "column": 22,
-          "line": 70
+          "line": 76
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Sepia",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 83
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderSepia",
         "start": {
           "column": 19,
-          "line": 74
+          "line": 80
         }
       },
       {
         "defaultMessage": "!!!Use Proxy",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 87
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.isEnabled",
         "start": {
           "column": 15,
-          "line": 78
+          "line": 84
         }
       },
       {
         "defaultMessage": "!!!Proxy Host/IP",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 91
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.host",
         "start": {
           "column": 13,
-          "line": 82
+          "line": 88
         }
       },
       {
         "defaultMessage": "!!!Port",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 95
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.port",
         "start": {
           "column": 13,
-          "line": 86
+          "line": 92
         }
       },
       {
         "defaultMessage": "!!!User",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 99
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.user",
         "start": {
           "column": 13,
-          "line": 90
+          "line": 96
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 103
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.password",
         "start": {
           "column": 17,
-          "line": 94
+          "line": 100
         }
       }
     ],

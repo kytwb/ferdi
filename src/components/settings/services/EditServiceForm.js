@@ -112,7 +112,7 @@ const messages = defineMessages({
   },
   headlineDarkReaderSettings: {
     id: 'settings.service.form.headlineDarkReaderSettings',
-    defaultMessage: '!!!DarkReader Settings',
+    defaultMessage: '!!!Dark Reader Settings',
   },
   iconDelete: {
     id: 'settings.service.form.iconDelete',

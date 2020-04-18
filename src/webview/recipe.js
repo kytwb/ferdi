@@ -231,9 +231,9 @@ class RecipeController {
         disableDarkMode();
         this.universalDarkModeInjected = false;
       } else if (this.settings.app.universalDarkMode && !ignoreList.includes(window.location.host)) {
-        console.log('Injecting DarkReader');
+        console.log('Injecting Dark Reader');
 
-        // Use darkreader instead
+        // Use Dark Reader instead
         const { brightness, contrast, sepia } = this.settings.service.darkReaderSettings;
         enableDarkMode({ brightness, contrast, sepia }, {
           css: customDarkModeCss[window.location.host] || '',
@@ -257,7 +257,7 @@ class RecipeController {
         console.log('Removing injected darkmode.css');
         removeDarkModeStyle();
       } else {
-        console.log('Removing DarkReader');
+        console.log('Removing Dark Reader');
 
         disableDarkMode();
         this.universalDarkModeInjected = false;

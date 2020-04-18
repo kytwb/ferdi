@@ -47,7 +47,7 @@
 - Fix app possibly unusable when using faulty translations (#340)
 - Fix Dark Mode setting on Windows (#347)
 - Fix login problems in Google services
-- Fix DarkReader blocking services from loading (#285)
+- Fix Dark Reader blocking services from loading (#285)
 - Fix incorrect body closing tag (#330), 💖 @jereksel
 
 ### Build changes
@@ -126,7 +126,7 @@
 - Attempt at making "About Ferdi" consistent across platforms #47 (comment)
 - Attempt at fixing "Launch on start" feature on Linux #63
 - Add "Quick Switch" feature
-- Add universal Dark-Mode via the [DarkReader extension](https://github.com/darkreader/darkreader)
+- Add universal Dark-Mode via the [Dark Reader extension](https://github.com/darkreader/darkreader)
 - Add "Scheduled Do-not-Disturb" feature
 
 # [5.3.3](https://github.com/getferdi/ferdi/compare/v5.3.2...v5.3.3) (2019-09-18)
