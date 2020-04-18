@@ -12,3 +12,4 @@ yarn-error.log
 npm-debug.log*
 lerna-debug.log
 uidev/lib
+*.tsbuildinfo

@@ -14,6 +14,10 @@ class RecipeWebview {
       this.loopFunc();
 
       debug('Poll event');
+
+      // This event is for checking if the service recipe is still actively
+      // communicating with the client
+      ipcRenderer.sendToHost('alive');
     });
   }
 
