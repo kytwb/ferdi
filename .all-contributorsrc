@@ -501,6 +501,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "dorukkarinca",
+      "name": "dorukkarinca",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9303867?v=4",
+      "profile": "https://github.com/dorukkarinca",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 6,
