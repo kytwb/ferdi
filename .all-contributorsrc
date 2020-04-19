@@ -510,6 +510,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "gautamsi",
+      "name": "Gautam Singh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5769869?v=4",
+      "profile": "https://www.linkedin.com/in/gautamsi",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
