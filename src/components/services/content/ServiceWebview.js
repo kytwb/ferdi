@@ -41,13 +41,13 @@ class ServiceWebview extends Component {
 
   refocusWebview = () => {
     const { webview } = this;
-    debug("Refocus Webview is called", this.props.service);
+    debug('Refocus Webview is called', this.props.service);
     if (!webview) return;
     if (this.props.service.isActive) {
       webview.view.blur();
       webview.view.focus();
     } else {
-      debug("Refocus not required - Not active service");
+      debug('Refocus not required - Not active service');
     }
   };
 
