@@ -155,12 +155,6 @@ export default class ServicesStore extends Store {
    */
   _serviceMaintenance() {
     this.all.forEach((service) => {
-      // Defines which services should be hibernated.
-      if (!service.isActive && (Date.now() - service.lastUsed > ms('5m'))) {
-        // If service is stale for 5 min, hibernate it.
-        this._hibernate({ serviceId: service.id });
-      }
-
       if (service.lastPoll && (service.lastPoll) - service.lastPollAnswer > ms('30s')) {
         // If service did not reply for more than 30s try to reload.
         if (!service.isActive) {
