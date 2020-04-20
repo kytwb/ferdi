@@ -279,6 +279,7 @@
   "settings.app.currentVersion": "Current version:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
+  "settings.app.form.alwaysShowServicesNames": "Always show services names under the icons in the sidebar",
   "settings.app.form.autoLaunchInBackground": "Open in background",
   "settings.app.form.autoLaunchOnStart": "Launch Ferdi on start",
   "settings.app.form.automaticUpdates": "Enable updates",

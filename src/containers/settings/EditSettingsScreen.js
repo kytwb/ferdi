@@ -130,6 +130,10 @@ const messages = defineMessages({
     id: 'settings.app.form.universalDarkMode',
     defaultMessage: '!!!Enable universal Dark Mode',
   },
+  alwaysShowServicesNames: {
+    id: 'settings.app.form.alwaysShowServicesNames',
+    defaultMessage: '!!!Always show services names under the icons in the sidebar',
+  },
   serviceRibbonWidth: {
     id: 'settings.app.form.serviceRibbonWidth',
     defaultMessage: '!!!Sidebar width',
@@ -228,6 +232,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         darkMode: settingsData.darkMode,
         adaptableDarkMode: settingsData.adaptableDarkMode,
         universalDarkMode: settingsData.universalDarkMode,
+        alwaysShowServicesNames: settingsData.alwaysShowServicesNames,
         serviceRibbonWidth: settingsData.serviceRibbonWidth,
         iconSize: settingsData.iconSize,
         accentColor: settingsData.accentColor,
@@ -467,6 +472,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.universalDarkMode),
           value: settings.all.app.universalDarkMode,
           default: DEFAULT_APP_SETTINGS.universalDarkMode,
+        },
+        alwaysShowServicesNames: {
+          label: intl.formatMessage(messages.alwaysShowServicesNames),
+          value: settings.all.app.alwaysShowServicesNames,
+          default: DEFAULT_APP_SETTINGS.alwaysShowServicesNames,
         },
         serviceRibbonWidth: {
           label: intl.formatMessage(messages.serviceRibbonWidth),

@@ -124,6 +124,7 @@ export const DEFAULT_APP_SETTINGS = {
   automaticUpdates: true,
   showServiceNavigationBar: false,
   universalDarkMode: true,
+  alwaysShowServicesNames: true,
   adaptableDarkMode: true,
   accentColor: '#7367f0',
   serviceRibbonWidth: 68,

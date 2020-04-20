@@ -19,7 +19,8 @@ class TabBarSortableList extends Component {
     enableService: PropTypes.func.isRequired,
     showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
     showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
-  }
+    alwaysShowServicesNames: PropTypes.bool.isRequired,
+  };
 
   render() {
     const {
@@ -34,12 +35,11 @@ class TabBarSortableList extends Component {
       openSettings,
       showMessageBadgeWhenMutedSetting,
       showMessageBadgesEvenWhenMuted,
+      alwaysShowServicesNames,
     } = this.props;
 
     return (
-      <ul
-        className="tabs"
-      >
+      <ul className="tabs">
         {services.map((service, index) => (
           <TabItem
             key={service.id}
@@ -48,7 +48,8 @@ class TabBarSortableList extends Component {
             index={index}
             shortcutIndex={index + 1}
             reload={() => reload({ serviceId: service.id })}
-            toggleNotifications={() => toggleNotifications({ serviceId: service.id })}
+            toggleNotifications={() => toggleNotifications({ serviceId: service.id })
+            }
             toggleAudio={() => toggleAudio({ serviceId: service.id })}
             deleteService={() => deleteService({ serviceId: service.id })}
             disableService={() => disableService({ serviceId: service.id })}
@@ -56,6 +57,7 @@ class TabBarSortableList extends Component {
             openSettings={openSettings}
             showMessageBadgeWhenMutedSetting={showMessageBadgeWhenMutedSetting}
             showMessageBadgesEvenWhenMuted={showMessageBadgesEvenWhenMuted}
+            alwaysShowServicesNames={alwaysShowServicesNames}
           />
         ))}
         {/* <li>

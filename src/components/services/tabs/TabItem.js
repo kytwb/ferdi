@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import { SortableElement } from 'react-sortable-hoc';
 
 import ServiceModel from '../../../models/Service';
-import { isDevMode, ctrlKey } from '../../../environment';
+import { ctrlKey } from '../../../environment';
 
 const { Menu } = remote;
 
@@ -65,6 +65,7 @@ class TabItem extends Component {
     enableService: PropTypes.func.isRequired,
     showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
     showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
+    alwaysShowServicesNames: PropTypes.bool.isRequired,
   };
 
   static contextTypes = {
@@ -85,52 +86,65 @@ class TabItem extends Component {
       openSettings,
       showMessageBadgeWhenMutedSetting,
       showMessageBadgesEvenWhenMuted,
+      alwaysShowServicesNames,
     } = this.props;
     const { intl } = this.context;
 
-
-    const menuTemplate = [{
-      label: service.name || service.recipe.name,
-      enabled: false,
-    }, {
-      type: 'separator',
-    }, {
-      label: intl.formatMessage(messages.reload),
-      click: reload,
-    }, {
-      label: intl.formatMessage(messages.edit),
-      click: () => openSettings({
-        path: `services/edit/${service.id}`,
-      }),
-    }, {
-      type: 'separator',
-    }, {
-      label: service.isNotificationEnabled
-        ? intl.formatMessage(messages.disableNotifications)
-        : intl.formatMessage(messages.enableNotifications),
-      click: () => toggleNotifications(),
-    }, {
-      label: service.isMuted
-        ? intl.formatMessage(messages.enableAudio)
-        : intl.formatMessage(messages.disableAudio),
-      click: () => toggleAudio(),
-    }, {
-      label: intl.formatMessage(service.isEnabled ? messages.disableService : messages.enableService),
-      click: () => (service.isEnabled ? disableService() : enableService()),
-    }, {
-      type: 'separator',
-    }];
-
-    if (isDevMode) {
-      menuTemplate.push({
+    const menuTemplate = [
+      {
+        label: service.name || service.recipe.name,
+        enabled: false,
+      },
+      {
+        type: 'separator',
+      },
+      {
+        label: intl.formatMessage(messages.reload),
+        click: reload,
+      },
+      {
+        label: intl.formatMessage(messages.edit),
+        click: () => openSettings({
+          path: `services/edit/${service.id}`,
+        }),
+      },
+      {
+        type: 'separator',
+      },
+      {
+        label: service.isNotificationEnabled
+          ? intl.formatMessage(messages.disableNotifications)
+          : intl.formatMessage(messages.enableNotifications),
+        click: () => toggleNotifications(),
+      },
+      {
+        label: service.isMuted
+          ? intl.formatMessage(messages.enableAudio)
+          : intl.formatMessage(messages.disableAudio),
+        click: () => toggleAudio(),
+      },
+      {
+        label: intl.formatMessage(
+          service.isEnabled ? messages.disableService : messages.enableService,
+        ),
+        click: () => (service.isEnabled ? disableService() : enableService()),
+      },
+      {
+        type: 'separator',
+      },
+      {
         label: intl.formatMessage(messages.deleteService),
         click: () => deleteService(),
-      });
-    }
+      },
+    ];
     const menu = Menu.buildFromTemplate(menuTemplate);
 
     let notificationBadge = null;
-    if ((showMessageBadgeWhenMutedSetting || service.isNotificationEnabled) && showMessageBadgesEvenWhenMuted && service.isBadgeEnabled) {
+    if (
+      (showMessageBadgeWhenMutedSetting || service.isNotificationEnabled)
+      && showMessageBadgesEvenWhenMuted
+      && service.isBadgeEnabled
+    ) {
       notificationBadge = (
         <span>
           {service.unreadDirectMessageCount > 0 && (
@@ -141,14 +155,10 @@ class TabItem extends Component {
           {service.unreadIndirectMessageCount > 0
             && service.unreadDirectMessageCount === 0
             && service.isIndirectMessageBadgeEnabled && (
-            <span className="tab-item__message-count is-indirect">
-                •
-            </span>
+              <span className="tab-item__message-count is-indirect">•</span>
           )}
           {service.isHibernating && !service.disableHibernation && (
-            <span className="tab-item__message-count hibernating">
-              •
-            </span>
+            <span className="tab-item__message-count hibernating">•</span>
           )}
         </span>
       );
@@ -161,17 +171,25 @@ class TabItem extends Component {
           'is-active': service.isActive,
           'has-custom-icon': service.hasCustomIcon,
           'is-disabled': !service.isEnabled,
+          'is-alwaysShowServicesNames': alwaysShowServicesNames,
         })}
         onClick={clickHandler}
         onContextMenu={() => menu.popup(remote.getCurrentWindow())}
-        data-tip={`${service.name} ${shortcutIndex <= 9 ? `(${ctrlKey}+${shortcutIndex})` : ''}`}
+        data-tip={
+          !alwaysShowServicesNames
+            ? `${service.name} ${
+              shortcutIndex <= 9 ? `(${ctrlKey}+${shortcutIndex})` : ''
+            }`
+            : ''
+        }
       >
-        <img
-          src={service.icon}
-          className="tab-item__icon"
-          alt=""
-        />
+        <img src={service.icon} className="tab-item__icon" alt="" />
         {notificationBadge}
+        {alwaysShowServicesNames ? (
+          <p className="tab-item__service-name">{service.name}</p>
+        ) : (
+          ''
+        )}
       </li>
     );
   }

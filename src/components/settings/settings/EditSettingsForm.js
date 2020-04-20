@@ -432,6 +432,7 @@ export default @observer class EditSettingsForm extends Component {
 
             <Select field={form.$('iconSize')} />
 
+            <Toggle field={form.$('alwaysShowServicesNames')} />
             <Hr />
 
             <Input
