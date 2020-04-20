@@ -169,6 +169,16 @@ export default @observer class EditSettingsForm extends Component {
     intl: intlShape,
   };
 
+  state = {
+    activeSetttingsTab: 'general',
+  }
+
+  setActiveSettingsTab(tab) {
+    this.setState({
+      activeSetttingsTab: tab,
+    });
+  } 
+
   submit(e) {
     e.preventDefault();
     this.props.form.submit({
@@ -203,6 +213,7 @@ export default @observer class EditSettingsForm extends Component {
       isTodosActivated,
     } = this.props;
     const { intl } = this.context;
+    /* const { activeSettingsTab } = this.state; */
 
     let updateButtonLabelMessage = messages.buttonSearchForUpdate;
     if (isCheckingForUpdates) {
@@ -231,194 +242,226 @@ export default @observer class EditSettingsForm extends Component {
           >
             {/* Titles */}
             <div className="recipes__navigation">
-              <h2 id="general" className="badge">{intl.formatMessage(messages.headlineGeneral)}</h2>
+              <h2
+                id="general"
+                className={this.state.activeSetttingsTab === 'general' ? 'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('general'); }}
+              >
+                {intl.formatMessage(messages.headlineGeneral)}
+              </h2>
+                &nbsp;&nbsp; 
+              <h2
+                id="apperance"
+                className={this.state.activeSetttingsTab === 'apperance' ?  'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('apperance'); }}
+              >
+                {intl.formatMessage(messages.headlineAppearance)}
+              </h2>
                 &nbsp;&nbsp;
-              <h2 id="apperance" className="badge">{intl.formatMessage(messages.headlineAppearance)}</h2>
+              <h2
+                id="language"
+                className={this.state.activeSetttingsTab === 'language' ? 'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('language'); }}
+              >
+                {intl.formatMessage(messages.headlineLanguage)}
+              </h2>
                 &nbsp;&nbsp;
-              <h2 id="language" className="badge">{intl.formatMessage(messages.headlineLanguage)}</h2>
+              <h2
+                id="advanced"
+                className={this.state.activeSetttingsTab === 'advanced' ? 'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('advanced'); }}
+              >
+                {intl.formatMessage(messages.headlineAdvanced)}
+              </h2>
                 &nbsp;&nbsp;
-              <h2 id="advanced">{intl.formatMessage(messages.headlineAdvanced)}</h2>
-                &nbsp;&nbsp;
-              <h2 id="updates" className="badge">{intl.formatMessage(messages.headlineUpdates)}</h2>
-            </div>
+              <h2
+                id="updates"
+                className={this.state.activeSetttingsTab === 'updates' ? 'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('updates'); }}
+              >
+                {intl.formatMessage(messages.headlineUpdates)}
+                </h2>
+            </div> 
 
             {/* General */}
-            <Toggle field={form.$('autoLaunchOnStart')} />
-            <Toggle field={form.$('runInBackground')} />
-            <Toggle field={form.$('enableSystemTray')} />
-            <Toggle field={form.$('reloadAfterResume')} />
-            <Toggle field={form.$('startMinimized')} />
-            {process.platform === 'win32' && (
-              <Toggle field={form.$('minimizeToSystemTray')} />
-            )}
-            <Toggle field={form.$('privateNotifications')} />
-            <Select field={form.$('navigationBarBehaviour')} />
+            <div>
+              <Toggle field={form.$('autoLaunchOnStart')} />
+              <Toggle field={form.$('runInBackground')} />
+              <Toggle field={form.$('enableSystemTray')} />
+              <Toggle field={form.$('reloadAfterResume')} />
+              <Toggle field={form.$('startMinimized')} />
+              {process.platform === 'win32' && (
+                <Toggle field={form.$('minimizeToSystemTray')} />
+              )}
+              <Toggle field={form.$('privateNotifications')} />
+              <Select field={form.$('navigationBarBehaviour')} />
 
-            <Hr />
+              <Hr />
 
-            <Toggle field={form.$('sentry')} />
-            <p>{intl.formatMessage(messages.sentryInfo)}</p>
+              <Toggle field={form.$('sentry')} />
+              <p>{intl.formatMessage(messages.sentryInfo)}</p>
 
-            <Hr />
+              <Hr />
 
-            <Toggle field={form.$('hibernate')} />
-            {hibernationEnabled && (
-              <Select field={form.$('hibernationStrategy')} />
-            )}
-            <p
-              className="settings__message"
-              style={{
-                borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-              }}
-            >
-              <span>
-                { intl.formatMessage(messages.hibernateInfo) }
-              </span>
-            </p>
-
-            <Hr />
-
-            {isWorkspaceEnabled && (
-              <Toggle field={form.$('keepAllWorkspacesLoaded')} />
-            )}
-
-            <Hr />
-
-            {isTodosEnabled && (
-              <>
-                <Toggle field={form.$('enableTodos')} />
-                {isTodosActivated && (
-                  <div>
-                    <Select field={form.$('predefinedTodoServer')} />
-                    {form.$('predefinedTodoServer').value === 'isUsingCustomTodoService' && (
-                      <div>
-                        <Input
-                          placeholder="Todo Server"
-                          onChange={e => this.submit(e)}
-                          field={form.$('customTodoServer')}
-                        />
-                        <p
-                          className="settings__message"
-                          style={{
-                            borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                          }}
-                        >
-                          { intl.formatMessage(messages.todoServerInfo) }
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-
-
-            <Hr />
-
-            <Toggle field={form.$('lockingFeatureEnabled')} />
-            {lockingFeatureEnabled && (
-              <>
-                {systemPreferences.canPromptTouchID() && (
-                  <Toggle field={form.$('useTouchIdToUnlock')} />
-                )}
-
-                <Input
-                  placeholder={intl.formatMessage(messages.lockedPassword)}
-                  onChange={e => this.submit(e)}
-                  field={form.$('lockedPassword')}
-                  type="password"
-                  scorePassword
-                  showPasswordToggle
-                />
-                <p>
-                  { intl.formatMessage(messages.lockedPasswordInfo) }
-                </p>
-
-                <Input
-                  placeholder="Lock after inactivity"
-                  onChange={e => this.submit(e)}
-                  field={form.$('inactivityLock')}
-                  autoFocus
-                />
-                <p>
-                  { intl.formatMessage(messages.inactivityLockInfo) }
-                </p>
-              </>
-            )}
-            <p
-              className="settings__message"
-              style={{
-                borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-              }}
-            >
-              <span>
-                { intl.formatMessage(messages.lockInfo) }
-              </span>
-            </p>
-
-            <Hr />
-
-            <Toggle field={form.$('scheduledDNDEnabled')} />
-            {scheduledDNDEnabled && (
-              <>
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
+              <Toggle field={form.$('hibernate')} />
+              {hibernationEnabled && (
+                <Select field={form.$('hibernationStrategy')} />
+              )}
+              <p
+                className="settings__message"
+                style={{
+                  borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
                 }}
-                >
-                  <div style={{
-                    padding: '0 1rem',
-                    width: '100%',
-                  }}
-                  >
-                    <Input
-                      placeholder="17:00"
-                      onChange={e => this.submit(e)}
-                      field={form.$('scheduledDNDStart')}
-                      type="time"
-                    />
-                  </div>
-                  <div style={{
-                    padding: '0 1rem',
-                    width: '100%',
-                  }}
-                  >
-                    <Input
-                      placeholder="09:00"
-                      onChange={e => this.submit(e)}
-                      field={form.$('scheduledDNDEnd')}
-                      type="time"
-                    />
-                  </div>
-                </div>
-                <p>
-                  { intl.formatMessage(messages.scheduledDNDTimeInfo) }
-                </p>
-              </>
-            )}
-            <p
-              className="settings__message"
-              style={{
-                borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-              }}
-            >
-              <span>
-                { intl.formatMessage(messages.scheduledDNDInfo) }
-              </span>
-            </p>
+              >
+                <span>
+                  { intl.formatMessage(messages.hibernateInfo) }
+                </span>
+              </p>
 
+              <Hr />
+
+              {isWorkspaceEnabled && (
+                <Toggle field={form.$('keepAllWorkspacesLoaded')} />
+              )}
+
+              <Hr />
+
+              {isTodosEnabled && (
+                <>
+                  <Toggle field={form.$('enableTodos')} />
+                  {isTodosActivated && (
+                    <div>
+                      <Select field={form.$('predefinedTodoServer')} />
+                      {form.$('predefinedTodoServer').value === 'isUsingCustomTodoService' && (
+                        <div>
+                          <Input
+                            placeholder="Todo Server"
+                            onChange={e => this.submit(e)}
+                            field={form.$('customTodoServer')}
+                          />
+                          <p
+                            className="settings__message"
+                            style={{
+                              borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                            }}
+                          >
+                            { intl.formatMessage(messages.todoServerInfo) }
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+
+
+              <Hr />
+
+              <Toggle field={form.$('lockingFeatureEnabled')} />
+              {lockingFeatureEnabled && (
+                <>
+                  {systemPreferences.canPromptTouchID() && (
+                    <Toggle field={form.$('useTouchIdToUnlock')} />
+                  )}
+
+                  <Input
+                    placeholder={intl.formatMessage(messages.lockedPassword)}
+                    onChange={e => this.submit(e)}
+                    field={form.$('lockedPassword')}
+                    type="password"
+                    scorePassword
+                    showPasswordToggle
+                  />
+                  <p>
+                    { intl.formatMessage(messages.lockedPasswordInfo) }
+                  </p>
+
+                  <Input
+                    placeholder="Lock after inactivity"
+                    onChange={e => this.submit(e)}
+                    field={form.$('inactivityLock')}
+                    autoFocus
+                  />
+                  <p>
+                    { intl.formatMessage(messages.inactivityLockInfo) }
+                  </p>
+                </>
+              )}
+              <p
+                className="settings__message"
+                style={{
+                  borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                }}
+              >
+                <span>
+                  { intl.formatMessage(messages.lockInfo) }
+                </span>
+              </p>
+
+              <Hr />
+
+              <Toggle field={form.$('scheduledDNDEnabled')} />
+              {scheduledDNDEnabled && (
+                <>
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                  }}
+                  >
+                    <div style={{
+                      padding: '0 1rem',
+                      width: '100%',
+                    }}
+                    >
+                      <Input
+                        placeholder="17:00"
+                        onChange={e => this.submit(e)}
+                        field={form.$('scheduledDNDStart')}
+                        type="time"
+                      />
+                    </div>
+                    <div style={{
+                      padding: '0 1rem',
+                      width: '100%',
+                    }}
+                    >
+                      <Input
+                        placeholder="09:00"
+                        onChange={e => this.submit(e)}
+                        field={form.$('scheduledDNDEnd')}
+                        type="time"
+                      />
+                    </div>
+                  </div>
+                  <p>
+                    { intl.formatMessage(messages.scheduledDNDTimeInfo) }
+                  </p>
+                </>
+              )}
+              <p
+                className="settings__message"
+                style={{
+                  borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                }}
+              >
+                <span>
+                  { intl.formatMessage(messages.scheduledDNDInfo) }
+                </span>
+              </p>
+            </div>
 
             {/* Appearance */}
-            <Toggle field={form.$('showDisabledServices')} />
-            <Toggle field={form.$('showMessageBadgeWhenMuted')} />
+            <div>
+              <Toggle field={form.$('showDisabledServices')} />
+              <Toggle field={form.$('showMessageBadgeWhenMuted')} />
 
-            {isMac && <Toggle field={form.$('showDragArea')} />}
+              {isMac && <Toggle field={form.$('showDragArea')} />}
 
-            <Hr />
+              <Hr />
 
-            {(isMac || isWindows) && <Toggle field={form.$('adaptableDarkMode')} />}
-            {!((isMac || isWindows) && isAdaptableDarkModeEnabled) && <Toggle field={form.$('darkMode')} />}
-            {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
+              {(isMac || isWindows) && <Toggle field={form.$('adaptableDarkMode')} />}
+              {!((isMac || isWindows) && isAdaptableDarkModeEnabled) && <Toggle field={form.$('darkMode')} />}
+              {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
               <>
                 <Toggle field={form.$('universalDarkMode')} />
                 <p
@@ -432,87 +475,93 @@ export default @observer class EditSettingsForm extends Component {
                   </span>
                 </p>
               </>
-            )}
+              )}
 
-            <Hr />
+              <Hr />
 
-            <Select field={form.$('serviceRibbonWidth')} />
+              <Select field={form.$('serviceRibbonWidth')} />
 
-            <Select field={form.$('iconSize')} />
+              <Select field={form.$('iconSize')} />
 
-            <Hr />
+              <Hr />
 
-            <Input
-              placeholder="Accent Color"
-              onChange={e => this.submit(e)}
-              field={form.$('accentColor')}
-            />
-            <p>{intl.formatMessage(messages.accentColorInfo)}</p>
+              <Input
+                placeholder="Accent Color"
+                onChange={e => this.submit(e)}
+                field={form.$('accentColor')}
+              />
+              <p>{intl.formatMessage(messages.accentColorInfo)}</p>
+            </div>
 
             {/* Language */}
-            <Select field={form.$('locale')} showLabel={false} />
+            <div>
+              <Select field={form.$('locale')} showLabel={false} />
 
-            <Hr />
+              <Hr />
 
-            <PremiumFeatureContainer
-              condition={!isSpellcheckerIncludedInCurrentPlan}
-              gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
-            >
-              <Fragment>
-                <Toggle
-                  field={form.$('enableSpellchecking')}
-                />
-                {form.$('enableSpellchecking').value && (
+              <PremiumFeatureContainer
+                condition={!isSpellcheckerIncludedInCurrentPlan}
+                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
+              >
+                <Fragment>
+                  <Toggle
+                    field={form.$('enableSpellchecking')}
+                  />
+                  {form.$('enableSpellchecking').value && (
                   <Select field={form.$('spellcheckerLanguage')} />
-                )}
-              </Fragment>
-            </PremiumFeatureContainer>
-            <a
-              href={FRANZ_TRANSLATION}
-              target="_blank"
-              className="link"
-            >
-              {intl.formatMessage(messages.translationHelp)}
-              {' '}
-              <i className="mdi mdi-open-in-new" />
-            </a>
+                  )}
+                </Fragment>
+              </PremiumFeatureContainer>
+              <a
+                href={FRANZ_TRANSLATION}
+                target="_blank"
+                className="link"
+              >
+                {intl.formatMessage(messages.translationHelp)}
+                {' '}
+                <i className="mdi mdi-open-in-new" />
+              </a>
+            </div>
 
             {/* Advanced */}
-            <Toggle field={form.$('enableGPUAcceleration')} />
-            <p className="settings__help">{intl.formatMessage(messages.enableGPUAccelerationInfo)}</p>
-            <div className="settings__settings-group">
-              <h3>
-                {intl.formatMessage(messages.subheadlineCache)}
-              </h3>
-              <p>
-                {intl.formatMessage(messages.cacheInfo, {
-                  size: cacheSize,
-                })}
-              </p>
-              <p>
-                <Button
-                  buttonType="secondary"
-                  label={intl.formatMessage(messages.buttonClearAllCache)}
-                  onClick={onClearAllCache}
-                  disabled={isClearingAllCache}
-                  loaded={!isClearingAllCache}
-                />
-              </p>
-              <div style={{
-                marginTop: 20,
-              }}
-              >
-                <Button
-                  buttonType="secondary"
-                  label="Open Process Manager"
-                  onClick={openProcessManager}
-                />
+            <div>
+              <Toggle field={form.$('enableGPUAcceleration')} />
+              <p className="settings__help">{intl.formatMessage(messages.enableGPUAccelerationInfo)}</p>
+              <div className="settings__settings-group">
+                <h3>
+                  {intl.formatMessage(messages.subheadlineCache)}
+                </h3>
+                <p>
+                  {intl.formatMessage(messages.cacheInfo, {
+                    size: cacheSize,
+                  })}
+                </p>
+                <p>
+                  <Button
+                    buttonType="secondary"
+                    label={intl.formatMessage(messages.buttonClearAllCache)}
+                    onClick={onClearAllCache}
+                    disabled={isClearingAllCache}
+                    loaded={!isClearingAllCache}
+                  />
+                </p>
+                <div style={{
+                  marginTop: 20,
+                }}
+                >
+                  <Button
+                    buttonType="secondary"
+                    label="Open Process Manager"
+                    onClick={openProcessManager}
+                  />
+                </div>
               </div>
             </div>
 
             {/* Updates */}
-            <Toggle field={form.$('automaticUpdates')} />
-            {automaticUpdates && (
+            <div>
+              <Toggle field={form.$('automaticUpdates')} />
+              {automaticUpdates && (
               <div>
                 <Toggle field={form.$('beta')} />
                 {updateIsReadyToInstall ? (
@@ -531,35 +580,36 @@ export default @observer class EditSettingsForm extends Component {
                 )}
                 <br />
               </div>
-            )}
-            {intl.formatMessage(messages.currentVersion)}
-            {' '}
-            {remote.app.getVersion()}
-            {noUpdateAvailable && (
+              )}
+              {intl.formatMessage(messages.currentVersion)}
+              {' '}
+              {remote.app.getVersion()}
+              {noUpdateAvailable && (
               <>
                 <br />
                 <br />
                 {intl.formatMessage(messages.updateStatusUpToDate)}
               </>
-            )
+              )
             }
-            <p className="settings__message">
-              <span className="mdi mdi-github-face" />
-              <span>
+              <p className="settings__message">
+                <span className="mdi mdi-github-face" />
+                <span>
 
                 Ferdi is based on
-                {' '}
-                <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
+                  {' '}
+                  <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
 
                 , a project published
                 under the
-                {' '}
-                <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0 License</a>
-              </span>
-              <br />
-              <span className="mdi mdi-information" />
-              {intl.formatMessage(messages.languageDisclaimer)}
-            </p>
+                  {' '}
+                  <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0 License</a>
+                </span>
+                <br />
+                <span className="mdi mdi-information" />
+                {intl.formatMessage(messages.languageDisclaimer)}
+              </p>
+            </div>
           </form>
         </div>
       </div>
