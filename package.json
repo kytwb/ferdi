@@ -158,7 +158,7 @@
     "cross-env": "^5.0.5",
     "cz-conventional-changelog": "2.1.0",
     "dotenv": "^4.0.0",
-    "electron": "8.1.1",
+    "electron": "8.2.3",
     "electron-builder": "22.4.1",
     "electron-notarize": "0.2.1",
     "electron-rebuild": "1.10.0",
