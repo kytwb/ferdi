@@ -521,6 +521,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "FeikoJoosten",
+      "name": "Feiko Joosten",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10920052?v=4",
+      "profile": "https://feikojoosten.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
