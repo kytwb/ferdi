@@ -529,7 +529,7 @@ export default @observer class EditSettingsForm extends Component {
             )}
 
             {/* Advanced */}
-            { this.state.activeSetttingsTab === 'advanced' && (           
+            { this.state.activeSetttingsTab === 'advanced' && (
               <div>
                 <Toggle field={form.$('enableGPUAcceleration')} />
                 <p className="settings__help">{intl.formatMessage(messages.enableGPUAccelerationInfo)}</p>
@@ -566,7 +566,7 @@ export default @observer class EditSettingsForm extends Component {
             )}
 
             {/* Updates */}
-            { this.state.activeSetttingsTab === 'updates' && (  
+            { this.state.activeSetttingsTab === 'updates' && (
             <div>
               <Toggle field={form.$('automaticUpdates')} />
               {automaticUpdates && (
