@@ -495,9 +495,7 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
-      if (document.activeElement) {
-        document.activeElement.blur();
-      }
+      service.webview.blur();
       service.webview.focus();
     }
   }
