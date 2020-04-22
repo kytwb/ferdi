@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "إعادة التشغيل وتثبيت التحديث",
   "settings.app.buttonSearchForUpdate": "التحقق من وجود تحديثات",
   "settings.app.cacheInfo": "التخزين المؤقت لفردي يستخدم حاليا {size} من مساحة القرص.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "الإصدار الحالي:",
   "settings.app.form.accentColor": "لون التمييز",
   "settings.app.form.adaptableDarkMode": "مزامنة الوضع المظلم مع إعداد الوضع المظلم لنظام التشغيل الخاص بي",
