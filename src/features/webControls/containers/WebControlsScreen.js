@@ -52,11 +52,8 @@ class WebControlsScreen extends Component {
   }
 
   goHome() {
-    const { reloadActive } = this.props.actions.service;
-
     if (!this.webview) return;
-
-    reloadActive();
+    this.webview.goToIndex(0);
   }
 
   reload() {

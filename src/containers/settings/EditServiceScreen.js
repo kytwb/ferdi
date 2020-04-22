@@ -33,6 +33,10 @@ const messages = defineMessages({
     id: 'settings.service.form.enableService',
     defaultMessage: '!!!Enable service',
   },
+  disableHibernation: {
+    id: 'settings.service.form.disableHibernation',
+    defaultMessage: '!!!Disable hibernation',
+  },
   enableNotification: {
     id: 'settings.service.form.enableNotification',
     defaultMessage: '!!!Enable Notifications',
@@ -65,6 +69,18 @@ const messages = defineMessages({
     id: 'settings.service.form.enableDarkMode',
     defaultMessage: '!!!Enable Dark Mode',
   },
+  darkReaderBrightness: {
+    id: 'settings.service.form.darkReaderBrightness',
+    defaultMessage: '!!!Dark Reader Brightness',
+  },
+  darkReaderContrast: {
+    id: 'settings.service.form.darkReaderContrast',
+    defaultMessage: '!!!Dark Reader Contrast',
+  },
+  darkReaderSepia: {
+    id: 'settings.service.form.darkReaderSepia',
+    defaultMessage: '!!!Dark Reader Sepia',
+  },
   enableProxy: {
     id: 'settings.service.form.proxy.isEnabled',
     defaultMessage: '!!!Use Proxy',
@@ -96,6 +112,14 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
     const { action } = this.props.router.params;
     const { recipes, services } = this.props.stores;
     const { createService, updateService } = this.props.actions.service;
+    data.darkReaderSettings = {
+      brightness: data.darkReaderBrightness,
+      contrast: data.darkReaderContrast,
+      sepia: data.darkReaderSepia,
+    };
+    delete data.darkReaderContrast;
+    delete data.darkReaderBrightness;
+    delete data.darkReaderSepia;
 
     const serviceData = data;
     serviceData.isMuted = !serviceData.isMuted;
@@ -114,7 +138,10 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
 
     const {
       stores,
+      router,
     } = this.props;
+
+    const { action } = router.params;
 
     let defaultSpellcheckerLanguage = SPELLCHECKER_LOCALES[stores.settings.app.spellcheckerLanguage];
 
@@ -139,6 +166,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.enableService),
           value: service.isEnabled,
           default: true,
+        },
+        disableHibernation: {
+          label: intl.formatMessage(messages.disableHibernation),
+          value: action !== 'edit' ? false : service.disableHibernation,
+          default: false,
         },
         isNotificationEnabled: {
           label: intl.formatMessage(messages.enableNotification),
@@ -165,6 +197,21 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.enableDarkMode),
           value: service.isDarkModeEnabled,
           default: stores.settings.app.darkMode,
+        },
+        darkReaderBrightness: {
+          label: intl.formatMessage(messages.darkReaderBrightness),
+          value: service.darkReaderSettings ? service.darkReaderSettings.brightness : undefined,
+          default: 100,
+        },
+        darkReaderContrast: {
+          label: intl.formatMessage(messages.darkReaderContrast),
+          value: service.darkReaderSettings ? service.darkReaderSettings.contrast : undefined,
+          default: 90,
+        },
+        darkReaderSepia: {
+          label: intl.formatMessage(messages.darkReaderSepia),
+          value: service.darkReaderSettings ? service.darkReaderSettings.sepia : undefined,
+          default: 10,
         },
         spellcheckerLanguage: {
           label: intl.formatMessage(globalMessages.spellcheckerLanguage),
@@ -292,7 +339,9 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
   }
 
   render() {
-    const { recipes, services, user } = this.props.stores;
+    const {
+      recipes, services, user, settings,
+    } = this.props.stores;
     const { action } = this.props.router.params;
 
     let recipe;
@@ -346,6 +395,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           isProxyFeatureEnabled={proxyFeature.isEnabled}
           isServiceProxyIncludedInCurrentPlan={proxyFeature.isIncludedInCurrentPlan}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerFeature.isIncludedInCurrentPlan}
+          isHibernationFeatureActive={settings.app.hibernate}
         />
       </ErrorBoundary>
     );

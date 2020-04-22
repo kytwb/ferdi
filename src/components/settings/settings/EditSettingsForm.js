@@ -99,6 +99,10 @@ const messages = defineMessages({
     id: 'settings.app.cacheInfo',
     defaultMessage: '!!!Ferdi cache is currently using {size} of disk space.',
   },
+  cacheNotCleared: {
+    id: 'settings.app.cacheNotCleared',
+    defaultMessage: 'Couldn\'t clear all cache',
+  },
   buttonClearAllCache: {
     id: 'settings.app.buttonClearAllCache',
     defaultMessage: '!!!Clear cache',
@@ -171,12 +175,17 @@ export default @observer class EditSettingsForm extends Component {
 
   state = {
     activeSetttingsTab: 'general',
+    clearCacheButtonClicked: false,
   }
 
   setActiveSettingsTab(tab) {
     this.setState({
       activeSetttingsTab: tab,
     });
+  }
+
+  onClearCacheClicked=() => {
+    this.setState({ clearCacheButtonClicked: true });
   }
 
   submit(e) {
@@ -227,7 +236,7 @@ export default @observer class EditSettingsForm extends Component {
       lockingFeatureEnabled,
       scheduledDNDEnabled,
     } = window.ferdi.stores.settings.all.app;
-
+    const notCleared = this.state.clearCacheButtonClicked && isClearingAllCache === false && cacheSize !== 0;
     return (
       <div className="settings__main">
         <div className="settings__header">
@@ -301,7 +310,10 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Toggle field={form.$('hibernate')} />
                 {hibernationEnabled && (
-                  <Select field={form.$('hibernationStrategy')} />
+                  <>
+                    <Select field={form.$('hibernationStrategy')} />
+                    <Toggle field={form.$('hibernateOnStartup')} />
+                  </>
                 )}
                 <p
                   className="settings__message"
@@ -537,11 +549,18 @@ export default @observer class EditSettingsForm extends Component {
                       size: cacheSize,
                     })}
                   </p>
+                  {
+                    notCleared && (
+                      <p>
+                        {intl.formatMessage(messages.cacheNotCleared)}
+                      </p>
+                    )
+                  }
                   <p>
                     <Button
                       buttonType="secondary"
                       label={intl.formatMessage(messages.buttonClearAllCache)}
-                      onClick={onClearAllCache}
+                      onClick={() => { onClearAllCache(); this.onClearCacheClicked(); }}
                       disabled={isClearingAllCache}
                       loaded={!isClearingAllCache}
                     />
@@ -599,9 +618,11 @@ export default @observer class EditSettingsForm extends Component {
                 <span className="mdi mdi-github-face" />
                 <span>
 
+
                 Ferdi is based on
                   {' '}
                   <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
+
 
                 , a project published
                 under the

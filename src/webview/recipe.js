@@ -157,6 +157,7 @@ class RecipeController {
     debug('isDarkModeEnabled', this.settings.service.isDarkModeEnabled);
     debug('System spellcheckerLanguage', this.settings.app.spellcheckerLanguage);
     debug('Service spellcheckerLanguage', this.settings.service.spellcheckerLanguage);
+    debug('darkReaderSettigs', this.settings.service.darkReaderSettings);
 
     if (this.userscript && this.userscript.internal_setSettings) {
       this.userscript.internal_setSettings(this.settings);
@@ -230,10 +231,11 @@ class RecipeController {
         disableDarkMode();
         this.universalDarkModeInjected = false;
       } else if (this.settings.app.universalDarkMode && !ignoreList.includes(window.location.host)) {
-        console.log('Injecting DarkReader');
+        console.log('Injecting Dark Reader');
 
-        // Use darkreader instead
-        enableDarkMode({}, {
+        // Use Dark Reader instead
+        const { brightness, contrast, sepia } = this.settings.service.darkReaderSettings;
+        enableDarkMode({ brightness, contrast, sepia }, {
           css: customDarkModeCss[window.location.host] || '',
         });
         this.universalDarkModeInjected = true;
@@ -255,7 +257,7 @@ class RecipeController {
         console.log('Removing injected darkmode.css');
         removeDarkModeStyle();
       } else {
-        console.log('Removing DarkReader');
+        console.log('Removing Dark Reader');
 
         disableDarkMode();
         this.universalDarkModeInjected = false;

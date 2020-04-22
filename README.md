@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-48-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-52-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -124,6 +124,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds CTRL+← and CTRL+→ shortcuts and menu options to go back and forward in the service browsing history([#39](https://github.com/getferdi/ferdi/issues/39))
 - [x] Adds "Scheduled Do-not-Disturb" feature in which you won't get notifications (similar to Rambox's [Work Hours](https://rambox.pro/#feature-details/work_hours))
 - [x] Allows you to [use any Todo service inside "Franz Todo" panel](https://github.com/getferdi/ferdi/wiki/Custom-Todo) (e.g. Todoist via https://todoist.com/app) instead of being limited to using Franz Todo
+- [x] Adds a dropdown list to choose your Todo service ([#418](https://github.com/getferdi/ferdi/issues/418), [#477](https://github.com/getferdi/ferdi/issues/477)), 💖 [@yourcontact](https://github.com/yourcontact)
 
 ### Adds features to improve your privacy
 - [x] [Adds option to change server to a custom](https://github.com/getferdi/ferdi/wiki/Custom-Server) [ferdi-server](https://github.com/getferdi/server)
@@ -137,20 +138,28 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 ### Adds features to improve your experience using Ferdi
 - [x] Adds Universal Dark Mode via the [DarkReader extension](https://github.com/darkreader/darkreader) ([#71](https://github.com/getferdi/ferdi/issues/71))
-- [x] Adds adaptable Dark Mode that will respect the system's Dark Mode setting ([#173](https://github.com/getferdi/ferdi/issues/173))
+- [x] Adds Dark Reader settings ([#531](https://github.com/getferdi/ferdi/issues/531), [#568](https://github.com/getferdi/ferdi/issues/568)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
+- [x] Adds adaptable Dark Mode that will respect the system's Dark Mode setting ([#173](https://github.com/getferdi/ferdi/issues/173), [#548](https://github.com/getferdi/ferdi/issues/548) (💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)))
+- [x] Adds a hotkey to quickly toggle darkmode ([#530](https://github.com/getferdi/ferdi/issues/530), [#537](https://github.com/getferdi/ferdi/issues/537)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
+- [x] Adds an option to start Ferdi minimized ([#490](https://github.com/getferdi/ferdi/issues/490), [#534](https://github.com/getferdi/ferdi/issues/534))
 - [x] Adds ability to change the services icons size and sidebar width ([#153](https://github.com/getferdi/ferdi/issues/153))
 - [x] Adds an option to auto-hide the menubar ([#7](https://github.com/getferdi/ferdi/issues/7), [franz#833](https://github.com/meetfranz/franz/issues/833))
 - [x] Enhances system tray icon behaviour ([#307](https://github.com/getferdi/ferdi/issues/307))
+- [x] Adds option to show draggable window area on macOS ([#304](https://github.com/getferdi/ferdi/issues/304), [#532](https://github.com/getferdi/ferdi/issues/532))
+- [x] Adds a notification & audio toggle action to the tray context menu ([#542](https://github.com/getferdi/ferdi/issues/542)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 - [x] Adds option to show a browser-like navigation bar on all services
 - [x] Adds option to change accent color
-- [x] Reflects your currently opened service name to the window title to improve support for Password Managers ([#213](https://github.com/getferdi/ferdi/issues/213))
+- [x] Reflects your currently opened service name to the window title to improve support for Password Managers ([#213](https://github.com/getferdi/ferdi/issues/213)), 💖 [@gmarec](https://github.com/gmarec)
 - [x] Allows using SVGs for service custom icon
 - [x] Adds button to open darkmode.css for a service
 - [x] Improves "About Ferdi" screen to better display versions
-- [x] Adds option to start Ferdi in system tray ([#331](https://github.com/getferdi/ferdi/issues/331))
-- [x] Fixes and enhances context menu (#357 #413 #452 #354 #227)
+- [x] Improves user onboarding ([#493](https://github.com/getferdi/ferdi/issues/493))
+- [x] Improves "Updates" section in settings ([#506](https://github.com/getferdi/ferdi/issues/506)), 💖 [@yourcontact](https://github.com/yourcontact)
+- [x] Improves draggable window area height for macOS ([#304](https://github.com/getferdi/ferdi/issues/304), [#479](https://github.com/getferdi/ferdi/issues/479))
+- [x] Adds option to start Ferdi in system tray ([#331](https://github.com/getferdi/ferdi/issues/331)), 💖 [@jereksel](https://github.com/jereksel)
+- [x] Fixes and enhances context menu ([#357](https://github.com/getferdi/ferdi/issues/357) [#413](https://github.com/getferdi/ferdi/issues/413) [#452](https://github.com/getferdi/ferdi/issues/452) [#354](https://github.com/getferdi/ferdi/issues/354) [#227](https://github.com/getferdi/ferdi/issues/227))
 - [x] Adds better support for macOS dark mode
-- [x] Adds option to disable reload of services after resuming Ferdi ([#442](https://github.com/getferdi/ferdi/issues/442))
+- [x] Adds option to disable reload of services after resuming Ferdi ([#442](https://github.com/getferdi/ferdi/issues/442)), 💖 [@n0emis](https://github.com/n0emis)
 - [x] Comes with a custom branding proper to Ferdi
 - [x] Adds better separation in settings
 - [x] Adds various other UI improvements
@@ -163,19 +172,24 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Fixes missing Slack services custom icons ([#290](https://github.com/getferdi/ferdi/issues/290))
 - [x] Fixes bug that marked valid domains as invalid ([#276](https://github.com/getferdi/ferdi/issues/276))
 - [x] Fixes microphone/camera access on some versions of macOS ([#193](https://github.com/getferdi/ferdi/issues/193))
+- [x] Fixes cache clearing not working in Windows 10 ([#541](https://github.com/getferdi/ferdi/issues/541), [#544](https://github.com/getferdi/ferdi/issues/544)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
+- [x] Fixes Home button in navigation bar not correctly navigating ([#571](https://github.com/getferdi/ferdi/issues/571), [#573](https://github.com/getferdi/ferdi/issues/573)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 
 ### Adds new platforms
-- [x] Adds portable version for Windows so you can use Ferdi without even installing it
-- [x] Adds Arch Linux AUR packages
-- [x] Adds Ferdi as a Flatpak on Flathub ([#323](https://github.com/getferdi/ferdi/issues/323))
+- [x] Adds portable version for Windows so you can use Ferdi without even installing it, 💖 [@Makazzz](https://github.com/Makazzz)
+- [x] Adds Arch Linux AUR packages, 💖 [@AGCaesar](https://github.com/AGCaesar)
+- [x] Adds Ferdi as a Flatpak on Flathub ([#323](https://github.com/getferdi/ferdi/issues/323)), 💖 [@lhw](https://github.com/lhw)
 
 ### Adds internal changes
-- [x] Upgrades to Electron 8
+- [x] Upgrades to Electron 8.1.1
 - [x] Switches to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Minifies build files to improve app size
 - [x] Adds "npm run prepare-code" command for development to lint and beautify code
-- [x] Fixes incorrect body closing tag ([#330](https://github.com/getferdi/ferdi/issues/330))
+- [x] Adds "npm run link-readme" command to automatically add links to issues and users inside README.md
+- [x] Fixes incorrect body closing tag ([#330](https://github.com/getferdi/ferdi/issues/330)), 💖 [@jereksel](https://github.com/jereksel)
 - [x] Uses CrowdIn to improve i18n
+- [x] Adds retry commands to flaky build steps ([#498](https://github.com/getferdi/ferdi/issues/498))
+- [x] Runs utility scripts pre-commit instead of pre-push ([#515](https://github.com/getferdi/ferdi/issues/515))
 
 > Thanks to all our [contributors](#contributors-) who helped realize all these amazing features! 💖 
 
@@ -185,7 +199,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 #### Node.js
 
-Please make sure you are running NodeJS v10 ([v10.16.3](https://nodejs.org/dist/v10.16.3/) suggested). Versions above will throw an errow when trying to install due to an [old fsevent dependency](https://github.com/fsevents/fsevents/issues/278).
+Please make sure you are running NodeJS v10 or above.
 
 #### Git
 
@@ -343,9 +357,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://crowdin.com/profile/johanengstrand"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14152801/small/fd395f120efca971ca9b34c57fd02cca.png" width="40px;" alt=""/><br /><sub><b>Johan Engstrand</b></sub></a><br /><a href="#translation-johanengstrand" title="Translation">🌍</a></td>
     <td align="center"><a href="https://mrassili.com"><img src="https://avatars0.githubusercontent.com/u/25288435?v=4" width="40px;" alt=""/><br /><sub><b>Marouane R</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mrassili" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/yourcontact"><img src="https://avatars2.githubusercontent.com/u/46404814?v=4" width="40px;" alt=""/><br /><sub><b>Roman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=yourcontact" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a> <a href="#ideas-mahadevans87" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/getferdi/ferdi/pulls?q=is%3Apr+reviewed-by%3Amahadevans87" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://jakelee.co.uk"><img src="https://avatars2.githubusercontent.com/u/12380876?v=4" width="40px;" alt=""/><br /><sub><b>Jake Lee</b></sub></a><br /><a href="#content-JakeSteam" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/sampathBlam"><img src="https://avatars1.githubusercontent.com/u/17728976?v=4" width="40px;" alt=""/><br /><sub><b>Sampath Kumar Krishnan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/sampathBlam"><img src="https://avatars1.githubusercontent.com/u/17728976?v=4" width="40px;" alt=""/><br /><sub><b>Sampath Kumar Krishnan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Code">💻</a> <a href="https://github.com/getferdi/ferdi/pulls?q=is%3Apr+reviewed-by%3AsampathBlam" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/saruwman"><img src="https://avatars2.githubusercontent.com/u/41330038?v=4" width="40px;" alt=""/><br /><sub><b>saruwman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Documentation">📖</a> <a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dorukkarinca"><img src="https://avatars0.githubusercontent.com/u/9303867?v=4" width="40px;" alt=""/><br /><sub><b>dorukkarinca</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/issues?q=author%3Adorukkarinca" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/gautamsi"><img src="https://avatars2.githubusercontent.com/u/5769869?v=4" width="40px;" alt=""/><br /><sub><b>Gautam Singh</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=gautamsi" title="Code">💻</a></td>
+    <td align="center"><a href="https://feikojoosten.com"><img src="https://avatars0.githubusercontent.com/u/10920052?v=4" width="40px;" alt=""/><br /><sub><b>Feiko Joosten</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=FeikoJoosten" title="Code">💻</a></td>
   </tr>
 </table>
 
