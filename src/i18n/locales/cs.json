@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Restartovat a nainstalovat aktualizace",
   "settings.app.buttonSearchForUpdate": "Zkontrolovat aktualizace",
   "settings.app.cacheInfo": "Ferdi momentálně používá {size} místa na disku.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Aktuální verze:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
