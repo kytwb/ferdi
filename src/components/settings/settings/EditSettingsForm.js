@@ -213,7 +213,6 @@ export default @observer class EditSettingsForm extends Component {
       isTodosActivated,
     } = this.props;
     const { intl } = this.context;
-    /* const { activeSettingsTab } = this.state; */
 
     let updateButtonLabelMessage = messages.buttonSearchForUpdate;
     if (isCheckingForUpdates) {
