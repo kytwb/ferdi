@@ -249,7 +249,6 @@ export default @observer class EditSettingsForm extends Component {
               >
                 {intl.formatMessage(messages.headlineGeneral)}
               </h2>
-                &nbsp;&nbsp;
               <h2
                 id="appearance"
                 className={this.state.activeSetttingsTab === 'appearance' ? 'badge badge--primary' : 'badge'}
@@ -257,7 +256,6 @@ export default @observer class EditSettingsForm extends Component {
               >
                 {intl.formatMessage(messages.headlineAppearance)}
               </h2>
-                &nbsp;&nbsp;
               <h2
                 id="language"
                 className={this.state.activeSetttingsTab === 'language' ? 'badge badge--primary' : 'badge'}
@@ -265,7 +263,6 @@ export default @observer class EditSettingsForm extends Component {
               >
                 {intl.formatMessage(messages.headlineLanguage)}
               </h2>
-                &nbsp;&nbsp;
               <h2
                 id="advanced"
                 className={this.state.activeSetttingsTab === 'advanced' ? 'badge badge--primary' : 'badge'}
@@ -273,7 +270,6 @@ export default @observer class EditSettingsForm extends Component {
               >
                 {intl.formatMessage(messages.headlineAdvanced)}
               </h2>
-                &nbsp;&nbsp;
               <h2
                 id="updates"
                 className={this.state.activeSetttingsTab === 'updates' ? 'badge badge--primary' : 'badge'}
