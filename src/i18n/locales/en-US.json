@@ -276,7 +276,7 @@
   "settings.app.buttonInstallUpdate": "Restart & install update",
   "settings.app.buttonSearchForUpdate": "Check for updates",
   "settings.app.cacheInfo": "Ferdi cache is currently using {size} of disk space.",
-  "settings.app.cacheNotCleared": "Couldn't clear cache",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Current version:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
