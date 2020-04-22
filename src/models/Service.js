@@ -2,6 +2,8 @@ import { autorun, computed, observable } from 'mobx';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
+import userAgent from '../helpers/userAgent-helpers';
+
 const debug = require('debug')('Ferdi:Service');
 
 export const RESTRICTION_TYPES = {
@@ -74,6 +76,20 @@ export default class Service {
 
   @observable restrictionType = null;
 
+  @observable isHibernationEnabled = false;
+
+  @observable lastUsed = Date.now(); // timestamp
+
+  @observable lastPoll = null;
+
+  @observable lastPollAnswer = null;
+
+  @observable lostRecipeConnection = false;
+
+  @observable lostRecipeReloadAttempt = 0;
+
+  @observable chromelessUserAgent = false;
+
   constructor(data, recipe) {
     if (!data) {
       console.error('Service config not valid');
@@ -119,7 +135,20 @@ export default class Service {
 
     this.spellcheckerLanguage = data.spellcheckerLanguage !== undefined ? data.spellcheckerLanguage : this.spellcheckerLanguage;
 
+    this.isHibernationEnabled = data.isHibernationEnabled !== undefined ? data.isHibernationEnabled : this.isHibernationEnabled;
+
     this.recipe = recipe;
+
+    // Check if "Hibernate on Startup" is enabled and hibernate all services except active one
+    const {
+      hibernate,
+      hibernateOnStartup,
+    } = window.ferdi.stores.settings.app;
+    // The service store is probably not loaded yet so we need to use localStorage data to get active service
+    const isActive = window.localStorage.service && JSON.parse(window.localStorage.service).activeService === this.id;
+    if (hibernate && hibernateOnStartup && !isActive) {
+      this.isHibernating = true;
+    }
 
     autorun(() => {
       if (!this.isEnabled) {
@@ -187,20 +216,33 @@ export default class Service {
   }
 
   @computed get userAgent() {
-    let { userAgent } = window.navigator;
+    let ua = userAgent(this.chromelessUserAgent);
     if (typeof this.recipe.overrideUserAgent === 'function') {
-      userAgent = this.recipe.overrideUserAgent();
+      ua = this.recipe.overrideUserAgent();
     }
 
-    // Remove Ferdi as it can cause incompatabilities with services.
-    // This way, Ferdi will look like a normal Chrome instance
-    userAgent = userAgent.replace(/(Ferdi|Electron)([^\s]+\s)/g, '');
-
-    return userAgent;
+    return ua;
   }
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
     const webContents = this.webview.getWebContents();
+
+    const handleUserAgent = (url, forwardingHack = false) => {
+      if (url.startsWith('https://accounts.google.com')) {
+        if (!this.chromelessUserAgent) {
+          debug('Setting user agent to chromeless for url', url);
+          this.webview.setUserAgent(userAgent(true));
+          if (forwardingHack) {
+            this.webview.loadURL(url);
+          }
+          this.chromelessUserAgent = true;
+        }
+      } else if (this.chromelessUserAgent) {
+        debug('Setting user agent to contain chrome');
+        this.webview.setUserAgent(this.userAgent);
+        this.chromelessUserAgent = false;
+      }
+    };
 
     this.webview.addEventListener('ipc-message', e => handleIPCMessage({
       serviceId: this.id,
@@ -209,7 +251,6 @@ export default class Service {
     }));
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
-      console.log('open window', event, url, frameName, options);
       openWindow({
         event,
         url,
@@ -217,6 +258,9 @@ export default class Service {
         options,
       });
     });
+
+
+    this.webview.addEventListener('will-navigate', event => handleUserAgent(event.url, true));
 
     this.webview.addEventListener('did-start-loading', (event) => {
       debug('Did start load', this.name, event);
@@ -235,7 +279,10 @@ export default class Service {
     };
 
     this.webview.addEventListener('did-frame-finish-load', didLoad.bind(this));
-    this.webview.addEventListener('did-navigate', didLoad.bind(this));
+    this.webview.addEventListener('did-navigate', (event) => {
+      handleUserAgent(event.url);
+      didLoad();
+    });
 
     this.webview.addEventListener('did-fail-load', (event) => {
       debug('Service failed to load', this.name, event);

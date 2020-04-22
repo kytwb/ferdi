@@ -27,6 +27,7 @@ before_script:
   - travis_retry npm install node-sass -g
 script:
   - travis_retry travis_wait 100 npm run build
+
 cache: npm
 
 branches:

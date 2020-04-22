@@ -49,6 +49,7 @@ const styles = theme => ({
   priceWrapper: {
     height: 50,
     marginBottom: 0,
+    marginTop: ({ text }) => (!text ? 15 : 0),
   },
   price: {
     fontSize: 50,
@@ -64,7 +65,7 @@ const styles = theme => ({
   cta: {
     background: theme.styleTypes.primary.accent,
     color: theme.styleTypes.primary.contrast,
-    margin: [40, 'auto', 0, 'auto'],
+    margin: [30, 'auto', 0, 'auto'],
   },
   divider: {
     width: 40,
@@ -77,10 +78,14 @@ const styles = theme => ({
     background: color(theme.styleTypes.primary.accent).darken(0.25).hex(),
     color: theme.styleTypes.primary.contrast,
     position: 'relative',
+    height: 'auto',
   },
   content: {
     padding: [10, 20, 20],
     background: '#EFEFEF',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   simpleCTA: {
     background: 'none',
@@ -167,10 +172,14 @@ export default @observer @injectSheet(styles) class PlanItem extends Component {
             </div>
           )}
           <H2 className={classes.planName}>{name}</H2>
-          <p className={classes.text}>
-            {text}
-          </p>
-          <hr className={classes.divider} />
+          {text && (
+            <>
+              <p className={classes.text}>
+                {text}
+              </p>
+              <hr className={classes.divider} />
+            </>
+          )}
           <p className={classes.priceWrapper}>
             <span className={classes.currency}>{currency}</span>
             <span className={classes.price}>

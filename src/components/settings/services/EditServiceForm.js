@@ -94,6 +94,10 @@ const messages = defineMessages({
     id: 'settings.service.form.isMutedInfo',
     defaultMessage: '!!!When disabled, all notification sounds and audio playback are muted',
   },
+  disableHibernationInfo: {
+    id: 'settings.service.form.disableHibernationInfo',
+    defaultMessage: '!!!You currently have hibernation enabled but you can disable hibernation for individual services using this option.',
+  },
   headlineNotifications: {
     id: 'settings.service.form.headlineNotifications',
     defaultMessage: '!!!Notifications',
@@ -108,7 +112,7 @@ const messages = defineMessages({
   },
   headlineDarkReaderSettings: {
     id: 'settings.service.form.headlineDarkReaderSettings',
-    defaultMessage: '!!!DarkReader Settings',
+    defaultMessage: '!!!Dark Reader Settings',
   },
   iconDelete: {
     id: 'settings.service.form.iconDelete',
@@ -154,6 +158,7 @@ export default @observer class EditServiceForm extends Component {
     isProxyFeatureEnabled: PropTypes.bool.isRequired,
     isServiceProxyIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
+    isHibernationFeatureActive: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -219,6 +224,7 @@ export default @observer class EditServiceForm extends Component {
       isProxyFeatureEnabled,
       isServiceProxyIncludedInCurrentPlan,
       isSpellcheckerIncludedInCurrentPlan,
+      isHibernationFeatureActive,
     } = this.props;
     const { intl } = this.context;
 
@@ -365,6 +371,14 @@ export default @observer class EditServiceForm extends Component {
                 <div className="settings__settings-group">
                   <h3>{intl.formatMessage(messages.headlineGeneral)}</h3>
                   <Toggle field={form.$('isEnabled')} />
+                  {isHibernationFeatureActive && (
+                    <>
+                      <Toggle field={form.$('disableHibernation')} />
+                      <p className="settings__help">
+                        {intl.formatMessage(messages.disableHibernationInfo)}
+                      </p>
+                    </>
+                  )}
                   <Toggle field={form.$('isDarkModeEnabled')} />
                   {form.$('isDarkModeEnabled').value
                     && (

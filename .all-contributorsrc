@@ -472,7 +472,9 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/1255523?v=4",
       "profile": "https://github.com/mahadevans87",
       "contributions": [
-        "code"
+        "code",
+        "ideas",
+        "review"
       ]
     },
     {
@@ -489,6 +491,43 @@
       "name": "Sampath Kumar Krishnan",
       "avatar_url": "https://avatars1.githubusercontent.com/u/17728976?v=4",
       "profile": "https://github.com/sampathBlam",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
+      "login": "saruwman",
+      "name": "saruwman",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/41330038?v=4",
+      "profile": "https://github.com/saruwman",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "dorukkarinca",
+      "name": "dorukkarinca",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9303867?v=4",
+      "profile": "https://github.com/dorukkarinca",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "gautamsi",
+      "name": "Gautam Singh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5769869?v=4",
+      "profile": "https://www.linkedin.com/in/gautamsi",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "FeikoJoosten",
+      "name": "Feiko Joosten",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10920052?v=4",
+      "profile": "https://feikojoosten.com",
       "contributions": [
         "code"
       ]

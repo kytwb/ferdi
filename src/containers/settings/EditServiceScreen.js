@@ -33,6 +33,10 @@ const messages = defineMessages({
     id: 'settings.service.form.enableService',
     defaultMessage: '!!!Enable service',
   },
+  disableHibernation: {
+    id: 'settings.service.form.disableHibernation',
+    defaultMessage: '!!!Disable hibernation',
+  },
   enableNotification: {
     id: 'settings.service.form.enableNotification',
     defaultMessage: '!!!Enable Notifications',
@@ -67,15 +71,15 @@ const messages = defineMessages({
   },
   darkReaderBrightness: {
     id: 'settings.service.form.darkReaderBrightness',
-    defaultMessage: '!!!Darkreader Brightness',
+    defaultMessage: '!!!Dark Reader Brightness',
   },
   darkReaderContrast: {
     id: 'settings.service.form.darkReaderContrast',
-    defaultMessage: '!!!Darkreader Contrast',
+    defaultMessage: '!!!Dark Reader Contrast',
   },
   darkReaderSepia: {
     id: 'settings.service.form.darkReaderSepia',
-    defaultMessage: '!!!Darkreader Sepia',
+    defaultMessage: '!!!Dark Reader Sepia',
   },
   enableProxy: {
     id: 'settings.service.form.proxy.isEnabled',
@@ -134,7 +138,10 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
 
     const {
       stores,
+      router,
     } = this.props;
+
+    const { action } = router.params;
 
     let defaultSpellcheckerLanguage = SPELLCHECKER_LOCALES[stores.settings.app.spellcheckerLanguage];
 
@@ -159,6 +166,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.enableService),
           value: service.isEnabled,
           default: true,
+        },
+        disableHibernation: {
+          label: intl.formatMessage(messages.disableHibernation),
+          value: action !== 'edit' ? false : service.disableHibernation,
+          default: false,
         },
         isNotificationEnabled: {
           label: intl.formatMessage(messages.enableNotification),
@@ -327,7 +339,9 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
   }
 
   render() {
-    const { recipes, services, user } = this.props.stores;
+    const {
+      recipes, services, user, settings,
+    } = this.props.stores;
     const { action } = this.props.router.params;
 
     let recipe;
@@ -381,6 +395,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           isProxyFeatureEnabled={proxyFeature.isEnabled}
           isServiceProxyIncludedInCurrentPlan={proxyFeature.isIncludedInCurrentPlan}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerFeature.isIncludedInCurrentPlan}
+          isHibernationFeatureActive={settings.app.hibernate}
         />
       </ErrorBoundary>
     );
