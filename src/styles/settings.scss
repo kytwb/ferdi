@@ -197,6 +197,8 @@
     overflow-y: scroll;
     padding: 25px 15px 15px 25px;
 
+    .badge { margin-right: 10px; }
+
     &::-webkit-scrollbar { width: 8px; }
 
     /* Track */
