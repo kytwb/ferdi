@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "再起動して更新をインストールする",
   "settings.app.buttonSearchForUpdate": "更新の確認",
   "settings.app.cacheInfo": "現在、Ferdiのキャッシュはディスクの{size}分を使用しています。",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "現在のバージョン:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
