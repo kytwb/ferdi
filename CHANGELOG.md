@@ -46,8 +46,8 @@
 - Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
 - Remove automatic reloading from WhatsApp
 - Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
-- Organize settings with horizontal tabs 💖 @yourcontact
-- Improve cache clearing UI feedback 💖 @saruwman
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
 
 ### Bug fixes
 - Fix cache clearing not working in Windows 10 (#541, #544), 💖 @Room4O4 & @mahadevans87
@@ -87,8 +87,8 @@
 - Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
 - Remove automatic reloading from WhatsApp
 - Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
-- Organize settings with horizontal tabs 💖 @yourcontact
-- Improve cache clearing UI feedback 💖 @saruwman
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
 
 ### Bug Fixes
 - Fix DarkReader translation problem (#593)
