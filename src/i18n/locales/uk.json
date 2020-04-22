@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Перезавантажити і встановити оновлення",
   "settings.app.buttonSearchForUpdate": "Перевірити наявність оновлень",
   "settings.app.cacheInfo": "Кеш, який використовує Ferdi, займає {size} дискового простору.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Поточна версія:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
