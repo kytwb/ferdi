@@ -187,6 +187,10 @@
     .mdi { color: $theme-gray-light; }
   }
 
+  .settings_titles {
+    display:inline-block;
+  }
+
   .settings__body {
     flex: 1;
     margin: 15px;

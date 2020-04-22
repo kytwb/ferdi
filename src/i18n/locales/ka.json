@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "გადატვირთეთ და დააყენეთ განახლება",
   "settings.app.buttonSearchForUpdate": "განახლებების შემოწმება",
   "settings.app.cacheInfo": "Ferdi cache is currently using {size} of disk space.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "ამჟამინდელი ვერსია:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",

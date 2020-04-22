@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Starta om & installera uppdatering",
   "settings.app.buttonSearchForUpdate": "Sök efter uppdateringar",
   "settings.app.cacheInfo": "Ferdis cache använder för närvarande {size} diskutrymme.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Nuvarande version:",
   "settings.app.form.accentColor": "Accentfärg",
   "settings.app.form.adaptableDarkMode": "Synkronisera det mörka läget med operativsystemets inställning för mörkt läge",

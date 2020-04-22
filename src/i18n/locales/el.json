@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Επανεκκίνηση & εγκατάσταση ενημερώσεων",
   "settings.app.buttonSearchForUpdate": "Έλεγχος για ενημερώσεις",
   "settings.app.cacheInfo": "Το Ferdi χρησιμοποιεί αυτήν τη στιγμή {size} χώρου στο δίσκο.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Τρέχουσα έκδοση:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
