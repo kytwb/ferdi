@@ -101,7 +101,7 @@ const messages = defineMessages({
   },
   cacheNotCleared: {
     id: 'settings.app.cacheNotCleared',
-    defaultMessage: 'Couldn\'t clear all cache',
+    defaultMessage: '!!!Couldn\'t clear all cache',
   },
   buttonClearAllCache: {
     id: 'settings.app.buttonClearAllCache',
@@ -497,8 +497,7 @@ export default @observer class EditSettingsForm extends Component {
               </p>
               {notCleared && (
               <p>
-                {intl.formatMessage(messages.cacheNotCleared)
-                }
+                {intl.formatMessage(messages.cacheNotCleared)}
               </p>
               )}
               <p>

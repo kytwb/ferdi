@@ -3293,6 +3293,19 @@
         }
       },
       {
+        "defaultMessage": "!!!Couldn't clear cache",
+        "end": {
+          "column": 3,
+          "line": 105
+        },
+        "file": "src/components/settings/settings/EditSettingsForm.js",
+        "id": "settings.app.cacheNotCleared",
+        "start": {
+          "column": 23,
+          "line": 102
+        }
+      },
+      {
         "defaultMessage": "!!!Clear cache",
         "end": {
           "column": 3,
