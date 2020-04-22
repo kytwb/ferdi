@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Yeniden Başlat ve Güncelleştirmeleri Kur",
   "settings.app.buttonSearchForUpdate": "Güncellemeleri kontrol et",
   "settings.app.cacheInfo": "Ferdi önbelleği şu anda {size} disk alanı kullanıyor.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Geçerli sürüm:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",
