@@ -18,24 +18,34 @@ let readme = fs.readFileSync(readmepath, 'utf-8');
 
 let replacements = 0;
 
-// Replace Ferdi issues
-// Regex matches strings that don't begin with a "[", i.e. are not already linked and
-// don't begin with "franz", i.e. are not Franz issues, followed by a "#" and 3 digits to indicate
-// a GitHub issue, and not ending with a "]"
-readme = readme.replace(/(?<!\[|franz)#\d{3}(?!\])/gi, (match) => {
-  const issueNr = match.replace('#', '');
-  replacements += 1;
-  return `[#${issueNr}](https://github.com/getferdi/ferdi/issues/${issueNr})`;
-});
-
 // Replace Franz issues
 // Regex matches strings that don't begin with a "[", i.e. are not already linked
-// followed by a "franz#" and 3 digits to indicate
+// followed by a "franz#" and digits to indicate
 // a GitHub issue, and not ending with a "]"
-readme = readme.replace(/(?<!\[)franz#\d{3,}(?!\])/gi, (match) => {
+readme = readme.replace(/(?<!\[)franz#\d{1,}(?![\]\d])/gi, (match) => {
   const issueNr = match.replace('franz#', '');
   replacements += 1;
   return `[franz#${issueNr}](https://github.com/meetfranz/franz/issues/${issueNr})`;
+});
+
+// Replace external issues
+// Regex matches strings that don't begin with a "[", followed a repo name in the format "user/repo"
+// followed by a "#" and digits to indicate a GitHub issue, and not ending with a "]"
+readme = readme.replace(/(?<!\[)\w+\/\w+#\d{1,}(?![\]\d])/gi, (match) => {
+  const issueNr = match.replace(/\D/g, '');
+  const repo = match.replace(/#\d+/g, '');
+  replacements += 1;
+  return `[${repo}#${issueNr}](https://github.com/${repo}/issues/${issueNr})`;
+});
+
+// Replace Ferdi issues
+// Regex matches strings that don't begin with a "[", i.e. are not already linked and
+// don't begin with "franz", i.e. are not Franz issues, followed by a "#" and digits to indicate
+// a GitHub issue, and not ending with a "]"
+readme = readme.replace(/(?<!\[|franz)#\d{1,}(?![\]\d])/gi, (match) => {
+  const issueNr = match.replace('#', '');
+  replacements += 1;
+  return `[#${issueNr}](https://github.com/getferdi/ferdi/issues/${issueNr})`;
 });
 
 // Link GitHub users
