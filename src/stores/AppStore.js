@@ -222,7 +222,7 @@ export default class AppStore extends Store {
       if (!localStorage.getItem(CATALINA_NOTIFICATION_HACK_KEY)) {
         debug('Triggering macOS Catalina notification permission trigger');
         // eslint-disable-next-line no-new
-        new window.Notification('Welcome to Franz 5', {
+        new window.Notification('Welcome to Ferdi 5', {
           body: 'Have a wonderful day & happy messaging.',
         });
 
