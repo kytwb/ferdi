@@ -3,6 +3,7 @@ import {
   BrowserWindow,
   shell,
   ipcMain,
+  session,
 } from 'electron';
 import isDevMode from 'electron-is-dev';
 import fs from 'fs-extra';
@@ -392,6 +393,23 @@ ipcMain.on('feature-basic-auth-credentials', (e, { user, password }) => {
 
   authCallback(user, password);
   authCallback = noop;
+});
+
+
+ipcMain.on('modifyRequestHeaders', (e, { modifiedRequestHeaders, serviceId }) => {
+  debug('Received modifyRequestHeaders', modifiedRequestHeaders, serviceId);
+  modifiedRequestHeaders.forEach((headerFilterSet) => {
+    const { headers, requestFilters } = headerFilterSet;
+    session.fromPartition(`persist:service-${serviceId}`).webRequest.onBeforeSendHeaders(requestFilters, (details, callback) => {
+      for (const key in headers) {
+        if (Object.prototype.hasOwnProperty.call(headers, key)) {
+          const value = headers[key];
+          details.requestHeaders[key] = value;
+        }
+      }
+      callback({ requestHeaders: details.requestHeaders });
+    });
+  });
 });
 
 ipcMain.on('feature-basic-auth-cancel', () => {
