@@ -1,4 +1,5 @@
 matrix:
+  fast_finish: true
   include:
     - os: linux
       dist: xenial
@@ -11,6 +12,7 @@ matrix:
             - libxkbfile-dev
             - rpm
     - os: osx
+      if: branch = release
       osx_image: xcode11
 
 language: node_js
@@ -30,5 +32,8 @@ install:
 before_script:
   - npm run lint && npm run test
 script:
-  - echo $TRAVIS_BRANCH
+  - |
+    if [ $TRAVIS_BRANCH == "release" ]; then
+      travis_retry travis_wait 100 npm run build
+    fi
 
