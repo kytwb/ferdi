@@ -14,24 +14,21 @@ matrix:
       osx_image: xcode11
 
 language: node_js
-# Handle git submodules yourself
 git:
   submodules: false
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
+branches:
+  only:
+    - develop
+    - release
+cache: npm
+
 before_install:
   - git submodule update --init --recursive
 install:
-  - echo do nothing
-before_script:
   - travis_retry npx lerna bootstrap
   - travis_retry npm install node-sass -g
+before_script:
+  - npm run lint && npm run test
 script:
-  - travis_retry travis_wait 100 npm run build
+  - echo $TRAVIS_BRANCH
 
-cache: npm
-
-branches:
-  except:
-    - i18n
-    - l10n_master
-    - l10n_develop

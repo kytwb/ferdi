@@ -1,5 +1,7 @@
 version: build-{build}
-
+branches:
+  only:
+    - release
 skip_tags: true
 skip_branch_with_pr: true
 
