@@ -20,7 +20,7 @@
     "lint": "eslint --quiet --fix src",
     "manage-translations": "node ./src/i18n/manage-translations.js",
     "prebuild": "gulp build",
-    "build": "npx electron-builder --publish onTag",
+    "build": "npx electron-builder",
     "rebuild": "npx electron-rebuild",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
