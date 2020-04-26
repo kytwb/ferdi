@@ -71,6 +71,7 @@
 ### Build changes
 - Add retry commands to flaky build steps (#498)
 - Run utility scripts pre-commit instead of pre-push (#515)
+- Sign Windows binaries (#635, #633, #112)
 
 # [5.5.0-gm.2](https://github.com/getferdi/ferdi/compare/v5.5.0-gm...v5.5.0-gm.2) (2020-04-23)
 ### Features
