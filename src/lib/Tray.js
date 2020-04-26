@@ -55,6 +55,8 @@ export default class TrayIcon {
 
     this.trayIcon = new Tray(this._getAsset('tray', INDICATOR_TRAY_PLAIN));
 
+    this.trayIcon.setToolTip('Ferdi');
+
     this.trayMenu = Menu.buildFromTemplate(this.trayMenuTemplate);
 
     ipcMain.on('initialAppSettings', (event, appSettings) => {
