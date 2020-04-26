@@ -1,4 +1,4 @@
-# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0) (2020-04-26)
+# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
