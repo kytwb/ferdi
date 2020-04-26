@@ -187,11 +187,17 @@
     .mdi { color: $theme-gray-light; }
   }
 
+  .settings_titles {
+    display:inline-block;
+  }
+
   .settings__body {
     flex: 1;
     margin: 15px;
     overflow-y: scroll;
     padding: 25px 15px 15px 25px;
+
+    .badge { margin-right: 10px; }
 
     &::-webkit-scrollbar { width: 8px; }
 

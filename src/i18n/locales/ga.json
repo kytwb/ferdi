@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Atosaigh ⁊ suiteáil nuashonrú",
   "settings.app.buttonSearchForUpdate": "Cuardaigh le nuashonruithe",
   "settings.app.cacheInfo": "Tá taisce Ferdi ag baint úsáid as {size} den spás diosca.",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Leagan reatha:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",

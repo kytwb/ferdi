@@ -276,6 +276,7 @@
   "settings.app.buttonInstallUpdate": "Uruchom ponownie i zainstaluj aktualizację",
   "settings.app.buttonSearchForUpdate": "Sprawdź aktualizacje",
   "settings.app.cacheInfo": "Pamięć podręczna zajmuje obecnie {size} przestrzeni dyskowej",
+  "settings.app.cacheNotCleared": "Couldn't clear all cache",
   "settings.app.currentVersion": "Aktualna wersja:",
   "settings.app.form.accentColor": "Accent color",
   "settings.app.form.adaptableDarkMode": "Synchronize dark mode with my OS's dark mode setting",

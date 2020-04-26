@@ -6,6 +6,7 @@ import path from 'path';
 const FILE_EXTENSION = process.platform === 'win32' ? 'ico' : 'png';
 const INDICATOR_TRAY_PLAIN = 'tray';
 const INDICATOR_TRAY_UNREAD = 'tray-unread';
+const INDICATOR_TRAY_INDIRECT = 'tray-indirect';
 
 export default class TrayIcon {
   trayIcon = null;
@@ -103,14 +104,23 @@ export default class TrayIcon {
     this._refreshIcon();
   }
 
+  _getAssetFromIndicator(indicator) {
+    if (indicator === '•') {
+      return INDICATOR_TRAY_INDIRECT;
+    } if (indicator !== 0) {
+      return INDICATOR_TRAY_UNREAD;
+    }
+    return INDICATOR_TRAY_PLAIN;
+  }
+
   _refreshIcon() {
     if (!this.trayIcon) return;
 
-    this.trayIcon.setImage(this._getAsset('tray', this.indicator !== 0 ? INDICATOR_TRAY_UNREAD : INDICATOR_TRAY_PLAIN));
+    this.trayIcon.setImage(this._getAsset('tray', this._getAssetFromIndicator(this.indicator)));
 
     if (process.platform === 'darwin') {
       this.trayIcon.setPressedImage(
-        this._getAsset('tray', `${this.indicator !== 0 ? INDICATOR_TRAY_UNREAD : INDICATOR_TRAY_PLAIN}-active`),
+        this._getAsset('tray', `${this._getAssetFromIndicator(this.indicator)}-active`),
       );
     }
   }

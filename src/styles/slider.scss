@@ -41,14 +41,5 @@
       box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
       cursor: pointer;
     }
-    
-    .slider::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: $theme-brand-primary;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-      cursor: pointer;
-    }
     }
 }

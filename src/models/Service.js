@@ -1,4 +1,5 @@
 import { autorun, computed, observable } from 'mobx';
+import { ipcRenderer } from 'electron';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
@@ -224,8 +225,22 @@ export default class Service {
     return ua;
   }
 
+
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
     const webContents = this.webview.getWebContents();
+
+    // If the recipe has implemented modifyRequestHeaders,
+    // Send those headers to ipcMain so that it can be set in session
+    if (typeof this.recipe.modifyRequestHeaders === 'function') {
+      const modifiedRequestHeaders = this.recipe.modifyRequestHeaders();
+      debug(this.name, 'modifiedRequestHeaders', modifiedRequestHeaders);
+      ipcRenderer.send('modifyRequestHeaders', {
+        modifiedRequestHeaders,
+        serviceId: this.id,
+      });
+    } else {
+      debug(this.name, 'modifyRequestHeaders is not defined in the recipe');
+    }
 
     const handleUserAgent = (url, forwardingHack = false) => {
       if (url.startsWith('https://accounts.google.com')) {
