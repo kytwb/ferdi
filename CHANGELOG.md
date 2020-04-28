@@ -1,4 +1,4 @@
-# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0) (2020-04-17)
+# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
@@ -65,12 +65,15 @@
 - Fix Dark Reader blocking services from loading (#285)
 - Fix incorrect body closing tag (#330), 💖 @jereksel
 - Fix DarkReader translation problem (#593)
+- Fix system tray icon tooltip text (#648), 💖 @sampathBlam
+- Enable Dark Reader settings to follow the accent color (#646), 💖 @sampathBlam
 
 ### Build changes
 - Add retry commands to flaky build steps (#498)
 - Run utility scripts pre-commit instead of pre-push (#515)
+- Sign Windows binaries (#635, #633, #112)
 
-# [5.5.0-gm.2](https://github.com/getferdi/ferdi/compare/v5.5.0-gm...v5.5.0-gm.2) (2020-04-22)
+# [5.5.0-gm.2](https://github.com/getferdi/ferdi/compare/v5.5.0-gm...v5.5.0-gm.2) (2020-04-23)
 ### Features
 - Differentiate between indirect and direct notifications (#590), 💖 @Room4O4 @mahadevans87 @FeikoJoosten @sampathBlam
 - Add setting to keep service in hibernation after startup (#577, #584)
@@ -93,7 +96,7 @@
 ### Bug Fixes
 - Fix DarkReader translation problem (#593)
 
-## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-15)
+## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-19)
 ### Features
 - Merge Franz 5.5.0-beta.2
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
