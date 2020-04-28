@@ -1,6 +1,7 @@
 # [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
+- Add modifyRequestHeaders, enable properly setting headers for services (#639), 💖 @mahadevans87 @sampathBlam 
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
 - Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
 - Add option to start Ferdi minimized (#490, #534)
