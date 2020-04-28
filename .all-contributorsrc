@@ -475,7 +475,10 @@
       "contributions": [
         "code",
         "ideas",
-        "review"
+        "review",
+        "bug",
+        "doc",
+        "userTesting"
       ]
     },
     {
