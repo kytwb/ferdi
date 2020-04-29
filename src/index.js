@@ -192,6 +192,14 @@ const createWindow = () => {
     },
   });
 
+  app.on('web-contents-created', (e, contents) => {
+    if (contents.getType() === 'webview') {
+      contents.on('new-window', (event) => {
+        event.preventDefault();
+      });
+    }
+  });
+
   mainWindow.webContents.on('did-finish-load', () => {
     const fns = onDidLoadFns;
     onDidLoadFns = null;

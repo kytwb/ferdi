@@ -631,7 +631,8 @@ export default class ServicesStore extends Store {
   }
 
   @action _openWindow({ event }) {
-    if (event.disposition !== 'new-window' && event.url !== 'about:blank') {
+    if (event.url !== 'about:blank') {
+      event.preventDefault();
       this.actions.app.openExternalUrl({ url: event.url });
     }
   }
