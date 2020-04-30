@@ -678,6 +678,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "tristanplouz",
+      "name": "tristanplouz",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6893466?v=4",
+      "profile": "https://github.com/tristanplouz",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 6,
