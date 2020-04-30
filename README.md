@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-68-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-69-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -394,6 +394,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://crowdin.com/profile/tinect"><img src="https://crowdin-static.downloads.crowdin.com/avatar/12521988/small/56c2041645746af9e51dd28782b828c3.jpeg" width="40px;" alt=""/><br /><sub><b>tinect</b></sub></a><br /><a href="#translation-tinect" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/gega7"><img src="https://avatars0.githubusercontent.com/u/20799911?v=4" width="40px;" alt=""/><br /><sub><b>gega7</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/issues?q=author%3Agega7" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/tristanplouz"><img src="https://avatars2.githubusercontent.com/u/6893466?v=4" width="40px;" alt=""/><br /><sub><b>tristanplouz</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=tristanplouz" title="Code">💻</a> <a href="#ideas-tristanplouz" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
