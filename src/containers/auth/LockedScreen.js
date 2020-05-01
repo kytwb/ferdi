@@ -4,13 +4,7 @@ import { inject, observer } from 'mobx-react';
 import Locked from '../../components/auth/Locked';
 import SettingsStore from '../../stores/SettingsStore';
 
-import { globalError as globalErrorPropType } from '../../prop-types';
-
 export default @inject('stores', 'actions') @observer class LockedScreen extends Component {
-  static propTypes = {
-    error: globalErrorPropType.isRequired,
-  };
-
   state = {
     error: false,
   }
@@ -56,17 +50,23 @@ export default @inject('stores', 'actions') @observer class LockedScreen extends
   }
 
   render() {
-    const { stores, error } = this.props;
+    const { stores } = this.props;
     const { useTouchIdToUnlock } = this.props.stores.settings.all.app;
 
     return (
-      <Locked
-        onSubmit={this.onSubmit}
-        unlock={this.unlock}
-        useTouchIdToUnlock={useTouchIdToUnlock}
-        isSubmitting={stores.user.loginRequest.isExecuting}
-        error={this.state.error || error}
-      />
+      <div className="auth">
+        <div className="auth__layout">
+          <div className="auth__container">
+            <Locked
+              onSubmit={this.onSubmit}
+              unlock={this.unlock}
+              useTouchIdToUnlock={useTouchIdToUnlock}
+              isSubmitting={stores.user.loginRequest.isExecuting}
+              error={this.state.error || {}}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }
