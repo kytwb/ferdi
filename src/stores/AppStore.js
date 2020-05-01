@@ -33,8 +33,11 @@ const {
 const mainWindow = remote.getCurrentWindow();
 
 const defaultLocale = DEFAULT_APP_SETTINGS.locale;
+
+const executablePath = isMac ? remote.process.execPath : process.execPath;
 const autoLauncher = new AutoLaunch({
   name: 'Ferdi',
+  path: executablePath,
 });
 
 const CATALINA_NOTIFICATION_HACK_KEY = '_temp_askedForCatalinaNotificationPermissions';
@@ -324,8 +327,10 @@ export default class AppStore extends Store {
 
     try {
       if (enable) {
+        debug('enabling launch on startup', executablePath);
         autoLauncher.enable();
       } else {
+        debug('disabling launch on startup');
         autoLauncher.disable();
       }
     } catch (err) {
