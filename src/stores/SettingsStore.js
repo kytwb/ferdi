@@ -6,6 +6,7 @@ import localStorage from 'mobx-localstorage';
 import { DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER } from '../config';
 import { API } from '../environment';
 import { getLocale } from '../helpers/i18n-helpers';
+import { hash } from '../helpers/password-helpers';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 import Request from './lib/Request';
 import Store from './lib/Store';
@@ -296,6 +297,26 @@ export default class SettingsStore extends Store {
         type: 'migration',
         data: {
           '5.4.4-beta.4-settings': true,
+        },
+      });
+
+      debug('Migrated updates settings');
+    }
+
+    if (!this.all.migration['password-hashing']) {
+      if (this.stores.settings.app.lockedPassword !== '') {
+        this.actions.settings.update({
+          type: 'app',
+          data: {
+            lockedPassword: hash(String(legacySettings.lockedPassword)),
+          },
+        });
+      }
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          'password-hashing': true,
         },
       });
 
