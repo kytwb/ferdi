@@ -57,21 +57,6 @@ export default class SettingsStore extends Store {
       },
     );
 
-    reaction(
-      () => this.all.app.locked,
-      () => {
-        const { router } = window.ferdi.stores;
-        if (this.all.app.locked && this.all.app.lockingFeatureEnabled) {
-          // App just got locked, redirect to unlock screen
-          router.push('/auth/locked');
-        } else if (router.location.pathname.includes('/auth/locked')) {
-          // App is unlocked but user is still on locked screen
-          // Redirect to homepage
-          router.push('/');
-        }
-      },
-    );
-
     // Inactivity lock timer
     let inactivityTimer;
     remote.getCurrentWindow().on('blur', () => {
@@ -97,15 +82,8 @@ export default class SettingsStore extends Store {
       if (this.startup && resp.type === 'app' && resp.data.lockingFeatureEnabled) {
         this.startup = false;
         process.nextTick(() => {
-          // If the app was previously closed unlocked
-          // we can update the `locked` setting and rely on the reaction to lock at startup
           if (!this.all.app.locked) {
             this.all.app.locked = true;
-          } else {
-            // Otherwise the app previously closed in a locked state
-            // We can't rely on updating the locked setting for the reaction to be triggered
-            // So we lock manually
-            window.ferdi.stores.router.push('/auth/locked');
           }
         });
       }
