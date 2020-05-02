@@ -704,6 +704,15 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "belyazidi56",
+      "name": "Youssef Belyazidi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/35711540?v=4",
+      "profile": "https://github.com/belyazidi56",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
