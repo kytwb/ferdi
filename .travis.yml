@@ -39,6 +39,6 @@ script:
     fi
   - |
     if [ $TRAVIS_BRANCH == "nightly" ]; then
-      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.repo=ferdi-nightly
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi-nightly
     fi
 
