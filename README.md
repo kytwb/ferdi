@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-70-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-71-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -396,6 +396,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/gega7"><img src="https://avatars0.githubusercontent.com/u/20799911?v=4" width="40px;" alt=""/><br /><sub><b>gega7</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/issues?q=author%3Agega7" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/tristanplouz"><img src="https://avatars2.githubusercontent.com/u/6893466?v=4" width="40px;" alt=""/><br /><sub><b>tristanplouz</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=tristanplouz" title="Code">💻</a> <a href="#ideas-tristanplouz" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/dannyqiu"><img src="https://avatars1.githubusercontent.com/u/1170755?v=4" width="40px;" alt=""/><br /><sub><b>Danny Qiu</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dannyqiu" title="Code">💻</a> <a href="https://github.com/getferdi/ferdi/issues?q=author%3Adannyqiu" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/belyazidi56"><img src="https://avatars3.githubusercontent.com/u/35711540?v=4" width="40px;" alt=""/><br /><sub><b>Youssef Belyazidi</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=belyazidi56" title="Code">💻</a></td>
   </tr>
 </table>
 
