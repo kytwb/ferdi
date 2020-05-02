@@ -22,6 +22,7 @@ branches:
   only:
     - develop
     - release
+    - nightly
 cache: npm
 
 before_install:
@@ -35,5 +36,9 @@ script:
   - |
     if [ $TRAVIS_BRANCH == "release" ]; then
       travis_retry travis_wait 100 npm run build
+    fi
+  - |
+    if [ $TRAVIS_BRANCH == "nightly" ]; then
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.repo=ferdi-nightly
     fi
 
