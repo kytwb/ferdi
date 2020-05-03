@@ -2,6 +2,7 @@ version: build-{build}
 branches:
   only:
     - release
+    - nightly
 skip_tags: true
 skip_branch_with_pr: true
 
@@ -20,3 +21,10 @@ before_build:
 
 build_script:
   - appveyor-retry npm run build
+
+-
+  branches:
+    only:
+      - nightly
+  before_build:
+    - npm version prerelease --preid=nightly
