@@ -12,7 +12,7 @@ matrix:
             - libxkbfile-dev
             - rpm
     - os: osx
-      if: branch = release
+      if: branch IN (nightly, release)
       osx_image: xcode11
 
 language: node_js
