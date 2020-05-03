@@ -28,4 +28,4 @@ for:
     only:
       - nightly
   before_build:
-    - npm version prerelease --preid=nightly
+    - npm version prerelease --preid=nightly --no-git-tag-version
