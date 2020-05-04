@@ -16,6 +16,7 @@ import {
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
+import { hash } from '../../helpers/password-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
@@ -185,6 +186,14 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
     intl: intlShape,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      lockedPassword: '',
+    };
+  }
+
   onSubmit(settingsData) {
     const { todos, workspaces } = this.props.stores;
     const {
@@ -194,6 +203,10 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       todos: todosActions,
       workspaces: workspaceActions,
     } = this.props.actions;
+
+    this.setState({
+      lockedPassword: settingsData.lockedPassword,
+    });
 
     app.launchOnStartup({
       enable: settingsData.autoLaunchOnStart,
@@ -217,7 +230,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         predefinedTodoServer: settingsData.predefinedTodoServer,
         customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
-        lockedPassword: settingsData.lockedPassword,
+        lockedPassword: hash(String(settingsData.lockedPassword)),
         useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
         inactivityLock: settingsData.inactivityLock,
         scheduledDNDEnabled: settingsData.scheduledDNDEnabled,
@@ -273,6 +286,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       app, settings, user, todos, workspaces,
     } = this.props.stores;
     const { intl } = this.context;
+    const { lockedPassword } = this.state;
 
     const locales = getSelectOptions({
       locales: APP_LOCALES,
@@ -395,7 +409,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         },
         lockedPassword: {
           label: intl.formatMessage(messages.lockPassword),
-          value: settings.all.app.lockedPassword,
+          value: lockedPassword,
           default: '',
           type: 'password',
         },
