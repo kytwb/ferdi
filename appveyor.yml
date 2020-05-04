@@ -30,4 +30,4 @@ for:
   before_build:
     - npm version prerelease --preid=nightly --no-git-tag-version
   build_script:
-    - appveyor-retry npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi-nightly
+    - appveyor-retry npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies

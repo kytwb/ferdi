@@ -40,7 +40,7 @@ script:
   - |
     if [ $TRAVIS_BRANCH == "nightly" ]; then
       npm version prerelease --preid=nightly -m "%s [skip ci]"
-      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi-nightly
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
       git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
       git push --quiet --set-upstream nightly HEAD:nightly >/dev/null 2>&1
     fi
