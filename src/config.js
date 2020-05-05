@@ -60,6 +60,7 @@ export const TODO_APPS = {
   'https://app.nozbe.com/#login': 'Nozbe',
   'https://www.rememberthemilk.com/login/': 'Remember The Milk',
   'https://desktop.any.do/': 'Any.do',
+  'https://tasks.google.com/embed/?origin=https%3A%2F%2Fcalendar.google.com&fullWidth=1': 'Google Tasks',
   isUsingCustomTodoService: 'Other service',
 };
 

@@ -1,6 +1,7 @@
-# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0) (2020-04-17)
+# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
+- Add modifyRequestHeaders, enable properly setting headers for services (#639), 💖 @mahadevans87 @sampathBlam 
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
 - Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
 - Add option to start Ferdi minimized (#490, #534)
@@ -15,6 +16,8 @@
 - Add option to disable reload after resume (#442), 💖 @n0emis
 - Add custom JS/CSS to services (#83)
 - Add ability to change the services icons size and sidebar width (#153)
+- Differentiate between indirect and direct notifications (#590), 💖 @Room4O4 @mahadevans87 @FeikoJoosten @sampathBlam
+- Add setting to keep service in hibernation after startup (#577, #584)
 
 ### Minor changes
 - Improve user onboarding (#493)
@@ -33,6 +36,19 @@
 - Add better support for macOS dark mode
 - Add better seperation in settings
 - Change Sentry telemetry to be opt-in only (#160)
+- Remove excess code from Franz's hibernate feature (#609)
+- Refocus Webview only for active service (#610), 💖 @Room4O4 & @mahadevans87
+- Use GitHub notifications center and direct notifications (getferdi/recipes#133)
+- Switch back to original Telegram, add Telegram React (getferdi/recipes#132)
+- Fix notifications for various services, 💖 @FeikoJoosten
+- Add support for indirect messages for various services, 💖 @FeikoJoosten
+- Use correct Riot icon (getferdi/recipes#125), 💖 @halms
+- Remove incorrectly placed icons (getferdi/recipes#126), 💖 @halms
+- Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
+- Remove automatic reloading from WhatsApp
+- Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
 
 ### Bug fixes
 - Fix cache clearing not working in Windows 10 (#541, #544), 💖 @Room4O4 & @mahadevans87
@@ -49,12 +65,39 @@
 - Fix login problems in Google services
 - Fix Dark Reader blocking services from loading (#285)
 - Fix incorrect body closing tag (#330), 💖 @jereksel
+- Fix DarkReader translation problem (#593)
+- Fix system tray icon tooltip text (#648), 💖 @sampathBlam
+- Enable Dark Reader settings to follow the accent color (#646), 💖 @sampathBlam
 
 ### Build changes
 - Add retry commands to flaky build steps (#498)
 - Run utility scripts pre-commit instead of pre-push (#515)
+- Sign Windows binaries (#635, #633, #112)
 
-## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-15)
+# [5.5.0-gm.2](https://github.com/getferdi/ferdi/compare/v5.5.0-gm...v5.5.0-gm.2) (2020-04-23)
+### Features
+- Differentiate between indirect and direct notifications (#590), 💖 @Room4O4 @mahadevans87 @FeikoJoosten @sampathBlam
+- Add setting to keep service in hibernation after startup (#577, #584)
+
+### Minor changes
+- Remove excess code from Franz's hibernate feature (#609)
+- Refocus Webview only for active service (#610), 💖 @Room4O4 & @mahadevans87
+- Use GitHub notifications center and direct notifications (getferdi/recipes#133)
+- Switch back to original Telegram, add Telegram React (getferdi/recipes#132)
+- Fix notifications for various services, 💖 @FeikoJoosten
+- Add support for indirect messages for various services, 💖 @FeikoJoosten
+- Use correct Riot icon (getferdi/recipes#125), 💖 @halms
+- Remove incorrectly placed icons (getferdi/recipes#126), 💖 @halms
+- Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
+- Remove automatic reloading from WhatsApp
+- Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
+
+### Bug Fixes
+- Fix DarkReader translation problem (#593)
+
+## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-19)
 ### Features
 - Merge Franz 5.5.0-beta.2
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact

@@ -89,54 +89,42 @@ class TabItem extends Component {
       alwaysShowServicesNames,
     } = this.props;
     const { intl } = this.context;
+    
+    const menuTemplate = [{
+      label: service.name || service.recipe.name,
+      enabled: false,
+    }, {
+      type: 'separator',
+    }, {
+      label: intl.formatMessage(messages.reload),
+      click: reload,
+    }, {
+      label: intl.formatMessage(messages.edit),
+      click: () => openSettings({
+        path: `services/edit/${service.id}`,
+      }),
+    }, {
+      type: 'separator',
+    }, {
+      label: service.isNotificationEnabled
+        ? intl.formatMessage(messages.disableNotifications)
+        : intl.formatMessage(messages.enableNotifications),
+      click: () => toggleNotifications(),
+    }, {
+      label: service.isMuted
+        ? intl.formatMessage(messages.enableAudio)
+        : intl.formatMessage(messages.disableAudio),
+      click: () => toggleAudio(),
+    }, {
+      label: intl.formatMessage(service.isEnabled ? messages.disableService : messages.enableService),
+      click: () => (service.isEnabled ? disableService() : enableService()),
+    }, {
+      type: 'separator',
+    }, {
+      label: intl.formatMessage(messages.deleteService),
+      click: () => deleteService(),
+    }];
 
-    const menuTemplate = [
-      {
-        label: service.name || service.recipe.name,
-        enabled: false,
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(messages.reload),
-        click: reload,
-      },
-      {
-        label: intl.formatMessage(messages.edit),
-        click: () => openSettings({
-          path: `services/edit/${service.id}`,
-        }),
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: service.isNotificationEnabled
-          ? intl.formatMessage(messages.disableNotifications)
-          : intl.formatMessage(messages.enableNotifications),
-        click: () => toggleNotifications(),
-      },
-      {
-        label: service.isMuted
-          ? intl.formatMessage(messages.enableAudio)
-          : intl.formatMessage(messages.disableAudio),
-        click: () => toggleAudio(),
-      },
-      {
-        label: intl.formatMessage(
-          service.isEnabled ? messages.disableService : messages.enableService,
-        ),
-        click: () => (service.isEnabled ? disableService() : enableService()),
-      },
-      {
-        type: 'separator',
-      },
-      {
-        label: intl.formatMessage(messages.deleteService),
-        click: () => deleteService(),
-      },
-    ];
     const menu = Menu.buildFromTemplate(menuTemplate);
 
     let notificationBadge = null;

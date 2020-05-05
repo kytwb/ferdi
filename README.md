@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-51-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-71-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -119,12 +119,14 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds an option to keep individual workspaces always loaded ([#37](https://github.com/getferdi/ferdi/issues/37))
 - [x] Adds "Quick Switch" feature to help you navigate a long list of services (similar to Rambox's [Quick Switcher](https://rambox.pro/#feature-details/quick_switcher))
 - [x] Adds "Service Hibernation" that will automatically unload services when they are unused to keep your computer running fast
+- [x] Adds a setting to keep service in hibernation after startup ([#577](https://github.com/getferdi/ferdi/issues/577), [#584](https://github.com/getferdi/ferdi/issues/584))
 - [x] [Add `user.css` and `user.js` that allows users to inject custom code into services](https://github.com/getferdi/ferdi/wiki/Using-user.css-and-user.js) ([#83](https://github.com/getferdi/ferdi/issues/83))
 - [x] Adds Process Manager to find services using a lot of resources
 - [x] Adds CTRL+← and CTRL+→ shortcuts and menu options to go back and forward in the service browsing history([#39](https://github.com/getferdi/ferdi/issues/39))
 - [x] Adds "Scheduled Do-not-Disturb" feature in which you won't get notifications (similar to Rambox's [Work Hours](https://rambox.pro/#feature-details/work_hours))
 - [x] Allows you to [use any Todo service inside "Franz Todo" panel](https://github.com/getferdi/ferdi/wiki/Custom-Todo) (e.g. Todoist via https://todoist.com/app) instead of being limited to using Franz Todo
 - [x] Adds a dropdown list to choose your Todo service ([#418](https://github.com/getferdi/ferdi/issues/418), [#477](https://github.com/getferdi/ferdi/issues/477)), 💖 [@yourcontact](https://github.com/yourcontact)
+- [x] Differentiates between indirect and direct notifications ([#590](https://github.com/getferdi/ferdi/issues/590)), 💖 [@Room4O4](https://github.com/Room4O4) [@mahadevans87](https://github.com/mahadevans87) [@FeikoJoosten](https://github.com/FeikoJoosten) [@sampathBlam](https://github.com/sampathBlam)
 
 ### Adds features to improve your privacy
 - [x] [Adds option to change server to a custom](https://github.com/getferdi/ferdi/wiki/Custom-Server) [ferdi-server](https://github.com/getferdi/server)
@@ -164,6 +166,8 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds better separation in settings
 - [x] Adds various other UI improvements
 - [x] Improves documentation of development so more developers can help making Ferdi even better
+- [x] Updates Microsoft Teams to allow Desktop Sharing ([getferdi/recipes#116](https://github.com/getferdi/recipes/issues/116)), 💖 [@Gautasmi](https://github.com/Gautasmi)
+- [x] Removes automatic reloading from WhatsApp
 
 ### Removed bugs
 - [x] Fixes bug that would incorrectly display unread messages count on some services (more info in [7566ccd](https://github.com/getferdi/ferdi/commit/7566ccd))
@@ -174,6 +178,8 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Fixes microphone/camera access on some versions of macOS ([#193](https://github.com/getferdi/ferdi/issues/193))
 - [x] Fixes cache clearing not working in Windows 10 ([#541](https://github.com/getferdi/ferdi/issues/541), [#544](https://github.com/getferdi/ferdi/issues/544)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 - [x] Fixes Home button in navigation bar not correctly navigating ([#571](https://github.com/getferdi/ferdi/issues/571), [#573](https://github.com/getferdi/ferdi/issues/573)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
+- [x] Fixes notifications for various services, 💖 [@FeikoJoosten](https://github.com/FeikoJoosten)
+- [x] Refocuses Webview only for active service ([#610](https://github.com/getferdi/ferdi/issues/610)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 
 ### Adds new platforms
 - [x] Adds portable version for Windows so you can use Ferdi without even installing it, 💖 [@Makazzz](https://github.com/Makazzz)
@@ -356,15 +362,41 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://crowdin.com/profile/johanengstrand"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14152801/small/fd395f120efca971ca9b34c57fd02cca.png" width="40px;" alt=""/><br /><sub><b>Johan Engstrand</b></sub></a><br /><a href="#translation-johanengstrand" title="Translation">🌍</a></td>
     <td align="center"><a href="https://mrassili.com"><img src="https://avatars0.githubusercontent.com/u/25288435?v=4" width="40px;" alt=""/><br /><sub><b>Marouane R</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mrassili" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/yourcontact"><img src="https://avatars2.githubusercontent.com/u/46404814?v=4" width="40px;" alt=""/><br /><sub><b>Roman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=yourcontact" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a> <a href="#ideas-mahadevans87" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/yourcontact"><img src="https://avatars2.githubusercontent.com/u/46404814?v=4" width="40px;" alt=""/><br /><sub><b>Roman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=yourcontact" title="Code">💻</a> <a href="#ideas-yourcontact" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/mahadevans87"><img src="https://avatars1.githubusercontent.com/u/1255523?v=4" width="40px;" alt=""/><br /><sub><b>Mahadevan Sreenivasan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Code">💻</a> <a href="#ideas-mahadevans87" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/getferdi/ferdi/pulls?q=is%3Apr+reviewed-by%3Amahadevans87" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/getferdi/ferdi/issues?q=author%3Amahadevans87" title="Bug reports">🐛</a> <a href="https://github.com/getferdi/ferdi/commits?author=mahadevans87" title="Documentation">📖</a> <a href="#userTesting-mahadevans87" title="User Testing">📓</a></td>
     <td align="center"><a href="https://jakelee.co.uk"><img src="https://avatars2.githubusercontent.com/u/12380876?v=4" width="40px;" alt=""/><br /><sub><b>Jake Lee</b></sub></a><br /><a href="#content-JakeSteam" title="Content">🖋</a></td>
-    <td align="center"><a href="https://github.com/sampathBlam"><img src="https://avatars1.githubusercontent.com/u/17728976?v=4" width="40px;" alt=""/><br /><sub><b>Sampath Kumar Krishnan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/sampathBlam"><img src="https://avatars1.githubusercontent.com/u/17728976?v=4" width="40px;" alt=""/><br /><sub><b>Sampath Kumar Krishnan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Code">💻</a> <a href="https://github.com/getferdi/ferdi/pulls?q=is%3Apr+reviewed-by%3AsampathBlam" title="Reviewed Pull Requests">👀</a> <a href="#ideas-sampathBlam" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/getferdi/ferdi/issues?q=author%3AsampathBlam" title="Bug reports">🐛</a> <a href="https://github.com/getferdi/ferdi/commits?author=sampathBlam" title="Documentation">📖</a> <a href="#userTesting-sampathBlam" title="User Testing">📓</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/saruwman"><img src="https://avatars2.githubusercontent.com/u/41330038?v=4" width="40px;" alt=""/><br /><sub><b>saruwman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/saruwman"><img src="https://avatars2.githubusercontent.com/u/41330038?v=4" width="40px;" alt=""/><br /><sub><b>saruwman</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Documentation">📖</a> <a href="https://github.com/getferdi/ferdi/commits?author=saruwman" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dorukkarinca"><img src="https://avatars0.githubusercontent.com/u/9303867?v=4" width="40px;" alt=""/><br /><sub><b>dorukkarinca</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/issues?q=author%3Adorukkarinca" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/gautamsi"><img src="https://avatars2.githubusercontent.com/u/5769869?v=4" width="40px;" alt=""/><br /><sub><b>Gautam Singh</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=gautamsi" title="Code">💻</a></td>
+    <td align="center"><a href="https://feikojoosten.com"><img src="https://avatars0.githubusercontent.com/u/10920052?v=4" width="40px;" alt=""/><br /><sub><b>Feiko Joosten</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=FeikoJoosten" title="Code">💻</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/2bdelghafour"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14219410/small/31ff20f60d352fb46e314f3c180a77b0.jpeg" width="40px;" alt=""/><br /><sub><b>2bdelghafour</b></sub></a><br /><a href="#translation-2bdelghafour" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/abdoutanta"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14213908/small/5b2fc8166f8a0a2b7313fbf49ee5b6b6.jpeg" width="40px;" alt=""/><br /><sub><b>Abderrahim Tantaoui</b></sub></a><br /><a href="#translation-abdoutanta" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://crowdin.com/profile/AndiLeni"><img src="https://www.gravatar.com/avatar/4bd0da860de38afa735425ce2d4e10b5" width="40px;" alt=""/><br /><sub><b>AndiLeni</b></sub></a><br /><a href="#translation-AndiLeni" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/brunofalmada"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14200540/small/f6f1addceeeabc02488f9b08520a902f.jpeg" width="40px;" alt=""/><br /><sub><b>Bruno Almada</b></sub></a><br /><a href="#translation-brunofalmada" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/Catarino"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14208802/small/07287eb2de671257ca3d6bb4ba1cca67.jpeg" width="40px;" alt=""/><br /><sub><b>Catarino Gonçalo</b></sub></a><br /><a href="#translation-Catarino" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/Alzemand"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14184269/small/f5e68247f01988ae7951a282f0fd4d06.jpeg" width="40px;" alt=""/><br /><sub><b>Edilson Alzemand Sigmaringa Junior</b></sub></a><br /><a href="#translation-Alzemand" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/MAT-OUT"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14201550/small/68dd2402bf2879bc3ca312d627710400.png" width="40px;" alt=""/><br /><sub><b>MAT-OUT</b></sub></a><br /><a href="#translation-MAT-OUT" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/mazzo98"><img src="https://crowdin-static.downloads.crowdin.com/avatar/12864917/small/69799b5fd7be2f67282715d5cdfd4ae1.png" width="40px;" alt=""/><br /><sub><b>mazzo98</b></sub></a><br /><a href="#translation-mazzo98" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://crowdin.com/profile/paprika-naught-tiffin-flyspeck"><img src="https://www.gravatar.com/avatar/8671ebe7a7164dfa7624fbdbff69ed96" width="40px;" alt=""/><br /><sub><b>paprika-naught-tiffin-flyspeck</b></sub></a><br /><a href="#translation-paprika-naught-tiffin-flyspeck" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/patrickvalle"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14217484/small/8b73f313ee79fe33625e819cdac86551.jpg" width="40px;" alt=""/><br /><sub><b>Patrick Valle</b></sub></a><br /><a href="#translation-patrickvalle" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/peq42"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14155811/small/b62a94dde7ec29948ec6a6af9fd24b1d.png" width="40px;" alt=""/><br /><sub><b>peq42_</b></sub></a><br /><a href="#translation-peq42" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/karlinhos"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14161139/small/96450eb44c22b3141ab4401e547109b8.png" width="40px;" alt=""/><br /><sub><b>Pumbinha</b></sub></a><br /><a href="#translation-karlinhos" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/dies"><img src="https://crowdin-static.downloads.crowdin.com/avatar/1/small/e84bcdf6c084ffd52527931f988fb410.png" width="40px;" alt=""/><br /><sub><b>Serhiy Dmytryshyn</b></sub></a><br /><a href="#translation-dies" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://crowdin.com/profile/SMile61"><img src="https://crowdin-static.downloads.crowdin.com/avatar/14177585/small/1bb4f6ba39bff3df8f579e61460ce016.png" width="40px;" alt=""/><br /><sub><b>SMile61</b></sub></a><br /><a href="#translation-SMile61" title="Translation">🌍</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://crowdin.com/profile/tinect"><img src="https://crowdin-static.downloads.crowdin.com/avatar/12521988/small/56c2041645746af9e51dd28782b828c3.jpeg" width="40px;" alt=""/><br /><sub><b>tinect</b></sub></a><br /><a href="#translation-tinect" title="Translation">🌍</a></td>
+    <td align="center"><a href="https://github.com/gega7"><img src="https://avatars0.githubusercontent.com/u/20799911?v=4" width="40px;" alt=""/><br /><sub><b>gega7</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/issues?q=author%3Agega7" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/tristanplouz"><img src="https://avatars2.githubusercontent.com/u/6893466?v=4" width="40px;" alt=""/><br /><sub><b>tristanplouz</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=tristanplouz" title="Code">💻</a> <a href="#ideas-tristanplouz" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/dannyqiu"><img src="https://avatars1.githubusercontent.com/u/1170755?v=4" width="40px;" alt=""/><br /><sub><b>Danny Qiu</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dannyqiu" title="Code">💻</a> <a href="https://github.com/getferdi/ferdi/issues?q=author%3Adannyqiu" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/belyazidi56"><img src="https://avatars3.githubusercontent.com/u/35711540?v=4" width="40px;" alt=""/><br /><sub><b>Youssef Belyazidi</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=belyazidi56" title="Code">💻</a></td>
   </tr>
 </table>
 

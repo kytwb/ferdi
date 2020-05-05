@@ -495,9 +495,7 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
-      if (document.activeElement) {
-        document.activeElement.blur();
-      }
+      service.webview.blur();
       service.webview.focus();
     }
   }
@@ -633,7 +631,8 @@ export default class ServicesStore extends Store {
   }
 
   @action _openWindow({ event }) {
-    if (event.disposition !== 'new-window' && event.url !== 'about:blank') {
+    if (event.url !== 'about:blank') {
+      event.preventDefault();
       this.actions.app.openExternalUrl({ url: event.url });
     }
   }

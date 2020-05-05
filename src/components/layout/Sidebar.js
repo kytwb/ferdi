@@ -213,9 +213,7 @@ class Sidebar extends Component {
           type="button"
           onClick={() => openSettings({ path: 'app' })}
           className="sidebar__button sidebar__button--settings"
-          data-tip={`${intl.formatMessage(
-            messages.settings,
-          )} (${ctrlKey}+${settingsShortcutKey})`}
+          data-tip={`${intl.formatMessage(messages.settings)} (${ctrlKey}+${settingsShortcutKey})`}
         >
           <i className="mdi mdi-settings" />
           {(this.props.stores.app.updateStatus

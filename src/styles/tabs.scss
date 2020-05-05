@@ -86,13 +86,13 @@
     position: absolute;
     right: 8px;
 
-    &.is-indirect {
+    &.is-indirect { 
       padding-top: 0;
       background: #0088cc;
-    }
-    &.hibernating {
-      padding-top: 0;
-      background: $theme-gray;
+	}
+    &.hibernating { 
+      padding-top: 0; 
+      background: $theme-gray; 
       font-size: 0px;
       min-height: 10px;
       min-width: 10px;
@@ -116,10 +116,11 @@
     right: 8px;
     width: 17px;
 
-    &.is-indirect {
+    &.is-indirect { 
       padding-top: 0;
       background: #0088cc;
-    }
+	}
+
   }
 
   &.is-reordering {
