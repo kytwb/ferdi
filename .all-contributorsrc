@@ -475,7 +475,10 @@
       "contributions": [
         "code",
         "ideas",
-        "review"
+        "review",
+        "bug",
+        "doc",
+        "userTesting"
       ]
     },
     {
@@ -495,7 +498,10 @@
       "contributions": [
         "code",
         "review",
-        "ideas"
+        "ideas",
+        "bug",
+        "doc",
+        "userTesting"
       ]
     },
     {
@@ -687,6 +693,25 @@
       "contributions": [
         "code",
         "ideas"
+      ]
+    },
+    {
+      "login": "dannyqiu",
+      "name": "Danny Qiu",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1170755?v=4",
+      "profile": "https://github.com/dannyqiu",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "belyazidi56",
+      "name": "Youssef Belyazidi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/35711540?v=4",
+      "profile": "https://github.com/belyazidi56",
+      "contributions": [
+        "code"
       ]
     }
   ],

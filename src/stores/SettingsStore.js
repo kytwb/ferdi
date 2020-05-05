@@ -6,6 +6,7 @@ import localStorage from 'mobx-localstorage';
 import { DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER } from '../config';
 import { API } from '../environment';
 import { getLocale } from '../helpers/i18n-helpers';
+import { hash } from '../helpers/password-helpers';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 import Request from './lib/Request';
 import Store from './lib/Store';
@@ -56,21 +57,6 @@ export default class SettingsStore extends Store {
       },
     );
 
-    reaction(
-      () => this.all.app.locked,
-      () => {
-        const { router } = window.ferdi.stores;
-        if (this.all.app.locked && this.all.app.lockingFeatureEnabled) {
-          // App just got locked, redirect to unlock screen
-          router.push('/auth/locked');
-        } else if (router.location.pathname.includes('/auth/locked')) {
-          // App is unlocked but user is still on locked screen
-          // Redirect to homepage
-          router.push('/');
-        }
-      },
-    );
-
     // Inactivity lock timer
     let inactivityTimer;
     remote.getCurrentWindow().on('blur', () => {
@@ -96,15 +82,8 @@ export default class SettingsStore extends Store {
       if (this.startup && resp.type === 'app' && resp.data.lockingFeatureEnabled) {
         this.startup = false;
         process.nextTick(() => {
-          // If the app was previously closed unlocked
-          // we can update the `locked` setting and rely on the reaction to lock at startup
           if (!this.all.app.locked) {
             this.all.app.locked = true;
-          } else {
-            // Otherwise the app previously closed in a locked state
-            // We can't rely on updating the locked setting for the reaction to be triggered
-            // So we lock manually
-            window.ferdi.stores.router.push('/auth/locked');
           }
         });
       }
@@ -296,6 +275,26 @@ export default class SettingsStore extends Store {
         type: 'migration',
         data: {
           '5.4.4-beta.4-settings': true,
+        },
+      });
+
+      debug('Migrated updates settings');
+    }
+
+    if (!this.all.migration['password-hashing']) {
+      if (this.stores.settings.app.lockedPassword !== '') {
+        this.actions.settings.update({
+          type: 'app',
+          data: {
+            lockedPassword: hash(String(legacySettings.lockedPassword)),
+          },
+        });
+      }
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          'password-hashing': true,
         },
       });
 
