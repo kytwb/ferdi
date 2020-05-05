@@ -49,21 +49,6 @@ class SupportFerdiDashboard extends Component {
         </div>
         <div className="settings__body">
           <h1>{intl.formatMessage(messages.title)}</h1>
-          <Button
-            label={intl.formatMessage(messages.github)}
-            className="franz-form__button--inverted franz-form__button--large"
-            onClick={() => openLink('https://github.com/getferdi/ferdi')}
-          />
-          <Button
-            label={intl.formatMessage(messages.share)}
-            className="franz-form__button--inverted franz-form__button--large"
-            onClick={() => openLink('https://twitter.com/intent/tweet?text=Ferdi%3A%20A%20messaging%20browser%20that%20allows%20you%20to%20combine%20your%20favourite%20messaging%20services%20into%20one%20application.%0A%0ACheck%20out%20Ferdi%20at%20https%3A//getferdi.com')}
-          />
-          <Button
-            label={intl.formatMessage(messages.openCollective)}
-            className="franz-form__button--inverted franz-form__button--large"
-            onClick={() => openLink('https://opencollective.com/getferdi')}
-          />
         </div>
       </div>
     );

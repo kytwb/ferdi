@@ -12,6 +12,8 @@ import SettingsStore from '../../../stores/SettingsStore';
 import Appear from '../../../components/ui/effects/Appear';
 import UpgradeButton from '../../../components/ui/UpgradeButton';
 
+import userAgent from '../../../helpers/userAgent-helpers';
+
 // NOTE: https://stackoverflow.com/questions/5717093/check-if-a-javascript-string-is-a-url
 function validURL(str) {
   let url;
@@ -128,6 +130,11 @@ class TodosWebview extends Component {
     this.node.addEventListener('mousemove', this.resizePanel.bind(this));
     this.node.addEventListener('mouseup', this.stopResize.bind(this));
     this.node.addEventListener('mouseleave', this.stopResize.bind(this));
+
+    const webViewInstance = this;
+    this.webview.addEventListener('dom-ready', () => {
+      webViewInstance.webview.setUserAgent(userAgent(true));
+    })
   }
 
   startResize = (event) => {
