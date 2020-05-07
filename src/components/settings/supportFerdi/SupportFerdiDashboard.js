@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { defineMessages, intlShape } from 'react-intl';
-
-import Button from '../../ui/Button';
 
 const messages = defineMessages({
   headline: {
@@ -13,18 +10,6 @@ const messages = defineMessages({
     id: 'settings.supportFerdi.title',
     defaultMessage: '!!!Do you like Ferdi? Spread the love!',
   },
-  github: {
-    id: 'settings.supportFerdi.github',
-    defaultMessage: '!!!Star on GitHub',
-  },
-  share: {
-    id: 'settings.supportFerdi.share',
-    defaultMessage: '!!!Tell your Friends',
-  },
-  openCollective: {
-    id: 'settings.supportFerdi.openCollective',
-    defaultMessage: '!!!Support our Open Collective',
-  },
 });
 
 class SupportFerdiDashboard extends Component {
@@ -32,12 +17,7 @@ class SupportFerdiDashboard extends Component {
     intl: intlShape,
   };
 
-  static propTypes = {
-    openLink: PropTypes.func.isRequired,
-  };
-
   render() {
-    const { openLink } = this.props;
     const { intl } = this.context;
 
     return (
