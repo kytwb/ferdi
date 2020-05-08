@@ -134,7 +134,7 @@ class TodosWebview extends Component {
     const webViewInstance = this;
     this.webview.addEventListener('dom-ready', () => {
       webViewInstance.webview.setUserAgent(userAgent(true));
-    })
+    });
   }
 
   startResize = (event) => {

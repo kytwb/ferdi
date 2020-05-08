@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Franz Todos are available to premium users now!",
     "file": "src/features/todos/components/TodosWebview.js",
     "start": {
-      "line": 27,
+      "line": 31,
       "column": 15
     },
     "end": {
-      "line": 30,
+      "line": 34,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Upgrade Account",
     "file": "src/features/todos/components/TodosWebview.js",
     "start": {
-      "line": 31,
+      "line": 35,
       "column": 14
     },
     "end": {
-      "line": 34,
+      "line": 38,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Everyone else will have to wait a little longer.",
     "file": "src/features/todos/components/TodosWebview.js",
     "start": {
-      "line": 35,
+      "line": 39,
       "column": 15
     },
     "end": {
-      "line": 38,
+      "line": 42,
       "column": 3
     }
   }

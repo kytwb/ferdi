@@ -3431,65 +3431,26 @@
         "defaultMessage": "!!!Support Ferdi",
         "end": {
           "column": 3,
-          "line": 11
+          "line": 8
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.headline",
         "start": {
           "column": 12,
-          "line": 8
+          "line": 5
         }
       },
       {
-        "defaultMessage": "!!!Do you like Ferdi? Spread the love!",
+        "defaultMessage": "!!!Do you like Ferdi?",
         "end": {
           "column": 3,
-          "line": 15
+          "line": 12
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.title",
         "start": {
           "column": 9,
-          "line": 12
-        }
-      },
-      {
-        "defaultMessage": "!!!Star on GitHub",
-        "end": {
-          "column": 3,
-          "line": 19
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.github",
-        "start": {
-          "column": 10,
-          "line": 16
-        }
-      },
-      {
-        "defaultMessage": "!!!Tell your Friends",
-        "end": {
-          "column": 3,
-          "line": 23
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.share",
-        "start": {
-          "column": 9,
-          "line": 20
-        }
-      },
-      {
-        "defaultMessage": "!!!Support our Open Collective",
-        "end": {
-          "column": 3,
-          "line": 27
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.openCollective",
-        "start": {
-          "column": 18,
-          "line": 24
+          "line": 9
         }
       }
     ],
@@ -5916,39 +5877,39 @@
         "defaultMessage": "!!!Franz Todos are available to premium users now!",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 34
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.info",
         "start": {
           "column": 15,
-          "line": 27
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Upgrade Account",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 38
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.upgrade",
         "start": {
           "column": 14,
-          "line": 31
+          "line": 35
         }
       },
       {
         "defaultMessage": "!!!Everyone else will have to wait a little longer.",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 42
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.rollout",
         "start": {
           "column": 15,
-          "line": 35
+          "line": 39
         }
       }
     ],
