@@ -2223,7 +2223,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
           "line": 44
@@ -3428,7 +3428,7 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
           "line": 8

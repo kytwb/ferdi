@@ -1,7 +1,7 @@
 [
   {
     "id": "settings.supportFerdi.headline",
-    "defaultMessage": "!!!Support Ferdi",
+    "defaultMessage": "!!!About Ferdi",
     "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
     "start": {
       "line": 5,
