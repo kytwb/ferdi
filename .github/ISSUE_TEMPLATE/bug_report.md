@@ -31,10 +31,11 @@ visible in your bug report, so please don't put any text in them.
 - Operating System: <!-- e.g. macOS Catalina, Windows 10, etc. -->
 - Ferdi Version: <!-- e.g. 5.4.3 -->
 - Server: <!-- e.g. Ferdi, Franz, Using without an account -->
-- Debug information: <!-- https://debug.getferdi.com/... -->
+
+- Debug information:
 <!-- 
-To publish a bug report, inside Ferdi's menu bar click on "Help" > "Publish debug information", accept our terms
-and copy the link given to you.
+Get your debug information via Ferdi "Help" menu ("Copy/Publish Debug Information") then
+share a debug information file or your published link with us.
 -->
 
 <!-- Please consider supporting Ferdi!
