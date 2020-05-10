@@ -3431,26 +3431,26 @@
         "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
-          "line": 8
+          "line": 12
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.headline",
         "start": {
           "column": 12,
-          "line": 5
+          "line": 9
         }
       },
       {
         "defaultMessage": "!!!Do you like Ferdi?",
         "end": {
           "column": 3,
-          "line": 12
+          "line": 16
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.title",
         "start": {
           "column": 9,
-          "line": 9
+          "line": 13
         }
       }
     ],
