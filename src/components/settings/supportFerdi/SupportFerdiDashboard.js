@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
+import { remote } from 'electron';
+import InfoBar from '../../ui/InfoBar';
+
+const { BrowserWindow } = remote;
 
 const messages = defineMessages({
   headline: {
@@ -16,6 +20,15 @@ class SupportFerdiDashboard extends Component {
   static contextTypes = {
     intl: intlShape,
   };
+
+  openSurveyWindow() {
+    let win = new BrowserWindow({ width: 670, height: 400 });
+    win.on('closed', () => {
+      win = null;
+    });
+
+    win.loadURL('https://rp28.typeform.com/to/E3phJT');
+  }
 
   render() {
     const { intl } = this.context;
@@ -65,7 +78,7 @@ class SupportFerdiDashboard extends Component {
               </a>
             </p>
             <p>
-            While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend. You can see our financial accounts on
+            While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our
               <a href="https://opencollective.com/getferdi#section-budget" target="_blank" className="link">
                 {' '}
                 Open Collective
@@ -73,21 +86,31 @@ class SupportFerdiDashboard extends Component {
               </a>
             </p>
             <p>
-              If you feel like supporting Ferdi with a donation, you can do so
-              <a href="https://opencollective.com/getferdi#section-budget" target="_blank" className="link">
+              If you feel like supporting Ferdi development with a donation, you can do so on both,
+              <a href="https://opencollective.com/getferdi#section-contribute" target="_blank" className="link">
                 {' '}
-                here
+                Open Collective
                 <i className="mdi mdi-open-in-new" />
               </a>
-            </p>
-            <p>
-                  Your help will be greatly appreciated.
-            </p>
-            <p>
-              Thank you for supporting Ferdi.
+              {' '}
+and
+              <a href="https://github.com/sponsors/getferdi" target="_blank" className="link">
+                {' '}
+                GitHub Sponsors
+                <i className="mdi mdi-open-in-new" />
+              </a>
+
             </p>
           </div>
         </div>
+        <InfoBar
+          sticky
+          type="primary"
+          ctaLabel="Open survey"
+          onClick={this.openSurveyWindow}
+        >
+          {'Do you want to help us improve Ferdi?'}
+        </InfoBar>
       </div>
     );
   }
