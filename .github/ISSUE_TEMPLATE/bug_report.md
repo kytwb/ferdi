@@ -31,7 +31,7 @@ visible in your bug report, so please don't put any text in them.
 - Operating System: <!-- e.g. macOS Catalina, Windows 10, etc. -->
 - Ferdi Version: <!-- e.g. 5.4.3 -->
 - Server: <!-- e.g. Ferdi, Franz, Using without an account -->
--  Debug information: <!-- https://debug.getferdi.com/... -->
+- Debug information: <!-- https://debug.getferdi.com/... -->
 <!-- 
 To publish a bug report, inside Ferdi's menu bar click on "Help" > "Publish debug information", accept our terms
 and copy the link given to you.
