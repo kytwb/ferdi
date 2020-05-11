@@ -152,8 +152,8 @@ const createWindow = () => {
   const mainWindowState = windowStateKeeper({
     defaultWidth: DEFAULT_WINDOW_OPTIONS.width,
     defaultHeight: DEFAULT_WINDOW_OPTIONS.height,
-    maximize: false,
-    fullScreen: false,
+    maximize: true, // Automatically maximizes the window, if it was last clsoed maximized
+    fullScreen: true, // Automatically restores the window to full screen, if it was last closed full screen
   });
 
   let posX = mainWindowState.x || DEFAULT_WINDOW_OPTIONS.x;
