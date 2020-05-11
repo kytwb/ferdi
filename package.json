@@ -1,6 +1,7 @@
 {
   "name": "ferdi",
   "productName": "Ferdi",
+  "desktopName": "ferdi.desktop",
   "appId": "com.kytwb.ferdi",
   "version": "5.5.0",
   "description": "Messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more.",
