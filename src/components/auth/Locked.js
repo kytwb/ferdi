@@ -8,6 +8,7 @@ import Form from '../../lib/Form';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 import Infobox from '../ui/Infobox';
+import { isMac } from '../../environment';
 
 import { globalError as globalErrorPropType } from '../../prop-types';
 
@@ -100,7 +101,7 @@ export default @observer class Locked extends Component {
       useTouchIdToUnlock,
     } = this.props;
 
-    const touchIdEnabled = useTouchIdToUnlock && systemPreferences.canPromptTouchID();
+    const touchIdEnabled = isMac ? (useTouchIdToUnlock && systemPreferences.canPromptTouchID()) : false;
     const submitButtonLabel = touchIdEnabled ? intl.formatMessage(messages.unlockWithPassword) : intl.formatMessage(messages.submitButtonLabel);
 
     return (
