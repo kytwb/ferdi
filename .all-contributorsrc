@@ -713,6 +713,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "gabspeck",
+      "name": "Gabriel Speckhahn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/749488?v=4",
+      "profile": "https://github.com/gabspeck",
+      "contributions": [
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 6,
