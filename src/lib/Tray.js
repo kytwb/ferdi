@@ -2,6 +2,11 @@ import {
   app, Menu, nativeImage, nativeTheme, systemPreferences, Tray, ipcMain,
 } from 'electron';
 import path from 'path';
+import {
+  isMac,
+  isWindows,
+  isLinux,
+} from '../environment';
 
 const FILE_EXTENSION = process.platform === 'win32' ? 'ico' : 'png';
 const INDICATOR_TRAY_PLAIN = 'tray';
@@ -61,6 +66,9 @@ export default class TrayIcon {
     this.trayIcon.setToolTip('Ferdi');
 
     this.trayMenu = Menu.buildFromTemplate(this.trayMenuTemplate);
+    if (isLinux) {
+      this.trayIcon.setContextMenu(this.trayMenu);
+    }
 
     ipcMain.on('initialAppSettings', (event, appSettings) => {
       this._updateTrayMenu(appSettings);
@@ -81,9 +89,11 @@ export default class TrayIcon {
       }
     });
 
-    this.trayIcon.on('right-click', () => {
-      this.trayIcon.popUpContextMenu(this.trayMenu);
-    });
+    if (isMac || isWindows) {
+      this.trayIcon.on('right-click', () => {
+        this.trayIcon.popUpContextMenu(this.trayMenu);
+      });
+    }
 
     if (process.platform === 'darwin') {
       this.themeChangeSubscriberId = systemPreferences.subscribeNotification('AppleInterfaceThemeChangedNotification', () => {
