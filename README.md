@@ -282,18 +282,33 @@ Deliverables will be available in the `out` folder.
 
 ### Release
 
+Create a new [draft release](https://github.com/getferdi/ferdi/releases/new) that targets the `release` branch, then:
+
 ```bash
 $ git checkout develop && git pull
+$ git checkout release
 $ git submodule update --remote --force
 $ git add .
 $ git commit -m "Update submodules"
-$ git checkout master
 $ git merge --no-ff develop
-$ git tag v5.3.4-beta.4
-$ git push --tags
+$ git push
 ```
 
-When pushing a new tag, the CI builds will create a draft GitHub release and upload the deliverables in the draft release assets. Wait for all the assets to be uploaded before publishing the draft release.
+Once the draft release assets are uploaded (13 assets), publish the release. The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed.
+
+#### Nightly
+
+```bash
+$ git checkout develop && git pull
+$ git checkout nightly
+$ git submodule update --remote --force
+$ git add .
+$ git commit -m "Update submodules"
+$ git merge --no-ff develop
+$ git push
+```
+
+The draft release and assets will be available in [getferdi/nightlies releases](https://github.com/getferdi/nightlies/releases). You need to manually publish the draft release as a pre-release for now.
 
 ## Contributors ✨
 
