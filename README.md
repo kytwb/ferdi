@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-73-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-74-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -416,6 +416,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/dandelionadia"><img src="https://avatars0.githubusercontent.com/u/33199975?v=4" width="40px;" alt=""/><br /><sub><b>Nadiia Ridko</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dandelionadia" title="Code">💻</a></td>
+    <td align="center"><a href="https://hohner.dev"><img src="https://avatars0.githubusercontent.com/u/649895?v=4" width="40px;" alt=""/><br /><sub><b>Jan Hohner</b></sub></a><br /><a href="#userTesting-janhohner" title="User Testing">📓</a></td>
   </tr>
 </table>
 
