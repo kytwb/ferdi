@@ -3452,6 +3452,162 @@
           "column": 9,
           "line": 13
         }
+      },
+      {
+        "defaultMessage": "!!!Ferdi is an open-source and a community-lead application.",
+        "end": {
+          "column": 3,
+          "line": 20
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textIntroFirst",
+        "start": {
+          "column": 18,
+          "line": 17
+        }
+      },
+      {
+        "defaultMessage": "!!!Thanks to the people who make this possbile:",
+        "end": {
+          "column": 3,
+          "line": 24
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textIntroSecond",
+        "start": {
+          "column": 19,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!Full list of contributor",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textListContributors",
+        "start": {
+          "column": 24,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!here",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textListContributorsHere",
+        "start": {
+          "column": 28,
+          "line": 29
+        }
+      },
+      {
+        "defaultMessage": "!!!The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.",
+        "end": {
+          "column": 3,
+          "line": 36
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textVolunteers",
+        "start": {
+          "column": 18,
+          "line": 33
+        }
+      },
+      {
+        "defaultMessage": "!!!Support is always welcome. You can find a list of the help we need",
+        "end": {
+          "column": 3,
+          "line": 40
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcome",
+        "start": {
+          "column": 22,
+          "line": 37
+        }
+      },
+      {
+        "defaultMessage": "!!!here",
+        "end": {
+          "column": 3,
+          "line": 44
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcomeHere",
+        "start": {
+          "column": 26,
+          "line": 41
+        }
+      },
+      {
+        "defaultMessage": "!!!While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our",
+        "end": {
+          "column": 3,
+          "line": 48
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textExpenses",
+        "start": {
+          "column": 16,
+          "line": 45
+        }
+      },
+      {
+        "defaultMessage": "!!!Open Collective",
+        "end": {
+          "column": 3,
+          "line": 52
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textOpenCollective",
+        "start": {
+          "column": 22,
+          "line": 49
+        }
+      },
+      {
+        "defaultMessage": "!!!If you feel like supporting Ferdi development with a donation, you can do so on both,",
+        "end": {
+          "column": 3,
+          "line": 56
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonation",
+        "start": {
+          "column": 16,
+          "line": 53
+        }
+      },
+      {
+        "defaultMessage": "!!!and",
+        "end": {
+          "column": 3,
+          "line": 60
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonationAnd",
+        "start": {
+          "column": 19,
+          "line": 57
+        }
+      },
+      {
+        "defaultMessage": "!!!GitHub Sponsors",
+        "end": {
+          "column": 3,
+          "line": 64
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textGitHubSponsors",
+        "start": {
+          "column": 22,
+          "line": 61
+        }
       }
     ],
     "path": "src/components/settings/supportFerdi/SupportFerdiDashboard.json"
