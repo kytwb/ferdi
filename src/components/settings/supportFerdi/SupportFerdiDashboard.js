@@ -14,6 +14,54 @@ const messages = defineMessages({
     id: 'settings.supportFerdi.title',
     defaultMessage: '!!!Do you like Ferdi?',
   },
+  textIntroFirst: {
+    id: 'settings.supportFerdi.textIntroFirst',
+    defaultMessage: '!!!Ferdi is an open-source and a community-lead application.',
+  },
+  textIntroSecond: {
+    id: 'settings.supportFerdi.textIntroSecond',
+    defaultMessage: '!!!Thanks to the people who make this possbile:',
+  },
+  textListContributors: {
+    id: 'settings.supportFerdi.textListContributors',
+    defaultMessage: '!!!Full list of contributor',
+  },
+  textListContributorsHere: {
+    id: 'settings.supportFerdi.textListContributorsHere',
+    defaultMessage: '!!!here',
+  },
+  textVolunteers: {
+    id: 'settings.supportFerdi.textVolunteers',
+    defaultMessage: '!!!The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.',
+  },
+  textSupportWelcome: {
+    id: 'settings.supportFerdi.textSupportWelcome',
+    defaultMessage: '!!!Support is always welcome. You can find a list of the help we need',
+  },
+  textSupportWelcomeHere: {
+    id: 'settings.supportFerdi.textSupportWelcomeHere',
+    defaultMessage: '!!!here',
+  },
+  textExpenses: {
+    id: 'settings.supportFerdi.textExpenses',
+    defaultMessage: '!!!While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our',
+  },
+  textOpenCollective: {
+    id: 'settings.supportFerdi.textOpenCollective',
+    defaultMessage: '!!!Open Collective',
+  },
+  textDonation: {
+    id: 'settings.supportFerdi.textDonation',
+    defaultMessage: '!!!If you feel like supporting Ferdi development with a donation, you can do so on both,',
+  },
+  textDonationAnd: {
+    id: 'settings.supportFerdi.textDonationAnd',
+    defaultMessage: '!!!and',
+  },
+  textGitHubSponsors: {
+    id: 'settings.supportFerdi.textGitHubSponsors',
+    defaultMessage: '!!!GitHub Sponsors',
+  },
 });
 
 class SupportFerdiDashboard extends Component {
@@ -50,56 +98,61 @@ class SupportFerdiDashboard extends Component {
               <a href="https://opencollective.com/getferdi#section-contributors" target="_blank"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective" /></a>
             </p>
             <p>
-                Ferdi is an open-source and a community-lead application.
+              {intl.formatMessage(messages.textIntroFirst)}
             </p>
             <p>
-                Thanks to the people who make this possbile:
+              {intl.formatMessage(messages.textIntroSecond)}
               <br />
               <br />
             </p>
-            <p><a href="#contributors-via-opencollective"><img alt="GitHub contributors (non-exhaustive)" width="100%" src="https://opencollective.com/getferdi/contributors.svg?width=642&button=false" /></a></p>
             <p>
-              Full list of contributors
+              <a href="#contributors-via-opencollective">
+                <img alt="GitHub contributors (non-exhaustive)" width="100%" src="https://opencollective.com/getferdi/contributors.svg?width=642&button=false" />
+              </a>
+            </p>
+            <p>
+              {intl.formatMessage(messages.textListContributors)}
               <a href="https://github.com/getferdi/ferdi#contributors-" target="_blank" className="link">
                 {' '}
-              here
+                {intl.formatMessage(messages.textListContributorsHere)}
                 <i className="mdi mdi-open-in-new" />
               </a>
               <br />
               <br />
             </p>
-            <p>The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.</p>
             <p>
-              Support is always welcome. You can find a list of the help we need
+              {intl.formatMessage(messages.textVolunteers)}
+            </p>
+            <p>
+              {intl.formatMessage(messages.textSupportWelcome)}
               <a href="https://help.getferdi.com/general/support" target="_blank" className="link">
                 {' '}
-              here
+                {intl.formatMessage(messages.textSupportWelcomeHere)}
                 <i className="mdi mdi-open-in-new" />
               </a>
             </p>
             <p>
-            While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our
+              {intl.formatMessage(messages.textExpenses)}
               <a href="https://opencollective.com/getferdi#section-budget" target="_blank" className="link">
                 {' '}
-                Open Collective
+                {intl.formatMessage(messages.textOpenCollective)}
                 <i className="mdi mdi-open-in-new" />
               </a>
             </p>
             <p>
-              If you feel like supporting Ferdi development with a donation, you can do so on both,
+              {intl.formatMessage(messages.textDonation)}
               <a href="https://opencollective.com/getferdi#section-contribute" target="_blank" className="link">
                 {' '}
-                Open Collective
+                {intl.formatMessage(messages.textOpenCollective)}
                 <i className="mdi mdi-open-in-new" />
               </a>
               {' '}
-and
+              {intl.formatMessage(messages.textDonationAnd)}
               <a href="https://github.com/sponsors/getferdi" target="_blank" className="link">
                 {' '}
-                GitHub Sponsors
+                {intl.formatMessage(messages.textGitHubSponsors)}
                 <i className="mdi mdi-open-in-new" />
               </a>
-
             </p>
           </div>
         </div>
