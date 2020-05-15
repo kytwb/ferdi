@@ -22,6 +22,8 @@ export default class TrayIcon {
 
   trayMenu = null;
 
+  visible = false;
+
   trayMenuTemplate = [
     {
       label: 'Show Ferdi',
@@ -50,6 +52,16 @@ export default class TrayIcon {
     },
   ];
 
+  constructor() {
+    ipcMain.on('initialAppSettings', (event, appSettings) => {
+      this._updateTrayMenu(appSettings);
+    });
+
+    ipcMain.on('updateAppSettings', (event, appSettings) => {
+      this._updateTrayMenu(appSettings);
+    });
+  }
+
   _updateTrayMenu(appSettings) {
     if (!this.trayIcon) return;
 
@@ -64,6 +76,11 @@ export default class TrayIcon {
   }
 
   show() {
+    this.visible = true;
+    this._show();
+  }
+
+  _show() {
     if (this.trayIcon) return;
 
     this.trayIcon = new Tray(this._getAsset('tray', INDICATOR_TRAY_PLAIN));
@@ -74,14 +91,6 @@ export default class TrayIcon {
     if (isLinux) {
       this.trayIcon.setContextMenu(this.trayMenu);
     }
-
-    ipcMain.on('initialAppSettings', (event, appSettings) => {
-      this._updateTrayMenu(appSettings);
-    });
-
-    ipcMain.on('updateAppSettings', (event, appSettings) => {
-      this._updateTrayMenu(appSettings);
-    });
 
     this.trayIcon.on('click', () => {
       if (app.mainWindow.isMinimized()) {
@@ -108,6 +117,11 @@ export default class TrayIcon {
   }
 
   hide() {
+    this.visible = false;
+    this._hide();
+  }
+
+  _hide() {
     if (!this.trayIcon) return;
 
     this.trayIcon.destroy();
@@ -116,6 +130,17 @@ export default class TrayIcon {
     if (process.platform === 'darwin' && this.themeChangeSubscriberId) {
       systemPreferences.unsubscribeNotification(this.themeChangeSubscriberId);
       this.themeChangeSubscriberId = null;
+    }
+  }
+
+  recreateIfVisible() {
+    if (this.visible) {
+      this._hide();
+      setTimeout(() => {
+        if (this.visible) {
+          this._show();
+        }
+      }, 100);
     }
   }
 

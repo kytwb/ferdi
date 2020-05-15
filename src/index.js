@@ -35,6 +35,7 @@ import {
 import { mainIpcHandler as basicAuthHandler } from './features/basicAuth';
 import ipcApi from './electron/ipc-api';
 import Tray from './lib/Tray';
+import DBus from './lib/DBus';
 import Settings from './electron/Settings';
 import handleDeepLink from './electron/deepLinking';
 import { isPositionValid } from './electron/windowUtils';
@@ -213,6 +214,9 @@ const createWindow = () => {
   // Initialize System Tray
   const trayIcon = new Tray();
 
+  // Initialize DBus interface
+  const dbus = new DBus(trayIcon);
+
   // Initialize ipcApi
   ipcApi({
     mainWindow,
@@ -222,6 +226,9 @@ const createWindow = () => {
     },
     trayIcon,
   });
+
+  // Connect to the DBus after ipcApi took care of the System Tray
+  dbus.start();
 
   // Manage Window State
   mainWindowState.manage(mainWindow);
@@ -265,6 +272,7 @@ const createWindow = () => {
         mainWindow.hide();
       }
     } else {
+      dbus.stop();
       app.quit();
     }
   });
