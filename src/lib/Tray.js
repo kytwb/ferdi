@@ -51,6 +51,8 @@ export default class TrayIcon {
   ];
 
   _updateTrayMenu(appSettings) {
+    if (!this.trayIcon) return;
+
     if (appSettings.type === 'app') {
       const { isAppMuted } = appSettings.data;
       this.trayMenuTemplate[1].label = isAppMuted ? 'Enable Notifications && Audio' : 'Disable Notifications && Audio';
