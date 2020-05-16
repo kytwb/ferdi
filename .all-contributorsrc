@@ -740,6 +740,15 @@
       "contributions": [
         "userTesting"
       ]
+    },
+    {
+      "login": "kris7t",
+      "name": "Kristóf Marussy",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38888?v=4",
+      "profile": "https://marussy.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
