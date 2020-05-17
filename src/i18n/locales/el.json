@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Επαναφόρτωση",
   "app.errorHandler.headline": "Κάτι δεν λειτουργεί",
+  "changeserver.customServerLabel": "Προσαρμοσμένος διακομιστής",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Υποβολή",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Ανανέωση Υπηρεσίας",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
