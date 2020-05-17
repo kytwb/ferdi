@@ -3608,6 +3608,32 @@
           "column": 22,
           "line": 61
         }
+      },
+      {
+        "defaultMessage": "!!!Open Survey",
+        "end": {
+          "column": 3,
+          "line": 68
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.openSurvey",
+        "start": {
+          "column": 14,
+          "line": 65
+        }
+      },
+      {
+        "defaultMessage": "!!!Do you want to help us improve Ferdi?",
+        "end": {
+          "column": 3,
+          "line": 72
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.bannerText",
+        "start": {
+          "column": 14,
+          "line": 69
+        }
       }
     ],
     "path": "src/components/settings/supportFerdi/SupportFerdiDashboard.json"

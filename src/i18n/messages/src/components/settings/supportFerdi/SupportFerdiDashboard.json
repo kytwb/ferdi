@@ -180,5 +180,31 @@
       "line": 64,
       "column": 3
     }
+  },
+  {
+    "id": "settings.supportFerdi.openSurvey",
+    "defaultMessage": "!!!Open Survey",
+    "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+    "start": {
+      "line": 65,
+      "column": 14
+    },
+    "end": {
+      "line": 68,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.supportFerdi.bannerText",
+    "defaultMessage": "!!!Do you want to help us improve Ferdi?",
+    "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+    "start": {
+      "line": 69,
+      "column": 14
+    },
+    "end": {
+      "line": 72,
+      "column": 3
+    }
   }
 ]

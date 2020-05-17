@@ -62,6 +62,14 @@ const messages = defineMessages({
     id: 'settings.supportFerdi.textGitHubSponsors',
     defaultMessage: '!!!GitHub Sponsors',
   },
+  openSurvey: {
+    id: 'settings.supportFerdi.openSurvey',
+    defaultMessage: '!!!Open Survey',
+  },
+  bannerText: {
+    id: 'settings.supportFerdi.bannerText',
+    defaultMessage: '!!!Do you want to help us improve Ferdi?',
+  },
 });
 
 class SupportFerdiDashboard extends Component {
@@ -159,10 +167,10 @@ class SupportFerdiDashboard extends Component {
         <InfoBar
           sticky
           type="primary"
-          ctaLabel="Open survey"
+          ctaLabel={intl.formatMessage(messages.openSurvey)}
           onClick={this.openSurveyWindow}
         >
-          {'Do you want to help us improve Ferdi?'}
+          {intl.formatMessage(messages.bannerText)}
         </InfoBar>
       </div>
     );
