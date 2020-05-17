@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "새로고침",
   "app.errorHandler.headline": "문제가 발생했습니다.",
+  "changeserver.customServerLabel": "Custom server",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Submit",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Reload Service",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
