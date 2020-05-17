@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Ricarica",
   "app.errorHandler.headline": "Qualcosa è andato storto",
+  "changeserver.customServerLabel": "Server personalizzato",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Invia",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Ricarica Servizio",
   "connectionLostBanner.informationLink": "Cos'è successo?",
   "connectionLostBanner.message": "Oh no! Ferdi ha perso la connessione con {name}.",
