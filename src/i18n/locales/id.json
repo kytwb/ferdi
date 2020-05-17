@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Muat Ulang",
   "app.errorHandler.headline": "Terjadi kesalahan",
+  "changeserver.customServerLabel": "Server khusus",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Kirim",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Muat ulang Layanan",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
