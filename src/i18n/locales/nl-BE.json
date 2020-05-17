@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Herladen",
   "app.errorHandler.headline": "Er ging iets mis",
+  "changeserver.customServerLabel": "Aangepaste server",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Verzenden",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Service Herladen",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
