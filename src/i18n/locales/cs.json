@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Obnovit",
   "app.errorHandler.headline": "Něco se pokazilo",
+  "changeserver.customServerLabel": "Vlastní server",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Odeslat",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Obnovit službu",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
