@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Ladda om",
   "app.errorHandler.headline": "Någonting gick snett",
+  "changeserver.customServerLabel": "Anpassad server",
   "changeserver.headline": "Byt server",
   "changeserver.label": "Server",
   "changeserver.submit": "Skicka",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Ladda om tjänst",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
