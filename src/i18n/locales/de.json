@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Neu laden",
   "app.errorHandler.headline": "Es ist ein Fehler aufgetreten",
+  "changeserver.customServerLabel": "Eigener Server",
   "changeserver.headline": "Server wechseln",
   "changeserver.label": "Server",
   "changeserver.submit": "Absenden",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Dienst neu laden",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
