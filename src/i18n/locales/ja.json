@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "再読み込み",
   "app.errorHandler.headline": "間違えている部分があります",
+  "changeserver.customServerLabel": "独自サーバー",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "送信",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "サービスをリロードする",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
