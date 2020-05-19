@@ -77,7 +77,7 @@ export default class Service {
 
   @observable restrictionType = null;
 
-  @observable isHibernationEnabled = false;
+  @observable disableHibernation = false;
 
   @observable lastUsed = Date.now(); // timestamp
 
@@ -136,7 +136,7 @@ export default class Service {
 
     this.spellcheckerLanguage = data.spellcheckerLanguage !== undefined ? data.spellcheckerLanguage : this.spellcheckerLanguage;
 
-    this.isHibernationEnabled = data.isHibernationEnabled !== undefined ? data.isHibernationEnabled : this.isHibernationEnabled;
+    this.disableHibernation = data.disableHibernation !== undefined ? data.disableHibernation : this.disableHibernation;
 
     this.recipe = recipe;
 
