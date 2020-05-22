@@ -3454,185 +3454,172 @@
         }
       },
       {
-        "defaultMessage": "!!!Ferdi is an open-source and a community-lead application.",
+        "defaultMessage": "!!!Introduction of about screen.",
         "end": {
           "column": 3,
           "line": 20
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.textIntroFirst",
+        "id": "settings.supportFerdi.aboutIntro",
         "start": {
-          "column": 18,
+          "column": 14,
           "line": 17
-        }
-      },
-      {
-        "defaultMessage": "!!!Thanks to the people who make this possbile:",
-        "end": {
-          "column": 3,
-          "line": 24
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.textIntroSecond",
-        "start": {
-          "column": 19,
-          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Full list of contributor",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 24
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textListContributors",
         "start": {
           "column": 24,
-          "line": 25
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!here",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 28
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textListContributorsHere",
         "start": {
           "column": 28,
-          "line": 29
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 32
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textVolunteers",
         "start": {
           "column": 18,
-          "line": 33
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!Support is always welcome. You can find a list of the help we need",
         "end": {
           "column": 3,
-          "line": 40
+          "line": 36
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textSupportWelcome",
         "start": {
           "column": 22,
-          "line": 37
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!here",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 40
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textSupportWelcomeHere",
         "start": {
           "column": 26,
-          "line": 41
+          "line": 37
         }
       },
       {
         "defaultMessage": "!!!While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our",
         "end": {
           "column": 3,
-          "line": 48
+          "line": 44
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textExpenses",
         "start": {
           "column": 16,
-          "line": 45
+          "line": 41
         }
       },
       {
         "defaultMessage": "!!!Open Collective",
         "end": {
           "column": 3,
-          "line": 52
+          "line": 48
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textOpenCollective",
         "start": {
           "column": 22,
-          "line": 49
+          "line": 45
         }
       },
       {
         "defaultMessage": "!!!If you feel like supporting Ferdi development with a donation, you can do so on both,",
         "end": {
           "column": 3,
-          "line": 56
+          "line": 52
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textDonation",
         "start": {
           "column": 16,
-          "line": 53
+          "line": 49
         }
       },
       {
         "defaultMessage": "!!!and",
         "end": {
           "column": 3,
-          "line": 60
+          "line": 56
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textDonationAnd",
         "start": {
           "column": 19,
-          "line": 57
+          "line": 53
         }
       },
       {
         "defaultMessage": "!!!GitHub Sponsors",
         "end": {
           "column": 3,
-          "line": 64
+          "line": 60
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.textGitHubSponsors",
         "start": {
           "column": 22,
-          "line": 61
+          "line": 57
         }
       },
       {
         "defaultMessage": "!!!Open Survey",
         "end": {
           "column": 3,
-          "line": 68
+          "line": 64
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.openSurvey",
         "start": {
           "column": 14,
-          "line": 65
+          "line": 61
         }
       },
       {
         "defaultMessage": "!!!Do you want to help us improve Ferdi?",
         "end": {
           "column": 3,
-          "line": 72
+          "line": 68
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.bannerText",
         "start": {
           "column": 14,
-          "line": 69
+          "line": 65
         }
       }
     ],

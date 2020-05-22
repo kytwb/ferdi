@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { defineMessages, intlShape } from 'react-intl';
+import { defineMessages, FormattedHTMLMessage, intlShape } from 'react-intl';
 import { remote } from 'electron';
 import InfoBar from '../../ui/InfoBar';
 
@@ -14,13 +14,9 @@ const messages = defineMessages({
     id: 'settings.supportFerdi.title',
     defaultMessage: '!!!Do you like Ferdi?',
   },
-  textIntroFirst: {
-    id: 'settings.supportFerdi.textIntroFirst',
-    defaultMessage: '!!!Ferdi is an open-source and a community-lead application.',
-  },
-  textIntroSecond: {
-    id: 'settings.supportFerdi.textIntroSecond',
-    defaultMessage: '!!!Thanks to the people who make this possbile:',
+  aboutIntro: {
+    id: 'settings.supportFerdi.aboutIntro',
+    defaultMessage: '!!!<p>Ferdi is an open-source and a community-lead application.</p><p>Thanks to the people who make this possbile:</p>',
   },
   textListContributors: {
     id: 'settings.supportFerdi.textListContributors',
@@ -105,14 +101,9 @@ class SupportFerdiDashboard extends Component {
               <a href="https://opencollective.com/getferdi#section-contributors" target="_blank"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective" /></a>
               <a href="https://opencollective.com/getferdi#section-contributors" target="_blank"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective" /></a>
             </p>
-            <p>
-              {intl.formatMessage(messages.textIntroFirst)}
-            </p>
-            <p>
-              {intl.formatMessage(messages.textIntroSecond)}
-              <br />
-              <br />
-            </p>
+            <FormattedHTMLMessage {...messages.aboutIntro} />
+            <br />
+            <br />
             <p>
               <a href="#contributors-via-opencollective">
                 <img alt="GitHub contributors (non-exhaustive)" width="100%" src="https://opencollective.com/getferdi/contributors.svg?width=642&button=false" />
