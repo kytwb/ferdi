@@ -367,7 +367,7 @@ export default @observer class EditSettingsForm extends Component {
                 <Toggle field={form.$('lockingFeatureEnabled')} />
                 {lockingFeatureEnabled && (
                   <>
-                    {systemPreferences.canPromptTouchID() && (
+                    {isMac && systemPreferences.canPromptTouchID() && (
                       <Toggle field={form.$('useTouchIdToUnlock')} />
                     )}
 

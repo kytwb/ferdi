@@ -1,8 +1,9 @@
 {
   "name": "ferdi",
   "productName": "Ferdi",
+  "desktopName": "ferdi.desktop",
   "appId": "com.kytwb.ferdi",
-  "version": "5.5.0",
+  "version": "5.5.1-nightly.13",
   "description": "Messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more.",
   "copyright": "kytwb",
   "main": "index.js",
@@ -67,6 +68,7 @@
     "cld3-asm": "1.0.1",
     "css": "2.2.4",
     "darkreader": "4.7.15",
+    "dbus-next": "0.8.2",
     "du": "^0.1.0",
     "electron-dl": "1.14.0",
     "electron-fetch": "1.4.0",

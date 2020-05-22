@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-71-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-75-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -282,18 +282,33 @@ Deliverables will be available in the `out` folder.
 
 ### Release
 
+Create a new [draft release](https://github.com/getferdi/ferdi/releases/new) that targets the `release` branch, then:
+
 ```bash
 $ git checkout develop && git pull
+$ git checkout release
 $ git submodule update --remote --force
 $ git add .
 $ git commit -m "Update submodules"
-$ git checkout master
 $ git merge --no-ff develop
-$ git tag v5.3.4-beta.4
-$ git push --tags
+$ git push
 ```
 
-When pushing a new tag, the CI builds will create a draft GitHub release and upload the deliverables in the draft release assets. Wait for all the assets to be uploaded before publishing the draft release.
+Once the draft release assets are uploaded (13 assets), publish the release. The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed.
+
+#### Nightly
+
+```bash
+$ git checkout develop && git pull
+$ git checkout nightly
+$ git submodule update --remote --force
+$ git add .
+$ git commit -m "Update submodules"
+$ git merge --no-ff develop
+$ git push
+```
+
+The draft release and assets will be available in [getferdi/nightlies releases](https://github.com/getferdi/nightlies/releases). You need to manually publish the draft release as a pre-release for now.
 
 ## Contributors ✨
 
@@ -397,6 +412,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/tristanplouz"><img src="https://avatars2.githubusercontent.com/u/6893466?v=4" width="40px;" alt=""/><br /><sub><b>tristanplouz</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=tristanplouz" title="Code">💻</a> <a href="#ideas-tristanplouz" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/dannyqiu"><img src="https://avatars1.githubusercontent.com/u/1170755?v=4" width="40px;" alt=""/><br /><sub><b>Danny Qiu</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dannyqiu" title="Code">💻</a> <a href="https://github.com/getferdi/ferdi/issues?q=author%3Adannyqiu" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/belyazidi56"><img src="https://avatars3.githubusercontent.com/u/35711540?v=4" width="40px;" alt=""/><br /><sub><b>Youssef Belyazidi</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=belyazidi56" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/gabspeck"><img src="https://avatars2.githubusercontent.com/u/749488?v=4" width="40px;" alt=""/><br /><sub><b>Gabriel Speckhahn</b></sub></a><br /><a href="#platform-gabspeck" title="Packaging/porting to new platform">📦</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/dandelionadia"><img src="https://avatars0.githubusercontent.com/u/33199975?v=4" width="40px;" alt=""/><br /><sub><b>Nadiia Ridko</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dandelionadia" title="Code">💻</a></td>
+    <td align="center"><a href="https://hohner.dev"><img src="https://avatars0.githubusercontent.com/u/649895?v=4" width="40px;" alt=""/><br /><sub><b>Jan Hohner</b></sub></a><br /><a href="#userTesting-janhohner" title="User Testing">📓</a></td>
+    <td align="center"><a href="https://marussy.com"><img src="https://avatars1.githubusercontent.com/u/38888?v=4" width="40px;" alt=""/><br /><sub><b>Kristóf Marussy</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=kris7t" title="Code">💻</a></td>
   </tr>
 </table>
 

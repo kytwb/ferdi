@@ -2,6 +2,7 @@ version: build-{build}
 branches:
   only:
     - release
+    - nightly
 skip_tags: true
 skip_branch_with_pr: true
 
@@ -20,3 +21,13 @@ before_build:
 
 build_script:
   - appveyor-retry npm run build
+
+for:
+-
+  branches:
+    only:
+      - nightly
+  before_build:
+    - npm version prerelease --preid=nightly --no-git-tag-version
+  build_script:
+    - appveyor-retry npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies

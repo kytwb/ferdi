@@ -276,7 +276,7 @@
   "settings.app.buttonInstallUpdate": "Redémarrer et installer la mise à jour",
   "settings.app.buttonSearchForUpdate": "Vérifier les mises à jour",
   "settings.app.cacheInfo": "Le cache de Ferdi occupe actuellement {size} en espace disque.",
-  "settings.app.cacheNotCleared": "Couldn't clear all cache",
+  "settings.app.cacheNotCleared": "Impossible de vider toute la cache",
   "settings.app.currentVersion": "Version actuelle :",
   "settings.app.form.accentColor": "Couleur d'accentuation",
   "settings.app.form.adaptableDarkMode": "Synchroniser le mode sombre avec l'option mode sombre du système",

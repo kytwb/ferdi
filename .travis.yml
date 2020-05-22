@@ -12,7 +12,7 @@ matrix:
             - libxkbfile-dev
             - rpm
     - os: osx
-      if: branch = release
+      if: branch IN (nightly, release)
       osx_image: xcode11
 
 language: node_js
@@ -22,6 +22,7 @@ branches:
   only:
     - develop
     - release
+    - nightly
 cache: npm
 
 before_install:
@@ -34,6 +35,14 @@ before_script:
 script:
   - |
     if [ $TRAVIS_BRANCH == "release" ]; then
-      travis_retry travis_wait 100 npm run build
+      travis_retry travis_wait 100 npm run build 
     fi
-
+  - |
+    if [ $TRAVIS_BRANCH == "nightly" ]; then
+      npm version prerelease --preid=nightly -m "%s [skip ci]"
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
+      if [ $TRAVIS_OS_NAME == "osx" ]; then
+        git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
+        git push --quiet --set-upstream nightly HEAD:nightly >/dev/null 2>&1
+      fi
+    fi

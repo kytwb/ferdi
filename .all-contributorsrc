@@ -713,6 +713,42 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "gabspeck",
+      "name": "Gabriel Speckhahn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/749488?v=4",
+      "profile": "https://github.com/gabspeck",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "dandelionadia",
+      "name": "Nadiia Ridko",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33199975?v=4",
+      "profile": "https://github.com/dandelionadia",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "janhohner",
+      "name": "Jan Hohner",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/649895?v=4",
+      "profile": "https://hohner.dev",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "kris7t",
+      "name": "Kristóf Marussy",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38888?v=4",
+      "profile": "https://marussy.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,
