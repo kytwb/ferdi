@@ -3454,7 +3454,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Introduction of about screen.",
+        "defaultMessage": "!!!<p>Ferdi is an open-source and a community-lead application.</p><p>Thanks to the people who make this possbile:</p>",
         "end": {
           "column": 3,
           "line": 20
