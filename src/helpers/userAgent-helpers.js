@@ -9,7 +9,6 @@ const ferdiVersion = remote && remote.app ? remote.app.getVersion() : app.getVer
 
 function macOS() {
   const version = macosVersion();
-
   return `Macintosh; Intel Mac OS X ${version.replace(/\./g, '_')}`;
 }
 
@@ -20,7 +19,7 @@ function windows() {
 }
 
 function linux() {
-  return 'X11; Ubuntu; Linux x86_64';
+  return 'X11; Linux x86_64';
 }
 
 export default function userAgent(removeChromeVersion = false) {
@@ -34,12 +33,17 @@ export default function userAgent(removeChromeVersion = false) {
     platformString = linux();
   }
 
-  let applicationString = '';
+  let chromeVersion = 'Chrome';
   if (!removeChromeVersion) {
-    applicationString = ` Ferdi/${ferdiVersion} (Electron ${process.versions.electron})`;
+    chromeVersion = `Chrome/${process.versions.chrome}`;
   }
 
-  // TODO: Update AppleWebKit and Safari version after electron update
-  return `Mozilla/5.0 (${platformString}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome${!removeChromeVersion ? `/${process.versions.chrome}` : ''} Safari/537.36${applicationString}`;
-  // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) old-airport-include/1.0.0 Chrome Electron/7.1.7 Safari/537.36
+  let applicationString = '';
+  if (!removeChromeVersion) {
+    applicationString = ` Ferdi/${ferdiVersion} Electron/${process.versions.electron}`;
+  }
+
+  // Chrome is pinned to WebKit 537.36, the latest version before hard forking to Blink.
+  return `Mozilla/5.0 (${platformString}) AppleWebKit/537.36 (KHTML, like Gecko) ${chromeVersion} Safari/537.36${applicationString}`;
+  // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36 Ferdi/5.5.1-nightly.13 Electron/8.2.3
 }
