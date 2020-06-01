@@ -195,7 +195,7 @@ const createWindow = () => {
 
   app.on('web-contents-created', (e, contents) => {
     if (contents.getType() === 'webview') {
-      contents.on('new-window', (event) => {        
+      contents.on('new-window', (event) => {
         event.preventDefault();
       });
     }
