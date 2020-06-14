@@ -1,3 +1,30 @@
+# [5.6.0-beta.1](https://github.com/getferdi/ferdi/compare/v5.5.0...v5.6.0-beta.1) (2020-06-14)
+
+### Features
+- Make the notifications badge work with LauncherAPI-compliant (#736) 💖 @gabspeck
+
+### Minor changes
+- Update node-sass to 4.14.0 for compatibility with Node 14.x (#656) 💖 @dpeukert
+- Change Keyboard shortcut tooltip text in Sidebar for Settings (#665) 💖 @sampathBlam
+- Restore "delete service" option in sidebar (#692) 💖 @sampathBlam
+- Add Google Tasks to Todo providers (#695) 💖 @dannyqiu
+- Restore window last closed maximize/fullscreen state (#733) 💖 @dannyqiu
+- Add password hashing to lock password (#694)
+- Close/open window when clicking on tray menu item (#630) 💖 @dandelionadia
+- Use Tray popUpContextMenu on macOS/Windows only (#741)
+- Setup nightly releases deployment pipeline (#730)
+- Make Tray icons more robust on Linux (#748) 💖 @kris7t
+- Load disable hibernation per service status on startup (#754) 💖 @kris7t
+- Update global user agent to conform with spec (#779) 💖 @dannyqiu
+
+### Bug Fixes
+- Prevent unnecessary electron popup windows for links (#685) 💖 @mahadevans87
+- Refactor locking feature (#693)
+- Review launch on startup for macOS, start Ferdi app, not renderer (#696) 💖 @dannyqiu
+- Fix TodosWebview user agent (#713) 💖 @mahadevans87
+- Fix crash when using Password Lock with TouchID API unavailable (#737) 💖 @mahadevans87
+- Fix setting of webview disablewebsecurity attribute (#772) 💖 @dannyqiu
+
 # [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
