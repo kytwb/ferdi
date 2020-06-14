@@ -72,7 +72,7 @@ export default @observer class Input extends Component {
     if (type === 'password' && this.state.showPassword) {
       type = 'text';
     }
-    
+
     return (
       <div
         className={classnames({
