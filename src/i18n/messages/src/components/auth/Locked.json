@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Locked",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 19,
+      "line": 20,
       "column": 12
     },
     "end": {
-      "line": 22,
+      "line": 23,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Ferdi is currently locked. Please unlock Ferdi with your password to see your messages.",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 23,
+      "line": 24,
       "column": 8
     },
     "end": {
-      "line": 26,
+      "line": 27,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Unlock with Touch ID",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 27,
+      "line": 28,
       "column": 11
     },
     "end": {
-      "line": 30,
+      "line": 31,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!unlock via Touch ID",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 31,
+      "line": 32,
       "column": 17
     },
     "end": {
-      "line": 34,
+      "line": 35,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Password",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 35,
+      "line": 36,
       "column": 17
     },
     "end": {
-      "line": 38,
+      "line": 39,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Unlock",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 39,
+      "line": 40,
       "column": 21
     },
     "end": {
-      "line": 42,
+      "line": 43,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Unlock with Password",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 43,
+      "line": 44,
       "column": 22
     },
     "end": {
-      "line": 46,
+      "line": 47,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Password invalid",
     "file": "src/components/auth/Locked.js",
     "start": {
-      "line": 47,
+      "line": 48,
       "column": 22
     },
     "end": {
-      "line": 50,
+      "line": 51,
       "column": 3
     }
   }

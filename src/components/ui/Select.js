@@ -10,13 +10,37 @@ export default @observer class Select extends Component {
     className: PropTypes.string,
     showLabel: PropTypes.bool,
     disabled: PropTypes.bool,
+    multiple: PropTypes.bool,
   };
 
   static defaultProps = {
     className: null,
     showLabel: true,
     disabled: false,
+    multiple: false,
   };
+
+  constructor(props) {
+    super(props);
+
+    this.element = React.createRef();
+  }
+
+  multipleChange() {
+    const element = this.element.current;
+
+    const result = [];
+    const options = element && element.options;
+
+    for (const option of options) {
+      if (option.selected) {
+        result.push(option.value || option.text);
+      }
+    }
+
+    const { field } = this.props;
+    field.value = result;
+  }
 
   render() {
     const {
@@ -24,7 +48,21 @@ export default @observer class Select extends Component {
       className,
       showLabel,
       disabled,
+      multiple,
     } = this.props;
+
+    let selected = field.value;
+
+    if (multiple) {
+      if (typeof field.value === 'string' && field.value.substr(0, 1) === '[') {
+        // Value is JSON encoded
+        selected = JSON.parse(field.value);
+      } else if (typeof field.value === 'object') {
+        selected = field.value;
+      } else {
+        selected = [field.value];
+      }
+    }
 
     return (
       <div
@@ -44,11 +82,13 @@ export default @observer class Select extends Component {
           </label>
         )}
         <select
-          onChange={field.onChange}
+          onChange={multiple ? e => this.multipleChange(e) : field.onChange}
           id={field.id}
-          defaultValue={field.value}
+          defaultValue={selected}
           className="franz-form__select"
           disabled={field.disabled || disabled}
+          multiple={multiple}
+          ref={this.element}
         >
           {field.options.map(type => (
             <option
