@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Recarrega",
   "app.errorHandler.headline": "Quelcom ha anat malament",
+  "changeserver.customServerLabel": "Servidor personalitzat",
   "changeserver.headline": "Canvía de Servidor",
   "changeserver.label": "Servidor",
   "changeserver.submit": "Enviar",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Torna a carregar el servei",
   "connectionLostBanner.informationLink": "Què ha passat?",
   "connectionLostBanner.message": "Oh no! Ferdi ha perdut la connexió a {name}.",

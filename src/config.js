@@ -98,7 +98,7 @@ export const DEFAULT_APP_SETTINGS = {
   showMessageBadgeWhenMuted: true,
   showDragArea: false,
   enableSpellchecking: true,
-  spellcheckerLanguage: 'en-us',
+  spellcheckerLanguage: '["en-US"]',
   darkMode: process.platform === 'darwin' ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
   locale: '',
   fallbackLocale: 'en-US',

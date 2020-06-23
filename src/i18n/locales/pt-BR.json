@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Recarregar",
   "app.errorHandler.headline": "Algo deu errado",
+  "changeserver.customServerLabel": "Servidor personalizado",
   "changeserver.headline": "Alterar servidor",
   "changeserver.label": "Servidor",
   "changeserver.submit": "Submeter",
+  "changeserver.urlError": "Informe uma URL válida",
+  "changeserver.warning": "As configurações extras oferecidas pelo Ferdi não serão salvas",
   "connectionLostBanner.cta": "Recarregar serviço",
   "connectionLostBanner.informationLink": "O que aconteceu?",
   "connectionLostBanner.message": "Ah não! Ferdi perdeu a conexão com {name}.",

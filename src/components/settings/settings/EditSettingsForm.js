@@ -91,6 +91,10 @@ const messages = defineMessages({
     id: 'settings.app.translationHelp',
     defaultMessage: '!!!Help us to translate Ferdi into your language.',
   },
+  spellCheckerLanguageInfo: {
+    id: 'settings.app.spellCheckerLanguageInfo',
+    defaultMessage: '!!!Ferdi uses your Mac\'s build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac\'s System Preferences.',
+  },
   subheadlineCache: {
     id: 'settings.app.subheadlineCache',
     defaultMessage: '!!!Cache',
@@ -518,8 +522,11 @@ export default @observer class EditSettingsForm extends Component {
                     <Toggle
                       field={form.$('enableSpellchecking')}
                     />
-                    {form.$('enableSpellchecking').value && (
-                    <Select field={form.$('spellcheckerLanguage')} />
+                    {form.$('enableSpellchecking').value && !isMac && (
+                      <Select field={form.$('spellcheckerLanguage')} multiple />
+                    )}
+                    {form.$('enableSpellchecking').value && isMac && (
+                      <p>{intl.formatMessage(messages.spellCheckerLanguageInfo)}</p>
                     )}
                   </Fragment>
                 </PremiumFeatureContainer>

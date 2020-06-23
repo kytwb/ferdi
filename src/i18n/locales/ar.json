@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "إعادة التحميل",
   "app.errorHandler.headline": "لقد حدث خطب ما",
+  "changeserver.customServerLabel": "خادم مخصص",
   "changeserver.headline": "تغيير الخادم",
   "changeserver.label": "خادم",
   "changeserver.submit": "إرسال",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "إعادة تحميل الخدمة",
   "connectionLostBanner.informationLink": "ماذا حدث؟",
   "connectionLostBanner.message": "أوه لا! فقد فردي الاتصال بـ.",

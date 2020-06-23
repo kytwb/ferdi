@@ -2,9 +2,11 @@ import { ipcMain } from 'electron';
 
 export default (params) => {
   ipcMain.on('getAppSettings', (event, type) => {
+    const cleanData = JSON.parse(JSON.stringify(params.settings[type].all));
+
     params.mainWindow.webContents.send('appSettings', {
       type,
-      data: params.settings[type].all,
+      data: cleanData,
     });
   });
 

@@ -7,6 +7,7 @@ import { defineMessages, intlShape } from 'react-intl';
 import SearchInput from '../../ui/SearchInput';
 import Infobox from '../../ui/Infobox';
 import Loader from '../../ui/Loader';
+import FAB from '../../ui/FAB';
 import ServiceItem from './ServiceItem';
 import Appear from '../../ui/effects/Appear';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
@@ -175,6 +176,12 @@ export default @observer class ServicesDashboard extends Component {
               </tbody>
             </table>
           )}
+
+          <FAB>
+            <Link to="/settings/recipes">
+              +
+            </Link>
+          </FAB>
         </div>
       </div>
     );

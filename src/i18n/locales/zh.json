@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "重新加载",
   "app.errorHandler.headline": "出了些问题",
+  "changeserver.customServerLabel": "Custom server",
   "changeserver.headline": "Change server",
   "changeserver.label": "服务器：",
   "changeserver.submit": "Submit",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "重新加载服务",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",

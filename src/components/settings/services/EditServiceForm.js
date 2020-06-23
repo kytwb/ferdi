@@ -21,6 +21,8 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
 import { serviceLimitStore } from '../../../features/serviceLimit';
 
+import { isMac } from '../../../environment';
+
 const messages = defineMessages({
   saveService: {
     id: 'settings.service.form.saveButton',
@@ -401,14 +403,16 @@ export default @observer class EditServiceForm extends Component {
               </div>
             </div>
 
-            <PremiumFeatureContainer
-              condition={!isSpellcheckerIncludedInCurrentPlan}
-              gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
-            >
-              <div className="settings__settings-group">
-                <Select field={form.$('spellcheckerLanguage')} />
-              </div>
-            </PremiumFeatureContainer>
+            {!isMac && (
+              <PremiumFeatureContainer
+                condition={!isSpellcheckerIncludedInCurrentPlan}
+                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
+              >
+                <div className="settings__settings-group">
+                  <Select field={form.$('spellcheckerLanguage')} multiple />
+                </div>
+              </PremiumFeatureContainer>
+            )}
 
             {isProxyFeatureEnabled && (
               <PremiumFeatureContainer

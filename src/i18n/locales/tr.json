@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Yenile",
   "app.errorHandler.headline": "Bir terslik çıktı",
+  "changeserver.customServerLabel": "Özel sunucu",
   "changeserver.headline": "Sunucuyu değiştir",
   "changeserver.label": "Sunucu",
   "changeserver.submit": "Gönder",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Servisi Tekrar Yükle",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",

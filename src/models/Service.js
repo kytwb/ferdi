@@ -1,5 +1,5 @@
 import { autorun, computed, observable } from 'mobx';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer, remote } from 'electron';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
@@ -227,7 +227,7 @@ export default class Service {
 
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
-    const webContents = this.webview.getWebContents();
+    const webContents = remote.webContents.fromId(this.webview.getWebContentsId());
 
     // If the recipe has implemented modifyRequestHeaders,
     // Send those headers to ipcMain so that it can be set in session
@@ -266,12 +266,17 @@ export default class Service {
     }));
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
-      openWindow({
-        event,
-        url,
-        frameName,
-        options,
-      });
+      debug('new-window', event, url, frameName, options);
+      if (event.disposition === 'foreground-tab') {
+        ipcRenderer.send('open-browser-window', event, this.id);
+      } else {
+        openWindow({
+          event,
+          url,
+          frameName,
+          options,
+        });
+      }
     });
 
 

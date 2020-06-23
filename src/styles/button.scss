@@ -110,3 +110,32 @@
     z-index: 9999;
   }
 }
+
+.ferdi__fab {
+  box-sizing: border-box;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 25px;
+  white-space: nowrap;
+  z-index: 9998;
+  list-style: none;
+  background: $theme-brand-primary;
+  
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  cursor: pointer;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  a {
+    font-size: 30px;
+    color: #FFFFFF;
+    cursor: pointer;  
+  }
+}

@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Újratöltés",
   "app.errorHandler.headline": "Valami nem jött össze",
+  "changeserver.customServerLabel": "Egyéni szerver",
   "changeserver.headline": "Change server",
   "changeserver.label": "Szerver",
   "changeserver.submit": "Küldés",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Szolgáltatás újraindítása",
   "connectionLostBanner.informationLink": "Mi történt?",
   "connectionLostBanner.message": "Ja ne! Ferdi nem tud kapcsolodni {name}-hez.",

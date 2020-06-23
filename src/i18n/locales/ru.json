@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Перезагрузить",
   "app.errorHandler.headline": "Что-то пошло не так",
+  "changeserver.customServerLabel": "Пользовательский сервер",
   "changeserver.headline": "Изменить сервер",
   "changeserver.label": "Server",
   "changeserver.submit": "Принять",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Перезапустить сервис",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",

@@ -1,9 +1,12 @@
 {
   "app.errorHandler.action": "Ponovno učitavanje",
   "app.errorHandler.headline": "Something went wrong",
+  "changeserver.customServerLabel": "Prilagođen server",
   "changeserver.headline": "Change server",
   "changeserver.label": "Server",
   "changeserver.submit": "Pošalji",
+  "changeserver.urlError": "Enter a valid URL",
+  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
   "connectionLostBanner.cta": "Reload Service",
   "connectionLostBanner.informationLink": "What happened?",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
