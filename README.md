@@ -49,7 +49,7 @@
   - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
-  - [External Sponsors](#external-sponsors)
+  - [Other Sponsors](#other-sponsors)
 </details>
 
 ### What is Ferdi?
@@ -432,11 +432,13 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 <a href="https://opencollective.com/getferdi#section-contribute" target="_blank"><img src="https://opencollective.com/getferdi/backers.svg?width=890"></a>
 
+Mention to the individuals backing us via [GitHub Sponsors](https://github.com/sponsors/getferdi) as well.
+
 ## Sponsors via OpenCollective
 
 <a href="https://opencollective.com/getferdi#section-contribute" target="_blank"><img src="https://opencollective.com/getferdi/sponsors.svg?width=890"></a>
 
-## External Sponsors
+## Other Sponsors
 
 <p>
   <a href="https://www.digitalocean.com/">
