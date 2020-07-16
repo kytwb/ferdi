@@ -434,3 +434,16 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Sponsors via OpenCollective
 
 <a href="https://opencollective.com/getferdi#section-contribute" target="_blank"><img src="https://opencollective.com/getferdi/sponsors.svg?width=890"></a>
+
+## External Sponsors
+
+<p>
+  <a href="https://www.digitalocean.com/">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
+  </a>
+</p>
+<p>
+  <a href="https://www.parallels.com/">
+    <img src="https://user-images.githubusercontent.com/412895/87706297-3025e380-c797-11ea-94c4-bf8414b0b5ab.png" height="32px">
+  </a>
+</p>
