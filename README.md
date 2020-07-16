@@ -49,6 +49,7 @@
   - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
+  - [External Sponsors](#external-sponsors)
 </details>
 
 ### What is Ferdi?
