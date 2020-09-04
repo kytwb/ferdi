@@ -91,7 +91,7 @@
     "lodash": "^4.17.4",
     "mac-screen-capture-permissions": "1.1.0",
     "macos-version": "5.2.0",
-    "marked": "0.6.1",
+    "marked": "0.7.0",
     "mdi": "^1.9.33",
     "mime-types": "2.1.25",
     "mobx": "5.15.0",
