@@ -65,7 +65,18 @@ class RecipeController {
   }
 
   @computed get spellcheckerLanguage() {
-    return this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
+    let selected;
+    const langs = this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
+    if (typeof langs === 'string' && langs.substr(0, 1) === '[') {
+      // Value is JSON encoded
+      selected = JSON.parse(langs);
+    } else if (typeof langs === 'object') {
+      selected = langs;
+    } else {
+      selected = [langs];
+    }
+
+    return selected;
   }
 
   cldIdentifier = null;
@@ -165,11 +176,11 @@ class RecipeController {
 
     if (this.settings.app.enableSpellchecking) {
       debug('Setting spellchecker language to', this.spellcheckerLanguage);
-      let { spellcheckerLanguage } = this;
-      if (spellcheckerLanguage === 'automatic') {
+      const { spellcheckerLanguage } = this;
+      if (spellcheckerLanguage.includes('automatic')) {
         this.automaticLanguageDetection();
         debug('Found `automatic` locale, falling back to user locale until detected', this.settings.app.locale);
-        spellcheckerLanguage = this.settings.app.locale;
+        spellcheckerLanguage.push(this.settings.app.locale);
       } else if (this.cldIdentifier) {
         this.cldIdentifier.destroy();
       }
@@ -318,7 +329,10 @@ class RecipeController {
         const spellcheckerLocale = getSpellcheckerLocaleByFuzzyIdentifier(findResult.language);
         debug('Language detected reliably, setting spellchecker language to', spellcheckerLocale);
         if (spellcheckerLocale) {
-          switchDict(spellcheckerLocale);
+          switchDict([
+            ...this.spellcheckerLanguage,
+            spellcheckerLocale,
+          ]);
         }
       }
     }, 225));

@@ -332,7 +332,7 @@ const createWindow = () => {
     e.preventDefault();
 
     if (isValidExternalURL(url)) {
-      shell.openExternal(url);
+        shell.openExternal(url);
     }
   });
 
@@ -411,6 +411,15 @@ ipcMain.on('feature-basic-auth-credentials', (e, { user, password }) => {
   authCallback = noop;
 });
 
+ipcMain.on('open-browser-window', (e, {disposition, url}, serviceId) => {
+  if (disposition === 'foreground-tab') {
+    let serviceSession = session.fromPartition(`persist:service-${serviceId}`)
+    let child = new BrowserWindow({ parent: mainWindow, webPreferences: {session: serviceSession}});
+    child.show();
+    child.loadURL(url);
+  }
+  debug('Received open-browser-window', disposition, url);
+});
 
 ipcMain.on('modifyRequestHeaders', (e, { modifiedRequestHeaders, serviceId }) => {
   debug('Received modifyRequestHeaders', modifiedRequestHeaders, serviceId);

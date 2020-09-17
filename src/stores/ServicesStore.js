@@ -618,7 +618,10 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
-      service.webview.send(channel, args);
+      // Make sure the args are clean, otherwise ElectronJS can't transmit them
+      const cleanArgs = JSON.parse(JSON.stringify(args));
+
+      service.webview.send(channel, cleanArgs);
     }
   }
 
@@ -895,10 +898,14 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
+      // We need to completely clone the object, otherwise Electron won't be able to send the object via IPC
+      const shareWithWebview = JSON.parse(JSON.stringify(service.shareWithWebview));
+
       debug('Initialize recipe', service.recipe.id, service.name);
-      service.webview.send('initialize-recipe', Object.assign({
+      service.webview.send('initialize-recipe', {
+        ...shareWithWebview,
         franzVersion: app.getVersion(),
-      }, service.shareWithWebview), service.recipe);
+      }, service.recipe);
     }
   }
 
