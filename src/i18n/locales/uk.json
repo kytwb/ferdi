@@ -335,6 +335,7 @@
   "settings.app.scheduledDNDInfo": "Scheduled Do-not-Disturb allows you to define a period of time in which you do not want to get Notifications from Ferdi.",
   "settings.app.scheduledDNDTimeInfo": "Times in 24-Hour-Format. End time can be before start time (e.g. start 17:00, end 09:00) to enable Do-not-Disturb overnight.",
   "settings.app.sentryInfo": "Sending telemetry data allows us to find errors in Ferdi - we will not send any personal information like your message data! Changing this option requires you to restart Ferdi.",
+  "settings.app.spellCheckerLanguageInfo": "Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
   "settings.app.subheadlineCache": "Кеш",
   "settings.app.todoServerInfo": "This server will be used for the \"Ferdi Todo\" feature.",
   "settings.app.translationHelp": "Допоможіть перекласти Ferdi на Вашу мову.",
