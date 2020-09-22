@@ -12,7 +12,7 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
 import { FRANZ_TRANSLATION } from '../../../config';
-import { isMac, isWindows } from '../../../environment';
+import { isMac } from '../../../environment';
 
 const {
   systemPreferences,
@@ -472,8 +472,8 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
-                {(isMac || isWindows) && <Toggle field={form.$('adaptableDarkMode')} />}
-                {!((isMac || isWindows) && isAdaptableDarkModeEnabled) && <Toggle field={form.$('darkMode')} />}
+                <Toggle field={form.$('adaptableDarkMode')} />
+                {!isAdaptableDarkModeEnabled && <Toggle field={form.$('darkMode')} />}
                 {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
                 <>
                   <Toggle field={form.$('universalDarkMode')} />
