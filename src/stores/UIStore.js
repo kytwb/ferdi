@@ -65,10 +65,10 @@ export default class UIStore extends Store {
       && this.isOsDarkThemeActive;
     const isWithoutAdaptableInDarkMode = this.stores.settings.all.app.darkMode
       && !this.stores.settings.all.app.adaptableDarkMode;
-    const isNotInDarkMode = this.stores.settings.all.app.darkMode;
+    const isInDarkMode = this.stores.settings.all.app.darkMode;
     return !!(isWithAdaptableInDarkMode
       || isWithoutAdaptableInDarkMode
-      || isNotInDarkMode);
+      || isInDarkMode);
   }
 
   @computed get theme() {
