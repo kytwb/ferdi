@@ -25,6 +25,8 @@ export const APP_LOCALES = {
   tr: 'Türkçe',
   'zh-TW': '台語 (Chinese Taiwan)',
   es: 'Español',
+  no: 'Norsk (Norwegian)',
+  be: 'белар (Belarusian)'
 };
 
 // Hunspell compatible keys

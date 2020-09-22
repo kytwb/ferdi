@@ -266,12 +266,17 @@ export default class Service {
     }));
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
-      openWindow({
-        event,
-        url,
-        frameName,
-        options,
-      });
+      debug('new-window', event, url, frameName, options);
+      if (event.disposition === 'foreground-tab') {
+        ipcRenderer.send('open-browser-window', event, this.id);
+      } else {
+        openWindow({
+          event,
+          url,
+          frameName,
+          options,
+        });
+      }
     });
 
 

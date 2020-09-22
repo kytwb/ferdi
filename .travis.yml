@@ -28,6 +28,7 @@ cache: npm
 before_install:
   - git submodule update --init --recursive
 install:
+  - cd recipes && npm install && npm run package && cd ..
   - travis_retry npx lerna bootstrap
   - travis_retry npm install node-sass -g
 before_script:

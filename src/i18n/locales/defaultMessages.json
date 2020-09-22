@@ -5968,39 +5968,39 @@
         "defaultMessage": "!!!Franz Todos are available to premium users now!",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 30
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.info",
         "start": {
           "column": 15,
-          "line": 31
+          "line": 27
         }
       },
       {
         "defaultMessage": "!!!Upgrade Account",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 34
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.upgrade",
         "start": {
           "column": 14,
-          "line": 35
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Everyone else will have to wait a little longer.",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 38
         },
         "file": "src/features/todos/components/TodosWebview.js",
         "id": "feature.todos.premium.rollout",
         "start": {
           "column": 15,
-          "line": 39
+          "line": 35
         }
       }
     ],

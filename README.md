@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-75-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-76-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -49,6 +49,7 @@
   - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
+  - [Other Sponsors](#other-sponsors)
 </details>
 
 ### What is Ferdi?
@@ -418,6 +419,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/dandelionadia"><img src="https://avatars0.githubusercontent.com/u/33199975?v=4" width="40px;" alt=""/><br /><sub><b>Nadiia Ridko</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=dandelionadia" title="Code">💻</a></td>
     <td align="center"><a href="https://hohner.dev"><img src="https://avatars0.githubusercontent.com/u/649895?v=4" width="40px;" alt=""/><br /><sub><b>Jan Hohner</b></sub></a><br /><a href="#userTesting-janhohner" title="User Testing">📓</a></td>
     <td align="center"><a href="https://marussy.com"><img src="https://avatars1.githubusercontent.com/u/38888?v=4" width="40px;" alt=""/><br /><sub><b>Kristóf Marussy</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=kris7t" title="Code">💻</a></td>
+    <td align="center"><a href="https://cl.linkedin.com/in/juanvalentinmoraruiz"><img src="https://avatars0.githubusercontent.com/u/4575267?v=4" width="40px;" alt=""/><br /><sub><b>Juan Mora</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=raicerk" title="Code">💻</a></td>
   </tr>
 </table>
 
@@ -431,6 +433,21 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 <a href="https://opencollective.com/getferdi#section-contribute" target="_blank"><img src="https://opencollective.com/getferdi/backers.svg?width=890"></a>
 
+Mention to the individuals backing us via [GitHub Sponsors](https://github.com/sponsors/getferdi) as well.
+
 ## Sponsors via OpenCollective
 
 <a href="https://opencollective.com/getferdi#section-contribute" target="_blank"><img src="https://opencollective.com/getferdi/sponsors.svg?width=890"></a>
+
+## Other Sponsors
+
+<p>
+  <a href="https://www.digitalocean.com/">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
+  </a>
+</p>
+<p>
+  <a href="https://www.parallels.com/">
+    <img src="https://user-images.githubusercontent.com/412895/87706297-3025e380-c797-11ea-94c4-bf8414b0b5ab.png" height="32px">
+  </a>
+</p>

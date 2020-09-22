@@ -10,6 +10,8 @@ const {
   clipboard, nativeImage, remote, shell,
 } = require('electron');
 
+const { URL } = require('url');
+
 const { Menu, MenuItem } = remote;
 
 function matchesWord(string) {
@@ -31,6 +33,7 @@ const contextMenuStringTable = {
   copy: () => 'Copy',
   paste: () => 'Paste',
   inspectElement: () => 'Inspect Element',
+  goToHomePage: () => 'Go to Home Page',
 };
 
 /**
@@ -128,6 +131,8 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.goToHomePage(menu, menuInfo);
+
     return menu;
   }
 
@@ -175,6 +180,8 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.goToHomePage(menu, menuInfo);
+
     return menu;
   }
 
@@ -190,6 +197,8 @@ module.exports = class ContextMenuBuilder {
     this.addCopy(menu, menuInfo);
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
+
+    this.goToHomePage(menu, menuInfo);
 
     return menu;
   }
@@ -415,5 +424,23 @@ module.exports = class ContextMenuBuilder {
     };
 
     img.src = url;
+  }
+
+  /**
+   * Adds the go to home  menu item.
+   */
+  goToHomePage(menu, menuInfo) {
+    const baseURL = new URL(menuInfo.pageURL);
+    menu.append(new MenuItem({
+      label: this.stringTable.goToHomePage(),
+      accelerator: 'CommandOrControl+Home',
+      enabled: true,
+      click: () => {
+        // target.loadURL(baseURL.origin);
+        window.location.href = baseURL.origin;
+      },
+    }));
+
+    return menu;
   }
 };
