@@ -281,6 +281,8 @@ export default class SettingsStore extends Store {
       debug('Migrated updates settings');
     }
 
+    // TODO: migrate from previous languages?
+
     if (!this.all.migration['password-hashing']) {
       if (this.stores.settings.app.lockedPassword !== '') {
         this.actions.settings.update({

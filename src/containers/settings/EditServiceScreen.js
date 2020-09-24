@@ -143,16 +143,17 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
 
     const { action } = router.params;
 
+    // TODO: handle multiple languages
     let defaultSpellcheckerLanguage = SPELLCHECKER_LOCALES[stores.settings.app.spellcheckerLanguage];
 
-    if (stores.settings.app.spellcheckerLanguage === 'automatic') {
+    if (stores.settings.app.spellcheckerLanguage.includes('automatic')) {
       defaultSpellcheckerLanguage = intl.formatMessage(globalMessages.spellcheckerAutomaticDetectionShort);
     }
 
     const spellcheckerLanguage = getSelectOptions({
       locales: SPELLCHECKER_LOCALES,
       resetToDefaultText: intl.formatMessage(globalMessages.spellcheckerSystemDefault, { default: defaultSpellcheckerLanguage }),
-      automaticDetectionText: stores.settings.app.spellcheckerLanguage !== 'automatic' ? intl.formatMessage(globalMessages.spellcheckerAutomaticDetection) : '',
+      automaticDetectionText: stores.settings.app.spellcheckerLanguage.includes('automatic') ? '' : intl.formatMessage(globalMessages.spellcheckerAutomaticDetection),
     });
 
     const config = {

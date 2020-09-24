@@ -1,8 +1,10 @@
-import { webFrame } from 'electron';
+import { remote } from 'electron';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 import setupContextMenu from './contextMenu';
 
 const debug = require('debug')('Franz:spellchecker');
+
+const webContents = remote.getCurrentWebContents();
 
 let _isEnabled = false;
 
@@ -16,7 +18,20 @@ export async function switchDict(locales) {
   try {
     debug('Trying to load dictionary', locales);
 
-    webFrame.session.setSpellCheckerLanguages([...locales, 'en-US']);
+    // Only use languages that are supported
+    const supportedLocales = webContents.session.availableSpellCheckerLanguages;
+
+    for (let localeIndex = locales.length; localeIndex >= 0; localeIndex--) {
+      if (supportedLocales.indexOf(locales[localeIndex]) === -1) {
+        locales.splice(localeIndex, 1);
+      }
+    }
+
+    if (locales.length === 0 && supportedLocales.indexOf('en-US') !== -1) {
+      locales.push('en-US');
+    }
+
+    webContents.session.setSpellCheckerLanguages(locales);
 
     debug('Switched dictionary to', locales);
 
@@ -54,6 +69,7 @@ export function disable() {
 }
 
 export function getSpellcheckerLocaleByFuzzyIdentifier(identifier) {
+  // TODO: check if this didn't break
   const locales = Object.keys(SPELLCHECKER_LOCALES).filter(key => key === identifier.toLowerCase() || key.split('-')[0] === identifier.toLowerCase());
 
   if (locales.length >= 1) {
