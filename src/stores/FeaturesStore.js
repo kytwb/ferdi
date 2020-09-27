@@ -24,6 +24,7 @@ import todos from '../features/todos';
 import appearance from '../features/appearance';
 import planSelection from '../features/planSelection';
 import trialStatusBar from '../features/trialStatusBar';
+import extensions from '../features/extensions';
 
 import { DEFAULT_FEATURES_CONFIG } from '../config';
 
@@ -95,5 +96,6 @@ export default class FeaturesStore extends Store {
     appearance(this.stores, this.actions);
     planSelection(this.stores, this.actions);
     trialStatusBar(this.stores, this.actions);
+    extensions(this.stores, this.actions);
   }
 }

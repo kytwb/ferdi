@@ -64,6 +64,7 @@
     "atob": "2.1.2",
     "auto-launch": "5.0.5",
     "btoa": "1.2.1",
+    "chrome-webstore": "1.4.0",
     "classnames": "2.2.6",
     "cld3-asm": "1.0.1",
     "css": "2.2.4",
@@ -125,6 +126,7 @@
     "tar": "^4.0.2",
     "targz": "1.0.1",
     "terser": "4.4.0",
+    "unzip-crx": "0.2.0",
     "uuid": "3.3.3",
     "validator": "11.0.0",
     "ws": "6.2.1"

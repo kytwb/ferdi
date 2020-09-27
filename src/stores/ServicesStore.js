@@ -527,6 +527,7 @@ export default class ServicesStore extends Store {
       this._initRecipePolling(service.id);
       this._initializeServiceRecipeInWebview(serviceId);
       this._shareSettingsWithServiceProcess();
+      this._initExtensions(service);
     } else if (channel === 'alive') {
       service.lastPollAnswer = Date.now();
     } else if (channel === 'messages') {
@@ -849,6 +850,12 @@ export default class ServicesStore extends Store {
       channel: 'settings-update',
       args: settings,
     });
+  }
+
+  _initExtensions(service) {
+    if (service.webview) {
+      window.ferdi.features.extensions.useWebview(service.webview);
+    }
   }
 
   _cleanUpTeamIdAndCustomUrl(recipeId, data) {

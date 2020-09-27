@@ -1,0 +1,28 @@
+[
+  {
+    "id": "settings.extension.form.deleteButton",
+    "defaultMessage": "!!!Delete Extension",
+    "file": "src/components/settings/extensions/EditExtensionForm.js",
+    "start": {
+      "line": 11,
+      "column": 19
+    },
+    "end": {
+      "line": 14,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extension.form.openFolder",
+    "defaultMessage": "!!!Open extension folder",
+    "file": "src/components/settings/extensions/EditExtensionForm.js",
+    "start": {
+      "line": 15,
+      "column": 14
+    },
+    "end": {
+      "line": 18,
+      "column": 3
+    }
+  }
+]

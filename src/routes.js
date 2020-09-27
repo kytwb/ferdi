@@ -8,6 +8,8 @@ import {
 import AppLayoutContainer from './containers/layout/AppLayoutContainer';
 import SettingsWindow from './containers/settings/SettingsWindow';
 import RecipesScreen from './containers/settings/RecipesScreen';
+import ExtensionStoreScreen from './containers/settings/ExtensionStoreScreen';
+import ExtensionStoreDetailScreen from './containers/settings/ExtensionStoreDetailScreen';
 import ServicesScreen from './containers/settings/ServicesScreen';
 import EditServiceScreen from './containers/settings/EditServiceScreen';
 import AccountScreen from './containers/settings/AccountScreen';
@@ -30,6 +32,8 @@ import SubscriptionPopupScreen from './containers/subscription/SubscriptionPopup
 import WorkspacesScreen from './features/workspaces/containers/WorkspacesScreen';
 import EditWorkspaceScreen from './features/workspaces/containers/EditWorkspaceScreen';
 import { WORKSPACES_ROUTES } from './features/workspaces';
+import ExtensionsScreen from './containers/settings/ExtensionsScreen';
+import EditExtensionScreen from './containers/settings/EditExtensionScreen';
 import AnnouncementScreen from './features/announcements/components/AnnouncementScreen';
 import { ANNOUNCEMENTS_ROUTES } from './features/announcements';
 
@@ -62,6 +66,11 @@ export default @inject('stores', 'actions') @observer class Routes extends Compo
             <Route path="/settings/services/:action/:id" component={EditServiceScreen} />
             <Route path={WORKSPACES_ROUTES.ROOT} component={WorkspacesScreen} />
             <Route path={WORKSPACES_ROUTES.EDIT} component={EditWorkspaceScreen} />
+            <Route path="/settings/extensions" component={ExtensionsScreen} />
+            <Route path="/settings/extensions/:extension" component={EditExtensionScreen} />
+            <Route path="/settings/store-extensions" component={ExtensionStoreScreen} />
+            <Route path="/settings/store-extensions/:filter" component={ExtensionStoreScreen} />
+            <Route path="/settings/store-extensions/detail/:extension" component={ExtensionStoreDetailScreen} />
             <Route path="/settings/user" component={AccountScreen} />
             <Route path="/settings/user/edit" component={EditUserScreen} />
             <Route path="/settings/team" component={TeamScreen} />

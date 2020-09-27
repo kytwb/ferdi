@@ -1,0 +1,41 @@
+[
+  {
+    "id": "settings.services.tooltip.isDisabled",
+    "defaultMessage": "!!!Service is disabled",
+    "file": "src/components/settings/extensions/ExtensionItem.js",
+    "start": {
+      "line": 9,
+      "column": 21
+    },
+    "end": {
+      "line": 12,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.services.tooltip.notificationsDisabled",
+    "defaultMessage": "!!!Notifications are disabled",
+    "file": "src/components/settings/extensions/ExtensionItem.js",
+    "start": {
+      "line": 13,
+      "column": 32
+    },
+    "end": {
+      "line": 16,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.services.tooltip.isMuted",
+    "defaultMessage": "!!!All sounds are muted",
+    "file": "src/components/settings/extensions/ExtensionItem.js",
+    "start": {
+      "line": 17,
+      "column": 18
+    },
+    "end": {
+      "line": 20,
+      "column": 3
+    }
+  }
+]

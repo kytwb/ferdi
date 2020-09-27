@@ -183,6 +183,7 @@ export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
 
 // Replacing app.asar is not beautiful but unfortunately necessary
 export const RECIPES_PATH = asarPath(path.join(__dirname, 'recipes'));
+export const EXTENSIONS_PATH = asarPath(path.join(__dirname, 'extensions'));
 
 export const ALLOWED_PROTOCOLS = [
   'https:',

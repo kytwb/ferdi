@@ -1,0 +1,184 @@
+[
+  {
+    "id": "settings.extensions.store.headline",
+    "defaultMessage": "!!!Available Extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 19,
+      "column": 12
+    },
+    "end": {
+      "line": 22,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.searchExtension",
+    "defaultMessage": "!!!Search extension",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 23,
+      "column": 19
+    },
+    "end": {
+      "line": 26,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.mostPopular",
+    "defaultMessage": "!!!Most popular",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 27,
+      "column": 25
+    },
+    "end": {
+      "line": 30,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.all",
+    "defaultMessage": "!!!All extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 31,
+      "column": 17
+    },
+    "end": {
+      "line": 34,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.custom",
+    "defaultMessage": "!!!Custom Extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 35,
+      "column": 20
+    },
+    "end": {
+      "line": 38,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.nothingFound",
+    "defaultMessage": "!!!Sorry, but no extension matched your search term.",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 39,
+      "column": 16
+    },
+    "end": {
+      "line": 42,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.extensionsSuccessfulAddedInfo",
+    "defaultMessage": "!!!Extension successfully added",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 43,
+      "column": 33
+    },
+    "end": {
+      "line": 46,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.missingService",
+    "defaultMessage": "!!!Missing an extension?",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 47,
+      "column": 18
+    },
+    "end": {
+      "line": 50,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.intro",
+    "defaultMessage": "!!!You can add any Chrome Extension into Ferdi. To do so, copy the extension folder into:",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 51,
+      "column": 24
+    },
+    "end": {
+      "line": 54,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.openFolder",
+    "defaultMessage": "!!!Open directory",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 55,
+      "column": 14
+    },
+    "end": {
+      "line": 58,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.openDevDocs",
+    "defaultMessage": "!!!Developer Documentation",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 59,
+      "column": 15
+    },
+    "end": {
+      "line": 62,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.headline.customExtensions",
+    "defaultMessage": "!!!Custom 3rd Party Extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 63,
+      "column": 28
+    },
+    "end": {
+      "line": 66,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.headline.communityExtensions",
+    "defaultMessage": "!!!Community 3rd Party Extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 67,
+      "column": 31
+    },
+    "end": {
+      "line": 70,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.customService.headline.devExtensions",
+    "defaultMessage": "!!!Your Development Extensions",
+    "file": "src/components/settings/extensions/StoreDashboard.js",
+    "start": {
+      "line": 71,
+      "column": 25
+    },
+    "end": {
+      "line": 74,
+      "column": 3
+    }
+  }
+]

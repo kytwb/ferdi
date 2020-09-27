@@ -501,3 +501,47 @@
     width: 7px;
   }
 }
+
+.extension-info {
+  .extension-icon {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+
+    img {
+      height: 75px;
+      width: auto;
+    }
+  }
+
+  .extension-title {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .extension-version {
+    text-align: center;
+    color: #979797;
+  }
+  .extension-description, .extension-homepage {
+    margin: 15px 0;
+    font-size: 15px;
+  }
+  .extension-homepage {
+    color: #212121;
+    cursor: pointer;
+  }
+  .extensions-permissions {
+    margin: 15px 0;
+    height: auto;
+
+    ul {
+      margin-top: 15px;
+
+      li {
+        margin-top: 15px;
+        padding-left: 20px;
+      }
+    }
+  }
+}

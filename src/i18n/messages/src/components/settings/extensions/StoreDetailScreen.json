@@ -1,0 +1,41 @@
+[
+  {
+    "id": "settings.extensions.store.headline",
+    "defaultMessage": "!!!Available Extensions",
+    "file": "src/components/settings/extensions/StoreDetailScreen.js",
+    "start": {
+      "line": 13,
+      "column": 12
+    },
+    "end": {
+      "line": 16,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.installExtension",
+    "defaultMessage": "!!!Install Extension",
+    "file": "src/components/settings/extensions/StoreDetailScreen.js",
+    "start": {
+      "line": 17,
+      "column": 20
+    },
+    "end": {
+      "line": 20,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.extensions.store.errorMessage",
+    "defaultMessage": "!!!We could not install this extension. Please try again later.",
+    "file": "src/components/settings/extensions/StoreDetailScreen.js",
+    "start": {
+      "line": 21,
+      "column": 16
+    },
+    "end": {
+      "line": 24,
+      "column": 3
+    }
+  }
+]

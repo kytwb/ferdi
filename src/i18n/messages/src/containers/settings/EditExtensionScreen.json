@@ -1,0 +1,249 @@
+[
+  {
+    "id": "settings.service.form.name",
+    "defaultMessage": "!!!Name",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 13,
+      "column": 8
+    },
+    "end": {
+      "line": 16,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.enableService",
+    "defaultMessage": "!!!Enable service",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 17,
+      "column": 17
+    },
+    "end": {
+      "line": 20,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.disableHibernation",
+    "defaultMessage": "!!!Disable hibernation",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 21,
+      "column": 22
+    },
+    "end": {
+      "line": 24,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.enableNotification",
+    "defaultMessage": "!!!Enable Notifications",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 25,
+      "column": 22
+    },
+    "end": {
+      "line": 28,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.enableBadge",
+    "defaultMessage": "!!!Show unread message badges",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 29,
+      "column": 15
+    },
+    "end": {
+      "line": 32,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.enableAudio",
+    "defaultMessage": "!!!Enable audio",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 33,
+      "column": 15
+    },
+    "end": {
+      "line": 36,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.team",
+    "defaultMessage": "!!!Team",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 37,
+      "column": 8
+    },
+    "end": {
+      "line": 40,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.customUrl",
+    "defaultMessage": "!!!Service URL",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 41,
+      "column": 13
+    },
+    "end": {
+      "line": 44,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.indirectMessages",
+    "defaultMessage": "!!!Show message badge for all new messages",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 45,
+      "column": 20
+    },
+    "end": {
+      "line": 48,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.icon",
+    "defaultMessage": "!!!Custom icon",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 49,
+      "column": 8
+    },
+    "end": {
+      "line": 52,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.enableDarkMode",
+    "defaultMessage": "!!!Enable Dark Mode",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 53,
+      "column": 18
+    },
+    "end": {
+      "line": 56,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.darkReaderBrightness",
+    "defaultMessage": "!!!Dark Reader Brightness",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 57,
+      "column": 24
+    },
+    "end": {
+      "line": 60,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.darkReaderContrast",
+    "defaultMessage": "!!!Dark Reader Contrast",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 61,
+      "column": 22
+    },
+    "end": {
+      "line": 64,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.darkReaderSepia",
+    "defaultMessage": "!!!Dark Reader Sepia",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 65,
+      "column": 19
+    },
+    "end": {
+      "line": 68,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.isEnabled",
+    "defaultMessage": "!!!Use Proxy",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 69,
+      "column": 15
+    },
+    "end": {
+      "line": 72,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.host",
+    "defaultMessage": "!!!Proxy Host/IP",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 73,
+      "column": 13
+    },
+    "end": {
+      "line": 76,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.port",
+    "defaultMessage": "!!!Port",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 77,
+      "column": 13
+    },
+    "end": {
+      "line": 80,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.user",
+    "defaultMessage": "!!!User",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 81,
+      "column": 13
+    },
+    "end": {
+      "line": 84,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.password",
+    "defaultMessage": "!!!Password",
+    "file": "src/containers/settings/EditExtensionScreen.js",
+    "start": {
+      "line": 85,
+      "column": 17
+    },
+    "end": {
+      "line": 88,
+      "column": 3
+    }
+  }
+]
