@@ -12,9 +12,7 @@ const { nativeTheme, systemPreferences } = remote;
 export default class UIStore extends Store {
   @observable showServicesUpdatedInfoBar = false;
 
-  @observable isOsDarkThemeActive = (isMac || isWindows)
-    ? nativeTheme.shouldUseDarkColors
-    : false;
+  @observable isOsDarkThemeActive = nativeTheme.shouldUseDarkColors;
 
   constructor(...args) {
     super(...args);
@@ -63,16 +61,14 @@ export default class UIStore extends Store {
   }
 
   @computed get isDarkThemeActive() {
-    const isMacOrWindowsWithAdaptableInDarkMode = (isMac || isWindows)
-      && this.stores.settings.all.app.adaptableDarkMode
+    const isWithAdaptableInDarkMode = this.stores.settings.all.app.adaptableDarkMode
       && this.isOsDarkThemeActive;
-    const isMacOrWindowsWithoutAdaptableInDarkMode = (isMac || isWindows)
-      && this.stores.settings.all.app.darkMode
+    const isWithoutAdaptableInDarkMode = this.stores.settings.all.app.darkMode
       && !this.stores.settings.all.app.adaptableDarkMode;
-    const isMacOrWindowsNotInDarkMode = !(isMac || isWindows) && this.stores.settings.all.app.darkMode;
-    return !!(isMacOrWindowsWithAdaptableInDarkMode
-      || isMacOrWindowsWithoutAdaptableInDarkMode
-      || isMacOrWindowsNotInDarkMode);
+    const isInDarkMode = this.stores.settings.all.app.darkMode;
+    return !!(isWithAdaptableInDarkMode
+      || isWithoutAdaptableInDarkMode
+      || isInDarkMode);
   }
 
   @computed get theme() {

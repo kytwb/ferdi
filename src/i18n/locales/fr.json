@@ -335,6 +335,7 @@
   "settings.app.scheduledDNDInfo": "Planifier le Ne-pas-Déranger vous permet de définir une période de temps dans lequel vous ne voulez pas de notifications de Ferdi.",
   "settings.app.scheduledDNDTimeInfo": "Le temps est en format 24 heures. La fin du temps peut être avant le début du temps (ex: début 17:00, fin 09:00) pour activer le Ne-pas-Déranger durant la nuit.",
   "settings.app.sentryInfo": "L'envoi de données de télémétrie nous permet de trouver des erreurs dans Ferdi - nous n'enverrons aucune information personnelle comme vos données de message! La modification de cette option nécessite le redémarrage de Ferdi.",
+  "settings.app.spellCheckerLanguageInfo": "Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
   "settings.app.subheadlineCache": "Cache",
   "settings.app.todoServerInfo": "Ce serveur sera utilisé pour la fonctionnalité \"Ferdi Todo\".",
   "settings.app.translationHelp": "Aidez-nous à traduire Ferdi dans votre langue.",

@@ -22,7 +22,7 @@ function linux() {
   return 'X11; Linux x86_64';
 }
 
-export default function userAgent(removeChromeVersion = false) {
+export default function userAgent(removeChromeVersion = false, addFerdiVersion = false) {
   let platformString = '';
 
   if (isMac) {
@@ -39,7 +39,7 @@ export default function userAgent(removeChromeVersion = false) {
   }
 
   let applicationString = '';
-  if (!removeChromeVersion) {
+  if (addFerdiVersion) {
     applicationString = ` Ferdi/${ferdiVersion} Electron/${process.versions.electron}`;
   }
 
