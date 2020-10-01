@@ -147,14 +147,16 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
             )}
           </Link>
         ) : null}
-        <Link
-          to="/settings/user"
-          className="settings-navigation__link"
-          activeClassName="is-active"
-          disabled={!isLoggedIn}
-        >
-          {intl.formatMessage(messages.account)}
-        </Link>
+        {!isUsingWithoutAccount && (
+          <Link
+            to="/settings/user"
+            className="settings-navigation__link"
+            activeClassName="is-active"
+            disabled={!isLoggedIn}
+          >
+            {intl.formatMessage(messages.account)}
+          </Link>
+        )}
         {isUsingFranzServer && (
           <Link
             to="/settings/team"
