@@ -11,7 +11,7 @@ export interface IStyleTypes {
   };
 }
 
-export const brandPrimary = '#7367F0';
+export const brandPrimary = '#7266F0';
 export const brandSuccess = '#5cb85c';
 export const brandInfo = '#5bc0de';
 export const brandWarning = '#FF9F00';

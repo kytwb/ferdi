@@ -1,5 +1,5 @@
 /* legacy config, injected into sass */
-export const themeBrandPrimary = '#7367F0';
+export const themeBrandPrimary = '#7266F0';
 export const themeBrandSuccess = '#5cb85c';
 export const themeBrandInfo = '#5bc0de';
 export const themeBrandWarning = '#FF9F00';

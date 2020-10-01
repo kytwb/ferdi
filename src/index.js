@@ -167,8 +167,8 @@ const createWindow = () => {
   }
 
   // Create the browser window.
-  let backgroundColor = '#7367F0';
-  if (settings.get('accentColor') !== '#7367f0') {
+  let backgroundColor = '#7266F0';
+  if (settings.get('accentColor') !== '#7266F0') {
     backgroundColor = settings.get('accentColor');
   } else if (settings.get('darkMode')) {
     backgroundColor = '#1E1E1E';

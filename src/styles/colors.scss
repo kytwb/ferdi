@@ -1,7 +1,7 @@
 @import "./type-helper";
 
 $theme-brand-primary:        convert-rgb-string-to-color($raw-theme-brand-primary);
-$theme-brand-gradient:       linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);
+$theme-brand-gradient:       #7266F0;
 $theme-brand-success:        convert-rgb-string-to-color($raw-theme-brand-success);
 $theme-brand-info:           convert-rgb-string-to-color($raw-theme-brand-info);
 $theme-brand-warning:        convert-rgb-string-to-color($raw-theme-brand-warning);

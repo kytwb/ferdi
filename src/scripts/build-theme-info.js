@@ -10,6 +10,7 @@ const path = require('path');
 // Colors that should be replaced with the accent color
 const accentColors = [
   '#7367f0',
+  '#7266F0',
   '#5e50ee',
 ];
 

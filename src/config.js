@@ -126,7 +126,7 @@ export const DEFAULT_APP_SETTINGS = {
   showServiceNavigationBar: false,
   universalDarkMode: true,
   adaptableDarkMode: true,
-  accentColor: '#7367f0',
+  accentColor: '#7266F0',
   serviceRibbonWidth: 68,
   iconSize: iconSizeBias,
   sentry: false,
