@@ -227,7 +227,7 @@ $ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
 
 #### Windows
 
-Please make sure your run this command as Administrator.
+Please make sure you run this command as an administrator:
 
 ```bash
 $ npm install --global windows-build-tools --vs2015
