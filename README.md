@@ -259,6 +259,15 @@ If you previously ran `npm install` it sometimes is necessary to delete your `no
 $ npm run rebuild
 ```
 
+### Package recipe repository
+
+Ferdi requires its recipes to be packaged before it can use it. When running Ferdi as a development instance, you'll need to package the local recipes before you can create any services inside Ferdi.
+
+```bash
+$ cd recipes
+$ npm install && npm run package
+```
+
 ### Start development app
 
 Run these two commands **simultaneously** in different terminals:
