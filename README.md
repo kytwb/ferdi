@@ -227,6 +227,8 @@ $ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
 
 #### Windows
 
+Please make sure you run this command as an administrator:
+
 ```bash
 $ npm install --global windows-build-tools --vs2015
 ```
@@ -255,6 +257,15 @@ If you previously ran `npm install` it sometimes is necessary to delete your `no
 
 ```bash
 $ npm run rebuild
+```
+
+### Package recipe repository
+
+Ferdi requires its recipes to be packaged before it can use it. When running Ferdi as a development instance, you'll need to package the local recipes before you can create any services inside Ferdi.
+
+```bash
+$ cd recipes
+$ npm install && npm run package
 ```
 
 ### Start development app
