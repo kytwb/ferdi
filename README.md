@@ -92,6 +92,12 @@ Ferdi is a messaging browser that allows you to combine your favorite messaging 
 
 You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](https://getferdi.com/download) or you can find all variants in the [latest stable release](https://github.com/getferdi/ferdi/releases/latest) assets and [all the other release here](https://github.com/getferdi/ferdi/releases).
 
+### Or use Chocolatey (Windows only)
+
+`$ choco install ferdi`
+
+(Don't know Chocolatey? [chocolatey.org](https://chocolatey.org/))
+
 ### Or use homebrew (macOS only)
 
 `$ brew cask install ferdi`
