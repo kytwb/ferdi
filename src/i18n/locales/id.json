@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Layanan tersedia",
   "settings.recipes.missingService": "Layanan tidak tersedia?",
   "settings.recipes.mostPopular": "Terpopuler",
-  "settings.recipes.nothingFound": "Maaf, tidak ada layanan yang cocok dengan pencarian Anda.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Layanan berhasil ditambahkan",
   "settings.searchService": "Cari layanan",
   "settings.service.error.goBack": "Kembali ke layanan",
