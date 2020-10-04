@@ -367,7 +367,7 @@
   "settings.recipes.headline": "利用可能なサービス",
   "settings.recipes.missingService": "使いたいサービスが一覧にありませんか?",
   "settings.recipes.mostPopular": "最も人気",
-  "settings.recipes.nothingFound": "すみませんが、検索ワードに該当するサービスが見つかりませんでした。",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "サービスが追加されました",
   "settings.searchService": "サービスを検索",
   "settings.service.error.goBack": "サービスに戻る",
