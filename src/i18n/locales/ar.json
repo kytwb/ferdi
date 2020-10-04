@@ -367,7 +367,7 @@
   "settings.recipes.headline": "الخدمات المتاحة",
   "settings.recipes.missingService": "خدمة مفقودة؟",
   "settings.recipes.mostPopular": "الأكثر شعبية",
-  "settings.recipes.nothingFound": "عذراً، ولكن لا توجد خدمة تطابق مصطلح البحث الخاص بك.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "تمت إضافة الخدمة بنجاح",
   "settings.searchService": "البحث عن خدمة",
   "settings.service.error.goBack": "العودة إلى الخدمات",
