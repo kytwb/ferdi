@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Dostupné služby",
   "settings.recipes.missingService": "Chýba vám služba?",
   "settings.recipes.mostPopular": "Najpopulárnejšie",
-  "settings.recipes.nothingFound": "Ľutujeme, ale žiadna služba nezodpovedá vami hľadanému výrazu.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Služba bola úspešne pridaná",
   "settings.searchService": "Vyhľadať službu",
   "settings.service.error.goBack": "Späť na služby",
