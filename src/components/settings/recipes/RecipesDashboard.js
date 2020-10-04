@@ -15,6 +15,7 @@ import Appear from '../../ui/effects/Appear';
 import { FRANZ_SERVICE_REQUEST } from '../../../config';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
+import RecipePreview from '../../../models/RecipePreview';
 
 const messages = defineMessages({
   headline: {
@@ -39,7 +40,7 @@ const messages = defineMessages({
   },
   nothingFound: {
     id: 'settings.recipes.nothingFound',
-    defaultMessage: '!!!Sorry, but no service matched your search term.',
+    defaultMessage: '!!!Sorry, but no service matched your search term - but you can still probably add it using the "Custom Website" option:',
   },
   servicesSuccessfulAddedInfo: {
     id: 'settings.recipes.servicesSuccessfulAddedInfo',
@@ -106,6 +107,7 @@ const styles = {
 export default @injectSheet(styles) @observer class RecipesDashboard extends Component {
   static propTypes = {
     recipes: MobxPropTypes.arrayOrObservableArray.isRequired,
+    customWebsiteRecipe: PropTypes.instanceOf(RecipePreview).isRequired,
     isLoading: PropTypes.bool.isRequired,
     hasLoadedRecipes: PropTypes.bool.isRequired,
     showAddServiceInterface: PropTypes.func.isRequired,
@@ -133,6 +135,7 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
   render() {
     const {
       recipes,
+      customWebsiteRecipe,
       isLoading,
       hasLoadedRecipes,
       showAddServiceInterface,
@@ -256,12 +259,19 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
                 )}
                 <div className="recipes__list">
                   {hasLoadedRecipes && recipes.length === 0 && recipeFilter !== 'dev' && (
-                    <p className="align-middle settings__empty-state">
+                    <div className="align-middle settings__empty-state">
                       <span className="emoji">
                         <img src="./assets/images/emoji/dontknow.png" alt="" />
                       </span>
-                      {intl.formatMessage(messages.nothingFound)}
-                    </p>
+
+                      <p className="settings__empty-state-text">{intl.formatMessage(messages.nothingFound)}</p>
+                      
+                      <RecipeItem
+                        key={customWebsiteRecipe.id}
+                        recipe={customWebsiteRecipe}
+                        onClick={() => isLoggedIn && showAddServiceInterface({ recipeId: customWebsiteRecipe.id })}
+                      />
+                    </div>
                   )}
                   {communityRecipes.map(recipe => (
                     <RecipeItem

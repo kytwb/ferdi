@@ -330,6 +330,10 @@
     text-align: center;
     width: 100%;
 
+    .settings__empty-state-text {
+      margin-bottom: 1em;
+    }
+
     a.button { margin-top: 40px; }
   }
 

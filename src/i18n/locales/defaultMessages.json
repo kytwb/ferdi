@@ -2296,182 +2296,182 @@
         "defaultMessage": "!!!Available Services",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 24
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.headline",
         "start": {
           "column": 12,
-          "line": 20
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Search service",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 28
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.searchService",
         "start": {
           "column": 17,
-          "line": 24
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!Most popular",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 32
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.mostPopular",
         "start": {
           "column": 22,
-          "line": 28
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!All services",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 36
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.all",
         "start": {
           "column": 14,
-          "line": 32
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Custom Services",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 40
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.custom",
         "start": {
           "column": 17,
-          "line": 36
+          "line": 37
         }
       },
       {
-        "defaultMessage": "!!!Sorry, but no service matched your search term.",
+        "defaultMessage": "!!!Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 44
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.nothingFound",
         "start": {
           "column": 16,
-          "line": 40
+          "line": 41
         }
       },
       {
         "defaultMessage": "!!!Service successfully added",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 48
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.servicesSuccessfulAddedInfo",
         "start": {
           "column": 31,
-          "line": 44
+          "line": 45
         }
       },
       {
         "defaultMessage": "!!!Missing a service?",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 52
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.missingService",
         "start": {
           "column": 18,
-          "line": 48
+          "line": 49
         }
       },
       {
         "defaultMessage": "!!!To add a custom service, copy the recipe folder into:",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 56
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.intro",
         "start": {
           "column": 21,
-          "line": 52
+          "line": 53
         }
       },
       {
         "defaultMessage": "!!!Open directory",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 60
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openFolder",
         "start": {
           "column": 14,
-          "line": 56
+          "line": 57
         }
       },
       {
         "defaultMessage": "!!!Developer Documentation",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 64
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openDevDocs",
         "start": {
           "column": 15,
-          "line": 60
+          "line": 61
         }
       },
       {
         "defaultMessage": "!!!Custom 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 68
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.customRecipes",
         "start": {
           "column": 25,
-          "line": 64
+          "line": 65
         }
       },
       {
         "defaultMessage": "!!!Community 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 72
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.communityRecipes",
         "start": {
           "column": 28,
-          "line": 68
+          "line": 69
         }
       },
       {
         "defaultMessage": "!!!Your Development Service Recipes",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 76
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.devRecipes",
         "start": {
           "column": 22,
-          "line": 72
+          "line": 73
         }
       }
     ],
