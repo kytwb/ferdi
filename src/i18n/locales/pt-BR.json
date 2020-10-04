@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Serviços disponíveis",
   "settings.recipes.missingService": "Falta um serviço?",
   "settings.recipes.mostPopular": "Os mais populares",
-  "settings.recipes.nothingFound": "Lamentamos, nenhum serviço corresponde ao termo pesquisado.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Serviço adicionado com sucesso",
   "settings.searchService": "Pesquisar serviço",
   "settings.service.error.goBack": "Voltar aos serviços",
