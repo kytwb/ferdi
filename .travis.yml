@@ -27,6 +27,20 @@ cache: npm
 
 before_install:
   - git submodule update --init --recursive
+  - |
+    if [ $TRAVIS_BRANCH == "nightly" ]; then
+      git remote add source https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
+      git fetch source
+      git merge --no-ff --commit --no-edit source/develop
+      changes=$(git diff --stat HEAD origin/nightly | wc -l)
+      if [ $changes -eq 0 ]; then
+        travis_terminate 0;
+      else
+        git submodule update --remote --force
+        git add .
+        git commit -m "Update submodules"
+      fi
+    fi
 install:
   - cd recipes && npm install && npm run package && cd ..
   - travis_retry npx lerna bootstrap
@@ -40,7 +54,7 @@ script:
     fi
   - |
     if [ $TRAVIS_BRANCH == "nightly" ]; then
-      npm version prerelease --preid=nightly -m "%s [skip ci]"
+      npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]"
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
       if [ $TRAVIS_OS_NAME == "osx" ]; then
         git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1

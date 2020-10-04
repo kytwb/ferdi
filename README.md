@@ -309,19 +309,9 @@ $ git push
 
 Once the draft release assets are uploaded (13 assets), publish the release. The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed.
 
-#### Nightly
+#### Nightly releases
 
-```bash
-$ git checkout develop && git pull
-$ git checkout nightly
-$ git submodule update --remote --force
-$ git add .
-$ git commit -m "Update submodules"
-$ git merge --no-ff develop
-$ git push
-```
-
-The draft release and assets will be available in [getferdi/nightlies releases](https://github.com/getferdi/nightlies/releases). You need to manually publish the draft release as a pre-release for now.
+Nightly releases are automaticly triggered every day ([details](https://github.com/getferdi/ferdi/pull/990)) and available in [getferdi/nightlies](https://github.com/getferdi/nightlies/releases). Maintainers still need to manually publish the draft releases as pre-releases for now.
 
 ## Contributors ✨
 
