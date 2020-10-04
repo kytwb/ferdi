@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Dostupne usluge",
   "settings.recipes.missingService": "Da li neki servis nedostaje?",
   "settings.recipes.mostPopular": "Najpopularniji",
-  "settings.recipes.nothingFound": "Žao nam je, ali ne postoje usluge koje se poklapaju s onima koje tražite. ",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Usluga uspješno dodana. ",
   "settings.searchService": "Potraži servis",
   "settings.service.error.goBack": "Nazad do servisa",
