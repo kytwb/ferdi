@@ -19,7 +19,7 @@
   "feature.delayApp.trial.headline": "Hol dir die kostenlose Ferdi Professional Testlizenz und es geht ohne Warten weiter",
   "feature.delayApp.upgrade.action": "Hol dir Ferdi Premium",
   "feature.delayApp.upgrade.actionShort": "Account erweitern",
-  "feature.nightlyBuilds.activate": "Activate",
+  "feature.nightlyBuilds.activate": "Aktivieren",
   "feature.nightlyBuilds.cancel": "Abbrechen",
   "feature.nightlyBuilds.info": "Nightly builds are highly experimental versions of Ferdi that may contain unpolished or uncompleted features. These nightly builds are mainly used by developers to test their newly developed features and how they will perform in the final build. If you don't know what you are doing, we suggest not activating nightly builds.",
   "feature.nightlyBuilds.title": "Nightly Builds",
