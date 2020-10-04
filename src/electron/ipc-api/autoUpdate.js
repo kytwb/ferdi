@@ -15,6 +15,15 @@ export default (params) => {
         try {
           autoUpdater.autoInstallOnAppQuit = false;
           autoUpdater.allowPrerelease = Boolean(params.settings.app.get('beta'));
+          
+          if (params.settings.app.get('nightly')) {
+            autoUpdater.setFeedURL({
+              provider: 'github',
+              repo: 'nightlies',
+              owner: 'getferdi',
+            });
+          }
+
           if (args.action === 'check') {
             autoUpdater.checkForUpdates();
           } else if (args.action === 'install') {

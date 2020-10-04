@@ -1,0 +1,54 @@
+[
+  {
+    "id": "feature.nightlyBuilds.title",
+    "defaultMessage": "!!!Nightly Builds",
+    "file": "src/features/nightlyBuilds/Component.js",
+    "start": {
+      "line": 14,
+      "column": 9
+    },
+    "end": {
+      "line": 17,
+      "column": 3
+    }
+  },
+  {
+    "id": "feature.nightlyBuilds.info",
+    "defaultMessage": "!!!Nightly builds are highly experimental versions of Ferdi that may contain unpolished or uncompleted features. These nightly builds are mainly used by developers to test their newly developed features and how they will perform in the final build. If you don't know what you are doing, we suggest not activating nightly builds.",
+    "file": "src/features/nightlyBuilds/Component.js",
+    "start": {
+      "line": 18,
+      "column": 8
+    },
+    "end": {
+      "line": 21,
+      "column": 3
+    }
+  },
+  {
+    "id": "feature.nightlyBuilds.activate",
+    "defaultMessage": "!!!Activate",
+    "file": "src/features/nightlyBuilds/Component.js",
+    "start": {
+      "line": 22,
+      "column": 12
+    },
+    "end": {
+      "line": 25,
+      "column": 3
+    }
+  },
+  {
+    "id": "feature.nightlyBuilds.cancel",
+    "defaultMessage": "!!!Cancel",
+    "file": "src/features/nightlyBuilds/Component.js",
+    "start": {
+      "line": 26,
+      "column": 10
+    },
+    "end": {
+      "line": 29,
+      "column": 3
+    }
+  }
+]
