@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Tilgængelige tjenester",
   "settings.recipes.missingService": "Mangler du en service?",
   "settings.recipes.mostPopular": "Mest populære",
-  "settings.recipes.nothingFound": "Beklager, men ingen tjenester matchede dit søgeord.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Tjenesten blev tilføjet",
   "settings.searchService": "Søg tjeneste",
   "settings.service.error.goBack": "Tilbage til tjenester",
