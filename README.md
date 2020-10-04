@@ -20,6 +20,7 @@
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
 <a href="https://ci.appveyor.com/project/kytwb/ferdi"><img alt="Build Status Windows" src="https://img.shields.io/appveyor/ci/kytwb/ferdi/master?logo=appveyor"></a>
 <a href="https://travis-ci.org/getferdi/ferdi"><img alt="Build Status Mac & Linux" src="https://img.shields.io/travis/getferdi/ferdi/master?logo=travis"></a>
+<a href="https://gitter.im/getferdi/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img alt="Gitter Chat Room" src="https://img.shields.io/gitter/room/getferdi/community"></a>
 </p>
 
 🤴🏽 Hard-fork of [Franz](https://github.com/meetfranz/franz), adding awesome features and removing unwanted ones.
@@ -226,6 +227,8 @@ $ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
 
 #### Windows
 
+Please make sure you run this command as an administrator:
+
 ```bash
 $ npm install --global windows-build-tools --vs2015
 ```
@@ -254,6 +257,15 @@ If you previously ran `npm install` it sometimes is necessary to delete your `no
 
 ```bash
 $ npm run rebuild
+```
+
+### Package recipe repository
+
+Ferdi requires its recipes to be packaged before it can use it. When running Ferdi as a development instance, you'll need to package the local recipes before you can create any services inside Ferdi.
+
+```bash
+$ cd recipes
+$ npm install && npm run package
 ```
 
 ### Start development app
@@ -297,19 +309,9 @@ $ git push
 
 Once the draft release assets are uploaded (13 assets), publish the release. The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed.
 
-#### Nightly
+#### Nightly releases
 
-```bash
-$ git checkout develop && git pull
-$ git checkout nightly
-$ git submodule update --remote --force
-$ git add .
-$ git commit -m "Update submodules"
-$ git merge --no-ff develop
-$ git push
-```
-
-The draft release and assets will be available in [getferdi/nightlies releases](https://github.com/getferdi/nightlies/releases). You need to manually publish the draft release as a pre-release for now.
+Nightly releases are automaticly triggered every day ([details](https://github.com/getferdi/ferdi/pull/990)) and available in [getferdi/nightlies](https://github.com/getferdi/nightlies/releases). Maintainers still need to manually publish the draft releases as pre-releases for now.
 
 ## Contributors ✨
 

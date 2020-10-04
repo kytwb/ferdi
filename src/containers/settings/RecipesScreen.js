@@ -163,7 +163,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
           recipeDirectory={recipeDirectory}
           openRecipeDirectory={async () => {
             await fs.ensureDir(recipeDirectory);
-            shell.openItem(recipeDirectory);
+            shell.openExternal(`file://${recipeDirectory}`);
           }}
           openDevDocs={() => {
             appActions.openExternalUrl({ url: FRANZ_DEV_DOCS });
