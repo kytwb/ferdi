@@ -367,7 +367,7 @@
   "settings.recipes.headline": "Διαθέσιμες υπηρεσίες",
   "settings.recipes.missingService": "Λείπει κάποια υπηρεσία;",
   "settings.recipes.mostPopular": "Τα πιο δημοφιλή",
-  "settings.recipes.nothingFound": "Λυπούμαστε αλλά καμία υπηρεσία δεν ταιριάζει με τον όρο αναζήτησης.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
   "settings.recipes.servicesSuccessfulAddedInfo": "Η υπηρεσία προστέθηκε με επιτυχία",
   "settings.searchService": "Αναζήτηση υπηρεσίας",
   "settings.service.error.goBack": "Επιστροφή στις υπηρεσίες",
