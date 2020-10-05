@@ -92,7 +92,7 @@
   },
   {
     "id": "settings.services.noServicesAdded",
-    "defaultMessage": "!!!You haven't added any services yet.",
+    "defaultMessage": "!!!Start by adding a service.",
     "file": "src/features/workspaces/components/EditWorkspaceForm.js",
     "start": {
       "line": 49,

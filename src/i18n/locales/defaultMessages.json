@@ -2976,7 +2976,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
           "line": 27
@@ -6359,7 +6359,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
           "line": 52
@@ -6543,7 +6543,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any workspaces yet.",
+        "defaultMessage": "!!!You haven't created any workspaces yet.",
         "end": {
           "column": 3,
           "line": 27

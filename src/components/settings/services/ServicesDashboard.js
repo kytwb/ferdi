@@ -23,7 +23,7 @@ const messages = defineMessages({
   },
   noServicesAdded: {
     id: 'settings.services.noServicesAdded',
-    defaultMessage: '!!!You haven\'t added any services yet.',
+    defaultMessage: '!!!Start by adding a service.',
   },
   noServiceFound: {
     id: 'settings.recipes.nothingFound',
@@ -95,7 +95,7 @@ export default @observer class ServicesDashboard extends Component {
         </div>
         <LimitReachedInfobox />
         <div className="settings__body">
-          {!isLoading && (
+          {services.length !== 0 && !isLoading && (
             <SearchInput
               placeholder={intl.formatMessage(messages.searchService)}
               onChange={needle => filterServices({ needle })}
@@ -143,7 +143,7 @@ export default @observer class ServicesDashboard extends Component {
             <div className="align-middle settings__empty-state">
               <p className="settings__empty-text">
                 <span className="emoji">
-                  <img src="./assets/images/emoji/sad.png" alt="" />
+                  <img src="./assets/images/emoji/star.png" alt="" />
                 </span>
                 {intl.formatMessage(messages.noServicesAdded)}
               </p>
