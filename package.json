@@ -160,7 +160,7 @@
     "cross-env": "^5.0.5",
     "cz-conventional-changelog": "2.1.0",
     "dotenv": "^4.0.0",
-    "electron": "9.0.3",
+    "electron": "9.3.0",
     "electron-builder": "22.8.1",
     "electron-notarize": "0.2.1",
     "electron-rebuild": "1.11.0",
