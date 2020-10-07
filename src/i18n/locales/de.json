@@ -283,7 +283,7 @@
   "settings.app.buttonInstallUpdate": "Neu starten & Update installieren",
   "settings.app.buttonSearchForUpdate": "Nach Updates suchen",
   "settings.app.cacheInfo": "Der Ferdi Cache belegt derzeit {size}.",
-  "settings.app.cacheNotCleared": "Konnte nicht alle App-Daten löschen",
+  "settings.app.cacheNotCleared": "Konnte nicht den ganzen Zwischenspeicher löschen",
   "settings.app.currentVersion": "Aktuelle Version:",
   "settings.app.form.accentColor": "Akzentfarbe",
   "settings.app.form.adaptableDarkMode": "Synchronisiere den Dunkelmodus mit den Einstellungen meines Betriebssystems",
