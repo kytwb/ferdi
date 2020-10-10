@@ -34,7 +34,8 @@
     "update-submodules": "git submodule update --remote --force && git add .",
     "prepare-code": "npm run update-submodules && npm run lint && npm run reformat-files && npm run manage-translations && npm run apply-branding",
     "build-theme-info": "node src/scripts/build-theme-info.js",
-    "link-readme": "node src/scripts/link-readme.js"
+    "link-readme": "node src/scripts/link-readme.js",
+    "minify-images": "./scripts/minify-images.sh"
   },
   "keywords": [],
   "author": "Amine Mouafik <amine@mouafik.fr>",
@@ -181,6 +182,7 @@
     "hex-rgb": "3.0.0",
     "html-webpack-plugin": "4.0.0-beta.5",
     "husky": "^1.1.4",
+    "imagemin-cli": "6.0.0",
     "jest": "24.9.0",
     "kebab-case": "1.0.0",
     "lerna": "3.19.0",
