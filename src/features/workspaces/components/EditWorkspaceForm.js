@@ -48,7 +48,7 @@ const messages = defineMessages({
   },
   noServicesAdded: {
     id: 'settings.services.noServicesAdded',
-    defaultMessage: '!!!You haven\'t added any services yet.',
+    defaultMessage: '!!!Start by adding a service.',
   },
   discoverServices: {
     id: 'settings.services.discoverServices',

@@ -130,6 +130,7 @@ export const DEFAULT_APP_SETTINGS = {
   serviceRibbonWidth: 68,
   iconSize: iconSizeBias,
   sentry: false,
+  nightly: false,
   navigationBarBehaviour: 'custom',
 };
 

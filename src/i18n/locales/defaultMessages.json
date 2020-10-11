@@ -1056,52 +1056,52 @@
         "defaultMessage": "!!!Your services have been updated.",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 35
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.servicesUpdated",
         "start": {
           "column": 19,
-          "line": 31
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Reload services",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 39
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.buttonReloadServices",
         "start": {
           "column": 24,
-          "line": 35
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Could not load services and user information",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 43
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.requiredRequestsFailed",
         "start": {
           "column": 26,
-          "line": 39
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!There were errors while trying to perform an authenticated request. Please try logging out and back in if this error persists.",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 47
         },
         "file": "src/components/layout/AppLayout.js",
         "id": "infobar.authRequestFailed",
         "start": {
           "column": 21,
-          "line": 43
+          "line": 44
         }
       }
     ],
@@ -2262,7 +2262,7 @@
         }
       },
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
           "line": 44
@@ -2296,182 +2296,182 @@
         "defaultMessage": "!!!Available Services",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 24
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.headline",
         "start": {
           "column": 12,
-          "line": 20
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Search service",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 28
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.searchService",
         "start": {
           "column": 17,
-          "line": 24
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!Most popular",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 32
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.mostPopular",
         "start": {
           "column": 22,
-          "line": 28
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!All services",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 36
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.all",
         "start": {
           "column": 14,
-          "line": 32
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Custom Services",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 40
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.custom",
         "start": {
           "column": 17,
-          "line": 36
+          "line": 37
         }
       },
       {
-        "defaultMessage": "!!!Sorry, but no service matched your search term.",
+        "defaultMessage": "!!!Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 44
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.nothingFound",
         "start": {
           "column": 16,
-          "line": 40
+          "line": 41
         }
       },
       {
         "defaultMessage": "!!!Service successfully added",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 48
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.servicesSuccessfulAddedInfo",
         "start": {
           "column": 31,
-          "line": 44
+          "line": 45
         }
       },
       {
         "defaultMessage": "!!!Missing a service?",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 52
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.missingService",
         "start": {
           "column": 18,
-          "line": 48
+          "line": 49
         }
       },
       {
         "defaultMessage": "!!!To add a custom service, copy the recipe folder into:",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 56
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.intro",
         "start": {
           "column": 21,
-          "line": 52
+          "line": 53
         }
       },
       {
         "defaultMessage": "!!!Open directory",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 60
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openFolder",
         "start": {
           "column": 14,
-          "line": 56
+          "line": 57
         }
       },
       {
         "defaultMessage": "!!!Developer Documentation",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 64
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.openDevDocs",
         "start": {
           "column": 15,
-          "line": 60
+          "line": 61
         }
       },
       {
         "defaultMessage": "!!!Custom 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 68
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.customRecipes",
         "start": {
           "column": 25,
-          "line": 64
+          "line": 65
         }
       },
       {
         "defaultMessage": "!!!Community 3rd Party Recipes",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 72
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.communityRecipes",
         "start": {
           "column": 28,
-          "line": 68
+          "line": 69
         }
       },
       {
         "defaultMessage": "!!!Your Development Service Recipes",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 76
         },
         "file": "src/components/settings/recipes/RecipesDashboard.js",
         "id": "settings.recipes.customService.headline.devRecipes",
         "start": {
           "column": 22,
-          "line": 72
+          "line": 73
         }
       }
     ],
@@ -2976,7 +2976,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
           "line": 27
@@ -3075,403 +3075,403 @@
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 26
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headline",
         "start": {
           "column": 12,
-          "line": 22
+          "line": 23
         }
       },
       {
         "defaultMessage": "!!!General",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 30
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineGeneral",
         "start": {
           "column": 19,
-          "line": 26
+          "line": 27
         }
       },
       {
         "defaultMessage": "!!!Sending telemetry data allows us to find errors in Ferdi - we will not send any personal information like your message data! Changing this option requires you to restart Ferdi.",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 34
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.sentryInfo",
         "start": {
           "column": 14,
-          "line": 30
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!By default, Ferdi will keep all your services open and loaded in the background so they are ready when you want to use them. Service Hibernation will unload your services after a specified amount. This is useful to save RAM or keeping services from slowing down your computer.",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 38
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.hibernateInfo",
         "start": {
           "column": 17,
-          "line": 34
+          "line": 35
         }
       },
       {
         "defaultMessage": "!!!Minutes of inactivity, after which Ferdi should automatically lock. Use 0 to disable",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 42
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.inactivityLockInfo",
         "start": {
           "column": 22,
-          "line": 38
+          "line": 39
         }
       },
       {
         "defaultMessage": "!!!This server will be used for the \"Franz Todo\" feature. (default: https://app.franztodos.com)",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 46
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.todoServerInfo",
         "start": {
           "column": 18,
-          "line": 42
+          "line": 43
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 50
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPassword",
         "start": {
           "column": 18,
-          "line": 46
+          "line": 47
         }
       },
       {
         "defaultMessage": "!!!Please make sure to set a password you'll remember.\nIf you loose this password, you will have to reinstall Ferdi.",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 54
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockedPasswordInfo",
         "start": {
           "column": 22,
-          "line": 50
+          "line": 51
         }
       },
       {
         "defaultMessage": "!!!Password Lock allows you to keep your messages protected.\nUsing Password Lock, you will be prompted to enter your password everytime you start Ferdi or lock Ferdi yourself using the lock symbol in the bottom left corner or the shortcut CMD/CTRL+Shift+L.",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 58
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.lockInfo",
         "start": {
           "column": 12,
-          "line": 54
+          "line": 55
         }
       },
       {
         "defaultMessage": "!!!Times in 24-Hour-Format. End time can be before start time (e.g. start 17:00, end 09:00) to enable Do-not-Disturb overnight.",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 62
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDTimeInfo",
         "start": {
           "column": 24,
-          "line": 58
+          "line": 59
         }
       },
       {
         "defaultMessage": "!!!Scheduled Do-not-Disturb allows you to define a period of time in which you do not want to get Notifications from Ferdi.",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 66
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.scheduledDNDInfo",
         "start": {
           "column": 20,
-          "line": 62
+          "line": 63
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 70
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineLanguage",
         "start": {
           "column": 20,
-          "line": 66
+          "line": 67
         }
       },
       {
         "defaultMessage": "!!!Updates",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 74
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineUpdates",
         "start": {
           "column": 19,
-          "line": 70
+          "line": 71
         }
       },
       {
         "defaultMessage": "!!!Appearance",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 78
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAppearance",
         "start": {
           "column": 22,
-          "line": 74
+          "line": 75
         }
       },
       {
         "defaultMessage": "!!!Universal Dark Mode tries to dynamically generate dark mode styles for services that are otherwise not currently supported.",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 82
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.universalDarkModeInfo",
         "start": {
           "column": 25,
-          "line": 78
+          "line": 79
         }
       },
       {
         "defaultMessage": "!!!Write your accent color in a CSS-compatible format. (Default: #7367f0)",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 86
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.accentColorInfo",
         "start": {
           "column": 19,
-          "line": 82
+          "line": 83
         }
       },
       {
         "defaultMessage": "!!!Advanced",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 90
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAdvanced",
         "start": {
           "column": 20,
-          "line": 86
+          "line": 87
         }
       },
       {
         "defaultMessage": "!!!Help us to translate Ferdi into your language.",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 94
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.translationHelp",
         "start": {
           "column": 19,
-          "line": 90
+          "line": 91
         }
       },
       {
         "defaultMessage": "!!!Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 98
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.spellCheckerLanguageInfo",
         "start": {
           "column": 28,
-          "line": 94
+          "line": 95
         }
       },
       {
         "defaultMessage": "!!!Cache",
         "end": {
           "column": 3,
-          "line": 101
+          "line": 102
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.subheadlineCache",
         "start": {
           "column": 20,
-          "line": 98
+          "line": 99
         }
       },
       {
         "defaultMessage": "!!!Ferdi cache is currently using {size} of disk space.",
         "end": {
           "column": 3,
-          "line": 105
+          "line": 106
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheInfo",
         "start": {
           "column": 13,
-          "line": 102
+          "line": 103
         }
       },
       {
         "defaultMessage": "!!!Couldn't clear all cache",
         "end": {
           "column": 3,
-          "line": 109
+          "line": 110
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheNotCleared",
         "start": {
           "column": 19,
-          "line": 106
+          "line": 107
         }
       },
       {
         "defaultMessage": "!!!Clear cache",
         "end": {
           "column": 3,
-          "line": 113
+          "line": 114
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonClearAllCache",
         "start": {
           "column": 23,
-          "line": 110
+          "line": 111
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 117
+          "line": 118
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonSearchForUpdate",
         "start": {
           "column": 25,
-          "line": 114
+          "line": 115
         }
       },
       {
         "defaultMessage": "!!!Restart & install update",
         "end": {
           "column": 3,
-          "line": 121
+          "line": 122
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonInstallUpdate",
         "start": {
           "column": 23,
-          "line": 118
+          "line": 119
         }
       },
       {
         "defaultMessage": "!!!Is searching for update",
         "end": {
           "column": 3,
-          "line": 125
+          "line": 126
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusSearching",
         "start": {
           "column": 25,
-          "line": 122
+          "line": 123
         }
       },
       {
         "defaultMessage": "!!!Update available, downloading...",
         "end": {
           "column": 3,
-          "line": 129
+          "line": 130
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusAvailable",
         "start": {
           "column": 25,
-          "line": 126
+          "line": 127
         }
       },
       {
         "defaultMessage": "!!!You are using the latest version of Ferdi",
         "end": {
           "column": 3,
-          "line": 133
+          "line": 134
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusUpToDate",
         "start": {
           "column": 24,
-          "line": 130
+          "line": 131
         }
       },
       {
         "defaultMessage": "!!!Current version:",
         "end": {
           "column": 3,
-          "line": 137
+          "line": 138
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.currentVersion",
         "start": {
           "column": 18,
-          "line": 134
+          "line": 135
         }
       },
       {
         "defaultMessage": "!!!Changes require restart",
         "end": {
           "column": 3,
-          "line": 141
+          "line": 142
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.restartRequired",
         "start": {
           "column": 29,
-          "line": 138
+          "line": 139
         }
       },
       {
         "defaultMessage": "!!!Official translations are English & German. All other languages are community based translations.",
         "end": {
           "column": 3,
-          "line": 145
+          "line": 146
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.languageDisclaimer",
         "start": {
           "column": 22,
-          "line": 142
+          "line": 143
         }
       }
     ],
@@ -3480,68 +3480,198 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "!!!Support Ferdi",
+        "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
-          "line": 11
+          "line": 12
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.headline",
         "start": {
           "column": 12,
-          "line": 8
+          "line": 9
         }
       },
       {
-        "defaultMessage": "!!!Do you like Ferdi? Spread the love!",
+        "defaultMessage": "!!!Do you like Ferdi?",
         "end": {
           "column": 3,
-          "line": 15
+          "line": 16
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
         "id": "settings.supportFerdi.title",
         "start": {
           "column": 9,
-          "line": 12
+          "line": 13
         }
       },
       {
-        "defaultMessage": "!!!Star on GitHub",
+        "defaultMessage": "!!!<p>Ferdi is an open-source and a community-lead application.</p><p>Thanks to the people who make this possbile:</p>",
         "end": {
           "column": 3,
-          "line": 19
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.github",
-        "start": {
-          "column": 10,
-          "line": 16
-        }
-      },
-      {
-        "defaultMessage": "!!!Tell your Friends",
-        "end": {
-          "column": 3,
-          "line": 23
-        },
-        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.share",
-        "start": {
-          "column": 9,
           "line": 20
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.aboutIntro",
+        "start": {
+          "column": 14,
+          "line": 17
         }
       },
       {
-        "defaultMessage": "!!!Support our Open Collective",
+        "defaultMessage": "!!!Full list of contributor",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 24
         },
         "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
-        "id": "settings.supportFerdi.openCollective",
+        "id": "settings.supportFerdi.textListContributors",
+        "start": {
+          "column": 24,
+          "line": 21
+        }
+      },
+      {
+        "defaultMessage": "!!!here",
+        "end": {
+          "column": 3,
+          "line": 28
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textListContributorsHere",
+        "start": {
+          "column": 28,
+          "line": 25
+        }
+      },
+      {
+        "defaultMessage": "!!!The development of Ferdi is done by volunteers. People who use Ferdi like you. They maintain, fix, and improve Ferdi in their spare time.",
+        "end": {
+          "column": 3,
+          "line": 32
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textVolunteers",
         "start": {
           "column": 18,
-          "line": 24
+          "line": 29
+        }
+      },
+      {
+        "defaultMessage": "!!!Support is always welcome. You can find a list of the help we need",
+        "end": {
+          "column": 3,
+          "line": 36
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcome",
+        "start": {
+          "column": 22,
+          "line": 33
+        }
+      },
+      {
+        "defaultMessage": "!!!here",
+        "end": {
+          "column": 3,
+          "line": 40
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textSupportWelcomeHere",
+        "start": {
+          "column": 26,
+          "line": 37
+        }
+      },
+      {
+        "defaultMessage": "!!!While volunteers do most of the work, we still need to pay for servers and certificates. As a community, we are fully transparent on funds we collect and spend - see our",
+        "end": {
+          "column": 3,
+          "line": 44
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textExpenses",
+        "start": {
+          "column": 16,
+          "line": 41
+        }
+      },
+      {
+        "defaultMessage": "!!!Open Collective",
+        "end": {
+          "column": 3,
+          "line": 48
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textOpenCollective",
+        "start": {
+          "column": 22,
+          "line": 45
+        }
+      },
+      {
+        "defaultMessage": "!!!If you feel like supporting Ferdi development with a donation, you can do so on both,",
+        "end": {
+          "column": 3,
+          "line": 52
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonation",
+        "start": {
+          "column": 16,
+          "line": 49
+        }
+      },
+      {
+        "defaultMessage": "!!!and",
+        "end": {
+          "column": 3,
+          "line": 56
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textDonationAnd",
+        "start": {
+          "column": 19,
+          "line": 53
+        }
+      },
+      {
+        "defaultMessage": "!!!GitHub Sponsors",
+        "end": {
+          "column": 3,
+          "line": 60
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.textGitHubSponsors",
+        "start": {
+          "column": 22,
+          "line": 57
+        }
+      },
+      {
+        "defaultMessage": "!!!Open Survey",
+        "end": {
+          "column": 3,
+          "line": 64
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.openSurvey",
+        "start": {
+          "column": 14,
+          "line": 61
+        }
+      },
+      {
+        "defaultMessage": "!!!Do you want to help us improve Ferdi?",
+        "end": {
+          "column": 3,
+          "line": 68
+        },
+        "file": "src/components/settings/supportFerdi/SupportFerdiDashboard.js",
+        "id": "settings.supportFerdi.bannerText",
+        "start": {
+          "column": 14,
+          "line": 65
         }
       }
     ],
@@ -5317,6 +5447,63 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Nightly Builds",
+        "end": {
+          "column": 3,
+          "line": 17
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.title",
+        "start": {
+          "column": 9,
+          "line": 14
+        }
+      },
+      {
+        "defaultMessage": "!!!Nightly builds are highly experimental versions of Ferdi that may contain unpolished or uncompleted features. These nightly builds are mainly used by developers to test their newly developed features and how they will perform in the final build. If you don't know what you are doing, we suggest not activating nightly builds.",
+        "end": {
+          "column": 3,
+          "line": 21
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.info",
+        "start": {
+          "column": 8,
+          "line": 18
+        }
+      },
+      {
+        "defaultMessage": "!!!Activate",
+        "end": {
+          "column": 3,
+          "line": 25
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.activate",
+        "start": {
+          "column": 12,
+          "line": 22
+        }
+      },
+      {
+        "defaultMessage": "!!!Cancel",
+        "end": {
+          "column": 3,
+          "line": 29
+        },
+        "file": "src/features/nightlyBuilds/Component.js",
+        "id": "feature.nightlyBuilds.cancel",
+        "start": {
+          "column": 10,
+          "line": 26
+        }
+      }
+    ],
+    "path": "src/features/nightlyBuilds/Component.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!per month",
         "end": {
           "column": 3,
@@ -6302,7 +6489,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any services yet.",
+        "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
           "line": 52
@@ -6486,7 +6673,7 @@
         }
       },
       {
-        "defaultMessage": "!!!You haven't added any workspaces yet.",
+        "defaultMessage": "!!!You haven't created any workspaces yet.",
         "end": {
           "column": 3,
           "line": 27

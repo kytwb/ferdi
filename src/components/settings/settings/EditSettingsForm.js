@@ -7,6 +7,7 @@ import { defineMessages, intlShape } from 'react-intl';
 import Form from '../../../lib/Form';
 import Button from '../../ui/Button';
 import Toggle from '../../ui/Toggle';
+import ToggleRaw from '../../ui/ToggleRaw';
 import Select from '../../ui/Select';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
@@ -170,6 +171,7 @@ export default @observer class EditSettingsForm extends Component {
     hibernationEnabled: PropTypes.bool.isRequired,
     isDarkmodeEnabled: PropTypes.bool.isRequired,
     isAdaptableDarkModeEnabled: PropTypes.bool.isRequired,
+    isNightlyEnabled: PropTypes.bool.isRequired,
     openProcessManager: PropTypes.func.isRequired,
   };
 
@@ -224,6 +226,7 @@ export default @observer class EditSettingsForm extends Component {
       isDarkmodeEnabled,
       openProcessManager,
       isTodosActivated,
+      isNightlyEnabled,
     } = this.props;
     const { intl } = this.context;
 
@@ -593,6 +596,15 @@ export default @observer class EditSettingsForm extends Component {
               {automaticUpdates && (
               <div>
                 <Toggle field={form.$('beta')} />
+                <ToggleRaw
+                  field={{
+                    value: isNightlyEnabled,
+                    id: 'nightly',
+                    label: 'Include nightly versions',
+                    name: 'Nightly builds',
+                  }}
+                  onChange={window.ferdi.features.nightlyBuilds.toggleFeature}
+                />
                 {updateIsReadyToInstall ? (
                   <Button
                     label={intl.formatMessage(messages.buttonInstallUpdate)}

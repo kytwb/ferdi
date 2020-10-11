@@ -758,6 +758,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "tofran",
+      "name": "Francisco Marques",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5692603?v=4",
+      "profile": "https://tofran.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,

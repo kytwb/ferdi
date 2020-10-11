@@ -54,7 +54,10 @@ a, button {
     }
   }
 
-  &.link { color: $theme-brand-primary; }
+  &.link {
+    color: $theme-brand-primary;
+    cursor: pointer;
+  }
 }
 
 .error-message, .error-message:last-of-type {

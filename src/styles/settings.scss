@@ -329,6 +329,10 @@
     text-align: center;
     width: 100%;
 
+    .settings__empty-state-text {
+      margin-bottom: 1em;
+    }
+
     a.button { margin-top: 40px; }
   }
 
@@ -499,4 +503,8 @@
     margin-left: 5px;
     width: 7px;
   }
+}
+
+.settings__support-badges {
+  a { margin-right: 10px }
 }

@@ -27,7 +27,7 @@
   },
   {
     "id": "settings.services.noServicesAdded",
-    "defaultMessage": "!!!You haven't added any services yet.",
+    "defaultMessage": "!!!Start by adding a service.",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
       "line": 24,

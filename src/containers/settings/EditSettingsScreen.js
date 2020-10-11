@@ -586,6 +586,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
           isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
+          isNightlyEnabled={this.props.stores.settings.app.nightly}
           openProcessManager={() => this.openProcessManager()}
         />
       </ErrorBoundary>
