@@ -52,7 +52,7 @@
   "feature.serviceLimit.limitReached": "You have added {amount} out of {limit} services that are included in your plan. Please upgrade your account to add more services.",
   "feature.shareFranz.action.email": "שלח בתור אימייל",
   "feature.shareFranz.action.facebook": "שיתוף ב-Facebook",
-  "feature.shareFranz.action.twitter": "Share on Twitter",
+  "feature.shareFranz.action.twitter": "שתף בטוויטר",
   "feature.shareFranz.headline": "Ferdi is better together!",
   "feature.shareFranz.shareText.email": "I've added {count} services to Ferdi! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.getferdi.com",
   "feature.shareFranz.shareText.twitter": "I've added {count} services to Ferdi! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.getferdi.com /cc @FerdiMessenger",
