@@ -19,7 +19,7 @@ h2 {
   font-weight: 500;
   letter-spacing: -1px;
   margin-bottom: 25px;
-  margin-top: 55px;
+  margin-top: 5px;
 
   &:first-of-type { margin-top: 0; }
 }
@@ -57,7 +57,10 @@ a, button {
     }
   }
 
-  &.link { color: $theme-brand-primary; }
+  &.link {
+    color: $theme-brand-primary;
+    cursor: pointer;
+  }
 }
 
 .error-message, .error-message:last-of-type {

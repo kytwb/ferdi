@@ -33,8 +33,11 @@ const {
 const mainWindow = remote.getCurrentWindow();
 
 const defaultLocale = DEFAULT_APP_SETTINGS.locale;
+
+const executablePath = isMac ? remote.process.execPath : process.execPath;
 const autoLauncher = new AutoLaunch({
   name: 'Ferdi',
+  path: executablePath,
 });
 
 const CATALINA_NOTIFICATION_HACK_KEY = '_temp_askedForCatalinaNotificationPermissions';
@@ -218,13 +221,16 @@ export default class AppStore extends Store {
     // macOS catalina notifications hack
     // notifications got stuck after upgrade but forcing a notification
     // via `new Notification` triggered the permission request
-    if (isMac && !localStorage.getItem(CATALINA_NOTIFICATION_HACK_KEY)) {
-      // eslint-disable-next-line no-new
-      new window.Notification('Welcome to Franz 5', {
-        body: 'Have a wonderful day & happy messaging.',
-      });
+    if (isMac) {
+      if (!localStorage.getItem(CATALINA_NOTIFICATION_HACK_KEY)) {
+        debug('Triggering macOS Catalina notification permission trigger');
+        // eslint-disable-next-line no-new
+        new window.Notification('Welcome to Ferdi 5', {
+          body: 'Have a wonderful day & happy messaging.',
+        });
 
-      localStorage.setItem(CATALINA_NOTIFICATION_HACK_KEY, true);
+        localStorage.setItem(CATALINA_NOTIFICATION_HACK_KEY, true);
+      }
     }
   }
 
@@ -321,8 +327,10 @@ export default class AppStore extends Store {
 
     try {
       if (enable) {
+        debug('enabling launch on startup', executablePath);
         autoLauncher.enable();
       } else {
+        debug('disabling launch on startup');
         autoLauncher.disable();
       }
     } catch (err) {

@@ -66,6 +66,10 @@ const messages = defineMessages({
     id: 'pricing.features.adFree',
     defaultMessage: '!!!Forever ad-free',
   },
+  appDelayEnabled: {
+    id: 'pricing.features.appDelaysEnabled',
+    defaultMessage: '!!!Occasional Waiting Screens',
+  },
 });
 
 export class FeatureList extends Component {
@@ -96,6 +100,7 @@ export class FeatureList extends Component {
     const features = [];
     if (plan === PLANS.FREE) {
       features.push(
+        messages.appDelayEnabled,
         messages.upToThreeServices,
         messages.availableRecipes,
         messages.accountSync,

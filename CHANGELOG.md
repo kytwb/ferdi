@@ -1,3 +1,159 @@
+# [5.6.0-beta.1](https://github.com/getferdi/ferdi/compare/v5.5.0...v5.6.0-beta.1) (2020-06-14)
+
+### Features
+- Make the notifications badge work with LauncherAPI-compliant (#736) 💖 @gabspeck
+
+### Minor changes
+- Update node-sass to 4.14.0 for compatibility with Node 14.x (#656) 💖 @dpeukert
+- Change Keyboard shortcut tooltip text in Sidebar for Settings (#665) 💖 @sampathBlam
+- Restore "delete service" option in sidebar (#692) 💖 @sampathBlam
+- Add Google Tasks to Todo providers (#695) 💖 @dannyqiu
+- Restore window last closed maximize/fullscreen state (#733) 💖 @dannyqiu
+- Add password hashing to lock password (#694)
+- Close/open window when clicking on tray menu item (#630) 💖 @dandelionadia
+- Use Tray popUpContextMenu on macOS/Windows only (#741)
+- Setup nightly releases deployment pipeline (#730)
+- Make Tray icons more robust on Linux (#748) 💖 @kris7t
+- Load disable hibernation per service status on startup (#754) 💖 @kris7t
+- Update global user agent to conform with spec (#779) 💖 @dannyqiu
+
+### Bug Fixes
+- Prevent unnecessary electron popup windows for links (#685) 💖 @mahadevans87
+- Refactor locking feature (#693)
+- Review launch on startup for macOS, start Ferdi app, not renderer (#696) 💖 @dannyqiu
+- Fix TodosWebview user agent (#713) 💖 @mahadevans87
+- Fix crash when using Password Lock with TouchID API unavailable (#737) 💖 @mahadevans87
+- Fix setting of webview disablewebsecurity attribute (#772) 💖 @dannyqiu
+
+# [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
+### Features
+- Merge Franz 5.5.0-beta.2
+- Add modifyRequestHeaders, enable properly setting headers for services (#639), 💖 @mahadevans87 @sampathBlam 
+- Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
+- Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
+- Add option to start Ferdi minimized (#490, #534)
+- Add option to show draggable window area on macOS (#304, #532)
+- Add support for Adaptable Dark Mode on Windows (#548), 💖 @Room4O4 & @mahadevans87
+- Add notification & audio toggle action in tray context menu (#542), 💖 @Room4O4 & @mahadevans87
+- Add Dark Reader settings (#531, #568), 💖 @Room4O4 & @mahadevans87
+- Add support for 11 new services and improve existing ones, 💖 @rctneil @JakeSteam @sampathBlam @tpopela @RoiArthurB
+- Add support for unlocking with Touch ID (#367)
+- Add find in page feature (#67) (#432)
+- Add custom dark mode handler support (#445)
+- Add option to disable reload after resume (#442), 💖 @n0emis
+- Add custom JS/CSS to services (#83)
+- Add ability to change the services icons size and sidebar width (#153)
+- Differentiate between indirect and direct notifications (#590), 💖 @Room4O4 @mahadevans87 @FeikoJoosten @sampathBlam
+- Add setting to keep service in hibernation after startup (#577, #584)
+
+### Minor changes
+- Improve user onboarding (#493)
+- Improve "Updates" section in settings (#506), 💖 @yourcontact
+- Improve information about Franz Premium and Teams
+- Hide user lastname on Ferdi servers as it is not stored
+- Improve draggable window area height for macOS (#304, #479)
+- Remove server setting from settings screen (#516), 💖 @mrassili
+- Update Electron to 8.1.1 (#480)
+- Window title now reflects service name (#213), 💖 @gmarec
+- Improve system tray icon behaviour (#307)
+- Improve navigation bar behaviour setting (#270)
+- Ferdi is now available as Flatpak on Flathub (#323), 💖 @lhw
+- Add automatic local recipe updates
+- Add option to start Ferdi in system tray (#331), 💖 @jereksel 
+- Add better support for macOS dark mode
+- Add better seperation in settings
+- Change Sentry telemetry to be opt-in only (#160)
+- Remove excess code from Franz's hibernate feature (#609)
+- Refocus Webview only for active service (#610), 💖 @Room4O4 & @mahadevans87
+- Use GitHub notifications center and direct notifications (getferdi/recipes#133)
+- Switch back to original Telegram, add Telegram React (getferdi/recipes#132)
+- Fix notifications for various services, 💖 @FeikoJoosten
+- Add support for indirect messages for various services, 💖 @FeikoJoosten
+- Use correct Riot icon (getferdi/recipes#125), 💖 @halms
+- Remove incorrectly placed icons (getferdi/recipes#126), 💖 @halms
+- Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
+- Remove automatic reloading from WhatsApp
+- Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
+
+### Bug fixes
+- Fix cache clearing not working in Windows 10 (#541, #544), 💖 @Room4O4 & @mahadevans87
+- Fix Home button in navigation bar not correctly navigating (#571, #573), 💖 @Room4O4 & @mahadevans87
+- Fix and enhance context menu (#357) (#413) (#452) (#354) (#227)
+- Fix regresssion around muting services (#428), 💖 @dpeukert
+- Fix app unusable without an account on Windows since v5.4.0 (#253)
+- Fix services URL validation/harmonization (#276)
+- Fix app failing to properly lock itself at startup resulting in shortcuts not working (#377) (#362)
+- Fix shortcuts not working when locked (#404)
+- Fix missing Slack services custom icons (#290)
+- Fix app possibly unusable when using faulty translations (#340)
+- Fix Dark Mode setting on Windows (#347)
+- Fix login problems in Google services
+- Fix Dark Reader blocking services from loading (#285)
+- Fix incorrect body closing tag (#330), 💖 @jereksel
+- Fix DarkReader translation problem (#593)
+- Fix system tray icon tooltip text (#648), 💖 @sampathBlam
+- Enable Dark Reader settings to follow the accent color (#646), 💖 @sampathBlam
+
+### Build changes
+- Add retry commands to flaky build steps (#498)
+- Run utility scripts pre-commit instead of pre-push (#515)
+- Sign Windows binaries (#635, #633, #112)
+
+# [5.5.0-gm.2](https://github.com/getferdi/ferdi/compare/v5.5.0-gm...v5.5.0-gm.2) (2020-04-23)
+### Features
+- Differentiate between indirect and direct notifications (#590), 💖 @Room4O4 @mahadevans87 @FeikoJoosten @sampathBlam
+- Add setting to keep service in hibernation after startup (#577, #584)
+
+### Minor changes
+- Remove excess code from Franz's hibernate feature (#609)
+- Refocus Webview only for active service (#610), 💖 @Room4O4 & @mahadevans87
+- Use GitHub notifications center and direct notifications (getferdi/recipes#133)
+- Switch back to original Telegram, add Telegram React (getferdi/recipes#132)
+- Fix notifications for various services, 💖 @FeikoJoosten
+- Add support for indirect messages for various services, 💖 @FeikoJoosten
+- Use correct Riot icon (getferdi/recipes#125), 💖 @halms
+- Remove incorrectly placed icons (getferdi/recipes#126), 💖 @halms
+- Fix slack draft notifications (getferdi/recipes#127), 💖 @Serubin
+- Remove automatic reloading from WhatsApp
+- Update Microsoft Teams to allow Desktop Sharing (getferdi/recipes#116), 💖 @Gautasmi
+- Organize settings with horizontal tabs (#569), 💖 @yourcontact
+- Improve cache clearing UI feedback (#620), 💖 @saruwman
+
+### Bug Fixes
+- Fix DarkReader translation problem (#593)
+
+## [5.5.0-gm](https://github.com/getferdi/ferdi/compare/v5.4.4-beta.3...v5.5.0-gm) (2020-04-19)
+### Features
+- Merge Franz 5.5.0-beta.2
+- Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
+- Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
+- Add option to start Ferdi minimized (#490, #534)
+- Add option to show draggable window area on macOS (#304, #532)
+- Add support for Adaptable Dark Mode on Windows (#548), 💖 @Room4O4 & @mahadevans87
+- Add notification & audio toggle action in tray context menu (#542), 💖 @Room4O4 & @mahadevans87
+- Add Dark Reader settings (#531, #568), 💖 @Room4O4 & @mahadevans87
+- Add support for 11 new services and improve existing ones, 💖 @rctneil @JakeSteam @sampathBlam @tpopela @RoiArthurB
+
+### Minor changes
+- Improve user onboarding (#493)
+- Improve "Updates" section in settings (#506), 💖 @yourcontact
+- Improve information about Franz Premium and Teams
+- Improve user scripts (#559)
+- Hide user lastname on Ferdi servers as it is not stored
+- Improve draggable window area height for macOS (#304, #479)
+- Remove server setting from settings screen (#516), 💖 @mrassili
+- Update Electron to 8.1.1 (#480)
+
+### Bug fixes
+- Fix cache clearing not working in Windows 10 (#541, #544), 💖 @Room4O4 & @mahadevans87
+- Fix Home button in navigation bar not correctly navigating (#571, #573), 💖 @Room4O4 & @mahadevans87
+
+### Build changes
+- Add retry commands to flaky build steps (#498)
+- Run utility scripts pre-commit instead of pre-push (#515)
+
 # [5.4.3](https://github.com/getferdi/ferdi/compare/v5.4.0...v5.4.3)
 ### Features
 - Add inactivity lock #179
@@ -40,7 +196,7 @@
 - Attempt at making "About Ferdi" consistent across platforms #47 (comment)
 - Attempt at fixing "Launch on start" feature on Linux #63
 - Add "Quick Switch" feature
-- Add universal Dark-Mode via the [DarkReader extension](https://github.com/darkreader/darkreader)
+- Add universal Dark-Mode via the [Dark Reader extension](https://github.com/darkreader/darkreader)
 - Add "Scheduled Do-not-Disturb" feature
 
 # [5.3.3](https://github.com/getferdi/ferdi/compare/v5.3.2...v5.3.3) (2019-09-18)

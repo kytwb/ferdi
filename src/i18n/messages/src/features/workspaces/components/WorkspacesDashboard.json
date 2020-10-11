@@ -14,7 +14,7 @@
   },
   {
     "id": "settings.workspaces.noWorkspacesAdded",
-    "defaultMessage": "!!!You haven't added any workspaces yet.",
+    "defaultMessage": "!!!You haven't created any workspaces yet.",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
       "line": 24,

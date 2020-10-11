@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Available Services",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 20,
+      "line": 21,
       "column": 12
     },
     "end": {
-      "line": 23,
+      "line": 24,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Search service",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 24,
+      "line": 25,
       "column": 17
     },
     "end": {
-      "line": 27,
+      "line": 28,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Most popular",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 28,
+      "line": 29,
       "column": 22
     },
     "end": {
-      "line": 31,
+      "line": 32,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!All services",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 32,
+      "line": 33,
       "column": 14
     },
     "end": {
-      "line": 35,
+      "line": 36,
       "column": 3
     }
   },
@@ -56,24 +56,24 @@
     "defaultMessage": "!!!Custom Services",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 36,
+      "line": 37,
       "column": 17
     },
     "end": {
-      "line": 39,
+      "line": 40,
       "column": 3
     }
   },
   {
     "id": "settings.recipes.nothingFound",
-    "defaultMessage": "!!!Sorry, but no service matched your search term.",
+    "defaultMessage": "!!!Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option:",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 40,
+      "line": 41,
       "column": 16
     },
     "end": {
-      "line": 43,
+      "line": 44,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Service successfully added",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 44,
+      "line": 45,
       "column": 31
     },
     "end": {
-      "line": 47,
+      "line": 48,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Missing a service?",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 48,
+      "line": 49,
       "column": 18
     },
     "end": {
-      "line": 51,
+      "line": 52,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!To add a custom service, copy the recipe folder into:",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 52,
+      "line": 53,
       "column": 21
     },
     "end": {
-      "line": 55,
+      "line": 56,
       "column": 3
     }
   },
@@ -121,11 +121,11 @@
     "defaultMessage": "!!!Open directory",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 56,
+      "line": 57,
       "column": 14
     },
     "end": {
-      "line": 59,
+      "line": 60,
       "column": 3
     }
   },
@@ -134,11 +134,11 @@
     "defaultMessage": "!!!Developer Documentation",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 60,
+      "line": 61,
       "column": 15
     },
     "end": {
-      "line": 63,
+      "line": 64,
       "column": 3
     }
   },
@@ -147,11 +147,11 @@
     "defaultMessage": "!!!Custom 3rd Party Recipes",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 64,
+      "line": 65,
       "column": 25
     },
     "end": {
-      "line": 67,
+      "line": 68,
       "column": 3
     }
   },
@@ -160,11 +160,11 @@
     "defaultMessage": "!!!Community 3rd Party Recipes",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 68,
+      "line": 69,
       "column": 28
     },
     "end": {
-      "line": 71,
+      "line": 72,
       "column": 3
     }
   },
@@ -173,11 +173,11 @@
     "defaultMessage": "!!!Your Development Service Recipes",
     "file": "src/components/settings/recipes/RecipesDashboard.js",
     "start": {
-      "line": 72,
+      "line": 73,
       "column": 22
     },
     "end": {
-      "line": 75,
+      "line": 76,
       "column": 3
     }
   }

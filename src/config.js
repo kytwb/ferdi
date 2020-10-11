@@ -60,6 +60,7 @@ export const TODO_APPS = {
   'https://app.nozbe.com/#login': 'Nozbe',
   'https://www.rememberthemilk.com/login/': 'Remember The Milk',
   'https://desktop.any.do/': 'Any.do',
+  'https://tasks.google.com/embed/?origin=https%3A%2F%2Fcalendar.google.com&fullWidth=1': 'Google Tasks',
   isUsingCustomTodoService: 'Other service',
 };
 
@@ -97,7 +98,7 @@ export const DEFAULT_APP_SETTINGS = {
   showMessageBadgeWhenMuted: true,
   showDragArea: false,
   enableSpellchecking: true,
-  spellcheckerLanguage: 'en-us',
+  spellcheckerLanguage: '["en-US"]',
   darkMode: process.platform === 'darwin' ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
   locale: '',
   fallbackLocale: 'en-US',
@@ -118,6 +119,7 @@ export const DEFAULT_APP_SETTINGS = {
   scheduledDNDStart: '17:00',
   scheduledDNDEnd: '09:00',
   hibernate: false,
+  hibernateOnStartup: true,
   hibernationStrategy: 300,
   inactivityLock: 0,
   automaticUpdates: true,
@@ -128,6 +130,7 @@ export const DEFAULT_APP_SETTINGS = {
   serviceRibbonWidth: 68,
   iconSize: iconSizeBias,
   sentry: false,
+  nightly: false,
   navigationBarBehaviour: 'custom',
   useVerticalStyle: false,
   alwaysShowWorkspaces: false,

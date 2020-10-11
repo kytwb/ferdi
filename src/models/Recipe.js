@@ -38,6 +38,8 @@ export default class Recipe {
 
   disablewebsecurity = false;
 
+  autoHibernate = false;
+
   constructor(data) {
     if (!data) {
       throw Error('Recipe config not valid');
@@ -77,6 +79,8 @@ export default class Recipe {
     this.urlInputSuffix = data.config.urlInputSuffix || this.urlInputSuffix;
 
     this.disablewebsecurity = data.config.disablewebsecurity || this.disablewebsecurity;
+
+    this.autoHibernate = data.config.autoHibernate || this.autoHibernate;
 
     this.message = data.config.message || this.message;
   }

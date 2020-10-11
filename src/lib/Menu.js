@@ -921,7 +921,7 @@ export default class FranzMenu {
         tpl[5].submenu = this.todosMenu();
       }
     } else {
-      const touchIdEnabled = this.stores.settings.app.useTouchIdToUnlock && systemPreferences.canPromptTouchID();
+      const touchIdEnabled = isMac ? (this.stores.settings.app.useTouchIdToUnlock && systemPreferences.canPromptTouchID()) : false;
 
       tpl[0].submenu.unshift({
         label: intl.formatMessage(menuItems.touchId),

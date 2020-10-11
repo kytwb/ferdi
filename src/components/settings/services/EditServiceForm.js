@@ -12,6 +12,7 @@ import Service from '../../../models/Service';
 import Tabs, { TabItem } from '../../ui/Tabs';
 import Input from '../../ui/Input';
 import Toggle from '../../ui/Toggle';
+import Slider from '../../ui/Slider';
 import Button from '../../ui/Button';
 import ImageUpload from '../../ui/ImageUpload';
 import Select from '../../ui/Select';
@@ -19,6 +20,8 @@ import Select from '../../ui/Select';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
 import { serviceLimitStore } from '../../../features/serviceLimit';
+
+import { isMac } from '../../../environment';
 
 const messages = defineMessages({
   saveService: {
@@ -93,6 +96,10 @@ const messages = defineMessages({
     id: 'settings.service.form.isMutedInfo',
     defaultMessage: '!!!When disabled, all notification sounds and audio playback are muted',
   },
+  disableHibernationInfo: {
+    id: 'settings.service.form.disableHibernationInfo',
+    defaultMessage: '!!!You currently have hibernation enabled but you can disable hibernation for individual services using this option.',
+  },
   headlineNotifications: {
     id: 'settings.service.form.headlineNotifications',
     defaultMessage: '!!!Notifications',
@@ -104,6 +111,10 @@ const messages = defineMessages({
   headlineGeneral: {
     id: 'settings.service.form.headlineGeneral',
     defaultMessage: '!!!General',
+  },
+  headlineDarkReaderSettings: {
+    id: 'settings.service.form.headlineDarkReaderSettings',
+    defaultMessage: '!!!Dark Reader Settings',
   },
   iconDelete: {
     id: 'settings.service.form.iconDelete',
@@ -149,6 +160,7 @@ export default @observer class EditServiceForm extends Component {
     isProxyFeatureEnabled: PropTypes.bool.isRequired,
     isServiceProxyIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
+    isHibernationFeatureActive: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -214,6 +226,7 @@ export default @observer class EditServiceForm extends Component {
       isProxyFeatureEnabled,
       isServiceProxyIncludedInCurrentPlan,
       isSpellcheckerIncludedInCurrentPlan,
+      isHibernationFeatureActive,
     } = this.props;
     const { intl } = this.context;
 
@@ -359,8 +372,26 @@ export default @observer class EditServiceForm extends Component {
 
                 <div className="settings__settings-group">
                   <h3>{intl.formatMessage(messages.headlineGeneral)}</h3>
-                  <Toggle field={form.$('isDarkModeEnabled')} />
                   <Toggle field={form.$('isEnabled')} />
+                  {isHibernationFeatureActive && (
+                    <>
+                      <Toggle field={form.$('disableHibernation')} />
+                      <p className="settings__help">
+                        {intl.formatMessage(messages.disableHibernationInfo)}
+                      </p>
+                    </>
+                  )}
+                  <Toggle field={form.$('isDarkModeEnabled')} />
+                  {form.$('isDarkModeEnabled').value
+                    && (
+                      <>
+                        <h3>{intl.formatMessage(messages.headlineDarkReaderSettings)}</h3>
+                        <Slider field={form.$('darkReaderBrightness')} />
+                        <Slider field={form.$('darkReaderContrast')} />
+                        <Slider field={form.$('darkReaderSepia')} />
+                      </>
+                    )
+                  }
                 </div>
               </div>
               <div className="service-icon">
@@ -372,14 +403,16 @@ export default @observer class EditServiceForm extends Component {
               </div>
             </div>
 
-            <PremiumFeatureContainer
-              condition={!isSpellcheckerIncludedInCurrentPlan}
-              gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
-            >
-              <div className="settings__settings-group">
-                <Select field={form.$('spellcheckerLanguage')} />
-              </div>
-            </PremiumFeatureContainer>
+            {!isMac && (
+              <PremiumFeatureContainer
+                condition={!isSpellcheckerIncludedInCurrentPlan}
+                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
+              >
+                <div className="settings__settings-group">
+                  <Select field={form.$('spellcheckerLanguage')} multiple />
+                </div>
+              </PremiumFeatureContainer>
+            )}
 
             {isProxyFeatureEnabled && (
               <PremiumFeatureContainer

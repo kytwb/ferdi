@@ -40,7 +40,7 @@ const messages = defineMessages({
   },
   supportFerdi: {
     id: 'settings.navigation.supportFerdi',
-    defaultMessage: '!!!Support Ferdi',
+    defaultMessage: '!!!About Ferdi',
   },
   logout: {
     id: 'settings.navigation.logout',

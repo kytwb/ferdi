@@ -99,7 +99,7 @@ export default class UserStore extends Store {
 
     // Reactions
     this.registerReactions([
-      this._requireAuthenticatedUser,
+      this._requireAuthenticatedUser.bind(this),
       this._getUserData.bind(this),
       this._resetTrialActivationState.bind(this),
     ]);
@@ -321,7 +321,7 @@ export default class UserStore extends Store {
     }
 
     const { router } = this.stores;
-    const currentRoute = router.location.pathname;
+    const currentRoute = window.location.hash;
     if (!this.isLoggedIn
       && currentRoute.includes('token=')) {
       router.push(this.WELCOME_ROUTE);

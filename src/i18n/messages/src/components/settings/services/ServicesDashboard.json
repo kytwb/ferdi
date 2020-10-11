@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Your services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 15,
+      "line": 16,
       "column": 12
     },
     "end": {
-      "line": 18,
+      "line": 19,
       "column": 3
     }
   },
@@ -17,24 +17,24 @@
     "defaultMessage": "!!!Search service",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 19,
+      "line": 20,
       "column": 17
     },
     "end": {
-      "line": 22,
+      "line": 23,
       "column": 3
     }
   },
   {
     "id": "settings.services.noServicesAdded",
-    "defaultMessage": "!!!You haven't added any services yet.",
+    "defaultMessage": "!!!Start by adding a service.",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 23,
+      "line": 24,
       "column": 19
     },
     "end": {
-      "line": 26,
+      "line": 27,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Sorry, but no service matched your search term.",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 27,
+      "line": 28,
       "column": 18
     },
     "end": {
-      "line": 30,
+      "line": 31,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Discover services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 31,
+      "line": 32,
       "column": 20
     },
     "end": {
-      "line": 34,
+      "line": 35,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Could not load your services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 35,
+      "line": 36,
       "column": 25
     },
     "end": {
-      "line": 38,
+      "line": 39,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Try again",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 39,
+      "line": 40,
       "column": 21
     },
     "end": {
-      "line": 42,
+      "line": 43,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Your changes have been saved",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 43,
+      "line": 44,
       "column": 15
     },
     "end": {
-      "line": 46,
+      "line": 47,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Service has been deleted",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 47,
+      "line": 48,
       "column": 15
     },
     "end": {
-      "line": 50,
+      "line": 51,
       "column": 3
     }
   }

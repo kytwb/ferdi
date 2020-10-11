@@ -1,0 +1,41 @@
+[
+  {
+    "id": "connectionLostBanner.message",
+    "defaultMessage": "!!!Oh no! Franz lost the connection to {name}.",
+    "file": "src/components/services/content/ConnectionLostBanner.js",
+    "start": {
+      "line": 15,
+      "column": 8
+    },
+    "end": {
+      "line": 18,
+      "column": 3
+    }
+  },
+  {
+    "id": "connectionLostBanner.informationLink",
+    "defaultMessage": "!!!What happened?",
+    "file": "src/components/services/content/ConnectionLostBanner.js",
+    "start": {
+      "line": 19,
+      "column": 19
+    },
+    "end": {
+      "line": 22,
+      "column": 3
+    }
+  },
+  {
+    "id": "connectionLostBanner.cta",
+    "defaultMessage": "!!!Reload Service",
+    "file": "src/components/services/content/ConnectionLostBanner.js",
+    "start": {
+      "line": 23,
+      "column": 7
+    },
+    "end": {
+      "line": 26,
+      "column": 3
+    }
+  }
+]

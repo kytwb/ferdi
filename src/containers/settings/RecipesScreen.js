@@ -139,6 +139,8 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       ),
     ]) : recipeFilter;
 
+    const customWebsiteRecipe = recipePreviews.all.find(service => service.id === 'franz-custom-website');
+
     const isLoading = recipePreviews.featuredRecipePreviewsRequest.isExecuting
       || recipePreviews.allRecipePreviewsRequest.isExecuting
       || recipes.installRecipeRequest.isExecuting
@@ -150,6 +152,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       <ErrorBoundary>
         <RecipesDashboard
           recipes={allRecipes}
+          customWebsiteRecipe={customWebsiteRecipe}
           isLoading={isLoading}
           addedServiceCount={services.all.length}
           isPremium={user.data.isPremium}
@@ -163,7 +166,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
           recipeDirectory={recipeDirectory}
           openRecipeDirectory={async () => {
             await fs.ensureDir(recipeDirectory);
-            shell.openItem(recipeDirectory);
+            shell.openExternal(`file://${recipeDirectory}`);
           }}
           openDevDocs={() => {
             appActions.openExternalUrl({ url: FRANZ_DEV_DOCS });

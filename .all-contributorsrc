@@ -463,7 +463,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/46404814?v=4",
       "profile": "https://github.com/yourcontact",
       "contributions": [
-        "code"
+        "code",
+        "ideas"
       ]
     },
     {
@@ -472,7 +473,12 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/1255523?v=4",
       "profile": "https://github.com/mahadevans87",
       "contributions": [
-        "code"
+        "code",
+        "ideas",
+        "review",
+        "bug",
+        "doc",
+        "userTesting"
       ]
     },
     {
@@ -489,6 +495,275 @@
       "name": "Sampath Kumar Krishnan",
       "avatar_url": "https://avatars1.githubusercontent.com/u/17728976?v=4",
       "profile": "https://github.com/sampathBlam",
+      "contributions": [
+        "code",
+        "review",
+        "ideas",
+        "bug",
+        "doc",
+        "userTesting"
+      ]
+    },
+    {
+      "login": "saruwman",
+      "name": "saruwman",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/41330038?v=4",
+      "profile": "https://github.com/saruwman",
+      "contributions": [
+        "doc",
+        "code"
+      ]
+    },
+    {
+      "login": "dorukkarinca",
+      "name": "dorukkarinca",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/9303867?v=4",
+      "profile": "https://github.com/dorukkarinca",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "gautamsi",
+      "name": "Gautam Singh",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5769869?v=4",
+      "profile": "https://www.linkedin.com/in/gautamsi",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "FeikoJoosten",
+      "name": "Feiko Joosten",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10920052?v=4",
+      "profile": "https://feikojoosten.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "2bdelghafour",
+      "name": "2bdelghafour",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14219410/small/31ff20f60d352fb46e314f3c180a77b0.jpeg",
+      "profile": "https://crowdin.com/profile/2bdelghafour",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "abdoutanta",
+      "name": "Abderrahim Tantaoui",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14213908/small/5b2fc8166f8a0a2b7313fbf49ee5b6b6.jpeg",
+      "profile": "https://crowdin.com/profile/abdoutanta",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "AndiLeni",
+      "name": "AndiLeni",
+      "avatar_url": "https://www.gravatar.com/avatar/4bd0da860de38afa735425ce2d4e10b5",
+      "profile": "https://crowdin.com/profile/AndiLeni",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "brunofalmada",
+      "name": "Bruno Almada",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14200540/small/f6f1addceeeabc02488f9b08520a902f.jpeg",
+      "profile": "https://crowdin.com/profile/brunofalmada",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Catarino",
+      "name": "Catarino Gonçalo",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14208802/small/07287eb2de671257ca3d6bb4ba1cca67.jpeg",
+      "profile": "https://crowdin.com/profile/Catarino",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "Alzemand",
+      "name": "Edilson Alzemand Sigmaringa Junior",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14184269/small/f5e68247f01988ae7951a282f0fd4d06.jpeg",
+      "profile": "https://crowdin.com/profile/Alzemand",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "MAT-OUT",
+      "name": "MAT-OUT",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14201550/small/68dd2402bf2879bc3ca312d627710400.png",
+      "profile": "https://crowdin.com/profile/MAT-OUT",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "mazzo98",
+      "name": "mazzo98",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/12864917/small/69799b5fd7be2f67282715d5cdfd4ae1.png",
+      "profile": "https://crowdin.com/profile/mazzo98",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "paprika-naught-tiffin-flyspeck",
+      "name": "paprika-naught-tiffin-flyspeck",
+      "avatar_url": "https://www.gravatar.com/avatar/8671ebe7a7164dfa7624fbdbff69ed96",
+      "profile": "https://crowdin.com/profile/paprika-naught-tiffin-flyspeck",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "patrickvalle",
+      "name": "Patrick Valle",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14217484/small/8b73f313ee79fe33625e819cdac86551.jpg",
+      "profile": "https://crowdin.com/profile/patrickvalle",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "peq42",
+      "name": "peq42_",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14155811/small/b62a94dde7ec29948ec6a6af9fd24b1d.png",
+      "profile": "https://crowdin.com/profile/peq42",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "karlinhos",
+      "name": "Pumbinha",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14161139/small/96450eb44c22b3141ab4401e547109b8.png",
+      "profile": "https://crowdin.com/profile/karlinhos",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "dies",
+      "name": "Serhiy Dmytryshyn",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/1/small/e84bcdf6c084ffd52527931f988fb410.png",
+      "profile": "https://crowdin.com/profile/dies",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "SMile61",
+      "name": "SMile61",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/14177585/small/1bb4f6ba39bff3df8f579e61460ce016.png",
+      "profile": "https://crowdin.com/profile/SMile61",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "tinect",
+      "name": "tinect",
+      "avatar_url": "https://crowdin-static.downloads.crowdin.com/avatar/12521988/small/56c2041645746af9e51dd28782b828c3.jpeg",
+      "profile": "https://crowdin.com/profile/tinect",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "gega7",
+      "name": "gega7",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/20799911?v=4",
+      "profile": "https://github.com/gega7",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "tristanplouz",
+      "name": "tristanplouz",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6893466?v=4",
+      "profile": "https://github.com/tristanplouz",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
+    },
+    {
+      "login": "dannyqiu",
+      "name": "Danny Qiu",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1170755?v=4",
+      "profile": "https://github.com/dannyqiu",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "belyazidi56",
+      "name": "Youssef Belyazidi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/35711540?v=4",
+      "profile": "https://github.com/belyazidi56",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "gabspeck",
+      "name": "Gabriel Speckhahn",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/749488?v=4",
+      "profile": "https://github.com/gabspeck",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "dandelionadia",
+      "name": "Nadiia Ridko",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33199975?v=4",
+      "profile": "https://github.com/dandelionadia",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "janhohner",
+      "name": "Jan Hohner",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/649895?v=4",
+      "profile": "https://hohner.dev",
+      "contributions": [
+        "userTesting"
+      ]
+    },
+    {
+      "login": "kris7t",
+      "name": "Kristóf Marussy",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/38888?v=4",
+      "profile": "https://marussy.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "raicerk",
+      "name": "Juan Mora",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4575267?v=4",
+      "profile": "https://cl.linkedin.com/in/juanvalentinmoraruiz",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "tofran",
+      "name": "Francisco Marques",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5692603?v=4",
+      "profile": "https://tofran.com",
       "contributions": [
         "code"
       ]

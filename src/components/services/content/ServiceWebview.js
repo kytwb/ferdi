@@ -41,9 +41,14 @@ class ServiceWebview extends Component {
 
   refocusWebview = () => {
     const { webview } = this;
+    debug('Refocus Webview is called', this.props.service);
     if (!webview) return;
-    webview.view.blur();
-    webview.view.focus();
+    if (this.props.service.isActive) {
+      webview.view.blur();
+      webview.view.focus();
+    } else {
+      debug('Refocus not required - Not active service');
+    }
   };
 
   render() {
@@ -74,7 +79,7 @@ class ServiceWebview extends Component {
         }}
         onUpdateTargetUrl={this.updateTargetUrl}
         useragent={service.userAgent}
-        disablewebsecurity={service.recipe.disablewebsecurity}
+        disablewebsecurity={service.recipe.disablewebsecurity ? true : undefined}
         allowpopups
       />
     );

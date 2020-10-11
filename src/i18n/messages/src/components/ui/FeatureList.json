@@ -193,5 +193,18 @@
       "line": 68,
       "column": 3
     }
+  },
+  {
+    "id": "pricing.features.appDelaysEnabled",
+    "defaultMessage": "!!!Occasional Waiting Screens",
+    "file": "src/components/ui/FeatureList.js",
+    "start": {
+      "line": 69,
+      "column": 19
+    },
+    "end": {
+      "line": 72,
+      "column": 3
+    }
   }
 ]

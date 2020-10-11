@@ -1,0 +1,67 @@
+[
+  {
+    "id": "webControls.goHome",
+    "defaultMessage": "!!!Home",
+    "file": "src/components/services/content/ConnectionBanner.js",
+    "start": {
+      "line": 13,
+      "column": 10
+    },
+    "end": {
+      "line": 16,
+      "column": 3
+    }
+  },
+  {
+    "id": "webControls.openInBrowser",
+    "defaultMessage": "!!!Open in Browser",
+    "file": "src/components/services/content/ConnectionBanner.js",
+    "start": {
+      "line": 17,
+      "column": 17
+    },
+    "end": {
+      "line": 20,
+      "column": 3
+    }
+  },
+  {
+    "id": "webControls.back",
+    "defaultMessage": "!!!Back",
+    "file": "src/components/services/content/ConnectionBanner.js",
+    "start": {
+      "line": 21,
+      "column": 8
+    },
+    "end": {
+      "line": 24,
+      "column": 3
+    }
+  },
+  {
+    "id": "webControls.forward",
+    "defaultMessage": "!!!Forward",
+    "file": "src/components/services/content/ConnectionBanner.js",
+    "start": {
+      "line": 25,
+      "column": 11
+    },
+    "end": {
+      "line": 28,
+      "column": 3
+    }
+  },
+  {
+    "id": "webControls.reload",
+    "defaultMessage": "!!!Reload",
+    "file": "src/components/services/content/ConnectionBanner.js",
+    "start": {
+      "line": 29,
+      "column": 10
+    },
+    "end": {
+      "line": 32,
+      "column": 3
+    }
+  }
+]

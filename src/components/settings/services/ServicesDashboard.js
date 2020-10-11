@@ -7,6 +7,7 @@ import { defineMessages, intlShape } from 'react-intl';
 import SearchInput from '../../ui/SearchInput';
 import Infobox from '../../ui/Infobox';
 import Loader from '../../ui/Loader';
+import FAB from '../../ui/FAB';
 import ServiceItem from './ServiceItem';
 import Appear from '../../ui/effects/Appear';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
@@ -22,7 +23,7 @@ const messages = defineMessages({
   },
   noServicesAdded: {
     id: 'settings.services.noServicesAdded',
-    defaultMessage: '!!!You haven\'t added any services yet.',
+    defaultMessage: '!!!Start by adding a service.',
   },
   noServiceFound: {
     id: 'settings.recipes.nothingFound',
@@ -94,7 +95,7 @@ export default @observer class ServicesDashboard extends Component {
         </div>
         <LimitReachedInfobox />
         <div className="settings__body">
-          {!isLoading && (
+          {services.length !== 0 && !isLoading && (
             <SearchInput
               placeholder={intl.formatMessage(messages.searchService)}
               onChange={needle => filterServices({ needle })}
@@ -142,7 +143,7 @@ export default @observer class ServicesDashboard extends Component {
             <div className="align-middle settings__empty-state">
               <p className="settings__empty-text">
                 <span className="emoji">
-                  <img src="./assets/images/emoji/sad.png" alt="" />
+                  <img src="./assets/images/emoji/star.png" alt="" />
                 </span>
                 {intl.formatMessage(messages.noServicesAdded)}
               </p>
@@ -175,6 +176,12 @@ export default @observer class ServicesDashboard extends Component {
               </tbody>
             </table>
           )}
+
+          <FAB>
+            <Link to="/settings/recipes">
+              +
+            </Link>
+          </FAB>
         </div>
       </div>
     );

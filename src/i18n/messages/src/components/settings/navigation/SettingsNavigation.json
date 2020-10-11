@@ -79,7 +79,7 @@
   },
   {
     "id": "settings.navigation.supportFerdi",
-    "defaultMessage": "!!!Support Ferdi",
+    "defaultMessage": "!!!About Ferdi",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
       "line": 41,

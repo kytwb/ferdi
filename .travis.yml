@@ -1,4 +1,5 @@
 matrix:
+  fast_finish: true
   include:
     - os: linux
       dist: xenial
@@ -11,26 +12,56 @@ matrix:
             - libxkbfile-dev
             - rpm
     - os: osx
+      if: branch IN (nightly, release)
       osx_image: xcode11
 
 language: node_js
-# Handle git submodules yourself
 git:
   submodules: false
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
-before_install:
-  - git submodule update --init --recursive
-install:
-  - echo do nothing
-before_script:
-  - travis_retry npx lerna bootstrap
-  - travis_retry npm install node-sass -g
-script:
-  - travis_retry travis_wait 100 npm run build
+branches:
+  only:
+    - develop
+    - release
+    - nightly
 cache: npm
 
-branches:
-  except:
-    - i18n
-    - l10n_master
-    - l10n_develop
+before_install:
+  - git submodule update --init --recursive
+  - |
+    if [ $TRAVIS_BRANCH == "nightly" ]; then
+      git remote add source https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
+      git fetch source
+      git merge --no-ff --commit --no-edit source/develop
+      CHANGES_COUNT=$(git diff --stat HEAD origin/nightly | wc -l)
+      echo $TRAVIS_EVENT_TYPE
+      echo $changes
+      if [ $CHANGES_COUNT -eq 0 -a $TRAVIS_EVENT_TYPE == "cron" ]; then
+        travis_terminate 0;
+      else
+        git submodule update --remote --force
+        git add .
+        git diff-index --quiet HEAD || git commit -m "Update submodules"
+      fi
+    fi
+install:
+  - cd recipes && npm install && npm run package && cd ..
+  - travis_retry npx lerna bootstrap
+  - travis_retry npm install node-sass -g
+before_script:
+  - npm run lint && npm run test
+script:
+  - |
+    if [ $TRAVIS_BRANCH == "release" ]; then
+      echo "Building..."
+      travis_retry travis_wait 100 npm run build 
+    fi
+  - |
+    if [ $TRAVIS_BRANCH == "nightly" ]; then
+      npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]"
+      echo "Building..."
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
+      if [ $TRAVIS_OS_NAME == "osx" ]; then
+        git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
+        git push --quiet --set-upstream nightly HEAD:nightly >/dev/null 2>&1
+      fi
+    fi

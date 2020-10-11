@@ -3,6 +3,7 @@ import {
   BrowserWindow,
   shell,
   ipcMain,
+  session,
 } from 'electron';
 import isDevMode from 'electron-is-dev';
 import fs from 'fs-extra';
@@ -34,9 +35,11 @@ import {
 import { mainIpcHandler as basicAuthHandler } from './features/basicAuth';
 import ipcApi from './electron/ipc-api';
 import Tray from './lib/Tray';
+import DBus from './lib/DBus';
 import Settings from './electron/Settings';
 import handleDeepLink from './electron/deepLinking';
 import { isPositionValid } from './electron/windowUtils';
+// import askFormacOSPermissions from './electron/macOSPermissions';
 import { appId } from './package.json'; // eslint-disable-line import/no-unresolved
 import './electron/exception';
 
@@ -46,9 +49,20 @@ import {
 } from './config';
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
-/* eslint-enable import/first */
+import userAgent from './helpers/userAgent-helpers';
 
 const debug = require('debug')('Ferdi:App');
+
+// From Electron 9 onwards, app.allowRendererProcessReuse = true by default. This causes the app to crash on Windows due to the
+// Electron Windows Notification API crashing. Setting this to false fixes the issue until the electron team fixes the notification bug
+// More Info - https://github.com/electron/electron/issues/18397
+if (isWindows) {
+  app.allowRendererProcessReuse = false;
+}
+
+// Globally set useragent to fix user agent override in service workers
+debug('Set userAgent to ', userAgent());
+app.userAgentFallback = userAgent();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -146,8 +160,8 @@ const createWindow = () => {
   const mainWindowState = windowStateKeeper({
     defaultWidth: DEFAULT_WINDOW_OPTIONS.width,
     defaultHeight: DEFAULT_WINDOW_OPTIONS.height,
-    maximize: false,
-    fullScreen: false,
+    maximize: true, // Automatically maximizes the window, if it was last clsoed maximized
+    fullScreen: true, // Automatically restores the window to full screen, if it was last closed full screen
   });
 
   let posX = mainWindowState.x || DEFAULT_WINDOW_OPTIONS.x;
@@ -182,7 +196,16 @@ const createWindow = () => {
       nodeIntegration: true,
       webviewTag: true,
       preload: path.join(__dirname, 'sentry.js'),
+      enableRemoteModule: true,
     },
+  });
+
+  app.on('web-contents-created', (e, contents) => {
+    if (contents.getType() === 'webview') {
+      contents.on('new-window', (event) => {
+        event.preventDefault();
+      });
+    }
   });
 
   mainWindow.webContents.on('did-finish-load', () => {
@@ -198,6 +221,9 @@ const createWindow = () => {
   // Initialize System Tray
   const trayIcon = new Tray();
 
+  // Initialize DBus interface
+  const dbus = new DBus(trayIcon);
+
   // Initialize ipcApi
   ipcApi({
     mainWindow,
@@ -207,6 +233,9 @@ const createWindow = () => {
     },
     trayIcon,
   });
+
+  // Connect to the DBus after ipcApi took care of the System Tray
+  dbus.start();
 
   // Manage Window State
   mainWindowState.manage(mainWindow);
@@ -250,6 +279,7 @@ const createWindow = () => {
         mainWindow.hide();
       }
     } else {
+      dbus.stop();
       app.quit();
     }
   });
@@ -290,6 +320,11 @@ const createWindow = () => {
       trayIcon.hide();
     }
   });
+
+  // Asking for permissions like this currently crashes Ferdi
+  // if (isMac) {
+  //   askFormacOSPermissions();
+  // }
 
   mainWindow.on('show', () => {
     debug('Skip taskbar: true');
@@ -381,6 +416,32 @@ ipcMain.on('feature-basic-auth-credentials', (e, { user, password }) => {
 
   authCallback(user, password);
   authCallback = noop;
+});
+
+ipcMain.on('open-browser-window', (e, { disposition, url }, serviceId) => {
+  if (disposition === 'foreground-tab') {
+    const serviceSession = session.fromPartition(`persist:service-${serviceId}`);
+    const child = new BrowserWindow({ parent: mainWindow, webPreferences: { session: serviceSession } });
+    child.show();
+    child.loadURL(url);
+  }
+  debug('Received open-browser-window', disposition, url);
+});
+
+ipcMain.on('modifyRequestHeaders', (e, { modifiedRequestHeaders, serviceId }) => {
+  debug('Received modifyRequestHeaders', modifiedRequestHeaders, serviceId);
+  modifiedRequestHeaders.forEach((headerFilterSet) => {
+    const { headers, requestFilters } = headerFilterSet;
+    session.fromPartition(`persist:service-${serviceId}`).webRequest.onBeforeSendHeaders(requestFilters, (details, callback) => {
+      for (const key in headers) {
+        if (Object.prototype.hasOwnProperty.call(headers, key)) {
+          const value = headers[key];
+          details.requestHeaders[key] = value;
+        }
+      }
+      callback({ requestHeaders: details.requestHeaders });
+    });
+  });
 });
 
 ipcMain.on('feature-basic-auth-cancel', () => {

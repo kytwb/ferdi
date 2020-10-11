@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Change server",
     "file": "src/components/auth/ChangeServer.js",
     "start": {
-      "line": 11,
+      "line": 13,
       "column": 12
     },
     "end": {
-      "line": 14,
+      "line": 16,
       "column": 3
     }
   },
@@ -17,11 +17,50 @@
     "defaultMessage": "!!!Server",
     "file": "src/components/auth/ChangeServer.js",
     "start": {
-      "line": 15,
+      "line": 17,
       "column": 9
     },
     "end": {
-      "line": 18,
+      "line": 20,
+      "column": 3
+    }
+  },
+  {
+    "id": "changeserver.warning",
+    "defaultMessage": "!!!Extra settings offered by Ferdi will not be saved",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 21,
+      "column": 11
+    },
+    "end": {
+      "line": 24,
+      "column": 3
+    }
+  },
+  {
+    "id": "changeserver.customServerLabel",
+    "defaultMessage": "!!!Custom server",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 25,
+      "column": 21
+    },
+    "end": {
+      "line": 28,
+      "column": 3
+    }
+  },
+  {
+    "id": "changeserver.urlError",
+    "defaultMessage": "!!!Enter a valid URL",
+    "file": "src/components/auth/ChangeServer.js",
+    "start": {
+      "line": 29,
+      "column": 12
+    },
+    "end": {
+      "line": 32,
       "column": 3
     }
   },
@@ -30,11 +69,11 @@
     "defaultMessage": "!!!Submit",
     "file": "src/components/auth/ChangeServer.js",
     "start": {
-      "line": 19,
+      "line": 33,
       "column": 10
     },
     "end": {
-      "line": 22,
+      "line": 36,
       "column": 3
     }
   }

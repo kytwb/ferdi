@@ -16,6 +16,7 @@ import {
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
+import { hash } from '../../helpers/password-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
@@ -69,6 +70,10 @@ const messages = defineMessages({
   hibernate: {
     id: 'settings.app.form.hibernate',
     defaultMessage: '!!!Enable service hibernation',
+  },
+  hibernateOnStartup: {
+    id: 'settings.app.form.hibernateOnStartup',
+    defaultMessage: '!!!Keep services in hibernation on startup',
   },
   hibernationStrategy: {
     id: 'settings.app.form.hibernationStrategy',
@@ -189,6 +194,14 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
     intl: intlShape,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      lockedPassword: '',
+    };
+  }
+
   onSubmit(settingsData) {
     const { todos, workspaces } = this.props.stores;
     const {
@@ -198,6 +211,10 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       todos: todosActions,
       workspaces: workspaceActions,
     } = this.props.actions;
+
+    this.setState({
+      lockedPassword: settingsData.lockedPassword,
+    });
 
     app.launchOnStartup({
       enable: settingsData.autoLaunchOnStart,
@@ -216,11 +233,12 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
+        hibernateOnStartup: settingsData.hibernateOnStartup,
         hibernationStrategy: settingsData.hibernationStrategy,
         predefinedTodoServer: settingsData.predefinedTodoServer,
         customTodoServer: settingsData.customTodoServer,
         lockingFeatureEnabled: settingsData.lockingFeatureEnabled,
-        lockedPassword: settingsData.lockedPassword,
+        lockedPassword: hash(String(settingsData.lockedPassword)),
         useTouchIdToUnlock: settingsData.useTouchIdToUnlock,
         inactivityLock: settingsData.inactivityLock,
         scheduledDNDEnabled: settingsData.scheduledDNDEnabled,
@@ -239,7 +257,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         showMessageBadgeWhenMuted: settingsData.showMessageBadgeWhenMuted,
         showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
-        spellcheckerLanguage: settingsData.spellcheckerLanguage,
+        spellcheckerLanguage: JSON.stringify(settingsData.spellcheckerLanguage),
         beta: settingsData.beta, // we need this info in the main process as well
         automaticUpdates: settingsData.automaticUpdates, // we need this info in the main process as well
         locale: settingsData.locale, // we need this info in the main process as well
@@ -278,6 +296,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
       app, settings, user, todos, workspaces,
     } = this.props.stores;
     const { intl } = this.context;
+    const { lockedPassword } = this.state;
 
     const locales = getSelectOptions({
       locales: APP_LOCALES,
@@ -371,6 +390,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.hibernate,
           default: DEFAULT_APP_SETTINGS.hibernate,
         },
+        hibernateOnStartup: {
+          label: intl.formatMessage(messages.hibernateOnStartup),
+          value: settings.all.app.hibernateOnStartup,
+          default: DEFAULT_APP_SETTINGS.hibernateOnStartup,
+        },
         hibernationStrategy: {
           label: intl.formatMessage(messages.hibernationStrategy),
           value: settings.all.app.hibernationStrategy,
@@ -395,7 +419,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         },
         lockedPassword: {
           label: intl.formatMessage(messages.lockPassword),
-          value: settings.all.app.lockedPassword,
+          value: lockedPassword,
           default: '',
           type: 'password',
         },
@@ -582,6 +606,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
           isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
+          isNightlyEnabled={this.props.stores.settings.app.nightly}
           openProcessManager={() => this.openProcessManager()}
         />
       </ErrorBoundary>

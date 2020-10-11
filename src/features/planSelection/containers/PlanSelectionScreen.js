@@ -53,7 +53,8 @@ class PlanSelectionScreen extends Component {
     const { intl } = this.context;
 
     const { user, features } = this.props.stores;
-    const { plans, currency } = features.features.pricingConfig;
+    const { isPersonalPlanAvailable, pricingConfig } = features.features;
+    const { plans, currency } = pricingConfig;
     const { activateTrial } = this.props.actions.user;
     const { downgradeAccount, hideOverlay } = this.props.actions.planSelection;
 
@@ -95,6 +96,7 @@ class PlanSelectionScreen extends Component {
           }}
           subscriptionExpired={user.team && user.team.state === 'expired' && !user.team.userHasDowngraded}
           hadSubscription={user.data.hadSubscription}
+          isPersonalPlanAvailable={isPersonalPlanAvailable}
         />
       </ErrorBoundary>
     );

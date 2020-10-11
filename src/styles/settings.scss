@@ -187,11 +187,17 @@
     .mdi { color: $theme-gray-light; }
   }
 
+  .settings_titles {
+    display:inline-block;
+  }
+
   .settings__body {
     flex: 1;
     margin: 15px;
     overflow-y: scroll;
     padding: 25px 15px 15px 25px;
+
+    .badge { margin-right: 10px; }
 
     &::-webkit-scrollbar { width: 8px; }
 
@@ -323,6 +329,10 @@
     min-height: 70%;
     text-align: center;
     width: 100%;
+
+    .settings__empty-state-text {
+      margin-bottom: 1em;
+    }
 
     a.button { margin-top: 40px; }
   }
@@ -494,4 +504,8 @@
     margin-left: 5px;
     width: 7px;
   }
+}
+
+.settings__support-badges {
+  a { margin-right: 10px }
 }

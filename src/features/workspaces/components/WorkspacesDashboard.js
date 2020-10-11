@@ -23,7 +23,7 @@ const messages = defineMessages({
   },
   noServicesAdded: {
     id: 'settings.workspaces.noWorkspacesAdded',
-    defaultMessage: '!!!You haven\'t added any workspaces yet.',
+    defaultMessage: '!!!You haven\'t created any workspaces yet.',
   },
   workspacesRequestFailed: {
     id: 'settings.workspaces.workspacesRequestFailed',

@@ -5,7 +5,7 @@ import {
   computed,
   observable,
 } from 'mobx';
-import { remove } from 'lodash';
+import { debounce, remove } from 'lodash';
 import ms from 'ms';
 import fs from 'fs-extra';
 import path from 'path';
@@ -127,6 +127,54 @@ export default class ServicesStore extends Store {
     );
   }
 
+  initialize() {
+    super.initialize();
+
+    // Check services to become hibernated
+    this.serviceMaintenanceTick();
+  }
+
+  teardown() {
+    super.teardown();
+
+    // Stop checking services for hibernation
+    this.serviceMaintenanceTick.cancel();
+  }
+
+  /**
+   * Сheck for services to become hibernated.
+   */
+  serviceMaintenanceTick = debounce(() => {
+    this._serviceMaintenance();
+    this.serviceMaintenanceTick();
+    debug('Service maintenance tick');
+  }, ms('10s'));
+
+  /**
+   * Run various maintenance tasks on services
+   */
+  _serviceMaintenance() {
+    this.all.forEach((service) => {
+      if (service.lastPoll && (service.lastPoll) - service.lastPollAnswer > ms('30s')) {
+        // If service did not reply for more than 30s try to reload.
+        if (!service.isActive) {
+          if (this.stores.app.isOnline && service.lostRecipeReloadAttempt < 3) {
+            service.webview.reload();
+            service.lostRecipeReloadAttempt += 1;
+
+            service.lostRecipeConnection = false;
+          }
+        } else {
+          service.lostRecipeConnection = true;
+        }
+      } else {
+        service.lostRecipeConnection = false;
+        service.lostRecipeReloadAttempt = 0;
+      }
+    });
+  }
+
+  // Computed props
   @computed get all() {
     if (this.stores.user.isLoggedIn) {
       const services = this.allServicesRequest.execute().result;
@@ -379,6 +427,7 @@ export default class ServicesStore extends Store {
       this.all[index].isActive = false;
     });
     service.isActive = true;
+    service.lastUsed = Date.now();
 
     // Update list of last used services
     this.lastUsedServices = this.lastUsedServices.filter(id => id !== serviceId);
@@ -446,9 +495,7 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
-      if (document.activeElement) {
-        document.activeElement.blur();
-      }
+      service.webview.blur();
       service.webview.focus();
     }
   }
@@ -475,10 +522,16 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (channel === 'hello') {
+      debug('Received hello event from', serviceId);
+
       this._initRecipePolling(service.id);
       this._initializeServiceRecipeInWebview(serviceId);
       this._shareSettingsWithServiceProcess();
+    } else if (channel === 'alive') {
+      service.lastPollAnswer = Date.now();
     } else if (channel === 'messages') {
+      debug(`Received unread message info from '${serviceId}'`, args[0]);
+
       this.actions.service.setUnreadMessageCount({
         serviceId,
         count: {
@@ -565,7 +618,10 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
-      service.webview.send(channel, args);
+      // Make sure the args are clean, otherwise ElectronJS can't transmit them
+      const cleanArgs = JSON.parse(JSON.stringify(args));
+
+      service.webview.send(channel, cleanArgs);
     }
   }
 
@@ -578,7 +634,8 @@ export default class ServicesStore extends Store {
   }
 
   @action _openWindow({ event }) {
-    if (event.disposition !== 'new-window' && event.url !== 'about:blank') {
+    if (event.url !== 'about:blank') {
+      event.preventDefault();
       this.actions.app.openExternalUrl({ url: event.url });
     }
   }
@@ -600,6 +657,7 @@ export default class ServicesStore extends Store {
     if (!service.isEnabled) return;
 
     service.resetMessageCount();
+    service.lostRecipeConnection = false;
 
     // service.webview.loadURL(service.url);
     service.webview.reload();
@@ -777,7 +835,7 @@ export default class ServicesStore extends Store {
       const isMuted = isAppMuted || service.isMuted;
 
       if (isAttached) {
-        service.webview.setAudioMuted(isMuted);
+        service.webview.audioMuted = isMuted;
       }
     });
   }
@@ -840,10 +898,14 @@ export default class ServicesStore extends Store {
     const service = this.one(serviceId);
 
     if (service.webview) {
+      // We need to completely clone the object, otherwise Electron won't be able to send the object via IPC
+      const shareWithWebview = JSON.parse(JSON.stringify(service.shareWithWebview));
+
       debug('Initialize recipe', service.recipe.id, service.name);
-      service.webview.send('initialize-recipe', Object.assign({
+      service.webview.send('initialize-recipe', {
+        ...shareWithWebview,
         franzVersion: app.getVersion(),
-      }, service.shareWithWebview), service.recipe);
+      }, service.recipe);
     }
   }
 
@@ -863,6 +925,7 @@ export default class ServicesStore extends Store {
         service.webview.send('poll');
 
         service.timer = setTimeout(loop, delay);
+        service.lastPoll = Date.now();
       };
 
       loop();
