@@ -5093,150 +5093,150 @@
         "id": "settings.app.form.useVerticalStyle",
         "start": {
           "column": 20,
-          "line": 137
+          "line": 142
         }
       },
       {
         "defaultMessage": "!!!Always show workspace drawer",
         "end": {
           "column": 3,
-          "line": 144
-        },
-        "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.alwaysShowWorkspaces",
-        "start": {
-          "column": 24,
-          "line": 141
-        }
-      },
-      {
-        "defaultMessage": "!!!Accent color",
-        "end": {
-          "column": 3,
-          "line": 148
-        },
-        "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.accentColor",
-        "start": {
-          "column": 15,
-          "line": 142
-        }
-      },
-      {
-        "defaultMessage": "!!!Display disabled services tabs",
-        "end": {
-          "column": 3,
           "line": 149
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
-        "id": "settings.app.form.showDisabledServices",
+        "id": "settings.app.form.alwaysShowWorkspaces",
         "start": {
           "column": 24,
           "line": 146
         }
       },
       {
-        "defaultMessage": "!!!Show unread message badge when notifications are disabled",
+        "defaultMessage": "!!!Accent color",
         "end": {
           "column": 3,
           "line": 153
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.accentColor",
+        "start": {
+          "column": 15,
+          "line": 150
+        }
+      },
+      {
+        "defaultMessage": "!!!Display disabled services tabs",
+        "end": {
+          "column": 3,
+          "line": 157
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
+        "id": "settings.app.form.showDisabledServices",
+        "start": {
+          "column": 24,
+          "line": 154
+        }
+      },
+      {
+        "defaultMessage": "!!!Show unread message badge when notifications are disabled",
+        "end": {
+          "column": 3,
+          "line": 161
+        },
+        "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showMessagesBadgesWhenMuted",
         "start": {
           "column": 29,
-          "line": 150
+          "line": 158
         }
       },
       {
         "defaultMessage": "!!!Show draggable area on window",
         "end": {
           "column": 3,
-          "line": 157
+          "line": 165
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDragArea",
         "start": {
           "column": 16,
-          "line": 154
+          "line": 162
         }
       },
       {
         "defaultMessage": "!!!Enable spell checking",
         "end": {
           "column": 3,
-          "line": 161
+          "line": 169
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSpellchecking",
         "start": {
           "column": 23,
-          "line": 158
+          "line": 166
         }
       },
       {
         "defaultMessage": "!!!Enable GPU Acceleration",
         "end": {
           "column": 3,
-          "line": 165
+          "line": 173
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableGPUAcceleration",
         "start": {
           "column": 25,
-          "line": 162
+          "line": 170
         }
       },
       {
         "defaultMessage": "!!!Include beta versions",
         "end": {
           "column": 3,
-          "line": 169
+          "line": 177
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.beta",
         "start": {
           "column": 8,
-          "line": 166
+          "line": 174
         }
       },
       {
         "defaultMessage": "!!!Enable updates",
         "end": {
           "column": 3,
-          "line": 173
+          "line": 181
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
           "column": 20,
-          "line": 170
+          "line": 178
         }
       },
       {
         "defaultMessage": "!!!Enable Franz Todos",
         "end": {
           "column": 3,
-          "line": 177
+          "line": 185
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableTodos",
         "start": {
           "column": 15,
-          "line": 174
+          "line": 182
         }
       },
       {
         "defaultMessage": "!!!Keep all workspaces loaded",
         "end": {
           "column": 3,
-          "line": 181
+          "line": 189
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.keepAllWorkspacesLoaded",
         "start": {
           "column": 27,
-          "line": 178
+          "line": 186
         }
       }
     ],

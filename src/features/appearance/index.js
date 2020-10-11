@@ -50,6 +50,7 @@ function generateServiceRibbonWidthStyle(widthStr, iconSizeStr, vertical) {
     .tab-item {
       width: ${width - 2}px !important;
       height: ${width - 5 + iconSize}px !important;
+      min-height: unset;
     }
     .tab-item .tab-item__icon {
       width: ${(width / 2) + iconSize}px !important;
