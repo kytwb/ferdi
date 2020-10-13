@@ -25,6 +25,19 @@ export default (params) => {
   });
 
   ipcMain.on('updateAppIndicator', (event, args) => {
+
+    // Flash TaskBar for windows, bounce Dock on Mac
+    if (!app.mainWindow.isFocused()) {
+      if (params.settings.app.get('notifyTaskBarOnMessage')) {
+        if (process.platform === 'win32') {
+          app.mainWindow.flashFrame(true);
+          app.mainWindow.once('focus', () => app.mainWindow.flashFrame(false));
+        } else if (process.platform === 'darwin') {
+          app.dock.bounce('informational');
+        }
+      }
+    }
+
     // Update badge
     if (process.platform === 'darwin'
       && typeof (args.indicator) === 'string') {

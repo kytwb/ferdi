@@ -94,6 +94,7 @@ export const DEFAULT_APP_SETTINGS = {
   startMinimized: false,
   minimizeToSystemTray: false,
   privateNotifications: false,
+  notifyTaskBarOnMessage: false,
   showDisabledServices: true,
   showMessageBadgeWhenMuted: true,
   showDragArea: false,

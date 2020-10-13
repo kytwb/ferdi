@@ -59,6 +59,10 @@ const messages = defineMessages({
     id: 'settings.app.form.privateNotifications',
     defaultMessage: '!!!Don\'t show message content in notifications',
   },
+  notifyTaskBarOnMessage: {
+    id: 'settings.app.form.notifyTaskBarOnMessage',
+    defaultMessage: '!!!Notify TaskBar/Dock on new message',
+  },
   navigationBarBehaviour: {
     id: 'settings.app.form.navigationBarBehaviour',
     defaultMessage: '!!!Navigation bar behaviour',
@@ -230,6 +234,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         startMinimized: settingsData.startMinimized,
         minimizeToSystemTray: settingsData.minimizeToSystemTray,
         privateNotifications: settingsData.privateNotifications,
+        notifyTaskBarOnMessage: settingsData.notifyTaskBarOnMessage,
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
@@ -373,6 +378,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.privateNotifications),
           value: settings.all.app.privateNotifications,
           default: DEFAULT_APP_SETTINGS.privateNotifications,
+        },
+        notifyTaskBarOnMessage: {
+          label: intl.formatMessage(messages.notifyTaskBarOnMessage),
+          value: settings.all.app.notifyTaskBarOnMessage,
+          default: DEFAULT_APP_SETTINGS.notifyTaskBarOnMessage,
         },
         navigationBarBehaviour: {
           label: intl.formatMessage(messages.navigationBarBehaviour),
