@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Comportamiento de la barra de navegación",
   "settings.app.form.predefinedTodoServer": "Servidor de tareas",
   "settings.app.form.privateNotifications": "No mostrar contenido de mensajes en notificaciones",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Recargar Ferdi después de reanudar el sistema",
   "settings.app.form.runInBackground": "Mantener Ferdi en segundo plano al cerrar la ventana",
   "settings.app.form.scheduledDNDEnabled": "Activar programación \"No molestar\"",
