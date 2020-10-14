@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Comportement de la barre de navigation",
   "settings.app.form.predefinedTodoServer": "Serveur Todo",
   "settings.app.form.privateNotifications": "Ne pas afficher le contenu des notifications",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Recharger Ferdi après la reprise du système",
   "settings.app.form.runInBackground": "Garder Ferdi ouvert en arrière-plan à la fermeture de la fenêtre",
   "settings.app.form.scheduledDNDEnabled": "Activer Ne-pas-Déranger",
