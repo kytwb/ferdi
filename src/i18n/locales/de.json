@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Verhalten der Navigationsleiste",
   "settings.app.form.predefinedTodoServer": "Todo-Server",
   "settings.app.form.privateNotifications": "Nachrichteninhalt nicht in Benachrichtigungen anzeigen",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Ferdi nach dem aufwachen aus dem Standby neu laden",
   "settings.app.form.runInBackground": "Ferdi im Hintergrund behalten, wenn das Fenster geschlossen wird",
   "settings.app.form.scheduledDNDEnabled": "Geplante \"Nicht-stören\"-Funktion aktivieren",
