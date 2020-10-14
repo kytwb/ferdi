@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Navigasjonsbar oppførsel",
   "settings.app.form.predefinedTodoServer": "Gjøremål-tjener",
   "settings.app.form.privateNotifications": "Ikke vis meldingsinnholdet i varsler",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Last inn Ferdi på nytt etter at systemet går ut fra dvale",
   "settings.app.form.runInBackground": "Behold Ferdi i bakgrunnen når vinduet lukkes",
   "settings.app.form.scheduledDNDEnabled": "Aktiver planlagt ikke-forstyrr",
