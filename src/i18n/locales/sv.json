@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Navigeringsfältets beteende",
   "settings.app.form.predefinedTodoServer": "Todo-server",
   "settings.app.form.privateNotifications": "Visa inte meddelandeinnehåll i aviseringar",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Ladda om Ferdi efter datorn väckts från vila",
   "settings.app.form.runInBackground": "Kör Ferdi i bakgrunden när fönstret stängts",
   "settings.app.form.scheduledDNDEnabled": "Aktivera schemalagt Stör ej-läge",
