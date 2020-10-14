@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "Adressefeltets opførsel",
   "settings.app.form.predefinedTodoServer": "Todo server",
   "settings.app.form.privateNotifications": "Vis ikke beskedindhold i notifikationer",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Genindlæs Ferdi efter systemet er vågnet",
   "settings.app.form.runInBackground": "Behold Ferdi i baggrunden når vinduet lukkes",
   "settings.app.form.scheduledDNDEnabled": "Aktiver planlagt Forstyr ikke",
