@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "سلوك شريط التنقل",
   "settings.app.form.predefinedTodoServer": "خادم Todo",
   "settings.app.form.privateNotifications": "عدم إظهار محتوى الرسالة في الإشعارات",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "إعادة تحميل فيردي بعد أعادة تشغيل النظام",
   "settings.app.form.runInBackground": "إبقاء فردي في الخلفية عند إغلاق النافذة",
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
