@@ -60,6 +60,9 @@ if (isWindows) {
   app.allowRendererProcessReuse = false;
 }
 
+// 
+
+
 // Globally set useragent to fix user agent override in service workers
 debug('Set userAgent to ', userAgent());
 app.userAgentFallback = userAgent();
@@ -363,6 +366,9 @@ if (argv['auth-server-whitelist']) {
 if (argv['auth-negotiate-delegate-whitelist']) {
   app.commandLine.appendSwitch('auth-negotiate-delegate-whitelist', argv['auth-negotiate-delegate-whitelist']);
 }
+
+// Disable Chromium's poor MPRIS implementation
+app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService');
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
