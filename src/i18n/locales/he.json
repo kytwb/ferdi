@@ -311,6 +311,7 @@
   "settings.app.form.navigationBarBehaviour": "אפשרויות סרגל ניווט",
   "settings.app.form.predefinedTodoServer": "Todo Server",
   "settings.app.form.privateNotifications": "אל תציג את תוכן ההודעות בהתראה",
+  "settings.app.form.notifyTaskBarOnMessage": "Notify TaskBar/Dock on new message",
   "settings.app.form.reloadAfterResume": "Reload Ferdi after system resume",
   "settings.app.form.runInBackground": "שמור את פרדי פעילה ברקע כאשר סוגרים את החלון",
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
