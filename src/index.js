@@ -60,7 +60,6 @@ if (isWindows) {
   app.allowRendererProcessReuse = false;
 }
 
-// 
 
 
 // Globally set useragent to fix user agent override in service workers
