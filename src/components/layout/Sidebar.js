@@ -113,7 +113,7 @@ class Sidebar extends Component {
 
     const toggleSidebarVisibility = () => {
       this.setState(prevState => ({
-        sidebarHidden: prevState.sidebarHidden,
+        sidebarHidden: !prevState.sidebarHidden,
       }));
     };
 
