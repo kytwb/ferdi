@@ -433,7 +433,7 @@
   "settings.services.tooltip.notificationsDisabled": "Las notificaciones están desactivadas",
   "settings.services.updatedInfo": "Tus cambios han sido guardados",
   "settings.supportFerdi.aboutIntro": "<p>Ferdi is an open-source and a community-lead application.</p><p>Thanks to the people who make this possbile:</p>",
-  "settings.supportFerdi.bannerText": "Do you want to help us improve Ferdi?",
+  "settings.supportFerdi.bannerText": "¿Quieres ayudarnos a mejorar Ferdi?",
   "settings.supportFerdi.headline": "Acerca de Ferdi",
   "settings.supportFerdi.openSurvey": "Open survey",
   "settings.supportFerdi.textDonation": "If you feel like supporting Ferdi development with a donation, you can do so on both,",
