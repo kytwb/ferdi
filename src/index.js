@@ -61,7 +61,6 @@ if (isWindows) {
 }
 
 
-
 // Globally set useragent to fix user agent override in service workers
 debug('Set userAgent to ', userAgent());
 app.userAgentFallback = userAgent();

@@ -25,7 +25,6 @@ export default (params) => {
   });
 
   ipcMain.on('updateAppIndicator', (event, args) => {
-
     // Flash TaskBar for windows, bounce Dock on Mac
     if (!app.mainWindow.isFocused()) {
       if (params.settings.app.get('notifyTaskBarOnMessage')) {
