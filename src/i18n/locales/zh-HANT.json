@@ -308,6 +308,7 @@
   "settings.app.form.language": "語言",
   "settings.app.form.lockPassword": "密碼",
   "settings.app.form.minimizeToSystemTray": "最小化至系統匣",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "Navigation bar behaviour",
   "settings.app.form.predefinedTodoServer": "Todo Server",
   "settings.app.form.privateNotifications": "Don't show message content in notifications",

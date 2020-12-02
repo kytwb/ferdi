@@ -308,6 +308,7 @@
   "settings.app.form.language": "Språk",
   "settings.app.form.lockPassword": "Passord",
   "settings.app.form.minimizeToSystemTray": "Minimer Ferdi til systemstatusfeltet",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "Navigasjonsbar oppførsel",
   "settings.app.form.predefinedTodoServer": "Gjøremål-tjener",
   "settings.app.form.privateNotifications": "Ikke vis meldingsinnholdet i varsler",

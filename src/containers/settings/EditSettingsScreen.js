@@ -55,6 +55,10 @@ const messages = defineMessages({
     id: 'settings.app.form.minimizeToSystemTray',
     defaultMessage: '!!!Minimize Ferdi to system tray',
   },
+  closeToSystemTray: {
+    id: 'settings.app.form.closeToSystemTray',
+    defaultMessage: '!!!Close Ferdi to system tray',
+  },
   privateNotifications: {
     id: 'settings.app.form.privateNotifications',
     defaultMessage: '!!!Don\'t show message content in notifications',
@@ -233,6 +237,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         reloadAfterResume: settingsData.reloadAfterResume,
         startMinimized: settingsData.startMinimized,
         minimizeToSystemTray: settingsData.minimizeToSystemTray,
+        closeToSystemTray: settingsData.closeToSystemTray,
         privateNotifications: settingsData.privateNotifications,
         notifyTaskBarOnMessage: settingsData.notifyTaskBarOnMessage,
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
@@ -373,6 +378,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.minimizeToSystemTray),
           value: settings.all.app.minimizeToSystemTray,
           default: DEFAULT_APP_SETTINGS.minimizeToSystemTray,
+        },
+        closeToSystemTray: {
+          label: intl.formatMessage(messages.closeToSystemTray),
+          value: settings.all.app.closeToSystemTray,
+          default: DEFAULT_APP_SETTINGS.closeToSystemTray,
         },
         privateNotifications: {
           label: intl.formatMessage(messages.privateNotifications),

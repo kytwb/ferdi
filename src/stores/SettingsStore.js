@@ -173,6 +173,7 @@ export default class SettingsStore extends Store {
           runInBackground: legacySettings.runInBackground,
           enableSystemTray: legacySettings.enableSystemTray,
           minimizeToSystemTray: legacySettings.minimizeToSystemTray,
+          closeToSystemTray: legacySettings.closeToSystemTray,
           server: API,
           isAppMuted: legacySettings.isAppMuted,
           enableGPUAcceleration: legacySettings.enableGPUAcceleration,

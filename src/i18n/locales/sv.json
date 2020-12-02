@@ -308,6 +308,7 @@
   "settings.app.form.language": "Språk",
   "settings.app.form.lockPassword": "Lösenord",
   "settings.app.form.minimizeToSystemTray": "Minimera Ferdi till systemfältet",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "Navigeringsfältets beteende",
   "settings.app.form.predefinedTodoServer": "Todo-server",
   "settings.app.form.privateNotifications": "Visa inte meddelandeinnehåll i aviseringar",

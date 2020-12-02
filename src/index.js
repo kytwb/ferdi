@@ -272,7 +272,7 @@ const createWindow = () => {
         debug('Window: minimize');
         mainWindow.minimize();
 
-        if (settings.get('minimizeToSystemTray')) {
+        if (settings.get('closeToSystemTray')) {
           debug('Skip taskbar: true');
           mainWindow.setSkipTaskbar(true);
         }

@@ -308,6 +308,7 @@
   "settings.app.form.language": "اللغة",
   "settings.app.form.lockPassword": "كلمة المرور",
   "settings.app.form.minimizeToSystemTray": "تصغير النافذة إلى جانب شريط المهام",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "سلوك شريط التنقل",
   "settings.app.form.predefinedTodoServer": "خادم Todo",
   "settings.app.form.privateNotifications": "عدم إظهار محتوى الرسالة في الإشعارات",

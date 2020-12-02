@@ -93,6 +93,7 @@ export const DEFAULT_APP_SETTINGS = {
   enableSystemTray: true,
   startMinimized: false,
   minimizeToSystemTray: false,
+  closeToSystemTray: false,
   privateNotifications: false,
   notifyTaskBarOnMessage: false,
   showDisabledServices: true,

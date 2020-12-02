@@ -308,6 +308,7 @@
   "settings.app.form.language": "שפה",
   "settings.app.form.lockPassword": "סיסמא",
   "settings.app.form.minimizeToSystemTray": "מזער למגש המערכת",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "אפשרויות סרגל ניווט",
   "settings.app.form.predefinedTodoServer": "Todo Server",
   "settings.app.form.privateNotifications": "אל תציג את תוכן ההודעות בהתראה",

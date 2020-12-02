@@ -308,6 +308,7 @@
   "settings.app.form.language": "Idioma",
   "settings.app.form.lockPassword": "Palavra-passe",
   "settings.app.form.minimizeToSystemTray": "Minimizar Ferdi para a área de sistema",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.navigationBarBehaviour": "Comportamento da barra de navegação",
   "settings.app.form.predefinedTodoServer": "Servidor das Tarefas",
   "settings.app.form.privateNotifications": "Não mostrar o conteúdo de mensagens nas notificações",
