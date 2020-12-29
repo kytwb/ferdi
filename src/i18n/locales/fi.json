@@ -543,7 +543,7 @@
   "workspaceDrawer.premiumCtaButtonLabel": "Luo ensimmäinen työtila",
   "workspaceDrawer.proFeatureBadge": "Premium-ominaisuus",
   "workspaceDrawer.reactivatePremiumAccountLabel": "Ota Premium-tili uudelleen käyttöön",
-  "workspaceDrawer.workspaceFeatureInfo": "<p>Ferdi Workspaces antaa sinun keskittyä mikä on tärkeää juuri nyt. Määritä erilaisia palvelukokonaisuuksia ja vaihda helposti niiden välillä milloin tahansa.</p><p>Sinä päätät mitä palveluita tarvitset milloin ja missä, jotta voimme auttaa sinua pysymään työsi äärellä - tai helposti pois töistä aina kun haluat.</p>",
+  "workspaceDrawer.workspaceFeatureInfo": "<p>Ferdi Workspaces auttaa sinun keskittymään mikä on tärkeää juuri nyt. Määritä erilaisia palvelukokonaisuuksia ja vaihda helposti niiden välillä milloin tahansa.</p><p>Sinä päätät mitä palveluita tarvitset milloin ja missä, jotta voimme auttaa sinua pysymään työsi äärellä - tai helpottamaan poistumista aina kun haluat.</p>",
   "workspaceDrawer.workspacesSettingsTooltip": "Muokkaa työtilojen asetuksia",
   "workspaces.switchingIndicator.switchingTo": "Vaihdetaan"
 }
