@@ -100,7 +100,7 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 
 ### Or use homebrew (macOS only)
 
-`$ brew cask install ferdi`
+`$ brew install --cask ferdi`
 
 (Don't know homebrew? [brew.sh](https://brew.sh/))
 
