@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-79-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-80-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -433,6 +433,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/kawarimidoll"><img src="https://avatars0.githubusercontent.com/u/8146876?v=4?s=40" width="40px;" alt=""/><br /><sub><b>カワリミ人形</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=kawarimidoll" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://immortal-pc.info/"><img src="https://avatars0.githubusercontent.com/u/5358076?v=4?s=40" width="40px;" alt=""/><br /><sub><b>1mm0rt41PC</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=1mm0rt41PC" title="Code">💻</a></td>
   </tr>
 </table>
 
