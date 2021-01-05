@@ -53,7 +53,7 @@ script:
   - |
     if [ $TRAVIS_BRANCH == "release" ]; then
       echo "Building..."
-      travis_retry travis_wait 100 npm run build 
+      travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi -c.mac.identity=null
     fi
   - |
     if [ $TRAVIS_BRANCH == "nightly" ]; then
