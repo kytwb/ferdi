@@ -308,7 +308,7 @@
   "settings.app.form.language": "Sprog",
   "settings.app.form.lockPassword": "Adgangskode",
   "settings.app.form.minimizeToSystemTray": "Minimer Ferdi til systembakken",
-  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
+  "settings.app.form.closeToSystemTray": "Luk Ferdi til systembakken",
   "settings.app.form.navigationBarBehaviour": "Adressefeltets opførsel",
   "settings.app.form.predefinedTodoServer": "Todo server",
   "settings.app.form.privateNotifications": "Vis ikke beskedindhold i notifikationer",
