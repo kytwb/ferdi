@@ -209,7 +209,7 @@ class AccountDashboard extends Component {
                           </div>
                           <div className="account__info">
                             <H1>
-                              <span className="username">{`${user.firstname} ${isUsingFranzServer ? user.lastname : ''}`}</span>
+                              <span className="username">{`${user.firstname} ${user.lastname}`}</span>
                               {user.isPremium && (
                                 <>
                                   {' '}
