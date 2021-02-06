@@ -129,6 +129,7 @@
   "settings.app.form.autoLaunchInBackground": "Åpne i bakgrunnen",
   "settings.app.form.enableSystemTray": "Vis Ferdi i systemfeltet",
   "settings.app.form.minimizeToSystemTray": "Minimer Ferdi til systemfeltet",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.runInBackground": "Behold Ferdi i bakgrunnen når du lukker vinduet",
   "settings.app.form.language": "Språk",
   "settings.app.form.beta": "Inkluder beta versjoner",

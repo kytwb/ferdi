@@ -211,6 +211,7 @@
   "settings.app.form.keepAllWorkspacesLoaded": "Keep all workspaces loaded",
   "settings.app.form.language": "語言",
   "settings.app.form.minimizeToSystemTray": "最小化 Ferdi 到系統列",
+  "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.runInBackground": "當關閉視窗時，保持 Ferdi 在背景運作",
   "settings.app.form.showDisabledServices": "顯示停用的服務標籤",
   "settings.app.form.showMessagesBadgesWhenMuted": "當通知關閉時，標記未讀的訊息",

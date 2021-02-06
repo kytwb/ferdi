@@ -309,6 +309,9 @@ export default @observer class EditSettingsForm extends Component {
                 {process.platform === 'win32' && (
                   <Toggle field={form.$('minimizeToSystemTray')} />
                 )}
+                {process.platform === 'win32' && (
+                  <Toggle field={form.$('closeToSystemTray')} />
+                )}
                 <Toggle field={form.$('privateNotifications')} />
                 {(process.platform === 'win32' || process.platform === 'darwin') && (
                   <Toggle field={form.$('notifyTaskBarOnMessage')} />)}

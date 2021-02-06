@@ -767,6 +767,33 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "digitalcoyote",
+      "name": "Curtis Carter",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/16868093?v=4",
+      "profile": "https://digitalcoyote.github.io/NuGetDefense/",
+      "contributions": [
+        "platform"
+      ]
+    },
+    {
+      "login": "kawarimidoll",
+      "name": "カワリミ人形",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8146876?v=4",
+      "profile": "https://github.com/kawarimidoll",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "1mm0rt41PC",
+      "name": "1mm0rt41PC",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5358076?v=4",
+      "profile": "https://immortal-pc.info/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 6,

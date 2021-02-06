@@ -3,6 +3,7 @@ export const APP_LOCALES = {
   ca: 'Català',
   'zh-HANT': '中文 (Chinese Traditional)',
   cs: 'Čeština',
+  da: 'Dansk',
   nl: 'Nederlands',
   fr: 'Français',
   ka: 'ქართული (Georgian)',
