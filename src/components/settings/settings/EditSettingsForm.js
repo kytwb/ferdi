@@ -347,7 +347,7 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
-                {isTodosEnabled && (
+                {isTodosEnabled && !hasAddedTodosAsService && (
                   <>
                     <Toggle field={form.$('enableTodos')} />
                     {isTodosActivated && (

@@ -27,7 +27,6 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
     stores: PropTypes.shape({
       settings: PropTypes.instanceOf(SettingsStore).isRequired,
     }).isRequired,
-    upgrade: PropTypes.func.isRequired,
     isSpellcheckerEnabled: PropTypes.bool.isRequired,
   };
 
@@ -84,7 +83,6 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
       edit,
       enable,
       stores,
-      upgrade,
       isSpellcheckerEnabled,
     } = this.props;
 

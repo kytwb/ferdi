@@ -71,7 +71,7 @@ class ServiceWebview extends Component {
         }}
         autosize
         src={service.url}
-        preload="./webview/recipe.js"
+        preload={preloadScript}
         partition={service.partition}
         onDidAttach={() => {
           setWebviewReference({
