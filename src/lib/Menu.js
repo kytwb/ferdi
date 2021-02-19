@@ -860,8 +860,6 @@ export default class FranzMenu {
         accelerator: `${cmdKey}+Shift+Alt+I`,
         click: () => {
           this.actions.service.openDevToolsForActiveService();
-          const webview = document.querySelector('#todos-panel webview');
-          if (webview) this.actions.todos.openDevTools();
         },
         enabled: this.stores.user.isLoggedIn && this.stores.services.enabled.length > 0,
       });
@@ -871,8 +869,8 @@ export default class FranzMenu {
           label: intl.formatMessage(menuItems.toggleTodosDevTools),
           accelerator: `${cmdKey}+Shift+Alt+O`,
           click: () => {
-            const webview = document.querySelector('webview[partition="persist:todos"]');
-            if (webview) webview.openDevTools();
+            const webview = document.querySelector('#todos-panel webview');
+            if (webview) this.actions.todos.openDevTools();
           },
         });
       }
