@@ -95,7 +95,7 @@ export default @observer class ServicesDashboard extends Component {
         </div>
         <LimitReachedInfobox />
         <div className="settings__body">
-          {services.length !== 0 && !isLoading && (
+          {(services.length !== 0 || searchNeedle) && !isLoading && (
             <SearchInput
               placeholder={intl.formatMessage(messages.searchService)}
               onChange={needle => filterServices({ needle })}
