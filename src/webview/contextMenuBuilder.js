@@ -275,7 +275,7 @@ module.exports = class ContextMenuBuilder {
     const search = new MenuItem({
       label: this.stringTable.searchGoogle(),
       click: () => {
-        const url = `https://www.google.com/#q=${encodeURIComponent(menuInfo.selectionText)}`;
+        const url = `https://www.google.com/search?q=${encodeURIComponent(menuInfo.selectionText)}`;
 
         shell.openExternal(url);
       },
