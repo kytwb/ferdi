@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-82-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-83-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -436,6 +436,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://immortal-pc.info/"><img src="https://avatars0.githubusercontent.com/u/5358076?v=4?s=40" width="40px;" alt=""/><br /><sub><b>1mm0rt41PC</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=1mm0rt41PC" title="Code">💻</a></td>
     <td align="center"><a href="http://code-addict.pl"><img src="https://avatars.githubusercontent.com/u/6313392?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Michał Kostewicz</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=k0staa" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/yogainformatika/"><img src="https://avatars.githubusercontent.com/u/1139881?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Yoga Setiawan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=arioki1" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MosheGross"><img src="https://avatars.githubusercontent.com/u/77084755?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Moshe Gross</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=MosheGross" title="Code">💻</a></td>
   </tr>
 </table>
 
