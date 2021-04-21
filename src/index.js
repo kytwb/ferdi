@@ -47,6 +47,7 @@ import './electron/exception';
 import {
   DEFAULT_APP_SETTINGS,
   DEFAULT_WINDOW_OPTIONS,
+  DEFAULT_PROXY_SETTINGS,
 } from './config';
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
@@ -96,7 +97,7 @@ if (isWindows) {
 
 // Initialize Settings
 const settings = new Settings('app', DEFAULT_APP_SETTINGS);
-const proxySettings = new Settings('proxy');
+const proxySettings = new Settings('proxy', DEFAULT_PROXY_SETTINGS);
 
 if (settings.get('sentry')) {
   // eslint-disable-next-line global-require

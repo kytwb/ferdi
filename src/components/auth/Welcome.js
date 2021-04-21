@@ -80,7 +80,8 @@ export default @inject('actions') @observer class Login extends Component {
               cursor: 'pointer',
             }}
             >
-              Change server
+
+              Connection Settings
             </span>
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { Link } from 'react-router';
 import { defineMessages, intlShape } from 'react-intl';
 import normalizeUrl from 'normalize-url';
-
+import ProxySettings from '../proxy/ProxySettings';
 import Form from '../../../lib/Form';
 import User from '../../../models/User';
 import Recipe from '../../../models/Recipe';
@@ -182,7 +182,6 @@ export default @observer class EditServiceForm extends Component {
       onSuccess: async (form) => {
         const values = form.values();
         let isValid = true;
-
         const { files } = form.$('customIcon');
         if (files) {
           values.iconFile = files[0];
@@ -211,6 +210,7 @@ export default @observer class EditServiceForm extends Component {
     });
   }
 
+
   render() {
     const {
       recipe,
@@ -230,7 +230,6 @@ export default @observer class EditServiceForm extends Component {
     const { intl } = this.context;
 
     const { isValidatingCustomUrl } = this.state;
-
     const deleteButton = isDeleting ? (
       <Button
         label={intl.formatMessage(messages.deleteService)}
@@ -414,45 +413,10 @@ export default @observer class EditServiceForm extends Component {
             )}
 
             {isProxyFeatureEnabled && (
-              <PremiumFeatureContainer
-                condition={!isServiceProxyIncludedInCurrentPlan}
-                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'proxy' }}
-              >
-                <div className="settings__settings-group">
-                  <h3>
-                    {intl.formatMessage(messages.headlineProxy)}
-                    <span className="badge badge--success">beta</span>
-                  </h3>
-                  <Toggle field={form.$('proxy.isEnabled')} />
-                  {form.$('proxy.isEnabled').value && (
-                    <Fragment>
-                      <div className="grid">
-                        <div className="grid__row">
-                          <Input field={form.$('proxy.host')} className="proxyHost" />
-                          <Input field={form.$('proxy.port')} />
-                        </div>
-                      </div>
-                      <div className="grid">
-                        <div className="grid__row">
-                          <Input field={form.$('proxy.user')} />
-                          <Input
-                            field={form.$('proxy.password')}
-                            showPasswordToggle
-                          />
-                        </div>
-                      </div>
-                      <p>
-                        <span className="mdi mdi-information" />
-                        {intl.formatMessage(messages.proxyRestartInfo)}
-                      </p>
-                      <p>
-                        <span className="mdi mdi-information" />
-                        {intl.formatMessage(messages.proxyInfo)}
-                      </p>
-                    </Fragment>
-                  )}
-                </div>
-              </PremiumFeatureContainer>
+              <ProxySettings
+                form={form}
+                isProxyFeatureIncludedInCurrentPlan={isServiceProxyIncludedInCurrentPlan}
+              />
             )}
           </form>
 

@@ -62,7 +62,7 @@ const messages = defineMessages({
   },
   changeServer: {
     id: 'login.changeServer',
-    defaultMessage: '!!!Change server',
+    defaultMessage: '!!!Connection Settings',
   },
   serverless: {
     id: 'services.serverless',
@@ -149,6 +149,7 @@ export default @inject('actions') @observer class Signup extends Component {
             <h1>{intl.formatMessage(messages.headline)}</h1>
             {isDevMode && !useLiveAPI && (
               <Infobox type="warning">
+
                 In Dev Mode your data is not persistent. Please use the live app for accesing the production API.
               </Infobox>
             )}
@@ -189,6 +190,7 @@ export default @inject('actions') @observer class Signup extends Component {
               >
                 {intl.formatMessage(messages.terms)}
               </Link>
+
               &nbsp;&amp;&nbsp;
               <Link
                 to={`${termsBase}/privacy`}
@@ -197,6 +199,7 @@ export default @inject('actions') @observer class Signup extends Component {
               >
                 {intl.formatMessage(messages.privacy)}
               </Link>
+
               .
             </p>
           </form>

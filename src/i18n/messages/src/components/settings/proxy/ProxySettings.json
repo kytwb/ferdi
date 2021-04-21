@@ -1,0 +1,119 @@
+[
+  {
+    "id": "settings.service.form.proxy.isEnabled",
+    "defaultMessage": "!!!Use Proxy",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 13,
+      "column": 15
+    },
+    "end": {
+      "line": 16,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.form.proxy.warning",
+    "defaultMessage": "!!!Warning ! WebRTC will still reveal your real (non-proxied) IP in-spite of setting a proxy",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 17,
+      "column": 16
+    },
+    "end": {
+      "line": 20,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.host",
+    "defaultMessage": "!!!Proxy Host/IP",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 21,
+      "column": 13
+    },
+    "end": {
+      "line": 24,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.port",
+    "defaultMessage": "!!!Port",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 25,
+      "column": 13
+    },
+    "end": {
+      "line": 28,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.user",
+    "defaultMessage": "!!!User",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 29,
+      "column": 13
+    },
+    "end": {
+      "line": 32,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.password",
+    "defaultMessage": "!!!Password",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 33,
+      "column": 17
+    },
+    "end": {
+      "line": 36,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.headline",
+    "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 37,
+      "column": 17
+    },
+    "end": {
+      "line": 40,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.restartInfo",
+    "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 41,
+      "column": 20
+    },
+    "end": {
+      "line": 44,
+      "column": 3
+    }
+  },
+  {
+    "id": "settings.service.form.proxy.info",
+    "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
+    "file": "src\\components\\settings\\proxy\\ProxySettings.js",
+    "start": {
+      "line": 45,
+      "column": 13
+    },
+    "end": {
+      "line": 48,
+      "column": 3
+    }
+  }
+]

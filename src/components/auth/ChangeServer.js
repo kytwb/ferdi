@@ -8,11 +8,12 @@ import Select from '../ui/Select';
 import Button from '../ui/Button';
 import Infobox from '../ui/Infobox';
 import { url, required } from '../../helpers/validation-helpers';
+import ProxySettings from '../settings/proxy/ProxySettings';
 
 const messages = defineMessages({
   headline: {
     id: 'changeserver.headline',
-    defaultMessage: '!!!Change server',
+    defaultMessage: '!!!Connection settings',
   },
   label: {
     id: 'changeserver.label',
@@ -34,13 +35,41 @@ const messages = defineMessages({
     id: 'changeserver.submit',
     defaultMessage: '!!!Submit',
   },
-
+  enableProxy: {
+    id: 'settings.service.form.proxy.isEnabled',
+    defaultMessage: '!!!Use Proxy',
+  },
+  proxyHost: {
+    id: 'settings.service.form.proxy.host',
+    defaultMessage: '!!!Proxy Host/IP',
+  },
+  proxyPort: {
+    id: 'settings.service.form.proxy.port',
+    defaultMessage: '!!!Port',
+  },
+  proxyUser: {
+    id: 'settings.service.form.proxy.user',
+    defaultMessage: '!!!User',
+  },
+  proxyPassword: {
+    id: 'settings.service.form.proxy.password',
+    defaultMessage: '!!!Password',
+  },
 });
 
 export default @observer class ChangeServer extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     server: PropTypes.string.isRequired,
+    proxyConfig: PropTypes.shape({
+      port: PropTypes.string.isRequired,
+      host: PropTypes.string.isRequired,
+      user: PropTypes.string.isRequired,
+      password: PropTypes.string.isRequired,
+      isEnabled: PropTypes.bool.isRequired,
+    }).isRequired,
+    isProxyFeatureEnabled:PropTypes.bool.isRequired,
+    isProxyFeatureIncludedInCurrentPlan:PropTypes.bool.isRequired
   };
 
   static contextTypes = {
@@ -65,6 +94,38 @@ export default @observer class ChangeServer extends Component {
         value: '',
         validators: [url, required],
       },
+      proxy: {
+        name: 'proxy',
+        label: 'proxy',
+        fields: {
+          isEnabled: {
+            label: this.context.intl.formatMessage(messages.enableProxy),
+            value: this.props.proxyConfig.isEnabled,
+            default: false,
+          },
+          host: {
+            label: this.context.intl.formatMessage(messages.proxyHost),
+            value: this.props.proxyConfig.host,
+            default: '',
+          },
+          port: {
+            label: this.context.intl.formatMessage(messages.proxyPort),
+            value: this.props.proxyConfig.port,
+            default: '',
+          },
+          user: {
+            label: this.context.intl.formatMessage(messages.proxyUser),
+            value: this.props.proxyConfig.user,
+            default: '',
+          },
+          password: {
+            label: this.context.intl.formatMessage(messages.proxyPassword),
+            value: this.props.proxyConfig.password,
+            default: '',
+            type: 'password',
+          },
+        },
+      },
     },
   }, this.context.intl);
 
@@ -81,6 +142,7 @@ export default @observer class ChangeServer extends Component {
     e.preventDefault();
     this.form.submit({
       onSuccess: (form) => {
+        console.log('values:', form.values());
         if (!this.defaultServers.includes(form.values().server)) {
           form.$('server').onChange(form.values().customServer);
         }
@@ -97,6 +159,7 @@ export default @observer class ChangeServer extends Component {
   render() {
     const { form } = this;
     const { intl } = this.context;
+    const { isProxyFeatureEnabled, isProxyFeatureIncludedInCurrentPlan } = this.props;
     return (
       <div className="auth__container">
         <form className="franz-form auth__form" onSubmit={e => this.submit(e)}>
@@ -115,6 +178,12 @@ export default @observer class ChangeServer extends Component {
               onChange={e => this.submit(e)}
               field={form.$('customServer')}
             />
+          )}
+          {isProxyFeatureEnabled && (
+          <ProxySettings
+            form={form}
+            isProxyFeatureIncludedInCurrentPlan={isProxyFeatureIncludedInCurrentPlan}
+          />
           )}
           <Button
             type="submit"
