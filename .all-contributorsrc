@@ -830,6 +830,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "vraravam",
+      "name": "Vijay Raghavan Aravamudhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69629?v=4",
+      "profile": "https://github.com/vraravam",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 6,
