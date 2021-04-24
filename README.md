@@ -14,7 +14,7 @@
 <p align="center">
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-84-default.svg?logo=github' alt='Contributors'/></a>
+<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-85-default.svg?logo=github' alt='Contributors'/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END --> 
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
@@ -438,6 +438,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/yogainformatika/"><img src="https://avatars.githubusercontent.com/u/1139881?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Yoga Setiawan</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=arioki1" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MosheGross"><img src="https://avatars.githubusercontent.com/u/77084755?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Moshe Gross</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=MosheGross" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/stnkl"><img src="https://avatars.githubusercontent.com/u/17520641?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Stephan Rumswinkel</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=stnkl" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/vraravam"><img src="https://avatars.githubusercontent.com/u/69629?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Vijay Raghavan Aravamudhan</b></sub></a><br /><a href="#maintenance-vraravam" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
