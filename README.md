@@ -15,7 +15,7 @@
 <img alt="GitHub Releases" src="https://img.shields.io/github/downloads/getferdi/ferdi/latest/total?label=Downloads&logo=iCloud&logoColor=%23FFFFFF">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href='#contributors-'><img src='https://img.shields.io/badge/contributors-85-default.svg?logo=github' alt='Contributors'/></a>
-<!-- ALL-CONTRIBUTORS-BADGE:END --> 
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
 <a href="https://ci.appveyor.com/project/kytwb/ferdi"><img alt="Build Status Windows" src="https://img.shields.io/appveyor/ci/kytwb/ferdi/master?logo=appveyor"></a>
@@ -195,7 +195,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds Ferdi as a Flatpak on Flathub ([#323](https://github.com/getferdi/ferdi/issues/323)), 💖 [@lhw](https://github.com/lhw)
 
 ### Adds internal changes
-- [x] Upgrades to Electron 8.1.1
+- [x] Upgrades to Electron 10.4.3
 - [x] Switches to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Minifies build files to improve app size
 - [x] Adds "npm run prepare-code" command for development to lint and beautify code
@@ -205,7 +205,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds retry commands to flaky build steps ([#498](https://github.com/getferdi/ferdi/issues/498))
 - [x] Runs utility scripts pre-commit instead of pre-push ([#515](https://github.com/getferdi/ferdi/issues/515))
 
-> Thanks to all our [contributors](#contributors-) who helped realize all these amazing features! 💖 
+> Thanks to all our [contributors](#contributors-) who helped realize all these amazing features! 💖
 
 ## Development
 
