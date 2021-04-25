@@ -213,7 +213,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 #### Node.js
 
-Please make sure you are running NodeJS v10 or above.
+Please make sure you are running NodeJS v12. The exact node version used by the developers/contributors is specified in the [nvmrc file](./.nvmrc)
 
 #### Git
 
