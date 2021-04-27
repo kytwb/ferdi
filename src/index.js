@@ -206,6 +206,7 @@ const createWindow = () => {
     backgroundColor,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
       webviewTag: true,
       preload: path.join(__dirname, 'sentry.js'),
       enableRemoteModule: true,
