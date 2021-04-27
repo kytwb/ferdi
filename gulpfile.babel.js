@@ -7,7 +7,7 @@ import csso from 'gulp-csso';
 import terser from 'terser';
 import composer from 'gulp-uglify/composer';
 import htmlMin from 'gulp-htmlmin';
-import server from 'gulp-server-livereload';
+import connect from 'gulp-connect';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import sassVariables from 'gulp-sass-variables';
@@ -138,7 +138,8 @@ export function html() {
       collapseWhitespace: true,
       removeComments: true
     })))
-    .pipe(gulp.dest(paths.html.dest));
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(connect.reload());
 }
 
 export function styles() {
@@ -165,7 +166,8 @@ export function styles() {
     .pipe((gulpIf(process.env.NODE_ENV !== 'development', csso({ // Only minify in production to speed up dev builds
       restructure: false, // Don't restructure CSS, otherwise it will break the styles
     }))))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(connect.reload());
 }
 
 export function verticalStyle() {
@@ -192,7 +194,8 @@ export function verticalStyle() {
     .pipe((gulpIf(process.env.NODE_ENV !== 'development', csso({ // Only minify in production to speed up dev builds
       restructure: false, // Don't restructure CSS, otherwise it will break the styles
     }))))
-    .pipe(gulp.dest(paths.verticalStyle.dest));
+    .pipe(gulp.dest(paths.verticalStyle.dest))
+    .pipe(connect.reload());
 }
 
 export function scripts() {
@@ -204,7 +207,8 @@ export function scripts() {
       }),
     )
     .pipe(gulpIf(process.env.NODE_ENV !== 'development', uglify())) // Only uglify in production to speed up dev builds
-    .pipe(gulp.dest(paths.scripts.dest));
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(connect.reload());
 }
 
 export function watch() {
@@ -218,11 +222,10 @@ export function watch() {
 }
 
 export function webserver() {
-  gulp.src([paths.dest]).pipe(
-    server({
-      livereload: true,
-    }),
-  );
+  connect.server({
+    root: paths.dest,
+    livereload: true
+  });
 }
 
 export function recipes() {

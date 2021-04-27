@@ -177,7 +177,7 @@
     "gulp-cli": "1.2.2",
     "gulp-sass": "^4.0.2",
     "gulp-sass-variables": "1.2.0",
-    "gulp-server-livereload": "^1.9.2",
+    "gulp-connect": "^5.7.0",
     "hex-rgb": "3.0.0",
     "html-webpack-plugin": "4.0.0-beta.5",
     "husky": "^1.1.4",
