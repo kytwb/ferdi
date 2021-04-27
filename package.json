@@ -60,7 +60,7 @@
     "@meetfranz/forms": "file:packages/forms",
     "@meetfranz/theme": "file:packages/theme",
     "@meetfranz/ui": "file:packages/ui",
-    "@sentry/electron": "1.3.0",
+    "@sentry/electron": "^2.4.0",
     "address-rfc2822": "^2.0.1",
     "atob": "2.1.2",
     "auto-launch": "5.0.5",
