@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Launch Ferdi on start",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 31,
+      "line": 30,
       "column": 21
     },
     "end": {
-      "line": 34,
+      "line": 33,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Open in background",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 35,
+      "line": 34,
       "column": 26
     },
     "end": {
-      "line": 38,
+      "line": 37,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Keep Ferdi in background when closing the window",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 39,
+      "line": 38,
       "column": 19
     },
     "end": {
-      "line": 42,
+      "line": 41,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Start minimized",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 43,
+      "line": 42,
       "column": 18
     },
     "end": {
-      "line": 46,
+      "line": 45,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Always show Ferdi in system tray",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 47,
+      "line": 46,
       "column": 20
     },
     "end": {
-      "line": 50,
+      "line": 49,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Reload Ferdi after system resume",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 51,
+      "line": 50,
       "column": 21
     },
     "end": {
-      "line": 54,
+      "line": 53,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Minimize Ferdi to system tray",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 55,
+      "line": 54,
       "column": 24
     },
     "end": {
-      "line": 58,
+      "line": 57,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Close Ferdi to system tray",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 59,
+      "line": 58,
       "column": 21
     },
     "end": {
-      "line": 62,
+      "line": 61,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Don't show message content in notifications",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 63,
+      "line": 62,
       "column": 24
     },
     "end": {
-      "line": 66,
+      "line": 65,
       "column": 3
     }
   },
@@ -121,11 +121,11 @@
     "defaultMessage": "!!!Notify TaskBar/Dock on new message",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 67,
+      "line": 66,
       "column": 26
     },
     "end": {
-      "line": 70,
+      "line": 69,
       "column": 3
     }
   },
@@ -134,11 +134,11 @@
     "defaultMessage": "!!!Navigation bar behaviour",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 71,
+      "line": 70,
       "column": 26
     },
     "end": {
-      "line": 74,
+      "line": 73,
       "column": 3
     }
   },
@@ -147,11 +147,11 @@
     "defaultMessage": "!!!Send telemetry data",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 75,
+      "line": 74,
       "column": 10
     },
     "end": {
-      "line": 78,
+      "line": 77,
       "column": 3
     }
   },
@@ -160,11 +160,11 @@
     "defaultMessage": "!!!Enable service hibernation",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 79,
+      "line": 78,
       "column": 13
     },
     "end": {
-      "line": 82,
+      "line": 81,
       "column": 3
     }
   },
@@ -173,11 +173,11 @@
     "defaultMessage": "!!!Keep services in hibernation on startup",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 83,
+      "line": 82,
       "column": 22
     },
     "end": {
-      "line": 86,
+      "line": 85,
       "column": 3
     }
   },
@@ -186,11 +186,11 @@
     "defaultMessage": "!!!Hibernation strategy",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 87,
+      "line": 86,
       "column": 23
     },
     "end": {
-      "line": 90,
+      "line": 89,
       "column": 3
     }
   },
@@ -199,11 +199,11 @@
     "defaultMessage": "!!!Todo Server",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 91,
+      "line": 90,
       "column": 24
     },
     "end": {
-      "line": 94,
+      "line": 93,
       "column": 3
     }
   },
@@ -212,11 +212,11 @@
     "defaultMessage": "!!!Custom TodoServer",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 95,
+      "line": 94,
       "column": 20
     },
     "end": {
-      "line": 98,
+      "line": 97,
       "column": 3
     }
   },
@@ -225,11 +225,11 @@
     "defaultMessage": "!!!Enable Password Lock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 99,
+      "line": 98,
       "column": 14
     },
     "end": {
-      "line": 102,
+      "line": 101,
       "column": 3
     }
   },
@@ -238,11 +238,11 @@
     "defaultMessage": "!!!Password",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 103,
+      "line": 102,
       "column": 16
     },
     "end": {
-      "line": 106,
+      "line": 105,
       "column": 3
     }
   },
@@ -251,11 +251,11 @@
     "defaultMessage": "!!!Allow using Touch ID to unlock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 107,
+      "line": 106,
       "column": 22
     },
     "end": {
-      "line": 110,
+      "line": 109,
       "column": 3
     }
   },
@@ -264,11 +264,11 @@
     "defaultMessage": "!!!Lock after inactivity",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 111,
+      "line": 110,
       "column": 18
     },
     "end": {
-      "line": 114,
+      "line": 113,
       "column": 3
     }
   },
@@ -277,11 +277,11 @@
     "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 115,
+      "line": 114,
       "column": 23
     },
     "end": {
-      "line": 118,
+      "line": 117,
       "column": 3
     }
   },
@@ -290,11 +290,11 @@
     "defaultMessage": "!!!From",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 119,
+      "line": 118,
       "column": 21
     },
     "end": {
-      "line": 122,
+      "line": 121,
       "column": 3
     }
   },
@@ -303,11 +303,11 @@
     "defaultMessage": "!!!To",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 123,
+      "line": 122,
       "column": 19
     },
     "end": {
-      "line": 126,
+      "line": 125,
       "column": 3
     }
   },
@@ -316,11 +316,11 @@
     "defaultMessage": "!!!Language",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 127,
+      "line": 126,
       "column": 12
     },
     "end": {
-      "line": 130,
+      "line": 129,
       "column": 3
     }
   },
@@ -329,11 +329,11 @@
     "defaultMessage": "!!!Dark Mode",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 131,
+      "line": 130,
       "column": 12
     },
     "end": {
-      "line": 134,
+      "line": 133,
       "column": 3
     }
   },
@@ -342,11 +342,11 @@
     "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 135,
+      "line": 134,
       "column": 21
     },
     "end": {
-      "line": 138,
+      "line": 137,
       "column": 3
     }
   },
@@ -355,11 +355,11 @@
     "defaultMessage": "!!!Enable universal Dark Mode",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 139,
+      "line": 138,
       "column": 21
     },
     "end": {
-      "line": 142,
+      "line": 141,
       "column": 3
     }
   },
@@ -368,11 +368,11 @@
     "defaultMessage": "!!!Sidebar width",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 143,
+      "line": 142,
       "column": 22
     },
     "end": {
-      "line": 146,
+      "line": 145,
       "column": 3
     }
   },
@@ -381,11 +381,11 @@
     "defaultMessage": "!!!Service icon size",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 147,
+      "line": 146,
       "column": 12
     },
     "end": {
-      "line": 150,
+      "line": 149,
       "column": 3
     }
   },
@@ -394,11 +394,11 @@
     "defaultMessage": "!!!Use vertical style",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 151,
+      "line": 150,
       "column": 20
     },
     "end": {
-      "line": 154,
+      "line": 153,
       "column": 3
     }
   },
@@ -407,11 +407,11 @@
     "defaultMessage": "!!!Always show workspace drawer",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 155,
+      "line": 154,
       "column": 24
     },
     "end": {
-      "line": 158,
+      "line": 157,
       "column": 3
     }
   },
@@ -420,11 +420,11 @@
     "defaultMessage": "!!!Accent color",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 159,
+      "line": 158,
       "column": 15
     },
     "end": {
-      "line": 162,
+      "line": 161,
       "column": 3
     }
   },
@@ -433,11 +433,11 @@
     "defaultMessage": "!!!Display disabled services tabs",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 163,
+      "line": 162,
       "column": 24
     },
     "end": {
-      "line": 166,
+      "line": 165,
       "column": 3
     }
   },
@@ -446,11 +446,11 @@
     "defaultMessage": "!!!Show unread message badge when notifications are disabled",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 167,
+      "line": 166,
       "column": 29
     },
     "end": {
-      "line": 170,
+      "line": 169,
       "column": 3
     }
   },
@@ -459,11 +459,11 @@
     "defaultMessage": "!!!Show draggable area on window",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 171,
+      "line": 170,
       "column": 16
     },
     "end": {
-      "line": 174,
+      "line": 173,
       "column": 3
     }
   },
@@ -472,11 +472,11 @@
     "defaultMessage": "!!!Enable spell checking",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 175,
+      "line": 174,
       "column": 23
     },
     "end": {
-      "line": 178,
+      "line": 177,
       "column": 3
     }
   },
@@ -485,11 +485,11 @@
     "defaultMessage": "!!!Enable GPU Acceleration",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 179,
+      "line": 178,
       "column": 25
     },
     "end": {
-      "line": 182,
+      "line": 181,
       "column": 3
     }
   },
@@ -498,11 +498,11 @@
     "defaultMessage": "!!!Include beta versions",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 183,
+      "line": 182,
       "column": 8
     },
     "end": {
-      "line": 186,
+      "line": 185,
       "column": 3
     }
   },
@@ -511,11 +511,11 @@
     "defaultMessage": "!!!Enable updates",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 187,
+      "line": 186,
       "column": 20
     },
     "end": {
-      "line": 190,
+      "line": 189,
       "column": 3
     }
   },
@@ -524,11 +524,11 @@
     "defaultMessage": "!!!Enable Franz Todos",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 191,
+      "line": 190,
       "column": 15
     },
     "end": {
-      "line": 194,
+      "line": 193,
       "column": 3
     }
   },
@@ -537,11 +537,11 @@
     "defaultMessage": "!!!Keep all workspaces loaded",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 195,
+      "line": 194,
       "column": 27
     },
     "end": {
-      "line": 198,
+      "line": 197,
       "column": 3
     }
   }

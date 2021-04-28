@@ -172,7 +172,6 @@ export default @observer class EditSettingsForm extends Component {
     isDarkmodeEnabled: PropTypes.bool.isRequired,
     isAdaptableDarkModeEnabled: PropTypes.bool.isRequired,
     isNightlyEnabled: PropTypes.bool.isRequired,
-    openProcessManager: PropTypes.func.isRequired,
     hasAddedTodosAsService: PropTypes.bool.isRequired,
     isOnline: PropTypes.bool.isRequired,
   };
@@ -226,7 +225,6 @@ export default @observer class EditSettingsForm extends Component {
       automaticUpdates,
       hibernationEnabled,
       isDarkmodeEnabled,
-      openProcessManager,
       isTodosActivated,
       isNightlyEnabled,
       hasAddedTodosAsService,
@@ -589,16 +587,6 @@ export default @observer class EditSettingsForm extends Component {
                       loaded={!isClearingAllCache}
                     />
                   </p>
-                  <div style={{
-                    marginTop: 20,
-                  }}
-                  >
-                    <Button
-                      buttonType="secondary"
-                      label="Open Process Manager"
-                      onClick={openProcessManager}
-                    />
-                  </div>
                 </div>
               </div>
             )}

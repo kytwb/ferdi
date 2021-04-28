@@ -1,4 +1,3 @@
-import { ipcRenderer } from 'electron';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
@@ -296,10 +295,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         todosActions.toggleTodosFeatureVisibility();
       }
     }
-  }
-
-  openProcessManager() {
-    ipcRenderer.send('openProcessManager');
   }
 
   prepareForm() {
@@ -629,7 +624,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
           isUsingCustomTodoService={this.props.stores.todos.isUsingCustomTodoService}
           isNightlyEnabled={this.props.stores.settings.app.nightly}
-          openProcessManager={() => this.openProcessManager()}
           hasAddedTodosAsService={services.isTodosServiceAdded}
           isOnline={app.isOnline}
         />

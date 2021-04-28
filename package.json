@@ -76,8 +76,6 @@
     "electron-find": "1.0.6",
     "electron-hunspell": "1.1.1",
     "electron-is-dev": "1.1.0",
-    "electron-process-manager": "git+https://git@github.com/dizer/electron-process-manager.git",
-    "electron-process-reporter": "git+https://git@github.com/dizer/electron-process-reporter.git",
     "electron-react-titlebar": "0.8.2",
     "electron-updater": "4.3.5",
     "electron-util": "0.14.0",
