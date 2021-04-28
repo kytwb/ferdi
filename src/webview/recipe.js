@@ -128,17 +128,7 @@ class RecipeController {
   }
 
   @computed get spellcheckerLanguage() {
-    let selected;
-    const langs = this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
-    if (typeof langs === 'string' && langs.substr(0, 1) === '[') {
-      // Value is JSON encoded
-      selected = JSON.parse(langs);
-    } else if (typeof langs === 'object') {
-      selected = langs;
-    } else {
-      selected = [langs];
-    }
-
+    const selected = this.settings.service.spellcheckerLanguage || this.settings.app.spellcheckerLanguage;
     return selected;
   }
 
