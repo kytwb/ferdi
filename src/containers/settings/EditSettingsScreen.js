@@ -268,7 +268,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         showMessageBadgeWhenMuted: settingsData.showMessageBadgeWhenMuted,
         showDragArea: settingsData.showDragArea,
         enableSpellchecking: settingsData.enableSpellchecking,
-        spellcheckerLanguage: JSON.stringify(settingsData.spellcheckerLanguage),
+        spellcheckerLanguage: settingsData.spellcheckerLanguage,
         beta: settingsData.beta, // we need this info in the main process as well
         automaticUpdates: settingsData.automaticUpdates, // we need this info in the main process as well
         locale: settingsData.locale, // we need this info in the main process as well
