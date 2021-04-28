@@ -162,6 +162,11 @@ if (!settings.get('enableGPUAcceleration')) {
   app.disableHardwareAcceleration();
 }
 
+app.setAboutPanelOptions({
+  applicationVersion: `Version: ${app.getVersion()}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}`,
+  version: '',
+});
+
 const createWindow = () => {
   // Remember window size
   const mainWindowState = windowStateKeeper({
