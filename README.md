@@ -440,7 +440,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/stnkl"><img src="https://avatars.githubusercontent.com/u/17520641?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Stephan Rumswinkel</b></sub></a><br /><a href="https://github.com/getferdi/ferdi/commits?author=stnkl" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/vraravam"><img src="https://avatars.githubusercontent.com/u/69629?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Vijay Raghavan Aravamudhan</b></sub></a><br /><a href="#maintenance-vraravam" title="Maintenance">🚧</a> <a href="https://github.com/getferdi/ferdi/commits?author=vraravam" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/vraravam"><img src="https://avatars.githubusercontent.com/u/69629?v=4?s=40" width="40px;" alt=""/><br /><sub><b>Vijay Raghavan Aravamudhan</b></sub></a><br /><a href="#maintenance-vraravam" title="Maintenance">🚧</a> <a href="https://github.com/getferdi/ferdi/commits?author=vraravam" title="Documentation">📖</a> <a href="https://github.com/getferdi/ferdi/commits?author=vraravam" title="Code">💻</a></td>
   </tr>
 </table>
 
