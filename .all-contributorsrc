@@ -842,7 +842,8 @@
         "maintenance",
         "doc",
         "code",
-        "mentoring"
+        "mentoring",
+        "review"
       ]
     }
   ],
