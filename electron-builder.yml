@@ -14,6 +14,11 @@ mac:
   darkModeSupport: true
   entitlements: "./build-helpers/entitlements.mas.plist"
   entitlementsInherit: "./build-helpers/entitlements.mas.inherit.plist"
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
   extendInfo:
     NSCameraUsageDescription: "This app requires camera access for video chats"
     NSMicrophoneUsageDescription: "This app requires microphone access for voice chats"
