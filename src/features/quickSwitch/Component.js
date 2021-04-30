@@ -97,6 +97,8 @@ export default @injectSheet(styles) @inject('stores', 'actions') @observer class
 
   ARROW_UP = 38;
 
+  SHIFT = 16;
+
   ENTER = 13;
 
   TAB = 9;
@@ -204,7 +206,11 @@ export default @injectSheet(styles) @inject('stores', 'actions') @observer class
           this.changeSelected(1);
           break;
         case this.TAB:
-          this.changeSelected(1);
+          if (event.shiftKey) {
+            this.changeSelected(-1);
+          } else {
+            this.changeSelected(1);
+          }
           break;
         case this.ARROW_UP:
           this.changeSelected(-1);
