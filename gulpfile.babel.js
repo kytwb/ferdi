@@ -11,10 +11,9 @@ import connect from 'gulp-connect';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import sassVariables from 'gulp-sass-variables';
-import { moveSync, removeSync } from 'fs-extra';
+import { removeSync } from 'fs-extra';
 import kebabCase from 'kebab-case';
 import hexRgb from 'hex-rgb';
-import path from 'path';
 
 import config from './package.json';
 
@@ -80,6 +79,7 @@ const paths = {
   },
 };
 
+// eslint-disable-next-line no-unused-vars
 function _shell(cmd, cb) {
   console.log('executing', cmd);
   exec(
@@ -136,7 +136,7 @@ export function html() {
     .src(paths.html.src, { since: gulp.lastRun(html) })
     .pipe(gulpIf(process.env.NODE_ENV !== 'development', htmlMin({ // Only minify in production to speed up dev builds
       collapseWhitespace: true,
-      removeComments: true
+      removeComments: true,
     })))
     .pipe(gulp.dest(paths.html.dest))
     .pipe(connect.reload());
@@ -224,7 +224,7 @@ export function watch() {
 export function webserver() {
   connect.server({
     root: paths.dest,
-    livereload: true
+    livereload: true,
   });
 }
 
