@@ -14,7 +14,7 @@ import { ctrlKey, cmdKey } from '../../../environment';
 
 const IS_SERVICE_DEBUGGING_ENABLED = (localStorage.getItem('debug') || '').includes('Franz:Service');
 
-const { Menu } = remote;
+const { Menu, dialog, app } = remote;
 
 const messages = defineMessages({
   reload: {
@@ -52,6 +52,10 @@ const messages = defineMessages({
   deleteService: {
     id: 'tabs.item.deleteService',
     defaultMessage: '!!!Delete Service',
+  },
+  confirmDeleteService: {
+    id: 'tabs.item.confirmDeleteService',
+    defaultMessage: '!!!Do you really want to delete the service?',
   },
 });
 
@@ -147,7 +151,6 @@ const styles = {
     } = this.props;
     const { intl } = this.context;
 
-
     const menuTemplate = [{
       label: service.name || service.recipe.name,
       enabled: false,
@@ -181,7 +184,20 @@ const styles = {
       type: 'separator',
     }, {
       label: intl.formatMessage(messages.deleteService),
-      click: () => deleteService(),
+      click: () => {
+        const selection = dialog.showMessageBoxSync(app.mainWindow, {
+          type: 'question',
+          message: intl.formatMessage(messages.deleteService),
+          detail: intl.formatMessage(messages.confirmDeleteService),
+          buttons: [
+            'Yes',
+            'No',
+          ],
+        });
+        if (selection === 0) {
+          deleteService();
+        }
+      },
     }];
     const menu = Menu.buildFromTemplate(menuTemplate);
 

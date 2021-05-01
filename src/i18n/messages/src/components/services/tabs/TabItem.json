@@ -115,5 +115,18 @@
       "line": 55,
       "column": 3
     }
+  },
+  {
+    "id": "tabs.item.confirmDeleteService",
+    "defaultMessage": "!!!Do you really want to delete the service?",
+    "file": "src/components/services/tabs/TabItem.js",
+    "start": {
+      "line": 56,
+      "column": 24
+    },
+    "end": {
+      "line": 59,
+      "column": 3
+    }
   }
 ]
