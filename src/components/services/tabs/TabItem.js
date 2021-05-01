@@ -55,7 +55,7 @@ const messages = defineMessages({
   },
   confirmDeleteService: {
     id: 'tabs.item.confirmDeleteService',
-    defaultMessage: '!!!Do you really want to delete the service?',
+    defaultMessage: '!!!Do you really want to delete the {serviceName} service?',
   },
 });
 
@@ -188,7 +188,7 @@ const styles = {
         const selection = dialog.showMessageBoxSync(app.mainWindow, {
           type: 'question',
           message: intl.formatMessage(messages.deleteService),
-          detail: intl.formatMessage(messages.confirmDeleteService),
+          detail: intl.formatMessage(messages.confirmDeleteService, { serviceName: service.name || service.recipe.name }),
           buttons: [
             'Yes',
             'No',

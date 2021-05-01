@@ -118,7 +118,7 @@
   },
   {
     "id": "tabs.item.confirmDeleteService",
-    "defaultMessage": "!!!Do you really want to delete the service?",
+    "defaultMessage": "!!!Do you really want to delete the {serviceName} service?",
     "file": "src/components/services/tabs/TabItem.js",
     "start": {
       "line": 56,
