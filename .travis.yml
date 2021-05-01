@@ -33,15 +33,18 @@ before_install:
       git fetch source
       git merge --no-ff --commit -m "Merge remote-tracking branch 'source/develop' into HEAD [skip ci]" source/develop
       CHANGES_COUNT=$(git diff --stat HEAD origin/nightly | wc -l)
-      echo $TRAVIS_EVENT_TYPE
-      echo $changes
+      echo "Travis event type: $TRAVIS_EVENT_TYPE"
+      echo "Number of changes: $CHANGES_COUNT"
       if [ $CHANGES_COUNT -eq 0 -a $TRAVIS_EVENT_TYPE == "cron" ]; then
-        travis_terminate 0;
+        echo "Terminating the build since there are no changes in a cron-triggered build"
+        travis_terminate 0
       else
+        echo "Found changes, proceeding with submodule updates"
         git submodule update --remote --force
         git add .
         git commit -m "Update submodules [skip ci]" || true
       fi
+      echo "Completed merging from develop branch and upgrading submodules"
     fi
 install:
   - cd recipes && npm install && npm run package && cd ..
@@ -52,7 +55,7 @@ before_script:
 script:
   - |
     if [ $TRAVIS_BRANCH == "release" ]; then
-      echo "Building..."
+      echo "Building for release..."
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi -c.mac.identity=null
     fi
   - |
@@ -60,7 +63,7 @@ script:
       git add .
       git commit -m "Apply linter fixes [skip ci]"
       npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]"
-      echo "Building..."
+      echo "Building for nightly..."
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
       if [ $TRAVIS_OS_NAME == "osx" ]; then
         git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1

@@ -10,6 +10,10 @@
   "homepage": "https://github.com/getferdi/ferdi",
   "repository": "https://github.com/getferdi/ferdi.git",
   "private": true,
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "prestart": "npm run rebuild",
     "start": "electron ./build",
