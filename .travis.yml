@@ -16,6 +16,8 @@ matrix:
       osx_image: xcode12
 
 language: node_js
+node_js:
+  - 14
 git:
   submodules: false
 branches:
