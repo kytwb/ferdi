@@ -299,6 +299,15 @@ $ cd recipes
 $ npm install && npm run package
 ```
 
+### Using Docker to build a package
+
+```bash
+$ docker build -t ferdi-package .
+$ docker run -v tmp-out:/ferdi-out -it ferdi-package sh
+```
+
+The above will place all the built artifacts into the `/ferdi` folder within the image. If you want to copy them outside of the image, simply mount a volume into a different location, and copy all files from `/ferdi` into the mounted folder (`/ferdi-out` in the 2nd example command above).
+
 ### Start development app
 
 Run these two commands **simultaneously** in different terminals:
