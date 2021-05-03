@@ -844,7 +844,8 @@
         "doc",
         "code",
         "mentoring",
-        "review"
+        "review",
+        "infra"
       ]
     }
   ],
