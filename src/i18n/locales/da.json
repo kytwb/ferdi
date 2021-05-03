@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5 kommer med et stort udvalg af nye funktioner til give din daglige kommunikation et løft. Tjek vores nye planer og find ud af, hvilken der passer dig mest!",
   "subscriptionPopup.buttonCancel": "Annuller",
   "subscriptionPopup.buttonDone": "Udført",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "Slet tjeneste",
   "tabs.item.disableAudio": "Deaktiver lyd",
   "tabs.item.disableNotifications": "Deaktiver notifikationer",
