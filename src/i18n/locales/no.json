@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5 har en lang rekke nye funksjoner, for å styrke kommunikasjonen i hverdagen - batterier inkludert. Sjekk ut våre nye planer og finn ut hvilke som passer deg best!",
   "subscriptionPopup.buttonCancel": "Avbryt",
   "subscriptionPopup.buttonDone": "Ferdig",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "Slett tjeneste",
   "tabs.item.disableAudio": "Deaktiver lyd",
   "tabs.item.disableNotifications": "Deaktiver varslinger",
