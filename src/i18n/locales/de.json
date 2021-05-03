@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5 ist voll gepackt mit vielen neuen Features, damit du für jegliche kommunikative Eventualität gerüstet bist. Nimm dir was du brauchst und leg los!",
   "subscriptionPopup.buttonCancel": "Abbrechen",
   "subscriptionPopup.buttonDone": "Fertig",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "Dienst löschen",
   "tabs.item.disableAudio": "Audio deaktivieren",
   "tabs.item.disableNotifications": "Benachrichtigungen deaktivieren",
