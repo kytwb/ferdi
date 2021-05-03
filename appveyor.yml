@@ -12,11 +12,12 @@ cache:
 image: Visual Studio 2019
 
 environment:
-  nodejs_version: "14.16.1"
+  nodejs_version: "14.15.0"
 
 install:
   - appveyor-retry git submodule update --init --recursive
   - ps: Install-Product node $env:nodejs_version
+  - cmd: set NODE_OPTIONS=--max-old-space-size=2048
   - cd recipes && npm install && npm run package && cd ..
   - appveyor-retry npx lerna bootstrap
 
