@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5:n mukana tulee laaja valikoima uusia ominaisuuksia, jotka parantavat jokapäiväistä viestintää - ryhmät mukaanlukien. Tutustu uusiin suunnitelmiin ja selvitä, mikä sopii sinulle parhaiten!",
   "subscriptionPopup.buttonCancel": "Peruuta",
   "subscriptionPopup.buttonDone": "Valmis",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "Poista palvelu",
   "tabs.item.disableAudio": "Poista ääni käytöstä",
   "tabs.item.disableNotifications": "Poista ilmoitukset käytöstä",
