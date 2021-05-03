@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5 comes with a wide range of new features to boost up your everyday communication - batteries included. Check out our new plans and find out which one suits you most!",
   "subscriptionPopup.buttonCancel": "取消",
   "subscriptionPopup.buttonDone": "完成",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "刪除",
   "tabs.item.disableAudio": "停用音效",
   "tabs.item.disableNotifications": "停用通知",
