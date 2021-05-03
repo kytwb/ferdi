@@ -519,6 +519,7 @@
   "subscription.teaser.intro": "Ferdi 5 contiene un ampia gamma di nuove caratteristiche per potenziare le tue comunicazioni di tutti i giorni - incluse le batterie. Dai un'occhiata ai nostri nuovi piani per scoprire quale si adatta di più a te!",
   "subscriptionPopup.buttonCancel": "Annulla",
   "subscriptionPopup.buttonDone": "Fatto",
+  "tabs.item.confirmDeleteService": "Do you really want to delete the {serviceName} service?",
   "tabs.item.deleteService": "Elimina servizio",
   "tabs.item.disableAudio": "Disattiva audio",
   "tabs.item.disableNotifications": "Disattiva notifiche",
