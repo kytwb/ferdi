@@ -30,7 +30,13 @@
       "messagesDir": "./src/i18n/messages/",
       "enforceDescriptions": false,
       "extractSourceLocation": true
-    }]
+    }],
+    [
+      "@babel/plugin-proposal-private-methods",
+      {
+        "loose": true
+      }
+    ]
   ],
   "sourceMaps": "inline"
 }
