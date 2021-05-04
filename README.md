@@ -307,8 +307,7 @@ Create a new [draft release](https://github.com/getferdi/ferdi/releases/new) tha
 $ git checkout develop && git pull
 $ git checkout release
 $ git submodule update --remote --force
-$ git add .
-$ git commit -m "Update submodules"
+$ git commit -am "Update submodules"
 $ git merge --no-ff develop
 $ git push
 ```

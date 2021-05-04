@@ -43,8 +43,7 @@ before_install:
       else
         echo "Found changes, proceeding with submodule updates"
         git submodule update --remote --force
-        git add .
-        git commit -m "Update submodules [skip ci]" || true
+        git commit -am "Update submodules [skip ci]" || true
       fi
       echo "Completed merging from develop branch and upgrading submodules"
     fi
@@ -62,13 +61,12 @@ script:
     fi
   - |
     if [ $TRAVIS_BRANCH == "nightly" ]; then
-      git add .
-      git commit -m "Apply linter fixes [skip ci]"
+      git commit -am "Apply linter fixes [skip ci]"
       npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]"
       echo "Building for nightly..."
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies
       if [ $TRAVIS_OS_NAME == "osx" ]; then
         git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
-        git push --quiet --set-upstream nightly HEAD:nightly >/dev/null 2>&1
+        git push -qu nightly HEAD:nightly >/dev/null 2>&1
       fi
     fi
