@@ -14,6 +14,9 @@ matrix:
     - os: osx
       if: branch IN (nightly, release)
       osx_image: xcode12
+      env:
+        - ELECTRON_CACHE=$HOME/.cache/electron
+        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 language: node_js
 node_js:
@@ -25,7 +28,11 @@ branches:
     - develop
     - release
     - nightly
-cache: npm
+cache:
+  directories:
+    - node_modules
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
 
 before_install:
   - git submodule update --init --recursive

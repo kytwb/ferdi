@@ -33,20 +33,36 @@
 - [Ferdi](#ferdi)
     - [Table of contents](#table-of-contents)
     - [What is Ferdi?](#what-is-ferdi)
-    - [Features](#features)
+  - [Features](#features)
     - [What does Ferdi look like?](#what-does-ferdi-look-like)
   - [Download Ferdi](#download-ferdi)
+    - [Or use Chocolatey (Windows only)](#or-use-chocolatey-windows-only)
     - [Or use homebrew (macOS only)](#or-use-homebrew-macos-only)
     - [Or use AUR (Arch Linux)](#or-use-aur-arch-linux)
   - [What makes Ferdi different from Franz?](#what-makes-ferdi-different-from-franz)
+    - [Removes unproductive paywalls and other other interruptions](#removes-unproductive-paywalls-and-other-other-interruptions)
+    - [Adds features to increase your productivity](#adds-features-to-increase-your-productivity)
+    - [Adds features to improve your privacy](#adds-features-to-improve-your-privacy)
+    - [Adds features to improve your experience using Ferdi](#adds-features-to-improve-your-experience-using-ferdi)
+    - [Removed bugs](#removed-bugs)
+    - [Adds new platforms](#adds-new-platforms)
+    - [Adds internal changes](#adds-internal-changes)
   - [Development](#development)
     - [Install OS dependencies](#install-os-dependencies)
+      - [Node.js](#nodejs)
+      - [Git](#git)
+      - [Debian/Ubuntu](#debianubuntu)
+      - [Fedora](#fedora)
+      - [Windows](#windows)
     - [Clone repository with submodule](#clone-repository-with-submodule)
+    - [Local caching of dependencies](#local-caching-of-dependencies)
     - [Install dependencies](#install-dependencies)
     - [Fix native modules to match current electron node version](#fix-native-modules-to-match-current-electron-node-version)
+    - [Package recipe repository](#package-recipe-repository)
     - [Start development app](#start-development-app)
     - [Packaging](#packaging)
     - [Release](#release)
+      - [Nightly releases](#nightly-releases)
   - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
@@ -248,6 +264,15 @@ $ git submodule update --init --recursive
 ```
 
 It is important you execute the last command to get the required submodules (recipes, server).
+
+
+### Local caching of dependencies
+
+Set these env vars into your profile (or if you use [direnv](https://direnv.net/), you can manage them via the respective `.envrc` file)
+```bash
+export ELECTRON_CACHE=$HOME/.cache/electron
+export ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+```
 
 ### Install dependencies
 

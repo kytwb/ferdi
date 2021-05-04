@@ -8,6 +8,8 @@ skip_branch_with_pr: true
 cache:
   - '%APPDATA%\npm-cache'
   - node_modules
+  - '%USERPROFILE%\.electron'
+  - '%USERPROFILE%\.electron-builder'
 
 image: Visual Studio 2019
 
