@@ -19,8 +19,8 @@ matrix:
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 language: node_js
-node_js:
-  - 14
+node_js: "14.16.1"
+
 git:
   submodules: false
 branches:
