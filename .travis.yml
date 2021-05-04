@@ -60,7 +60,8 @@ install:
   - travis_retry npm install node-sass -g
 before_script:
   - npm run lint && npm run test
-  - rm -rf build out
+  - echo $pwd
+  - rm -rfv ./build ./out
 script:
   - |
     if [ $TRAVIS_BRANCH == "release" ]; then
