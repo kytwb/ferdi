@@ -15,7 +15,7 @@ matrix:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
     - os: osx
-      osx_image: xcode12.2
+      osx_image: xcode12.4
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
@@ -57,9 +57,11 @@ before_install:
       echo "Completed merging from develop branch and upgrading submodules"
     fi
 install:
+  - npm cache clean -f || travis_terminate 1
+  - npm uninstall node-gyp && travis_retry npm install -g node-gyp@8.0.0 || travis_terminate 1
+  - npm uninstall node-sass && travis_retry npm install -g node-sass@5.0.0 || travis_terminate 1
   - cd recipes && npm install && npm run package && cd .. || travis_terminate 1
   - travis_retry npx lerna bootstrap || travis_terminate 1
-  - travis_retry npm install node-sass -g || travis_terminate 1
 before_script:
   - npm run lint && npm run test || travis_terminate 1
 script:
