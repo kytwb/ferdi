@@ -143,7 +143,7 @@ export default @inject('actions') @observer class Login extends Component {
           <h1>{intl.formatMessage(messages.headline)}</h1>
           {isDevMode && !useLiveAPI && (
             <Infobox type="warning">
-              In Dev Mode your data is not persistent. Please use the live app for accesing the production API.
+              In Dev Mode your data is not persistent. Please use the live app for accessing the production API.
             </Infobox>
           )}
           {isTokenExpired && (
