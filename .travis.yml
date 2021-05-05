@@ -15,7 +15,6 @@ matrix:
         - ELECTRON_CACHE=$HOME/.cache/electron
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
     - os: osx
-      if: branch IN (nightly, release)
       osx_image: xcode12.2
       env:
         - ELECTRON_CACHE=$HOME/.cache/electron
@@ -63,23 +62,19 @@ install:
   - travis_retry npm install node-sass -g || travis_terminate 1
 before_script:
   - npm run lint && npm run test || travis_terminate 1
-  - echo $pwd
-  - chown -R `whoami` .
-  - rm -rfv ./build ./out
 script:
   - |
+    echo "Building for branch: $TRAVIS_BRANCH"
     if [ $TRAVIS_BRANCH == "release" ]; then
-      echo "Building for release..."
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi -c.mac.identity=null || travis_terminate 1
-    fi
-  - |
-    if [ $TRAVIS_BRANCH == "nightly" ]; then
+    elif [ $TRAVIS_BRANCH == "nightly" ]; then
       git commit -am "Apply linter fixes [skip ci]"
       npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]" || travis_terminate 1
-      echo "Building for nightly..."
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies || travis_terminate 1
       if [ $TRAVIS_OS_NAME == "osx" ]; then
         git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
         git push -qu nightly HEAD:nightly >/dev/null 2>&1
       fi
+    else
+      travis_retry travis_wait 100 npm run build || travis_terminate 1
     fi
