@@ -37,7 +37,7 @@
     - [What does Ferdi look like?](#what-does-ferdi-look-like)
   - [Download Ferdi](#download-ferdi)
     - [Or use Chocolatey (Windows only)](#or-use-chocolatey-windows-only)
-    - [Or use homebrew (macOS or linux)](#or-use-homebrew-macos-or-linux)
+    - [Or use homebrew (macOS or Linux)](#or-use-homebrew-macos-or-linux)
     - [Or use AUR (Arch Linux)](#or-use-aur-arch-linux)
   - [What makes Ferdi different from Franz?](#what-makes-ferdi-different-from-franz)
     - [Removes unproductive paywalls and other other interruptions](#removes-unproductive-paywalls-and-other-other-interruptions)
@@ -114,7 +114,7 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 
 (Don't know Chocolatey? [chocolatey.org](https://chocolatey.org/))
 
-### Or use homebrew (macOS or linux)
+### Or use homebrew (macOS or Linux)
 
 `$ brew install --cask ferdi`
 
