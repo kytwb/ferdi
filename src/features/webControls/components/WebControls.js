@@ -65,6 +65,7 @@ const styles = theme => ({
     width: '20px !important',
     height: 20,
     marginTop: 5,
+    color: theme.colorText,
   },
   input: {
     marginBottom: 0,
