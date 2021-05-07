@@ -2,6 +2,7 @@ import {
   app, Menu, nativeImage, nativeTheme, systemPreferences, Tray, ipcMain,
 } from 'electron';
 import path from 'path';
+import macosVersion from 'macos-version';
 import {
   isMac,
   isWindows,
@@ -173,7 +174,7 @@ export default class TrayIcon {
   _getAsset(type, asset) {
     let { platform } = process;
 
-    if (platform === 'darwin' && nativeTheme.shouldUseDarkColors) {
+    if (platform === 'darwin' && (nativeTheme.shouldUseDarkColors || macosVersion.isGreaterThanOrEqualTo('11'))) {
       platform = `${platform}-dark`;
     }
 
