@@ -1,6 +1,8 @@
 version: build-{build}
 branches:
   only:
+    - develop
+    - nightly
     - release
 skip_tags: true
 skip_branch_with_pr: true
@@ -31,6 +33,12 @@ build_script:
   - appveyor-retry npm run build
 
 for:
+-
+  branches:
+    only:
+      - develop
+  build_script:
+    - appveyor-retry npm run build
 -
   branches:
     only:
