@@ -187,7 +187,7 @@
     "husky": "^1.1.4",
     "jest": "^26.6.3",
     "kebab-case": "^1.0.0",
-    "lerna": "^3.22.1",
+    "lerna": "4.0.0",
     "mobx-react-devtools": "^6.1.1",
     "mocha": "^5.2.0",
     "node-abi": "^2.26.0",

@@ -27,7 +27,7 @@
     "@mdi/react": "^1.1.0",
     "@meetfranz/theme": "^1.0.14",
     "react-html-attributes": "^1.4.3",
-    "react-loader": "^2.4.5"
+    "react-loader": "2.4.7"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
