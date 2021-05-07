@@ -57,9 +57,7 @@ const debug = require('debug')('Ferdi:App');
 // From Electron 9 onwards, app.allowRendererProcessReuse = true by default. This causes the app to crash on Windows due to the
 // Electron Windows Notification API crashing. Setting this to false fixes the issue until the electron team fixes the notification bug
 // More Info - https://github.com/electron/electron/issues/18397
-if (isWindows) {
-  app.allowRendererProcessReuse = false;
-}
+app.allowRendererProcessReuse = false;
 
 // Globally set useragent to fix user agent override in service workers
 debug('Set userAgent to ', userAgent());
@@ -378,7 +376,8 @@ if (argv['auth-negotiate-delegate-whitelist']) {
 }
 
 // Disable Chromium's poor MPRIS implementation
-app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService');
+// and apply workaround for https://github.com/electron/electron/pull/26432
+app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling,MediaSessionService,CrossOriginOpenerPolicy');
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
