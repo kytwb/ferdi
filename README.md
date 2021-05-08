@@ -238,13 +238,13 @@ The version [2.23.0](https://github.com/git-for-windows/git/releases/tag/v2.23.0
 #### Debian/Ubuntu
 
 ```bash
-$ apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev
+$ apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev rpm
 ```
 
 #### Fedora
 
 ```bash
-$ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel
+$ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel rpm
 ```
 
 #### Windows
