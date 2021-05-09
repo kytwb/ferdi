@@ -39,6 +39,7 @@ const paths = {
   src: 'src',
   dest: 'build',
   tmp: '.tmp',
+  dist: 'out',
   package: `out/${config.version}`,
   buildInfoDestFile: 'build/buildInfo.json',
   recipes: {
@@ -105,6 +106,7 @@ function _shell(cmd, cb) {
 const clean = (done) => {
   removeSync(paths.tmp);
   removeSync(paths.dest);
+  removeSync(paths.dist);
 
   done();
 };
