@@ -24,6 +24,10 @@ dotenv.config();
 
 const uglify = composer(terser, console);
 
+const isDevBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() === 'development');
+
+const getTargetEnv = isDevBuild ? 'development' : 'production';
+
 const styleConfig = Object.keys(rawStyleConfig).map((key) => {
   const isHex = /^#[0-9A-F]{6}$/i.test(rawStyleConfig[key]);
   return {
@@ -147,7 +151,7 @@ export function exportBuildInfo() {
 export function html() {
   return gulp
     .src(paths.html.src, { since: gulp.lastRun(html) })
-    .pipe(gulpIf(process.env.NODE_ENV !== 'development', htmlMin({ // Only minify in production to speed up dev builds
+    .pipe(gulpIf(!isDevBuild, htmlMin({ // Only minify in production to speed up dev builds
       collapseWhitespace: true,
       removeComments: true,
     })))
@@ -162,10 +166,7 @@ export function styles() {
       sassVariables(
         Object.assign(
           {
-            $env:
-              process.env.NODE_ENV === 'development'
-                ? 'development'
-                : 'production',
+            $env: getTargetEnv,
           },
           ...styleConfig,
         ),
@@ -176,7 +177,7 @@ export function styles() {
         includePaths: ['./node_modules', '../node_modules'],
       }).on('error', sass.logError),
     )
-    .pipe((gulpIf(process.env.NODE_ENV !== 'development', csso({ // Only minify in production to speed up dev builds
+    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
       restructure: false, // Don't restructure CSS, otherwise it will break the styles
     }))))
     .pipe(gulp.dest(paths.styles.dest))
@@ -190,10 +191,7 @@ export function verticalStyle() {
       sassVariables(
         Object.assign(
           {
-            $env:
-              process.env.NODE_ENV === 'development'
-                ? 'development'
-                : 'production',
+            $env: getTargetEnv,
           },
           ...styleConfig,
         ),
@@ -204,7 +202,7 @@ export function verticalStyle() {
         includePaths: ['./node_modules', '../node_modules'],
       }).on('error', sass.logError),
     )
-    .pipe((gulpIf(process.env.NODE_ENV !== 'development', csso({ // Only minify in production to speed up dev builds
+    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
       restructure: false, // Don't restructure CSS, otherwise it will break the styles
     }))))
     .pipe(gulp.dest(paths.verticalStyle.dest))
@@ -219,7 +217,7 @@ export function scripts() {
         comments: false,
       }),
     )
-    .pipe(gulpIf(process.env.NODE_ENV !== 'development', uglify())) // Only uglify in production to speed up dev builds
+    .pipe(gulpIf(!isDevBuild, uglify())) // Only uglify in production to speed up dev builds
     .pipe(gulp.dest(paths.scripts.dest))
     .pipe(connect.reload());
 }
