@@ -1,5 +1,4 @@
 import electron from 'electron';
-import isDevMode from 'electron-is-dev';
 import ms from 'ms';
 import path from 'path';
 import { asarPath } from './helpers/asar-helpers';
@@ -32,8 +31,6 @@ export const PRODUCTION_TODOS_FRONTEND_URL = 'https://app.franztodos.com';
 export const DEVELOPMENT_TODOS_FRONTEND_URL = 'https://development--franz-todos.netlify.com';
 
 export const CDN_URL = 'https://cdn.franzinfra.com';
-
-export const GA_ID = !isDevMode ? 'UA-74126766-10' : 'UA-74126766-12';
 
 export const KEEP_WS_LOADED_USID = '0a0aa000-0a0a-49a0-a000-a0a0a0a0a0a0';
 
