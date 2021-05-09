@@ -9,6 +9,7 @@ import { todoActions } from '../features/todos/actions';
 import { CUSTOM_WEBSITE_ID } from '../features/webControls/constants';
 import { workspaceActions } from '../features/workspaces/actions';
 import { workspaceStore } from '../features/workspaces/index';
+import * as buildInfo from '../buildInfo.json'; // eslint-disable-line import/no-unresolved
 
 const {
   app, Menu, dialog, systemPreferences,
@@ -1024,7 +1025,7 @@ export default class FranzMenu {
           type: 'info',
           title: 'Franz Ferdinand',
           message: 'Ferdi',
-          detail: `Version: ${remote.app.getVersion()} (${process.arch})\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}`,
+          detail: `Version: ${remote.app.getVersion()}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
         });
       },
     };

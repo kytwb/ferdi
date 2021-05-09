@@ -42,6 +42,7 @@ import handleDeepLink from './electron/deepLinking';
 import { isPositionValid } from './electron/windowUtils';
 import askFormacOSPermissions from './electron/macOSPermissions';
 import { appId } from './package.json'; // eslint-disable-line import/no-unresolved
+import * as buildInfo from './buildInfo.json'; // eslint-disable-line import/no-unresolved
 import './electron/exception';
 
 import {
@@ -161,7 +162,7 @@ if (!settings.get('enableGPUAcceleration')) {
 }
 
 app.setAboutPanelOptions({
-  applicationVersion: `Version: ${app.getVersion()}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}`,
+  applicationVersion: `Version: ${app.getVersion()}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
   version: '',
 });
 

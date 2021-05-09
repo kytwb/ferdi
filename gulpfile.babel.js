@@ -11,13 +11,14 @@ import connect from 'gulp-connect';
 import { exec } from 'child_process';
 import dotenv from 'dotenv';
 import sassVariables from 'gulp-sass-variables';
-import { removeSync } from 'fs-extra';
+import { removeSync, outputJson } from 'fs-extra';
 import kebabCase from 'kebab-case';
 import hexRgb from 'hex-rgb';
 
 import config from './package.json';
 
 import * as rawStyleConfig from './src/theme/default/legacy.js';
+import * as buildInfo from 'preval-build-info';
 
 dotenv.config();
 
@@ -39,6 +40,7 @@ const paths = {
   dest: 'build',
   tmp: '.tmp',
   package: `out/${config.version}`,
+  buildInfoDestFile: 'build/buildInfo.json',
   recipes: {
     src: 'recipes/archives/*.tar.gz',
     dest: 'build/recipes/',
@@ -129,6 +131,15 @@ export function mvPackageJson() {
 
 export function mvLernaPackages() {
   return gulp.src(['packages/**']).pipe(gulp.dest(`${paths.dest}/packages`));
+}
+
+export function exportBuildInfo() {
+  var buildInfoData = {
+    timestamp: buildInfo.timestamp,
+    gitHashShort: buildInfo.gitHashShort,
+    gitBranch: buildInfo.gitBranch,
+  };
+  return outputJson(paths.buildInfoDestFile, buildInfoData);
 }
 
 export function html() {
@@ -239,7 +250,7 @@ export function recipeInfo() {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(mvSrc, mvPackageJson, mvLernaPackages),
+  gulp.parallel(mvSrc, mvPackageJson, mvLernaPackages, exportBuildInfo),
   gulp.parallel(html, scripts, styles, verticalStyle, recipes, recipeInfo),
 );
 export { build };
