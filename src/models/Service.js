@@ -94,6 +94,8 @@ export default class Service {
 
   @observable chromelessUserAgent = false;
 
+  @observable userAgentPref = '';
+
   constructor(data, recipe) {
     if (!data) {
       console.error('Service config not valid');
@@ -232,6 +234,10 @@ export default class Service {
   }
 
   @computed get userAgent() {
+    if (this.userAgentPref !== '') {
+      return this.userAgentPref;
+    }
+
     let ua = userAgent(this.chromelessUserAgent);
     if (typeof this.recipe.overrideUserAgent === 'function') {
       ua = this.recipe.overrideUserAgent();

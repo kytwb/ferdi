@@ -427,6 +427,7 @@
   "settings.service.form.tabOnPremise": "Self hosted ⭐️",
   "settings.service.form.team": "Team",
   "settings.service.form.useHostedService": "Use the hosted {name} service.",
+  "settings.service.form.userAgentPref": "User Agent",
   "settings.service.form.yourServices": "Your services",
   "settings.services.deletedInfo": "Service has been deleted",
   "settings.services.discoverServices": "Discover services",

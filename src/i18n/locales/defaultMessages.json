@@ -4892,6 +4892,19 @@
           "column": 17,
           "line": 100
         }
+      },
+      {
+        "defaultMessage": "!!!User Agent",
+        "end": {
+          "column": 3,
+          "line": 107
+        },
+        "file": "src/containers/settings/EditServiceScreen.js",
+        "id": "settings.service.form.userAgentPref",
+        "start": {
+          "column": 17,
+          "line": 104
+        }
       }
     ],
     "path": "src/containers/settings/EditServiceScreen.json"

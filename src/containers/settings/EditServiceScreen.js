@@ -101,6 +101,10 @@ const messages = defineMessages({
     id: 'settings.service.form.proxy.password',
     defaultMessage: '!!!Password',
   },
+  userAgentPref: {
+    id: 'settings.service.form.userAgentPref',
+    defaultMessage: '!!!User Agent',
+  },
 });
 
 export default @inject('stores', 'actions') @observer class EditServiceScreen extends Component {
@@ -161,6 +165,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           label: intl.formatMessage(messages.name),
           placeholder: intl.formatMessage(messages.name),
           value: service.id ? service.name : recipe.name,
+        },
+        userAgentPref: {
+          label: intl.formatMessage(messages.userAgentPref),
+          placeholder: intl.formatMessage(messages.userAgentPref),
+          value: service.id ? service.userAgentPref : '',
         },
         isEnabled: {
           label: intl.formatMessage(messages.enableService),

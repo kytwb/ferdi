@@ -216,7 +216,7 @@
 
     &::-webkit-scrollbar-thumb:window-inactive { background: none; }
     .service-flex-grid { display: flex; }
-    .service-name { flex: 1px; }
+    .service-name,.user-agent { flex: 1px; }
 
     .service-icon {
       float: right;
@@ -312,7 +312,7 @@
 
   .settings__delete-button { right: 0; }
   .settings__open-recipe-file-button {
-    cursor:pointer; 
+    cursor:pointer;
     margin-right: 10px;
   }
   .settings__open-recipe-file-container {

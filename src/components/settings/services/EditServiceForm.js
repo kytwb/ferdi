@@ -380,6 +380,9 @@ export default @observer class EditServiceForm extends Component {
                       </p>
                     </>
                   )}
+                  <div className="user-agent">
+                    <Input field={form.$('userAgentPref')} />
+                  </div>
                   <Toggle field={form.$('isDarkModeEnabled')} />
                   {form.$('isDarkModeEnabled').value
                     && (
