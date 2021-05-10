@@ -106,6 +106,7 @@
     "ms": "2.1.2",
     "node-fetch": "2.6.1",
     "normalize-url": "5.0.0",
+    "os-name": "4.0.0",
     "pretty-bytes": "^5.6.0",
     "prop-types": "^15.5.10",
     "react": "16.12.0",
