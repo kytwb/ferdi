@@ -13,7 +13,7 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
 import { FRANZ_TRANSLATION } from '../../../config';
-import { isMac } from '../../../environment';
+import { isMac, isWindows } from '../../../environment';
 
 const {
   systemPreferences,
@@ -304,14 +304,14 @@ export default @observer class EditSettingsForm extends Component {
                 <Toggle field={form.$('enableSystemTray')} />
                 <Toggle field={form.$('reloadAfterResume')} />
                 <Toggle field={form.$('startMinimized')} />
-                {process.platform === 'win32' && (
+                {isWindows && (
                   <Toggle field={form.$('minimizeToSystemTray')} />
                 )}
-                {process.platform === 'win32' && (
+                {isWindows && (
                   <Toggle field={form.$('closeToSystemTray')} />
                 )}
                 <Toggle field={form.$('privateNotifications')} />
-                {(process.platform === 'win32' || process.platform === 'darwin') && (
+                {(isWindows || isMac) && (
                   <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
                 <Select field={form.$('navigationBarBehaviour')} />
 

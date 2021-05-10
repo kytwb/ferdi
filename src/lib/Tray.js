@@ -3,13 +3,9 @@ import {
 } from 'electron';
 import path from 'path';
 import macosVersion from 'macos-version';
-import {
-  isMac,
-  isWindows,
-  isLinux,
-} from '../environment';
+import { isMac, isWindows, isLinux } from '../environment';
 
-const FILE_EXTENSION = process.platform === 'win32' ? 'ico' : 'png';
+const FILE_EXTENSION = isWindows ? 'ico' : 'png';
 const INDICATOR_TRAY_PLAIN = 'tray';
 const INDICATOR_TRAY_UNREAD = 'tray-unread';
 const INDICATOR_TRAY_INDIRECT = 'tray-indirect';
@@ -110,7 +106,7 @@ export default class TrayIcon {
       });
     }
 
-    if (process.platform === 'darwin') {
+    if (isMac) {
       this.themeChangeSubscriberId = systemPreferences.subscribeNotification('AppleInterfaceThemeChangedNotification', () => {
         this._refreshIcon();
       });
@@ -128,7 +124,7 @@ export default class TrayIcon {
     this.trayIcon.destroy();
     this.trayIcon = null;
 
-    if (process.platform === 'darwin' && this.themeChangeSubscriberId) {
+    if (isMac && this.themeChangeSubscriberId) {
       systemPreferences.unsubscribeNotification(this.themeChangeSubscriberId);
       this.themeChangeSubscriberId = null;
     }
@@ -164,7 +160,7 @@ export default class TrayIcon {
 
     this.trayIcon.setImage(this._getAsset('tray', this._getAssetFromIndicator(this.indicator)));
 
-    if (process.platform === 'darwin') {
+    if (isMac) {
       this.trayIcon.setPressedImage(
         this._getAsset('tray', `${this._getAssetFromIndicator(this.indicator)}-active`),
       );
@@ -174,7 +170,7 @@ export default class TrayIcon {
   _getAsset(type, asset) {
     let { platform } = process;
 
-    if (platform === 'darwin' && (nativeTheme.shouldUseDarkColors || macosVersion.isGreaterThanOrEqualTo('11'))) {
+    if (isMac && (nativeTheme.shouldUseDarkColors || macosVersion.isGreaterThanOrEqualTo('11'))) {
       platform = `${platform}-dark`;
     }
 

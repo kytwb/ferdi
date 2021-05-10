@@ -6,6 +6,8 @@
  *
  * Source: https://github.com/electron-userland/electron-spellchecker/blob/master/src/context-menu-builder.js
  */
+import { isMac } from '../environment';
+
 const {
   clipboard, nativeImage, remote, shell,
 } = require('electron');
@@ -261,7 +263,7 @@ module.exports = class ContextMenuBuilder {
       return menu;
     }
 
-    if (process.platform === 'darwin') {
+    if (isMac) {
       const webContents = this.getWebContents();
 
       const lookUpDefinition = new MenuItem({

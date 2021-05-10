@@ -1,9 +1,10 @@
 import { app, ipcMain } from 'electron';
 import path from 'path';
 import { autorun } from 'mobx';
+import { isMac, isWindows, isLinux } from '../../environment';
 
 const INDICATOR_TASKBAR = 'taskbar';
-const FILE_EXTENSION = process.platform === 'win32' ? 'ico' : 'png';
+const FILE_EXTENSION = isWindows ? 'ico' : 'png';
 
 let isTrayIconEnabled;
 
@@ -28,29 +29,28 @@ export default (params) => {
     // Flash TaskBar for windows, bounce Dock on Mac
     if (!app.mainWindow.isFocused()) {
       if (params.settings.app.get('notifyTaskBarOnMessage')) {
-        if (process.platform === 'win32') {
+        if (isWindows) {
           app.mainWindow.flashFrame(true);
           app.mainWindow.once('focus', () => app.mainWindow.flashFrame(false));
-        } else if (process.platform === 'darwin') {
+        } else if (isMac) {
           app.dock.bounce('informational');
         }
       }
     }
 
     // Update badge
-    if (process.platform === 'darwin'
+    if (isMac
       && typeof (args.indicator) === 'string') {
       app.dock.setBadge(args.indicator);
     }
 
-    if ((process.platform === 'darwin'
-      || process.platform === 'linux')
+    if ((isMac || isLinux)
       && typeof (args.indicator) === 'number'
     ) {
       app.badgeCount = args.indicator;
     }
 
-    if (process.platform === 'win32') {
+    if (isWindows) {
       if (typeof args.indicator === 'number'
         && args.indicator !== 0) {
         params.mainWindow.setOverlayIcon(

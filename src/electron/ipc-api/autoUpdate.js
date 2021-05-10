@@ -1,5 +1,6 @@
 import { app, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import { isMac, isWindows } from '../../environment';
 
 const debug = require('debug')('Ferdi:ipcApi:autoUpdate');
 
@@ -9,7 +10,7 @@ export default (params) => {
   if (!enableUpdate) {
     autoUpdater.autoInstallOnAppQuit = false;
     autoUpdater.autoDownload = false;
-  } else if (process.platform === 'darwin' || process.platform === 'win32' || process.env.APPIMAGE) {
+  } else if (isMac || isWindows || process.env.APPIMAGE) {
     ipcMain.on('autoUpdate', (event, args) => {
       if (enableUpdate) {
         try {

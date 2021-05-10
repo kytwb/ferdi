@@ -51,7 +51,7 @@ import {
 } from './config';
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
-import userAgent from './helpers/userAgent-helpers';
+import userAgent, { ferdiVersion } from './helpers/userAgent-helpers';
 
 const debug = require('debug')('Ferdi:App');
 
@@ -162,7 +162,7 @@ if (!settings.get('enableGPUAcceleration')) {
 }
 
 app.setAboutPanelOptions({
-  applicationVersion: `Version: ${app.getVersion()}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
+  applicationVersion: `Version: ${ferdiVersion}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${process.platform}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
   version: '',
 });
 
@@ -394,7 +394,7 @@ app.on('ready', () => {
     app.setAsDefaultProtocolClient('ferdi-dev');
   }
 
-  if (process.platform === 'win32') {
+  if (isWindows) {
     app.setUserTasks([{
       program: process.execPath,
       arguments: `${isDevMode ? `${__dirname} ` : ''}--reset-window`,

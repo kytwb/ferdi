@@ -1,9 +1,5 @@
-import {
-  sessionBus,
-} from 'dbus-next';
-import {
-  isLinux,
-} from '../environment';
+import { sessionBus } from 'dbus-next';
+import { isLinux } from '../environment';
 
 export default class DBus {
   bus = null;

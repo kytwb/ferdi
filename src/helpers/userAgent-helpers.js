@@ -5,7 +5,7 @@ import { isMac, isWindows } from '../environment';
 
 // This helper gets included from the backend and frontend but we only need to use "remote"
 // if we are in the frontend
-const ferdiVersion = remote && remote.app ? remote.app.getVersion() : app.getVersion();
+export const ferdiVersion = remote && remote.app ? remote.app.getVersion() : app.getVersion();
 
 function macOS() {
   const version = macosVersion();
