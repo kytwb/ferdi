@@ -11,6 +11,7 @@ import path from 'path';
 import windowStateKeeper from 'electron-window-state';
 import { enforceMacOSAppLocation } from 'electron-util';
 
+// TODO: This seems to be duplicated between here and 'config.js'
 // Set app directory before loading user modules
 if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('appData', process.env.FERDI_APPDATA_DIR);
@@ -60,10 +61,6 @@ const debug = require('debug')('Ferdi:App');
 // Electron Windows Notification API crashing. Setting this to false fixes the issue until the electron team fixes the notification bug
 // More Info - https://github.com/electron/electron/issues/18397
 app.allowRendererProcessReuse = false;
-
-// Globally set useragent to fix user agent override in service workers
-debug('Set userAgent to ', userAgent());
-app.userAgentFallback = userAgent();
 
 // Globally set useragent to fix user agent override in service workers
 debug('Set userAgent to ', userAgent());
