@@ -39,6 +39,9 @@ for:
       - develop
   build_script:
     - appveyor-retry npm run build
+  skip_commits:
+    files:
+      - src/i18n/**/*.json
 -
   branches:
     only:

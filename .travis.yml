@@ -78,5 +78,10 @@ script:
         git push -qu nightly HEAD:nightly >/dev/null 2>&1
       fi
     else
-      travis_retry travis_wait 100 npm run build || travis_terminate 1
+      if [[ $TRAVIS_COMMIT_MESSAGE =~ "New translations" ]]; then
+        echo "Skipping travis build"
+        travis_terminate 0
+      else
+        travis_retry travis_wait 100 npm run build || travis_terminate 1
+      fi
     fi
