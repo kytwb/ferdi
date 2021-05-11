@@ -24,7 +24,7 @@ dotenv.config();
 
 const uglify = composer(terser, console);
 
-const isDevBuild = ((process.env.NODE_ENV || 'development').trim().toLowerCase() === 'development');
+const isDevBuild = process.env.NODE_ENV === 'development';
 
 const getTargetEnv = isDevBuild ? 'development' : 'production';
 
