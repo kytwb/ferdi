@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Päivitä Ferdi Professionaliin",
   "settings.account.userInfoRequestFailed": "Käyttäjätietoja ei voitu ladata",
   "settings.account.yourLicense": "Sinun Ferdi-lisenssi",
-  "settings.app.accentColorInfo": "Käytä korostusvärinäsi CSS-yhteensopivaa muotoa. (Oletus: {defaultAccentColor})",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Tyhjennä välimuisti",
   "settings.app.buttonInstallUpdate": "Käynnistä uudelleen ja asenna päivitys",
   "settings.app.buttonSearchForUpdate": "Tarkista päivitykset",
