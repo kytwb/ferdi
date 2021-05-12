@@ -1,3 +1,4 @@
+import color from 'color';
 import { reaction } from 'mobx';
 import themeInfo from '../../assets/themeInfo.json';
 import { DEFAULT_APP_SETTINGS, iconSizeBias } from '../../config';
@@ -17,16 +18,42 @@ function setAppearance(style) {
   styleElement.innerHTML = style;
 }
 
-function generateAccentStyle(color) {
+function generateAccentStyle(accentColorStr) {
   let style = '';
 
   Object.keys(themeInfo).forEach((property) => {
     style += `
       ${themeInfo[property]} {
-        ${property}: ${color};
+        ${property}: ${accentColorStr};
       }
     `;
   });
+
+  const accentColor = color(accentColorStr);
+  const darkerColorStr = accentColor.darken(0.05).hex();
+  style += `
+    a.button:hover, button.button:hover {
+      background: ${accentColor.darken(0.1).hex()};
+    }
+
+    .franz-form__button:hover,
+    .franz-form__button.franz-form__button--inverted:hover,
+    .settings .settings__close:hover {
+      background: ${darkerColorStr};
+    }
+
+    .franz-form__button:active {
+      background: ${darkerColorStr};
+    }
+
+    .franz-form__button.franz-form__button--inverted {
+      border-color: ${accentColorStr};
+    }
+
+    .tab-item.is-active {
+      background: ${accentColor.lighten(0.35).hex()};
+    }
+  `;
 
   return style;
 }
@@ -134,7 +161,7 @@ function generateStyle(settings) {
     alwaysShowWorkspaces,
   } = settings;
 
-  if (accentColor !== DEFAULT_APP_SETTINGS.accentColor) {
+  if (accentColor.toLowerCase() !== DEFAULT_APP_SETTINGS.accentColor.toLowerCase()) {
     style += generateAccentStyle(accentColor);
   }
   if (serviceRibbonWidth !== DEFAULT_APP_SETTINGS.serviceRibbonWidth
