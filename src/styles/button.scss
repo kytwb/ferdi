@@ -8,11 +8,11 @@
   &:active { background: lighten($theme-brand-primary, 5%); }
 
   &.franz-form__button--secondary {
-    background: $dark-theme-gray-lighter;
+    background: $dark-theme-gray-dark;
     color: $dark-theme-text-color;
 
-    &:hover { background: lighten($dark-theme-gray-lighter, 10%); }
-    &:active { background: lighten($dark-theme-gray-lighter, 20%); }
+    &:hover { background: lighten($dark-theme-gray-dark, 10%); }
+    &:active { background: lighten($dark-theme-gray-dark, 20%); }
   }
 
   &.franz-form__button--danger {
