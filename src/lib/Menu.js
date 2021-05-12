@@ -924,15 +924,15 @@ export default class FranzMenu {
       });
 
       if (serviceTpl.length > 0) {
-        tpl[3].submenu = serviceTpl;
+        tpl[2].submenu = serviceTpl;
       }
 
       if (workspaceStore.isFeatureEnabled) {
-        tpl[4].submenu = this.workspacesMenu();
+        tpl[3].submenu = this.workspacesMenu();
       }
 
       if (todosStore.isFeatureEnabled) {
-        tpl[5].submenu = this.todosMenu();
+        tpl[4].submenu = this.todosMenu();
       }
     } else {
       const touchIdEnabled = isMac ? (this.stores.settings.app.useTouchIdToUnlock && systemPreferences.canPromptTouchID()) : false;
