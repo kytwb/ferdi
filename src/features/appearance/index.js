@@ -76,7 +76,7 @@ function generateServiceRibbonWidthStyle(widthStr, iconSizeStr, vertical) {
     }
   ` : `
     .sidebar {
-      width: ${width - 1}px !important;
+      width: ${width - 2}px !important;
     }
     .tab-item {
       width: ${width - 2}px !important;
@@ -118,22 +118,27 @@ function generateVerticalStyle(widthStr, alwaysShowWorkspaces) {
     document.head.appendChild(link);
   }
   const width = Number(widthStr);
+  const sidebarWidthStr = `${width - 4}px`;
 
   return `
-  .app_service {
-    top: ${width}px !important;
-  }
-  .darwin .sidebar {
-    height: ${width + 19}px !important;
-  }
-  .darwin .sidebar .sidebar__button--workspaces.is-active {
-      height: ${width - 20}px !important;
-  }
-  ${alwaysShowWorkspaces ? `
   .sidebar {
+    height: ${sidebarWidthStr} !important;
+  ${alwaysShowWorkspaces ? `
     width: calc(100% - 300px) !important;
-  }
   ` : ''}
+  }
+
+  .sidebar .sidebar__button {
+    width: ${width}px;
+  }
+
+  .app .app__content {
+    padding-top: ${sidebarWidthStr} !important;
+  }
+
+  div[class^=WorkspaceDrawer-drawer] {
+    maring-top: -${sidebarWidthStr} !important;
+  }
   `;
 }
 

@@ -1,12 +1,13 @@
 @import './config.scss';
 
-$sidebar-width: 65px;
+$sidebar-width: 64px;
 
 .sidebar {
   width: 100vw;
   height: $sidebar-width;
   flex-direction: row;
   position: absolute;
+  top: 0;
   right: 0;
   padding-bottom: 0px;
 
@@ -49,14 +50,13 @@ $sidebar-width: 65px;
   }
 }
 
-.app_service {
-  width: 100vw;
-  position: absolute;
-  top: $sidebar-width;
-  right: 0;
+.app .app__content {
+  padding-top: $sidebar-width;
 }
 
 div[class^=WorkspaceDrawer-drawer] {
+  margin-top: -$sidebar-width;
+  height: 100vh;
   position: relative;
 
   &::after {
