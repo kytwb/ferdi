@@ -3,8 +3,8 @@ name: Bug report
 about: Create a report to help us improve
 ---
 <!--
-Please remember that if you are logging a bug for some service that has *stopped working*, please log the bug [here](https://github.com/getferdi/recipes/issues)
-Please remember to read the [self-help documentation](https://github.com/getferdi/ferdi#troubleshooting-recipes-self-help) - in case it helps you unblock yourself.
+Please remember that if you are logging a bug for some service that has *stopped working*, please log the bug at https://github.com/getferdi/recipes/issue
+Please remember to read the self-help documentation at https://github.com/getferdi/ferdi#troubleshooting-recipes-self-help - in case it helps you unblock yourself.
 
 Please fill our form below, this way we can analyse and fix the problem as fast as possible.
 

@@ -53,7 +53,7 @@ As a basic rule, before filing issues, feature requests or anything else. Take a
 
 Please make sure you are running the exact node version used by the developers/contributors as specified in the [nvmrc file](./.nvmrc).
 
-Currently, these are the combinations of system dependencies that work on an intel-based Mac (building on an ARM-based machine is still a work-in-progress due to node-sass native dependencies)
+Currently, these are the combinations of system dependencies that work on an intel-based machines for MacOS/Linux/Windows (building on an ARM-based machine is still a work-in-progress due to node-sass native dependencies)
 
 ```bash
 node -v
