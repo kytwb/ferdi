@@ -235,10 +235,10 @@ class TodosWebview extends Component {
       isTodoUrlValid = validURL(todoUrl);
     }
 
-    let displayedWidth = isVisible ? width : 0;
-    if (isTodosServiceActive) {
-      displayedWidth = null;
-    }
+    const todosPanelStyle = {
+      width: isVisible ? width : 0,
+      borderLeftWidth: isVisible ? '1px' : 0,
+    };
 
     return (
       <div
@@ -246,7 +246,7 @@ class TodosWebview extends Component {
           [classes.root]: true,
           [classes.isTodosServiceActive]: isTodosServiceActive,
         })}
-        style={{ width: displayedWidth }}
+        style={todosPanelStyle}
         onMouseUp={() => this.stopResize()}
         ref={(node) => { this.node = node; }}
         id="todos-panel"
