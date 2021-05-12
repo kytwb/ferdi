@@ -8,6 +8,14 @@ $sidebar-width: 65px;
   right: 0;
   padding-bottom: 0px;
 
+  &::after {
+    top: -10px;
+    right: -10px;
+    bottom: 0;
+    left: -10px;
+    clip-path: inset(10px 10px 0 10px);
+  }
+
   div:first-of-type {
     overflow-x: scroll;
     width: 100%;
