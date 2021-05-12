@@ -10,6 +10,7 @@ import fs from 'fs-extra';
 import path from 'path';
 import windowStateKeeper from 'electron-window-state';
 import { enforceMacOSAppLocation } from 'electron-util';
+import ms from 'ms';
 
 // TODO: This seems to be duplicated between here and 'config.js'
 // Set app directory before loading user modules
@@ -328,7 +329,7 @@ const createWindow = () => {
   });
 
   if (isMac) {
-    askFormacOSPermissions();
+    setTimeout(() => askFormacOSPermissions(mainWindow), ms('30s'));
   }
 
   mainWindow.on('show', () => {
