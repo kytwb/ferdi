@@ -587,7 +587,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
     } = this.props.stores;
     const {
       updateStatus,
-      cacheSize,
       updateStatusTypes,
       isClearingAllCache,
       lockingFeatureEnabled,
@@ -610,7 +609,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           noUpdateAvailable={updateStatus === updateStatusTypes.NOT_AVAILABLE}
           updateIsReadyToInstall={updateStatus === updateStatusTypes.DOWNLOADED}
           onSubmit={d => this.onSubmit(d)}
-          cacheSize={cacheSize}
+          getCacheSize={() => app.cacheSize}
           isClearingAllCache={isClearingAllCache}
           onClearAllCache={clearAllCache}
           isSpellcheckerIncludedInCurrentPlan={spellcheckerConfig.isIncludedInCurrentPlan}

@@ -4,7 +4,6 @@ import {
 } from 'mobx';
 import moment from 'moment';
 import AutoLaunch from 'auto-launch';
-import prettyBytes from 'pretty-bytes';
 import ms from 'ms';
 import { URL } from 'url';
 import os from 'os';
@@ -257,7 +256,7 @@ export default class AppStore extends Store {
   }
 
   @computed get cacheSize() {
-    return prettyBytes(this.getAppCacheSizeRequest.execute().result || 0);
+    return this.getAppCacheSizeRequest.execute().result;
   }
 
   @computed get debugInfo() {
