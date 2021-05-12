@@ -3,10 +3,12 @@ name: Bug report
 about: Create a report to help us improve
 ---
 <!--
+Please remember that if you are logging a bug for some service that has *stopped working*, please log the bug [here](https://github.com/getferdi/recipes/issues)
+Please remember to read the [self-help documentation](https://github.com/getferdi/ferdi#troubleshooting-recipes-self-help) - in case it helps you unblock yourself.
+
 Please fill our form below, this way we can analyse and fix the problem as fast as possible.
 
-Please keep in mind that any text inside "<!--" and "--\>" are comments from us and won't be
-visible in your bug report, so please don't put any text in them.
+Please keep in mind that any text inside "<!--" and "--\>" are comments from us and won't be visible in your bug report, so please don't put any text in them.
 -->
 **Bug description:**
 <!-- Add a clear and concise description of what the bug is -->
@@ -33,7 +35,7 @@ visible in your bug report, so please don't put any text in them.
 - Server: <!-- e.g. Ferdi, Franz, Using without an account -->
 
 - Debug information:
-<!-- 
+<!--
 Get your debug information via Ferdi "Help" menu ("Copy/Publish Debug Information") then
 share a debug information file or your published link with us.
 -->

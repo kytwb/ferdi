@@ -25,17 +25,18 @@
 
 🤴🏽 Hard-fork of [Franz](https://github.com/meetfranz/franz), adding awesome features and removing unwanted ones.
 
-### Table of contents
+## Table of contents
 
 <details>
 <summary>Toggle navigation</summary>
 
 - [Ferdi](#ferdi)
-    - [Table of contents](#table-of-contents)
-    - [What is Ferdi?](#what-is-ferdi)
+  - [Table of contents](#table-of-contents)
+  - [What is Ferdi?](#what-is-ferdi)
   - [Features](#features)
-    - [What does Ferdi look like?](#what-does-ferdi-look-like)
-  - [Download Ferdi](#download-ferdi)
+  - [What does Ferdi look like?](#what-does-ferdi-look-like)
+  - [How to get and start using Ferdi](#how-to-get-and-start-using-ferdi)
+    - [Download Ferdi](#download-ferdi)
     - [Or use Chocolatey (Windows only)](#or-use-chocolatey-windows-only)
     - [Or use homebrew (macOS or Linux)](#or-use-homebrew-macos-or-linux)
     - [Or use AUR (Arch Linux)](#or-use-aur-arch-linux)
@@ -44,36 +45,24 @@
     - [Adds features to increase your productivity](#adds-features-to-increase-your-productivity)
     - [Adds features to improve your privacy](#adds-features-to-improve-your-privacy)
     - [Adds features to improve your experience using Ferdi](#adds-features-to-improve-your-experience-using-ferdi)
-    - [Removed bugs](#removed-bugs)
+    - [Fixes bugs](#fixes-bugs)
     - [Adds new platforms](#adds-new-platforms)
     - [Adds internal changes](#adds-internal-changes)
-  - [Development](#development)
-    - [Install OS dependencies](#install-os-dependencies)
-      - [Node.js](#nodejs)
-      - [Git](#git)
-      - [Debian/Ubuntu](#debianubuntu)
-      - [Fedora](#fedora)
-      - [Windows](#windows)
-    - [Clone repository with submodule](#clone-repository-with-submodule)
-    - [Local caching of dependencies](#local-caching-of-dependencies)
-    - [Install dependencies](#install-dependencies)
-    - [Fix native modules to match current electron node version](#fix-native-modules-to-match-current-electron-node-version)
-    - [Package recipe repository](#package-recipe-repository)
-    - [Start development app](#start-development-app)
-    - [Packaging](#packaging)
-    - [Release](#release)
-      - [Nightly releases](#nightly-releases)
+  - [Contributing to Ferdi's development](#contributing-to-ferdis-development)
+  - [Nightly releases](#nightly-releases)
+  - [Troubleshooting recipes (self-help)](#troubleshooting-recipes-self-help)
   - [Contributors ✨](#contributors-)
   - [Backers via OpenCollective](#backers-via-opencollective)
   - [Sponsors via OpenCollective](#sponsors-via-opencollective)
   - [Other Sponsors](#other-sponsors)
 </details>
 
-### What is Ferdi?
+## What is Ferdi?
 
 Ferdi is a desktop app that helps you organize how you use your favourite apps by combining them into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdi gives you many additional features and doesn't restrict its usage! Ferdi is compatible with your existing Franz account so you can continue right where you left off. Find out more about Ferdi and its features on [getferdi.com](https://getferdi.com).
 
 ## Features
+
 - [x] Ferdi puts all your web apps into one place
 - [x] Native support for 100+ services
 - [x] Workspaces to keep your personal and work life separated
@@ -86,9 +75,10 @@ Ferdi is a desktop app that helps you organize how you use your favourite apps b
 - [x] Ferdi speaks your language: Support for 20+ languages
 
 ...and best of all:
+
 - [x] Its completely free! There are no restrictions on features, no paywalls
 
-### What does Ferdi look like?
+## What does Ferdi look like?
 
 <details>
 <summary>Toggle screenshots</summary>
@@ -104,7 +94,9 @@ Ferdi is a desktop app that helps you organize how you use your favourite apps b
 </p>
 </details>
 
-## Download Ferdi
+## How to get and start using Ferdi
+
+### Download Ferdi
 
 You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](https://getferdi.com/download) or you can find all variants in the [latest stable release](https://github.com/getferdi/ferdi/releases/latest) assets and [all the other release here](https://github.com/getferdi/ferdi/releases).
 
@@ -123,6 +115,7 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 ### Or use AUR (Arch Linux)
 
 Ferdi has three separate AUR packages you can use:
+
 - **[ferdi](https://aur.archlinux.org/packages/ferdi/)**: Uses your system electron version to run the latest release - this version will work best on most systems.
 - **[ferdi-bin](https://aur.archlinux.org/packages/ferdi-bin/)**: Uses the latest Fedora release and extracts it to Arch. Use this version if you are having trouble with the `ferdi` package.
 - **[ferdi-git](https://aur.archlinux.org/packages/ferdi-git/)**: Uses your system electron version to run the latest commit from the develop branch and may be unstable but may also give you features that are not yet available in other versions. Please only use `ferdi-git` if you accept these risks.
@@ -132,12 +125,14 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 ## What makes Ferdi different from Franz?
 
 ### Removes unproductive paywalls and other other interruptions
+
 - [x] Removes the counter-productive fullscreen app delay inviting users to upgrade
 - [x] Removes pages begging you to donate after registration
 - [x] Removes "Franz is better together" popup
 - [x] Makes all users Premium by default ([#15](https://github.com/getferdi/ferdi/issues/15))
 
 ### Adds features to increase your productivity
+
 - [x] Adds 30+ new services
 - [x] Adds "Find in Page" feature ([#67](https://github.com/getferdi/ferdi/issues/67))
 - [x] Adds an option to keep individual workspaces always loaded ([#37](https://github.com/getferdi/ferdi/issues/37))
@@ -153,6 +148,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Differentiates between indirect and direct notifications ([#590](https://github.com/getferdi/ferdi/issues/590)), 💖 [@Room4O4](https://github.com/Room4O4) [@mahadevans87](https://github.com/mahadevans87) [@FeikoJoosten](https://github.com/FeikoJoosten) [@sampathBlam](https://github.com/sampathBlam)
 
 ### Adds features to improve your privacy
+
 - [x] [Adds option to change server to a custom](https://github.com/getferdi/ferdi/wiki/Custom-Server) [ferdi-server](https://github.com/getferdi/server)
 - [x] Adds option to use Ferdi without an account ([#5](https://github.com/getferdi/ferdi/issues/5))
 - [x] Uses the Ferdi API instead of Franz's servers
@@ -163,6 +159,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Adds local [recipe repository](https://github.com/getferdi/recipes) that removes the need of downloading recipes from a remote server
 
 ### Adds features to improve your experience using Ferdi
+
 - [x] Adds Universal Dark Mode via the [DarkReader extension](https://github.com/darkreader/darkreader) ([#71](https://github.com/getferdi/ferdi/issues/71))
 - [x] Adds Dark Reader settings ([#531](https://github.com/getferdi/ferdi/issues/531), [#568](https://github.com/getferdi/ferdi/issues/568)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 - [x] Adds adaptable Dark Mode that will respect the system's Dark Mode setting ([#173](https://github.com/getferdi/ferdi/issues/173), [#548](https://github.com/getferdi/ferdi/issues/548) (💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)))
@@ -193,7 +190,8 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Updates Microsoft Teams to allow Desktop Sharing ([getferdi/recipes#116](https://github.com/getferdi/recipes/issues/116)), 💖 [@Gautasmi](https://github.com/Gautasmi)
 - [x] Removes automatic reloading from WhatsApp
 
-### Removed bugs
+### Fixes bugs
+
 - [x] Fixes bug that would incorrectly display unread messages count on some services (more info in [7566ccd](https://github.com/getferdi/ferdi/commit/7566ccd))
 - [x] Fixes zooming
 - [x] Fixes login problems in Google services
@@ -206,12 +204,14 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 - [x] Refocuses Webview only for active service ([#610](https://github.com/getferdi/ferdi/issues/610)), 💖 [@Room4O4](https://github.com/Room4O4) & [@mahadevans87](https://github.com/mahadevans87)
 
 ### Adds new platforms
+
 - [x] Adds portable version for Windows so you can use Ferdi without even installing it, 💖 [@Makazzz](https://github.com/Makazzz)
 - [x] Adds Arch Linux AUR packages, 💖 [@AGCaesar](https://github.com/AGCaesar)
 - [x] Adds Ferdi as a Flatpak on Flathub ([#323](https://github.com/getferdi/ferdi/issues/323)), 💖 [@lhw](https://github.com/lhw)
 
 ### Adds internal changes
-- [x] Upgrades to Electron 12.0.6
+
+- [x] Upgrades to Electron 12.0.7
 - [x] Switches to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Minifies build files to improve app size
 - [x] Adds "npm run prepare-code" command for development to lint and beautify code
@@ -223,134 +223,35 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 > Thanks to all our [contributors](#contributors-) who helped realize all these amazing features! 💖
 
-## Development
+## Contributing to Ferdi's development
 
-### Install OS dependencies
+We welcome all contributors. Please read the [contributing guidelines](CONTRIBUTING.md) to setup your development machine and proceed.
 
-#### Node.js
+## Nightly releases
 
-Please make sure you are running the exact node version used by the developers/contributors as specified in the [nvmrc file](./.nvmrc)
+Nightly releases are automatically triggered every day ([details](https://github.com/getferdi/ferdi/pull/990)) and available in [getferdi/nightlies](https://github.com/getferdi/nightlies/releases). Maintainers still need to manually publish the draft releases as pre-releases for now.
 
-#### Git
+## Troubleshooting recipes (self-help)
 
-The version [2.23.0](https://github.com/git-for-windows/git/releases/tag/v2.23.0.windows.1) for Git is working fine for development. You can then use the console from Git to do the development procedure.
+One of the issues being raised by the awesome users of Ferdi is that certain service-functionalities do not work. As good example of this is either the unread count (badge) stops working for specific services or the gmail logins don't work anymore. (These are just 2 of the most common problems reported).
 
-#### Debian/Ubuntu
+Since we (the contributors to Ferdi) also eat our own dog food, we use Ferdi as our day-to-day communication app - and most likely have faced the same/similar issue. As a first step before filing an issue, we request you to follow these simple steps to see if the issue gets fixed.
 
-```bash
-$ apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev rpm
-```
-
-#### Fedora
+- Make sure you are on the latest version of Ferdi. As of this writing, since the nightly CI packaging process is broken, we request you to download the latest nightly from the link in [Nightly releases](#nightly-releases) section.
+- Stop Ferdi
+- Navigate to the Ferdi profile folder in your respective installation in your file explorer application.
 
 ```bash
-$ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel rpm
+  Mac: ~/Library/Application Support/Ferdi/recipes
+  Windows: %appdata%/Ferdi/recipes
+  Linux: ~/.config/Ferdi/recipes
 ```
 
-#### Windows
-
-Please make sure you run this command as an administrator:
-
-```bash
-$ npm install --global windows-build-tools --vs2015
-```
-
-### Clone repository with submodule
-
-```bash
-$ git clone https://github.com/getferdi/ferdi.git
-$ cd ferdi
-$ git submodule update --init --recursive
-```
-
-It is important you execute the last command to get the required submodules (recipes, server).
-
-
-### Local caching of dependencies
-
-Set these env vars into your profile (or if you use [direnv](https://direnv.net/), you can manage them via the respective `.envrc` file)
-```bash
-export ELECTRON_CACHE=$HOME/.cache/electron
-export ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-```
-
-### Install dependencies
-
-Run the following command to install all dependencies, and link sibling modules with Ferdi.
-
-```bash
-$ npx lerna bootstrap
-```
-
-If you previously ran `npm install` it sometimes is necessary to delete your `node_modules` folder before running `npx lerna bootstrap`. If you encounter the `gyp: No Xcode or CLT version` error on macOS at this step, please have a look [here](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d).
-
-### Fix native modules to match current electron node version
-
-```bash
-$ npm run rebuild
-```
-
-### Package recipe repository
-
-Ferdi requires its recipes to be packaged before it can use it. When running Ferdi as a development instance, you'll need to package the local recipes before you can create any services inside Ferdi.
-
-```bash
-$ cd recipes
-$ npm install && npm run package
-```
-
-### Using Docker to build a package
-
-```bash
-$ docker build -t ferdi-package .
-$ docker run -v tmp-out:/ferdi-out -it ferdi-package sh
-```
-
-The above will place all the built artifacts into the `/ferdi` folder within the image. If you want to copy them outside of the image, simply mount a volume into a different location, and copy all files from `/ferdi` into the mounted folder (`/ferdi-out` in the 2nd example command above).
-
-### Start development app
-
-Run these two commands **simultaneously** in different terminals:
-
-```bash
-$ npm run dev
-$ DEBUG=Ferdi:* npm run start
-```
-
-Optionally, you can run both commands in one terminal with [misty](https://github.com/adlk/misty) (see [misty.yml](https://github.com/getferdi/ferdi/blob/develop/misty.yml)):
-
-```bash
-$ DEBUG=Ferdi:* npx misty
-```
-
-Note: please prefer [`debug()`](https://github.com/visionmedia/debug) over `console.log()`.
-
-### Packaging
-
-```bash
-$ npm run build
-```
-
-Assets will be available in the `out` folder.
-
-### Release
-
-Create a new [draft release](https://github.com/getferdi/ferdi/releases/new) that targets the `release` branch, then:
-
-```bash
-$ git checkout develop && git pull
-$ git checkout release
-$ git submodule update --remote --force
-$ git commit -am "Update submodules"
-$ git merge --no-ff develop
-$ git push
-```
-
-Once the draft release assets are uploaded (13 assets), publish the release. The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed.
-
-#### Nightly releases
-
-Nightly releases are automaticly triggered every day ([details](https://github.com/getferdi/ferdi/pull/990)) and available in [getferdi/nightlies](https://github.com/getferdi/nightlies/releases). Maintainers still need to manually publish the draft releases as pre-releases for now.
+- Delete the folder of the service that is causing your issue - _in the file explorer application_. (Please note that if you have manually modified any files here, it will be your responsibility to merge the changes with the latest version of the recipe (or you can submit a [pull request](https://github.com/getferdi/recipes/pulls) for the same).
+- Open a browser and navigate to the [recipes](https://github.com/getferdi/recipes/tree/master/recipes) repository page, and copy ALL the files for your erroneous service into your local machine at the location that you deleted in the previous step
+- Restart Ferdi (this should upgrade your recipes to the latest working version that the contributors have fixed)
+- If this process did not fix the issue, please log a detailed bug report [here](https://github.com/getferdi/recipes/issues)
+- _Note:_ An automated process to perform these steps is being ideated and tracked [here](https://github.com/getferdi/ferdi/issues/1302)
 
 ## Contributors ✨
 
