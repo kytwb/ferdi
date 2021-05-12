@@ -1,3 +1,5 @@
+@import './config.scss';
+
 $sidebar-width: 65px;
 
 .sidebar {
@@ -54,9 +56,32 @@ $sidebar-width: 65px;
   right: 0;
 }
 
+div[class^=WorkspaceDrawer-drawer] {
+  position: relative;
+
+  &::after {
+    content: ' ';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: -10px;
+    left: -10px;
+    z-index: 1000;
+    pointer-events: none;
+    clip-path: inset(10px 0 10px 10px);
+    box-shadow: inset 0 0 15px 0 rgba(0, 0, 0, .12),
+                inset 0 0 2px 0 rgba(0, 0, 0, 0.36);
+  }
+}
+
 .theme__dark {
   .sidebar .sidebar__button--workspaces.is-active {
     background-color: #2d2f31;
+  }
+
+  div[class^=WorkspaceDrawer-drawer]::after {
+    box-shadow: inset 0 0 10px 0 $dark-theme-black,
+                inset 0 0 2px 0 rgba(0, 0, 0, 0.4);
   }
 }
 
