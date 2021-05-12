@@ -54,7 +54,7 @@ $sidebar-width: 64px;
   padding-top: $sidebar-width;
 }
 
-div[class^=WorkspaceDrawer-drawer] {
+.workspaces-drawer {
   margin-top: -$sidebar-width;
   height: 100vh;
   position: relative;
@@ -79,7 +79,7 @@ div[class^=WorkspaceDrawer-drawer] {
     background-color: #2d2f31;
   }
 
-  div[class^=WorkspaceDrawer-drawer]::after {
+  .workspaces-drawer::after {
     box-shadow: inset 0 0 10px 0 $dark-theme-black,
                 inset 0 0 2px 0 rgba(0, 0, 0, 0.4);
   }

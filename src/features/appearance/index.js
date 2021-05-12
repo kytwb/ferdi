@@ -147,7 +147,7 @@ function generateVerticalStyle(widthStr, alwaysShowWorkspaces) {
     padding-top: ${sidebarWidthStr} !important;
   }
 
-  div[class^=WorkspaceDrawer-drawer] {
+  .workspaces-drawer {
     maring-top: -${sidebarWidthStr} !important;
   }
   `;
