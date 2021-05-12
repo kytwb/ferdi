@@ -7,19 +7,16 @@ export enum ThemeType {
   dark = 'dark',
 }
 
+export const DEFAULT_ACCENT_COLOR = legacyStyles.themeBrandPrimary;
+
 export function theme(themeId: ThemeType,
-                      brandColor: string = legacyStyles.themeBrandPrimary) {
-  const defaultThemeConfig = makeDefaultThemeConfig(brandColor);
-  if (themeId === ThemeType.dark) {
-    const darkThemeConfig = makeDarkThemeConfig(brandColor);
-
-    return Object.assign({}, defaultThemeConfig, darkThemeConfig, { legacyStyles });
-  }
-
-  return Object.assign({}, defaultThemeConfig, { legacyStyles });
+                      brandColor: string = DEFAULT_ACCENT_COLOR) {
+  return themeId === ThemeType.dark ?
+    makeDarkThemeConfig(brandColor) :
+    makeDefaultThemeConfig(brandColor);
 }
 
 const defaultThemeConfigWithDefaultAccentColor =
-  makeDefaultThemeConfig(legacyStyles.themeBrandPrimary);
+  makeDefaultThemeConfig(DEFAULT_ACCENT_COLOR);
 
 export type Theme = typeof defaultThemeConfigWithDefaultAccentColor;

@@ -265,5 +265,7 @@ export default (brandPrimary: string) => {
         progressIndicator: legacyStyles.themeGrayLight,
       },
     },
+
+    legacyStyles,
   };
 };

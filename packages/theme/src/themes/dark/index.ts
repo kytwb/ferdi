@@ -28,6 +28,8 @@ export default (brandPrimary: string) => {
   });
 
   return {
+    ...defaultStyles,
+
     colorBackground,
     colorContentBackground: legacyStyles.darkThemeGrayDarkest,
     colorBackgroundSubscriptionContainer: legacyStyles.themeBrandInfo,
