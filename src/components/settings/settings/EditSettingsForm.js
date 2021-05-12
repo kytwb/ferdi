@@ -12,7 +12,10 @@ import Select from '../../ui/Select';
 import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
-import { FRANZ_TRANSLATION } from '../../../config';
+import {
+  DEFAULT_APP_SETTINGS,
+  FRANZ_TRANSLATION,
+} from '../../../config';
 import { isMac, isWindows } from '../../../environment';
 
 const {
@@ -82,7 +85,7 @@ const messages = defineMessages({
   },
   accentColorInfo: {
     id: 'settings.app.accentColorInfo',
-    defaultMessage: '!!!Write your accent color in a CSS-compatible format. (Default: #7367f0)',
+    defaultMessage: '!!!Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})',
   },
   headlineAdvanced: {
     id: 'settings.app.headlineAdvanced',
@@ -518,7 +521,10 @@ export default @observer class EditSettingsForm extends Component {
                   onChange={e => this.submit(e)}
                   field={form.$('accentColor')}
                 />
-                <p>{intl.formatMessage(messages.accentColorInfo)}</p>
+                <p>
+                  {intl.formatMessage(messages.accentColorInfo,
+                    { defaultAccentColor: DEFAULT_APP_SETTINGS.accentColor })}
+                </p>
               </div>
             )}
 

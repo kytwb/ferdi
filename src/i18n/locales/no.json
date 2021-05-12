@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Oppgrader til Ferdi Professional",
   "settings.account.userInfoRequestFailed": "Kunne ikke laste brukerinformasjonen",
   "settings.account.yourLicense": "Din Ferdi lisens",
-  "settings.app.accentColorInfo": "Skriv inn din farge for fremhevelse i CSS-kompatibelt format. (Standard: #7367f0)",
+  "settings.app.accentColorInfo": "Skriv inn din farge for fremhevelse i CSS-kompatibelt format. (Standard: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Tøm hurtiglager",
   "settings.app.buttonInstallUpdate": "Start på nytt og installer oppdatering",
   "settings.app.buttonSearchForUpdate": "Se etter oppdateringer",

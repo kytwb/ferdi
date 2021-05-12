@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Upgrade to Ferdi Professional",
   "settings.account.userInfoRequestFailed": "Nebolo možné načítať informácie o používateľovi",
   "settings.account.yourLicense": "Your Ferdi License",
-  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Vyčistiť vyrovnávaciu pamäť",
   "settings.app.buttonInstallUpdate": "Reštartovať a nainštalovať aktualizáciu",
   "settings.app.buttonSearchForUpdate": "Skontrolovať aktualizácie",

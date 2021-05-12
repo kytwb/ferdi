@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Actualiza a Ferdi Profesional",
   "settings.account.userInfoRequestFailed": "No se pudo cargar la información de usuario",
   "settings.account.yourLicense": "Su Licencia Ferdi",
-  "settings.app.accentColorInfo": "Escribir color de acento en formato compatible CSS. (Predeterminado: #7367f0)",
+  "settings.app.accentColorInfo": "Escribir color de acento en formato compatible CSS. (Predeterminado: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Limpiar caché",
   "settings.app.buttonInstallUpdate": "Reiniciar e instalar actualización",
   "settings.app.buttonSearchForUpdate": "Comprobar actualizaciones",

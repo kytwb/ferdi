@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Підвищити до Fredi Professional",
   "settings.account.userInfoRequestFailed": "Не вдалося завантажити інформацію користувача",
   "settings.account.yourLicense": "Your Ferdi License",
-  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Очистити кеш",
   "settings.app.buttonInstallUpdate": "Перезавантажити і встановити оновлення",
   "settings.app.buttonSearchForUpdate": "Перевірити наявність оновлень",

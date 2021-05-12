@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Ferdi Professional'a Yükselt",
   "settings.account.userInfoRequestFailed": "Kullanıcı bilgisi yüklenemedi",
   "settings.account.yourLicense": "Your Ferdi License",
-  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Önbelleği temizle",
   "settings.app.buttonInstallUpdate": "Yeniden Başlat ve Güncelleştirmeleri Kur",
   "settings.app.buttonSearchForUpdate": "Güncellemeleri kontrol et",

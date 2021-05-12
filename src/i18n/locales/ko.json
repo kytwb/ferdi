@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Ferdi 프로페셔널로 업그레이드 합니다.",
   "settings.account.userInfoRequestFailed": "사용자 정보를 불러올 수 없습니다.",
   "settings.account.yourLicense": "Your Ferdi License",
-  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "캐시 지우기",
   "settings.app.buttonInstallUpdate": "재시작 후 업데이트 설치",
   "settings.app.buttonSearchForUpdate": "업데이트 확인",

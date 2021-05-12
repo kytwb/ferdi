@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Opgrader til Ferdi Professionel",
   "settings.account.userInfoRequestFailed": "Kunne ikke indlæse brugerinformation",
   "settings.account.yourLicense": "Din Ferdi-licens",
-  "settings.app.accentColorInfo": "Skriv din fremhævelsesfarve i et CSS-kompatibelt format. (Standard: #7367f0)",
+  "settings.app.accentColorInfo": "Skriv din fremhævelsesfarve i et CSS-kompatibelt format. (Standard: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Ryd cache",
   "settings.app.buttonInstallUpdate": "Genstart og installer opdatering",
   "settings.app.buttonSearchForUpdate": "Søg efter opdateringer",

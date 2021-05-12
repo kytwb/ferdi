@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Passez à Ferdi Professionnel",
   "settings.account.userInfoRequestFailed": "Impossible de charger les informations de l'utilisateur",
   "settings.account.yourLicense": "Votre licence Ferdi",
-  "settings.app.accentColorInfo": "Écrivez votre couleur d'accentuation dans un format compatible avec CSS. (Par défaut : #7367f0)",
+  "settings.app.accentColorInfo": "Écrivez votre couleur d'accentuation dans un format compatible avec CSS. (Par défaut : {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Vider le cache",
   "settings.app.buttonInstallUpdate": "Redémarrer et installer la mise à jour",
   "settings.app.buttonSearchForUpdate": "Vérifier les mises à jour",

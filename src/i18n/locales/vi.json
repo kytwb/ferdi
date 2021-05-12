@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "Upgrade to Ferdi Professional",
   "settings.account.userInfoRequestFailed": "Không thể tải được thông tin người dùng",
   "settings.account.yourLicense": "Giấy phép Ferdi của bạn",
-  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: #7367f0)",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "Xóa bộ nhớ cache",
   "settings.app.buttonInstallUpdate": "Khởi động lại và cài đặt bản cập nhật",
   "settings.app.buttonSearchForUpdate": "Kiểm tra cập nhật",
