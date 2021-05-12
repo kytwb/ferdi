@@ -6,6 +6,12 @@ import * as legacyStyles from '../legacy';
 
 export default (brandPrimary: string) => {
   const defaultStyles = makeDefaultThemeConfig(brandPrimary);
+  let brandPrimaryColor = color(legacyStyles.themeBrandPrimary);
+  try {
+    brandPrimaryColor = color(defaultStyles.brandPrimary);
+  } catch (e) {
+    // Ignore invalid color and fall back to default.
+  }
 
   const colorBackground = legacyStyles.darkThemeGrayDarkest;
   const colorText = legacyStyles.darkThemeTextColor;
@@ -125,7 +131,7 @@ export default (brandPrimary: string) => {
           },
           services: {
             color: color(colorText).darken(0.5).hex(),
-            active: color(defaultStyles.brandPrimary).lighten(0.5).hex(),
+            active: brandPrimaryColor.lighten(0.5).hex(),
           },
         },
       },

@@ -29,7 +29,12 @@ function generateAccentStyle(accentColorStr) {
     `;
   });
 
-  const accentColor = color(accentColorStr);
+  let accentColor = color(DEFAULT_APP_SETTINGS.accentColor);
+  try {
+    accentColor = color(accentColorStr);
+  } catch (e) {
+    // Ignore invalid accent color.
+  }
   const darkerColorStr = accentColor.darken(0.05).hex();
   style += `
     a.button:hover, button.button:hover {
