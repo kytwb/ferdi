@@ -44,7 +44,8 @@ const styles = theme => ({
   services: {
     width: '100%',
     maxHeight: '50vh',
-    overflow: 'scroll',
+    overflowX: 'hidden',
+    overflowY: 'auto',
   },
   service: {
     background: theme.styleTypes.primary.contrast,
