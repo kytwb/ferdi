@@ -1,4 +1,5 @@
 import electron from 'electron';
+import isDevMode from 'electron-is-dev';
 import ms from 'ms';
 import path from 'path';
 import { asarPath } from './helpers/asar-helpers';
@@ -182,6 +183,10 @@ if (process.env.FERDI_APPDATA_DIR != null) {
 } else if (process.platform === 'win32') {
   app.setPath('appData', process.env.APPDATA);
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
+}
+
+if (isDevMode) {
+  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }
 
 export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
