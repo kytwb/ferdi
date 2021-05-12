@@ -279,7 +279,7 @@
   "settings.account.upgradeToPro.label": "الترقية إلى الخطة الإحترافية لفردي",
   "settings.account.userInfoRequestFailed": "تعذر تحميل معلومات المستخدم",
   "settings.account.yourLicense": "رخصة فردي الخاصة بك",
-  "settings.app.accentColorInfo": "اكتب لون التمييز الخاص بك بتنسيق متوافق مع CSS. (الافتراضي: {defaultAccentColor})",
+  "settings.app.accentColorInfo": "Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})",
   "settings.app.buttonClearAllCache": "مسح ذاكرة التخزين المؤقت",
   "settings.app.buttonInstallUpdate": "إعادة التشغيل وتثبيت التحديث",
   "settings.app.buttonSearchForUpdate": "التحقق من وجود تحديثات",
