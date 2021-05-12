@@ -7314,962 +7314,962 @@
         "defaultMessage": "!!!Edit",
         "end": {
           "column": 3,
-          "line": 21
-        },
-        "file": "src/lib/Menu.js",
-        "id": "menu.edit",
-        "start": {
-          "column": 8,
-          "line": 18
-        }
-      },
-      {
-        "defaultMessage": "!!!Undo",
-        "end": {
-          "column": 3,
           "line": 25
         },
         "file": "src/lib/Menu.js",
-        "id": "menu.edit.undo",
+        "id": "menu.edit",
         "start": {
           "column": 8,
           "line": 22
         }
       },
       {
-        "defaultMessage": "!!!Redo",
+        "defaultMessage": "!!!Undo",
         "end": {
           "column": 3,
           "line": 29
         },
         "file": "src/lib/Menu.js",
-        "id": "menu.edit.redo",
+        "id": "menu.edit.undo",
         "start": {
           "column": 8,
           "line": 26
         }
       },
       {
-        "defaultMessage": "!!!Cut",
+        "defaultMessage": "!!!Redo",
         "end": {
           "column": 3,
           "line": 33
         },
         "file": "src/lib/Menu.js",
+        "id": "menu.edit.redo",
+        "start": {
+          "column": 8,
+          "line": 30
+        }
+      },
+      {
+        "defaultMessage": "!!!Cut",
+        "end": {
+          "column": 3,
+          "line": 37
+        },
+        "file": "src/lib/Menu.js",
         "id": "menu.edit.cut",
         "start": {
           "column": 7,
-          "line": 30
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Copy",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 41
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.copy",
         "start": {
           "column": 8,
-          "line": 34
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!Paste",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 45
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.paste",
         "start": {
           "column": 9,
-          "line": 38
+          "line": 42
         }
       },
       {
         "defaultMessage": "!!!Paste And Match Style",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 49
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.pasteAndMatchStyle",
         "start": {
           "column": 22,
-          "line": 42
+          "line": 46
         }
       },
       {
         "defaultMessage": "!!!Delete",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 53
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.delete",
         "start": {
           "column": 10,
-          "line": 46
+          "line": 50
         }
       },
       {
         "defaultMessage": "!!!Select All",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 57
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.selectAll",
         "start": {
           "column": 13,
-          "line": 50
+          "line": 54
         }
       },
       {
         "defaultMessage": "!!!Find in Page",
         "end": {
           "column": 3,
-          "line": 57
+          "line": 61
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.findInPage",
         "start": {
           "column": 14,
-          "line": 54
+          "line": 58
         }
       },
       {
         "defaultMessage": "!!!Speech",
         "end": {
           "column": 3,
-          "line": 61
+          "line": 65
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.speech",
         "start": {
           "column": 10,
-          "line": 58
+          "line": 62
         }
       },
       {
         "defaultMessage": "!!!Start Speaking",
         "end": {
           "column": 3,
-          "line": 65
+          "line": 69
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.startSpeaking",
         "start": {
           "column": 17,
-          "line": 62
+          "line": 66
         }
       },
       {
         "defaultMessage": "!!!Stop Speaking",
         "end": {
           "column": 3,
-          "line": 69
+          "line": 73
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.stopSpeaking",
         "start": {
           "column": 16,
-          "line": 66
+          "line": 70
         }
       },
       {
         "defaultMessage": "!!!Start Dictation",
         "end": {
           "column": 3,
-          "line": 73
+          "line": 77
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.startDictation",
         "start": {
           "column": 18,
-          "line": 70
+          "line": 74
         }
       },
       {
         "defaultMessage": "!!!Emoji & Symbols",
         "end": {
           "column": 3,
-          "line": 77
+          "line": 81
         },
         "file": "src/lib/Menu.js",
         "id": "menu.edit.emojiSymbols",
         "start": {
           "column": 16,
-          "line": 74
+          "line": 78
         }
       },
       {
         "defaultMessage": "!!!Open Quick Switch",
         "end": {
           "column": 3,
-          "line": 81
+          "line": 85
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.openQuickSwitch",
         "start": {
           "column": 19,
-          "line": 78
+          "line": 82
         }
       },
       {
         "defaultMessage": "!!!Back",
         "end": {
           "column": 3,
-          "line": 85
+          "line": 89
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.back",
         "start": {
           "column": 8,
-          "line": 82
+          "line": 86
         }
       },
       {
         "defaultMessage": "!!!Forward",
         "end": {
           "column": 3,
-          "line": 89
+          "line": 93
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.forward",
         "start": {
           "column": 11,
-          "line": 86
+          "line": 90
         }
       },
       {
         "defaultMessage": "!!!Actual Size",
         "end": {
           "column": 3,
-          "line": 93
+          "line": 97
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.resetZoom",
         "start": {
           "column": 13,
-          "line": 90
+          "line": 94
         }
       },
       {
         "defaultMessage": "!!!Zoom In",
         "end": {
           "column": 3,
-          "line": 97
+          "line": 101
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.zoomIn",
         "start": {
           "column": 10,
-          "line": 94
+          "line": 98
         }
       },
       {
         "defaultMessage": "!!!Zoom Out",
         "end": {
           "column": 3,
-          "line": 101
+          "line": 105
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.zoomOut",
         "start": {
           "column": 11,
-          "line": 98
+          "line": 102
         }
       },
       {
         "defaultMessage": "!!!Enter Full Screen",
         "end": {
           "column": 3,
-          "line": 105
+          "line": 109
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.enterFullScreen",
         "start": {
           "column": 19,
-          "line": 102
+          "line": 106
         }
       },
       {
         "defaultMessage": "!!!Exit Full Screen",
         "end": {
           "column": 3,
-          "line": 109
+          "line": 113
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.exitFullScreen",
         "start": {
           "column": 18,
-          "line": 106
+          "line": 110
         }
       },
       {
         "defaultMessage": "!!!Toggle Full Screen",
         "end": {
           "column": 3,
-          "line": 113
+          "line": 117
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleFullScreen",
         "start": {
           "column": 20,
-          "line": 110
+          "line": 114
         }
       },
       {
         "defaultMessage": "!!!Toggle Dark Mode",
         "end": {
           "column": 3,
-          "line": 117
-        },
-        "file": "src/lib/Menu.js",
-        "id": "menu.view.toggleDarkMode",
-        "start": {
-          "column": 18,
-          "line": 114
-        }
-      },
-      {
-        "defaultMessage": "!!!Toggle Developer Tools",
-        "end": {
-          "column": 3,
           "line": 121
         },
         "file": "src/lib/Menu.js",
-        "id": "menu.view.toggleDevTools",
+        "id": "menu.view.toggleDarkMode",
         "start": {
           "column": 18,
           "line": 118
         }
       },
       {
-        "defaultMessage": "!!!Toggle Todos Developer Tools",
+        "defaultMessage": "!!!Toggle Developer Tools",
         "end": {
           "column": 3,
           "line": 125
         },
         "file": "src/lib/Menu.js",
+        "id": "menu.view.toggleDevTools",
+        "start": {
+          "column": 18,
+          "line": 122
+        }
+      },
+      {
+        "defaultMessage": "!!!Toggle Todos Developer Tools",
+        "end": {
+          "column": 3,
+          "line": 129
+        },
+        "file": "src/lib/Menu.js",
         "id": "menu.view.toggleTodosDevTools",
         "start": {
           "column": 23,
-          "line": 122
+          "line": 126
         }
       },
       {
         "defaultMessage": "!!!Toggle Service Developer Tools",
         "end": {
           "column": 3,
-          "line": 129
+          "line": 133
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.toggleServiceDevTools",
         "start": {
           "column": 25,
-          "line": 126
+          "line": 130
         }
       },
       {
         "defaultMessage": "!!!Reload Service",
         "end": {
           "column": 3,
-          "line": 133
+          "line": 137
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.reloadService",
         "start": {
           "column": 17,
-          "line": 130
+          "line": 134
         }
       },
       {
         "defaultMessage": "!!!Reload Ferdi",
         "end": {
           "column": 3,
-          "line": 137
+          "line": 141
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.reloadFranz",
         "start": {
           "column": 15,
-          "line": 134
+          "line": 138
         }
       },
       {
         "defaultMessage": "!!!Lock Ferdi",
         "end": {
           "column": 3,
-          "line": 141
+          "line": 145
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.lockFerdi",
         "start": {
           "column": 13,
-          "line": 138
+          "line": 142
         }
       },
       {
         "defaultMessage": "!!!Reload ToDos",
         "end": {
           "column": 3,
-          "line": 145
+          "line": 149
         },
         "file": "src/lib/Menu.js",
         "id": "menu.view.reloadTodos",
         "start": {
           "column": 15,
-          "line": 142
+          "line": 146
         }
       },
       {
         "defaultMessage": "!!!Minimize",
         "end": {
           "column": 3,
-          "line": 149
+          "line": 153
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window.minimize",
         "start": {
           "column": 12,
-          "line": 146
+          "line": 150
         }
       },
       {
         "defaultMessage": "!!!Close",
         "end": {
           "column": 3,
-          "line": 153
+          "line": 157
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window.close",
         "start": {
           "column": 9,
-          "line": 150
+          "line": 154
         }
       },
       {
         "defaultMessage": "!!!Learn More",
         "end": {
           "column": 3,
-          "line": 157
-        },
-        "file": "src/lib/Menu.js",
-        "id": "menu.help.learnMore",
-        "start": {
-          "column": 13,
-          "line": 154
-        }
-      },
-      {
-        "defaultMessage": "!!!Changelog",
-        "end": {
-          "column": 3,
           "line": 161
         },
         "file": "src/lib/Menu.js",
-        "id": "menu.help.changelog",
+        "id": "menu.help.learnMore",
         "start": {
           "column": 13,
           "line": 158
         }
       },
       {
-        "defaultMessage": "!!!Support",
+        "defaultMessage": "!!!Changelog",
         "end": {
           "column": 3,
           "line": 165
         },
         "file": "src/lib/Menu.js",
+        "id": "menu.help.changelog",
+        "start": {
+          "column": 13,
+          "line": 162
+        }
+      },
+      {
+        "defaultMessage": "!!!Support",
+        "end": {
+          "column": 3,
+          "line": 169
+        },
+        "file": "src/lib/Menu.js",
         "id": "menu.help.support",
         "start": {
           "column": 11,
-          "line": 162
+          "line": 166
         }
       },
       {
         "defaultMessage": "!!!Copy Debug Information",
         "end": {
           "column": 3,
-          "line": 169
+          "line": 173
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfo",
         "start": {
           "column": 13,
-          "line": 166
+          "line": 170
         }
       },
       {
         "defaultMessage": "!!!Publish Debug Information",
         "end": {
           "column": 3,
-          "line": 173
+          "line": 177
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.publishDebugInfo",
         "start": {
           "column": 20,
-          "line": 170
+          "line": 174
         }
       },
       {
         "defaultMessage": "!!!Ferdi Debug Information",
         "end": {
           "column": 3,
-          "line": 177
+          "line": 181
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfoCopiedHeadline",
         "start": {
           "column": 27,
-          "line": 174
+          "line": 178
         }
       },
       {
         "defaultMessage": "!!!Your Debug Information has been copied to your clipboard.",
         "end": {
           "column": 3,
-          "line": 181
+          "line": 185
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.debugInfoCopiedBody",
         "start": {
           "column": 23,
-          "line": 178
+          "line": 182
         }
       },
       {
         "defaultMessage": "!!!Unlock with Touch ID",
         "end": {
           "column": 3,
-          "line": 185
+          "line": 189
         },
         "file": "src/lib/Menu.js",
         "id": "locked.touchId",
         "start": {
           "column": 11,
-          "line": 182
+          "line": 186
         }
       },
       {
         "defaultMessage": "!!!unlock via Touch ID",
         "end": {
           "column": 3,
-          "line": 189
+          "line": 193
         },
         "file": "src/lib/Menu.js",
         "id": "locked.touchIdPrompt",
         "start": {
           "column": 17,
-          "line": 186
+          "line": 190
         }
       },
       {
         "defaultMessage": "!!!Terms of Service",
         "end": {
           "column": 3,
-          "line": 193
+          "line": 197
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.tos",
         "start": {
           "column": 7,
-          "line": 190
+          "line": 194
         }
       },
       {
         "defaultMessage": "!!!Privacy Statement",
         "end": {
           "column": 3,
-          "line": 197
+          "line": 201
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help.privacy",
         "start": {
           "column": 11,
-          "line": 194
+          "line": 198
         }
       },
       {
         "defaultMessage": "!!!File",
         "end": {
           "column": 3,
-          "line": 201
-        },
-        "file": "src/lib/Menu.js",
-        "id": "menu.file",
-        "start": {
-          "column": 8,
-          "line": 198
-        }
-      },
-      {
-        "defaultMessage": "!!!View",
-        "end": {
-          "column": 3,
           "line": 205
         },
         "file": "src/lib/Menu.js",
-        "id": "menu.view",
+        "id": "menu.file",
         "start": {
           "column": 8,
           "line": 202
         }
       },
       {
-        "defaultMessage": "!!!Services",
+        "defaultMessage": "!!!View",
         "end": {
           "column": 3,
           "line": 209
         },
         "file": "src/lib/Menu.js",
+        "id": "menu.view",
+        "start": {
+          "column": 8,
+          "line": 206
+        }
+      },
+      {
+        "defaultMessage": "!!!Services",
+        "end": {
+          "column": 3,
+          "line": 213
+        },
+        "file": "src/lib/Menu.js",
         "id": "menu.services",
         "start": {
           "column": 12,
-          "line": 206
+          "line": 210
         }
       },
       {
         "defaultMessage": "!!!Window",
         "end": {
           "column": 3,
-          "line": 213
+          "line": 217
         },
         "file": "src/lib/Menu.js",
         "id": "menu.window",
         "start": {
           "column": 10,
-          "line": 210
+          "line": 214
         }
       },
       {
         "defaultMessage": "!!!Help",
         "end": {
           "column": 3,
-          "line": 217
+          "line": 221
         },
         "file": "src/lib/Menu.js",
         "id": "menu.help",
         "start": {
           "column": 8,
-          "line": 214
+          "line": 218
         }
       },
       {
         "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
-          "line": 221
+          "line": 225
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.about",
         "start": {
           "column": 9,
-          "line": 218
+          "line": 222
         }
       },
       {
         "defaultMessage": "!!!What's new?",
         "end": {
           "column": 3,
-          "line": 225
+          "line": 229
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.announcement",
         "start": {
           "column": 16,
-          "line": 222
+          "line": 226
         }
       },
       {
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 229
+          "line": 233
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.settings",
         "start": {
           "column": 12,
-          "line": 226
+          "line": 230
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 233
+          "line": 237
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.checkForUpdates",
         "start": {
           "column": 19,
-          "line": 230
+          "line": 234
         }
       },
       {
         "defaultMessage": "!!!Hide",
         "end": {
           "column": 3,
-          "line": 237
+          "line": 241
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.hide",
         "start": {
           "column": 8,
-          "line": 234
+          "line": 238
         }
       },
       {
         "defaultMessage": "!!!Hide Others",
         "end": {
           "column": 3,
-          "line": 241
+          "line": 245
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.hideOthers",
         "start": {
           "column": 14,
-          "line": 238
+          "line": 242
         }
       },
       {
         "defaultMessage": "!!!Unhide",
         "end": {
           "column": 3,
-          "line": 245
+          "line": 249
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.unhide",
         "start": {
           "column": 10,
-          "line": 242
+          "line": 246
         }
       },
       {
         "defaultMessage": "!!!Auto-hide menu bar",
         "end": {
           "column": 3,
-          "line": 249
+          "line": 253
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.autohideMenuBar",
         "start": {
           "column": 19,
-          "line": 246
+          "line": 250
         }
       },
       {
         "defaultMessage": "!!!Quit",
         "end": {
           "column": 3,
-          "line": 253
+          "line": 257
         },
         "file": "src/lib/Menu.js",
         "id": "menu.app.quit",
         "start": {
           "column": 8,
-          "line": 250
+          "line": 254
         }
       },
       {
         "defaultMessage": "!!!Add New Service...",
         "end": {
           "column": 3,
-          "line": 257
+          "line": 261
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.addNewService",
         "start": {
           "column": 17,
-          "line": 254
+          "line": 258
         }
       },
       {
         "defaultMessage": "!!!Add New Workspace...",
         "end": {
           "column": 3,
-          "line": 261
+          "line": 265
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.addNewWorkspace",
         "start": {
           "column": 19,
-          "line": 258
+          "line": 262
         }
       },
       {
         "defaultMessage": "!!!Open workspace drawer",
         "end": {
           "column": 3,
-          "line": 265
+          "line": 269
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.openWorkspaceDrawer",
         "start": {
           "column": 23,
-          "line": 262
+          "line": 266
         }
       },
       {
         "defaultMessage": "!!!Close workspace drawer",
         "end": {
           "column": 3,
-          "line": 269
+          "line": 273
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.closeWorkspaceDrawer",
         "start": {
           "column": 24,
-          "line": 266
+          "line": 270
         }
       },
       {
         "defaultMessage": "!!!Activate next service...",
         "end": {
           "column": 3,
-          "line": 273
+          "line": 277
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.setNextServiceActive",
         "start": {
           "column": 23,
-          "line": 270
+          "line": 274
         }
       },
       {
         "defaultMessage": "!!!Activate previous service...",
         "end": {
           "column": 3,
-          "line": 277
+          "line": 281
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.activatePreviousService",
         "start": {
           "column": 27,
-          "line": 274
+          "line": 278
         }
       },
       {
         "defaultMessage": "!!!Disable notifications & audio",
         "end": {
           "column": 3,
-          "line": 281
+          "line": 285
         },
         "file": "src/lib/Menu.js",
         "id": "sidebar.muteApp",
         "start": {
           "column": 11,
-          "line": 278
+          "line": 282
         }
       },
       {
         "defaultMessage": "!!!Enable notifications & audio",
         "end": {
           "column": 3,
-          "line": 285
+          "line": 289
         },
         "file": "src/lib/Menu.js",
         "id": "sidebar.unmuteApp",
         "start": {
           "column": 13,
-          "line": 282
+          "line": 286
         }
       },
       {
         "defaultMessage": "!!!Workspaces",
         "end": {
           "column": 3,
-          "line": 289
+          "line": 293
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces",
         "start": {
           "column": 14,
-          "line": 286
+          "line": 290
         }
       },
       {
         "defaultMessage": "!!!Default",
         "end": {
           "column": 3,
-          "line": 293
+          "line": 297
         },
         "file": "src/lib/Menu.js",
         "id": "menu.workspaces.defaultWorkspace",
         "start": {
           "column": 20,
-          "line": 290
+          "line": 294
         }
       },
       {
         "defaultMessage": "!!!Todos",
         "end": {
           "column": 3,
-          "line": 297
+          "line": 301
         },
         "file": "src/lib/Menu.js",
         "id": "menu.todos",
         "start": {
           "column": 9,
-          "line": 294
+          "line": 298
         }
       },
       {
         "defaultMessage": "!!!Open Todos drawer",
         "end": {
           "column": 3,
-          "line": 301
+          "line": 305
         },
         "file": "src/lib/Menu.js",
         "id": "menu.Todoss.openTodosDrawer",
         "start": {
           "column": 19,
-          "line": 298
+          "line": 302
         }
       },
       {
         "defaultMessage": "!!!Close Todos drawer",
         "end": {
           "column": 3,
-          "line": 305
+          "line": 309
         },
         "file": "src/lib/Menu.js",
         "id": "menu.Todoss.closeTodosDrawer",
         "start": {
           "column": 20,
-          "line": 302
+          "line": 306
         }
       },
       {
         "defaultMessage": "!!!Enable Todos",
         "end": {
           "column": 3,
-          "line": 309
+          "line": 313
         },
         "file": "src/lib/Menu.js",
         "id": "menu.todos.enableTodos",
         "start": {
           "column": 15,
-          "line": 306
+          "line": 310
         }
       },
       {
         "defaultMessage": "!!!Home",
         "end": {
           "column": 3,
-          "line": 313
+          "line": 317
         },
         "file": "src/lib/Menu.js",
         "id": "menu.services.goHome",
         "start": {
           "column": 17,
-          "line": 310
+          "line": 314
         }
       }
     ],
