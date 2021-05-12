@@ -1,5 +1,5 @@
-import * as darkThemeConfig from './themes/dark';
-import * as defaultThemeConfig from './themes/default';
+import makeDarkThemeConfig from './themes/dark';
+import makeDefaultThemeConfig from './themes/default';
 import * as legacyStyles from './themes/legacy';
 
 export enum ThemeType {
@@ -7,12 +7,19 @@ export enum ThemeType {
   dark = 'dark',
 }
 
-export function theme(themeId: ThemeType) {
+export function theme(themeId: ThemeType,
+                      brandColor: string = legacyStyles.themeBrandPrimary) {
+  const defaultThemeConfig = makeDefaultThemeConfig(brandColor);
   if (themeId === ThemeType.dark) {
+    const darkThemeConfig = makeDarkThemeConfig(brandColor);
+
     return Object.assign({}, defaultThemeConfig, darkThemeConfig, { legacyStyles });
   }
 
   return Object.assign({}, defaultThemeConfig, { legacyStyles });
 }
 
-export type Theme = typeof defaultThemeConfig;
+const defaultThemeConfigWithDefaultAccentColor =
+  makeDefaultThemeConfig(legacyStyles.themeBrandPrimary);
+
+export type Theme = typeof defaultThemeConfigWithDefaultAccentColor;

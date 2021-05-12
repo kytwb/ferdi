@@ -72,8 +72,9 @@ export default class UIStore extends Store {
   }
 
   @computed get theme() {
-    if (this.isDarkThemeActive || this.stores.settings.app.darkMode) return theme('dark');
-    return theme('default');
+    const themeId = (this.isDarkThemeActive || this.stores.settings.app.darkMode) ? 'dark' : 'default';
+    const accentColor = this.stores.settings.app.accentColor;
+    return theme(themeId, accentColor);
   }
 
   // Actions

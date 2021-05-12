@@ -4,15 +4,6 @@ import { DEFAULT_APP_SETTINGS, iconSizeBias } from '../../config';
 
 const STYLE_ELEMENT_ID = 'custom-appearance-style';
 
-// Additional styles needed to make accent colors work properly
-// "[ACCENT]" will be replaced with the accent color
-const ACCENT_ADDITIONAL_STYLES = `
-.franz-form__button {
-  background: inherit !important;
-  border: 2px solid [ACCENT] !important;
-}
-`;
-
 function createStyleElement() {
   const styles = document.createElement('style');
   styles.id = STYLE_ELEMENT_ID;
@@ -36,8 +27,6 @@ function generateAccentStyle(color) {
       }
     `;
   });
-
-  style += ACCENT_ADDITIONAL_STYLES.replace(/\[ACCENT\]/g, color);
 
   return style;
 }
