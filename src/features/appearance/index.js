@@ -38,15 +38,21 @@ function generateAccentStyle(accentColorStr) {
 
     .franz-form__button:hover,
     .franz-form__button.franz-form__button--inverted:hover,
-    .settings .settings__close:hover {
+    .settings .settings__close:hover,
+    .theme__dark .franz-form__button:hover,
+    .theme__dark .franz-form__button.franz-form__button--inverted:hover,
+    .theme__dark .settings .settings__close:hover {
       background: ${darkerColorStr};
     }
 
-    .franz-form__button:active {
+    .franz-form__button:active,
+    .theme__dark .franz-form__button:active {
       background: ${darkerColorStr};
     }
 
+    .theme__dark .franz-form__button.franz-form__button--inverted,
     .franz-form__button.franz-form__button--inverted {
+      background: none;
       border-color: ${accentColorStr};
     }
 
