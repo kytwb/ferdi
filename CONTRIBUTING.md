@@ -135,10 +135,22 @@ npm install && npm run package
 
 ```bash
 docker build -t ferdi-package .
-docker run -v tmp-out:/ferdi-out -it ferdi-package sh
 ```
 
-The above will place all the built artifacts into the `/ferdi` folder within the image. If you want to copy them outside of the image, simply mount a volume into a different location, and copy all files from `/ferdi` into the mounted folder (`/ferdi-out` in the 2nd example command above).
+The above will place all the built artifacts into the `/ferdi` folder within the image.
+
+If you want to copy them outside of the image, simply mount a volume into a different location, and copy all files from `/ferdi` into the mounted folder (`/ferdi-out` in the example command below).
+
+```bash
+mkdir -p tmp-out
+docker run -v $PWD/tmp-out:/ferdi-out -it ferdi-package sh
+# inside the container:
+mv /ferdi/Ferdi-5.6.0-nightly.18.AppImage /ferdi-out/Ferdi-`date +%Y-%b-%d`.AppImage
+mv /ferdi/ferdi-5.6.0-nightly.18.tar.gz /ferdi-out/Ferdi-`date +%Y-%b-%d`.tar.gz
+mv /ferdi/ferdi-5.6.0-nightly.18.x86_64.rpm /ferdi-out/Ferdi-`date +%Y-%b-%d`.x86_64.rpm
+mv /ferdi/ferdi_5.6.0-nightly.18_amd64.deb /ferdi-out/Ferdi_`date +%Y-%b-%d`_amd64.deb
+mv /ferdi/ferdi /ferdi-out/Ferdi_`date +%Y-%b-%d`
+```
 
 ### Start development app
 
