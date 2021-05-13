@@ -85,7 +85,7 @@ dnf install libX11-devel libXext-devel libXScrnSaver-devel libxkbfile-devel rpm
 Please make sure you run this command as an administrator:
 
 ```bash
-npm install --global windows-build-tools --vs2015
+npm i -g windows-build-tools --vs2015
 ```
 
 ### Clone repository with submodule
@@ -101,6 +101,7 @@ It is important you execute the last command to get the required submodules (rec
 ### Local caching of dependencies
 
 Set these env vars into your profile (or if you use [direnv](https://direnv.net/), you can manage them via the respective `.envrc` file)
+
 ```bash
 export ELECTRON_CACHE=$HOME/.cache/electron
 export ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
@@ -127,8 +128,7 @@ npm run rebuild
 Ferdi requires its recipes to be packaged before it can use it. When running Ferdi as a development instance, you'll need to package the local recipes before you can create any services inside Ferdi.
 
 ```bash
-cd recipes
-npm install && npm run package
+cd recipes && npm i && npm run package
 ```
 
 ### Using Docker to build an rpm package

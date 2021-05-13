@@ -22,7 +22,7 @@ install:
   - appveyor-retry git submodule update --init --recursive
   - ps: Update-NodeJsInstallation $env:nodejs_version
   - cmd: set NODE_OPTIONS=--max-old-space-size=2048
-  - cd recipes && npm install && npm run package && cd ..
+  - cd recipes && npm i && npm run package && cd ..
   - appveyor-retry npx lerna bootstrap
 
 before_build:

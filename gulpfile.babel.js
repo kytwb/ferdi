@@ -15,10 +15,10 @@ import { removeSync, outputJson } from 'fs-extra';
 import kebabCase from 'kebab-case';
 import hexRgb from 'hex-rgb';
 
+import * as buildInfo from 'preval-build-info';
 import config from './package.json';
 
 import * as rawStyleConfig from './src/theme/default/legacy.js';
-import * as buildInfo from 'preval-build-info';
 
 dotenv.config();
 
