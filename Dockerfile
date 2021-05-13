@@ -11,12 +11,16 @@ WORKDIR /usr/src/ferdi
 COPY package*.json ./
 COPY lerna.json ./
 
-RUN npm i gulp@^4.0.0
-RUN npx lerna bootstrap
+# Note: This is being set to bypass the error with missing git repo information for the 'preval-build-info' module
+ENV PREVAL_BUILD_INFO_PLACEHOLDERS=true
+
+RUN npm i node-gyp@8.0.0 node-sass@5.0.0 \
+    && npx lerna bootstrap
 
 COPY . .
 
-RUN npm run build
+RUN cd recipes && npm i && npm run package && cd .. \
+    && npm run build
 
 FROM busybox
 
