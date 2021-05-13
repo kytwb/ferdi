@@ -6,7 +6,7 @@
   "changeserver.label": "サーバー",
   "changeserver.submit": "送信",
   "changeserver.urlError": "有効なURLを入力してください。",
-  "changeserver.warning": "Extra settings offered by Ferdi will not be saved",
+  "changeserver.warning": "Ferdiの追加設定は保存されません",
   "connectionLostBanner.cta": "サービスをリロードする",
   "connectionLostBanner.informationLink": "何が起きましたか？",
   "connectionLostBanner.message": "Oh no! Ferdi lost the connection to {name}.",
