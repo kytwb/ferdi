@@ -53,6 +53,7 @@ import {
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
 import userAgent, { ferdiVersion } from './helpers/userAgent-helpers';
+import ms from 'ms';
 
 const osName = require('os-name');
 const debug = require('debug')('Ferdi:App');
@@ -333,7 +334,7 @@ const createWindow = () => {
   });
 
   if (isMac) {
-    askFormacOSPermissions();
+    setTimeout(() => askFormacOSPermissions(mainWindow), ms('30s'));
   }
 
   mainWindow.on('show', () => {
