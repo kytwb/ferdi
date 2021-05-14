@@ -29,10 +29,14 @@ const contextMenuStringTable = {
   paste: () => 'Paste',
   searchGoogle: () => 'Search with Google',
   openLinkUrl: () => 'Open Link',
+  openLinkInFerdiUrl: () => 'Open Link in Ferdi',
+  openInBrowser: () => 'Open in Browser',
   copyLinkUrl: () => 'Copy Link',
   copyImageUrl: () => 'Copy Image Address',
   copyImage: () => 'Copy Image',
   addToDictionary: () => 'Add to Dictionary',
+  goBack: () => 'Go Back',
+  goForward: () => 'Go Forward',
   goToHomePage: () => 'Go to Home Page',
   copyMail: () => 'Copy Email Address',
   inspectElement: () => 'Inspect Element',
@@ -134,6 +138,7 @@ module.exports = class ContextMenuBuilder {
     this.processMenu(menu, menuInfo);
 
     this.goToHomePage(menu, menuInfo);
+    this.openInBrowser(menu, menuInfo);
 
     return menu;
   }
@@ -164,7 +169,7 @@ module.exports = class ContextMenuBuilder {
     });
 
     const openInFerdiLink = new MenuItem({
-      label: 'Open Link in Ferdi',
+      label: this.stringTable.openLinkInFerdiUrl(),
       click: () => {
         window.location.href = menuInfo.linkURL;
       },
@@ -182,7 +187,10 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.goBack(menu);
+    this.goForward(menu);
     this.goToHomePage(menu, menuInfo);
+    this.openInBrowser(menu, menuInfo);
 
     return menu;
   }
@@ -200,7 +208,10 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.goBack(menu);
+    this.goForward(menu);
     this.goToHomePage(menu, menuInfo);
+    this.openInBrowser(menu, menuInfo);
 
     return menu;
   }
@@ -429,7 +440,37 @@ module.exports = class ContextMenuBuilder {
   }
 
   /**
-   * Adds the go to home  menu item.
+   * Adds the 'go back' menu item
+   */
+  goBack(menu) {
+    const webContents = this.getWebContents();
+    menu.append(new MenuItem({
+      label: this.stringTable.goBack(),
+      accelerator: 'CommandOrControl+left',
+      enabled: webContents.canGoBack(),
+      click: () => webContents.goBack(),
+    }));
+
+    return menu;
+  }
+
+  /**
+   * Adds the 'go forward' menu item
+   */
+  goForward(menu) {
+    const webContents = this.getWebContents();
+    menu.append(new MenuItem({
+      label: this.stringTable.goForward(),
+      accelerator: 'CommandOrControl+right',
+      enabled: webContents.canGoForward(),
+      click: () => webContents.goForward(),
+    }));
+
+    return menu;
+  }
+
+  /**
+   * Adds the 'go to home' menu item.
    */
   goToHomePage(menu, menuInfo) {
     const baseURL = new URL(menuInfo.pageURL);
@@ -440,6 +481,21 @@ module.exports = class ContextMenuBuilder {
       click: () => {
         // webContents.loadURL(baseURL.origin);
         window.location.href = baseURL.origin;
+      },
+    }));
+
+    return menu;
+  }
+
+  /**
+   * Adds the 'open in browser' menu item.
+   */
+  openInBrowser(menu, menuInfo) {
+    menu.append(new MenuItem({
+      label: this.stringTable.openInBrowser(),
+      enabled: true,
+      click: () => {
+        shell.openExternal(menuInfo.pageURL);
       },
     }));
 
