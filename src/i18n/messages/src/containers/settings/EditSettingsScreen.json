@@ -143,15 +143,28 @@
     }
   },
   {
+    "id": "settings.app.form.searchEngine",
+    "defaultMessage": "!!!Choose Search Engine",
+    "file": "src/containers/settings/EditSettingsScreen.js",
+    "start": {
+      "line": 74,
+      "column": 16
+    },
+    "end": {
+      "line": 77,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.app.form.sentry",
     "defaultMessage": "!!!Send telemetry data",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 74,
+      "line": 78,
       "column": 10
     },
     "end": {
-      "line": 77,
+      "line": 81,
       "column": 3
     }
   },
@@ -160,11 +173,11 @@
     "defaultMessage": "!!!Enable service hibernation",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 78,
+      "line": 82,
       "column": 13
     },
     "end": {
-      "line": 81,
+      "line": 85,
       "column": 3
     }
   },
@@ -173,11 +186,11 @@
     "defaultMessage": "!!!Keep services in hibernation on startup",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 82,
+      "line": 86,
       "column": 22
     },
     "end": {
-      "line": 85,
+      "line": 89,
       "column": 3
     }
   },
@@ -186,11 +199,11 @@
     "defaultMessage": "!!!Hibernation strategy",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 86,
+      "line": 90,
       "column": 23
     },
     "end": {
-      "line": 89,
+      "line": 93,
       "column": 3
     }
   },
@@ -199,11 +212,11 @@
     "defaultMessage": "!!!Todo Server",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 90,
+      "line": 94,
       "column": 24
     },
     "end": {
-      "line": 93,
+      "line": 97,
       "column": 3
     }
   },
@@ -212,11 +225,11 @@
     "defaultMessage": "!!!Custom TodoServer",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 94,
+      "line": 98,
       "column": 20
     },
     "end": {
-      "line": 97,
+      "line": 101,
       "column": 3
     }
   },
@@ -225,11 +238,11 @@
     "defaultMessage": "!!!Enable Password Lock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 98,
+      "line": 102,
       "column": 14
     },
     "end": {
-      "line": 101,
+      "line": 105,
       "column": 3
     }
   },
@@ -238,11 +251,11 @@
     "defaultMessage": "!!!Password",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 102,
+      "line": 106,
       "column": 16
     },
     "end": {
-      "line": 105,
+      "line": 109,
       "column": 3
     }
   },
@@ -251,11 +264,11 @@
     "defaultMessage": "!!!Allow using Touch ID to unlock",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 106,
+      "line": 110,
       "column": 22
     },
     "end": {
-      "line": 109,
+      "line": 113,
       "column": 3
     }
   },
@@ -264,11 +277,11 @@
     "defaultMessage": "!!!Lock after inactivity",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 110,
+      "line": 114,
       "column": 18
     },
     "end": {
-      "line": 113,
+      "line": 117,
       "column": 3
     }
   },
@@ -277,11 +290,11 @@
     "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 114,
+      "line": 118,
       "column": 23
     },
     "end": {
-      "line": 117,
+      "line": 121,
       "column": 3
     }
   },
@@ -290,11 +303,11 @@
     "defaultMessage": "!!!From",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 118,
+      "line": 122,
       "column": 21
     },
     "end": {
-      "line": 121,
+      "line": 125,
       "column": 3
     }
   },
@@ -303,21 +316,8 @@
     "defaultMessage": "!!!To",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 122,
-      "column": 19
-    },
-    "end": {
-      "line": 125,
-      "column": 3
-    }
-  },
-  {
-    "id": "settings.app.form.language",
-    "defaultMessage": "!!!Language",
-    "file": "src/containers/settings/EditSettingsScreen.js",
-    "start": {
       "line": 126,
-      "column": 12
+      "column": 19
     },
     "end": {
       "line": 129,
@@ -325,8 +325,8 @@
     }
   },
   {
-    "id": "settings.app.form.darkMode",
-    "defaultMessage": "!!!Dark Mode",
+    "id": "settings.app.form.language",
+    "defaultMessage": "!!!Language",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 130,
@@ -338,12 +338,12 @@
     }
   },
   {
-    "id": "settings.app.form.adaptableDarkMode",
-    "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
+    "id": "settings.app.form.darkMode",
+    "defaultMessage": "!!!Dark Mode",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 134,
-      "column": 21
+      "column": 12
     },
     "end": {
       "line": 137,
@@ -351,8 +351,8 @@
     }
   },
   {
-    "id": "settings.app.form.universalDarkMode",
-    "defaultMessage": "!!!Enable universal Dark Mode",
+    "id": "settings.app.form.adaptableDarkMode",
+    "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 138,
@@ -364,15 +364,28 @@
     }
   },
   {
+    "id": "settings.app.form.universalDarkMode",
+    "defaultMessage": "!!!Enable universal Dark Mode",
+    "file": "src/containers/settings/EditSettingsScreen.js",
+    "start": {
+      "line": 142,
+      "column": 21
+    },
+    "end": {
+      "line": 145,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.app.form.serviceRibbonWidth",
     "defaultMessage": "!!!Sidebar width",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 142,
+      "line": 146,
       "column": 22
     },
     "end": {
-      "line": 145,
+      "line": 149,
       "column": 3
     }
   },
@@ -381,11 +394,11 @@
     "defaultMessage": "!!!Service icon size",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 146,
+      "line": 150,
       "column": 12
     },
     "end": {
-      "line": 149,
+      "line": 153,
       "column": 3
     }
   },
@@ -394,11 +407,11 @@
     "defaultMessage": "!!!Use vertical style",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 150,
+      "line": 154,
       "column": 20
     },
     "end": {
-      "line": 153,
+      "line": 157,
       "column": 3
     }
   },
@@ -407,11 +420,11 @@
     "defaultMessage": "!!!Always show workspace drawer",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 154,
+      "line": 158,
       "column": 24
     },
     "end": {
-      "line": 157,
+      "line": 161,
       "column": 3
     }
   },
@@ -420,11 +433,11 @@
     "defaultMessage": "!!!Accent color",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 158,
+      "line": 162,
       "column": 15
     },
     "end": {
-      "line": 161,
+      "line": 165,
       "column": 3
     }
   },
@@ -433,11 +446,11 @@
     "defaultMessage": "!!!Display disabled services tabs",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 162,
+      "line": 166,
       "column": 24
     },
     "end": {
-      "line": 165,
+      "line": 169,
       "column": 3
     }
   },
@@ -446,11 +459,11 @@
     "defaultMessage": "!!!Show unread message badge when notifications are disabled",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 166,
+      "line": 170,
       "column": 29
     },
     "end": {
-      "line": 169,
+      "line": 173,
       "column": 3
     }
   },
@@ -459,11 +472,11 @@
     "defaultMessage": "!!!Show draggable area on window",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 170,
+      "line": 174,
       "column": 16
     },
     "end": {
-      "line": 173,
+      "line": 177,
       "column": 3
     }
   },
@@ -472,11 +485,11 @@
     "defaultMessage": "!!!Enable spell checking",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 174,
+      "line": 178,
       "column": 23
     },
     "end": {
-      "line": 177,
+      "line": 181,
       "column": 3
     }
   },
@@ -485,11 +498,11 @@
     "defaultMessage": "!!!Enable GPU Acceleration",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 178,
+      "line": 182,
       "column": 25
     },
     "end": {
-      "line": 181,
+      "line": 185,
       "column": 3
     }
   },
@@ -498,11 +511,11 @@
     "defaultMessage": "!!!Include beta versions",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 182,
+      "line": 186,
       "column": 8
     },
     "end": {
-      "line": 185,
+      "line": 189,
       "column": 3
     }
   },
@@ -511,11 +524,11 @@
     "defaultMessage": "!!!Enable updates",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 186,
+      "line": 190,
       "column": 20
     },
     "end": {
-      "line": 189,
+      "line": 193,
       "column": 3
     }
   },
@@ -524,11 +537,11 @@
     "defaultMessage": "!!!Enable Franz Todos",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 190,
+      "line": 194,
       "column": 15
     },
     "end": {
-      "line": 193,
+      "line": 197,
       "column": 3
     }
   },
@@ -537,11 +550,11 @@
     "defaultMessage": "!!!Keep all workspaces loaded",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
-      "line": 194,
+      "line": 198,
       "column": 27
     },
     "end": {
-      "line": 197,
+      "line": 201,
       "column": 3
     }
   }

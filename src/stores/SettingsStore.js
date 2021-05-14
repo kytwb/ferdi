@@ -3,7 +3,9 @@ import {
   action, computed, observable, reaction,
 } from 'mobx';
 import localStorage from 'mobx-localstorage';
-import { DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER } from '../config';
+import {
+  DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER, SEARCH_ENGINE_DDG,
+} from '../config';
 import { API } from '../environment';
 import { getLocale } from '../helpers/i18n-helpers';
 import { hash } from '../helpers/password-helpers';
@@ -300,6 +302,22 @@ export default class SettingsStore extends Store {
       });
 
       debug('Migrated updates settings');
+    }
+
+    if (!this.all.migration['5.6.0-beta.6-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          searchEngine: SEARCH_ENGINE_DDG,
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          '5.6.0-beta.6-settings': true,
+        },
+      });
     }
   }
 }

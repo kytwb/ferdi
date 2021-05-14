@@ -8,6 +8,8 @@
  */
 import { isMac } from '../environment';
 
+import { SEARCH_ENGINE_NAMES, SEARCH_ENGINE_URLS } from '../config';
+
 const {
   clipboard, nativeImage, remote, shell,
 } = require('electron');
@@ -27,7 +29,7 @@ const contextMenuStringTable = {
   cut: () => 'Cut',
   copy: () => 'Copy',
   paste: () => 'Paste',
-  searchGoogle: () => 'Search with Google',
+  searchWith: ({ searchEngine }) => `Search with ${searchEngine}`,
   openLinkUrl: () => 'Open Link',
   openLinkInFerdiUrl: () => 'Open Link in Ferdi',
   openInBrowser: () => 'Open in Browser',
@@ -286,9 +288,9 @@ module.exports = class ContextMenuBuilder {
     }
 
     const search = new MenuItem({
-      label: this.stringTable.searchGoogle(),
+      label: this.stringTable.searchWith({ searchEngine: SEARCH_ENGINE_NAMES[menuInfo.searchEngine] }),
       click: () => {
-        const url = `https://www.google.com/search?q=${encodeURIComponent(menuInfo.selectionText)}`;
+        const url = `${SEARCH_ENGINE_URLS[menuInfo.searchEngine]}${encodeURIComponent(menuInfo.selectionText)}`;
 
         shell.openExternal(url);
       },

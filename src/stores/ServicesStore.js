@@ -130,6 +130,11 @@ export default class ServicesStore extends Store {
       () => this.stores.settings.app.universalDarkMode,
       () => this._shareSettingsWithServiceProcess(),
     );
+
+    reaction(
+      () => this.stores.settings.app.searchEngine,
+      () => this._shareSettingsWithServiceProcess(),
+    );
   }
 
   initialize() {

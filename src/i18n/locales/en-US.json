@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
   "settings.app.form.scheduledDNDEnd": "To",
   "settings.app.form.scheduledDNDStart": "From",
+  "settings.app.form.searchEngine": "Choose Search Engine",
   "settings.app.form.sentry": "Send telemetry data",
   "settings.app.form.serviceRibbonWidth": "Sidebar width",
   "settings.app.form.showDisabledServices": "Display disabled services tabs",

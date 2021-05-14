@@ -152,6 +152,7 @@ class RecipeController {
       () => this.settings.app.enableSpellchecking,
       () => this.settings.app.spellcheckerLanguage,
       () => this.spellcheckerLanguage,
+      () => this.settings.app.searchEngine,
     );
 
     autorun(() => this.update());
@@ -230,6 +231,7 @@ class RecipeController {
     debug('System spellcheckerLanguage', this.settings.app.spellcheckerLanguage);
     debug('Service spellcheckerLanguage', this.settings.service.spellcheckerLanguage);
     debug('darkReaderSettigs', this.settings.service.darkReaderSettings);
+    debug('searchEngine', this.settings.app.searchEngine);
 
     if (this.userscript && this.userscript.internal_setSettings) {
       this.userscript.internal_setSettings(this.settings);

@@ -3,7 +3,7 @@ import ContextMenuBuilder from './contextMenuBuilder';
 
 const webContents = remote.getCurrentWebContents();
 
-export default async function setupContextMenu(isSpellcheckEnabled, getDefaultSpellcheckerLanguage, getSpellcheckerLanguage) {
+export default async function setupContextMenu(isSpellcheckEnabled, getDefaultSpellcheckerLanguage, getSpellcheckerLanguage, getSearchEngine) {
   const contextMenuBuilder = new ContextMenuBuilder(
     webContents,
   );
@@ -11,7 +11,7 @@ export default async function setupContextMenu(isSpellcheckEnabled, getDefaultSp
   webContents.on('context-menu', (e, props) => {
     // TODO?: e.preventDefault();
     contextMenuBuilder.showPopupMenu(
-      props,
+      { ...props, searchEngine: getSearchEngine() },
       isSpellcheckEnabled(),
       getDefaultSpellcheckerLanguage(),
       getSpellcheckerLanguage(),

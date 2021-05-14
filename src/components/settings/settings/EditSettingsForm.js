@@ -331,6 +331,7 @@ export default @observer class EditSettingsForm extends Component {
                 {(isWindows || isMac) && (
                   <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
                 <Select field={form.$('navigationBarBehaviour')} />
+                <Select field={form.$('searchEngine')} />
 
                 <Hr />
 

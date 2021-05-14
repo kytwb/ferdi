@@ -10,7 +10,7 @@ import TodosStore from '../../features/todos/store';
 import Form from '../../lib/Form';
 import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
-  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, TODO_APPS,
+  DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, SEARCH_ENGINE_NAMES, TODO_APPS,
 } from '../../config';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
@@ -70,6 +70,10 @@ const messages = defineMessages({
   navigationBarBehaviour: {
     id: 'settings.app.form.navigationBarBehaviour',
     defaultMessage: '!!!Navigation bar behaviour',
+  },
+  searchEngine: {
+    id: 'settings.app.form.searchEngine',
+    defaultMessage: '!!!Choose Search Engine',
   },
   sentry: {
     id: 'settings.app.form.sentry',
@@ -241,6 +245,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         privateNotifications: settingsData.privateNotifications,
         notifyTaskBarOnMessage: settingsData.notifyTaskBarOnMessage,
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
+        searchEngine: settingsData.searchEngine,
         sentry: settingsData.sentry,
         hibernate: settingsData.hibernate,
         hibernateOnStartup: settingsData.hibernateOnStartup,
@@ -310,6 +315,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
 
     const navigationBarBehaviours = getSelectOptions({
       locales: NAVIGATION_BAR_BEHAVIOURS,
+      sort: false,
+    });
+
+    const searchEngines = getSelectOptions({
+      locales: SEARCH_ENGINE_NAMES,
       sort: false,
     });
 
@@ -395,6 +405,12 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.navigationBarBehaviour,
           default: DEFAULT_APP_SETTINGS.navigationBarBehaviour,
           options: navigationBarBehaviours,
+        },
+        searchEngine: {
+          label: intl.formatMessage(messages.searchEngine),
+          value: settings.all.app.searchEngine,
+          default: DEFAULT_APP_SETTINGS.searchEngine,
+          options: searchEngines,
         },
         sentry: {
           label: intl.formatMessage(messages.sentry),
