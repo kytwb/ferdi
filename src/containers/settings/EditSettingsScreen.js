@@ -12,6 +12,7 @@ import { APP_LOCALES, SPELLCHECKER_LOCALES } from '../../i18n/languages';
 import {
   DEFAULT_APP_SETTINGS, HIBERNATION_STRATEGIES, SIDEBAR_WIDTH, ICON_SIZES, NAVIGATION_BAR_BEHAVIOURS, SEARCH_ENGINE_NAMES, TODO_APPS,
 } from '../../config';
+import { isMac } from '../../environment';
 import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
@@ -45,7 +46,11 @@ const messages = defineMessages({
   },
   enableSystemTray: {
     id: 'settings.app.form.enableSystemTray',
-    defaultMessage: '!!!Always show Ferdi in system tray',
+    defaultMessage: '!!!Always show Ferdi in System Tray',
+  },
+  enableMenuBar: {
+    id: 'settings.app.form.enableMenuBar',
+    defaultMessage: '!!!Always show Ferdi in Menu Bar',
   },
   reloadAfterResume: {
     id: 'settings.app.form.reloadAfterResume',
@@ -371,7 +376,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           default: DEFAULT_APP_SETTINGS.startMinimized,
         },
         enableSystemTray: {
-          label: intl.formatMessage(messages.enableSystemTray),
+          label: intl.formatMessage(isMac ? messages.enableMenuBar : messages.enableSystemTray),
           value: settings.all.app.enableSystemTray,
           default: DEFAULT_APP_SETTINGS.enableSystemTray,
         },
