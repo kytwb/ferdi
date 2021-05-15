@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Aspetto",
   "settings.app.headlineGeneral": "Generale",
   "settings.app.headlineLanguage": "Lingua",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Aggiornamenti",
   "settings.app.hibernateInfo": "Per impostazione predefinita, Ferdi manterrà tutti i servizi aperti e caricati in background in modo che siano pronti quando si desidera utilizzarli. Il servizio Hibernation sospenderà i servizi dopo un tempo specificato. Questo è utile per risparmiare RAM o per evitare che i servizi rallentino il computer.",
   "settings.app.inactivityLockInfo": "Minuti di inattività oltre i quali Ferdi si bloccherà automaticamente, 0 per disabilitare",
