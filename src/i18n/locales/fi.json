@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Ota ajoitettu Älä häiritse-tila käyttöön",
   "settings.app.form.scheduledDNDEnd": "Vastaanottaja",
   "settings.app.form.scheduledDNDStart": "Lähettäjä",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Lähetä telemetriatiedot",
   "settings.app.form.serviceRibbonWidth": "Valikon leveys",
   "settings.app.form.showDisabledServices": "Näytä Estetyt palvelut -välilehdet",
