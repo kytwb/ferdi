@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Geplante \"Nicht-stören\"-Funktion aktivieren",
   "settings.app.form.scheduledDNDEnd": "Von",
   "settings.app.form.scheduledDNDStart": "Bis",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Telemetrie-Daten senden",
   "settings.app.form.serviceRibbonWidth": "Größe der Sidebar",
   "settings.app.form.showDisabledServices": "Deaktivierte Services-Tabs anzeigen",
