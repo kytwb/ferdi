@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "방해 금지 모드 시간 설정",
   "settings.app.form.scheduledDNDEnd": "To",
   "settings.app.form.scheduledDNDStart": "From",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Send telemetry data",
   "settings.app.form.serviceRibbonWidth": "사이드바 너비",
   "settings.app.form.showDisabledServices": "사용하지 않는 서비스 출력",
