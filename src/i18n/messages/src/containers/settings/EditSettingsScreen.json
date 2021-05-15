@@ -144,7 +144,7 @@
   },
   {
     "id": "settings.app.form.searchEngine",
-    "defaultMessage": "!!!Choose Search Engine",
+    "defaultMessage": "!!!Search engine",
     "file": "src/containers/settings/EditSettingsScreen.js",
     "start": {
       "line": 74,

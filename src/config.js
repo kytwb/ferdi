@@ -55,13 +55,13 @@ export const NAVIGATION_BAR_BEHAVIOURS = {
 export const SEARCH_ENGINE_GOOGLE = 'google';
 export const SEARCH_ENGINE_DDG = 'duckDuckGo';
 export const SEARCH_ENGINE_NAMES = {
-  SEARCH_ENGINE_GOOGLE: 'Google',
-  SEARCH_ENGINE_DDG: 'Duck Duck Go',
+  [SEARCH_ENGINE_GOOGLE]: 'Google',
+  [SEARCH_ENGINE_DDG]: 'DuckDuckGo',
 };
 
 export const SEARCH_ENGINE_URLS = {
-  SEARCH_ENGINE_GOOGLE: 'https://www.google.com/search?q=',
-  SEARCH_ENGINE_DDG: 'https://duckduckgo.com/?q=',
+  [SEARCH_ENGINE_GOOGLE]: ({ searchTerm }) => `https://www.google.com/search?q=${searchTerm}`,
+  [SEARCH_ENGINE_DDG]: ({ searchTerm }) => `https://duckduckgo.com/?q=${searchTerm}`,
 };
 
 export const TODO_APPS = {

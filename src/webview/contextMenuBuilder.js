@@ -290,8 +290,7 @@ module.exports = class ContextMenuBuilder {
     const search = new MenuItem({
       label: this.stringTable.searchWith({ searchEngine: SEARCH_ENGINE_NAMES[menuInfo.searchEngine] }),
       click: () => {
-        const url = `${SEARCH_ENGINE_URLS[menuInfo.searchEngine]}${encodeURIComponent(menuInfo.selectionText)}`;
-
+        const url = SEARCH_ENGINE_URLS[menuInfo.searchEngine]({ searchTerm: encodeURIComponent(menuInfo.selectionText) });
         shell.openExternal(url);
       },
     });

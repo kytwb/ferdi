@@ -73,7 +73,7 @@ const messages = defineMessages({
   },
   searchEngine: {
     id: 'settings.app.form.searchEngine',
-    defaultMessage: '!!!Choose Search Engine',
+    defaultMessage: '!!!Search engine',
   },
   sentry: {
     id: 'settings.app.form.sentry',
