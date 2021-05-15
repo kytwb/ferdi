@@ -396,6 +396,57 @@ export default @observer class EditSettingsForm extends Component {
                   </>
                 )}
 
+
+                <Hr />
+
+                <Toggle field={form.$('scheduledDNDEnabled')} />
+                {scheduledDNDEnabled && (
+                  <>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                    }}
+                    >
+                      <div style={{
+                        padding: '0 1rem',
+                        width: '100%',
+                      }}
+                      >
+                        <Input
+                          placeholder="17:00"
+                          onChange={e => this.submit(e)}
+                          field={form.$('scheduledDNDStart')}
+                          type="time"
+                        />
+                      </div>
+                      <div style={{
+                        padding: '0 1rem',
+                        width: '100%',
+                      }}
+                      >
+                        <Input
+                          placeholder="09:00"
+                          onChange={e => this.submit(e)}
+                          field={form.$('scheduledDNDEnd')}
+                          type="time"
+                        />
+                      </div>
+                    </div>
+                    <p>
+                      { intl.formatMessage(messages.scheduledDNDTimeInfo) }
+                    </p>
+                  </>
+                )}
+                <p
+                  className="settings__message"
+                  style={{
+                    borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                  }}
+                >
+                  <span>
+                    { intl.formatMessage(messages.scheduledDNDInfo) }
+                  </span>
+                </p>
               </div>
             )}
 
@@ -505,57 +556,6 @@ export default @observer class EditSettingsForm extends Component {
                 >
                   <span>
                     { intl.formatMessage(messages.lockInfo) }
-                  </span>
-                </p>
-
-                <Hr />
-
-                <Toggle field={form.$('scheduledDNDEnabled')} />
-                {scheduledDNDEnabled && (
-                  <>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                    }}
-                    >
-                      <div style={{
-                        padding: '0 1rem',
-                        width: '100%',
-                      }}
-                      >
-                        <Input
-                          placeholder="17:00"
-                          onChange={e => this.submit(e)}
-                          field={form.$('scheduledDNDStart')}
-                          type="time"
-                        />
-                      </div>
-                      <div style={{
-                        padding: '0 1rem',
-                        width: '100%',
-                      }}
-                      >
-                        <Input
-                          placeholder="09:00"
-                          onChange={e => this.submit(e)}
-                          field={form.$('scheduledDNDEnd')}
-                          type="time"
-                        />
-                      </div>
-                    </div>
-                    <p>
-                      { intl.formatMessage(messages.scheduledDNDTimeInfo) }
-                    </p>
-                  </>
-                )}
-                <p
-                  className="settings__message"
-                  style={{
-                    borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                  }}
-                >
-                  <span>
-                    { intl.formatMessage(messages.scheduledDNDInfo) }
                   </span>
                 </p>
               </div>
