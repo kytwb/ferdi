@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Aparência",
   "settings.app.headlineGeneral": "Geral",
   "settings.app.headlineLanguage": "Idioma",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Atualizações",
   "settings.app.hibernateInfo": "Por padrão, Ferdi manterá todos seus serviços abertos e carregados, assim eles estarão disponíveis quando você for usá-los. O Serviço de Hibernação irá finalizar seus serviços após um período específico. Isso é útil para evitar consumo excessivo de memória RAM evitando também que seu computador fique lento.",
   "settings.app.inactivityLockInfo": "Minutos de inatividade, após este tempo Ferdi irá automaticamente bloquear. Utilize 0 para desabilitar",
