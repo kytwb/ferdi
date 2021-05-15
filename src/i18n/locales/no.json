@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Aktiver planlagt ikke-forstyrr",
   "settings.app.form.scheduledDNDEnd": "Til",
   "settings.app.form.scheduledDNDStart": "Fra",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Send telemetridata",
   "settings.app.form.serviceRibbonWidth": "Vidden til sidebaren",
   "settings.app.form.showDisabledServices": "Vis deaktiverte tjenestefaner",
