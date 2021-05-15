@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "모양",
   "settings.app.headlineGeneral": "일반",
   "settings.app.headlineLanguage": "언어",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "업데이트",
   "settings.app.hibernateInfo": "기본적으로 Ferdi 는 모든 서비스를 열고 백그라운드에서 불러옵니다. 그래서 사용할 때 이미 준비되어 있습니다. Service Hibernation은 일정 개수 이후에 서비스를 불러오지 않습니다. 이로인해 RAM을 절약하고 컴퓨터에서 서비스가 느려지는 것을 방지해주기에 유용합니다.",
   "settings.app.inactivityLockInfo": "Minutes of inactivity, after which Ferdi should automatically lock. Use 0 to disable",
