@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Abilita la pianificazione dei Do-Not-Disturb",
   "settings.app.form.scheduledDNDEnd": "A",
   "settings.app.form.scheduledDNDStart": "Da",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Inviare i dati di telemetria",
   "settings.app.form.serviceRibbonWidth": "Larghezza barra laterale",
   "settings.app.form.showDisabledServices": "Mostra schede servizi disattivati",
