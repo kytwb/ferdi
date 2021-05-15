@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Activer Ne-pas-Déranger",
   "settings.app.form.scheduledDNDEnd": "À",
   "settings.app.form.scheduledDNDStart": "De",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Envoyer des données de télémétrie",
   "settings.app.form.serviceRibbonWidth": "Largeur du menu",
   "settings.app.form.showDisabledServices": "Afficher les onglets des services désactivés",
