@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Ulkoasu",
   "settings.app.headlineGeneral": "Yleinen",
   "settings.app.headlineLanguage": "Kieli",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Päivitykset",
   "settings.app.hibernateInfo": "Oletuksena Ferdi pitää kaikki palvelut auki ja ladattuna taustalla, joten ne ovat valmiina, kun haluat käyttää niitä. Horrostila sammuttaa palveluita tietyn jakson jälkeen. Tämä kätevä toimino säästää RAM-muistia tai estää palveluita hidastamasta tietokonetta.",
   "settings.app.inactivityLockInfo": "Minuutin käyttämättömyyden jälkeen Ferdi lukkiutuu automaattisesti. Käytä arvoa 0 poistaaksesi toiminnon käytöstä",
