@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Activar programación \"No molestar\"",
   "settings.app.form.scheduledDNDEnd": "A",
   "settings.app.form.scheduledDNDStart": "De",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Enviar datos de telemetría",
   "settings.app.form.serviceRibbonWidth": "Ancho de Barra Lateral",
   "settings.app.form.showDisabledServices": "Mostrar pestañas de servicios desactivados",
