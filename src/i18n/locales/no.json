@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Utseende",
   "settings.app.headlineGeneral": "Generelt",
   "settings.app.headlineLanguage": "Språk",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Oppdateringer",
   "settings.app.hibernateInfo": "Som standard vil Ferdi beholde alle tjenestene dine åpne og lastet i bakgrunnen slik at de er klare når du vil bruke dem. Dvalemodus for tjenester vil sette tjenestene dine i dvale etter et angitt tidsrom. Dette er nyttig for å spare minne eller sørge for at tjenestene ikke gjør datamaskinen din treg.",
   "settings.app.inactivityLockInfo": "Minutter med inaktivitet, hvorpå Ferdi burde låses automatisk. Bruk 0 for å deaktivere",
