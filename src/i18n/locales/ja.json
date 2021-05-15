@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "集中モードのスケジュールを有効にする",
   "settings.app.form.scheduledDNDEnd": "終了",
   "settings.app.form.scheduledDNDStart": "開始",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "統計情報を送信",
   "settings.app.form.serviceRibbonWidth": "サイドバーの幅",
   "settings.app.form.showDisabledServices": "無効化されたサービスのタブを表示する",
