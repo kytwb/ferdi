@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Activar o agendamento Não Incomodar\"",
   "settings.app.form.scheduledDNDEnd": "Para",
   "settings.app.form.scheduledDNDStart": "De",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Enviar dados de telemetria",
   "settings.app.form.serviceRibbonWidth": "Largura da barra lateral",
   "settings.app.form.showDisabledServices": "Mostrar separadores de serviços desativados",
