@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Utseende",
   "settings.app.headlineGeneral": "Allmänt",
   "settings.app.headlineLanguage": "Språk",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Uppdateringar",
   "settings.app.hibernateInfo": "Som standard kommer Ferdi att hålla alla dina tjänster öppna och laddade i bakgrunden så att de är redo när du vill använda dem. Viloläget kommer att stänga dina tjänster efter ett angivet belopp. Detta är användbart för att spara på arbetsminne eller se till att tjänster inte saktar ner datorn.",
   "settings.app.inactivityLockInfo": "Antal minuter av inaktivitet, varefter Ferdi låses automatiskt. Ange 0 för att inaktivera",
