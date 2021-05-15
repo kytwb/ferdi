@@ -3446,198 +3446,211 @@
         }
       },
       {
-        "defaultMessage": "!!!Advanced",
+        "defaultMessage": "!!!Privacy",
         "end": {
           "column": 3,
           "line": 94
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
+        "id": "settings.app.headlinePrivacy",
+        "start": {
+          "column": 19,
+          "line": 91
+        }
+      },
+      {
+        "defaultMessage": "!!!Advanced",
+        "end": {
+          "column": 3,
+          "line": 98
+        },
+        "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.headlineAdvanced",
         "start": {
           "column": 20,
-          "line": 91
+          "line": 95
         }
       },
       {
         "defaultMessage": "!!!Help us to translate Ferdi into your language.",
         "end": {
           "column": 3,
-          "line": 98
+          "line": 102
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.translationHelp",
         "start": {
           "column": 19,
-          "line": 95
+          "line": 99
         }
       },
       {
         "defaultMessage": "!!!Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
         "end": {
           "column": 3,
-          "line": 102
+          "line": 106
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.spellCheckerLanguageInfo",
         "start": {
           "column": 28,
-          "line": 99
+          "line": 103
         }
       },
       {
         "defaultMessage": "!!!Cache",
         "end": {
           "column": 3,
-          "line": 106
+          "line": 110
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.subheadlineCache",
         "start": {
           "column": 20,
-          "line": 103
+          "line": 107
         }
       },
       {
         "defaultMessage": "!!!Ferdi cache is currently using {size} of disk space.",
         "end": {
           "column": 3,
-          "line": 110
+          "line": 114
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheInfo",
         "start": {
           "column": 13,
-          "line": 107
+          "line": 111
         }
       },
       {
         "defaultMessage": "!!!Couldn't clear all cache",
         "end": {
           "column": 3,
-          "line": 114
+          "line": 118
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.cacheNotCleared",
         "start": {
           "column": 19,
-          "line": 111
+          "line": 115
         }
       },
       {
         "defaultMessage": "!!!Clear cache",
         "end": {
           "column": 3,
-          "line": 118
+          "line": 122
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonClearAllCache",
         "start": {
           "column": 23,
-          "line": 115
+          "line": 119
         }
       },
       {
         "defaultMessage": "!!!Check for updates",
         "end": {
           "column": 3,
-          "line": 122
+          "line": 126
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonSearchForUpdate",
         "start": {
           "column": 25,
-          "line": 119
+          "line": 123
         }
       },
       {
         "defaultMessage": "!!!Restart & install update",
         "end": {
           "column": 3,
-          "line": 126
+          "line": 130
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.buttonInstallUpdate",
         "start": {
           "column": 23,
-          "line": 123
+          "line": 127
         }
       },
       {
         "defaultMessage": "!!!Is searching for update",
         "end": {
           "column": 3,
-          "line": 130
-        },
-        "file": "src/components/settings/settings/EditSettingsForm.js",
-        "id": "settings.app.updateStatusSearching",
-        "start": {
-          "column": 25,
-          "line": 127
-        }
-      },
-      {
-        "defaultMessage": "!!!Update available, downloading...",
-        "end": {
-          "column": 3,
           "line": 134
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
-        "id": "settings.app.updateStatusAvailable",
+        "id": "settings.app.updateStatusSearching",
         "start": {
           "column": 25,
           "line": 131
         }
       },
       {
-        "defaultMessage": "!!!You are using the latest version of Ferdi",
+        "defaultMessage": "!!!Update available, downloading...",
         "end": {
           "column": 3,
           "line": 138
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
+        "id": "settings.app.updateStatusAvailable",
+        "start": {
+          "column": 25,
+          "line": 135
+        }
+      },
+      {
+        "defaultMessage": "!!!You are using the latest version of Ferdi",
+        "end": {
+          "column": 3,
+          "line": 142
+        },
+        "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.updateStatusUpToDate",
         "start": {
           "column": 24,
-          "line": 135
+          "line": 139
         }
       },
       {
         "defaultMessage": "!!!Current version:",
         "end": {
           "column": 3,
-          "line": 142
+          "line": 146
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.currentVersion",
         "start": {
           "column": 18,
-          "line": 139
+          "line": 143
         }
       },
       {
         "defaultMessage": "!!!Changes require restart",
         "end": {
           "column": 3,
-          "line": 146
+          "line": 150
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.restartRequired",
         "start": {
           "column": 29,
-          "line": 143
+          "line": 147
         }
       },
       {
         "defaultMessage": "!!!Official translations are English & German. All other languages are community based translations.",
         "end": {
           "column": 3,
-          "line": 150
+          "line": 154
         },
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.languageDisclaimer",
         "start": {
           "column": 22,
-          "line": 147
+          "line": 151
         }
       }
     ],

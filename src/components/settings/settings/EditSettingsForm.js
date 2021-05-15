@@ -88,6 +88,10 @@ const messages = defineMessages({
     id: 'settings.app.accentColorInfo',
     defaultMessage: '!!!Write your accent color in a CSS-compatible format. (Default: {defaultAccentColor})',
   },
+  headlinePrivacy: {
+    id: 'settings.app.headlinePrivacy',
+    defaultMessage: '!!!Privacy',
+  },
   headlineAdvanced: {
     id: 'settings.app.headlineAdvanced',
     defaultMessage: '!!!Advanced',
@@ -291,6 +295,13 @@ export default @observer class EditSettingsForm extends Component {
                 {intl.formatMessage(messages.headlineAppearance)}
               </h2>
               <h2
+                id="privacy"
+                className={this.state.activeSetttingsTab === 'privacy' ? 'badge badge--primary' : 'badge'}
+                onClick={() => { this.setActiveSettingsTab('privacy'); }}
+              >
+                {intl.formatMessage(messages.headlinePrivacy)}
+              </h2>
+              <h2
                 id="language"
                 className={this.state.activeSetttingsTab === 'language' ? 'badge badge--primary' : 'badge'}
                 onClick={() => { this.setActiveSettingsTab('language'); }}
@@ -327,16 +338,7 @@ export default @observer class EditSettingsForm extends Component {
                 {isWindows && (
                   <Toggle field={form.$('closeToSystemTray')} />
                 )}
-                <Toggle field={form.$('privateNotifications')} />
-                {(isWindows || isMac) && (
-                  <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
                 <Select field={form.$('navigationBarBehaviour')} />
-
-                <Hr />
-
-                <Select field={form.$('searchEngine')} />
-                <Toggle field={form.$('sentry')} />
-                <p>{intl.formatMessage(messages.sentryInfo)}</p>
 
                 <Hr />
 
@@ -393,6 +395,75 @@ export default @observer class EditSettingsForm extends Component {
                     )}
                   </>
                 )}
+
+              </div>
+            )}
+
+            {/* Appearance */}
+            { this.state.activeSetttingsTab === 'appearance' && (
+              <div>
+                <Toggle field={form.$('showDisabledServices')} />
+                <Toggle field={form.$('showMessageBadgeWhenMuted')} />
+
+                {isMac && <Toggle field={form.$('showDragArea')} />}
+
+                <Hr />
+
+                <Toggle field={form.$('adaptableDarkMode')} />
+                {!isAdaptableDarkModeEnabled && <Toggle field={form.$('darkMode')} />}
+                {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
+                <>
+                  <Toggle field={form.$('universalDarkMode')} />
+                  <p
+                    className="settings__message"
+                    style={{
+                      borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
+                    }}
+                  >
+                    <span>
+                      { intl.formatMessage(messages.universalDarkModeInfo) }
+                    </span>
+                  </p>
+                </>
+                )}
+
+                <Hr />
+
+                <Select field={form.$('serviceRibbonWidth')} />
+
+                <Toggle field={form.$('useVerticalStyle')} />
+
+                <Toggle field={form.$('alwaysShowWorkspaces')} />
+
+                <Hr />
+                <Select field={form.$('iconSize')} />
+
+                <Hr />
+
+                <Input
+                  placeholder="Accent Color"
+                  onChange={e => this.submit(e)}
+                  field={form.$('accentColor')}
+                />
+                <p>
+                  {intl.formatMessage(messages.accentColorInfo,
+                    { defaultAccentColor: DEFAULT_APP_SETTINGS.accentColor })}
+                </p>
+              </div>
+            )}
+
+            {/* Privacy */}
+            { this.state.activeSetttingsTab === 'privacy' && (
+              <div>
+                <Toggle field={form.$('privateNotifications')} />
+                {(isWindows || isMac) && (
+                  <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
+
+                <Hr />
+
+                <Select field={form.$('searchEngine')} />
+                <Toggle field={form.$('sentry')} />
+                <p>{intl.formatMessage(messages.sentryInfo)}</p>
 
                 <Hr />
 
@@ -486,59 +557,6 @@ export default @observer class EditSettingsForm extends Component {
                   <span>
                     { intl.formatMessage(messages.scheduledDNDInfo) }
                   </span>
-                </p>
-              </div>
-            )}
-
-            {/* Appearance */}
-            { this.state.activeSetttingsTab === 'appearance' && (
-              <div>
-                <Toggle field={form.$('showDisabledServices')} />
-                <Toggle field={form.$('showMessageBadgeWhenMuted')} />
-
-                {isMac && <Toggle field={form.$('showDragArea')} />}
-
-                <Hr />
-
-                <Toggle field={form.$('adaptableDarkMode')} />
-                {!isAdaptableDarkModeEnabled && <Toggle field={form.$('darkMode')} />}
-                {(isDarkmodeEnabled || isAdaptableDarkModeEnabled) && (
-                <>
-                  <Toggle field={form.$('universalDarkMode')} />
-                  <p
-                    className="settings__message"
-                    style={{
-                      borderTop: 0, marginTop: 0, paddingTop: 0, marginBottom: '2rem',
-                    }}
-                  >
-                    <span>
-                      { intl.formatMessage(messages.universalDarkModeInfo) }
-                    </span>
-                  </p>
-                </>
-                )}
-
-                <Hr />
-
-                <Select field={form.$('serviceRibbonWidth')} />
-
-                <Toggle field={form.$('useVerticalStyle')} />
-
-                <Toggle field={form.$('alwaysShowWorkspaces')} />
-
-                <Hr />
-                <Select field={form.$('iconSize')} />
-
-                <Hr />
-
-                <Input
-                  placeholder="Accent Color"
-                  onChange={e => this.submit(e)}
-                  field={form.$('accentColor')}
-                />
-                <p>
-                  {intl.formatMessage(messages.accentColorInfo,
-                    { defaultAccentColor: DEFAULT_APP_SETTINGS.accentColor })}
                 </p>
               </div>
             )}

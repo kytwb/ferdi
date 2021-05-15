@@ -208,15 +208,28 @@
     }
   },
   {
+    "id": "settings.app.headlinePrivacy",
+    "defaultMessage": "!!!Privacy",
+    "file": "src/components/settings/settings/EditSettingsForm.js",
+    "start": {
+      "line": 91,
+      "column": 19
+    },
+    "end": {
+      "line": 94,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.app.headlineAdvanced",
     "defaultMessage": "!!!Advanced",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 91,
+      "line": 95,
       "column": 20
     },
     "end": {
-      "line": 94,
+      "line": 98,
       "column": 3
     }
   },
@@ -225,11 +238,11 @@
     "defaultMessage": "!!!Help us to translate Ferdi into your language.",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 95,
+      "line": 99,
       "column": 19
     },
     "end": {
-      "line": 98,
+      "line": 102,
       "column": 3
     }
   },
@@ -238,11 +251,11 @@
     "defaultMessage": "!!!Ferdi uses your Mac's build-in spellchecker to check for typos. If you want to change the languages the spellchecker checks for, you can do so in your Mac's System Preferences.",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 99,
+      "line": 103,
       "column": 28
     },
     "end": {
-      "line": 102,
+      "line": 106,
       "column": 3
     }
   },
@@ -251,11 +264,11 @@
     "defaultMessage": "!!!Cache",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 103,
+      "line": 107,
       "column": 20
     },
     "end": {
-      "line": 106,
+      "line": 110,
       "column": 3
     }
   },
@@ -264,11 +277,11 @@
     "defaultMessage": "!!!Ferdi cache is currently using {size} of disk space.",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 107,
+      "line": 111,
       "column": 13
     },
     "end": {
-      "line": 110,
+      "line": 114,
       "column": 3
     }
   },
@@ -277,11 +290,11 @@
     "defaultMessage": "!!!Couldn't clear all cache",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 111,
+      "line": 115,
       "column": 19
     },
     "end": {
-      "line": 114,
+      "line": 118,
       "column": 3
     }
   },
@@ -290,11 +303,11 @@
     "defaultMessage": "!!!Clear cache",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 115,
+      "line": 119,
       "column": 23
     },
     "end": {
-      "line": 118,
+      "line": 122,
       "column": 3
     }
   },
@@ -303,11 +316,11 @@
     "defaultMessage": "!!!Check for updates",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 119,
+      "line": 123,
       "column": 25
     },
     "end": {
-      "line": 122,
+      "line": 126,
       "column": 3
     }
   },
@@ -316,21 +329,8 @@
     "defaultMessage": "!!!Restart & install update",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 123,
-      "column": 23
-    },
-    "end": {
-      "line": 126,
-      "column": 3
-    }
-  },
-  {
-    "id": "settings.app.updateStatusSearching",
-    "defaultMessage": "!!!Is searching for update",
-    "file": "src/components/settings/settings/EditSettingsForm.js",
-    "start": {
       "line": 127,
-      "column": 25
+      "column": 23
     },
     "end": {
       "line": 130,
@@ -338,8 +338,8 @@
     }
   },
   {
-    "id": "settings.app.updateStatusAvailable",
-    "defaultMessage": "!!!Update available, downloading...",
+    "id": "settings.app.updateStatusSearching",
+    "defaultMessage": "!!!Is searching for update",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
       "line": 131,
@@ -351,15 +351,28 @@
     }
   },
   {
+    "id": "settings.app.updateStatusAvailable",
+    "defaultMessage": "!!!Update available, downloading...",
+    "file": "src/components/settings/settings/EditSettingsForm.js",
+    "start": {
+      "line": 135,
+      "column": 25
+    },
+    "end": {
+      "line": 138,
+      "column": 3
+    }
+  },
+  {
     "id": "settings.app.updateStatusUpToDate",
     "defaultMessage": "!!!You are using the latest version of Ferdi",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 135,
+      "line": 139,
       "column": 24
     },
     "end": {
-      "line": 138,
+      "line": 142,
       "column": 3
     }
   },
@@ -368,11 +381,11 @@
     "defaultMessage": "!!!Current version:",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 139,
+      "line": 143,
       "column": 18
     },
     "end": {
-      "line": 142,
+      "line": 146,
       "column": 3
     }
   },
@@ -381,11 +394,11 @@
     "defaultMessage": "!!!Changes require restart",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 143,
+      "line": 147,
       "column": 29
     },
     "end": {
-      "line": 146,
+      "line": 150,
       "column": 3
     }
   },
@@ -394,11 +407,11 @@
     "defaultMessage": "!!!Official translations are English & German. All other languages are community based translations.",
     "file": "src/components/settings/settings/EditSettingsForm.js",
     "start": {
-      "line": 147,
+      "line": 151,
       "column": 22
     },
     "end": {
-      "line": 150,
+      "line": 154,
       "column": 3
     }
   }
