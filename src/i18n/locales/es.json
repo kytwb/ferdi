@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "Apariencia",
   "settings.app.headlineGeneral": "General",
   "settings.app.headlineLanguage": "Idioma",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "Actualizaciones",
   "settings.app.hibernateInfo": "Por defecto, Ferdi mantendrá todos sus servicios abiertos y cargados en segundo plano para que estén listos cuando los necesite. La hibernación del servicio desactivará los mismos tras el tiempo especificado. Esto es útil para ahorrar RAM y evitar que los servicios ralentizen su sistema.",
   "settings.app.inactivityLockInfo": "Minutos de inactividad, tras los cuales Ferdi debe bloquear automáticamente. Utilice 0 para desactivar",
