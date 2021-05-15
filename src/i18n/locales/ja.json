@@ -334,6 +334,7 @@
   "settings.app.headlineAppearance": "表示スタイル",
   "settings.app.headlineGeneral": "一般",
   "settings.app.headlineLanguage": "言語",
+  "settings.app.headlinePrivacy": "Privacy",
   "settings.app.headlineUpdates": "更新",
   "settings.app.hibernateInfo": "デフォルトでは、Ferdiはすべてのサービスをバックグラウンドで開いて読み込んでおくので、使いたいときにすぐに使えます。 サービス休止機能は設定した時間が経過したら読み込んだサービスを解放します。これはRAMを節約したり、サービスでコンピューターの動作が重くなるのを防ぐのに役立ちます。",
   "settings.app.inactivityLockInfo": "休止状態までの時間(分)、この時間が経過後Ferdiは自動でロックします。0で無効化",
