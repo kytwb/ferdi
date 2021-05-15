@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
   "settings.app.form.scheduledDNDEnd": "Do",
   "settings.app.form.scheduledDNDStart": "Od",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Send telemetry data",
   "settings.app.form.serviceRibbonWidth": "Sidebar width",
   "settings.app.form.showDisabledServices": "Zobraziť záložky vypnutých služieb",
