@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Aktivera schemalagt Stör ej-läge",
   "settings.app.form.scheduledDNDEnd": "Till",
   "settings.app.form.scheduledDNDStart": "Från",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Skicka telemetridata",
   "settings.app.form.serviceRibbonWidth": "Sidofältets bredd",
   "settings.app.form.showDisabledServices": "Visa flikar för inaktiverade tjänster",
