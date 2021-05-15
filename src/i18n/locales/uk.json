@@ -319,6 +319,7 @@
   "settings.app.form.scheduledDNDEnabled": "Enable scheduled Do-not-Disturb",
   "settings.app.form.scheduledDNDEnd": "До",
   "settings.app.form.scheduledDNDStart": "Від",
+  "settings.app.form.searchEngine": "Search engine",
   "settings.app.form.sentry": "Send telemetry data",
   "settings.app.form.serviceRibbonWidth": "Sidebar width",
   "settings.app.form.showDisabledServices": "Показати вкладку вимкнених сервісів",
