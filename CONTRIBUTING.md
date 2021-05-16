@@ -142,14 +142,15 @@ The above will place all the built artifacts into the `/ferdi` folder within the
 If you want to copy them outside of the image, simply mount a volume into a different location, and copy all files from `/ferdi` into the mounted folder (`/ferdi-out` in the example command below).
 
 ```bash
-mkdir -p tmp-out
-docker run -v $PWD/tmp-out:/ferdi-out -it ferdi-package sh
+DATE=`date +"%Y-%b-%d-%H-%M"`
+mkdir -p ~/Downloads/$DATE
+docker run -e GIT_SHA=`git rev-parse --short HEAD` -v ~/Downloads/$DATE:/ferdi-out -it ferdi-package sh
 # inside the container:
-mv /ferdi/Ferdi-5.6.0-nightly.18.AppImage /ferdi-out/Ferdi-`date +%Y-%b-%d`.AppImage
-mv /ferdi/ferdi-5.6.0-nightly.18.tar.gz /ferdi-out/Ferdi-`date +%Y-%b-%d`.tar.gz
-mv /ferdi/ferdi-5.6.0-nightly.18.x86_64.rpm /ferdi-out/Ferdi-`date +%Y-%b-%d`.x86_64.rpm
-mv /ferdi/ferdi_5.6.0-nightly.18_amd64.deb /ferdi-out/Ferdi_`date +%Y-%b-%d`_amd64.deb
-mv /ferdi/ferdi /ferdi-out/Ferdi_`date +%Y-%b-%d`
+mv /ferdi/Ferdi-*.AppImage /ferdi-out/Ferdi-$GIT_SHA.AppImage
+mv /ferdi/ferdi-*.tar.gz /ferdi-out/Ferdi-$GIT_SHA.tar.gz
+mv /ferdi/ferdi-*.x86_64.rpm /ferdi-out/Ferdi-x86_64-$GIT_SHA.rpm
+mv /ferdi/ferdi_*_amd64.deb /ferdi-out/Ferdi-amd64-$GIT_SHA.deb
+mv /ferdi/ferdi /ferdi-out/Ferdi-$GIT_SHA
 ```
 
 ### Start development app

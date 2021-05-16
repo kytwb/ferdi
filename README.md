@@ -231,6 +231,17 @@ We welcome all contributors. Please read the [contributing guidelines](CONTRIBUT
 
 Nightly releases are automatically triggered every day ([details](https://github.com/getferdi/ferdi/pull/990)) and available in [getferdi/nightlies](https://github.com/getferdi/nightlies/releases). Maintainers still need to manually publish the draft releases as pre-releases for now.
 
+**🔥🔥 UPDATE ON NIGHTLIES 🔥🔥**
+
+1. Since the nightly builds are broken for now, one of the active contributors is sharing builds that are built directly from source in [this location](https://drive.google.com/drive/folders/1mJmKbhpVHdb066IHlrdYiD8TG9wlmuBv?usp=sharing). You are free to use these and report any bugs - please be sure to specify *all the information* that shows up in the *About Ferdi* dialog on your installation. Please also upvote [this issue](https://github.com/getferdi/ferdi/issues/1254) where the broken nightly CI process is being tracked.
+2. Since this is being done on a volunteer basis AND being built from the source code, please be aware that there might be some bugs (introduced rarely - completely unintentionally). We will try to vet the builds before uploading them for your use. But, YMMV.
+3. Since the builds are being built from source, they will contain the latest and greatest of the application code as well as the recipes code - so, please be sure to test and log bugs for anything that is not working.
+4. For macOS users on Catalina or above, please be aware that the OS does not recognize unsigned applications that are not downloaded from the Mac App Store. To work around this issue, you will have to run the following command:
+
+```bash
+sudo xattr -rd com.apple.quarantine <path/to/Ferdi.app>
+```
+
 ## Troubleshooting recipes (self-help)
 
 One of the issues being raised by the awesome users of Ferdi is that certain service-functionalities do not work. As good example of this is either the unread count (badge) stops working for specific services or the gmail logins don't work anymore. (These are just 2 of the most common problems reported).
