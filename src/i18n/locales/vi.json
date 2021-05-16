@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Cho phép Chế độ nền tối",
   "settings.app.form.enableGPUAcceleration": "Enable GPU Acceleration",
   "settings.app.form.enableLock": "Cho phép khóa bằng mật khẩu",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Enable spell checking",
   "settings.app.form.enableSystemTray": "Show Ferdi in system tray",
   "settings.app.form.enableTodos": "Cho phép Ferdi Todos",
