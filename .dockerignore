@@ -5,6 +5,7 @@ out
 **/.idea
 **/build
 .tmp
+.husky/
 .stage
 **/.env
 **/yarn-error.log
