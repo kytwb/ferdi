@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "啟用夜間模式",
   "settings.app.form.enableGPUAcceleration": "開啟顯示卡（GPU）加速",
   "settings.app.form.enableLock": "Enable Password Lock",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Enable spell checking",
   "settings.app.form.enableSystemTray": "在系統匣上顯示",
   "settings.app.form.enableTodos": "Enable Ferdi Todos",
