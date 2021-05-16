@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Enable dark mode",
   "settings.app.form.enableGPUAcceleration": "Hardveres gyorsítás engedélyezése",
   "settings.app.form.enableLock": "Enable Password Lock",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Helyesírás-ellenőrzés engedélyezése",
   "settings.app.form.enableSystemTray": "Ferdi mutatása a tálcán",
   "settings.app.form.enableTodos": "Ferdi Tennivalók bekapcsolása",
