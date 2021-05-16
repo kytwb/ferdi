@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Enable dark mode",
   "settings.app.form.enableGPUAcceleration": "Cumasaigh luasghéarú APG",
   "settings.app.form.enableLock": "Enable Password Lock",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Cumasaigh seiceáil litrithe",
   "settings.app.form.enableSystemTray": "Taispeáin Ferdi i dtráidire an chórais",
   "settings.app.form.enableTodos": "Enable Ferdi Todos",
