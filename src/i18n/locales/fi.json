@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Ota tumma tila käyttöön",
   "settings.app.form.enableGPUAcceleration": "Ota Gpu-kiihdytys käyttöön",
   "settings.app.form.enableLock": "Ota Salasanan lukitus käyttöön",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Ota oikoluku käyttöön",
   "settings.app.form.enableSystemTray": "Näytä Ferdi ilmoitusalueella",
   "settings.app.form.enableTodos": "Ota Ferdi Todos käyttöön",
