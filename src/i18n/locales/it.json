@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Attiva modalità scura",
   "settings.app.form.enableGPUAcceleration": "Attiva Accelerazione GPU",
   "settings.app.form.enableLock": "Abilita blocco con password",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Attiva controllo ortografico",
   "settings.app.form.enableSystemTray": "Mostra Ferdi nell'area di notifica",
   "settings.app.form.enableTodos": "Abilità le Attività Ferdi",
