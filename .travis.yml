@@ -71,7 +71,7 @@ script:
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=ferdi -c.mac.identity=null || travis_terminate 1
     elif [ $TRAVIS_BRANCH == "nightly" ]; then
       git commit -am "Apply linter fixes [skip ci]"
-      npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip travisci]" || travis_terminate 1
+      npm version prerelease --preid=nightly -m "%s and trigger AppVeyor nightly build [skip ci]" || travis_terminate 1
       travis_retry travis_wait 100 npm run build -- --publish always -c.publish.provider=github -c.publish.owner=getferdi -c.publish.repo=nightlies || travis_terminate 1
       if [ $TRAVIS_OS_NAME == "osx" ]; then
         git remote add nightly https://${GH_TOKEN}@github.com/getferdi/ferdi.git > /dev/null 2>&1
