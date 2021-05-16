@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Enable dark mode",
   "settings.app.form.enableGPUAcceleration": "Ενεργοποιήση Ενίσχυσης GPU ",
   "settings.app.form.enableLock": "Enable Password Lock",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Ενεργοποίηση ορθογραφικού ελέγχου",
   "settings.app.form.enableSystemTray": "Εμφάνιση του Ferdi στη γραμμή ειδοποιήσεων",
   "settings.app.form.enableTodos": "Enable Ferdi Todos",
