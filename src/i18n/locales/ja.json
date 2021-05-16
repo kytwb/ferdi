@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "ダークモードを有効にする",
   "settings.app.form.enableGPUAcceleration": "GPUアクセラレーションを有効にする",
   "settings.app.form.enableLock": "パスワードロックを有効にする",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "スペルチェックを有効にする",
   "settings.app.form.enableSystemTray": "Ferdiをシステムトレイに表示する",
   "settings.app.form.enableTodos": "Ferdi ToDoを有効にする",
