@@ -16,7 +16,7 @@ cache:
 image: Visual Studio 2019
 
 environment:
-  nodejs_version: "14.15.0"
+  nodejs_version: "14.16.1"
 
 install:
   - appveyor-retry git submodule update --init --recursive
