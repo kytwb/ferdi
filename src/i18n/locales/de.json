@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Dunkles Design verwenden",
   "settings.app.form.enableGPUAcceleration": "Hardwarebeschleunigung aktivieren",
   "settings.app.form.enableLock": "Passwort-Sperre aktivieren",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Rechtschreibprüfung aktivieren",
   "settings.app.form.enableSystemTray": "Ferdi im Infobereich anzeigen",
   "settings.app.form.enableTodos": "Ferdi Todos aktivieren",
