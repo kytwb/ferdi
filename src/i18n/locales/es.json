@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "Activar tema oscuro",
   "settings.app.form.enableGPUAcceleration": "Habilitar aceleración de GPU",
   "settings.app.form.enableLock": "Activar bloqueo por contraseña",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "Activar corrección ortográfica",
   "settings.app.form.enableSystemTray": "Mostrar Ferdi en la bandeja del sistema",
   "settings.app.form.enableTodos": "Activar Ferdi Todos",
