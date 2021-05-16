@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "다크 모드 활성화",
   "settings.app.form.enableGPUAcceleration": "GPU 가속 사용",
   "settings.app.form.enableLock": "암호 잠금 활성화",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "맞춤법 검사 활성화",
   "settings.app.form.enableSystemTray": "Ferdi 시스템 트레이에 표시",
   "settings.app.form.enableTodos": "Enable Ferdi Todos",
