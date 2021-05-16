@@ -161,7 +161,7 @@ if (!settings.get('enableGPUAcceleration')) {
 }
 
 app.setAboutPanelOptions({
-  applicationVersion: `Version: ${ferdiVersion}\nElectron: ${process.versions.electron}\nNode.js: ${process.version}\nPlatform: ${osName()}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
+  applicationVersion: `Version: ${ferdiVersion}\nElectron: ${process.versions.electron}\nChrome: ${process.versions.chrome}\nNode.js: ${process.versions.node}\nPlatform: ${osName()}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
   version: '',
 });
 
