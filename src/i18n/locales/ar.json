@@ -298,6 +298,7 @@
   "settings.app.form.darkMode": "تفعيل الوضع المظلم",
   "settings.app.form.enableGPUAcceleration": "تفعيل التسريع بوحدة معالجة الرسومات",
   "settings.app.form.enableLock": "تفعيل القفل بكلمة المرور",
+  "settings.app.form.enableMenuBar": "Always show Ferdi in Menu Bar",
   "settings.app.form.enableSpellchecking": "تفعيل التصحيح الإملائي",
   "settings.app.form.enableSystemTray": "إظهار فردي في شريط النظام",
   "settings.app.form.enableTodos": "تفعيل فردي للمهام",
