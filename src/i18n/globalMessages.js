@@ -25,6 +25,10 @@ export default defineMessages({
     id: 'global.spellchecking.autodetect.short',
     defaultMessage: '!!!Automatic',
   },
+  userAgentPref: {
+    id: 'global.userAgentPref',
+    defaultMessage: '!!!User Agent',
+  },
   proRequired: {
     id: 'global.franzProRequired',
     defaultMessage: '!!!Franz Professional Required',

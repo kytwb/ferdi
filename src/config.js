@@ -2,6 +2,7 @@ import ms from 'ms';
 import path from 'path';
 import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
 import { asarPath } from './helpers/asar-helpers';
+import defaultUserAgent from './helpers/userAgent-helpers';
 
 const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
@@ -164,6 +165,7 @@ export const DEFAULT_APP_SETTINGS = {
   automaticUpdates: true,
   showServiceNavigationBar: false,
   universalDarkMode: true,
+  userAgentPref: defaultUserAgent(),
   adaptableDarkMode: true,
   accentColor: DEFAULT_ACCENT_COLOR,
   serviceRibbonWidth: 68,

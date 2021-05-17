@@ -359,6 +359,14 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
+                <Input
+                  placeholder="User Agent"
+                  onChange={e => this.submit(e)}
+                  field={form.$('userAgentPref')}
+                />
+
+                <Hr />
+
                 {isWorkspaceEnabled && (
                   <Toggle field={form.$('keepAllWorkspacesLoaded')} />
                 )}

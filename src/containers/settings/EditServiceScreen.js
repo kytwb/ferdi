@@ -219,6 +219,11 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           options: spellcheckerLanguage,
           disabled: !stores.settings.app.enableSpellchecking,
         },
+        userAgentPref: {
+          label: intl.formatMessage(globalMessages.userAgentPref),
+          placeholder: intl.formatMessage(globalMessages.userAgentPref),
+          value: service.userAgentPref ? service.userAgentPref : '',
+        },
       },
     };
 

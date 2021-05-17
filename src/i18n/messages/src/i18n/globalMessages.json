@@ -78,15 +78,28 @@
     }
   },
   {
+    "id": "global.userAgentPref",
+    "defaultMessage": "!!!User Agent",
+    "file": "src/i18n/globalMessages.js",
+    "start": {
+      "line": 28,
+      "column": 17
+    },
+    "end": {
+      "line": 31,
+      "column": 3
+    }
+  },
+  {
     "id": "global.franzProRequired",
     "defaultMessage": "!!!Franz Professional Required",
     "file": "src/i18n/globalMessages.js",
     "start": {
-      "line": 28,
+      "line": 32,
       "column": 15
     },
     "end": {
-      "line": 31,
+      "line": 35,
       "column": 3
     }
   }

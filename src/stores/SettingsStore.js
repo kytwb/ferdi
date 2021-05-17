@@ -320,5 +320,21 @@ export default class SettingsStore extends Store {
         },
       });
     }
+
+    if (!this.all.migration['user-agent-settings']) {
+      this.actions.settings.update({
+        type: 'app',
+        data: {
+          userAgentPref: DEFAULT_APP_SETTINGS.userAgentPref,
+        },
+      });
+
+      this.actions.settings.update({
+        type: 'migration',
+        data: {
+          'user-agent-settings': true,
+        },
+      });
+    }
   }
 }

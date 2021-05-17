@@ -216,7 +216,7 @@
 
     &::-webkit-scrollbar-thumb:window-inactive { background: none; }
     .service-flex-grid { display: flex; }
-    .service-name { flex: 1px; }
+    .service-name,.user-agent { flex: 1px; }
 
     .service-icon {
       float: right;

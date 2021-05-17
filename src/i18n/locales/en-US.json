@@ -74,6 +74,7 @@
   "global.spellchecking.autodetect": "Detect language automatically",
   "global.spellchecking.autodetect.short": "Automatic",
   "global.spellchecking.language": "Spell checking language",
+  "global.userAgentPref": "User Agent",
   "global.upgradeButton.upgradeToPro": "Upgrade to Ferdi Professional",
   "import.headline": "Import your Ferdi 4 services",
   "import.notSupportedHeadline": "Services not yet supported in Ferdi 5",

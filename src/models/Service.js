@@ -66,6 +66,8 @@ export default class Service {
 
   @observable spellcheckerLanguage = null;
 
+  @observable userAgentPref = '';
+
   @observable isFirstLoad = true;
 
   @observable isLoading = true;
@@ -141,6 +143,8 @@ export default class Service {
 
     this.spellcheckerLanguage = data.spellcheckerLanguage !== undefined ? data.spellcheckerLanguage : this.spellcheckerLanguage;
 
+    this.userAgentPref = data.userAgentPref !== undefined ? data.userAgentPref : this.userAgentPref;
+
     this.isHibernationEnabled = data.isHibernationEnabled !== undefined ? data.isHibernationEnabled : this.isHibernationEnabled;
 
     this.recipe = recipe;
@@ -176,6 +180,7 @@ export default class Service {
     return {
       id: this.id,
       spellcheckerLanguage: this.spellcheckerLanguage,
+      userAgentPref: this.userAgentPref,
       isDarkModeEnabled: this.isDarkModeEnabled,
       darkReaderSettings: this.darkReaderSettings,
       team: this.team,
@@ -240,6 +245,10 @@ export default class Service {
   }
 
   @computed get userAgent() {
+    if (this.userAgentPref !== '') {
+      return this.userAgentPref;
+    }
+
     return this.userAgentModel.userAgent;
   }
 

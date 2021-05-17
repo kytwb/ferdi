@@ -41,6 +41,7 @@ class RecipeController {
     service: {
       isDarkModeEnabled: false,
       spellcheckerLanguage: '',
+      userAgentPref: '',
     },
   };
 
