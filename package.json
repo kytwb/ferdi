@@ -16,6 +16,7 @@
     "node-gyp": "^8.0"
   },
   "scripts": {
+    "prepare": "husky install",
     "prestart": "npm run rebuild",
     "start": "electron ./build",
     "start:local": "cross-env LOCAL_API=1 npm start",
