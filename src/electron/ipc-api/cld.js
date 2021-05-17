@@ -1,7 +1,7 @@
 import { ipcMain } from 'electron';
 import cld from 'cld';
 
-const debug = require('debug')('Franz:ipcApi:cld');
+const debug = require('debug')('Ferdi:ipcApi:cld');
 
 export default async () => {
   ipcMain.handle('detect-language', async (event, { sample }) => {

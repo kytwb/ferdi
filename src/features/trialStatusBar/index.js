@@ -1,7 +1,7 @@
 import { reaction } from 'mobx';
 import TrialStatusBarStore from './store';
 
-const debug = require('debug')('Franz:feature:trialStatusBar');
+const debug = require('debug')('Ferdi:feature:trialStatusBar');
 
 export const GA_CATEGORY_TRIAL_STATUS_BAR = 'trialStatusBar';
 

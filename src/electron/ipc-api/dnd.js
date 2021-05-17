@@ -1,7 +1,7 @@
 import { ipcMain } from 'electron';
 import { getDoNotDisturb } from '@meetfranz/electron-notification-state';
 
-const debug = require('debug')('Franz:ipcApi:dnd');
+const debug = require('debug')('Ferdi:ipcApi:dnd');
 
 export default async () => {
   ipcMain.handle('get-dnd', async () => {

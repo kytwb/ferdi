@@ -1,7 +1,7 @@
 [
   {
     "id": "connectionLostBanner.message",
-    "defaultMessage": "!!!Oh no! Franz lost the connection to {name}.",
+    "defaultMessage": "!!!Oh no! Ferdi lost the connection to {name}.",
     "file": "src/components/services/content/ConnectionLostBanner.js",
     "start": {
       "line": 15,

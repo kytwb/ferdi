@@ -9,7 +9,7 @@ import { trialStatusBarActions } from './actions';
 import { FeatureStore } from '../utils/FeatureStore';
 import { createActionBindings } from '../utils/ActionBinding';
 
-const debug = require('debug')('Franz:feature:trialStatusBar:store');
+const debug = require('debug')('Ferdi:feature:trialStatusBar:store');
 
 export default class TrialStatusBarStore extends FeatureStore {
   @observable isFeatureActive = false;

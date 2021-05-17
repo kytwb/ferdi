@@ -2,7 +2,7 @@ import { sendAuthRequest } from '../../api/utils/auth';
 import { API, API_VERSION } from '../../environment';
 import Request from '../../stores/lib/Request';
 
-const debug = require('debug')('Franz:feature:planSelection:api');
+const debug = require('debug')('Ferdi:feature:planSelection:api');
 
 export const planSelectionApi = {
   downgrade: async () => {

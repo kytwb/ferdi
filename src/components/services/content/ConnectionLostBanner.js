@@ -14,7 +14,7 @@ import { LIVE_API_WEBSITE } from '../../../config';
 const messages = defineMessages({
   text: {
     id: 'connectionLostBanner.message',
-    defaultMessage: '!!!Oh no! Franz lost the connection to {name}.',
+    defaultMessage: '!!!Oh no! Ferdi lost the connection to {name}.',
   },
   moreInformation: {
     id: 'connectionLostBanner.informationLink',

@@ -360,7 +360,7 @@ const createWindow = () => {
 // https://electronjs.org/docs/api/chrome-command-line-switches
 // used for Kerberos support
 // Usage e.g. MACOS
-// $ Franz.app/Contents/MacOS/Ferdi --auth-server-whitelist *.mydomain.com --auth-negotiate-delegate-whitelist *.mydomain.com
+// $ Ferdi.app/Contents/MacOS/Ferdi --auth-server-whitelist *.mydomain.com --auth-negotiate-delegate-whitelist *.mydomain.com
 const argv = require('minimist')(process.argv.slice(1));
 
 if (argv['auth-server-whitelist']) {

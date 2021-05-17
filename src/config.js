@@ -212,7 +212,7 @@ export const ALLOWED_PROTOCOLS = [
   'https:',
   'http:',
   'ftp:',
-  'franz:',
+  'ferdi:',
 ];
 
 export const PLANS = {

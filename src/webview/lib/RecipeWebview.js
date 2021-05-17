@@ -1,7 +1,7 @@
 const { ipcRenderer } = require('electron');
 const fs = require('fs-extra');
 
-const debug = require('debug')('Franz:Plugin:RecipeWebview');
+const debug = require('debug')('Ferdi:Plugin:RecipeWebview');
 
 class RecipeWebview {
   constructor() {

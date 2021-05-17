@@ -12,7 +12,7 @@ import { observable, autorun } from 'mobx';
 import ServiceModel from '../../../models/Service';
 import { ctrlKey, cmdKey } from '../../../environment';
 
-const IS_SERVICE_DEBUGGING_ENABLED = (localStorage.getItem('debug') || '').includes('Franz:Service');
+const IS_SERVICE_DEBUGGING_ENABLED = (localStorage.getItem('debug') || '').includes('Ferdi:Service');
 
 const { Menu, dialog, app } = remote;
 

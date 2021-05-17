@@ -9,7 +9,7 @@ import { FeatureStore } from '../utils/FeatureStore';
 import { createActionBindings } from '../utils/ActionBinding';
 import { downgradeUserRequest } from './api';
 
-const debug = require('debug')('Franz:feature:planSelection:store');
+const debug = require('debug')('Ferdi:feature:planSelection:store');
 
 export default class PlanSelectionStore extends FeatureStore {
   @observable isFeatureEnabled = false;

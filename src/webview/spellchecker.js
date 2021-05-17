@@ -4,7 +4,7 @@ import {
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 import { isMac } from '../environment';
 
-const debug = require('debug')('Franz:spellchecker');
+const debug = require('debug')('Ferdi:spellchecker');
 
 const webContents = remote.getCurrentWebContents();
 const [defaultLocale] = webContents.session.getSpellCheckerLanguages();

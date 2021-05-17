@@ -1,7 +1,7 @@
 import { reaction } from 'mobx';
 import PlanSelectionStore from './store';
 
-const debug = require('debug')('Franz:feature:planSelection');
+const debug = require('debug')('Ferdi:feature:planSelection');
 
 export const planSelectionStore = new PlanSelectionStore();
 

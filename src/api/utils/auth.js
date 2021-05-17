@@ -8,11 +8,11 @@ export const prepareAuthRequest = (options = { method: 'GET' }, auth = true) => 
     mode: 'cors',
     headers: Object.assign({
       'Content-Type': 'application/json',
-      'X-Franz-Source': 'desktop',
-      'X-Franz-Version': app.getVersion(),
-      'X-Franz-platform': process.platform,
-      'X-Franz-Timezone-Offset': new Date().getTimezoneOffset(),
-      'X-Franz-System-Locale': app.getLocale(),
+      'X-Ferdi-Source': 'desktop',
+      'X-Ferdi-Version': app.getVersion(),
+      'X-Ferdi-platform': process.platform,
+      'X-Ferdi-Timezone-Offset': new Date().getTimezoneOffset(),
+      'X-Ferdi-System-Locale': app.getLocale(),
     }, options.headers),
   });
 
