@@ -39,6 +39,7 @@ const contextMenuStringTable = {
   addToDictionary: () => 'Add to Dictionary',
   goBack: () => 'Go Back',
   goForward: () => 'Go Forward',
+  copyPageUrl: () => 'Copy Page URL',
   goToHomePage: () => 'Go to Home Page',
   copyMail: () => 'Copy Email Address',
   inspectElement: () => 'Inspect Element',
@@ -139,6 +140,7 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.copyPageUrl(menu);
     this.goToHomePage(menu, menuInfo);
     this.openInBrowser(menu, menuInfo);
 
@@ -158,8 +160,9 @@ module.exports = class ContextMenuBuilder {
       label: isEmailAddress ? this.stringTable.copyMail() : this.stringTable.copyLinkUrl(),
       click: () => {
         // Omit the mailto: portion of the link; we just want the address
-        clipboard.writeText(isEmailAddress
-          ? menuInfo.linkText : menuInfo.linkURL);
+        const url = isEmailAddress ? menuInfo.linkText : menuInfo.linkURL;
+        clipboard.writeText(url);
+        this.sendNotificationOnClipboardEvent(`Link URL copied: ${url}`);
       },
     });
 
@@ -191,6 +194,7 @@ module.exports = class ContextMenuBuilder {
 
     this.goBack(menu);
     this.goForward(menu);
+    this.copyPageUrl(menu);
     this.goToHomePage(menu, menuInfo);
     this.openInBrowser(menu, menuInfo);
 
@@ -212,6 +216,7 @@ module.exports = class ContextMenuBuilder {
 
     this.goBack(menu);
     this.goForward(menu);
+    this.copyPageUrl(menu);
     this.goToHomePage(menu, menuInfo);
     this.openInBrowser(menu, menuInfo);
 
@@ -311,15 +316,24 @@ module.exports = class ContextMenuBuilder {
   addImageItems(menu, menuInfo) {
     const copyImage = new MenuItem({
       label: this.stringTable.copyImage(),
-      click: () => this.convertImageToBase64(menuInfo.srcURL,
-        dataURL => clipboard.writeImage(nativeImage.createFromDataURL(dataURL))),
+      click: () => {
+        const result = this.convertImageToBase64(menuInfo.srcURL,
+          dataURL => clipboard.writeImage(nativeImage.createFromDataURL(dataURL)));
+
+        this.sendNotificationOnClipboardEvent(`Image copied from URL: ${menuInfo.srcURL}`);
+        return result;
+      },
     });
 
     menu.append(copyImage);
 
     const copyImageUrl = new MenuItem({
       label: this.stringTable.copyImageUrl(),
-      click: () => clipboard.writeText(menuInfo.srcURL),
+      click: () => {
+        const result = clipboard.writeText(menuInfo.srcURL);
+        this.sendNotificationOnClipboardEvent(`Image URL copied: ${menuInfo.srcURL}`);
+        return result;
+      },
     });
 
     menu.append(copyImageUrl);
@@ -471,6 +485,22 @@ module.exports = class ContextMenuBuilder {
   }
 
   /**
+   * Adds the 'copy page url' menu item.
+   */
+  copyPageUrl(menu) {
+    menu.append(new MenuItem({
+      label: this.stringTable.copyPageUrl(),
+      enabled: true,
+      click: () => {
+        clipboard.writeText(window.location.href);
+        this.sendNotificationOnClipboardEvent(`Page URL copied: ${window.location.href}`);
+      },
+    }));
+
+    return menu;
+  }
+
+  /**
    * Adds the 'go to home' menu item.
    */
   goToHomePage(menu, menuInfo) {
@@ -501,5 +531,13 @@ module.exports = class ContextMenuBuilder {
     }));
 
     return menu;
+  }
+
+  sendNotificationOnClipboardEvent(notificationText) {
+    // eslint-disable-next-line no-new
+    new window.Notification('Data copied into Clipboard',
+      {
+        body: notificationText,
+      });
   }
 };
