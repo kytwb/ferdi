@@ -151,6 +151,7 @@ mv /ferdi/ferdi-*.tar.gz /ferdi-out/Ferdi-$GIT_SHA.tar.gz
 mv /ferdi/ferdi-*.x86_64.rpm /ferdi-out/Ferdi-x86_64-$GIT_SHA.rpm
 mv /ferdi/ferdi_*_amd64.deb /ferdi-out/Ferdi-amd64-$GIT_SHA.deb
 mv /ferdi/ferdi /ferdi-out/Ferdi-$GIT_SHA
+mv /ferdi/latest-linux.yml /ferdi-out/latest-linux-$GIT_SHA.yml
 ```
 
 ### Start development app
