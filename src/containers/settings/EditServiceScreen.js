@@ -238,7 +238,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
         customUrl: {
           label: intl.formatMessage(messages.customUrl),
           placeholder: 'https://',
-          value: service.customUrl,
+          value: service.customUrl || recipe.serviceURL,
           validators: [required, url],
         },
       });
