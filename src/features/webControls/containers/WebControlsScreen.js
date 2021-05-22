@@ -6,6 +6,7 @@ import { autorun, observable } from 'mobx';
 import WebControls from '../components/WebControls';
 import ServicesStore from '../../../stores/ServicesStore';
 import Service from '../../../models/Service';
+import { SEARCH_ENGINE_URLS } from '../../../config';
 
 const URL_EVENTS = [
   'load-commit',
@@ -86,7 +87,7 @@ class WebControlsScreen extends Component {
       if (url.match(/^((?!-))(xn--)?[a-z0-9][a-z0-9-_]{0,61}[a-z0-9]{0,1}\.(xn--)?([a-z0-9\-]{1,61}|[a-z0-9-]{1,30}\.[a-z]{2,})$/)) {
         url = `http://${url}`;
       } else {
-        url = `https://www.google.com/search?query=${url}`;
+        url = SEARCH_ENGINE_URLS[this.settings.app.searchEngine]({ searchTerm: url });
       }
     }
 
