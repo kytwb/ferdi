@@ -478,12 +478,16 @@ export default @observer class EditServiceForm extends Component {
                   onClick={() => openRecipeFile('user.js')}
                 />
               </div>
-              <p style={{ marginTop: 10 }}>
+              <p style={{ marginTop: 10, marginBottom: 10 }}>
                 <span className="mdi mdi-information" />
                 {intl.formatMessage(messages.recipeFileInfo)}
               </p>
             </>
           )}
+          <span style={{ fontStyle: 'italic', fontSize: '80%' }}>
+            Recipe version:
+            {recipe.version}
+          </span>
         </div>
         <div className="settings__controls">
           {/* Delete Button */}
