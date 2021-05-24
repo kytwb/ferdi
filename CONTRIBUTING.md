@@ -68,10 +68,12 @@ v8.0.0
 
 The version [2.23.0](https://github.com/git-for-windows/git/releases/tag/v2.23.0.windows.1) for Git is working fine for development. You can then use the console from Git to do the development procedure.
 
+_Note:_ This list can likely get outdated. If so, please refer to the specific version of the [electronuserland builder](https://hub.docker.com/r/electronuserland/builder) that we use in our [Dockerfile](./Dockerfile).
+
 #### Debian/Ubuntu
 
 ```bash
-apt install libx11-dev libxext-dev libxss-dev libxkbfile-dev rpm
+apt install ca-certificates curl netbase wget tzdata rpm
 ```
 
 #### Fedora

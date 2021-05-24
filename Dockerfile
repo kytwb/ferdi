@@ -1,10 +1,4 @@
-FROM node:14 as builder
-
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends libx11-dev libxext-dev libxss-dev libxkbfile-dev rpm \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+FROM electronuserland/builder:14 as builder
 
 WORKDIR /usr/src/ferdi
 
