@@ -75,7 +75,7 @@
     "cld": "2.7.0",
     "css": "2.2.4",
     "darkreader": "4.7.15",
-    "dbus-next": "0.8.2",
+    "dbus-next": "0.9.2",
     "du": "^0.1.0",
     "electron-dl": "1.14.0",
     "electron-fetch": "1.7.3",
