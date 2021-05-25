@@ -28,7 +28,7 @@
     "manage-translations": "node ./src/i18n/manage-translations.js",
     "prebuild": "preval-build-info-cli && gulp build",
     "build": "electron-builder",
-    "rebuild": "electron-rebuild",
+    "rebuild": "electron-rebuild --force-abi=98",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "contributors": "all-contributors",
