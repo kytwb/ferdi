@@ -1,7 +1,5 @@
-import { remote } from 'electron';
+import { app } from '@electron/remote';
 import localStorage from 'mobx-localstorage';
-
-const { app } = remote;
 
 export const prepareAuthRequest = (options = { method: 'GET' }, auth = true) => {
   const request = Object.assign(options, {

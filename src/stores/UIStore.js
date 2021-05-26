@@ -2,12 +2,10 @@ import {
   action, observable, computed, reaction,
 } from 'mobx';
 import { theme } from '@meetfranz/theme';
-import { remote } from 'electron';
+import { nativeTheme, systemPreferences } from '@electron/remote';
 
 import Store from './lib/Store';
 import { isMac, isWindows } from '../environment';
-
-const { nativeTheme, systemPreferences } = remote;
 
 export default class UIStore extends Store {
   @observable showServicesUpdatedInfoBar = false;

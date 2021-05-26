@@ -1,4 +1,5 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import { getCurrentWindow } from '@electron/remote';
 import {
   action, computed, observable, reaction,
 } from 'mobx';
@@ -41,7 +42,7 @@ export default class SettingsStore extends Store {
     reaction(
       () => this.all.app.autohideMenuBar,
       () => {
-        const currentWindow = remote.getCurrentWindow();
+        const currentWindow = getCurrentWindow();
         currentWindow.setMenuBarVisibility(!this.all.app.autohideMenuBar);
         currentWindow.autoHideMenuBar = this.all.app.autohideMenuBar;
       },
@@ -61,7 +62,7 @@ export default class SettingsStore extends Store {
 
     // Inactivity lock timer
     let inactivityTimer;
-    remote.getCurrentWindow().on('blur', () => {
+    getCurrentWindow().on('blur', () => {
       if (this.all.app.inactivityLock !== 0) {
         inactivityTimer = setTimeout(() => {
           this.actions.settings.update({
@@ -73,7 +74,7 @@ export default class SettingsStore extends Store {
         }, this.all.app.inactivityLock * 1000 * 60);
       }
     });
-    remote.getCurrentWindow().on('focus', () => {
+    getCurrentWindow().on('focus', () => {
       if (inactivityTimer) {
         clearTimeout(inactivityTimer);
       }

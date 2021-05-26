@@ -1,5 +1,3 @@
-import isDev from 'electron-is-dev';
-
 import {
   LIVE_API,
   DEV_API,
@@ -14,7 +12,9 @@ import {
   PRODUCTION_TODOS_FRONTEND_URL,
 } from './config';
 
-export const isDevMode = isDev;
+const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+
+export const isDevMode = !app.isPackaged;
 export const useLiveAPI = process.env.LIVE_API;
 export const useLocalAPI = process.env.LOCAL_API;
 

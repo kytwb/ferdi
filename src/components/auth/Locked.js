@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { systemPreferences } from '@electron/remote';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
@@ -11,10 +11,6 @@ import Infobox from '../ui/Infobox';
 import { isMac } from '../../environment';
 
 import { globalError as globalErrorPropType } from '../../prop-types';
-
-const {
-  systemPreferences,
-} = remote;
 
 const messages = defineMessages({
   headline: {

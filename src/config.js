@@ -1,12 +1,9 @@
-import electron from 'electron';
-import isDevMode from 'electron-is-dev';
 import ms from 'ms';
 import path from 'path';
 import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
 import { asarPath } from './helpers/asar-helpers';
 
-const app = process.type === 'renderer' ? electron.remote.app : electron.app;
-const nativeTheme = process.type === 'renderer' ? electron.remote.nativeTheme : electron.nativeTheme;
+const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
@@ -199,6 +196,7 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
+export const isDevMode = !app.isPackaged;
 if (isDevMode) {
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }

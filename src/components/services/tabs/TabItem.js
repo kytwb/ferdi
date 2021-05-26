@@ -1,4 +1,6 @@
-import { remote } from 'electron';
+import {
+  Menu, dialog, app, getCurrentWindow,
+} from '@electron/remote';
 import React, { Component } from 'react';
 import { defineMessages, intlShape } from 'react-intl';
 import PropTypes from 'prop-types';
@@ -13,8 +15,6 @@ import ServiceModel from '../../../models/Service';
 import { ctrlKey, cmdKey } from '../../../environment';
 
 const IS_SERVICE_DEBUGGING_ENABLED = (localStorage.getItem('debug') || '').includes('Ferdi:Service');
-
-const { Menu, dialog, app } = remote;
 
 const messages = defineMessages({
   reload: {
@@ -236,7 +236,7 @@ const styles = {
           'is-disabled': !service.isEnabled,
         })}
         onClick={clickHandler}
-        onContextMenu={() => menu.popup(remote.getCurrentWindow())}
+        onContextMenu={() => menu.popup(getCurrentWindow())}
         data-tip={`${service.name} ${shortcutIndex <= 9 ? `(${ctrlKey}+${shortcutIndex})` : ''}`}
       >
         <img

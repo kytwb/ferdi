@@ -1,5 +1,6 @@
 /* eslint-disable import/first */
-import { ipcRenderer, remote, desktopCapturer } from 'electron';
+import { ipcRenderer, desktopCapturer } from 'electron';
+import { getCurrentWebContents } from '@electron/remote';
 import path from 'path';
 import { autorun, computed, observable } from 'mobx';
 import fs from 'fs-extra';
@@ -158,7 +159,7 @@ class RecipeController {
     autorun(() => this.update());
 
     document.addEventListener('DOMContentLoaded', () => {
-      this.findInPage = new FindInPage(remote.getCurrentWebContents(), {
+      this.findInPage = new FindInPage(getCurrentWebContents(), {
         inputFocusColor: '#CE9FFC',
         textColor: '#212121',
       });

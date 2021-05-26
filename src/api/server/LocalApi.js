@@ -1,11 +1,10 @@
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import { session } from '@electron/remote';
 import du from 'du';
 
 import { getServicePartitionsDirectory } from '../../helpers/service-helpers.js';
 
 const debug = require('debug')('Ferdi:LocalApi');
-
-const { session } = remote;
 
 export default class LocalApi {
   // Settings

@@ -2,7 +2,7 @@ import os from 'os';
 import path from 'path';
 import tar from 'tar';
 import fs from 'fs-extra';
-import { remote } from 'electron';
+import { app, require as remoteRequire } from '@electron/remote';
 
 import ServiceModel from '../../models/Service';
 import RecipePreviewModel from '../../models/RecipePreview';
@@ -35,8 +35,7 @@ module.paths.unshift(
   getRecipeDirectory(),
 );
 
-const { app } = remote;
-const { default: fetch } = remote.require('electron-fetch');
+const { default: fetch } = remoteRequire('electron-fetch');
 
 export default class ServerApi {
   recipePreviews = [];

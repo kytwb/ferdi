@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { defineMessages, FormattedHTMLMessage, intlShape } from 'react-intl';
-import { remote } from 'electron';
+import { BrowserWindow } from '@electron/remote';
 import InfoBar from '../../ui/InfoBar';
-
-const { BrowserWindow } = remote;
 
 const messages = defineMessages({
   headline: {

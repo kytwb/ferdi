@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { Menu, getCurrentWindow } from '@electron/remote';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
@@ -6,8 +6,6 @@ import injectSheet from 'react-jss';
 import classnames from 'classnames';
 import { defineMessages, intlShape } from 'react-intl';
 import { ctrlKey } from '../../../environment';
-
-const { Menu } = remote;
 
 const messages = defineMessages({
   noServicesAddedYet: {
@@ -113,7 +111,7 @@ class WorkspaceDrawerItem extends Component {
         ])}
         onClick={onClick}
         onContextMenu={() => (
-          onContextMenuEditClick && contextMenu.popup(remote.getCurrentWindow())
+          onContextMenuEditClick && contextMenu.popup(getCurrentWindow())
         )}
         data-tip={`${shortcutIndex <= 9 ? `(${ctrlKey}+Alt+${shortcutIndex})` : ''}`}
       >

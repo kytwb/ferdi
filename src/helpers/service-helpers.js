@@ -1,8 +1,6 @@
 import path from 'path';
-import { remote } from 'electron';
+import { app } from '@electron/remote';
 import fs from 'fs-extra';
-
-const { app } = remote;
 
 export function getServicePartitionsDirectory() {
   return path.join(app.getPath('userData'), 'Partitions');

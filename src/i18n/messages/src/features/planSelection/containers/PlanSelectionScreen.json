@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Downgrade your Franz Plan",
     "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
     "start": {
-      "line": 16,
+      "line": 14,
       "column": 15
     },
     "end": {
-      "line": 19,
+      "line": 17,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!You're about to downgrade to our Free account. Are you sure? Click here instead to get more services and functionality for just {currency}{price} a month.",
     "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
     "start": {
-      "line": 20,
+      "line": 18,
       "column": 17
     },
     "end": {
-      "line": 23,
+      "line": 21,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Downgrade to Free",
     "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
     "start": {
-      "line": 24,
+      "line": 22,
       "column": 22
     },
     "end": {
-      "line": 27,
+      "line": 25,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Choose Personal",
     "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
     "start": {
-      "line": 28,
+      "line": 26,
       "column": 20
     },
     "end": {
-      "line": 31,
+      "line": 29,
       "column": 3
     }
   }

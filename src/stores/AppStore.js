@@ -1,7 +1,8 @@
-import { remote, ipcRenderer, shell } from 'electron';
+import { ipcRenderer, shell } from 'electron';
 import {
-  action, computed, observable,
-} from 'mobx';
+  app, screen, powerMonitor, nativeTheme, getCurrentWindow, process as remoteProcess,
+} from '@electron/remote';
+import { action, computed, observable } from 'mobx';
 import moment from 'moment';
 import AutoLaunch from 'auto-launch';
 import ms from 'ms';
@@ -24,18 +25,11 @@ import { sleep } from '../helpers/async-helpers';
 
 const debug = require('debug')('Ferdi:AppStore');
 
-const {
-  app,
-  screen,
-  powerMonitor,
-  nativeTheme,
-} = remote;
-
-const mainWindow = remote.getCurrentWindow();
+const mainWindow = getCurrentWindow();
 
 const defaultLocale = DEFAULT_APP_SETTINGS.locale;
 
-const executablePath = isMac ? remote.process.execPath : process.execPath;
+const executablePath = isMac ? remoteProcess.execPath : process.execPath;
 const autoLauncher = new AutoLaunch({
   name: 'Ferdi',
   path: executablePath,

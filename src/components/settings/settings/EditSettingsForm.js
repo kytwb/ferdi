@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { app, systemPreferences } from '@electron/remote';
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
@@ -18,10 +18,6 @@ import {
   FRANZ_TRANSLATION,
 } from '../../../config';
 import { isMac, isWindows } from '../../../environment';
-
-const {
-  systemPreferences,
-} = remote;
 
 const messages = defineMessages({
   headline: {
@@ -665,7 +661,7 @@ export default @observer class EditSettingsForm extends Component {
               )}
               {intl.formatMessage(messages.currentVersion)}
               {' '}
-              {remote.app.getVersion()}
+              {app.getVersion()}
               {noUpdateAvailable && (
               <>
                 <br />

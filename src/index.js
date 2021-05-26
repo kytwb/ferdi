@@ -1,3 +1,5 @@
+/* eslint-disable import/first */
+
 import {
   app,
   BrowserWindow,
@@ -5,12 +7,25 @@ import {
   ipcMain,
   session,
 } from 'electron';
-import isDevMode from 'electron-is-dev';
+
 import fs from 'fs-extra';
 import path from 'path';
 import windowStateKeeper from 'electron-window-state';
 import { enforceMacOSAppLocation } from 'electron-util';
 import ms from 'ms';
+
+require('@electron/remote/main').initialize();
+
+import {
+  DEFAULT_APP_SETTINGS,
+  DEFAULT_WINDOW_OPTIONS,
+} from './config';
+
+import {
+  isMac,
+  isWindows,
+  isLinux,
+} from './environment';
 
 // TODO: This seems to be duplicated between here and 'config.js'
 // Set app directory before loading user modules
@@ -25,16 +40,11 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
+const isDevMode = !app.isPackaged;
 if (isDevMode) {
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }
 
-/* eslint-disable import/first */
-import {
-  isMac,
-  isWindows,
-  isLinux,
-} from './environment';
 import { mainIpcHandler as basicAuthHandler } from './features/basicAuth';
 import ipcApi from './electron/ipc-api';
 import Tray from './lib/Tray';
@@ -42,15 +52,10 @@ import DBus from './lib/DBus';
 import Settings from './electron/Settings';
 import handleDeepLink from './electron/deepLinking';
 import { isPositionValid } from './electron/windowUtils';
-import askFormacOSPermissions from './electron/macOSPermissions';
 import { appId } from './package.json'; // eslint-disable-line import/no-unresolved
 import * as buildInfo from './buildInfo.json'; // eslint-disable-line import/no-unresolved
 import './electron/exception';
 
-import {
-  DEFAULT_APP_SETTINGS,
-  DEFAULT_WINDOW_OPTIONS,
-} from './config';
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
 import userAgent, { ferdiVersion } from './helpers/userAgent-helpers';
@@ -329,6 +334,8 @@ const createWindow = () => {
   });
 
   if (isMac) {
+    // eslint-disable-next-line global-require
+    const askFormacOSPermissions = require('./electron/macOSPermissions');
     setTimeout(() => askFormacOSPermissions(mainWindow), ms('30s'));
   }
 

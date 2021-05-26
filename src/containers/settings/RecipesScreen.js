@@ -1,4 +1,5 @@
-import { remote, shell } from 'electron';
+import { shell } from 'electron';
+import { app } from '@electron/remote';
 import fs from 'fs-extra';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -16,8 +17,6 @@ import ErrorBoundary from '../../components/util/ErrorBoundary';
 import { FRANZ_DEV_DOCS, RECIPES_PATH } from '../../config';
 import { communityRecipesStore } from '../../features/communityRecipes';
 import RecipePreview from '../../models/RecipePreview';
-
-const { app } = remote;
 
 export default @inject('stores', 'actions') @observer class RecipesScreen extends Component {
   static propTypes = {

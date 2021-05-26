@@ -1,7 +1,7 @@
-import { remote } from 'electron';
+import { getCurrentWebContents } from '@electron/remote';
 import ContextMenuBuilder from './contextMenuBuilder';
 
-const webContents = remote.getCurrentWebContents();
+const webContents = getCurrentWebContents();
 
 export default async function setupContextMenu(isSpellcheckEnabled, getDefaultSpellcheckerLanguage, getSpellcheckerLanguage, getSearchEngine) {
   const contextMenuBuilder = new ContextMenuBuilder(

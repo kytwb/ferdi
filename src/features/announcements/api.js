@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { app } from '@electron/remote';
 import Request from '../../stores/lib/Request';
 
 const debug = require('debug')('Ferdi:feature:announcements:api');
@@ -6,7 +6,7 @@ const debug = require('debug')('Ferdi:feature:announcements:api');
 export const announcementsApi = {
   async getCurrentVersion() {
     debug('getting current version of electron app');
-    return Promise.resolve(remote.app.getVersion());
+    return Promise.resolve(app.getVersion());
   },
 
   async getChangelog(version) {

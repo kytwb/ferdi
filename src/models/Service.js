@@ -1,5 +1,6 @@
 import { autorun, computed, observable } from 'mobx';
-import { ipcRenderer, remote } from 'electron';
+import { ipcRenderer } from 'electron';
+import { webContents } from '@electron/remote';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
@@ -246,7 +247,7 @@ export default class Service {
 
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
-    const webContents = remote.webContents.fromId(this.webview.getWebContentsId());
+    const webviewWebContents = webContents.fromId(this.webview.getWebContentsId());
 
     // If the recipe has implemented modifyRequestHeaders,
     // Send those headers to ipcMain so that it can be set in session
@@ -337,14 +338,14 @@ export default class Service {
       this.hasCrashed = true;
     });
 
-    webContents.on('login', (event, request, authInfo, callback) => {
+    webviewWebContents.on('login', (event, request, authInfo, callback) => {
       // const authCallback = callback;
       debug('browser login event', authInfo);
       event.preventDefault();
 
       if (authInfo.isProxy && authInfo.scheme === 'basic') {
         debug('Sending service echo ping');
-        webContents.send('get-service-id');
+        webviewWebContents.send('get-service-id');
 
         debug('Received service id', this.id);
 

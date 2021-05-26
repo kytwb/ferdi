@@ -1,4 +1,5 @@
-import { clipboard, remote, shell } from 'electron';
+import { clipboard, shell } from 'electron';
+import { app, Menu, dialog, systemPreferences } from '@electron/remote';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
 import {
@@ -15,10 +16,6 @@ import * as buildInfo from '../buildInfo.json'; // eslint-disable-line import/no
 import { ferdiVersion } from '../helpers/userAgent-helpers';
 
 const osName = require('os-name');
-
-const {
-  app, Menu, dialog, systemPreferences,
-} = remote;
 
 const menuItems = defineMessages({
   edit: {

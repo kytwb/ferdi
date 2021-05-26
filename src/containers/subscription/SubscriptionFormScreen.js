@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { remote } from 'electron';
+import { BrowserWindow, getCurrentWindow } from '@electron/remote';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 
@@ -7,8 +7,6 @@ import PaymentStore from '../../stores/PaymentStore';
 
 import SubscriptionForm from '../../components/subscription/SubscriptionForm';
 import TrialForm from '../../components/subscription/TrialForm';
-
-const { BrowserWindow } = remote;
 
 export default @inject('stores', 'actions') @observer class SubscriptionFormScreen extends Component {
   static propTypes = {
@@ -34,7 +32,7 @@ export default @inject('stores', 'actions') @observer class SubscriptionFormScre
     hostedPageURL = user.getAuthURL(hostedPageURL);
 
     const paymentWindow = new BrowserWindow({
-      parent: remote.getCurrentWindow(),
+      parent: getCurrentWindow(),
       modal: true,
       title: '🔒 Franz Supporter License',
       width: 800,
@@ -44,6 +42,8 @@ export default @inject('stores', 'actions') @observer class SubscriptionFormScre
       webPreferences: {
         nodeIntegration: true,
         webviewTag: true,
+        enableRemoteModule: true,
+        contextIsolation: false,
       },
     });
     paymentWindow.loadURL(`file://${__dirname}/../../index.html#/payment/${encodeURIComponent(hostedPageURL)}`);

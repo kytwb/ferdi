@@ -3,7 +3,7 @@ import moment from 'moment';
 import jwt from 'jsonwebtoken';
 import localStorage from 'mobx-localstorage';
 import ms from 'ms';
-import { remote } from 'electron';
+import { session } from '@electron/remote';
 
 import { isDevMode } from '../environment';
 import Store from './lib/Store';
@@ -13,8 +13,6 @@ import { sleep } from '../helpers/async-helpers';
 import { getPlan } from '../helpers/plan-helpers';
 import { PLANS } from '../config';
 import { TODOS_PARTITION_ID } from '../features/todos';
-
-const { session } = remote;
 
 const debug = require('debug')('Ferdi:UserStore');
 

@@ -1,4 +1,4 @@
-import { shell, remote } from 'electron';
+import { shell } from 'electron';
 import {
   action,
   reaction,
@@ -7,6 +7,7 @@ import {
 } from 'mobx';
 import { debounce, remove } from 'lodash';
 import ms from 'ms';
+import { app } from '@electron/remote';
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -24,8 +25,6 @@ import { TODOS_RECIPE_ID } from '../features/todos';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 
 const debug = require('debug')('Ferdi:ServiceStore');
-
-const { app } = remote;
 
 export default class ServicesStore extends Store {
   @observable allServicesRequest = new CachedRequest(this.api.services, 'all');

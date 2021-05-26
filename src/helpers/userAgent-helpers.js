@@ -1,11 +1,12 @@
-import { remote, app } from 'electron';
+import { app } from 'electron';
+import { app as remoteApp } from '@electron/remote';
 import os from 'os';
 import macosVersion from 'macos-version';
 import { isMac, isWindows } from '../environment';
 
 // This helper gets included from the backend and frontend but we only need to use "remote"
 // if we are in the frontend
-export const ferdiVersion = remote && remote.app ? remote.app.getVersion() : app.getVersion();
+export const ferdiVersion = remoteApp ? remoteApp.getVersion() : app.getVersion();
 
 function macOS() {
   const version = macosVersion();

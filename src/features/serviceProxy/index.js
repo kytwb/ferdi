@@ -1,9 +1,5 @@
 import { autorun, observable } from 'mobx';
-import { remote } from 'electron';
-
-// import { DEFAULT_FEATURES_CONFIG } from '../../config';
-
-const { session } = remote;
+import { session } from '@electron/remote';
 
 const debug = require('debug')('Ferdi:feature:serviceProxy');
 
@@ -16,8 +12,6 @@ export default function init(stores) {
   debug('Initializing `serviceProxy` feature');
 
   autorun(() => {
-    // const { isServiceProxyEnabled, isServiceProxyIncludedInCurrentPlan } = stores.features.features;
-
     config.isEnabled = true;
     config.isIncludedInCurrentPlan = true;
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
-import { remote } from 'electron';
+import { dialog, app } from '@electron/remote';
 import { defineMessages, intlShape } from 'react-intl';
 
 import FeaturesStore from '../../../stores/FeaturesStore';
@@ -9,8 +9,6 @@ import UserStore from '../../../stores/UserStore';
 import PlanSelection from '../components/PlanSelection';
 import ErrorBoundary from '../../../components/util/ErrorBoundary';
 import { planSelectionStore } from '..';
-
-const { dialog, app } = remote;
 
 const messages = defineMessages({
   dialogTitle: {

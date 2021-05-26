@@ -1,6 +1,6 @@
 import os from 'os';
 import semver from 'semver';
-import { remote } from 'electron';
+import { TouchBar, getCurrentWindow } from '@electron/remote';
 import { autorun } from 'mobx';
 
 import { isMac } from '../environment';
@@ -22,14 +22,13 @@ export default class FranzTouchBar {
   }
 
   _build() {
-    const currentWindow = remote.getCurrentWindow();
+    const currentWindow = getCurrentWindow();
 
     if (this.stores.router.location.pathname.startsWith('/payment/')) {
       return;
     }
 
     if (this.stores.user.isLoggedIn) {
-      const { TouchBar } = remote;
       const { TouchBarButton, TouchBarSpacer } = TouchBar;
 
       const buttons = [];
