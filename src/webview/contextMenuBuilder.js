@@ -341,7 +341,8 @@ module.exports = class ContextMenuBuilder {
 
     menu.append(copyImageUrl);
 
-    if (menuInfo.srcURL.startsWith('blob:')) {
+    // TODO: This doesn't seem to work on linux, so, limiting to Mac for now
+    if (isMac && menuInfo.srcURL.startsWith('blob:')) {
       const downloadImage = new MenuItem({
         label: this.stringTable.downloadImage(),
         click: () => {
