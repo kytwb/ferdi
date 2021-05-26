@@ -19,9 +19,6 @@ appveyor.yml
 Dockerfile
 flow-typed
 out
-packages/forms/lib
-packages/theme/lib
-packages/ui/lib
 recipes/archives
 tmp-out/
 uidev/lib
