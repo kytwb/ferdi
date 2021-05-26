@@ -12,7 +12,8 @@ import {
   PRODUCTION_TODOS_FRONTEND_URL,
 } from './config';
 
-const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+// eslint-disable-next-line global-require
+export const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
 export const isDevMode = !app.isPackaged;
 export const useLiveAPI = process.env.LIVE_API;
