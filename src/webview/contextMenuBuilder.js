@@ -350,9 +350,8 @@ module.exports = class ContextMenuBuilder {
             (dataURL) => {
               const url = new window.URL(urlWithoutBlob);
               const fileName = url.pathname.substr(1);
-              const base64data = nativeImage.createFromDataURL(dataURL);
               ipcRenderer.send('download-file', {
-                content: base64data.toDataURL(),
+                content: dataURL,
                 fileOptions: {
                   name: fileName,
                   mime: 'image/png',
