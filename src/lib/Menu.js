@@ -1,5 +1,7 @@
 import { clipboard, shell } from 'electron';
-import { app, Menu, dialog, systemPreferences } from '@electron/remote';
+import {
+  app, Menu, dialog, systemPreferences,
+} from '@electron/remote';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
 import {

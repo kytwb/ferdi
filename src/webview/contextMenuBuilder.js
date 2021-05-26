@@ -6,7 +6,9 @@
  *
  * Source: https://github.com/electron-userland/electron-spellchecker/blob/master/src/context-menu-builder.js
  */
-import { clipboard, ipcRenderer, nativeImage, shell } from 'electron';
+import {
+  clipboard, ipcRenderer, nativeImage, shell,
+} from 'electron';
 import { Menu, MenuItem } from '@electron/remote';
 import { isMac } from '../environment';
 
