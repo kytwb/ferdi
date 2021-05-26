@@ -11,7 +11,7 @@ import { isMac } from '../environment';
 import { SEARCH_ENGINE_NAMES, SEARCH_ENGINE_URLS } from '../config';
 
 const {
-  clipboard, nativeImage, remote, shell,
+  clipboard, ipcRenderer, nativeImage, remote, shell,
 } = require('electron');
 
 const { URL } = require('url');
@@ -36,6 +36,7 @@ const contextMenuStringTable = {
   copyLinkUrl: () => 'Copy Link',
   copyImageUrl: () => 'Copy Image Address',
   copyImage: () => 'Copy Image',
+  downloadImage: () => 'Download Image',
   addToDictionary: () => 'Add to Dictionary',
   goBack: () => 'Go Back',
   goForward: () => 'Go Forward',
@@ -192,6 +193,7 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.addSeparator(menu);
     this.goBack(menu);
     this.goForward(menu);
     this.copyPageUrl(menu);
@@ -214,6 +216,7 @@ module.exports = class ContextMenuBuilder {
     this.addInspectElement(menu, menuInfo);
     this.processMenu(menu, menuInfo);
 
+    this.addSeparator(menu);
     this.goBack(menu);
     this.goForward(menu);
     this.copyPageUrl(menu);
@@ -337,6 +340,32 @@ module.exports = class ContextMenuBuilder {
     });
 
     menu.append(copyImageUrl);
+
+    if (menuInfo.srcURL.startsWith('blob:')) {
+      const downloadImage = new MenuItem({
+        label: this.stringTable.downloadImage(),
+        click: () => {
+          const urlWithoutBlob = menuInfo.srcURL.substr(5);
+          this.convertImageToBase64(menuInfo.srcURL,
+            (dataURL) => {
+              const url = new window.URL(urlWithoutBlob);
+              const fileName = url.pathname.substr(1);
+              const base64data = nativeImage.createFromDataURL(dataURL);
+              ipcRenderer.send('download-file', {
+                content: base64data.toDataURL(),
+                fileOptions: {
+                  name: fileName,
+                  mime: 'image/png',
+                },
+              });
+            });
+          this.sendNotificationOnClipboardEvent(`Image downloaded: ${urlWithoutBlob}`);
+        },
+      });
+
+      menu.append(downloadImage);
+    }
+
     return menu;
   }
 
