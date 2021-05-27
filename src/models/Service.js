@@ -275,9 +275,9 @@ export default class Service {
       debug(this.name, 'modifyRequestHeaders is not defined in the recipe');
     }
 
-    this.webview.addEventListener('ipc-message', (e) => {
+    this.webview.addEventListener('ipc-message', async (e) => {
       if (e.channel === 'inject-js-unsafe') {
-        this.webview.executeJavaScript(e.args[0]);
+        await this.webview.executeJavaScript(`"use strict"; (() => { ${e.args[0]} })();`);
       } else {
         handleIPCMessage({
           serviceId: this.id,

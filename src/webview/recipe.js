@@ -83,7 +83,7 @@ window.open = (url, frameName, features) => {
   }
 };
 
-window.log = isDevMode ? console.log : () => {};
+window.log = isDevMode ? (...args) => console.log(...args) : () => {};
 
 // We can't override APIs here, so we first expose functions via window.ferdi,
 // then overwrite the corresponding field of the window object by injected JS.
