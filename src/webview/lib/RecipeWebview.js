@@ -69,8 +69,10 @@ class RecipeWebview {
   injectJSUnsafe(...files) {
     files.forEach(async (file) => {
       if (await fs.exists(file)) {
-        const data = await fs.readFile(file);
+        const data = await fs.readFile(file, 'utf8');
         ipcRenderer.sendToHost('inject-js-unsafe', data);
+
+        debug('Inject script to main world', data);
       }
     });
   }
