@@ -4,11 +4,13 @@ import { pathExistsSync, readFile } from 'fs-extra';
 const debug = require('debug')('Ferdi:Plugin:RecipeWebview');
 
 class RecipeWebview {
-  constructor() {
+  constructor(notificationsHandler) {
     this.countCache = {
       direct: 0,
       indirect: 0,
     };
+
+    this.notificationsHandler = notificationsHandler;
 
     ipcRenderer.on('poll', () => {
       this.loopFunc();
@@ -85,6 +87,15 @@ class RecipeWebview {
     });
   }
 
+  injectJSUnsafe(...files) {
+    files.forEach(async (file) => {
+      if (await fs.exists(file)) {
+        const data = await fs.readFile(file);
+        ipcRenderer.sendToHost('inject-js-unsafe', data);
+      }
+    });
+  }
+
   /**
    * Set a custom handler for turning on and off dark mode
    *
@@ -96,7 +107,7 @@ class RecipeWebview {
 
   onNotify(fn) {
     if (typeof fn === 'function') {
-      window.Notification.prototype.onNotify = fn;
+      this.notificationsHandler.onNotify = fn;
     }
   }
 

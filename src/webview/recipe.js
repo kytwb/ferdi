@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import { ipcRenderer } from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
 import { getCurrentWebContents } from '@electron/remote';
 import path from 'path';
 import { autorun, computed, observable } from 'mobx';
@@ -23,15 +23,17 @@ import customDarkModeCss from './darkmode/custom';
 import RecipeWebview from './lib/RecipeWebview';
 import Userscript from './lib/Userscript';
 
-import { switchDict, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
 import contextMenu from './contextMenu';
-import './notifications';
-import { screenShareCss } from './screenshare';
+import { NotificationsHandler, notificationsClassDefinition } from './notifications';
+import { getDisplayMediaSelector, screenShareCss, screenShareJs } from './screenshare';
+import { switchDict, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 
 import { DEFAULT_APP_SETTINGS, isDevMode } from '../environment';
 
 const debug = require('debug')('Ferdi:Plugin');
+
+const notificationsHandler = new NotificationsHandler();
 
 class RecipeController {
   @observable settings = {
@@ -111,7 +113,7 @@ class RecipeController {
     // Delete module from cache
     delete require.cache[require.resolve(modulePath)];
     try {
-      this.recipe = new RecipeWebview();
+      this.recipe = new RecipeWebview(notificationsHandler);
       // eslint-disable-next-line
       require(modulePath)(this.recipe, {...config, recipe,});
       debug('Initialize Recipe', config, recipe);
@@ -373,6 +375,20 @@ window.open = (url, frameName, features) => {
   }
 };
 
-if (isDevMode) {
-  window.log = console.log;
-}
+window.log = isDevMode ? console.log : () => {};
+
+// We can't override APIs here, so we first expose functions via window.ferdi,
+// then overwrite the corresponding field of the window object by injected JS.
+contextBridge.exposeInMainWorld('ferdi', {
+  open: window.open,
+  log: window.log,
+  getDisplayMediaSelector,
+  displayNotification: (title, options) => notificationsHandler.displayNotification(title, options),
+});
+
+ipcRenderer.sendToHost('inject-js-unsafe', `
+window.open = window.ferdi.open;
+window.log = window.ferdi.log;
+${notificationsClassDefinition}
+${screenShareJs}
+`);
