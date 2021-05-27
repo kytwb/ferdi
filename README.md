@@ -106,6 +106,12 @@ You can download Ferdi for Windows, Mac and Linux on [Ferdi's download page](htt
 
 (Don't know Chocolatey? [chocolatey.org](https://chocolatey.org/))
 
+### Or use Windows Package Manager (Windows only)
+
+`$ winget install --id AmineMouafik.Ferdi`
+
+(Don't know winget? [winget-cli](https://github.com/microsoft/winget-cli/))
+
 ### Or use homebrew (macOS or Linux)
 
 `$ brew install --cask ferdi`
