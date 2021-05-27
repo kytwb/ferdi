@@ -23,6 +23,7 @@ import customDarkModeCss from './darkmode/custom';
 import RecipeWebview from './lib/RecipeWebview';
 import Userscript from './lib/Userscript';
 
+import { BadgeHandler } from './badge';
 import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
 import contextMenu from './contextMenu';
 import { NotificationsHandler, notificationsClassDefinition } from './notifications';
@@ -33,7 +34,73 @@ import { DEFAULT_APP_SETTINGS, isDevMode } from '../environment';
 
 const debug = require('debug')('Ferdi:Plugin');
 
+const badgeHandler = new BadgeHandler();
+
 const notificationsHandler = new NotificationsHandler();
+
+// Patching window.open
+const originalWindowOpen = window.open;
+
+window.open = (url, frameName, features) => {
+  debug('window.open', url, frameName, features);
+  if (!url) {
+    // The service hasn't yet supplied a URL (as used in Skype).
+    // Return a new dummy window object and wait for the service to change the properties
+    const newWindow = {
+      location: {
+        href: '',
+      },
+    };
+
+    const checkInterval = setInterval(() => {
+      // Has the service changed the URL yet?
+      if (newWindow.location.href !== '') {
+        if (features) {
+          originalWindowOpen(newWindow.location.href, frameName, features);
+        } else {
+          // Open the new URL
+          ipcRenderer.sendToHost('new-window', newWindow.location.href);
+        }
+        clearInterval(checkInterval);
+      }
+    }, 0);
+
+    setTimeout(() => {
+      // Stop checking for location changes after 1 second
+      clearInterval(checkInterval);
+    }, 1000);
+
+    return newWindow;
+  }
+
+  // We need to differentiate if the link should be opened in a popup or in the systems default browser
+  if (!frameName && !features && typeof features !== 'string') {
+    return ipcRenderer.sendToHost('new-window', url);
+  }
+
+  if (url) {
+    return originalWindowOpen(url, frameName, features);
+  }
+};
+
+window.log = isDevMode ? console.log : () => {};
+
+// We can't override APIs here, so we first expose functions via window.ferdi,
+// then overwrite the corresponding field of the window object by injected JS.
+contextBridge.exposeInMainWorld('ferdi', {
+  open: window.open,
+  log: window.log,
+  setBadge: (direct, indirect) => badgeHandler.setBadge(direct || 0, indirect || 0),
+  displayNotification: (title, options) => notificationsHandler.displayNotification(title, options),
+  getDisplayMediaSelector,
+});
+
+ipcRenderer.sendToHost('inject-js-unsafe', `
+window.open = window.ferdi.open;
+window.log = window.ferdi.log;
+${notificationsClassDefinition}
+${screenShareJs}
+`);
 
 class RecipeController {
   @observable settings = {
@@ -113,7 +180,7 @@ class RecipeController {
     // Delete module from cache
     delete require.cache[require.resolve(modulePath)];
     try {
-      this.recipe = new RecipeWebview(notificationsHandler);
+      this.recipe = new RecipeWebview(badgeHandler, notificationsHandler);
       // eslint-disable-next-line
       require(modulePath)(this.recipe, {...config, recipe,});
       debug('Initialize Recipe', config, recipe);
@@ -329,66 +396,3 @@ class RecipeController {
 /* eslint-disable no-new */
 new RecipeController();
 /* eslint-enable no-new */
-
-// Patching window.open
-const originalWindowOpen = window.open;
-
-window.open = (url, frameName, features) => {
-  debug('window.open', url, frameName, features);
-  if (!url) {
-    // The service hasn't yet supplied a URL (as used in Skype).
-    // Return a new dummy window object and wait for the service to change the properties
-    const newWindow = {
-      location: {
-        href: '',
-      },
-    };
-
-    const checkInterval = setInterval(() => {
-      // Has the service changed the URL yet?
-      if (newWindow.location.href !== '') {
-        if (features) {
-          originalWindowOpen(newWindow.location.href, frameName, features);
-        } else {
-          // Open the new URL
-          ipcRenderer.sendToHost('new-window', newWindow.location.href);
-        }
-        clearInterval(checkInterval);
-      }
-    }, 0);
-
-    setTimeout(() => {
-      // Stop checking for location changes after 1 second
-      clearInterval(checkInterval);
-    }, 1000);
-
-    return newWindow;
-  }
-
-  // We need to differentiate if the link should be opened in a popup or in the systems default browser
-  if (!frameName && !features && typeof features !== 'string') {
-    return ipcRenderer.sendToHost('new-window', url);
-  }
-
-  if (url) {
-    return originalWindowOpen(url, frameName, features);
-  }
-};
-
-window.log = isDevMode ? console.log : () => {};
-
-// We can't override APIs here, so we first expose functions via window.ferdi,
-// then overwrite the corresponding field of the window object by injected JS.
-contextBridge.exposeInMainWorld('ferdi', {
-  open: window.open,
-  log: window.log,
-  getDisplayMediaSelector,
-  displayNotification: (title, options) => notificationsHandler.displayNotification(title, options),
-});
-
-ipcRenderer.sendToHost('inject-js-unsafe', `
-window.open = window.ferdi.open;
-window.log = window.ferdi.log;
-${notificationsClassDefinition}
-${screenShareJs}
-`);
