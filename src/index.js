@@ -22,6 +22,7 @@ import {
 } from './config';
 
 import {
+  isDevMode,
   isMac,
   isWindows,
   isLinux,
@@ -40,7 +41,6 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
-const isDevMode = !app.isPackaged;
 if (isDevMode) {
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }

@@ -1,4 +1,5 @@
 import {
+  isDevMode as isDev,
   LIVE_API,
   DEV_API,
   LOCAL_API,
@@ -15,7 +16,7 @@ import {
 // eslint-disable-next-line global-require
 export const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
-export const isDevMode = !app.isPackaged;
+export const isDevMode = isDev;
 export const useLiveAPI = process.env.LIVE_API;
 export const useLocalAPI = process.env.LOCAL_API;
 

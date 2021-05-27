@@ -196,7 +196,9 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
-export const isDevMode = !app.isPackaged;
+const isDevModeEnvSet = 'ELECTRON_IS_DEV' in process.env;
+const devModeFromEnv = Number.parseInt(process.env.ELECTRON_IS_DEV, 10) === 1;
+export const isDevMode = isDevModeEnvSet ? devModeFromEnv : !app.isPackaged;
 if (isDevMode) {
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }
