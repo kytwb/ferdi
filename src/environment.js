@@ -16,7 +16,9 @@ import {
 // eslint-disable-next-line global-require
 export const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
 
+// TODO Remove this re-export and move the code from config.js to here.
 export const isDevMode = isDev;
+
 export const useLiveAPI = process.env.LIVE_API;
 export const useLocalAPI = process.env.LOCAL_API;
 

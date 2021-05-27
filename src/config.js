@@ -196,17 +196,20 @@ if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
+const ELECTRON_IS_DEV_VAR = 'ELECTRON_IS_DEV';
+const NODE_ENV_VAR = 'NODE_ENV';
+
+// TODO Move this to environment.js and remove the re-export from there.
 export const isDevMode = (() => {
-  // Copied from https://github.com/sindresorhus/electron-is-dev/blob/f05330b856782dac7987b10859bfd95ea6a187a6/index.js
-  // but electron-is-dev breaks in a renderer process, so we use the app import from above instead.
-  const isDevModeEnvSet = 'ELECTRON_IS_DEV' in process.env;
-  if (isDevModeEnvSet) {
-    const devModeFromEnv = Number.parseInt(process.env.ELECTRON_IS_DEV, 10) === 1;
-    return devModeFromEnv;
+  const isEnvVarSet = name => name in process.env;
+  if (isEnvVarSet(ELECTRON_IS_DEV_VAR)) {
+    // Copied from https://github.com/sindresorhus/electron-is-dev/blob/f05330b856782dac7987b10859bfd95ea6a187a6/index.js
+    // but electron-is-dev breaks in a renderer process, so we use the app import from above instead.
+    const electronIsDev = process.env[ELECTRON_IS_DEV_VAR];
+    return electronIsDev === 'true' || Number.parseInt(electronIsDev, 10) === 1;
   }
-  const isNodeEnvSet = 'NODE_ENV' in process.env;
-  if (isNodeEnvSet) {
-    return process.env.NODE_ENV === 'development';
+  if (isEnvVarSet(NODE_ENV_VAR)) {
+    return process.env[NODE_ENV_VAR] === 'development';
   }
   return !app.isPackaged;
 })();
