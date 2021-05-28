@@ -340,6 +340,11 @@ export default class Service {
       this.hasCrashed = true;
     });
 
+    this.webview.addEventListener('found-in-page', ({ result }) => {
+      debug('Found in page', result);
+      this.webview.send('found-in-page', result);
+    });
+
     webviewWebContents.on('login', (event, request, authInfo, callback) => {
       // const authCallback = callback;
       debug('browser login event', authInfo);

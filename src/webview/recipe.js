@@ -1,11 +1,9 @@
 /* eslint-disable import/first */
 import { contextBridge, ipcRenderer } from 'electron';
-import { getCurrentWebContents } from '@electron/remote';
 import path from 'path';
 import { autorun, computed, observable } from 'mobx';
 import fs from 'fs-extra';
 import { debounce } from 'lodash';
-import { FindInPage } from 'electron-find';
 
 // For some services darkreader tries to use the chrome extension message API
 // This will cause the service to fail loading
@@ -24,8 +22,9 @@ import RecipeWebview from './lib/RecipeWebview';
 import Userscript from './lib/Userscript';
 
 import { BadgeHandler } from './badge';
-import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
 import contextMenu from './contextMenu';
+import { injectDarkModeStyle, isDarkModeStyleInjected, removeDarkModeStyle } from './darkmode';
+import FindInPage from './find';
 import { NotificationsHandler, notificationsClassDefinition } from './notifications';
 import { getDisplayMediaSelector, screenShareCss, screenShareJs } from './screenshare';
 import { switchDict, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
@@ -161,7 +160,7 @@ class RecipeController {
     autorun(() => this.update());
 
     document.addEventListener('DOMContentLoaded', () => {
-      this.findInPage = new FindInPage(getCurrentWebContents(), {
+      this.findInPage = new FindInPage({
         inputFocusColor: '#CE9FFC',
         textColor: '#212121',
       });

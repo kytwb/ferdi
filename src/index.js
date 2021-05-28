@@ -449,6 +449,36 @@ ipcMain.on('feature-basic-auth-cancel', () => {
   authCallback = noop;
 });
 
+// Handle synchronous messages from service webviews.
+
+ipcMain.on('find-in-page', (e, text, options) => {
+  const { sender: webContents } = e;
+  if (webContents !== mainWindow.webContents && typeof (text) === 'string') {
+    const sanitizedOptions = {};
+    for (const option of ['forward', 'findNext', 'matchCase']) {
+      if (option in options) {
+        sanitizedOptions[option] = !!options[option];
+      }
+    }
+    const requestId = webContents.findInPage(text, sanitizedOptions);
+    debug('Find in page', text, options, requestId);
+    e.returnValue = requestId;
+  } else {
+    e.returnValue = null;
+  }
+});
+
+ipcMain.on('stop-find-in-page', (e, action) => {
+  const { sender: webContents } = e;
+  if (webContents !== mainWindow.webContents) {
+    const validActions = ['clearSelection', 'keepSelection', 'activateSelection'];
+    if (validActions.includes(action)) {
+      webContents.stopFindInPage(action);
+    }
+  }
+  e.returnValue = null;
+});
+
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On OS X it is common for applications and their menu bar
