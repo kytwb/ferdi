@@ -1,5 +1,7 @@
 import { desktopCapturer } from 'electron';
 
+const CANCEL_ID = 'desktop-capturer-selection__cancel';
+
 export const screenShareCss = `
 .desktop-capturer-selection {
   position: fixed;
@@ -44,11 +46,14 @@ export const screenShareCss = `
   padding: 4px;
   background: #252626;
   text-align: left;
-  transition: background-color .15s, box-shadow .15s;
+  transition: background-color .15s, box-shadow .15s, color .15s;
+  color: #dedede;
 }
 .desktop-capturer-selection__btn:hover,
 .desktop-capturer-selection__btn:focus {
   background: rgba(98,100,167,.8);
+  box-shadow: 0 0 4px rgba(0,0,0,0.45), 0 0 2px rgba(0,0,0,0.25);
+  color: #fff;
 }
 .desktop-capturer-selection__thumbnail {
   width: 100%;
@@ -56,10 +61,14 @@ export const screenShareCss = `
   object-fit: cover;
 }
 .desktop-capturer-selection__name {
-  margin: 6px 0 6px;
+  margin: 6px 0;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: center;
   overflow: hidden;
+}
+.desktop-capturer-selection__name--cancel {
+  margin: auto 0;
 }
 `;
 
@@ -83,6 +92,11 @@ window.navigator.mediaDevices.getDisplayMedia = () => new Promise(async (resolve
                 </button>
               </li>
             `).join('')}
+            <li class="desktop-capturer-selection__item">
+              <button class="desktop-capturer-selection__btn" data-id="${CANCEL_ID}" title="Cancel">
+                <span class="desktop-capturer-selection__name desktop-capturer-selection__name--cancel">Cancel</span>
+              </button>
+            </li>
           </ul>
         </div>
       `;
@@ -93,25 +107,29 @@ window.navigator.mediaDevices.getDisplayMedia = () => new Promise(async (resolve
         button.addEventListener('click', async () => {
           try {
             const id = button.getAttribute('data-id');
-            const mediaSource = sources.find(source => source.id === id);
-            if (!mediaSource) {
-              throw new Error(`Source with id ${id} does not exist`);
-            }
+            if (id === CANCEL_ID) {
+              reject(new Error('Cancelled by user'));
+            } else {
+              const mediaSource = sources.find(source => source.id === id);
+              if (!mediaSource) {
+                throw new Error(`Source with id ${id} does not exist`);
+              }
 
-            const stream = await window.navigator.mediaDevices.getUserMedia({
-              audio: false,
-              video: {
-                mandatory: {
-                  chromeMediaSource: 'desktop',
-                  chromeMediaSourceId: mediaSource.id,
+              const stream = await window.navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: {
+                  mandatory: {
+                    chromeMediaSource: 'desktop',
+                    chromeMediaSourceId: mediaSource.id,
+                  },
                 },
-              },
-            });
-            resolve(stream);
-
-            selectionElem.remove();
+              });
+              resolve(stream);
+            }
           } catch (err) {
             reject(err);
+          } finally {
+            selectionElem.remove();
           }
         });
       });
