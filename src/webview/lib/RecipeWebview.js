@@ -67,12 +67,18 @@ class RecipeWebview {
   }
 
   injectJSUnsafe(...files) {
-    files.forEach(async (file) => {
+    Promise.all(files.map(async (file) => {
       if (await fs.exists(file)) {
         const data = await fs.readFile(file, 'utf8');
-        ipcRenderer.sendToHost('inject-js-unsafe', data);
-
-        debug('Inject script to main world', data);
+        return data;
+      }
+      debug('Script not found', file);
+      return null;
+    })).then(async (scripts) => {
+      const scriptsFound = scripts.filter(script => script !== null);
+      if (scriptsFound.length > 0) {
+        debug('Inject scripts to main world', scriptsFound);
+        ipcRenderer.sendToHost('inject-js-unsafe', ...scriptsFound);
       }
     });
   }

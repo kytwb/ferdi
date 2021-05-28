@@ -92,11 +92,10 @@ contextBridge.exposeInMainWorld('ferdi', {
   getDisplayMediaSelector,
 });
 
-ipcRenderer.sendToHost('inject-js-unsafe', `
-window.open = window.ferdi.open;
-${notificationsClassDefinition}
-${screenShareJs}
-`);
+ipcRenderer.sendToHost('inject-js-unsafe',
+  'window.open = window.ferdi.open;',
+  notificationsClassDefinition,
+  screenShareJs);
 
 class RecipeController {
   @observable settings = {

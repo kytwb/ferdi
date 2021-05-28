@@ -277,7 +277,7 @@ export default class Service {
 
     this.webview.addEventListener('ipc-message', async (e) => {
       if (e.channel === 'inject-js-unsafe') {
-        await this.webview.executeJavaScript(`"use strict"; (() => { ${e.args[0]} })();`);
+        await Promise.all(e.args.map(script => this.webview.executeJavaScript(`"use strict"; (() => { ${script} })();`)));
       } else {
         handleIPCMessage({
           serviceId: this.id,
