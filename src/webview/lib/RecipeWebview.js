@@ -55,12 +55,12 @@ class RecipeWebview {
     const indirectInt = parseInt(indirect, 10);
 
     const count = {
-      direct: directInt > 0 ? directInt : 0,
-      indirect: indirectInt > 0 ? indirectInt : 0,
+      direct: Math.max(directInt, 0),
+      indirect: Math.max(indirectInt, 0),
     };
 
 
-    ipcRenderer.sendToHost('messages', count);
+    ipcRenderer.sendToHost('message-counts', count);
     Object.assign(this.countCache, count);
 
     debug('Sending badge count to host', count);

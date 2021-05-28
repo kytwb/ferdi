@@ -583,7 +583,7 @@ export default class ServicesStore extends Store {
       this._shareSettingsWithServiceProcess();
     } else if (channel === 'alive') {
       service.lastPollAnswer = Date.now();
-    } else if (channel === 'messages') {
+    } else if (channel === 'message-counts') {
       debug(`Received unread message info from '${serviceId}'`, args[0]);
 
       this.actions.service.setUnreadMessageCount({
