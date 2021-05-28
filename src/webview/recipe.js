@@ -30,7 +30,7 @@ import { NotificationsHandler, notificationsClassDefinition } from './notificati
 import { getDisplayMediaSelector, screenShareCss, screenShareJs } from './screenshare';
 import { switchDict, getSpellcheckerLocaleByFuzzyIdentifier } from './spellchecker';
 
-import { DEFAULT_APP_SETTINGS, isDevMode } from '../environment';
+import { DEFAULT_APP_SETTINGS } from '../environment';
 
 const debug = require('debug')('Ferdi:Plugin');
 
@@ -83,13 +83,10 @@ window.open = (url, frameName, features) => {
   }
 };
 
-window.log = isDevMode ? (...args) => console.log(...args) : () => {};
-
 // We can't override APIs here, so we first expose functions via window.ferdi,
 // then overwrite the corresponding field of the window object by injected JS.
 contextBridge.exposeInMainWorld('ferdi', {
   open: window.open,
-  log: window.log,
   setBadge: (direct, indirect) => badgeHandler.setBadge(direct || 0, indirect || 0),
   displayNotification: (title, options) => notificationsHandler.displayNotification(title, options),
   getDisplayMediaSelector,
@@ -97,7 +94,6 @@ contextBridge.exposeInMainWorld('ferdi', {
 
 ipcRenderer.sendToHost('inject-js-unsafe', `
 window.open = window.ferdi.open;
-window.log = window.ferdi.log;
 ${notificationsClassDefinition}
 ${screenShareJs}
 `);
