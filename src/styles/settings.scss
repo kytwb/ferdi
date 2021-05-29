@@ -135,13 +135,13 @@
 
 .settings {
   border-radius: $theme-border-radius;
-  // box-shadow: 0 20px 50px rgba(black, .5);
+  box-shadow: 0 20px 50px rgba($dark-theme-black, .5);
   display: flex;
   height: 100%;
   max-height: 720px;
   max-width: 900px;
   min-height: 400px;
-  // overflow: hidden;
+  overflow: hidden;
   position: relative;
   width: 100%;
   z-index: 9999;
@@ -245,7 +245,6 @@
     position: absolute;
     right: 0;
     transition: background $theme-transition-time;
-    border-top-right-radius: $theme-border-radius;
     cursor: pointer;
 
     &::before { cursor: pointer; }
@@ -454,7 +453,6 @@
   border-top-left-radius: $theme-border-radius;;
   border-bottom-left-radius: $theme-border-radius;;
   overflow: hidden;
-  box-shadow: 0 20px 50px rgba($dark-theme-black, .5);
 
   .settings-navigation__link {
     align-items: center;
