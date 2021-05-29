@@ -18,6 +18,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <a href="#backers-via-opencollective"><img alt="Open Collective backers" src="https://img.shields.io/opencollective/backers/getferdi?logo=open-collective"></a>
 <a href="#sponsors-via-opencollective"><img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/getferdi?logo=open-collective"></a>
+<a href="https://github.com/vraravam/ferdi/actions/workflows/ferdi-builds.yml"><img alt="Build Status" src="https://github.com/vraravam/ferdi/actions/workflows/ferdi-builds.yml/badge.svg?branch=develop&event=push"></a>
 <a href="https://ci.appveyor.com/project/kytwb/ferdi"><img alt="Build Status Windows" src="https://img.shields.io/appveyor/ci/kytwb/ferdi/master?logo=appveyor"></a>
 <a href="https://travis-ci.org/getferdi/ferdi"><img alt="Build Status Mac & Linux" src="https://img.shields.io/travis/getferdi/ferdi/master?logo=travis"></a>
 <a href="https://gitter.im/getferdi/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img alt="Gitter Chat Room" src="https://img.shields.io/gitter/room/getferdi/community"></a>
@@ -38,6 +39,7 @@
   - [How to get and start using Ferdi](#how-to-get-and-start-using-ferdi)
     - [Download Ferdi](#download-ferdi)
     - [Or use Chocolatey (Windows only)](#or-use-chocolatey-windows-only)
+    - [Or use Windows Package Manager (Windows only)](#or-use-windows-package-manager-windows-only)
     - [Or use homebrew (macOS or Linux)](#or-use-homebrew-macos-or-linux)
     - [Or use AUR (Arch Linux)](#or-use-aur-arch-linux)
   - [What makes Ferdi different from Franz?](#what-makes-ferdi-different-from-franz)

@@ -1,0 +1,196 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+# Note: This workflow requires some secrets setup, and set on this repo with the names:
+  # 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
+  # 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
+  # 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
+  # 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac and windows artifacts)
+  # 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac and windows artifacts)
+
+name: Ferdi Builds
+
+on:
+  # Push to any tracked branches
+  push:
+    branches: [develop, release, nightly]
+  # PRs only on develop branch
+  pull_request:
+    branches: [develop]
+  # Manual trigger from the UI
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message for build'
+        required: true
+  schedule:
+    - cron: '0 0 * * *' # every night at 12 am
+
+env:
+  USE_HARD_LINKS: false
+  # DEBUG: electron-builder
+
+jobs:
+  check_date:
+    runs-on: ubuntu-latest
+    name: Check latest commit
+    outputs:
+      should_run: ${{ steps.should_run.outputs.should_run }}
+    steps:
+      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled'
+        uses: actions/checkout@v2
+        with:
+          ref: nightly
+          submodules: recursive
+          fetch-depth: 0
+      - name: Print latest commit
+        run: echo ${{ github.sha }}
+      - name: Setup git configs
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      - name: Merge from 'origin/develop' (continue if errored)
+        if: ${{ github.event_name == 'schedule' }}
+        continue-on-error: true
+        run: git merge --no-ff --no-verify --commit -m "Merge remote-tracking branch 'origin/develop' into HEAD" origin/develop
+      - name: Update submodules (continue if errored)
+        if: ${{ github.event_name == 'schedule' }}
+        continue-on-error: true
+        run: |
+          echo "Updating submodules"
+          git submodule update --remote -f
+
+          echo "Committing submodules"
+          git commit -am "Update submodules" --no-verify || true
+
+          echo "Running linter and tests"
+          npm run lint && npm run test
+
+          echo "Committing linter fixes"
+          git commit -am "Apply linter fixes" --no-verify || true
+      - id: should_run
+        name: Check whether there are any commits since this run was last triggered and either push or set the output
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
+          echo "Number of changes: $CHANGES_COUNT"
+          if [ $CHANGES_COUNT -eq 0 ]; then
+            echo "No changes found - terminating the build"
+            echo "::set-output name=should_run::false"
+          else
+            echo "Bumping version number"
+            npm version prerelease --preid=nightly
+
+            echo "Pushing merge, linter, submodule and version-bump commits"
+            git push origin nightly --no-verify
+          fi
+
+  build:
+    name: '${{ matrix.os }}'
+    needs: check_date
+    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-10.15, ubuntu-20.04, windows-2019]
+        node-version: [14.16.1]
+      fail-fast: false
+    steps:
+      - name: Set env vars for macOS and Linux
+        if: startsWith(runner.os, 'macOS') || startsWith(runner.os, 'Linux')
+        run: |
+          echo "NPM_CACHE=$HOME/.npm" >> $GITHUB_ENV
+          echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
+          echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
+      - name: Set env vars for Windows
+        if: startsWith(runner.os, 'Windows')
+        run: |
+          echo "HOME=$USERPROFILE" >> $GITHUB_ENV
+          echo "NPM_CACHE=$USERPROFILE\.npm" >> $GITHUB_ENV
+          echo "ELECTRON_CACHE=$USERPROFILE\.cache\electron" >> $GITHUB_ENV
+          echo "ELECTRON_BUILDER_CACHE=$USERPROFILE\.cache\electron-builder" >> $GITHUB_ENV
+        shell: bash
+      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled'
+        uses: actions/checkout@v2
+        if: ${{ github.event_name == 'schedule' }}
+        with:
+          submodules: recursive
+          ref: nightly
+      - name: Checkout code along with submodules for any branch if the trigger event is 'scheduled'
+        uses: actions/checkout@v2
+        if: ${{ github.event_name != 'schedule' }}
+        with:
+          submodules: recursive
+      - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
+        run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+        shell: bash
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{ env.NPM_CACHE }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Cache electron modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_CACHE }}
+      - name: Cache electron-builder modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-builder-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_BUILDER_CACHE }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
+        if: startsWith(runner.os, 'macOS')
+        run: |
+          sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
+          sudo xcode-select -s "/Applications/Xcode_12.4.app"
+      - name: Uninstall locally and reinstall node-gyp globally
+        if: startsWith(runner.os, 'macOS') || startsWith(runner.os, 'Linux')
+        run: |
+          npm uninstall node-gyp
+          npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Install node dependencies recursively
+        run: npx lerna bootstrap
+      - name: Package recipes
+        run: npm i && npm run package
+        working-directory: ./recipes
+      - name: Run linter and tests
+        run: npm run lint && npm run test
+      - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
+        if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
+        run: npm run build
+        shell: bash
+      - name: Build Ferdi with publish for 'nightly' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'nightly' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=nightlies
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          APPLEID: ${{ secrets.APPLEID }}
+          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      - name: Build Ferdi with publish for 'release' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'release' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=ferdi
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          APPLEID: ${{ secrets.APPLEID }}
+          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          CSC_LINK: ${{ secrets.CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
