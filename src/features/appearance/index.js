@@ -18,6 +18,12 @@ function setAppearance(style) {
   styleElement.innerHTML = style;
 }
 
+// See https://github.com/Qix-/color/issues/53#issuecomment-656590710
+function darkenAbsolute(originalColor, absoluteChange) {
+  const originalLightness = originalColor.lightness();
+  return originalColor.lightness(originalLightness - absoluteChange);
+}
+
 function generateAccentStyle(accentColorStr) {
   let style = '';
 
@@ -35,10 +41,10 @@ function generateAccentStyle(accentColorStr) {
   } catch (e) {
     // Ignore invalid accent color.
   }
-  const darkerColorStr = accentColor.darken(0.05).hex();
+  const darkerColorStr = darkenAbsolute(accentColor, 5).hex();
   style += `
     a.button:hover, button.button:hover {
-      background: ${accentColor.darken(0.1).hex()};
+      background: ${darkenAbsolute(accentColor, 10).hex()};
     }
 
     .franz-form__button:hover,

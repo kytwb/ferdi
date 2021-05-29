@@ -33,7 +33,8 @@
   width: $theme-sidebar-width;
 
   &.is-active {
-    background: lighten($theme-brand-primary, 35%);
+    background: change-color($theme-brand-primary,
+                             $lightness: min(lightness($theme-brand-primary) * 1.35, 100));
     border-left-width: 4px;
     border-left-style: solid;
     color: $theme-brand-primary;
