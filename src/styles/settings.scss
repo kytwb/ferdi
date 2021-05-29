@@ -79,16 +79,16 @@
       }
 
       .badge {
-        background: $dark-theme-gray-lighter;
-        color: $dark-theme-gray-smoke;
+        background: $dark-theme-gray;
+        color: $dark-theme-gray-lightest;
       }
 
       &:hover {
         background: darken($dark-theme-gray-darker, 5%);
 
         .badge {
-          background: $dark-theme-gray-lighter;
-          color: $dark-theme-gray-smoke;
+          background: $dark-theme-gray;
+          color: $dark-theme-gray-lightest;
         }
       }
 
@@ -98,11 +98,11 @@
 
       &.is-active {
         background: $dark-theme-gray;
-        color: $dark-theme-gray-smoke;
+        color: $dark-theme-gray-lightest;
 
         .badge {
           background: $dark-theme-gray-lighter;
-          color: $dark-theme-gray-smoke;
+          color: #000;
         }
       }
     }
@@ -466,11 +466,17 @@
     transition: background $theme-transition-time, color $theme-transition-time;
     border-bottom: 1px solid darken($theme-gray-lightest, 3%);
 
+    .badge {
+      background: $theme-gray-light;
+      color: #FFF;
+    }
+
     &:hover {
-      background: darken($theme-gray-lightest, 5%);
+      background: darken($theme-gray-lightest, 8%);
 
       .badge {
-        background: #FFF;
+        background: $theme-gray-light;
+        color: #FFF;
       }
     }
 
@@ -488,7 +494,6 @@
   .settings-navigation__expander { flex: 1; }
 
   .badge {
-
     display: initial;
     transition: background $theme-transition-time, color $theme-transition-time;
   }
