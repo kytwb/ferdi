@@ -133,7 +133,7 @@
     "terser": "4.4.0",
     "uuid": "3.3.3",
     "validator": "11.0.0",
-    "ws": "6.2.1"
+    "ws": "7.4.6"
   },
   "devDependencies": {
     "@adlk/misty": "^0.2.0",
