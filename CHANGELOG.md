@@ -1,3 +1,117 @@
+# [5.6.0-beta.6](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.5...v5.6.0-beta.6) (2021-05-31)
+
+### Features
+- Add new setting to minimize to tray when closing on Windows (#1087) 💖 @1mm0rt41PC
+- Add Search with Google and DuckDuckGo items in the context menu 💖 @MosheGross, @vraravam
+- Add support for Apple M1 💖 @arioki1
+- Enchance Quick switch with fuzzy search and highlighting (#1311) (#1319) 💖 @vraravam
+- Alternative shortcuts for Quick switch (#850)
+- Add Back, Forward, Open, and Copy to clipboard items in browser context menu 💖 @vraravam
+- Add Copy to clipboard item for blob: images on macOS 💖 @vraravam
+- Add MSI installer for Windows (#1443) 💖 @vraravam
+
+### Minor changes
+- Display search input when service is not found 💖 @arioki1
+- Expose Electron version information in "About Ferdi" (#1109) 💖 @vraravam
+- Add delete service confirmation (#1286) 💖 @vraravam
+- Add macOS Big Sur icon (#1056) (#1100) 💖 @alopix @jakobsudau
+- Improve custom accent color design
+- Improve performance on Setting screen with large cache size
+- Automatically fill in default service URL (#1436) 💖 @vraravam
+- Installation instructions for winget-cli 💖 @mloskot
+- Improve screen sharing selector appearance and add screen sharing cancellation
+
+### Recipes
+- Add 14 new recipes! Intercom, Infomaniak Mail, Clockify, BiP, Azure DevOps, Canvas, Webex Teams, Erepublik, Kimai, Snapdrop, Amazon WorkMail, Google Contacts, Harvest, Inoreader 💖 @guillaume-ro-fr, @bidouilles, @sysuin, @arioki1, @BilelJegham, @Sagir-mo, @rbertoncelj, @kevinpapst, @vraravam, @annagrram
+- Update Google Calendar icon 💖 @jobo90
+- Fix WhatsApp unread message counter 💖 @bpwned, @TheBoroer
+- Synchronize Outlook services and correct message count 💖 @cromefire
+- Fix null element error in Protonmail 💖 @mmso
+- Update URL for Telegram React 💖 @RoiArthurB
+- Update Zulip logo and contact details 💖 @adambirds
+- Fix Element unread message count 💖 @fjl5
+- Fix Google Chat image previews (#1283) 💖 @vraravam
+- Fix non-SSO login for Google services (#1273) (#1283) 💖 @vraravam
+- Update Gmail icon (getferdi/recipes#349) 💖 @vraravam
+- Fix Gitter unread message count 💖 @vraravam
+- Fix Hangouts Chat unread message count (getferdi/recipes#102) (getferdi/recipes#485) 💖 @vraravam
+- Add self-hosted URL support for Office 365 (getferdi/recipes#500) 💖 @vraravam
+- Fix login redirect in PushBullet (#1331) 💖 @vraravam
+- Fix Mattermost unread count (#1110) 💖 @kemenaran
+- Add self-hosted URL support for Jitsi (#1228) 💖 @vraravam
+- Add self-hosted URL support for Jira (#1169) 💖 @vraravam
+- Fix Messenger unread count (#1113) 💖 @vraravam
+- Fix Zulip unread count (#1362) 💖 @vraravam
+- Fix Telegram React unread count 💖 @vraravam
+
+### Fixes
+- Fix installation instructions for Homebrew (#1143) 💖 @kawarimidoll
+- Show username and lastname fetched from server in account settings (#1040) 💖 @k0staa
+- Fix "Service Developer Tools not available" (#147) 💖 @arioki1
+- Fix window unsnapping when clicking notification (#896) 💖 @stnkl
+- Fix spellchecker language saving (#1016)
+- Fix typo in the Login screen 💖 @eltociear
+- Fix typo in README.md 💖 @graves501
+- Fix "Show Ferdi In Menu Bar" nomenclature on macOS (#1417) 💖 @vraravam
+
+### Under the hood
+- Update to Electron 13.0.1
+- Update dependencies
+- Synchronize with Ferdi 5.6.0
+- Add Docker containers for building in Linux and development with VSCode 💖 @vraravam
+
+# [5.6.0-beta.5](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.2...v5.6.0-beta.5) (2020-12-20)
+
+### Features
+- Add FAB to service dashboard (#824)
+- Add "Go to Home Page" in services context menu (#900) 💖 @raicerk
+- Add vertical style and "Always show workspace drawer" setting (#567)
+- Flash TaskBar (Windows) / Bounce Dock (Mac) on New Message (#1020) 💖 @mahadevans87
+- Add danish translations 💖 @madsmtm
+
+### Minor changes
+- Update dependencies
+- Add Norwegian translations (#840) 💖 @larsmagnusherland
+- Update adaptable dark mode to work on all platforms (#834)
+- Improved onboarding flow and settings empty states (#996) 💖 @tofran
+- Enhance the "Support Ferdi" screen (#722) 💖 @yourcontact
+- Improve Ferdi's design (#977)
+
+### Recipes
+- Add 24 new recipes! Nextcloud, Nextcloud Cospend, Nextcloud Tasks, StackExchange, Noisli, Yahoo Mail, TickTick, DevDocs, Figma, iCloud Reminders, OneNote, YouTrack, SimpleNote, Lark, Slite, Pinterest, Disqus, Microsoft Todo, Google Podcasts, YouTube Music, Sync.com, Wire, Fleep, Google Classroom 💖 @eandersons, @kittywhiskers, @andrsussa, @vraravam, @arioki1, @hongshaoyang, @tofran, @stephenpapierski, @marcolussetti, @alopix, @iansearly, @TanZng
+- Fix connection error in case of audio/video call in Google Meet (getferdi/recipes#186) 💖 @Room4O4
+- Fix Wrike notification counter (getferdi/recipes#237) 💖 @mvdgun
+- Update recipe for element (getferdi/recipes#247) 💖 @fjl5
+- Add support for empty unread badges in WhatsApp (getferdi/recipes#236) 💖 @ruippeixotog
+- Add custom URLs for Jira (getferdi/recipes#217) 💖 @yann-soubeyrand
+- Fixing unread-counter for office365 (getferdi/recipes#229) 💖 @CrEaK
+- Mattermost: Fix badge for unread channels when in single team (getferdi/recipes#230) 💖 @CrEaK
+- Update Riot.im to Element.io (getferdi/recipes#235) 💖 @omove
+- Fix whatsapp fullscreen for different screen sizes (getferdi/recipes#216) 💖 @breuerfelix
+- Changed gmail getMessages to grab value next to Inbox 💖 @stephenpapierski
+- Fix Gmail getMessages produces wrong value 💖 @stephenpapierski
+- Update Hangouts Chat to display direct and indirect notifications (#306) 💖 @mahadevans87
+- Update user agent for OWA and Outlook (#302) 💖 @StormPooper
+- Updated Zoho icons 💖 @tofran
+- Spoof Chrome plugins for Skype 💖 @kris7t
+- More careful Gmail unread count detection 💖 @kris7t
+- Update Todoist notifications badge selector (#333) (#334) 💖 @rvisharma
+- Fix messages count for Fastmail (#335) (#336) 💖 @marcolussetti
+- Fix Zoho Mail 💖 @pointergr
+- Add notification count for Habitica 💖 @iansearly
+
+### Fixes
+- Fix Electron 9 crash on Windows 10 (#986) 💖 @mahadevans87
+- Patch getDisplayMedia for screen sharing in all services (#802)
+- Fix "Open folder" button on "Custom services" screen (#991)
+
+### Under the hood
+- Update to Electron 9
+- Remove Ferdi string from default user agent (#806) 💖 @dannyqiu
+- Add recipes packaging to development setup (#985)
+- Use imagemin to minify images (#1008) 💖 @vraravam
+- Disable Chromium's poor MPRIS implementation (#1023)
+
 # [5.6.0-beta.2](https://github.com/getferdi/ferdi/compare/v5.5.0...v5.6.0-beta.2) (2020-06-14)
 
 ### Features
