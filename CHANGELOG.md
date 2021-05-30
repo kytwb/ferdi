@@ -3,11 +3,11 @@
 ### Features
 - Add new setting to minimize to tray when closing on Windows (#1087) 💖 @1mm0rt41PC
 - Add Search with Google and DuckDuckGo items in the context menu 💖 @MosheGross, @vraravam
-- Add support for Apple M1 💖 @arioki1
+- Add support for Apple M1 💖 @arioki1, @vraravam
 - Enchance Quick switch with fuzzy search and highlighting (#1311) (#1319) 💖 @vraravam
-- Alternative shortcuts for Quick switch (#850)
+- Alternative shortcuts for Quick switch (#850) 💖 @kris7t
 - Add Back, Forward, Open, and Copy to clipboard items in browser context menu 💖 @vraravam
-- Add Copy to clipboard item for blob: images on macOS 💖 @vraravam
+- Add Copy to clipboard item for blob images on macOS 💖 @vraravam
 - Add MSI installer for Windows (#1443) 💖 @vraravam
 
 ### Minor changes
@@ -15,8 +15,8 @@
 - Expose Electron version information in "About Ferdi" (#1109) 💖 @vraravam
 - Add delete service confirmation (#1286) 💖 @vraravam
 - Add macOS Big Sur icon (#1056) (#1100) 💖 @alopix @jakobsudau
-- Improve custom accent color design
-- Improve performance on Setting screen with large cache size
+- Improve custom accent color design 💖 @kris7t
+- Improve performance on Setting screen with large cache size 💖 @kris7t
 - Automatically fill in default service URL (#1436) 💖 @vraravam
 - Installation instructions for winget-cli 💖 @mloskot
 - Improve screen sharing selector appearance and add screen sharing cancellation
@@ -55,9 +55,9 @@
 - Fix "Show Ferdi In Menu Bar" nomenclature on macOS (#1417) 💖 @vraravam
 
 ### Under the hood
-- Update to Electron 13.0.1
-- Update dependencies
-- Synchronize with Ferdi 5.6.0
+- Update to Electron 13.0.1 💖 @vraravam, @kris7t
+- Update dependencies 💖 @vraravam, @kris7t
+- Synchronize with Ferdi 5.6.0 💖 @vraravam
 - Add Docker containers for building in Linux and development with VSCode 💖 @vraravam
 
 # [5.6.0-beta.5](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.2...v5.6.0-beta.5) (2020-12-20)
