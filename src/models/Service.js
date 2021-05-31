@@ -288,7 +288,11 @@ export default class Service {
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
       debug('new-window', event, url, frameName, options);
       if (event.disposition === 'foreground-tab') {
-        ipcRenderer.send('open-browser-window', event, this.id);
+        ipcRenderer.send('open-browser-window', {
+          disposition: event.disposition,
+          url: event.url,
+          serviceId: this.id,
+        });
       } else {
         openWindow({
           event,
