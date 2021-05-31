@@ -49,7 +49,7 @@ win:
 linux:
   icon: ./build-helpers/images/icons
   category: Network;InstantMessaging;
-  executableName: ferdi
+  executableName: Ferdi
   synopsis: "Messaging app for WhatsApp, Slack, Telegram, Gmail, Hangouts and many many more."
   description: "Ferdi is your messaging app / former Emperor of Austria and combines chat & messaging services into one application. Ferdi currently supports Slack, WhatsApp, Gmail, Facebook Messenger, Telegram, Google Hangouts, GroupMe, Skype and many more. You can download Ferdi for free for Mac & Windows."
   target:
