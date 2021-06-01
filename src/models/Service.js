@@ -4,7 +4,7 @@ import { webContents } from '@electron/remote';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
-import userAgent from '../helpers/userAgent-helpers';
+import userAgent, { isChromeless } from '../helpers/userAgent-helpers';
 import { TODOS_RECIPE_ID, todosStore } from '../features/todos';
 import { isValidExternalURL } from '../helpers/url-helpers';
 
@@ -264,7 +264,7 @@ export default class Service {
     }
 
     const handleUserAgent = (url, forwardingHack = false) => {
-      if (url.startsWith('https://accounts.google.com')) {
+      if (isChromeless(url)) {
         if (!this.chromelessUserAgent) {
           debug('Setting user agent to chromeless for url', url);
           this.webview.setUserAgent(userAgent(true));

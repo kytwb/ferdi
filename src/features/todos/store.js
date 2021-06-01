@@ -16,6 +16,8 @@ import {
 import { IPC } from './constants';
 import { state as delayAppState } from '../delayApp';
 
+import userAgent, { isChromeless } from '../../helpers/userAgent-helpers';
+
 const debug = require('debug')('Ferdi:feature:todos:store');
 
 export default class TodoStore extends FeatureStore {
@@ -24,6 +26,8 @@ export default class TodoStore extends FeatureStore {
   @observable isFeatureActive = false;
 
   @observable webview = null;
+
+  @observable chromelessUserAgent = false;
 
   isInitialized = false;
 
@@ -123,8 +127,33 @@ export default class TodoStore extends FeatureStore {
 
   @action _setTodosWebview = ({ webview }) => {
     debug('_setTodosWebview', webview);
-    this.webview = webview;
+    if (this.webview !== webview) {
+      this.webview = webview;
+      this._listenWebviewEvents();
+    }
   };
+
+  _listenWebviewEvents() {
+    const handleUserAgent = (url, forwardingHack = false) => {
+      if (isChromeless(url)) {
+        if (!this.chromelessUserAgent) {
+          debug('Setting todos user agent to chromeless for url', url);
+          this.webview.setUserAgent(userAgent(true));
+          if (forwardingHack) {
+            this.webview.loadURL(url);
+          }
+          this.chromelessUserAgent = true;
+        }
+      } else if (this.chromelessUserAgent) {
+        debug('Setting todos user agent to contain chrome');
+        this.webview.setUserAgent(userAgent());
+        this.chromelessUserAgent = false;
+      }
+    };
+
+    this.webview.addEventListener('will-navigate', event => handleUserAgent(event.url, true));
+    this.webview.addEventListener('did-navigate', event => handleUserAgent(event.url));
+  }
 
   @action _handleHostMessage = (message) => {
     debug('_handleHostMessage', message);

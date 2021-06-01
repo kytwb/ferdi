@@ -19,6 +19,10 @@ function linux() {
   return 'X11; Ubuntu; Linux x86_64';
 }
 
+export function isChromeless(url) {
+  return url.startsWith('https://accounts.google.com');
+}
+
 export default function userAgent(removeChromeVersion = false, addFerdiVersion = false) {
   let platformString = '';
 
