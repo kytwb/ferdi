@@ -6,6 +6,7 @@ import path from 'path';
 
 import userAgent from '../helpers/userAgent-helpers';
 import { TODOS_RECIPE_ID, todosStore } from '../features/todos';
+import { isValidExternalURL } from '../helpers/url-helpers';
 
 const debug = require('debug')('Ferdi:Service');
 
@@ -287,6 +288,9 @@ export default class Service {
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
       debug('new-window', event, url, frameName, options);
+      if (!isValidExternalURL(event.url)) {
+        return;
+      }
       if (event.disposition === 'foreground-tab') {
         ipcRenderer.send('open-browser-window', {
           disposition: event.disposition,
