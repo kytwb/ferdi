@@ -18,6 +18,7 @@ export default (params) => {
           autoUpdater.allowPrerelease = Boolean(params.settings.app.get('beta'));
 
           if (params.settings.app.get('nightly')) {
+            autoUpdater.allowPrerelease = Boolean(params.settings.app.get('nightly'));
             autoUpdater.setFeedURL({
               provider: 'github',
               repo: 'nightlies',
