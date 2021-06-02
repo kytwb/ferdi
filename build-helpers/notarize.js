@@ -2,7 +2,7 @@ const { notarize } = require("electron-notarize");
 
 exports.default = async function notarizing(context) {
   const { electronPlatformName, appOutDir } = context;
-  if (electronPlatformName !== "darwin" || (process.env.TRAVIS_BRANCH !== 'release' && process.env.TRAVIS_BRANCH !== 'nightly')) {
+  if (electronPlatformName !== "darwin" || (process.env.GIT_BRANCH_NAME !== 'release' && process.env.GIT_BRANCH_NAME !== 'nightly')) {
     return;
   }
 

@@ -2,7 +2,6 @@
 .husky/
 .stage
 .tmp
-.travis.yml
 **/.DS_Store
 **/.env
 **/.git*
@@ -15,7 +14,6 @@
 **/npm-debug.log*
 **/server*.log
 **/yarn-error.log
-appveyor.yml
 Dockerfile
 flow-typed
 out
