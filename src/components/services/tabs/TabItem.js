@@ -214,7 +214,7 @@ const styles = {
             && service.unreadDirectMessageCount === 0
             && service.isIndirectMessageBadgeEnabled && (
             <span className="tab-item__message-count is-indirect">
-                •
+              •
             </span>
           )}
           {service.isHibernating && !service.isHibernationEnabled && (

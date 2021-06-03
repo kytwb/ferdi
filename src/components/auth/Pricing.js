@@ -221,7 +221,7 @@ export default @injectSheet(styles) @observer class Signup extends Component {
               <p className={classnames(classes.price, classes.trialPrice)}>
                 <span className={classes.figure}>
                   {currency}
-                0
+                  0
                 </span>
                 <sup>00</sup>
               </p>

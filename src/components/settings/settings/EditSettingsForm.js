@@ -675,13 +675,13 @@ export default @observer class EditSettingsForm extends Component {
                 <span>
 
 
-                Ferdi is based on
+                  Ferdi is based on
                   {' '}
                   <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
 
 
-                , a project published
-                under the
+                  , a project published
+                  under the
                   {' '}
                   <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0 License</a>
                 </span>
