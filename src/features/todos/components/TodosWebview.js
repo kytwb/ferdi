@@ -110,6 +110,7 @@ class TodosWebview extends Component {
     resize: PropTypes.func.isRequired,
     width: PropTypes.number.isRequired,
     minWidth: PropTypes.number.isRequired,
+    userAgent: PropTypes.string.isRequired,
     isTodosIncludedInCurrentPlan: PropTypes.bool.isRequired,
     stores: PropTypes.shape({
       settings: PropTypes.instanceOf(SettingsStore).isRequired,
@@ -207,6 +208,7 @@ class TodosWebview extends Component {
       classes,
       isTodosServiceActive,
       isVisible,
+      userAgent,
       isTodosIncludedInCurrentPlan,
       stores,
     } = this.props;
@@ -268,6 +270,7 @@ class TodosWebview extends Component {
             partition={TODOS_PARTITION_ID}
             preload="./features/todos/preload.js"
             ref={(webview) => { this.webview = webview ? webview.view : null; }}
+            useragent={userAgent}
             src={todoUrl}
           />
           )

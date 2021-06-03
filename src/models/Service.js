@@ -4,9 +4,9 @@ import { webContents } from '@electron/remote';
 import normalizeUrl from 'normalize-url';
 import path from 'path';
 
-import userAgent, { isChromeless } from '../helpers/userAgent-helpers';
 import { TODOS_RECIPE_ID, todosStore } from '../features/todos';
 import { isValidExternalURL } from '../helpers/url-helpers';
+import UserAgent from './UserAgent';
 
 const debug = require('debug')('Ferdi:Service');
 
@@ -94,7 +94,7 @@ export default class Service {
 
   @observable lostRecipeReloadAttempt = 0;
 
-  @observable chromelessUserAgent = false;
+  @observable userAgentModel = null;
 
   constructor(data, recipe) {
     if (!data) {
@@ -155,6 +155,8 @@ export default class Service {
     if (hibernate && hibernateOnStartup && !isActive) {
       this.isHibernating = true;
     }
+
+    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
 
     autorun(() => {
       if (!this.isEnabled) {
@@ -234,12 +236,7 @@ export default class Service {
   }
 
   @computed get userAgent() {
-    let ua = userAgent(this.chromelessUserAgent);
-    if (typeof this.recipe.overrideUserAgent === 'function') {
-      ua = this.recipe.overrideUserAgent();
-    }
-
-    return ua;
+    return this.userAgentModel.userAgent;
   }
 
   @computed get partition() {
@@ -249,6 +246,8 @@ export default class Service {
 
   initializeWebViewEvents({ handleIPCMessage, openWindow, stores }) {
     const webviewWebContents = webContents.fromId(this.webview.getWebContentsId());
+
+    this.userAgentModel.setWebviewReference(this.webview);
 
     // If the recipe has implemented modifyRequestHeaders,
     // Send those headers to ipcMain so that it can be set in session
@@ -262,23 +261,6 @@ export default class Service {
     } else {
       debug(this.name, 'modifyRequestHeaders is not defined in the recipe');
     }
-
-    const handleUserAgent = (url, forwardingHack = false) => {
-      if (isChromeless(url)) {
-        if (!this.chromelessUserAgent) {
-          debug('Setting user agent to chromeless for url', url);
-          this.webview.setUserAgent(userAgent(true));
-          if (forwardingHack) {
-            this.webview.loadURL(url);
-          }
-          this.chromelessUserAgent = true;
-        }
-      } else if (this.chromelessUserAgent) {
-        debug('Setting user agent to contain chrome');
-        this.webview.setUserAgent(this.userAgent);
-        this.chromelessUserAgent = false;
-      }
-    };
 
     this.webview.addEventListener('ipc-message', e => handleIPCMessage({
       serviceId: this.id,
@@ -306,8 +288,6 @@ export default class Service {
       }
     });
 
-    this.webview.addEventListener('will-navigate', event => handleUserAgent(event.url, true));
-
     this.webview.addEventListener('did-start-loading', (event) => {
       debug('Did start load', this.name, event);
 
@@ -325,10 +305,7 @@ export default class Service {
     };
 
     this.webview.addEventListener('did-frame-finish-load', didLoad.bind(this));
-    this.webview.addEventListener('did-navigate', (event) => {
-      handleUserAgent(event.url);
-      didLoad();
-    });
+    this.webview.addEventListener('did-navigate', didLoad.bind(this));
 
     this.webview.addEventListener('did-fail-load', (event) => {
       debug('Service failed to load', this.name, event);

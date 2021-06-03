@@ -27,6 +27,7 @@ class TodosScreen extends Component {
           width={todosStore.width}
           minWidth={TODOS_MIN_WIDTH}
           resize={width => todoActions.resize({ width })}
+          userAgent={todosStore.userAgent}
           isTodosIncludedInCurrentPlan
         />
       </ErrorBoundary>

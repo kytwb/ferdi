@@ -16,7 +16,7 @@ import {
 import { IPC } from './constants';
 import { state as delayAppState } from '../delayApp';
 
-import userAgent, { isChromeless } from '../../helpers/userAgent-helpers';
+import UserAgent from '../../models/UserAgent';
 
 const debug = require('debug')('Ferdi:feature:todos:store');
 
@@ -27,7 +27,7 @@ export default class TodoStore extends FeatureStore {
 
   @observable webview = null;
 
-  @observable chromelessUserAgent = false;
+  @observable userAgentModel = new UserAgent();
 
   isInitialized = false;
 
@@ -53,6 +53,10 @@ export default class TodoStore extends FeatureStore {
 
   @computed get settings() {
     return localStorage.getItem('todos') || {};
+  }
+
+  @computed get userAgent() {
+    return this.userAgentModel.userAgent;
   }
 
   // ========== PUBLIC API ========= //
@@ -129,31 +133,9 @@ export default class TodoStore extends FeatureStore {
     debug('_setTodosWebview', webview);
     if (this.webview !== webview) {
       this.webview = webview;
-      this._listenWebviewEvents();
+      this.userAgentModel.setWebviewReference(webview);
     }
   };
-
-  _listenWebviewEvents() {
-    const handleUserAgent = (url, forwardingHack = false) => {
-      if (isChromeless(url)) {
-        if (!this.chromelessUserAgent) {
-          debug('Setting todos user agent to chromeless for url', url);
-          this.webview.setUserAgent(userAgent(true));
-          if (forwardingHack) {
-            this.webview.loadURL(url);
-          }
-          this.chromelessUserAgent = true;
-        }
-      } else if (this.chromelessUserAgent) {
-        debug('Setting todos user agent to contain chrome');
-        this.webview.setUserAgent(userAgent());
-        this.chromelessUserAgent = false;
-      }
-    };
-
-    this.webview.addEventListener('will-navigate', event => handleUserAgent(event.url, true));
-    this.webview.addEventListener('did-navigate', event => handleUserAgent(event.url));
-  }
 
   @action _handleHostMessage = (message) => {
     debug('_handleHostMessage', message);
