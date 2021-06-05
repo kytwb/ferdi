@@ -503,6 +503,7 @@ export default @observer class EditSettingsForm extends Component {
             { this.state.activeSetttingsTab === 'privacy' && (
               <div>
                 <Toggle field={form.$('privateNotifications')} />
+                <Toggle field={form.$('clipboardNotifications')} />
                 {(isWindows || isMac) && (
                   <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
 

@@ -161,7 +161,7 @@ module.exports = class ContextMenuBuilder {
         // Omit the mailto: portion of the link; we just want the address
         const url = isEmailAddress ? menuInfo.linkText : menuInfo.linkURL;
         clipboard.writeText(url);
-        this.sendNotificationOnClipboardEvent(`Link URL copied: ${url}`);
+        this._sendNotificationOnClipboardEvent(menuInfo.clipboardNotifications, () => `Link URL copied: ${url}`);
       },
     });
 
@@ -321,7 +321,7 @@ module.exports = class ContextMenuBuilder {
         const result = this.convertImageToBase64(menuInfo.srcURL,
           dataURL => clipboard.writeImage(nativeImage.createFromDataURL(dataURL)));
 
-        this.sendNotificationOnClipboardEvent(`Image copied from URL: ${menuInfo.srcURL}`);
+        this._sendNotificationOnClipboardEvent(menuInfo.clipboardNotifications, () => `Image copied from URL: ${menuInfo.srcURL}`);
         return result;
       },
     });
@@ -332,7 +332,7 @@ module.exports = class ContextMenuBuilder {
       label: this.stringTable.copyImageUrl(),
       click: () => {
         const result = clipboard.writeText(menuInfo.srcURL);
-        this.sendNotificationOnClipboardEvent(`Image URL copied: ${menuInfo.srcURL}`);
+        this._sendNotificationOnClipboardEvent(menuInfo.clipboardNotifications, () => `Image URL copied: ${menuInfo.srcURL}`);
         return result;
       },
     });
@@ -357,7 +357,7 @@ module.exports = class ContextMenuBuilder {
                 },
               });
             });
-          this.sendNotificationOnClipboardEvent(`Image downloaded: ${urlWithoutBlob}`);
+          this._sendNotificationOnClipboardEvent(menuInfo.clipboardNotifications, () => `Image downloaded: ${urlWithoutBlob}`);
         },
       });
 
@@ -520,7 +520,7 @@ module.exports = class ContextMenuBuilder {
       enabled: true,
       click: () => {
         clipboard.writeText(window.location.href);
-        this.sendNotificationOnClipboardEvent(`Page URL copied: ${window.location.href}`);
+        this._sendNotificationOnClipboardEvent(menu.clipboardNotifications, () => `Page URL copied: ${window.location.href}`);
       },
     }));
 
@@ -560,11 +560,14 @@ module.exports = class ContextMenuBuilder {
     return menu;
   }
 
-  sendNotificationOnClipboardEvent(notificationText) {
+  _sendNotificationOnClipboardEvent(isDisabled, notificationText) {
+    if (isDisabled) {
+      return;
+    }
     // eslint-disable-next-line no-new
     new window.Notification('Data copied into Clipboard',
       {
-        body: notificationText,
+        body: notificationText(),
       });
   }
 };

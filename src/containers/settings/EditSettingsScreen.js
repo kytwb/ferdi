@@ -68,6 +68,10 @@ const messages = defineMessages({
     id: 'settings.app.form.privateNotifications',
     defaultMessage: '!!!Don\'t show message content in notifications',
   },
+  clipboardNotifications: {
+    id: 'settings.app.form.clipboardNotifications',
+    defaultMessage: '!!!Don\'t show notifications for clipboard events',
+  },
   notifyTaskBarOnMessage: {
     id: 'settings.app.form.notifyTaskBarOnMessage',
     defaultMessage: '!!!Notify TaskBar/Dock on new message',
@@ -248,6 +252,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         minimizeToSystemTray: settingsData.minimizeToSystemTray,
         closeToSystemTray: settingsData.closeToSystemTray,
         privateNotifications: settingsData.privateNotifications,
+        clipboardNotifications: settingsData.clipboardNotifications,
         notifyTaskBarOnMessage: settingsData.notifyTaskBarOnMessage,
         navigationBarBehaviour: settingsData.navigationBarBehaviour,
         searchEngine: settingsData.searchEngine,
@@ -399,6 +404,11 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(messages.privateNotifications),
           value: settings.all.app.privateNotifications,
           default: DEFAULT_APP_SETTINGS.privateNotifications,
+        },
+        clipboardNotifications: {
+          label: intl.formatMessage(messages.clipboardNotifications),
+          value: settings.all.app.clipboardNotifications,
+          default: DEFAULT_APP_SETTINGS.clipboardNotifications,
         },
         notifyTaskBarOnMessage: {
           label: intl.formatMessage(messages.notifyTaskBarOnMessage),
