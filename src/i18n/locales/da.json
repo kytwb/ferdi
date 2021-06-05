@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "Åbn Ferdi ved start",
   "settings.app.form.automaticUpdates": "Aktiver automatiske opdateringer",
   "settings.app.form.beta": "Medtag betaversioner",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Luk Ferdi til systembakken",
   "settings.app.form.customTodoServer": "Brugerdefineret Todo server",
   "settings.app.form.darkMode": "Aktiver mørk tilstand",
