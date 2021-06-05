@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "Mở Ferdi khi khởi động máy",
   "settings.app.form.automaticUpdates": "Cho phép cập nhật",
   "settings.app.form.beta": "Bao gồm phiên bản thử nghiệp",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Thu nhỏ Ferdi xuống khay hệ thống",
   "settings.app.form.customTodoServer": "Tùy chỉnh Server Todo",
   "settings.app.form.darkMode": "Cho phép Chế độ nền tối",
