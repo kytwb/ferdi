@@ -13,7 +13,7 @@ name: Ferdi Builds
 on:
   # Push to any tracked branches
   push:
-    branches: [develop, release, nightly]
+    branches: [develop, release, nightly, github-actions]
   # PRs only on develop branch
   pull_request:
     branches: [develop]
@@ -68,18 +68,22 @@ jobs:
 
           echo "Committing linter fixes"
           git commit -am "Apply linter fixes" --no-verify || true
+      - name: Capture if this is a manually triggered forced rebuild
+        run: echo "FORCE_REBUILD=${{ contains(github.event.inputs.message, 'force build') }}" >> $GITHUB_ENV
       - id: should_run
         name: Check whether there are any commits since this run was last triggered and either push or set the output
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || env.FORCE_REBUILD == 'true' }}
         run: |
           CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
           echo "Number of changes: $CHANGES_COUNT"
-          if [ $CHANGES_COUNT -eq 0 ]; then
+          if [ $CHANGES_COUNT -eq 0 ] && [ $FORCE_REBUILD != "true" ]; then
             echo "No changes found - terminating the build"
             echo "::set-output name=should_run::false"
           else
-            echo "Bumping version number"
-            npm version prerelease --preid=nightly
+            if [ $FORCE_REBUILD != "true" ]; then
+              echo "Bumping version number"
+              npm version prerelease --preid=nightly
+            fi
 
             echo "Pushing merge, linter, submodule and version-bump commits"
             git push origin nightly --no-verify
@@ -102,6 +106,7 @@ jobs:
           echo "NPM_CACHE=$HOME/.npm" >> $GITHUB_ENV
           echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
           echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
+          echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
       - name: Set env vars for Windows
         if: startsWith(runner.os, 'Windows')
         run: |
@@ -109,16 +114,17 @@ jobs:
           echo "NPM_CACHE=$USERPROFILE\.npm" >> $GITHUB_ENV
           echo "ELECTRON_CACHE=$USERPROFILE\.cache\electron" >> $GITHUB_ENV
           echo "ELECTRON_BUILDER_CACHE=$USERPROFILE\.cache\electron-builder" >> $GITHUB_ENV
+          echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
         shell: bash
-      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled'
+      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled' or this is a forced rebuild on the nightly branch
         uses: actions/checkout@v2
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || env.FORCE_REBUILD_ON_NIGHTLY == 'true' }}
         with:
           submodules: recursive
           ref: nightly
-      - name: Checkout code along with submodules for any branch if the trigger event is 'scheduled'
+      - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
         uses: actions/checkout@v2
-        if: ${{ github.event_name != 'schedule' }}
+        if: ${{ github.event_name != 'schedule' && env.FORCE_REBUILD_ON_NIGHTLY != 'true' }}
         with:
           submodules: recursive
       - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
