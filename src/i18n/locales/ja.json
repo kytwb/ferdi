@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "システム起動時にFerdiを開く",
   "settings.app.form.automaticUpdates": "アップデートを有効にする",
   "settings.app.form.beta": "Betaバージョンを含める",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Ferdiをシステムトレイに閉じる",
   "settings.app.form.customTodoServer": "カスタムToDoサーバー",
   "settings.app.form.darkMode": "ダークモードを有効にする",
