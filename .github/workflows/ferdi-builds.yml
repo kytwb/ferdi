@@ -186,17 +186,19 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
-          APPLEID: ${{ secrets.APPLEID }}
-          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          # TODO: Commented out since we don't have the secrets setup for publishing to the 'getferdi' org yet
+          # APPLEID: ${{ secrets.APPLEID }}
+          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          # CSC_LINK: ${{ secrets.CSC_LINK }}
+          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
       - name: Build Ferdi with publish for 'release' branch
         if: ${{ env.GIT_BRANCH_NAME == 'release' }}
         run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=ferdi
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
-          APPLEID: ${{ secrets.APPLEID }}
-          APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-          CSC_LINK: ${{ secrets.CSC_LINK }}
-          CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+          # TODO: Commented out since we don't have the secrets setup for publishing to the 'getferdi' org yet
+          # APPLEID: ${{ secrets.APPLEID }}
+          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          # CSC_LINK: ${{ secrets.CSC_LINK }}
+          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
