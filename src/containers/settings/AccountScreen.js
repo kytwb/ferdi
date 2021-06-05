@@ -10,6 +10,7 @@ import SettingsStore from '../../stores/SettingsStore';
 
 import AccountDashboard from '../../components/settings/account/AccountDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
+import { LIVE_FRANZ_API } from '../../config';
 import { WEBSITE } from '../../environment';
 
 export default
@@ -35,7 +36,7 @@ class AccountScreen extends Component {
     const api = stores.settings.all.app.server;
 
     let url;
-    if (api === 'https://api.franzinfra.com') {
+    if (api === LIVE_FRANZ_API) {
       url = stores.user.getAuthURL(
         `${WEBSITE}${route}?utm_source=app&utm_medium=account_dashboard`,
       );

@@ -8,8 +8,10 @@ const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/re
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
 export const LOCAL_API = 'http://localhost:3000';
-export const DEV_API = 'https://dev.franzinfra.com';
-export const LIVE_API = 'https://api.getferdi.com';
+export const DEV_FRANZ_API = 'https://dev.franzinfra.com';
+
+export const LIVE_FERDI_API = 'https://api.getferdi.com';
+export const LIVE_FRANZ_API = 'https://api.franzinfra.com';
 
 // URL used to submit debugger information, see https://github.com/getferdi/debugger
 export const DEBUG_API = 'https://debug.getferdi.com';
@@ -19,9 +21,8 @@ export const DEV_WS_API = 'wss://dev.franzinfra.com';
 export const LIVE_WS_API = 'wss://api.franzinfra.com';
 
 export const LOCAL_API_WEBSITE = 'http://localhost:3333';
-// export const DEV_API_WEBSITE = 'https://meetfranz.com';t
-export const DEV_API_WEBSITE = 'http://hash-58883791519ef6288c952316bdce7fb462283893.franzstaging.com/'; // TODO: revert me
-export const LIVE_API_WEBSITE = 'https://getferdi.com';
+export const DEV_API_FRANZ_WEBSITE = 'https://meetfranz.com';
+export const LIVE_API_FERDI_WEBSITE = 'https://getferdi.com';
 
 export const STATS_API = 'https://stats.franzinfra.com';
 
@@ -120,7 +121,7 @@ export const DEFAULT_APP_SETTINGS = {
   serviceLimit: 5,
 
   // Ferdi specific options
-  server: LIVE_API,
+  server: LIVE_FERDI_API,
   predefinedTodoServer: 'https://app.franztodos.com',
   autohideMenuBar: false,
   lockingFeatureEnabled: false,
@@ -171,7 +172,9 @@ export const DEFAULT_WINDOW_OPTIONS = {
   y: 0,
 };
 
-export const FRANZ_SERVICE_REQUEST = 'https://github.com/getferdi/recipes/issues';
+export const GITHUB_FRANZ_URL = 'https://github.com/meetfranz';
+export const GITHUB_FERDI_URL = 'https://github.com/getferdi';
+export const FRANZ_SERVICE_REQUEST = `${GITHUB_FERDI_URL}/recipes/issues`;
 export const FRANZ_TRANSLATION = 'https://crowdin.com/project/getferdi';
 export const FRANZ_DEV_DOCS = 'http://bit.ly/franz-dev-hub';
 

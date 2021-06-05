@@ -11,7 +11,7 @@ import Button from '../../ui/Button';
 import Infobox from '../../ui/Infobox';
 import SubscriptionForm from '../../../containers/subscription/SubscriptionFormScreen';
 import { i18nPlanName } from '../../../helpers/plan-helpers';
-import { LOCAL_SERVER } from '../../../config';
+import { LOCAL_SERVER, LIVE_FRANZ_API } from '../../../config';
 
 const messages = defineMessages({
   headline: {
@@ -154,7 +154,7 @@ class AccountDashboard extends Component {
     }
 
     const isUsingWithoutAccount = server === LOCAL_SERVER;
-    const isUsingFranzServer = server === 'https://api.franzinfra.com';
+    const isUsingFranzServer = server === LIVE_FRANZ_API;
 
     return (
       <div className="settings__main">
