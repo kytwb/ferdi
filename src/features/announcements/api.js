@@ -1,6 +1,7 @@
 import { app } from '@electron/remote';
 import Request from '../../stores/lib/Request';
 import apiBase from '../../api/apiBase';
+import { GITHUB_FERDI_REPO_NAME, GITHUB_ORG_NAME } from '../../config';
 
 const debug = require('debug')('Ferdi:feature:announcements:api');
 
@@ -11,7 +12,7 @@ export const announcementsApi = {
   },
 
   async getChangelog(version) {
-    const url = `https://api.github.com/repos/getferdi/ferdi/releases/tags/v${version}`;
+    const url = `https://api.github.com/repos/${GITHUB_ORG_NAME}/${GITHUB_FERDI_REPO_NAME}/releases/tags/v${version}`;
     debug(`fetching release changelog from Github url: ${url}`);
     const request = await window.fetch(url, { method: 'GET' });
     if (!request.ok) return null;
