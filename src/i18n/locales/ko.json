@@ -1,6 +1,6 @@
 {
   "app.errorHandler.action": "새로고침",
-  "app.errorHandler.headline": "문제가 발생했습니다.",
+  "app.errorHandler.headline": "문제가 발생했습니다",
   "changeserver.customServerLabel": "사용자 정의 서버",
   "changeserver.headline": "서버 번경",
   "changeserver.label": "서버",
