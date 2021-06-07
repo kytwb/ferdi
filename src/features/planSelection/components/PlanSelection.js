@@ -9,7 +9,7 @@ import color from 'color';
 import { mdiArrowRight } from '@mdi/js';
 import PlanItem from './PlanItem';
 import { i18nPlanName } from '../../../helpers/plan-helpers';
-import { PLANS } from '../../../config';
+import { DEV_API_FRANZ_WEBSITE, PLANS } from '../../../config';
 import { FeatureList } from '../../../components/ui/FeatureList';
 import Appear from '../../../components/ui/effects/Appear';
 
@@ -248,7 +248,7 @@ class PlanSelection extends Component {
             </div>
             <div className={classes.footer}>
               <a
-                href="https://meetfranz.com/pricing"
+                href={`${DEV_API_FRANZ_WEBSITE}/pricing`}
                 target="_blank"
                 className={classes.fullFeatureList}
               >

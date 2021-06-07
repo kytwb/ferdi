@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Team",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 17,
+      "line": 18,
       "column": 12
     },
     "end": {
-      "line": 20,
+      "line": 21,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Franz Team Management",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 21,
+      "line": 22,
       "column": 19
     },
     "end": {
-      "line": 24,
+      "line": 25,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Your are currently using Franz Servers, which is why you have access to Team Management.",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 25,
+      "line": 26,
       "column": 9
     },
     "end": {
-      "line": 28,
+      "line": 29,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Franz's Team Management allows you to manage Franz Subscriptions for multiple users. Please keep in mind that having a Franz Premium subscription will give you no advantages in using Ferdi: The only reason you still have access to Team Management is so you can manage your legacy Franz Teams and so that you don't loose any functionality in managing your account.",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 29,
+      "line": 30,
       "column": 8
     },
     "end": {
-      "line": 32,
+      "line": 33,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Manage your Team on meetfranz.com",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 33,
+      "line": 34,
       "column": 16
     },
     "end": {
-      "line": 36,
+      "line": 37,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Upgrade your Account",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 37,
+      "line": 38,
       "column": 17
     },
     "end": {
-      "line": 40,
+      "line": 41,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Teams are unavailable",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 41,
+      "line": 42,
       "column": 20
     },
     "end": {
-      "line": 44,
+      "line": 45,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Teams are currently only available when using the Franz Server and after paying for Franz Professional. Please change your server to https://api.franzinfra.com to use teams.",
     "file": "src/components/settings/team/TeamDashboard.js",
     "start": {
-      "line": 45,
+      "line": 46,
       "column": 24
     },
     "end": {
-      "line": 48,
+      "line": 49,
       "column": 3
     }
   }

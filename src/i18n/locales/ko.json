@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "부팅 시 Ferdi 실행",
   "settings.app.form.automaticUpdates": "업데이트 활성화",
   "settings.app.form.beta": "베타 버전 포함",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Ferdi 시스템 트레이로 닫기",
   "settings.app.form.customTodoServer": "Custom Todo Server",
   "settings.app.form.darkMode": "다크 모드 활성화",

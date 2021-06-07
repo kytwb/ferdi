@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "تشغيل فردي عند البدء",
   "settings.app.form.automaticUpdates": "تفعيل التحديثات",
   "settings.app.form.beta": "تضمين الإصدارات التجريبية",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.customTodoServer": "خادم مهام مخصص",
   "settings.app.form.darkMode": "تفعيل الوضع المظلم",

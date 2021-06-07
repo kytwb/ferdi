@@ -1,5 +1,6 @@
 import { app, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
+import { GITHUB_NIGHTLIES_REPO_NAME, GITHUB_ORG_NAME } from '../../config';
 import { isMac, isWindows } from '../../environment';
 
 const debug = require('debug')('Ferdi:ipcApi:autoUpdate');
@@ -21,8 +22,8 @@ export default (params) => {
             autoUpdater.allowPrerelease = Boolean(params.settings.app.get('nightly'));
             autoUpdater.setFeedURL({
               provider: 'github',
-              repo: 'nightlies',
-              owner: 'getferdi',
+              owner: GITHUB_ORG_NAME,
+              repo: GITHUB_NIGHTLIES_REPO_NAME,
             });
           }
 

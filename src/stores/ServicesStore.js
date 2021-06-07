@@ -133,6 +133,11 @@ export default class ServicesStore extends Store {
       () => this.stores.settings.app.searchEngine,
       () => this._shareSettingsWithServiceProcess(),
     );
+
+    reaction(
+      () => this.stores.settings.app.clipboardNotifications,
+      () => this._shareSettingsWithServiceProcess(),
+    );
   }
 
   initialize() {

@@ -1,12 +1,12 @@
 import { sendAuthRequest } from '../../api/utils/auth';
-import { API, API_VERSION } from '../../environment';
 import Request from '../../stores/lib/Request';
+import apiBase from '../../api/apiBase';
 
 const debug = require('debug')('Ferdi:feature:planSelection:api');
 
 export const planSelectionApi = {
   downgrade: async () => {
-    const url = `${API}/${API_VERSION}/payment/downgrade`;
+    const url = `${apiBase()}/payment/downgrade`;
     const options = {
       method: 'PUT',
     };

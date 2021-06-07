@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "Käynnistä Ferdi käynnistettäessä",
   "settings.app.form.automaticUpdates": "Salli päivitykset",
   "settings.app.form.beta": "Sisällytä beta-versiot",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.customTodoServer": "Mukautettu Todo-Palvelin",
   "settings.app.form.darkMode": "Ota tumma tila käyttöön",

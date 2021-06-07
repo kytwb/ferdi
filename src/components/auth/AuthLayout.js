@@ -12,6 +12,7 @@ import globalMessages from '../../i18n/globalMessages';
 
 import { isWindows } from '../../environment';
 import AppUpdateInfoBar from '../AppUpdateInfoBar';
+import { GITHUB_FERDI_URL } from '../../config';
 
 export default @observer class AuthLayout extends Component {
   static propTypes = {
@@ -94,7 +95,7 @@ export default @observer class AuthLayout extends Component {
             })}
           </div>
           {/* </div> */}
-          <Link to="https://github.com/getferdi/ferdi" className="auth__adlk" target="_blank">
+          <Link to={`${GITHUB_FERDI_URL}/ferdi`} className="auth__adlk" target="_blank">
             <img src="./assets/images/adlk.svg" alt="" />
           </Link>
         </div>

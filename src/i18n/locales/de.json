@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "Ferdi beim Systemstart ausführen",
   "settings.app.form.automaticUpdates": "Updates aktivieren",
   "settings.app.form.beta": "Beta-Versionen einbeziehen",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.customTodoServer": "Eigener Todo Server",
   "settings.app.form.darkMode": "Dunkles Design verwenden",

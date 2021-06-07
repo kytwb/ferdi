@@ -8,6 +8,7 @@ import Select from '../ui/Select';
 import Button from '../ui/Button';
 import Infobox from '../ui/Infobox';
 import { url, required } from '../../helpers/validation-helpers';
+import { LIVE_FERDI_API, LIVE_FRANZ_API } from '../../config';
 
 const messages = defineMessages({
   headline: {
@@ -47,9 +48,9 @@ export default @observer class ChangeServer extends Component {
     intl: intlShape,
   };
 
-  ferdiServer='https://api.getferdi.com';
+  ferdiServer=LIVE_FERDI_API;
 
-  franzServer='https://api.franzinfra.com';
+  franzServer=LIVE_FRANZ_API;
 
   defaultServers=[this.franzServer, this.ferdiServer];
 

@@ -57,6 +57,7 @@ linux:
     - target: deb
     - target: tar.gz
     - target: rpm
+    - target: freebsd
 
 nsis:
   perMachine: false

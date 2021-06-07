@@ -4,8 +4,9 @@ import {
 } from '@electron/remote';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
+import { GITHUB_FERDI_URL, LIVE_API_FERDI_WEBSITE } from '../config';
 import {
-  cmdKey, ctrlKey, isLinux, isMac,
+  cmdKey, ctrlKey, isLinux, isMac, termsBase,
 } from '../environment';
 import { announcementsStore } from '../features/announcements';
 import { announcementActions } from '../features/announcements/actions';
@@ -322,10 +323,6 @@ function getActiveWebview() {
   return window.ferdi.stores.services.active.webview;
 }
 
-function termsBase() {
-  return window.ferdi.stores.settings.all.app.server !== 'https://api.franzinfra.com' ? window.ferdi.stores.settings.all.app.server : 'https://meetfranz.com';
-}
-
 const _templateFactory = (intl, locked) => [
   {
     label: intl.formatMessage(menuItems.edit),
@@ -521,7 +518,7 @@ const _templateFactory = (intl, locked) => [
     submenu: [
       {
         label: intl.formatMessage(menuItems.learnMore),
-        click() { shell.openExternal('https://getferdi.com'); },
+        click() { shell.openExternal(LIVE_API_FERDI_WEBSITE); },
       },
       {
         label: intl.formatMessage(menuItems.announcement),
@@ -535,7 +532,7 @@ const _templateFactory = (intl, locked) => [
       },
       {
         label: intl.formatMessage(menuItems.support),
-        click() { shell.openExternal('https://getferdi.com/contact'); },
+        click() { shell.openExternal(`${LIVE_API_FERDI_WEBSITE}/contact`); },
       },
       {
         type: 'separator',
@@ -787,18 +784,18 @@ const _titleBarTemplateFactory = (intl, locked) => [
     submenu: [
       {
         label: intl.formatMessage(menuItems.learnMore),
-        click() { shell.openExternal('https://getferdi.com'); },
+        click() { shell.openExternal(LIVE_API_FERDI_WEBSITE); },
       },
       {
         label: intl.formatMessage(menuItems.changelog),
-        click() { shell.openExternal('https://github.com/getferdi/ferdi/blob/master/CHANGELOG.md'); },
+        click() { shell.openExternal(`${GITHUB_FERDI_URL}/ferdi/blob/master/CHANGELOG.md`); },
       },
       {
         type: 'separator',
       },
       {
         label: intl.formatMessage(menuItems.support),
-        click() { shell.openExternal('https://getferdi.com/contact'); },
+        click() { shell.openExternal(`${LIVE_API_FERDI_WEBSITE}/contact`); },
       },
       {
         type: 'separator',

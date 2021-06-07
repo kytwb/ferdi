@@ -16,6 +16,7 @@ import Input from '../../ui/Input';
 import {
   DEFAULT_APP_SETTINGS,
   FRANZ_TRANSLATION,
+  GITHUB_FRANZ_URL,
 } from '../../../config';
 import { isMac, isWindows } from '../../../environment';
 
@@ -501,6 +502,7 @@ export default @observer class EditSettingsForm extends Component {
             { this.state.activeSetttingsTab === 'privacy' && (
               <div>
                 <Toggle field={form.$('privateNotifications')} />
+                <Toggle field={form.$('clipboardNotifications')} />
                 {(isWindows || isMac) && (
                   <Toggle field={form.$('notifyTaskBarOnMessage')} />)}
 
@@ -675,13 +677,13 @@ export default @observer class EditSettingsForm extends Component {
 
                   Ferdi is based on
                   {' '}
-                  <a href="https://github.com/meetfranz/franz" target="_blank">Franz</a>
+                  <a href={`${GITHUB_FRANZ_URL}/franz`} target="_blank">Franz</a>
 
 
                   , a project published
                   under the
                   {' '}
-                  <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0 License</a>
+                  <a href={`${GITHUB_FRANZ_URL}/franz/blob/master/LICENSE`} target="_blank">Apache-2.0 License</a>
                 </span>
                 <br />
                 <span className="mdi mdi-information" />

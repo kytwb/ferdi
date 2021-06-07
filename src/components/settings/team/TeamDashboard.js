@@ -12,6 +12,7 @@ import Button from '../../ui/Button';
 import Infobox from '../../ui/Infobox';
 import globalMessages from '../../../i18n/globalMessages';
 import UpgradeButton from '../../ui/UpgradeButton';
+import { LIVE_FRANZ_API } from '../../../config';
 
 const messages = defineMessages({
   headline: {
@@ -125,7 +126,7 @@ export default @injectSheet(styles) @observer class TeamDashboard extends Compon
     } = this.props;
     const { intl } = this.context;
 
-    if (server === 'https://api.franzinfra.com') {
+    if (server === LIVE_FRANZ_API) {
       return (
         <div className="settings__main">
           <div className="settings__header">

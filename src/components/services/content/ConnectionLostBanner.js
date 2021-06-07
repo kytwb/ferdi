@@ -8,7 +8,7 @@ import { intlShape, defineMessages } from 'react-intl';
 import {
   mdiAlert,
 } from '@mdi/js';
-import { LIVE_API_WEBSITE } from '../../../config';
+import { LIVE_API_FERDI_WEBSITE } from '../../../config';
 // import { Button } from '@meetfranz/forms';
 
 const messages = defineMessages({
@@ -98,7 +98,7 @@ class ConnectionLostBanner extends Component {
           {intl.formatMessage(messages.text, { name })}
           <br />
           <a
-            href={`${LIVE_API_WEBSITE}/support#what-does-franz-lost-the-connection-to-service-mean`}
+            href={`${LIVE_API_FERDI_WEBSITE}/support#what-does-franz-lost-the-connection-to-service-mean`}
             className={classes.link}
           >
             {intl.formatMessage(messages.moreInformation)}

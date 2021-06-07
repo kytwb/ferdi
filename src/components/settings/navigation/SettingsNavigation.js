@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 import { ProBadge } from '@meetfranz/ui';
 import { RouterStore } from 'mobx-react-router';
 
-import { LOCAL_SERVER, LIVE_API } from '../../../config';
+import { LOCAL_SERVER, LIVE_FERDI_API, LIVE_FRANZ_API } from '../../../config';
 import Link from '../../ui/Link';
 import { workspaceStore } from '../../../features/workspaces';
 import UIStore from '../../../stores/UIStore';
@@ -82,7 +82,7 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
         this.props.actions.settings.update({
           type: 'app',
           data: {
-            server: LIVE_API,
+            server: LIVE_FERDI_API,
           },
         });
       }
@@ -105,7 +105,7 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
     const { intl } = this.context;
     const isLoggedIn = Boolean(localStorage.getItem('authToken'));
     const isUsingWithoutAccount = stores.settings.app.server === LOCAL_SERVER;
-    const isUsingFranzServer = stores.settings.app.server === 'https://api.franzinfra.com';
+    const isUsingFranzServer = stores.settings.app.server === LIVE_FRANZ_API;
 
     return (
       <div className="settings-navigation">

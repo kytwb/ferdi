@@ -92,6 +92,7 @@ class RecipeController {
       () => this.settings.app.spellcheckerLanguage,
       () => this.spellcheckerLanguage,
       () => this.settings.app.searchEngine,
+      () => this.settings.app.clipboardNotifications,
     );
 
     autorun(() => this.update());

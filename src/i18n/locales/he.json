@@ -293,6 +293,7 @@
   "settings.app.form.autoLaunchOnStart": "התחל את Ferdi עם המערכת",
   "settings.app.form.automaticUpdates": "אפשר עדכונים",
   "settings.app.form.beta": "כלול גרסאות בטא",
+  "settings.app.form.clipboardNotifications": "Don't show notifications for clipboard events",
   "settings.app.form.closeToSystemTray": "Close Ferdi to system tray",
   "settings.app.form.customTodoServer": "שרת מותאם אישית לרשימת המשימות",
   "settings.app.form.darkMode": "אפשר מצב לילה",

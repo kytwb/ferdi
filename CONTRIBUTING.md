@@ -23,7 +23,8 @@
     - [Install dependencies](#install-dependencies)
     - [Fix native modules to match current electron node version](#fix-native-modules-to-match-current-electron-node-version)
     - [Package recipe repository](#package-recipe-repository)
-    - [Using Docker to build an rpm package](#using-docker-to-build-an-rpm-package)
+    - [Using Docker to build a linux-targetted packaged app](#using-docker-to-build-a-linux-targetted-packaged-app)
+    - [Code Signing on a mac](#code-signing-on-a-mac)
     - [Start development app](#start-development-app)
     - [Styleguide](#styleguide)
       - [Git Commit Messages format](#git-commit-messages-format)
@@ -133,7 +134,7 @@ Ferdi requires its recipes to be packaged before it can use it. When running Fer
 cd recipes && npm i && npm run package
 ```
 
-### Using Docker to build an rpm package
+### Using Docker to build a linux-targetted packaged app
 
 ```bash
 docker build -t ferdi-package .
@@ -152,8 +153,23 @@ mv /ferdi/Ferdi-*.AppImage /ferdi-out/Ferdi-$GIT_SHA.AppImage
 mv /ferdi/ferdi-*.tar.gz /ferdi-out/Ferdi-$GIT_SHA.tar.gz
 mv /ferdi/ferdi-*.x86_64.rpm /ferdi-out/Ferdi-x86_64-$GIT_SHA.rpm
 mv /ferdi/ferdi_*_amd64.deb /ferdi-out/Ferdi-amd64-$GIT_SHA.deb
+mv /ferdi/ferdi-*.freebsd /ferdi-out/Ferdi-$GIT_SHA.freebsd
 mv /ferdi/ferdi /ferdi-out/Ferdi-$GIT_SHA
 mv /ferdi/latest-linux.yml /ferdi-out/latest-linux-$GIT_SHA.yml
+```
+
+### Code Signing on a mac
+
+If you are building the packaged app (on a mac) for local testing, you can set this environment variable to bypass the code signing step during the packaging process (`npm run build`):
+
+```bash
+export CSC_IDENTITY_AUTO_DISCOVERY=false
+```
+
+Or else, if you want to self-sign on a mac with non-registered certificate (not for distribution of the resulting package), you can follow [this thread](https://github.com/electron/electron/issues/7476#issuecomment-356084754) and run this command:
+
+```bash
+codesign --deep --force --verbose --sign - node_modules/electron/dist/Electron.app
 ```
 
 ### Start development app

@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
 
-import { isDevMode, useLiveAPI } from '../../environment';
+import { LIVE_FRANZ_API } from '../../config';
+import { API_VERSION, isDevMode, useLiveAPI } from '../../environment';
 import Form from '../../lib/Form';
 import { required, email } from '../../helpers/validation-helpers';
 import serverlessLogin from '../../helpers/serverless-helpers';
@@ -164,12 +165,12 @@ export default @inject('actions') @observer class Login extends Component {
           {error.code === 'invalid-credentials' && (
             <>
               <p className="error-message center">{intl.formatMessage(messages.invalidCredentials)}</p>
-              { window.ferdi.stores.settings.all.app.server !== 'https://api.franzinfra.com' && (
+              { window.ferdi.stores.settings.all.app.server !== LIVE_FRANZ_API && (
                 <p className="error-message center">
                     {intl.formatMessage(messages.customServerQuestion)}
                   {' '}
                   <Link
-                    to={`${window.ferdi.stores.settings.all.app.server.replace('v1', '')}/import`}
+                    to={`${window.ferdi.stores.settings.all.app.server.replace(API_VERSION, '')}/import`}
                     target="_blank"
                     style={{ cursor: 'pointer', textDecoration: 'underline' }}
                   >

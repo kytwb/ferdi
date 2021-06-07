@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
 
-import { isDevMode, useLiveAPI } from '../../environment';
+import { isDevMode, termsBase, useLiveAPI } from '../../environment';
 import Form from '../../lib/Form';
 import { required, email, minLength } from '../../helpers/validation-helpers';
 import serverlessLogin from '../../helpers/serverless-helpers';
@@ -135,8 +135,6 @@ export default @inject('actions') @observer class Signup extends Component {
       isSubmitting, loginRoute, error, changeServerRoute,
     } = this.props;
 
-    const termsBase = window.ferdi.stores.settings.all.app.server !== 'https://api.franzinfra.com' ? window.ferdi.stores.settings.all.app.server : 'https://meetfranz.com';
-
     return (
       <div className="auth__scroll-container">
         <div className="auth__container auth__container--signup">
@@ -183,7 +181,7 @@ export default @inject('actions') @observer class Signup extends Component {
               {intl.formatMessage(messages.legalInfo)}
               <br />
               <Link
-                to={`${termsBase}/terms`}
+                to={`${termsBase()}/terms`}
                 target="_blank"
                 className="link"
               >
@@ -191,7 +189,7 @@ export default @inject('actions') @observer class Signup extends Component {
               </Link>
               &nbsp;&amp;&nbsp;
               <Link
-                to={`${termsBase}/privacy`}
+                to={`${termsBase()}/privacy`}
                 target="_blank"
                 className="link"
               >
