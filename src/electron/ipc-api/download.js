@@ -1,4 +1,4 @@
-import { ipcMain, dialog } from 'electron';
+import { ipcMain, dialog, BrowserWindow } from 'electron';
 import { download } from 'electron-dl';
 import mime from 'mime-types';
 import fs from 'fs-extra';
@@ -17,15 +17,11 @@ function decodeBase64Image(dataString) {
 
 export default (params) => {
   ipcMain.on('download-file', async (event, { url, content, fileOptions = {} }) => {
-    // We're passing a fake browserWindow to `electron-dl` in order to access the
-    // webContents of the webview that has initiated the download
-    const fakeWindow = {
-      webContents: event.sender.webContents,
-    };
+    const win = BrowserWindow.getFocusedWindow();
 
     try {
       if (!content) {
-        const dl = await download(fakeWindow, url, {
+        const dl = await download(win, url, {
           saveAs: true,
         });
         debug('File saved to', dl.savePath);
