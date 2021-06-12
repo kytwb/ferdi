@@ -178,7 +178,7 @@ jobs:
         run: npm run lint && npm run test
       - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
         if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
-        run: npm run build
+        run: npm run build -- --publish never
         shell: bash
       - name: Build Ferdi with publish for 'nightly' branch
         if: ${{ env.GIT_BRANCH_NAME == 'nightly' }}
