@@ -258,3 +258,6 @@ export const PLANS_MAPPING = {
   'franz-supporter-license-year-2019': PLANS.LEGACY,
   free: PLANS.FREE,
 };
+
+
+export const DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED = false;
