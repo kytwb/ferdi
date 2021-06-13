@@ -59,15 +59,15 @@ jobs:
         run: |
           echo "Updating submodules"
           git submodule update --remote -f
-
-          echo "Committing submodules"
           git commit -am "Update submodules" --no-verify || true
 
           echo "Running linter and tests"
           npm run lint && npm run test
-
-          echo "Committing linter fixes"
           git commit -am "Apply linter fixes" --no-verify || true
+
+          echo "Updating browserslist db"
+          npx browserslist@latest --update-db
+          git commit -am "Apply browserslist data updates" --no-verify || true
       - name: Capture if this is a manually triggered forced rebuild
         run: echo "FORCE_REBUILD=${{ contains(github.event.inputs.message, 'force build') }}" >> $GITHUB_ENV
       - id: should_run
