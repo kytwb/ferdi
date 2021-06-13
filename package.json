@@ -213,6 +213,6 @@
     }
   },
   "browserslist": [
-    "defaults"
+    "last 2 Chrome versions"
   ]
 }
