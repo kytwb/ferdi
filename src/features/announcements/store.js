@@ -7,7 +7,7 @@ import semver from 'semver';
 import localStorage from 'mobx-localstorage';
 
 import { FeatureStore } from '../utils/FeatureStore';
-import { ANNOUNCEMENTS_ROUTES } from '.';
+import { ANNOUNCEMENTS_ROUTES } from './constants';
 import { getAnnouncementRequest, getChangelogRequest, getCurrentVersionRequest } from './api';
 import { announcementActions } from './actions';
 import { createActionBindings } from '../utils/ActionBinding';

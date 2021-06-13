@@ -30,9 +30,9 @@ import AuthLayoutContainer from './containers/auth/AuthLayoutContainer';
 import SubscriptionPopupScreen from './containers/subscription/SubscriptionPopupScreen';
 import WorkspacesScreen from './features/workspaces/containers/WorkspacesScreen';
 import EditWorkspaceScreen from './features/workspaces/containers/EditWorkspaceScreen';
-import { WORKSPACES_ROUTES } from './features/workspaces';
+import { WORKSPACES_ROUTES } from './features/workspaces/constants';
 import AnnouncementScreen from './features/announcements/components/AnnouncementScreen';
-import { ANNOUNCEMENTS_ROUTES } from './features/announcements';
+import { ANNOUNCEMENTS_ROUTES } from './features/announcements/constants';
 
 import SettingsStore from './stores/SettingsStore';
 

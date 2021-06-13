@@ -24,7 +24,7 @@ import ErrorBoundary from '../../components/util/ErrorBoundary';
 import globalMessages from '../../i18n/globalMessages';
 import { DEFAULT_IS_FEATURE_ENABLED_BY_USER } from '../../features/todos';
 import WorkspacesStore from '../../features/workspaces/store';
-import { DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED } from '../../features/workspaces';
+import { DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED } from '../../features/workspaces/constants';
 import ServicesStore from '../../stores/ServicesStore';
 
 const messages = defineMessages({

@@ -13,7 +13,7 @@ import {
   getUserWorkspacesRequest,
   updateWorkspaceRequest,
 } from './api';
-import { WORKSPACES_ROUTES } from './index';
+import { WORKSPACES_ROUTES } from './constants';
 import { createReactions } from '../../stores/lib/Reaction';
 import { createActionBindings } from '../utils/ActionBinding';
 

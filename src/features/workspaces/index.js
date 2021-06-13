@@ -4,9 +4,6 @@ import { resetApiRequests } from './api';
 
 const debug = require('debug')('Ferdi:feature:workspaces');
 
-export const GA_CATEGORY_WORKSPACES = 'Workspaces';
-export const DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED = false;
-
 export const workspaceStore = new WorkspacesStore();
 
 export default function initWorkspaces(stores, actions) {
@@ -31,8 +28,3 @@ export default function initWorkspaces(stores, actions) {
     },
   );
 }
-
-export const WORKSPACES_ROUTES = {
-  ROOT: '/settings/workspaces',
-  EDIT: '/settings/workspaces/:action/:id',
-};
