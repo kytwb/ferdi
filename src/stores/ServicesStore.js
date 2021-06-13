@@ -820,19 +820,22 @@ export default class ServicesStore extends Store {
 
   @action _hibernate({ serviceId }) {
     const service = this.one(serviceId);
-    if (service.isActive || !service.isHibernationEnabled) {
+    if (!service.canHibernate) {
+      return;
+    }
+    if (service.isActive) {
       debug('Skipping service hibernation');
       return;
     }
 
     debug(`Hibernate ${service.name}`);
 
-    service.isHibernating = true;
+    service.isHibernationRequested = true;
   }
 
   @action _awake({ serviceId }) {
     const service = this.one(serviceId);
-    service.isHibernating = false;
+    service.isHibernationRequested = false;
     service.liveFrom = Date.now();
   }
 
