@@ -107,6 +107,7 @@ jobs:
           echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
           echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
           echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
+          echo "SKIP_NOTARIZATION=${{ !contains(github.repository_owner, 'getferdi') }}" >> $GITHUB_ENV
       - name: Set env vars for Windows
         if: startsWith(runner.os, 'Windows')
         run: |
@@ -115,6 +116,7 @@ jobs:
           echo "ELECTRON_CACHE=$USERPROFILE\.cache\electron" >> $GITHUB_ENV
           echo "ELECTRON_BUILDER_CACHE=$USERPROFILE\.cache\electron-builder" >> $GITHUB_ENV
           echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
+          echo "SKIP_NOTARIZATION=${{ !contains(github.repository_owner, 'getferdi') }}" >> $GITHUB_ENV
         shell: bash
       - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled' or this is a forced rebuild on the nightly branch
         uses: actions/checkout@v2
