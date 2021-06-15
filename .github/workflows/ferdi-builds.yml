@@ -31,7 +31,7 @@ env:
   # DEBUG: electron-builder
 
 jobs:
-  check_date:
+  check_updates:
     runs-on: ubuntu-latest
     name: Check latest commit
     outputs:
@@ -89,27 +89,199 @@ jobs:
             git push origin nightly --no-verify
           fi
 
-  build:
-    name: '${{ matrix.os }}'
-    needs: check_date
-    if: ${{ needs.check_date.outputs.should_run != 'false' }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-10.15, ubuntu-20.04, windows-2019]
-        node-version: [14.16.1]
-      fail-fast: false
+  build_mac:
+    name: 'macos ${{ github.event.inputs.message }}'
+    needs: check_updates
+    if: ${{ (needs.check_updates.outputs.should_run != 'false') && (github.event_name != 'workflow_dispatch' || contains(github.event.inputs.message, 'macOS')) }}
+    runs-on: macos-10.15
     steps:
-      - name: Set env vars for macOS and Linux
-        if: startsWith(runner.os, 'macOS') || startsWith(runner.os, 'Linux')
+      - name: Set env vars
         run: |
           echo "NPM_CACHE=$HOME/.npm" >> $GITHUB_ENV
           echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
           echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
           echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
           echo "SKIP_NOTARIZATION=${{ !contains(github.repository_owner, 'getferdi') }}" >> $GITHUB_ENV
-      - name: Set env vars for Windows
-        if: startsWith(runner.os, 'Windows')
+      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled' or this is a forced rebuild on the nightly branch
+        uses: actions/checkout@v2
+        if: ${{ github.event_name == 'schedule' || env.FORCE_REBUILD_ON_NIGHTLY == 'true' }}
+        with:
+          submodules: recursive
+          ref: nightly
+      - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
+        uses: actions/checkout@v2
+        if: ${{ github.event_name != 'schedule' && env.FORCE_REBUILD_ON_NIGHTLY != 'true' }}
+        with:
+          submodules: recursive
+      - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
+        run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+        shell: bash
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{ env.NPM_CACHE }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Cache electron modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_CACHE }}
+      - name: Cache electron-builder modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-builder-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_BUILDER_CACHE }}
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.16.1
+      - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
+        run: |
+          sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
+          sudo xcode-select -s "/Applications/Xcode_12.4.app"
+      - name: Uninstall locally and reinstall node-gyp globally
+        run: |
+          npm uninstall node-gyp
+          npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Install node dependencies recursively
+        run: npx lerna bootstrap
+      - name: Package recipes
+        run: npm i && npm run package
+        working-directory: ./recipes
+      - name: Run linter and tests
+        run: npm run lint && npm run test
+      - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
+        if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
+        run: npm run build -- --publish never
+        shell: bash
+      - name: Build Ferdi with publish for 'nightly' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'nightly' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=nightlies
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
+          # APPLEID: ${{ secrets.APPLEID }}
+          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          # CSC_LINK: ${{ secrets.CSC_LINK }}
+          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+      - name: Build Ferdi with publish for 'release' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'release' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=ferdi
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+          # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
+          # APPLEID: ${{ secrets.APPLEID }}
+          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
+          # CSC_LINK: ${{ secrets.CSC_LINK }}
+          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+
+  build_linux:
+    name: 'ubuntu ${{ github.event.inputs.message }}'
+    needs: check_updates
+    if: ${{ (needs.check_updates.outputs.should_run != 'false') && (github.event_name != 'workflow_dispatch' || contains(github.event.inputs.message, 'Linux')) }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set env vars
+        run: |
+          echo "NPM_CACHE=$HOME/.npm" >> $GITHUB_ENV
+          echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
+          echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
+          echo "FORCE_REBUILD_ON_NIGHTLY=${{ contains(github.event.inputs.message, 'force build') && contains(github.event.inputs.message, 'nightly branch') }}" >> $GITHUB_ENV
+          echo "SKIP_NOTARIZATION=${{ !contains(github.repository_owner, 'getferdi') }}" >> $GITHUB_ENV
+      - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled' or this is a forced rebuild on the nightly branch
+        uses: actions/checkout@v2
+        if: ${{ github.event_name == 'schedule' || env.FORCE_REBUILD_ON_NIGHTLY == 'true' }}
+        with:
+          submodules: recursive
+          ref: nightly
+      - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
+        uses: actions/checkout@v2
+        if: ${{ github.event_name != 'schedule' && env.FORCE_REBUILD_ON_NIGHTLY != 'true' }}
+        with:
+          submodules: recursive
+      - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
+        run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+        shell: bash
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{ env.NPM_CACHE }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Cache electron modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_CACHE }}
+      - name: Cache electron-builder modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-electron-builder-modules
+        with:
+          key: ${{ runner.os }}-${{ env.cache-name }}
+          path: ${{ env.ELECTRON_BUILDER_CACHE }}
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.16.1
+      - name: Uninstall locally and reinstall node-gyp globally
+        run: |
+          npm uninstall node-gyp
+          npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Install node dependencies recursively
+        run: npx lerna bootstrap
+      - name: Package recipes
+        run: npm i && npm run package
+        working-directory: ./recipes
+      - name: Run linter and tests
+        run: npm run lint && npm run test
+      - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
+        if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
+        run: npm run build -- --publish never
+        shell: bash
+      - name: Build Ferdi with publish for 'nightly' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'nightly' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=nightlies
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+      - name: Build Ferdi with publish for 'release' branch
+        if: ${{ env.GIT_BRANCH_NAME == 'release' }}
+        run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=ferdi
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+
+  build_windows:
+    name: 'windows ${{ github.event.inputs.message }}'
+    needs: check_updates
+    if: ${{ (needs.check_updates.outputs.should_run != 'false') && (github.event_name != 'workflow_dispatch' || contains(github.event.inputs.message, 'Windows')) }}
+    runs-on: windows-2019
+    steps:
+      - name: Set env vars
         run: |
           echo "HOME=$USERPROFILE" >> $GITHUB_ENV
           echo "NPM_CACHE=$USERPROFILE\.npm" >> $GITHUB_ENV
@@ -157,20 +329,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 14.16.1
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
-        if: startsWith(runner.os, 'macOS')
-        run: |
-          sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
-          sudo xcode-select -s "/Applications/Xcode_12.4.app"
-      - name: Uninstall locally and reinstall node-gyp globally
-        if: startsWith(runner.os, 'macOS') || startsWith(runner.os, 'Linux')
-        run: |
-          npm uninstall node-gyp
-          npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+          node-version: 14.16.1
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
@@ -190,10 +352,6 @@ jobs:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: false
           # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
-          # APPLEID: ${{ secrets.APPLEID }}
-          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-          # CSC_LINK: ${{ secrets.CSC_LINK }}
-          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           # WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
           # WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
       - name: Build Ferdi with publish for 'release' branch
@@ -204,9 +362,5 @@ jobs:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
           CSC_IDENTITY_AUTO_DISCOVERY: false
           # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
-          # APPLEID: ${{ secrets.APPLEID }}
-          # APPLEID_PASSWORD: ${{ secrets.APPLEID_PASSWORD }}
-          # CSC_LINK: ${{ secrets.CSC_LINK }}
-          # CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
           # WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
           # WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
