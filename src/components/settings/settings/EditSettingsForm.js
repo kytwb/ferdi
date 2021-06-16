@@ -141,7 +141,7 @@ const messages = defineMessages({
     id: 'settings.app.currentVersion',
     defaultMessage: '!!!Current version:',
   },
-  enableGPUAccelerationInfo: {
+  appRestartRequired: {
     id: 'settings.app.restartRequired',
     defaultMessage: '!!!Changes require restart',
   },
@@ -356,14 +356,6 @@ export default @observer class EditSettingsForm extends Component {
                     { intl.formatMessage(messages.hibernateInfo) }
                   </span>
                 </p>
-
-                <Hr />
-
-                <Input
-                  placeholder="User Agent"
-                  onChange={e => this.submit(e)}
-                  field={form.$('userAgentPref')}
-                />
 
                 <Hr />
 
@@ -604,7 +596,19 @@ export default @observer class EditSettingsForm extends Component {
             { this.state.activeSetttingsTab === 'advanced' && (
               <div>
                 <Toggle field={form.$('enableGPUAcceleration')} />
-                <p className="settings__help">{intl.formatMessage(messages.enableGPUAccelerationInfo)}</p>
+                <p className="settings__help">{intl.formatMessage(messages.appRestartRequired)}</p>
+
+                <Hr />
+
+                <Input
+                  placeholder="User Agent"
+                  onChange={e => this.submit(e)}
+                  field={form.$('userAgentPref')}
+                />
+                <p className="settings__help">{intl.formatMessage(messages.appRestartRequired)}</p>
+
+                <Hr />
+
                 <div className="settings__settings-group">
                   <h3>
                     {intl.formatMessage(messages.subheadlineCache)}
