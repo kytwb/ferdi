@@ -7306,19 +7306,6 @@
         }
       },
       {
-        "defaultMessage": "!!!User Agent",
-        "end": {
-          "column": 3,
-          "line": 15
-        },
-        "file": "src/i18n/globalMessages.js",
-        "id": "global.userAgentPref",
-        "start": {
-          "column": 24,
-          "line": 12
-        }
-      },
-      {
         "defaultMessage": "!!!Use System Default ({default})",
         "end": {
           "column": 3,
@@ -7358,16 +7345,29 @@
         }
       },
       {
-        "defaultMessage": "!!!Franz Professional Required",
+        "defaultMessage": "!!!User Agent",
         "end": {
           "column": 3,
           "line": 31
         },
         "file": "src/i18n/globalMessages.js",
+        "id": "global.userAgentPref",
+        "start": {
+          "column": 17,
+          "line": 28
+        }
+      },
+      {
+        "defaultMessage": "!!!Franz Professional Required",
+        "end": {
+          "column": 3,
+          "line": 35
+        },
+        "file": "src/i18n/globalMessages.js",
         "id": "global.franzProRequired",
         "start": {
           "column": 15,
-          "line": 28
+          "line": 32
         }
       }
     ],

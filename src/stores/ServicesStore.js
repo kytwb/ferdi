@@ -115,11 +115,6 @@ export default class ServicesStore extends Store {
     );
 
     reaction(
-      () => this.stores.settings.app.userAgentPref,
-      () => this._shareSettingsWithServiceProcess(),
-    );
-
-    reaction(
       () => this.stores.settings.app.darkMode,
       () => this._shareSettingsWithServiceProcess(),
     );
@@ -668,18 +663,6 @@ export default class ServicesStore extends Store {
           serviceId,
           serviceData: {
             spellcheckerLanguage: args[0] === 'reset' ? '' : args[0],
-          },
-          redirect: false,
-        });
-      }
-    } else if (channel === 'set-service-user-agent') {
-      if (!args) {
-        console.warn('Did not receive locale');
-      } else {
-        this.actions.service.updateService({
-          serviceId,
-          serviceData: {
-            userAgentPref: args[0] === 'reset' ? '' : args[0],
           },
           redirect: false,
         });

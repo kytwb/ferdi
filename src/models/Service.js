@@ -180,7 +180,6 @@ export default class Service {
     return {
       id: this.id,
       spellcheckerLanguage: this.spellcheckerLanguage,
-      userAgentPref: this.userAgentPref,
       isDarkModeEnabled: this.isDarkModeEnabled,
       darkReaderSettings: this.darkReaderSettings,
       team: this.team,
