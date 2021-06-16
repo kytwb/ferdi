@@ -66,8 +66,6 @@ export default class Service {
 
   @observable spellcheckerLanguage = null;
 
-  @observable userAgentPref = '';
-
   @observable isFirstLoad = true;
 
   @observable isLoading = true;
@@ -108,6 +106,8 @@ export default class Service {
       console.error('Service recipe not valid');
       return null;
     }
+
+    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
 
     this.id = data.id || this.id;
     this.name = data.name || this.name;
@@ -159,8 +159,6 @@ export default class Service {
     if (hibernate && hibernateOnStartup && !isActive) {
       this.isHibernating = true;
     }
-
-    this.userAgentModel = new UserAgent(recipe.overrideUserAgent);
 
     autorun(() => {
       if (!this.isEnabled) {
@@ -244,11 +242,19 @@ export default class Service {
   }
 
   @computed get userAgent() {
-    if (this.userAgentPref !== '') {
-      return this.userAgentPref;
-    }
-
     return this.userAgentModel.userAgent;
+  }
+
+  @computed get userAgentPref() {
+    return this.userAgentModel.userAgentPref;
+  }
+
+  set userAgentPref(pref) {
+    this.userAgentModel.userAgentPref = pref;
+  }
+
+  @computed get defaultUserAgent() {
+    return this.userAgentModel.defaultUserAgent;
   }
 
   @computed get partition() {

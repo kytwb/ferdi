@@ -18,7 +18,9 @@ export default class UserAgent {
 
   @observable chromelessUserAgent = false;
 
-  @observable getUserAgent = defaultUserAgent;
+  @observable userAgentPref = null;
+
+  @observable getUserAgent = null;
 
   constructor(overrideUserAgent = null) {
     if (typeof overrideUserAgent === 'function') {
@@ -36,8 +38,37 @@ export default class UserAgent {
     });
   }
 
+  @computed get defaultUserAgent() {
+    if (typeof this.getUserAgent === 'function') {
+      return this.getUserAgent();
+    }
+    const globalPref = window.ferdi.stores.settings.all.app.userAgentPref;
+    if (typeof globalPref === 'string') {
+      const trimmed = globalPref.trim();
+      if (trimmed !== '') {
+        return trimmed;
+      }
+    }
+    return defaultUserAgent();
+  }
+
+  @computed get userAgentWithChromeVersion() {
+    if (typeof this.userAgentPref === 'string') {
+      const trimmed = this.userAgentPref.trim();
+      if (trimmed !== '') {
+        return trimmed;
+      }
+    }
+    return this.defaultUserAgent;
+  }
+
+  @computed get userAgentWithoutChromeVersion() {
+    const withChrome = this.userAgentWithChromeVersion;
+    return withChrome.replace(/Chrome\/[0-9.]+/, 'Chrome');
+  }
+
   @computed get userAgent() {
-    return this.chromelessUserAgent ? defaultUserAgent(true) : this.getUserAgent();
+    return this.chromelessUserAgent ? this.userAgentWithoutChromeVersion : this.userAgentWithChromeVersion;
   }
 
   @action setWebviewReference(webview) {

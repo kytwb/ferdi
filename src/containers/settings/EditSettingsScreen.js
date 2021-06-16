@@ -18,6 +18,7 @@ import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
 import { hash } from '../../helpers/password-helpers';
+import defaultUserAgent from '../../helpers/userAgent-helpers';
 
 import EditSettingsForm from '../../components/settings/settings/EditSettingsForm';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
@@ -529,6 +530,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           label: intl.formatMessage(globalMessages.userAgentPref),
           value: settings.all.app.userAgentPref,
           default: DEFAULT_APP_SETTINGS.userAgentPref,
+          placeholder: defaultUserAgent(),
         },
         darkMode: {
           label: intl.formatMessage(messages.darkMode),

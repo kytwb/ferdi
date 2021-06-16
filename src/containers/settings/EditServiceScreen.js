@@ -221,7 +221,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
         },
         userAgentPref: {
           label: intl.formatMessage(globalMessages.userAgentPref),
-          placeholder: intl.formatMessage(globalMessages.userAgentPref),
+          placeholder: service.defaultUserAgent,
           value: service.userAgentPref ? service.userAgentPref : '',
         },
       },
