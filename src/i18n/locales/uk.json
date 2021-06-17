@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automatic",
   "global.spellchecking.language": "Мова перевірки правопису",
   "global.upgradeButton.upgradeToPro": "Підвищити до Fredi Professional",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Імпортувати ваші сервіси з Ferdi 4",
   "import.notSupportedHeadline": "Наразі сервіси не підтримуються у Ferdi 5",
   "import.skip.label": "Я бажаю додати сервіс вручну",
