@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automaticky",
   "global.spellchecking.language": "Oprava překlepů jazyka",
   "global.upgradeButton.upgradeToPro": "Upgrade to Ferdi Professional",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Importovat služby z Ferdi 4",
   "import.notSupportedHeadline": "Služby nejsou podporovány ve verzi Ferdi 5",
   "import.skip.label": "Chci přidat službu ručně",
