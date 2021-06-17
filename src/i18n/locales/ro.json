@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automat",
   "global.spellchecking.language": "Limba de verificare a ortografiei",
   "global.upgradeButton.upgradeToPro": "Upgrade la Ferdi Professional",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Importă serviciile tale Ferdi 4",
   "import.notSupportedHeadline": "Services not yet supported in Ferdi 5",
   "import.skip.label": "I want to add services manually",
