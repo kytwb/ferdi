@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "自動",
   "global.spellchecking.language": "スペルチェックする言語",
   "global.upgradeButton.upgradeToPro": "Ferdi Professionalにアップグレード",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Ferdi 4のサービスをインポートして下さい",
   "import.notSupportedHeadline": "Ferdi 5ではこのサービスにまだ対応していません",
   "import.skip.label": "手動でサービスを追加する",
