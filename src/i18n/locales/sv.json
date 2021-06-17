@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automatisk",
   "global.spellchecking.language": "Rättstavningsspråk",
   "global.upgradeButton.upgradeToPro": "Uppgradera till Ferdi Professional",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Importera dina Ferdi 4-tjänster",
   "import.notSupportedHeadline": "Tjänster som ännu inte stöds i Ferdi 5",
   "import.skip.label": "Jag vill lägga till tjänster manuellt",
