@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automatikus",
   "global.spellchecking.language": "Helyesírás-ellenőrző nyelve",
   "global.upgradeButton.upgradeToPro": "Frissítés Ferdi Professional-ra",
+  "global.userAgentPref": "User Agent",
   "import.headline": "Importáld szolgáltatásaidat a Ferdi 4-ből",
   "import.notSupportedHeadline": "Még nem támogatott szolgáltatások a Ferdi 5-ben",
   "import.skip.label": "Manuálisan szeretném hozzáadni a szolgáltatásokat",
