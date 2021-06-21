@@ -217,7 +217,7 @@ If you use an AUR Helper e.g. yay, simply install it via `yay -S ferdi`.
 
 ### Adds internal changes
 
-- [x] Upgrades to Electron 13.0.1
+- [x] Upgrades to Electron 13.1.3
 - [x] Switches to [`electron-spellchecker`](https://github.com/electron-userland/electron-spellchecker) to improve application size
 - [x] Minifies build files to improve app size
 - [x] Adds "npm run prepare-code" command for development to lint and beautify code

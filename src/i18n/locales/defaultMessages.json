@@ -3636,7 +3636,7 @@
         "file": "src/components/settings/settings/EditSettingsForm.js",
         "id": "settings.app.restartRequired",
         "start": {
-          "column": 29,
+          "column": 22,
           "line": 144
         }
       },
