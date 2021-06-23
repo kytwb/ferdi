@@ -59,7 +59,6 @@ class RecipeWebview {
       indirect: Math.max(indirectInt, 0),
     };
 
-
     ipcRenderer.sendToHost('message-counts', count);
     Object.assign(this.countCache, count);
 

@@ -58,7 +58,6 @@ class TrialStatusBarScreen extends Component {
     });
   }
 
-
   render() {
     const { intl } = this.context;
 

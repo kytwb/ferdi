@@ -33,7 +33,7 @@ export default class FeaturesStore extends Store {
 
   @observable featuresRequest = new CachedRequest(this.api.features, 'features');
 
-  @observable features = Object.assign({}, DEFAULT_FEATURES_CONFIG);
+  @observable features = ({ ...DEFAULT_FEATURES_CONFIG });
 
   async setup() {
     this.registerReactions([
@@ -57,7 +57,7 @@ export default class FeaturesStore extends Store {
   }
 
   _updateFeatures = () => {
-    const features = Object.assign({}, DEFAULT_FEATURES_CONFIG);
+    const features = { ...DEFAULT_FEATURES_CONFIG };
     if (this.stores.user.isLoggedIn) {
       let requestResult = {};
       try {

@@ -285,7 +285,6 @@ export const PLANS_MAPPING = {
   free: PLANS.FREE,
 };
 
-
 export const DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED = false;
 
 export const DEFAULT_SERVICE_LIMIT = 3;

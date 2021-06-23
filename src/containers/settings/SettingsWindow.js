@@ -28,7 +28,6 @@ export default @inject('stores', 'actions') @observer class SettingsContainer ex
     const { children, stores } = this.props;
     const { closeSettings } = this.props.actions.ui;
 
-
     const navigation = (
       <Navigation
         serviceCount={stores.services.all.length}

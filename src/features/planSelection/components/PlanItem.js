@@ -111,7 +111,6 @@ const styles = theme => ({
   },
 });
 
-
 export default @observer @injectSheet(styles) class PlanItem extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,

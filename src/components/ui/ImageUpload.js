@@ -55,7 +55,7 @@ export default @observer class ImageUpload extends Component {
         </label>
         <div className="image-upload">
           {(field.value && field.value !== 'delete') || this.state.path ? (
-            <Fragment>
+            <>
               <div
                 className="image-upload__preview"
                 style={{
@@ -80,7 +80,7 @@ export default @observer class ImageUpload extends Component {
                 </button>
                 <div className="image-upload__action-background" />
               </div>
-            </Fragment>
+            </>
           ) : (
             <Dropzone
               ref={(node) => {

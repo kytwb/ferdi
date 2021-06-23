@@ -34,7 +34,6 @@ const messages = defineMessages({
   },
 });
 
-
 const styles = {
   confettiContainer: {
     position: 'absolute',

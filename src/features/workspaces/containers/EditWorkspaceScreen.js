@@ -32,9 +32,7 @@ class EditWorkspaceScreen extends Component {
     const { workspaceBeingEdited } = workspaceStore;
     const { actions } = this.props;
     const workspace = new Workspace(
-      Object.assign({
-        saving: true,
-      }, workspaceBeingEdited, values),
+      ({ saving: true, ...workspaceBeingEdited, ...values }),
     );
     actions.workspaces.update({ workspace });
   };

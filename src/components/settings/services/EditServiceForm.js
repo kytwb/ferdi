@@ -311,14 +311,14 @@ export default @observer class EditServiceForm extends Component {
                 {recipe.hasCustomUrl && (
                   <TabItem title={intl.formatMessage(messages.tabOnPremise)}>
                     {user.isPremium || recipe.author.find(a => a.email === user.email) ? (
-                      <Fragment>
+                      <>
                         <Input field={form.$('customUrl')} />
                         {form.error === 'url-validation-error' && (
                           <p className="franz-form__error">
                             {intl.formatMessage(messages.customUrlValidationError, { name: recipe.name })}
                           </p>
                         )}
-                      </Fragment>
+                      </>
                     ) : (
                       <div className="center premium-info">
                         <p>{intl.formatMessage(messages.customUrlPremiumInfo)}</p>
@@ -360,12 +360,12 @@ export default @observer class EditServiceForm extends Component {
                   <h3>{intl.formatMessage(messages.headlineBadges)}</h3>
                   <Toggle field={form.$('isBadgeEnabled')} />
                   {recipe.hasIndirectMessages && form.$('isBadgeEnabled').value && (
-                    <Fragment>
+                    <>
                       <Toggle field={form.$('isIndirectMessageBadgeEnabled')} />
                       <p className="settings__help">
                         {intl.formatMessage(messages.indirectMessageInfo)}
                       </p>
-                    </Fragment>
+                    </>
                   )}
                 </div>
 
@@ -389,8 +389,7 @@ export default @observer class EditServiceForm extends Component {
                         <Slider field={form.$('darkReaderContrast')} />
                         <Slider field={form.$('darkReaderSepia')} />
                       </>
-                    )
-                  }
+                    )}
                 </div>
               </div>
               <div className="service-icon">
@@ -425,7 +424,7 @@ export default @observer class EditServiceForm extends Component {
                   </h3>
                   <Toggle field={form.$('proxy.isEnabled')} />
                   {form.$('proxy.isEnabled').value && (
-                    <Fragment>
+                    <>
                       <div className="grid">
                         <div className="grid__row">
                           <Input field={form.$('proxy.host')} className="proxyHost" />
@@ -449,7 +448,7 @@ export default @observer class EditServiceForm extends Component {
                         <span className="mdi mdi-information" />
                         {intl.formatMessage(messages.proxyInfo)}
                       </p>
-                    </Fragment>
+                    </>
                   )}
                 </div>
               </PremiumFeatureContainer>

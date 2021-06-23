@@ -22,7 +22,6 @@ export const themeTransitionTime = '.5s';
 
 export const themeInsetShadow = 'inset 0 2px 5px rgba(0, 0, 0, .03)';
 
-
 export const darkThemeBlack = '#1A1A1A';
 
 export const darkThemeGrayDarkest = '#1E1E1E';

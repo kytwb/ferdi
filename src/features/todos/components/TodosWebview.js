@@ -202,7 +202,7 @@ class TodosWebview extends Component {
       >
         <div
           className={classes.resizeHandler}
-          style={Object.assign({ left: delta }, isDragging ? { width: 600, marginLeft: -200 } : {})} // This hack is required as resizing with webviews beneath behaves quite bad
+          style={({ left: delta, ...(isDragging ? { width: 600, marginLeft: -200 } : {}) })} // This hack is required as resizing with webviews beneath behaves quite bad
           onMouseDown={e => this.startResize(e)}
         />
         {isDragging && (

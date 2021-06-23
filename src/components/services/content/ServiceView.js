@@ -109,7 +109,7 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
     return (
       <div className={webviewClasses}>
         {service.isActive && service.isEnabled && (
-          <Fragment>
+          <>
             {service.hasCrashed && (
               <WebviewCrashHandler
                 name={service.recipe.name}
@@ -131,10 +131,10 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
                 edit={edit}
               />
             )}
-          </Fragment>
+          </>
         )}
         {!service.isEnabled ? (
-          <Fragment>
+          <>
             {service.isActive && (
               <ServiceDisabled
                 name={service.recipe.name}
@@ -142,7 +142,7 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
                 enable={enable}
               />
             )}
-          </Fragment>
+          </>
         ) : (
           <>
             {(!service.isHibernating || service.isHibernationEnabled) ? (

@@ -127,7 +127,7 @@ export default @observer class Invite extends Component {
     });
 
     const renderForm = (
-      <Fragment>
+      <>
         {this.state.showSuccessInfo && isInviteSuccessful && (
           <Appear>
             <Infobox
@@ -175,7 +175,7 @@ export default @observer class Invite extends Component {
             </Link>
           )}
         </form>
-      </Fragment>
+      </>
     );
 
     return (

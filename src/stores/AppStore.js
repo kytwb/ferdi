@@ -127,7 +127,6 @@ export default class AppStore extends Store {
       this.isFullScreen = false;
     });
 
-
     this.isOnline = navigator.onLine;
 
     // Check if Ferdi should launch on start
@@ -473,7 +472,6 @@ export default class AppStore extends Store {
     if (this.stores.user.isLoggedIn) {
       locale = this.stores.user.data.locale;
     }
-
 
     if (locale && Object.prototype.hasOwnProperty.call(locales, locale) && locale !== this.locale) {
       this.locale = locale;

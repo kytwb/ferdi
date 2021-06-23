@@ -182,9 +182,7 @@ export default class ServerApi {
   async createService(recipeId, data) {
     const request = await sendAuthRequest(`${apiBase()}/service`, {
       method: 'POST',
-      body: JSON.stringify(Object.assign({
-        recipeId,
-      }, data)),
+      body: JSON.stringify({ recipeId, ...data }),
     });
     if (!request.ok) {
       throw request;

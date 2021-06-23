@@ -306,6 +306,7 @@ export default class ServicesStore extends Store {
     }
 
     // set default values for serviceData
+    // eslint-disable-next-line prefer-object-spread
     Object.assign({
       isEnabled: true,
       isHibernationEnabled: false,

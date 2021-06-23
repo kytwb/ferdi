@@ -10,7 +10,6 @@ import { Button } from '@meetfranz/forms';
 import { FeatureItem } from '../ui/FeatureItem';
 import { FeatureList } from '../ui/FeatureList';
 
-
 const messages = defineMessages({
   headline: {
     id: 'pricing.trial.headline.pro',

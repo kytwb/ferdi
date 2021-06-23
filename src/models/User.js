@@ -38,7 +38,6 @@ export default class User {
 
   @observable team = {};
 
-
   constructor(data) {
     if (!data.id) {
       throw Error('User requires Id');

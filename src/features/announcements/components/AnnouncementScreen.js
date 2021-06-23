@@ -185,7 +185,6 @@ const styles = theme => ({
   },
 });
 
-
 @inject('stores', 'actions') @injectSheet(styles) @observer
 class AnnouncementScreen extends Component {
   static propTypes = {

@@ -13,7 +13,6 @@ import { DEBUG_API } from '../../config';
 import AppStore from '../../stores/AppStore';
 import ServicesStore from '../../stores/ServicesStore';
 
-
 const messages = defineMessages({
   title: {
     id: 'feature.publishDebugInfo.title',

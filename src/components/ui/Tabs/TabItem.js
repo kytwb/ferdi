@@ -11,7 +11,7 @@ export default class TabItem extends Component {
     const { children } = this.props;
 
     return (
-      <Fragment>{children}</Fragment>
+      <>{children}</>
     );
   }
 }

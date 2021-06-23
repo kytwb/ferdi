@@ -1269,7 +1269,6 @@ export default class FranzMenu {
     return menu;
   }
 
-
   debugMenu() {
     const { intl } = window.ferdi;
 

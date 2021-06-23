@@ -34,7 +34,6 @@ const styles = theme => ({
   },
 });
 
-
 @inject('stores', 'actions') @injectSheet(styles) @observer
 class LimitReachedInfobox extends Component {
   static propTypes = {

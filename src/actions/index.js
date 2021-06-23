@@ -17,7 +17,7 @@ import todos from '../features/todos/actions';
 import planSelection from '../features/planSelection/actions';
 import trialStatusBar from '../features/trialStatusBar/actions';
 
-const actions = Object.assign({}, {
+const actions = {
   service,
   recipe,
   recipePreview,
@@ -28,7 +28,7 @@ const actions = Object.assign({}, {
   news,
   settings,
   requests,
-});
+};
 
 export default Object.assign(
   defineActions(actions, PropTypes.checkPropTypes),

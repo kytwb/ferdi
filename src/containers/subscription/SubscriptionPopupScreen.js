@@ -5,7 +5,6 @@ import { inject, observer } from 'mobx-react';
 import SubscriptionPopup from '../../components/subscription/SubscriptionPopup';
 import { isDevMode } from '../../environment';
 
-
 export default @inject('stores', 'actions') @observer class SubscriptionPopupScreen extends Component {
   state = {
     complete: false,
@@ -32,7 +31,6 @@ export default @inject('stores', 'actions') @observer class SubscriptionPopupScr
     );
   }
 }
-
 
 SubscriptionPopupScreen.wrappedComponent.propTypes = {
   router: PropTypes.shape({

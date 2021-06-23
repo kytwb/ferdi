@@ -85,8 +85,7 @@ class AccountScreen extends Component {
           openEditAccount={() => this.handleWebsiteLink('/user/profile')}
           upgradeToPro={() => upgradeAccount({
             planId: features.features.pricingConfig.plans.pro.yearly.id,
-          })
-          }
+          })}
           openBilling={() => this.handleWebsiteLink('/user/billing')}
           openInvoices={() => this.handleWebsiteLink('/user/invoices')}
         />

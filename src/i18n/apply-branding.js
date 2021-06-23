@@ -36,7 +36,6 @@ const replace = {
   '!!!': '',
 };
 
-
 const locales = path.join(__dirname, 'locales');
 const files = fs.readdirSync(locales);
 

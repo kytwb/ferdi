@@ -190,7 +190,7 @@ class EditWorkspaceForm extends Component {
                 <Link to="/settings/recipes" className="button">{intl.formatMessage(messages.discoverServices)}</Link>
               </div>
             ) : (
-              <Fragment>
+              <>
                 {services.map(s => (
                   <WorkspaceServiceListItem
                     key={s.id}
@@ -199,7 +199,7 @@ class EditWorkspaceForm extends Component {
                     onToggle={() => this.toggleService(s)}
                   />
                 ))}
-              </Fragment>
+              </>
             )}
           </div>
         </div>

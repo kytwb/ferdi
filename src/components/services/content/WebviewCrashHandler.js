@@ -43,7 +43,6 @@ export default @observer class WebviewCrashHandler extends Component {
 
   countdownIntervalTimeout = ms('1s');
 
-
   componentDidMount() {
     const { reload } = this.props;
 

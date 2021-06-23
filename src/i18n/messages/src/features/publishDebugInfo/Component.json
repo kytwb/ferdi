@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Publish debug information",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 18,
+      "line": 17,
       "column": 9
     },
     "end": {
-      "line": 21,
+      "line": 20,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Publishing your debug information helps us find issues and errors in Ferdi. By publishing your debug information you accept Ferdi Debugger's privacy policy and terms of service",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 22,
+      "line": 21,
       "column": 8
     },
     "end": {
-      "line": 25,
+      "line": 24,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!There was an error while trying to publish the debug information. Please try again later or view the console for more information.",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 26,
+      "line": 25,
       "column": 9
     },
     "end": {
-      "line": 29,
+      "line": 28,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Privacy policy",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 30,
+      "line": 29,
       "column": 11
     },
     "end": {
-      "line": 33,
+      "line": 32,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Terms of service",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 34,
+      "line": 33,
       "column": 9
     },
     "end": {
-      "line": 37,
+      "line": 36,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Accept and publish",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 38,
+      "line": 37,
       "column": 11
     },
     "end": {
-      "line": 41,
+      "line": 40,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Your debug log was published and is now availible at",
     "file": "src/features/publishDebugInfo/Component.js",
     "start": {
-      "line": 42,
+      "line": 41,
       "column": 13
     },
     "end": {
-      "line": 45,
+      "line": 44,
       "column": 3
     }
   }

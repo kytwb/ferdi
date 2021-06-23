@@ -98,7 +98,6 @@ const styles = {
   },
 };
 
-
 export default @injectSheet(styles) @observer class TeamDashboard extends Component {
   static propTypes = {
     isLoading: PropTypes.bool.isRequired,

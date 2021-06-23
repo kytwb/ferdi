@@ -72,7 +72,6 @@ export default @inject('actions') @observer class Login extends Component {
           <br />
           <br />
 
-
           <Link to={changeServerRoute}>
             <span style={{
               textAlign: 'center',

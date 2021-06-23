@@ -184,7 +184,7 @@ class WorkspacesDashboard extends Component {
               {getUserWorkspacesRequest.isExecuting ? (
                 <Loader />
               ) : (
-                <Fragment>
+                <>
                   {/* ===== Workspace could not be loaded error ===== */}
                   {getUserWorkspacesRequest.error ? (
                     <Infobox
@@ -197,7 +197,7 @@ class WorkspacesDashboard extends Component {
                       {intl.formatMessage(messages.workspacesRequestFailed)}
                     </Infobox>
                   ) : (
-                    <Fragment>
+                    <>
                       {workspaces.length === 0 ? (
                         <div className="align-middle settings__empty-state">
                           {/* ===== Workspaces empty state ===== */}
@@ -222,9 +222,9 @@ class WorkspacesDashboard extends Component {
                           </tbody>
                         </table>
                       )}
-                    </Fragment>
+                    </>
                   )}
-                </Fragment>
+                </>
               )}
             </>
           )}

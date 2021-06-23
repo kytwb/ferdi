@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Hi {name}, welcome to Franz",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 15,
+      "line": 14,
       "column": 12
     },
     "end": {
-      "line": 18,
+      "line": 17,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!We have a special treat for you.",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 19,
+      "line": 18,
       "column": 16
     },
     "end": {
-      "line": 22,
+      "line": 21,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Enjoy the full Franz Professional experience completely free for 14 days.",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 23,
+      "line": 22,
       "column": 10
     },
     "end": {
-      "line": 26,
+      "line": 25,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Happy messaging,",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 27,
+      "line": 26,
       "column": 18
     },
     "end": {
-      "line": 30,
+      "line": 29,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!No strings attached",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 31,
+      "line": 30,
       "column": 29
     },
     "end": {
-      "line": 34,
+      "line": 33,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!No credit card required",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 35,
+      "line": 34,
       "column": 16
     },
     "end": {
-      "line": 38,
+      "line": 37,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Your free trial ends automatically after 14 days",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 39,
+      "line": 38,
       "column": 21
     },
     "end": {
-      "line": 42,
+      "line": 41,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Free trial (normally {currency}{price} per month)",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 43,
+      "line": 42,
       "column": 14
     },
     "end": {
-      "line": 46,
+      "line": 45,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Sorry, we could not activate your trial!",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 47,
+      "line": 46,
       "column": 19
     },
     "end": {
-      "line": 50,
+      "line": 49,
       "column": 3
     }
   },
@@ -121,11 +121,11 @@
     "defaultMessage": "!!!Start my 14-day Franz Professional Trial",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 51,
+      "line": 50,
       "column": 13
     },
     "end": {
-      "line": 54,
+      "line": 53,
       "column": 3
     }
   },
@@ -134,11 +134,11 @@
     "defaultMessage": "!!!Start using Franz",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 55,
+      "line": 54,
       "column": 12
     },
     "end": {
-      "line": 58,
+      "line": 57,
       "column": 3
     }
   },
@@ -147,11 +147,11 @@
     "defaultMessage": "!!!Continue to Ferdi",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 59,
+      "line": 58,
       "column": 11
     },
     "end": {
-      "line": 62,
+      "line": 61,
       "column": 3
     }
   },
@@ -160,11 +160,11 @@
     "defaultMessage": "!!!Franz Professional includes:",
     "file": "src/components/auth/Pricing.js",
     "start": {
-      "line": 63,
+      "line": 62,
       "column": 20
     },
     "end": {
-      "line": 66,
+      "line": 65,
       "column": 3
     }
   }

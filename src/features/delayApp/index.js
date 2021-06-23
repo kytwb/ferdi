@@ -59,7 +59,6 @@ export default function init(stores) {
 
             setVisibility(true);
 
-
             setTimeout(() => {
               debug('Resetting app delay');
 
