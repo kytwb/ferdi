@@ -21,7 +21,7 @@ export default @observer class ImageUpload extends Component {
 
   state = {
     path: null,
-  }
+  };
 
   dropzoneRef = null;
 
@@ -40,11 +40,7 @@ export default @observer class ImageUpload extends Component {
 
   render() {
     const {
-      field,
-      className,
-      multiple,
-      textDelete,
-      textUpload,
+      field, className, multiple, textDelete, textUpload,
     } = this.props;
 
     const cssClasses = classnames({
@@ -54,15 +50,17 @@ export default @observer class ImageUpload extends Component {
 
     return (
       <div className="image-upload-wrapper">
-        <label className="franz-form__label" htmlFor="iconUpload">{field.label}</label>
+        <label className="franz-form__label" htmlFor="iconUpload">
+          {field.label}
+        </label>
         <div className="image-upload">
           {(field.value && field.value !== 'delete') || this.state.path ? (
             <Fragment>
               <div
                 className="image-upload__preview"
-                style={({
+                style={{
                   backgroundImage: `url("${this.state.path || field.value}")`,
-                })}
+                }}
               />
               <div className="image-upload__action">
                 <button
@@ -78,25 +76,27 @@ export default @observer class ImageUpload extends Component {
                   }}
                 >
                   <i className="mdi mdi-delete" />
-                  <p>
-                    {textDelete}
-                  </p>
+                  <p>{textDelete}</p>
                 </button>
                 <div className="image-upload__action-background" />
               </div>
             </Fragment>
           ) : (
             <Dropzone
-              ref={(node) => { this.dropzoneRef = node; }}
+              ref={(node) => {
+                this.dropzoneRef = node;
+              }}
               onDrop={this.onDrop.bind(this)}
-              className={cssClasses}
               multiple={multiple}
               accept="image/jpeg, image/png, image/svg+xml"
             >
-              <i className="mdi mdi-file-image" />
-              <p>
-                {textUpload}
-              </p>
+              {({ getRootProps, getInputProps }) => (
+                <div {...getRootProps()} className={cssClasses}>
+                  <i className="mdi mdi-file-image" />
+                  <p>{textUpload}</p>
+                  <input {...getInputProps()} />
+                </div>
+              )}
             </Dropzone>
           )}
         </div>
