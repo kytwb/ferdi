@@ -3,19 +3,29 @@
   "extends": "eslint-config-airbnb",
   "plugins": ["jest"],
   "rules": {
+    "arrow-parens": 0,
     "consistent-return": 0,
     "no-param-reassign": 0,
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-unresolved": [2, {
-      "ignore": ["electron"]
-      }],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["electron"]
+      }
+    ],
     "import/prefer-default-export": 0,
     "linebreak-style": 0,
+    "react/static-property-placement": 0,
+    "react/state-in-constructor": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/prefer-stateless-function": 0,
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js", ".jsx"]
-    }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
     "react/forbid-prop-types": 0,
     "react/destructuring-assignment": 0,
     "prefer-destructuring": 1,
@@ -32,13 +42,9 @@
     "jsx-a11y/label-has-for": [
       2,
       {
-        "components": [
-          "Label"
-        ],
+        "components": ["Label"],
         "required": {
-          "every": [
-            "id"
-          ]
+          "every": ["id"]
         },
         "allowChildren": false
       }
