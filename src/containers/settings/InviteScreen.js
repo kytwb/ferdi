@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 
 import Invite from '../../components/auth/Invite';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
+import UserStore from '../../stores/UserStore';
 
 export default @inject('stores', 'actions') @observer class InviteScreen extends Component {
   componentWillUnmount() {
@@ -29,13 +30,9 @@ export default @inject('stores', 'actions') @observer class InviteScreen extends
 
 InviteScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      invite: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
-    user: PropTypes.shape({
-      inviteRequest: PropTypes.object,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

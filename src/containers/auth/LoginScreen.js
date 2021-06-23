@@ -30,9 +30,7 @@ export default @inject('stores', 'actions') @observer class LoginScreen extends 
 
 LoginScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      login: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,

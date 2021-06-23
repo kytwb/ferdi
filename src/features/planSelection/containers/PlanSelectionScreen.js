@@ -9,6 +9,7 @@ import UserStore from '../../../stores/UserStore';
 import PlanSelection from '../components/PlanSelection';
 import ErrorBoundary from '../../../components/util/ErrorBoundary';
 import { planSelectionStore } from '..';
+import PaymentStore from '../../../stores/PaymentStore';
 
 const messages = defineMessages({
   dialogTitle: {
@@ -109,15 +110,11 @@ PlanSelectionScreen.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.shape({
-      upgradeAccount: PropTypes.func.isRequired,
-    }),
+    payment: PropTypes.instanceOf(PaymentStore),
     planSelection: PropTypes.shape({
       downgradeAccount: PropTypes.func.isRequired,
       hideOverlay: PropTypes.func.isRequired,
     }),
-    user: PropTypes.shape({
-      activateTrial: PropTypes.func.isRequired,
-    }),
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

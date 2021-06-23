@@ -9,6 +9,7 @@ import SettingsStore from '../../stores/SettingsStore';
 import TeamDashboard from '../../components/settings/team/TeamDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
 import { DEV_API_FRANZ_WEBSITE } from '../../config';
+import PaymentStore from '../../stores/PaymentStore';
 
 export default @inject('stores', 'actions') @observer class TeamScreen extends Component {
   handleWebsiteLink(route) {
@@ -47,15 +48,8 @@ TeamScreen.wrappedComponent.propTypes = {
     settings: PropTypes.instanceOf(SettingsStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.shape({
-      createDashboardUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-      delete: PropTypes.func.isRequired,
-    }).isRequired,
+    payment: PropTypes.instanceOf(PaymentStore).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

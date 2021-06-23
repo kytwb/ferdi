@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import { Button } from '@meetfranz/forms';
 
 import UserStore from '../../../stores/UserStore';
+import UIStore from '../../../stores/UIStore';
 
 const messages = defineMessages({
   action: {
@@ -101,8 +102,6 @@ ActivateTrialButton.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    ui: PropTypes.shape({
-      openSettings: PropTypes.func.isRequired,
-    }).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
   }).isRequired,
 };

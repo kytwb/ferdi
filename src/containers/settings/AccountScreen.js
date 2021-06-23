@@ -104,16 +104,8 @@ AccountScreen.wrappedComponent.propTypes = {
     app: PropTypes.instanceOf(AppStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.shape({
-      createDashboardUrl: PropTypes.func.isRequired,
-      upgradeAccount: PropTypes.func.isRequired,
-    }).isRequired,
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-      delete: PropTypes.func.isRequired,
-    }).isRequired,
+    payment: PropTypes.instanceOf(PaymentStore).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

@@ -10,6 +10,7 @@ import UserStore from '../../../stores/UserStore';
 
 import styles from './styles';
 import FeaturesStore from '../../../stores/FeaturesStore';
+import UIStore from '../../../stores/UIStore';
 
 const messages = defineMessages({
   action: {
@@ -93,9 +94,7 @@ PremiumFeatureContainer.wrappedComponent.propTypes = {
     features: PropTypes.instanceOf(FeaturesStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    ui: PropTypes.shape({
-      openSettings: PropTypes.func.isRequired,
-    }).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
   }).isRequired,
 };
 

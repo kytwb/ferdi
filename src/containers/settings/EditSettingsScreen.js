@@ -679,23 +679,10 @@ EditSettingsScreen.wrappedComponent.propTypes = {
     workspaces: PropTypes.instanceOf(WorkspacesStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      launchOnStartup: PropTypes.func.isRequired,
-      checkForUpdates: PropTypes.func.isRequired,
-      installUpdate: PropTypes.func.isRequired,
-      clearAllCache: PropTypes.func.isRequired,
-    }).isRequired,
-    settings: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
-    todos: PropTypes.shape({
-      toggleTodosFeatureVisibility: PropTypes.func.isRequired,
-    }).isRequired,
-    workspaces: PropTypes.shape({
-      toggleKeepAllWorkspacesLoadedSetting: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
+    settings: PropTypes.instanceOf(SettingsStore).isRequired,
+    todos: PropTypes.instanceOf(TodosStore).isRequired,
+    workspaces: PropTypes.instanceOf(WorkspacesStore).isRequired,
   }).isRequired,
 };

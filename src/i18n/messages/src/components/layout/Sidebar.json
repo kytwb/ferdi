@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Settings",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 18,
+      "line": 20,
       "column": 12
     },
     "end": {
-      "line": 21,
+      "line": 23,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Add new service",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 22,
+      "line": 24,
       "column": 17
     },
     "end": {
-      "line": 25,
+      "line": 27,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Disable notifications & audio",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 26,
+      "line": 28,
       "column": 8
     },
     "end": {
-      "line": 29,
+      "line": 31,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Enable notifications & audio",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 30,
+      "line": 32,
       "column": 10
     },
     "end": {
-      "line": 33,
+      "line": 35,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Open workspace drawer",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 34,
+      "line": 36,
       "column": 23
     },
     "end": {
-      "line": 37,
+      "line": 39,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Close workspace drawer",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 38,
+      "line": 40,
       "column": 24
     },
     "end": {
-      "line": 41,
+      "line": 43,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Open Franz Todos",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 42,
+      "line": 44,
       "column": 19
     },
     "end": {
-      "line": 45,
+      "line": 47,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Close Franz Todos",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 46,
+      "line": 48,
       "column": 20
     },
     "end": {
-      "line": 49,
+      "line": 51,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Lock Ferdi",
     "file": "src/components/layout/Sidebar.js",
     "start": {
-      "line": 50,
+      "line": 52,
       "column": 13
     },
     "end": {
-      "line": 53,
+      "line": 55,
       "column": 3
     }
   }

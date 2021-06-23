@@ -11,6 +11,7 @@ import Input from '../../components/ui/Input';
 import Modal from '../../components/ui/Modal';
 import { DEBUG_API } from '../../config';
 import AppStore from '../../stores/AppStore';
+import ServicesStore from '../../stores/ServicesStore';
 
 
 const messages = defineMessages({
@@ -201,8 +202,6 @@ PublishDebugLogModal.wrappedComponent.propTypes = {
     app: PropTypes.instanceOf(AppStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    service: PropTypes.shape({
-      setActive: PropTypes.func.isRequired,
-    }).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
 };

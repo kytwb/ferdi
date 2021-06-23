@@ -10,6 +10,7 @@ import TrialStatusBar from '../components/TrialStatusBar';
 import ErrorBoundary from '../../../components/util/ErrorBoundary';
 import { trialStatusBarStore } from '..';
 import { i18nPlanName } from '../../../helpers/plan-helpers';
+import PaymentStore from '../../../stores/PaymentStore';
 
 @inject('stores', 'actions') @observer
 class TrialStatusBarScreen extends Component {
@@ -102,8 +103,6 @@ TrialStatusBarScreen.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.shape({
-      upgradeAccount: PropTypes.func.isRequired,
-    }),
+    payment: PropTypes.instanceOf(PaymentStore),
   }).isRequired,
 };

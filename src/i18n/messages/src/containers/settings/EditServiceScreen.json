@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Name",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 28,
+      "line": 29,
       "column": 8
     },
     "end": {
-      "line": 31,
+      "line": 32,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Enable service",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 32,
+      "line": 33,
       "column": 17
     },
     "end": {
-      "line": 35,
+      "line": 36,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Enable hibernation",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 36,
+      "line": 37,
       "column": 21
     },
     "end": {
-      "line": 39,
+      "line": 40,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Enable Notifications",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 40,
+      "line": 41,
       "column": 22
     },
     "end": {
-      "line": 43,
+      "line": 44,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Show unread message badges",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 44,
+      "line": 45,
       "column": 15
     },
     "end": {
-      "line": 47,
+      "line": 48,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Enable audio",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 48,
+      "line": 49,
       "column": 15
     },
     "end": {
-      "line": 51,
+      "line": 52,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Team",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 52,
+      "line": 53,
       "column": 8
     },
     "end": {
-      "line": 55,
+      "line": 56,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Service URL",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 56,
+      "line": 57,
       "column": 13
     },
     "end": {
-      "line": 59,
+      "line": 60,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Show message badge for all new messages",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 60,
+      "line": 61,
       "column": 20
     },
     "end": {
-      "line": 63,
+      "line": 64,
       "column": 3
     }
   },
@@ -121,11 +121,11 @@
     "defaultMessage": "!!!Custom icon",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 64,
+      "line": 65,
       "column": 8
     },
     "end": {
-      "line": 67,
+      "line": 68,
       "column": 3
     }
   },
@@ -134,11 +134,11 @@
     "defaultMessage": "!!!Enable Dark Mode",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 68,
+      "line": 69,
       "column": 18
     },
     "end": {
-      "line": 71,
+      "line": 72,
       "column": 3
     }
   },
@@ -147,11 +147,11 @@
     "defaultMessage": "!!!Dark Reader Brightness",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 72,
+      "line": 73,
       "column": 24
     },
     "end": {
-      "line": 75,
+      "line": 76,
       "column": 3
     }
   },
@@ -160,11 +160,11 @@
     "defaultMessage": "!!!Dark Reader Contrast",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 76,
+      "line": 77,
       "column": 22
     },
     "end": {
-      "line": 79,
+      "line": 80,
       "column": 3
     }
   },
@@ -173,11 +173,11 @@
     "defaultMessage": "!!!Dark Reader Sepia",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 80,
+      "line": 81,
       "column": 19
     },
     "end": {
-      "line": 83,
+      "line": 84,
       "column": 3
     }
   },
@@ -186,11 +186,11 @@
     "defaultMessage": "!!!Use Proxy",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 84,
+      "line": 85,
       "column": 15
     },
     "end": {
-      "line": 87,
+      "line": 88,
       "column": 3
     }
   },
@@ -199,11 +199,11 @@
     "defaultMessage": "!!!Proxy Host/IP",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 88,
+      "line": 89,
       "column": 13
     },
     "end": {
-      "line": 91,
+      "line": 92,
       "column": 3
     }
   },
@@ -212,11 +212,11 @@
     "defaultMessage": "!!!Port",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 92,
+      "line": 93,
       "column": 13
     },
     "end": {
-      "line": 95,
+      "line": 96,
       "column": 3
     }
   },
@@ -225,11 +225,11 @@
     "defaultMessage": "!!!User",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 96,
+      "line": 97,
       "column": 13
     },
     "end": {
-      "line": 99,
+      "line": 100,
       "column": 3
     }
   },
@@ -238,11 +238,11 @@
     "defaultMessage": "!!!Password",
     "file": "src/containers/settings/EditServiceScreen.js",
     "start": {
-      "line": 100,
+      "line": 101,
       "column": 17
     },
     "end": {
-      "line": 103,
+      "line": 104,
       "column": 3
     }
   }

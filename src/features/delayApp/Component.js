@@ -9,6 +9,8 @@ import { Button } from '@meetfranz/forms';
 import { config } from './constants';
 import styles from './styles';
 import UserStore from '../../stores/UserStore';
+import UIStore from '../../stores/UIStore';
+import { FeatureStore } from '../utils/FeatureStore';
 
 const messages = defineMessages({
   headline: {
@@ -109,10 +111,10 @@ export default @inject('stores', 'actions') @injectSheet(styles) @observer class
 DelayApp.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,
+    features: PropTypes.instanceOf(FeatureStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    ui: PropTypes.shape({
-      openSettings: PropTypes.func.isRequired,
-    }).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

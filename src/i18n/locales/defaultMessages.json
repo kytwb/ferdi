@@ -1266,117 +1266,117 @@
         "defaultMessage": "!!!Settings",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 23
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.settings",
         "start": {
           "column": 12,
-          "line": 18
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Add new service",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 27
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.addNewService",
         "start": {
           "column": 17,
-          "line": 22
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Disable notifications & audio",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 31
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.muteApp",
         "start": {
           "column": 8,
-          "line": 26
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Enable notifications & audio",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 35
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.unmuteApp",
         "start": {
           "column": 10,
-          "line": 30
+          "line": 32
         }
       },
       {
         "defaultMessage": "!!!Open workspace drawer",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 39
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.openWorkspaceDrawer",
         "start": {
           "column": 23,
-          "line": 34
+          "line": 36
         }
       },
       {
         "defaultMessage": "!!!Close workspace drawer",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 43
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.closeWorkspaceDrawer",
         "start": {
           "column": 24,
-          "line": 38
+          "line": 40
         }
       },
       {
         "defaultMessage": "!!!Open Franz Todos",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 47
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.openTodosDrawer",
         "start": {
           "column": 19,
-          "line": 42
+          "line": 44
         }
       },
       {
         "defaultMessage": "!!!Close Franz Todos",
         "end": {
           "column": 3,
-          "line": 49
+          "line": 51
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.closeTodosDrawer",
         "start": {
           "column": 20,
-          "line": 46
+          "line": 48
         }
       },
       {
         "defaultMessage": "!!!Lock Ferdi",
         "end": {
           "column": 3,
-          "line": 53
+          "line": 55
         },
         "file": "src/components/layout/Sidebar.js",
         "id": "sidebar.lockFerdi",
         "start": {
           "column": 13,
-          "line": 50
+          "line": 52
         }
       }
     ],
@@ -4256,91 +4256,91 @@
         "defaultMessage": "!!!Get a Franz Supporter License",
         "end": {
           "column": 3,
-          "line": 15
+          "line": 16
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "feature.delayApp.upgrade.action",
         "start": {
           "column": 10,
-          "line": 12
+          "line": 13
         }
       },
       {
         "defaultMessage": "!!!Yes, I want the free 14 day trial of Franz Professional",
         "end": {
           "column": 3,
-          "line": 19
+          "line": 20
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "feature.delayApp.trial.action",
         "start": {
           "column": 15,
-          "line": 16
+          "line": 17
         }
       },
       {
         "defaultMessage": "!!!Upgrade account",
         "end": {
           "column": 3,
-          "line": 23
+          "line": 24
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "feature.delayApp.upgrade.actionShort",
         "start": {
           "column": 15,
-          "line": 20
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!Activate the free Franz Professional trial",
         "end": {
           "column": 3,
-          "line": 27
+          "line": 28
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "feature.delayApp.trial.actionShort",
         "start": {
           "column": 20,
-          "line": 24
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!No strings attached",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 32
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "pricing.trial.terms.headline",
         "start": {
           "column": 29,
-          "line": 28
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!No credit card required",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 36
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "pricing.trial.terms.noCreditCard",
         "start": {
           "column": 16,
-          "line": 32
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Your free trial ends automatically after 14 days",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 40
         },
         "file": "src/components/ui/ActivateTrialButton/index.js",
         "id": "pricing.trial.terms.automaticTrialEnd",
         "start": {
           "column": 21,
-          "line": 36
+          "line": 37
         }
       }
     ],
@@ -4565,13 +4565,13 @@
         "defaultMessage": "!!!Upgrade account",
         "end": {
           "column": 3,
-          "line": 18
+          "line": 19
         },
         "file": "src/components/ui/PremiumFeatureContainer/index.js",
         "id": "premiumFeature.button.upgradeAccount",
         "start": {
           "column": 10,
-          "line": 15
+          "line": 16
         }
       }
     ],
@@ -4583,13 +4583,13 @@
         "defaultMessage": "!!!Upgrade to Franz Professional",
         "end": {
           "column": 3,
-          "line": 15
+          "line": 16
         },
         "file": "src/components/ui/UpgradeButton/index.js",
         "id": "global.upgradeButton.upgradeToPro",
         "start": {
           "column": 16,
-          "line": 12
+          "line": 13
         }
       }
     ],
@@ -4650,247 +4650,247 @@
         "defaultMessage": "!!!Name",
         "end": {
           "column": 3,
-          "line": 31
+          "line": 32
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.name",
         "start": {
           "column": 8,
-          "line": 28
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!Enable service",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 36
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableService",
         "start": {
           "column": 17,
-          "line": 32
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Enable hibernation",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 40
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableHibernation",
         "start": {
           "column": 21,
-          "line": 36
+          "line": 37
         }
       },
       {
         "defaultMessage": "!!!Enable Notifications",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 44
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableNotification",
         "start": {
           "column": 22,
-          "line": 40
+          "line": 41
         }
       },
       {
         "defaultMessage": "!!!Show unread message badges",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 48
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableBadge",
         "start": {
           "column": 15,
-          "line": 44
+          "line": 45
         }
       },
       {
         "defaultMessage": "!!!Enable audio",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 52
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableAudio",
         "start": {
           "column": 15,
-          "line": 48
+          "line": 49
         }
       },
       {
         "defaultMessage": "!!!Team",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 56
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.team",
         "start": {
           "column": 8,
-          "line": 52
+          "line": 53
         }
       },
       {
         "defaultMessage": "!!!Service URL",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 60
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.customUrl",
         "start": {
           "column": 13,
-          "line": 56
+          "line": 57
         }
       },
       {
         "defaultMessage": "!!!Show message badge for all new messages",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 64
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.indirectMessages",
         "start": {
           "column": 20,
-          "line": 60
+          "line": 61
         }
       },
       {
         "defaultMessage": "!!!Custom icon",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 68
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.icon",
         "start": {
           "column": 8,
-          "line": 64
+          "line": 65
         }
       },
       {
         "defaultMessage": "!!!Enable Dark Mode",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 72
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.enableDarkMode",
         "start": {
           "column": 18,
-          "line": 68
+          "line": 69
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Brightness",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 76
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderBrightness",
         "start": {
           "column": 24,
-          "line": 72
+          "line": 73
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Contrast",
         "end": {
           "column": 3,
-          "line": 79
+          "line": 80
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderContrast",
         "start": {
           "column": 22,
-          "line": 76
+          "line": 77
         }
       },
       {
         "defaultMessage": "!!!Dark Reader Sepia",
         "end": {
           "column": 3,
-          "line": 83
+          "line": 84
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.darkReaderSepia",
         "start": {
           "column": 19,
-          "line": 80
+          "line": 81
         }
       },
       {
         "defaultMessage": "!!!Use Proxy",
         "end": {
           "column": 3,
-          "line": 87
+          "line": 88
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.isEnabled",
         "start": {
           "column": 15,
-          "line": 84
+          "line": 85
         }
       },
       {
         "defaultMessage": "!!!Proxy Host/IP",
         "end": {
           "column": 3,
-          "line": 91
+          "line": 92
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.host",
         "start": {
           "column": 13,
-          "line": 88
+          "line": 89
         }
       },
       {
         "defaultMessage": "!!!Port",
         "end": {
           "column": 3,
-          "line": 95
+          "line": 96
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.port",
         "start": {
           "column": 13,
-          "line": 92
+          "line": 93
         }
       },
       {
         "defaultMessage": "!!!User",
         "end": {
           "column": 3,
-          "line": 99
+          "line": 100
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.user",
         "start": {
           "column": 13,
-          "line": 96
+          "line": 97
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 103
+          "line": 104
         },
         "file": "src/containers/settings/EditServiceScreen.js",
         "id": "settings.service.form.proxy.password",
         "start": {
           "column": 17,
-          "line": 100
+          "line": 101
         }
       }
     ],
@@ -4902,585 +4902,585 @@
         "defaultMessage": "!!!Launch Ferdi on start",
         "end": {
           "column": 3,
-          "line": 35
+          "line": 34
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.autoLaunchOnStart",
         "start": {
           "column": 21,
-          "line": 32
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Open in background",
         "end": {
           "column": 3,
-          "line": 39
+          "line": 38
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.autoLaunchInBackground",
         "start": {
           "column": 26,
-          "line": 36
+          "line": 35
         }
       },
       {
         "defaultMessage": "!!!Keep Ferdi in background when closing the window",
         "end": {
           "column": 3,
-          "line": 43
+          "line": 42
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.runInBackground",
         "start": {
           "column": 19,
-          "line": 40
+          "line": 39
         }
       },
       {
         "defaultMessage": "!!!Start minimized",
         "end": {
           "column": 3,
-          "line": 47
+          "line": 46
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.startMinimized",
         "start": {
           "column": 18,
-          "line": 44
+          "line": 43
         }
       },
       {
         "defaultMessage": "!!!Always show Ferdi in System Tray",
         "end": {
           "column": 3,
-          "line": 51
+          "line": 50
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSystemTray",
         "start": {
           "column": 20,
-          "line": 48
+          "line": 47
         }
       },
       {
         "defaultMessage": "!!!Always show Ferdi in Menu Bar",
         "end": {
           "column": 3,
-          "line": 55
+          "line": 54
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableMenuBar",
         "start": {
           "column": 17,
-          "line": 52
+          "line": 51
         }
       },
       {
         "defaultMessage": "!!!Reload Ferdi after system resume",
         "end": {
           "column": 3,
-          "line": 59
+          "line": 58
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.reloadAfterResume",
         "start": {
           "column": 21,
-          "line": 56
+          "line": 55
         }
       },
       {
         "defaultMessage": "!!!Minimize Ferdi to system tray",
         "end": {
           "column": 3,
-          "line": 63
+          "line": 62
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.minimizeToSystemTray",
         "start": {
           "column": 24,
-          "line": 60
+          "line": 59
         }
       },
       {
         "defaultMessage": "!!!Close Ferdi to system tray",
         "end": {
           "column": 3,
-          "line": 67
+          "line": 66
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.closeToSystemTray",
         "start": {
           "column": 21,
-          "line": 64
+          "line": 63
         }
       },
       {
         "defaultMessage": "!!!Don't show message content in notifications",
         "end": {
           "column": 3,
-          "line": 71
+          "line": 70
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.privateNotifications",
         "start": {
           "column": 24,
-          "line": 68
+          "line": 67
         }
       },
       {
         "defaultMessage": "!!!Don't show notifications for clipboard events",
         "end": {
           "column": 3,
-          "line": 75
+          "line": 74
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.clipboardNotifications",
         "start": {
           "column": 26,
-          "line": 72
+          "line": 71
         }
       },
       {
         "defaultMessage": "!!!Notify TaskBar/Dock on new message",
         "end": {
           "column": 3,
-          "line": 79
+          "line": 78
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.notifyTaskBarOnMessage",
         "start": {
           "column": 26,
-          "line": 76
+          "line": 75
         }
       },
       {
         "defaultMessage": "!!!Navigation bar behaviour",
         "end": {
           "column": 3,
-          "line": 83
+          "line": 82
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.navigationBarBehaviour",
         "start": {
           "column": 26,
-          "line": 80
+          "line": 79
         }
       },
       {
         "defaultMessage": "!!!Search engine",
         "end": {
           "column": 3,
-          "line": 87
+          "line": 86
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.searchEngine",
         "start": {
           "column": 16,
-          "line": 84
+          "line": 83
         }
       },
       {
         "defaultMessage": "!!!Send telemetry data",
         "end": {
           "column": 3,
-          "line": 91
+          "line": 90
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.sentry",
         "start": {
           "column": 10,
-          "line": 88
+          "line": 87
         }
       },
       {
         "defaultMessage": "!!!Enable service hibernation",
         "end": {
           "column": 3,
-          "line": 95
+          "line": 94
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernate",
         "start": {
           "column": 13,
-          "line": 92
+          "line": 91
         }
       },
       {
         "defaultMessage": "!!!Keep services in hibernation on startup",
         "end": {
           "column": 3,
-          "line": 99
+          "line": 98
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernateOnStartup",
         "start": {
           "column": 22,
-          "line": 96
+          "line": 95
         }
       },
       {
         "defaultMessage": "!!!Hibernation strategy",
         "end": {
           "column": 3,
-          "line": 103
+          "line": 102
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.hibernationStrategy",
         "start": {
           "column": 23,
-          "line": 100
+          "line": 99
         }
       },
       {
         "defaultMessage": "!!!Todo Server",
         "end": {
           "column": 3,
-          "line": 107
+          "line": 106
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.predefinedTodoServer",
         "start": {
           "column": 24,
-          "line": 104
+          "line": 103
         }
       },
       {
         "defaultMessage": "!!!Custom TodoServer",
         "end": {
           "column": 3,
-          "line": 111
+          "line": 110
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.customTodoServer",
         "start": {
           "column": 20,
-          "line": 108
+          "line": 107
         }
       },
       {
         "defaultMessage": "!!!Enable Password Lock",
         "end": {
           "column": 3,
-          "line": 115
+          "line": 114
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableLock",
         "start": {
           "column": 14,
-          "line": 112
+          "line": 111
         }
       },
       {
         "defaultMessage": "!!!Password",
         "end": {
           "column": 3,
-          "line": 119
+          "line": 118
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.lockPassword",
         "start": {
           "column": 16,
-          "line": 116
+          "line": 115
         }
       },
       {
         "defaultMessage": "!!!Allow using Touch ID to unlock",
         "end": {
           "column": 3,
-          "line": 123
+          "line": 122
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.useTouchIdToUnlock",
         "start": {
           "column": 22,
-          "line": 120
+          "line": 119
         }
       },
       {
         "defaultMessage": "!!!Lock after inactivity",
         "end": {
           "column": 3,
-          "line": 127
+          "line": 126
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.inactivityLock",
         "start": {
           "column": 18,
-          "line": 124
+          "line": 123
         }
       },
       {
         "defaultMessage": "!!!Enable scheduled Do-not-Disturb",
         "end": {
           "column": 3,
-          "line": 131
+          "line": 130
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnabled",
         "start": {
           "column": 23,
-          "line": 128
+          "line": 127
         }
       },
       {
         "defaultMessage": "!!!From",
         "end": {
           "column": 3,
-          "line": 135
+          "line": 134
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDStart",
         "start": {
           "column": 21,
-          "line": 132
+          "line": 131
         }
       },
       {
         "defaultMessage": "!!!To",
         "end": {
           "column": 3,
-          "line": 139
+          "line": 138
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.scheduledDNDEnd",
         "start": {
           "column": 19,
-          "line": 136
+          "line": 135
         }
       },
       {
         "defaultMessage": "!!!Language",
         "end": {
           "column": 3,
-          "line": 143
+          "line": 142
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.language",
         "start": {
           "column": 12,
-          "line": 140
+          "line": 139
         }
       },
       {
         "defaultMessage": "!!!Dark Mode",
         "end": {
           "column": 3,
-          "line": 147
+          "line": 146
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.darkMode",
         "start": {
           "column": 12,
-          "line": 144
+          "line": 143
         }
       },
       {
         "defaultMessage": "!!!Synchronize dark mode with my OS's dark mode setting",
         "end": {
           "column": 3,
-          "line": 151
+          "line": 150
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.adaptableDarkMode",
         "start": {
           "column": 21,
-          "line": 148
+          "line": 147
         }
       },
       {
         "defaultMessage": "!!!Enable universal Dark Mode",
         "end": {
           "column": 3,
-          "line": 155
+          "line": 154
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.universalDarkMode",
         "start": {
           "column": 21,
-          "line": 152
+          "line": 151
         }
       },
       {
         "defaultMessage": "!!!Sidebar width",
         "end": {
           "column": 3,
-          "line": 159
+          "line": 158
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.serviceRibbonWidth",
         "start": {
           "column": 22,
-          "line": 156
+          "line": 155
         }
       },
       {
         "defaultMessage": "!!!Service icon size",
         "end": {
           "column": 3,
-          "line": 163
+          "line": 162
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.iconSize",
         "start": {
           "column": 12,
-          "line": 160
+          "line": 159
         }
       },
       {
         "defaultMessage": "!!!Use vertical style",
         "end": {
           "column": 3,
-          "line": 167
+          "line": 166
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.useVerticalStyle",
         "start": {
           "column": 20,
-          "line": 164
+          "line": 163
         }
       },
       {
         "defaultMessage": "!!!Always show workspace drawer",
         "end": {
           "column": 3,
-          "line": 171
+          "line": 170
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.alwaysShowWorkspaces",
         "start": {
           "column": 24,
-          "line": 168
+          "line": 167
         }
       },
       {
         "defaultMessage": "!!!Accent color",
         "end": {
           "column": 3,
-          "line": 175
+          "line": 174
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.accentColor",
         "start": {
           "column": 15,
-          "line": 172
+          "line": 171
         }
       },
       {
         "defaultMessage": "!!!Display disabled services tabs",
         "end": {
           "column": 3,
-          "line": 179
+          "line": 178
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDisabledServices",
         "start": {
           "column": 24,
-          "line": 176
+          "line": 175
         }
       },
       {
         "defaultMessage": "!!!Show unread message badge when notifications are disabled",
         "end": {
           "column": 3,
-          "line": 183
+          "line": 182
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showMessagesBadgesWhenMuted",
         "start": {
           "column": 29,
-          "line": 180
+          "line": 179
         }
       },
       {
         "defaultMessage": "!!!Show draggable area on window",
         "end": {
           "column": 3,
-          "line": 187
+          "line": 186
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.showDragArea",
         "start": {
           "column": 16,
-          "line": 184
+          "line": 183
         }
       },
       {
         "defaultMessage": "!!!Enable spell checking",
         "end": {
           "column": 3,
-          "line": 191
+          "line": 190
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableSpellchecking",
         "start": {
           "column": 23,
-          "line": 188
+          "line": 187
         }
       },
       {
         "defaultMessage": "!!!Enable GPU Acceleration",
         "end": {
           "column": 3,
-          "line": 195
+          "line": 194
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableGPUAcceleration",
         "start": {
           "column": 25,
-          "line": 192
+          "line": 191
         }
       },
       {
         "defaultMessage": "!!!Include beta versions",
         "end": {
           "column": 3,
-          "line": 199
+          "line": 198
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.beta",
         "start": {
           "column": 8,
-          "line": 196
+          "line": 195
         }
       },
       {
         "defaultMessage": "!!!Enable updates",
         "end": {
           "column": 3,
-          "line": 203
+          "line": 202
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.automaticUpdates",
         "start": {
           "column": 20,
-          "line": 200
+          "line": 199
         }
       },
       {
         "defaultMessage": "!!!Enable Franz Todos",
         "end": {
           "column": 3,
-          "line": 207
+          "line": 206
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.enableTodos",
         "start": {
           "column": 15,
-          "line": 204
+          "line": 203
         }
       },
       {
         "defaultMessage": "!!!Keep all workspaces loaded",
         "end": {
           "column": 3,
-          "line": 211
+          "line": 210
         },
         "file": "src/containers/settings/EditSettingsScreen.js",
         "id": "settings.app.form.keepAllWorkspacesLoaded",
         "start": {
           "column": 27,
-          "line": 208
+          "line": 207
         }
       }
     ],
@@ -5614,13 +5614,13 @@
         "defaultMessage": "!!!Changes in Ferdi {version}",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 23
         },
         "file": "src/features/announcements/components/AnnouncementScreen.js",
         "id": "feature.announcements.changelog.headline",
         "start": {
           "column": 12,
-          "line": 19
+          "line": 20
         }
       }
     ],
@@ -5650,65 +5650,65 @@
         "defaultMessage": "!!!Please purchase license to skip waiting",
         "end": {
           "column": 3,
-          "line": 17
+          "line": 19
         },
         "file": "src/features/delayApp/Component.js",
         "id": "feature.delayApp.headline",
         "start": {
           "column": 12,
-          "line": 14
+          "line": 16
         }
       },
       {
         "defaultMessage": "!!!Get the free Franz Professional 14 day trial and skip the line",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 23
         },
         "file": "src/features/delayApp/Component.js",
         "id": "feature.delayApp.trial.headline",
         "start": {
           "column": 17,
-          "line": 18
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Upgrade Franz",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 27
         },
         "file": "src/features/delayApp/Component.js",
         "id": "feature.delayApp.upgrade.action",
         "start": {
           "column": 10,
-          "line": 22
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Yes, I want the free 14 day trial of Franz Professional",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 31
         },
         "file": "src/features/delayApp/Component.js",
         "id": "feature.delayApp.trial.action",
         "start": {
           "column": 15,
-          "line": 26
+          "line": 28
         }
       },
       {
         "defaultMessage": "!!!Ferdi will continue in {seconds} seconds.",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 35
         },
         "file": "src/features/delayApp/Component.js",
         "id": "feature.delayApp.text",
         "start": {
           "column": 8,
-          "line": 30
+          "line": 32
         }
       }
     ],
@@ -5720,52 +5720,52 @@
         "defaultMessage": "!!!Nightly Builds",
         "end": {
           "column": 3,
-          "line": 17
+          "line": 19
         },
         "file": "src/features/nightlyBuilds/Component.js",
         "id": "feature.nightlyBuilds.title",
         "start": {
           "column": 9,
-          "line": 14
+          "line": 16
         }
       },
       {
         "defaultMessage": "!!!Nightly builds are highly experimental versions of Ferdi that may contain unpolished or uncompleted features. These nightly builds are mainly used by developers to test their newly developed features and how they will perform in the final build. If you don't know what you are doing, we suggest not activating nightly builds.",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 23
         },
         "file": "src/features/nightlyBuilds/Component.js",
         "id": "feature.nightlyBuilds.info",
         "start": {
           "column": 8,
-          "line": 18
+          "line": 20
         }
       },
       {
         "defaultMessage": "!!!Activate",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 27
         },
         "file": "src/features/nightlyBuilds/Component.js",
         "id": "feature.nightlyBuilds.activate",
         "start": {
           "column": 12,
-          "line": 22
+          "line": 24
         }
       },
       {
         "defaultMessage": "!!!Cancel",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 31
         },
         "file": "src/features/nightlyBuilds/Component.js",
         "id": "feature.nightlyBuilds.cancel",
         "start": {
           "column": 10,
-          "line": 26
+          "line": 28
         }
       }
     ],
@@ -6013,52 +6013,52 @@
         "defaultMessage": "!!!Downgrade your Franz Plan",
         "end": {
           "column": 3,
-          "line": 17
+          "line": 18
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.title",
         "start": {
           "column": 15,
-          "line": 14
+          "line": 15
         }
       },
       {
         "defaultMessage": "!!!You're about to downgrade to our Free account. Are you sure? Click here instead to get more services and functionality for just {currency}{price} a month.",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 22
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.message",
         "start": {
           "column": 17,
-          "line": 18
+          "line": 19
         }
       },
       {
         "defaultMessage": "!!!Downgrade to Free",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 26
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.cta.downgrade",
         "start": {
           "column": 22,
-          "line": 22
+          "line": 23
         }
       },
       {
         "defaultMessage": "!!!Choose Personal",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 30
         },
         "file": "src/features/planSelection/containers/PlanSelectionScreen.js",
         "id": "feature.planSelection.fullscreen.dialog.cta.upgrade",
         "start": {
           "column": 20,
-          "line": 26
+          "line": 27
         }
       }
     ],
@@ -6070,91 +6070,91 @@
         "defaultMessage": "!!!Publish debug information",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 21
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.title",
         "start": {
           "column": 9,
-          "line": 17
+          "line": 18
         }
       },
       {
         "defaultMessage": "!!!Publishing your debug information helps us find issues and errors in Ferdi. By publishing your debug information you accept Ferdi Debugger's privacy policy and terms of service",
         "end": {
           "column": 3,
-          "line": 24
+          "line": 25
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.info",
         "start": {
           "column": 8,
-          "line": 21
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!There was an error while trying to publish the debug information. Please try again later or view the console for more information.",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 29
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.error",
         "start": {
           "column": 9,
-          "line": 25
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!Privacy policy",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 33
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.privacy",
         "start": {
           "column": 11,
-          "line": 29
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!Terms of service",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 37
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.terms",
         "start": {
           "column": 9,
-          "line": 33
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Accept and publish",
         "end": {
           "column": 3,
-          "line": 40
+          "line": 41
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.publish",
         "start": {
           "column": 11,
-          "line": 37
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!Your debug log was published and is now availible at",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 45
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.published",
         "start": {
           "column": 13,
-          "line": 41
+          "line": 42
         }
       }
     ],

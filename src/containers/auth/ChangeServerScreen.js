@@ -39,9 +39,7 @@ export default @inject('stores', 'actions') @observer class ChangeServerScreen e
 
 ChangeServerScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    settings: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
+    settings: PropTypes.instanceOf(SettingsStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     settings: PropTypes.instanceOf(SettingsStore).isRequired,

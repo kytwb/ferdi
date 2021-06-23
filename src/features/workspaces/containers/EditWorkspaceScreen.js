@@ -8,14 +8,13 @@ import ServicesStore from '../../../stores/ServicesStore';
 import Workspace from '../models/Workspace';
 import { workspaceStore } from '../index';
 import { deleteWorkspaceRequest, updateWorkspaceRequest } from '../api';
+import WorkspacesStore from '../store';
 
 @inject('stores', 'actions') @observer
 class EditWorkspaceScreen extends Component {
   static propTypes = {
     actions: PropTypes.shape({
-      workspace: PropTypes.shape({
-        delete: PropTypes.func.isRequired,
-      }),
+      workspaces: PropTypes.instanceOf(WorkspacesStore),
     }).isRequired,
     stores: PropTypes.shape({
       services: PropTypes.instanceOf(ServicesStore).isRequired,

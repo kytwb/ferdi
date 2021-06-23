@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Upgrade account",
     "file": "src/components/ui/PremiumFeatureContainer/index.js",
     "start": {
-      "line": 15,
+      "line": 16,
       "column": 10
     },
     "end": {
-      "line": 18,
+      "line": 19,
       "column": 3
     }
   }

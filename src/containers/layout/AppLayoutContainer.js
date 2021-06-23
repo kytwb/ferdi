@@ -182,34 +182,11 @@ AppLayoutContainer.wrappedComponent.propTypes = {
     workspaces: PropTypes.instanceOf(WorkspacesStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    service: PropTypes.shape({
-      setActive: PropTypes.func.isRequired,
-      reload: PropTypes.func.isRequired,
-      toggleNotifications: PropTypes.func.isRequired,
-      toggleAudio: PropTypes.func.isRequired,
-      handleIPCMessage: PropTypes.func.isRequired,
-      setWebviewReference: PropTypes.func.isRequired,
-      detachService: PropTypes.func.isRequired,
-      openWindow: PropTypes.func.isRequired,
-      reloadUpdatedServices: PropTypes.func.isRequired,
-      updateService: PropTypes.func.isRequired,
-      deleteService: PropTypes.func.isRequired,
-      reorder: PropTypes.func.isRequired,
-    }).isRequired,
-    news: PropTypes.shape({
-      hide: PropTypes.func.isRequired,
-    }).isRequired,
-    ui: PropTypes.shape({
-      openSettings: PropTypes.func.isRequired,
-      closeSettings: PropTypes.func.isRequired,
-    }).isRequired,
-    app: PropTypes.shape({
-      installUpdate: PropTypes.func.isRequired,
-      toggleMuteApp: PropTypes.func.isRequired,
-    }).isRequired,
-    requests: PropTypes.shape({
-      retryRequiredRequests: PropTypes.func.isRequired,
-    }).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
+    news: PropTypes.instanceOf(NewsStore).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    requests: PropTypes.instanceOf(RequestStore).isRequired,
   }).isRequired,
   children: oneOrManyChildElements,
 };

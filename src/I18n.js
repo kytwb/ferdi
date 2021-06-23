@@ -6,6 +6,7 @@ import { IntlProvider } from 'react-intl';
 import { oneOrManyChildElements } from './prop-types';
 import translations from './i18n/translations';
 import UserStore from './stores/UserStore';
+import AppStore from './stores/AppStore';
 
 export default @inject('stores') @observer class I18N extends Component {
   componentDidUpdate() {
@@ -28,6 +29,7 @@ export default @inject('stores') @observer class I18N extends Component {
 
 I18N.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
+    app: PropTypes.instanceOf(AppStore).isRequired,
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   children: oneOrManyChildElements.isRequired,

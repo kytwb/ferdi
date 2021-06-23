@@ -10,14 +10,13 @@ import {
   getUserWorkspacesRequest,
   updateWorkspaceRequest,
 } from '../api';
+import WorkspacesStore from '../store';
 
 @inject('stores', 'actions') @observer
 class WorkspacesScreen extends Component {
   static propTypes = {
     actions: PropTypes.shape({
-      workspace: PropTypes.shape({
-        edit: PropTypes.func.isRequired,
-      }),
+      workspaces: PropTypes.instanceOf(WorkspacesStore),
     }).isRequired,
   };
 

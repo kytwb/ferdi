@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Upgrade to Franz Professional",
     "file": "src/components/ui/UpgradeButton/index.js",
     "start": {
-      "line": 12,
+      "line": 13,
       "column": 16
     },
     "end": {
-      "line": 15,
+      "line": 16,
       "column": 3
     }
   }

@@ -5,6 +5,7 @@ import Locked from '../../components/auth/Locked';
 import SettingsStore from '../../stores/SettingsStore';
 
 import { hash } from '../../helpers/password-helpers';
+import UserStore from '../../stores/UserStore';
 
 export default @inject('stores', 'actions') @observer class LockedScreen extends Component {
   state = {
@@ -75,11 +76,10 @@ export default @inject('stores', 'actions') @observer class LockedScreen extends
 
 LockedScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    settings: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
+    settings: PropTypes.instanceOf(SettingsStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     settings: PropTypes.instanceOf(SettingsStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

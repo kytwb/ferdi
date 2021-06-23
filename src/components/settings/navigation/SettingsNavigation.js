@@ -57,9 +57,7 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
       router: PropTypes.instanceOf(RouterStore).isRequired,
     }).isRequired,
     actions: PropTypes.shape({
-      settings: PropTypes.shape({
-        update: PropTypes.func.isRequired,
-      }).isRequired,
+      settings: PropTypes.instanceOf(SettingsStore).isRequired,
     }).isRequired,
     serviceCount: PropTypes.number.isRequired,
     workspaceCount: PropTypes.number.isRequired,

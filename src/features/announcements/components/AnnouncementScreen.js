@@ -8,6 +8,7 @@ import { Button } from '@meetfranz/forms';
 
 import { announcementsStore } from '../index';
 import UIStore from '../../../stores/UIStore';
+import AppStore from '../../../stores/AppStore';
 
 const renderer = new marked.Renderer();
 
@@ -193,9 +194,7 @@ class AnnouncementScreen extends Component {
       ui: PropTypes.instanceOf(UIStore).isRequired,
     }).isRequired,
     actions: PropTypes.shape({
-      app: PropTypes.shape({
-        openExternalUrl: PropTypes.func.isRequired,
-      }).isRequired,
+      app: PropTypes.instanceOf(AppStore).isRequired,
     }).isRequired,
   };
 

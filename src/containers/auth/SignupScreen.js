@@ -45,9 +45,7 @@ export default @inject('stores', 'actions') @observer class SignupScreen extends
 
 SignupScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      signup: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,

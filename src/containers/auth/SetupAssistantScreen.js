@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 
+import { RouterStore } from 'mobx-react-router';
 import { DEFAULT_TODO_RECIPE_ID, DEFAULT_TODO_SERVICE_NAME } from '../../config';
 import { sleep } from '../../helpers/async-helpers';
 import SetupAssistant from '../../components/auth/SetupAssistant';
@@ -116,18 +117,13 @@ export default @inject('stores', 'actions') @observer class SetupAssistantScreen
 SetupAssistantScreen.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     services: PropTypes.instanceOf(ServicesStore),
+    router: PropTypes.instanceOf(RouterStore).isRequired,
     recipes: PropTypes.instanceOf(RecipesStore),
     user: PropTypes.instanceOf(UserStore),
   }).isRequired,
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      invite: PropTypes.func.isRequired,
-    }).isRequired,
-    service: PropTypes.shape({
-      createService: PropTypes.func.isRequired,
-    }).isRequired,
-    recipe: PropTypes.shape({
-      install: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
+    recipe: PropTypes.instanceOf(RecipesStore).isRequired,
   }).isRequired,
 };

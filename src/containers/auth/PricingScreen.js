@@ -7,6 +7,7 @@ import Pricing from '../../components/auth/Pricing';
 import UserStore from '../../stores/UserStore';
 
 import { globalError as globalErrorPropType } from '../../prop-types';
+import FeaturesStore from '../../stores/FeaturesStore';
 
 export default @inject('stores', 'actions') @observer class PricingScreen extends Component {
   static propTypes = {
@@ -72,12 +73,11 @@ export default @inject('stores', 'actions') @observer class PricingScreen extend
 
 PricingScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      activateTrial: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,
     router: PropTypes.instanceOf(RouterStore).isRequired,
+    features: PropTypes.instanceOf(FeaturesStore).isRequired,
   }).isRequired,
 };

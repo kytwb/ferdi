@@ -14,6 +14,7 @@ export default @observer class ToggleRaw extends Component {
       id: PropTypes.string,
       name: PropTypes.string,
       label: PropTypes.string,
+      error: PropTypes.string,
     }).isRequired,
     className: PropTypes.string,
     showLabel: PropTypes.bool,

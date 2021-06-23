@@ -24,6 +24,7 @@
     "class-methods-use-this": 0,
     "no-console": 0,
     "react/jsx-no-bind": 0,
+    "react/sort-comp": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "react/jsx-no-target-blank": 0,
     "no-restricted-syntax": [0, "ForInStatement"],

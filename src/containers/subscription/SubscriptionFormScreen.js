@@ -7,6 +7,9 @@ import PaymentStore from '../../stores/PaymentStore';
 
 import SubscriptionForm from '../../components/subscription/SubscriptionForm';
 import TrialForm from '../../components/subscription/TrialForm';
+import UserStore from '../../stores/UserStore';
+import FeaturesStore from '../../stores/FeaturesStore';
+import AppStore from '../../stores/AppStore';
 
 export default @inject('stores', 'actions') @observer class SubscriptionFormScreen extends Component {
   static propTypes = {
@@ -84,17 +87,13 @@ export default @inject('stores', 'actions') @observer class SubscriptionFormScre
 
 SubscriptionFormScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    payment: PropTypes.shape({
-      createHostedPage: PropTypes.func.isRequired,
-    }).isRequired,
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    payment: PropTypes.instanceOf(PaymentStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     payment: PropTypes.instanceOf(PaymentStore).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
+    features: PropTypes.instanceOf(FeaturesStore).isRequired,
   }).isRequired,
 };

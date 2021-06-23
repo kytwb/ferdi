@@ -36,7 +36,7 @@ export default @observer class Tab extends Component {
         <div className="content-tabs__tabs">
           {React.Children.map(children, (child, i) => (
             <button
-              key={i}
+              key="{i}"
               className={classnames({
                 'content-tabs__item': true,
                 'is-active': this.state.active === i,
@@ -51,7 +51,7 @@ export default @observer class Tab extends Component {
         <div className="content-tabs__content">
           {React.Children.map(children, (child, i) => (
             <div
-              key={i}
+              key="{i}"
               className={classnames({
                 'content-tabs__item': true,
                 'is-active': this.state.active === i,

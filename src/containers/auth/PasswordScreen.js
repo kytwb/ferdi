@@ -22,9 +22,7 @@ export default @inject('stores', 'actions') @observer class PasswordScreen exten
 
 PasswordScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      retrievePassword: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,

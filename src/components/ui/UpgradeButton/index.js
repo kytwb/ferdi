@@ -7,6 +7,7 @@ import { Button } from '@meetfranz/forms';
 
 import UserStore from '../../../stores/UserStore';
 import ActivateTrialButton from '../ActivateTrialButton';
+import UIStore from '../../../stores/UIStore';
 
 const messages = defineMessages({
   upgradeToPro: {
@@ -77,8 +78,6 @@ UpgradeButton.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    ui: PropTypes.shape({
-      openSettings: PropTypes.func.isRequired,
-    }).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
   }).isRequired,
 };

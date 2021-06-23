@@ -10,6 +10,8 @@ import { ctrlKey, isMac } from '../../environment';
 import { workspaceStore } from '../../features/workspaces';
 import { todosStore } from '../../features/todos';
 import { todoActions } from '../../features/todos/actions';
+import AppStore from '../../stores/AppStore';
+import SettingsStore from '../../stores/SettingsStore';
 
 // Platform specific shortcut keys
 const settingsShortcutKey = isMac ? ',' : 'P';
@@ -61,6 +63,13 @@ export default @inject('stores', 'actions') @observer class Sidebar extends Comp
     isWorkspaceDrawerOpen: PropTypes.bool.isRequired,
     toggleWorkspaceDrawer: PropTypes.func.isRequired,
     isTodosServiceActive: PropTypes.bool.isRequired,
+    stores: PropTypes.shape({
+      app: PropTypes.instanceOf(AppStore).isRequired,
+      settings: PropTypes.instanceOf(SettingsStore).isRequired,
+    }).isRequired,
+    actions: PropTypes.shape({
+      settings: PropTypes.instanceOf(SettingsStore).isRequired,
+    }).isRequired,
   };
 
   static contextTypes = {

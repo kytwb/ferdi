@@ -17,6 +17,9 @@ export default @inject('stores') @withTheme @injectSheet(styles) @observer class
     spinnerColor: PropTypes.string,
     children: PropTypes.node,
     stores: PropTypes.shape({
+      app: PropTypes.shape({
+        accentColor: PropTypes.string.isRequired,
+      }).isRequired,
       settings: PropTypes.shape({
         app: PropTypes.shape({
           accentColor: PropTypes.string.isRequired,

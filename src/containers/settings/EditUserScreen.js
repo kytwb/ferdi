@@ -153,9 +153,6 @@ EditUserScreen.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    user: PropTypes.shape({
-      update: PropTypes.func.isRequired,
-      resetStatus: PropTypes.func.isRequired,
-    }).isRequired,
+    user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
 };

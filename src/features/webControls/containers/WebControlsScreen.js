@@ -7,6 +7,7 @@ import WebControls from '../components/WebControls';
 import ServicesStore from '../../../stores/ServicesStore';
 import Service from '../../../models/Service';
 import { SEARCH_ENGINE_URLS } from '../../../config';
+import AppStore from '../../../stores/AppStore';
 
 const URL_EVENTS = [
   'load-commit',
@@ -128,11 +129,7 @@ WebControlsScreen.wrappedComponent.propTypes = {
     services: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    service: PropTypes.shape({
-      reloadActive: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    service: PropTypes.instanceOf(ServicesStore).isRequired,
   }).isRequired,
 };

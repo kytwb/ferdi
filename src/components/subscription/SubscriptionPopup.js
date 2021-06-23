@@ -57,7 +57,6 @@ export default @observer class SubscriptionPopup extends Component {
         <div className="subscription-popup__content">
           <Webview
             className="subscription-popup__webview"
-
             autosize
             allowpopups
             src={encodeURI(url)}

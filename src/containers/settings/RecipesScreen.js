@@ -17,6 +17,7 @@ import ErrorBoundary from '../../components/util/ErrorBoundary';
 import { FRANZ_DEV_DOCS, RECIPES_PATH } from '../../config';
 import { communityRecipesStore } from '../../features/communityRecipes';
 import RecipePreview from '../../models/RecipePreview';
+import AppStore from '../../stores/AppStore';
 
 export default @inject('stores', 'actions') @observer class RecipesScreen extends Component {
   static propTypes = {
@@ -75,7 +76,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       search({ needle });
     }
   }
-
 
   prepareRecipes(recipes) {
     return recipes
@@ -186,12 +186,8 @@ RecipesScreen.wrappedComponent.propTypes = {
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
-    service: PropTypes.shape({
-      showAddServiceInterface: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    service: PropTypes.instanceOf(ServiceStore).isRequired,
     recipePreview: PropTypes.shape({
       search: PropTypes.func.isRequired,
     }).isRequired,

@@ -3,23 +3,19 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import classnames from 'classnames';
 
-export default @inject('stores') @observer class Button extends Component {
+import { oneOrManyChildElements } from '../../prop-types';
+
+export default @observer class Button extends Component {
   static propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
     type: PropTypes.string,
+    children: oneOrManyChildElements.isRequired,
     htmlForm: PropTypes.string,
-    stores: PropTypes.shape({
-      settings: PropTypes.shape({
-        app: PropTypes.shape({
-          accentColor: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired,
-    }).isRequired,
   };
 
   static defaultProps = {

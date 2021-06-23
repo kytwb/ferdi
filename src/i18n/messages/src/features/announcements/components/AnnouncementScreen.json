@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Changes in Ferdi {version}",
     "file": "src/features/announcements/components/AnnouncementScreen.js",
     "start": {
-      "line": 19,
+      "line": 20,
       "column": 12
     },
     "end": {
-      "line": 22,
+      "line": 23,
       "column": 3
     }
   }

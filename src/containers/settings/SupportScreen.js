@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import SupportFerdi from '../../components/settings/supportFerdi/SupportFerdiDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
+import AppStore from '../../stores/AppStore';
 
 export default @inject('actions') class SupportScreen extends Component {
   constructor(props) {
@@ -29,8 +30,6 @@ export default @inject('actions') class SupportScreen extends Component {
 
 SupportScreen.wrappedComponent.propTypes = {
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      openExternalUrl: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
   }).isRequired,
 };

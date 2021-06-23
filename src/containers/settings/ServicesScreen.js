@@ -63,13 +63,6 @@ ServicesScreen.wrappedComponent.propTypes = {
     router: PropTypes.instanceOf(RouterStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    service: PropTypes.shape({
-      showAddServiceInterface: PropTypes.func.isRequired,
-      deleteService: PropTypes.func.isRequired,
-      toggleService: PropTypes.func.isRequired,
-      filter: PropTypes.func.isRequired,
-      resetFilter: PropTypes.func.isRequired,
-      resetStatus: PropTypes.func.isRequired,
-    }).isRequired,
+    service: PropTypes.instanceOf(ServiceStore).isRequired,
   }).isRequired,
 };

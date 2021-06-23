@@ -7,9 +7,12 @@ import AuthLayout from '../../components/auth/AuthLayout';
 import AppStore from '../../stores/AppStore';
 import UserStore from '../../stores/UserStore';
 import GlobalErrorStore from '../../stores/GlobalErrorStore';
+import UIStore from '../../stores/UIStore';
+import SettingsStore from '../../stores/SettingsStore';
 import AppLoader from '../../components/ui/AppLoader';
 
 import { oneOrManyChildElements } from '../../prop-types';
+import FeaturesStore from '../../stores/FeaturesStore';
 
 export default @inject('stores', 'actions') @observer class AuthLayoutContainer extends Component {
   static propTypes = {
@@ -71,12 +74,13 @@ export default @inject('stores', 'actions') @observer class AuthLayoutContainer 
 AuthLayoutContainer.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     app: PropTypes.instanceOf(AppStore).isRequired,
+    features: PropTypes.instanceOf(FeaturesStore).isRequired,
     globalError: PropTypes.instanceOf(GlobalErrorStore).isRequired,
     user: PropTypes.instanceOf(UserStore).isRequired,
+    ui: PropTypes.instanceOf(UIStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    app: PropTypes.shape({
-      healthCheck: PropTypes.func.isRequired,
-    }).isRequired,
+    app: PropTypes.instanceOf(AppStore).isRequired,
+    settings: PropTypes.instanceOf(SettingsStore).isRequired,
   }).isRequired,
 };
