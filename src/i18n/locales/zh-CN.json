@@ -345,7 +345,7 @@
   "settings.recipes.headline": "Available services",
   "settings.recipes.missingService": "Missing a service?",
   "settings.recipes.mostPopular": "Most popular",
-  "settings.recipes.nothingFound": "Sorry, but no service matched your search term.",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term. Please note that the website might show more services that have been added to Ferdi since the version that you are currently on. To get those new services, please consider upgrading to a newer version of Ferdi.",
   "settings.recipes.servicesSuccessfulAddedInfo": "Service successfully added",
   "settings.searchService": "Search service",
   "settings.service.error.goBack": "Back to services",

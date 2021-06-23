@@ -40,7 +40,7 @@ const messages = defineMessages({
   },
   nothingFound: {
     id: 'settings.recipes.nothingFound',
-    defaultMessage: '!!!Sorry, but no service matched your search term - but you can still probably add it using the "Custom Website" option:',
+    defaultMessage: '!!!Sorry, but no service matched your search term - but you can still probably add it using the "Custom Website" option. Please note that the website might show more services that have been added to Ferdi since the version that you are currently on. To get those new services, please consider upgrading to a newer version of Ferdi.',
   },
   servicesSuccessfulAddedInfo: {
     id: 'settings.recipes.servicesSuccessfulAddedInfo',
@@ -265,7 +265,7 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
                       </span>
 
                       <p className="settings__empty-state-text">{intl.formatMessage(messages.nothingFound)}</p>
-                      
+
                       <RecipeItem
                         key={customWebsiteRecipe.id}
                         recipe={customWebsiteRecipe}

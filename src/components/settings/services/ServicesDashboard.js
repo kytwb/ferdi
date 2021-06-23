@@ -27,7 +27,7 @@ const messages = defineMessages({
   },
   noServiceFound: {
     id: 'settings.recipes.nothingFound',
-    defaultMessage: '!!!Sorry, but no service matched your search term.',
+    defaultMessage: '!!!Sorry, but no service matched your search term. Please note that the website might show more services that have been added to Ferdi since the version that you are currently on. To get those new services, please consider upgrading to a newer version of Ferdi.',
   },
   discoverServices: {
     id: 'settings.services.discoverServices',
