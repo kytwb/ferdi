@@ -377,7 +377,7 @@
   "settings.recipes.headline": "Käytettävissä olevat palvelut",
   "settings.recipes.missingService": "Palvelu puuttuu?",
   "settings.recipes.mostPopular": "Suosituin",
-  "settings.recipes.nothingFound": "Pahoittelut, mutta palvelu ei täsmää hakutermiisi - mutta voit todennäköisesti lisätä sen silti käyttämällä \"Mukautettua sivustoa\" -vaihtoehtoa:",
+  "settings.recipes.nothingFound": "Sorry, but no service matched your search term - but you can still probably add it using the \"Custom Website\" option. Please note that the website might show more services that have been added to Ferdi since the version that you are currently on. To get those new services, please consider upgrading to a newer version of Ferdi.",
   "settings.recipes.servicesSuccessfulAddedInfo": "Palvelu lisätty onnistuneesti",
   "settings.searchService": "Hae palvelua",
   "settings.service.error.goBack": "Takaisin palveluihin",
