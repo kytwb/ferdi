@@ -43,7 +43,9 @@ const messages = defineMessages({
   },
 });
 
-export default @observer class Invite extends Component {
+export default
+@observer
+class Invite extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     embed: PropTypes.bool,
@@ -63,36 +65,41 @@ export default @observer class Invite extends Component {
 
   state = { showSuccessInfo: false };
 
-  componentWillMount() {
-    const handlers = {
-      onChange: () => {
-        this.setState({ showSuccessInfo: false });
-      },
-    };
-
-    this.form = new Form({
-      fields: {
-        invite: [...Array(3).fill({
-          fields: {
-            name: {
-              label: this.context.intl.formatMessage(messages.nameLabel),
-              placeholder: this.context.intl.formatMessage(messages.nameLabel),
-              handlers,
-              // related: ['invite.0.email'], // path accepted but does not work
-            },
-            email: {
-              label: this.context.intl.formatMessage(messages.emailLabel),
-              placeholder: this.context.intl.formatMessage(messages.emailLabel),
-              handlers,
-              validators: [email],
-            },
-          },
-        })],
-      },
-    }, this.context.intl);
-  }
-
   componentDidMount() {
+    this.form = new Form(
+      {
+        fields: {
+          invite: [
+            ...Array(3).fill({
+              fields: {
+                name: {
+                  label: this.context.intl.formatMessage(messages.nameLabel),
+                  placeholder: this.context.intl.formatMessage(
+                    messages.nameLabel,
+                  ),
+                  onChange: () => {
+                    this.setState({ showSuccessInfo: false });
+                  },
+                  // related: ['invite.0.email'], // path accepted but does not work
+                },
+                email: {
+                  label: this.context.intl.formatMessage(messages.emailLabel),
+                  placeholder: this.context.intl.formatMessage(
+                    messages.emailLabel,
+                  ),
+                  onChange: () => {
+                    this.setState({ showSuccessInfo: false });
+                  },
+                  validators: [email],
+                },
+              },
+            }),
+          ],
+        },
+      },
+      this.context.intl,
+    );
+
     document.querySelector('input:first-child').focus();
   }
 
@@ -117,9 +124,10 @@ export default @observer class Invite extends Component {
     const { intl } = this.context;
     const { embed, isInviteSuccessful, isLoadingInvite } = this.props;
 
-    const atLeastOneEmailAddress = form.$('invite')
-      .map(invite => invite.$('email').value)
-      .some(emailValue => emailValue.trim() !== '');
+    const atLeastOneEmailAddress = form
+      .$('invite')
+      .map((invite) => invite.$('email').value)
+      .some((emailValue) => emailValue.trim() !== '');
 
     const sendButtonClassName = classnames({
       auth__button: true,
@@ -140,18 +148,17 @@ export default @observer class Invite extends Component {
           </Appear>
         )}
 
-        <form className="franz-form auth__form" onSubmit={e => this.submit(e)}>
+        <form
+          className="franz-form auth__form"
+          onSubmit={(e) => this.submit(e)}
+        >
           {!embed && (
-            <img
-              src="./assets/images/logo.svg"
-              className="auth__logo"
-              alt=""
-            />
+            <img src="./assets/images/logo.svg" className="auth__logo" alt="" />
           )}
           <h1 className={embed && 'invite__embed'}>
             {intl.formatMessage(messages.headline)}
           </h1>
-          {form.$('invite').map(invite => (
+          {form.$('invite').map((invite) => (
             <div className="grid" key={invite.key}>
               <div className="grid__row">
                 <Input field={invite.$('name')} showLabel={false} />
@@ -179,13 +186,23 @@ export default @observer class Invite extends Component {
     );
 
     return (
-      <div className={!embed ? 'auth__container auth__container--signup' : 'settings__main'}>
+      <div
+        className={
+          !embed ? 'auth__container auth__container--signup' : 'settings__main'
+        }
+      >
         {embed && (
           <div className="settings__header">
-            <h1>{this.context.intl.formatMessage(messages.settingsHeadline)}</h1>
+            <h1>
+              {this.context.intl.formatMessage(messages.settingsHeadline)}
+            </h1>
           </div>
         )}
-        {!embed ? <div>{renderForm}</div> : <div className="settings__body invite__form">{renderForm}</div>}
+        {!embed ? (
+          <div>{renderForm}</div>
+        ) : (
+          <div className="settings__body invite__form">{renderForm}</div>
+        )}
       </div>
     );
   }

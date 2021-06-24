@@ -12,7 +12,8 @@ import { trialStatusBarStore } from '..';
 import { i18nPlanName } from '../../../helpers/plan-helpers';
 import PaymentStore from '../../../stores/PaymentStore';
 
-@inject('stores', 'actions') @observer
+@inject('stores', 'actions')
+@observer
 class TrialStatusBarScreen extends Component {
   static contextTypes = {
     intl: intlShape,
@@ -41,7 +42,9 @@ class TrialStatusBarScreen extends Component {
 
   calculateRestTime() {
     const { trialEndTime } = trialStatusBarStore;
-    const percent = Math.abs(100 - Math.abs(trialEndTime.asMilliseconds()) * 100 / ms('14d')).toFixed(2);
+    const percent = (
+      Math.abs(100 - Math.abs(trialEndTime.asMilliseconds()) * 100) / ms('14d')
+    ).toFixed(2);
     const restTime = trialEndTime.humanize();
     const hasEnded = trialEndTime.asMilliseconds() > 0;
 
@@ -62,13 +65,15 @@ class TrialStatusBarScreen extends Component {
     const { intl } = this.context;
 
     const {
-      showOverlay,
-      percent,
-      restTime,
-      hasEnded,
+      showOverlay, percent, restTime, hasEnded,
     } = this.state;
 
-    if (!trialStatusBarStore || !trialStatusBarStore.isFeatureActive || !showOverlay || !trialStatusBarStore.showTrialStatusBarOverlay) {
+    if (
+      !trialStatusBarStore
+      || !trialStatusBarStore.isFeatureActive
+      || !showOverlay
+      || !trialStatusBarStore.showTrialStatusBarOverlay
+    ) {
       return null;
     }
 

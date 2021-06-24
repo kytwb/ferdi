@@ -28,7 +28,9 @@ const messages = defineMessages({
   },
 });
 
-export default @observer class Import extends Component {
+export default
+@observer
+class Import extends Component {
   static propTypes = {
     services: MobxPropTypes.arrayOrObservableArray.isRequired,
     onSubmit: PropTypes.func.isRequired,
@@ -40,17 +42,21 @@ export default @observer class Import extends Component {
     intl: intlShape,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     const config = {
       fields: {
-        import: [...this.props.services.filter(s => s.recipe).map(s => ({
-          fields: {
-            add: {
-              default: true,
-              options: s,
-            },
-          },
-        }))],
+        import: [
+          ...this.props.services
+            .filter((s) => s.recipe)
+            .map((s) => ({
+              fields: {
+                add: {
+                  default: true,
+                  options: s,
+                },
+              },
+            })),
+        ],
       },
     };
 
@@ -62,9 +68,12 @@ export default @observer class Import extends Component {
     e.preventDefault();
     this.form.submit({
       onSuccess: (form) => {
-        const servicesImport = form.values().import
-          .map((value, i) => !value.add || services.filter(s => s.recipe)[i])
-          .filter(s => typeof s !== 'boolean');
+        const servicesImport = form
+          .values()
+          .import.map(
+            (value, i) => !value.add || services.filter((s) => s.recipe)[i],
+          )
+          .filter((s) => typeof s !== 'boolean');
 
         this.props.onSubmit({ services: servicesImport });
       },
@@ -76,37 +85,31 @@ export default @observer class Import extends Component {
     const { intl } = this.context;
     const { services, isSubmitting, inviteRoute } = this.props;
 
-    const availableServices = services.filter(s => s.recipe);
-    const unavailableServices = services.filter(s => !s.recipe);
+    const availableServices = services.filter((s) => s.recipe);
+    const unavailableServices = services.filter((s) => !s.recipe);
 
     return (
       <div className="auth__scroll-container">
         <div className="auth__container auth__container--signup">
-          <form className="franz-form auth__form" onSubmit={e => this.submit(e)}>
-            <img
-              src="./assets/images/logo.svg"
-              className="auth__logo"
-              alt=""
-            />
-            <h1>
-              {intl.formatMessage(messages.headline)}
-            </h1>
+          <form
+            className="franz-form auth__form"
+            onSubmit={(e) => this.submit(e)}
+          >
+            <img src="./assets/images/logo.svg" className="auth__logo" alt="" />
+            <h1>{intl.formatMessage(messages.headline)}</h1>
             <table className="service-table available-services">
               <tbody>
                 {this.form.$('import').map((service, i) => (
-                  <tr
-                    key={service.id}
-                    className="service-table__row"
-                  >
+                  <tr key={service.id} className="service-table__row">
                     <td className="service-table__toggle">
-                      <Toggle
-                        field={service.$('add')}
-                        showLabel={false}
-                      />
+                      <Toggle field={service.$('add')} showLabel={false} />
                     </td>
                     <td className="service-table__column-icon">
                       <img
-                        src={availableServices[i].custom_icon || availableServices[i].recipe.icons.svg}
+                        src={
+                          availableServices[i].custom_icon
+                          || availableServices[i].recipe.icons.svg
+                        }
                         className={classnames({
                           'service-table__icon': true,
                           'has-custom-icon': availableServices[i].custom_icon,
@@ -125,14 +128,18 @@ export default @observer class Import extends Component {
             </table>
             {unavailableServices.length > 0 && (
               <div className="unavailable-services">
-                <strong>{intl.formatMessage(messages.notSupportedHeadline)}</strong>
+                <strong>
+                  {intl.formatMessage(messages.notSupportedHeadline)}
+                </strong>
                 <p>
-                  {services.filter(s => !s.recipe).map((service, i) => (
-                    <span key={service.id}>
-                      {service.name !== '' ? service.name : service.service}
-                      {unavailableServices.length > i + 1 ? ', ' : ''}
-                    </span>
-                  ))}
+                  {services
+                    .filter((s) => !s.recipe)
+                    .map((service, i) => (
+                      <span key={service.id}>
+                        {service.name !== '' ? service.name : service.service}
+                        {unavailableServices.length > i + 1 ? ', ' : ''}
+                      </span>
+                    ))}
                 </p>
               </div>
             )}

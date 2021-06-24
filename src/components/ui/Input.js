@@ -6,7 +6,9 @@ import classnames from 'classnames';
 
 import { scorePassword as scorePasswordFunc } from '../../helpers/password-helpers';
 
-export default @observer class Input extends Component {
+export default
+@observer
+class Input extends Component {
   static propTypes = {
     field: PropTypes.instanceOf(Field).isRequired,
     className: PropTypes.string,
@@ -31,7 +33,7 @@ export default @observer class Input extends Component {
   state = {
     showPassword: false,
     passwordScore: 0,
-  }
+  };
 
   inputElement = null;
 
@@ -82,9 +84,7 @@ export default @observer class Input extends Component {
         })}
       >
         <div className="franz-form__input-wrapper">
-          {prefix && (
-            <span className="franz-form__input-prefix">{prefix}</span>
-          )}
+          {prefix && <span className="franz-form__input-prefix">{prefix}</span>}
           <input
             id={field.id}
             type={type}
@@ -92,15 +92,15 @@ export default @observer class Input extends Component {
             name={field.name}
             value={field.value}
             placeholder={field.placeholder}
-            onChange={e => this.onChange(e)}
+            onChange={(e) => this.onChange(e)}
             onBlur={field.onBlur}
             onFocus={field.onFocus}
-            ref={(element) => { this.inputElement = element; }}
+            ref={(element) => {
+              this.inputElement = element;
+            }}
             disabled={field.disabled}
           />
-          {suffix && (
-            <span className="franz-form__input-suffix">{suffix}</span>
-          )}
+          {suffix && <span className="franz-form__input-suffix">{suffix}</span>}
           {showPasswordToggle && (
             <button
               type="button"
@@ -110,8 +110,11 @@ export default @observer class Input extends Component {
                 'mdi-eye': !this.state.showPassword,
                 'mdi-eye-off': this.state.showPassword,
               })}
-              onClick={() => this.setState(prevState => ({ showPassword: !prevState.showPassword }))}
-              tabIndex="-1"
+              onClick={() => this.setState((prevState) => ({
+                showPassword: !prevState.showPassword,
+              }))}
+              tabIndex={-1}
+              aria-label="Password toggle"
             />
           )}
           {scorePassword && (
@@ -128,20 +131,11 @@ export default @observer class Input extends Component {
           )}
         </div>
         {field.label && showLabel && (
-          <label
-            className="franz-form__label"
-            htmlFor={field.name}
-          >
+          <label className="franz-form__label" htmlFor={field.name}>
             {field.label}
           </label>
         )}
-        {field.error && (
-          <div
-            className="franz-form__error"
-          >
-            {field.error}
-          </div>
-        )}
+        {field.error && <div className="franz-form__error">{field.error}</div>}
       </div>
     );
   }

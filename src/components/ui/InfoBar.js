@@ -7,7 +7,9 @@ import Loader from 'react-loader';
 // import { oneOrManyChildElements } from '../../prop-types';
 import Appear from './effects/Appear';
 
-export default @observer class InfoBar extends Component {
+export default
+@observer
+class InfoBar extends Component {
   static propTypes = {
     // eslint-disable-next-line
     children: PropTypes.any.isRequired,
@@ -63,11 +65,7 @@ export default @observer class InfoBar extends Component {
         <div className="info-bar__content">
           {children}
           {ctaLabel && (
-            <button
-              type="button"
-              className="info-bar__cta"
-              onClick={onClick}
-            >
+            <button type="button" className="info-bar__cta" onClick={onClick}>
               <Loader
                 loaded={!ctaLoading}
                 lines={10}
@@ -84,6 +82,7 @@ export default @observer class InfoBar extends Component {
             type="button"
             className="info-bar__close mdi mdi-close"
             onClick={onHide}
+            aria-label="Hide"
           />
         )}
       </Appear>

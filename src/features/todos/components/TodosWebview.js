@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 import { TODOS_PARTITION_ID } from '../../../config';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     background: theme.colorBackground,
     position: 'relative',
@@ -34,7 +34,6 @@ const styles = theme => ({
     width: 5,
     zIndex: 400,
     background: theme.todos.dragIndicator.background,
-
   },
   premiumContainer: {
     display: 'flex',
@@ -68,7 +67,8 @@ const styles = theme => ({
   },
 });
 
-@injectSheet(styles) @observer
+@injectSheet(styles)
+@observer
 class TodosWebview extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired,
@@ -89,15 +89,11 @@ class TodosWebview extends Component {
     width: 300,
   };
 
-  componentWillMount() {
-    const { width } = this.props;
-
-    this.setState({
-      width,
-    });
-  }
-
   componentDidMount() {
+    this.setState({
+      width: this.props.width,
+    });
+
     this.node.addEventListener('mousemove', this.resizePanel.bind(this));
     this.node.addEventListener('mouseup', this.stopResize.bind(this));
     this.node.addEventListener('mouseleave', this.stopResize.bind(this));
@@ -114,10 +110,7 @@ class TodosWebview extends Component {
   resizePanel(e) {
     const { minWidth } = this.props;
 
-    const {
-      isDragging,
-      initialPos,
-    } = this.state;
+    const { isDragging, initialPos } = this.state;
 
     if (isDragging && Math.abs(e.clientX - window.innerWidth) > minWidth) {
       const delta = e.clientX - initialPos;
@@ -129,16 +122,9 @@ class TodosWebview extends Component {
   }
 
   stopResize() {
-    const {
-      resize,
-      minWidth,
-    } = this.props;
+    const { resize, minWidth } = this.props;
 
-    const {
-      isDragging,
-      delta,
-      width,
-    } = this.state;
+    const { isDragging, delta, width } = this.state;
 
     if (isDragging) {
       let newWidth = width + (delta < 0 ? Math.abs(delta) : -Math.abs(delta));
@@ -176,11 +162,7 @@ class TodosWebview extends Component {
       isTodoUrlValid,
     } = this.props;
 
-    const {
-      width,
-      delta,
-      isDragging,
-    } = this.state;
+    const { width, delta, isDragging } = this.state;
 
     let displayedWidth = isVisible ? width : 0;
     if (isTodosServiceActive) {
@@ -197,13 +179,18 @@ class TodosWebview extends Component {
         })}
         style={{ width: displayedWidth }}
         onMouseUp={() => this.stopResize()}
-        ref={(node) => { this.node = node; }}
+        ref={(node) => {
+          this.node = node;
+        }}
         id="todos-panel"
       >
         <div
           className={classes.resizeHandler}
-          style={({ left: delta, ...(isDragging ? { width: 600, marginLeft: -200 } : {}) })} // This hack is required as resizing with webviews beneath behaves quite bad
-          onMouseDown={e => this.startResize(e)}
+          style={{
+            left: delta,
+            ...(isDragging ? { width: 600, marginLeft: -200 } : {}),
+          }} // This hack is required as resizing with webviews beneath behaves quite bad
+          onMouseDown={(e) => this.startResize(e)}
         />
         {isDragging && (
           <div
@@ -221,7 +208,9 @@ class TodosWebview extends Component {
             }}
             partition={TODOS_PARTITION_ID}
             preload="./features/todos/preload.js"
-            ref={(webview) => { this.webview = webview ? webview.view : null; }}
+            ref={(webview) => {
+              this.webview = webview ? webview.view : null;
+            }}
             useragent={userAgent}
             src={todoUrl}
           />

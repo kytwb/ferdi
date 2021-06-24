@@ -5,7 +5,9 @@ import classnames from 'classnames';
 
 import { oneOrManyChildElements } from '../../../prop-types';
 
-export default @observer class Tab extends Component {
+export default
+@observer
+class Tab extends Component {
   static propTypes = {
     children: oneOrManyChildElements.isRequired,
     active: PropTypes.number,
@@ -15,7 +17,7 @@ export default @observer class Tab extends Component {
     active: 0,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({ active: this.props.active });
   }
 
@@ -25,7 +27,7 @@ export default @observer class Tab extends Component {
 
   render() {
     const { children: childElements } = this.props;
-    const children = childElements.filter(c => !!c);
+    const children = childElements.filter((c) => !!c);
 
     if (children.length === 1) {
       return <div>{children}</div>;
