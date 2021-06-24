@@ -664,169 +664,169 @@
         "defaultMessage": "!!!Hi {name}, welcome to Franz",
         "end": {
           "column": 3,
-          "line": 18
+          "line": 17
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.headline.pro",
         "start": {
           "column": 12,
-          "line": 15
+          "line": 14
         }
       },
       {
         "defaultMessage": "!!!We have a special treat for you.",
         "end": {
           "column": 3,
-          "line": 22
+          "line": 21
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.intro.specialTreat",
         "start": {
           "column": 16,
-          "line": 19
+          "line": 18
         }
       },
       {
         "defaultMessage": "!!!Enjoy the full Franz Professional experience completely free for 14 days.",
         "end": {
           "column": 3,
-          "line": 26
+          "line": 25
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.intro.tryPro",
         "start": {
           "column": 10,
-          "line": 23
+          "line": 22
         }
       },
       {
         "defaultMessage": "!!!Happy messaging,",
         "end": {
           "column": 3,
-          "line": 30
+          "line": 29
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.intro.happyMessaging",
         "start": {
           "column": 18,
-          "line": 27
+          "line": 26
         }
       },
       {
         "defaultMessage": "!!!No strings attached",
         "end": {
           "column": 3,
-          "line": 34
+          "line": 33
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.terms.headline",
         "start": {
           "column": 29,
-          "line": 31
+          "line": 30
         }
       },
       {
         "defaultMessage": "!!!No credit card required",
         "end": {
           "column": 3,
-          "line": 38
+          "line": 37
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.terms.noCreditCard",
         "start": {
           "column": 16,
-          "line": 35
+          "line": 34
         }
       },
       {
         "defaultMessage": "!!!Your free trial ends automatically after 14 days",
         "end": {
           "column": 3,
-          "line": 42
+          "line": 41
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.terms.automaticTrialEnd",
         "start": {
           "column": 21,
-          "line": 39
+          "line": 38
         }
       },
       {
         "defaultMessage": "!!!Free trial (normally {currency}{price} per month)",
         "end": {
           "column": 3,
-          "line": 46
+          "line": 45
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.terms.trialWorth",
         "start": {
           "column": 14,
-          "line": 43
+          "line": 42
         }
       },
       {
         "defaultMessage": "!!!Sorry, we could not activate your trial!",
         "end": {
           "column": 3,
-          "line": 50
+          "line": 49
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.error",
         "start": {
           "column": 19,
-          "line": 47
+          "line": 46
         }
       },
       {
         "defaultMessage": "!!!Start my 14-day Franz Professional Trial",
         "end": {
           "column": 3,
-          "line": 54
+          "line": 53
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.cta.accept",
         "start": {
           "column": 13,
-          "line": 51
+          "line": 50
         }
       },
       {
         "defaultMessage": "!!!Start using Franz",
         "end": {
           "column": 3,
-          "line": 58
+          "line": 57
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.cta.start",
         "start": {
           "column": 12,
-          "line": 55
+          "line": 54
         }
       },
       {
         "defaultMessage": "!!!Continue to Ferdi",
         "end": {
           "column": 3,
-          "line": 62
+          "line": 61
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.cta.skip",
         "start": {
           "column": 11,
-          "line": 59
+          "line": 58
         }
       },
       {
         "defaultMessage": "!!!Franz Professional includes:",
         "end": {
           "column": 3,
-          "line": 66
+          "line": 65
         },
         "file": "src/components/auth/Pricing.js",
         "id": "pricing.trial.features.headline",
         "start": {
           "column": 20,
-          "line": 63
+          "line": 62
         }
       }
     ],
@@ -6070,91 +6070,91 @@
         "defaultMessage": "!!!Publish debug information",
         "end": {
           "column": 3,
-          "line": 21
+          "line": 20
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.title",
         "start": {
           "column": 9,
-          "line": 18
+          "line": 17
         }
       },
       {
         "defaultMessage": "!!!Publishing your debug information helps us find issues and errors in Ferdi. By publishing your debug information you accept Ferdi Debugger's privacy policy and terms of service",
         "end": {
           "column": 3,
-          "line": 25
+          "line": 24
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.info",
         "start": {
           "column": 8,
-          "line": 22
+          "line": 21
         }
       },
       {
         "defaultMessage": "!!!There was an error while trying to publish the debug information. Please try again later or view the console for more information.",
         "end": {
           "column": 3,
-          "line": 29
+          "line": 28
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.error",
         "start": {
           "column": 9,
-          "line": 26
+          "line": 25
         }
       },
       {
         "defaultMessage": "!!!Privacy policy",
         "end": {
           "column": 3,
-          "line": 33
+          "line": 32
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.privacy",
         "start": {
           "column": 11,
-          "line": 30
+          "line": 29
         }
       },
       {
         "defaultMessage": "!!!Terms of service",
         "end": {
           "column": 3,
-          "line": 37
+          "line": 36
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.terms",
         "start": {
           "column": 9,
-          "line": 34
+          "line": 33
         }
       },
       {
         "defaultMessage": "!!!Accept and publish",
         "end": {
           "column": 3,
-          "line": 41
+          "line": 40
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.publish",
         "start": {
           "column": 11,
-          "line": 38
+          "line": 37
         }
       },
       {
         "defaultMessage": "!!!Your debug log was published and is now availible at",
         "end": {
           "column": 3,
-          "line": 45
+          "line": 44
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.published",
         "start": {
           "column": 13,
-          "line": 42
+          "line": 41
         }
       }
     ],
@@ -6736,7 +6736,7 @@
         "defaultMessage": "!!!*This option will be overwritten by the global \"Keep all workspaces loaded\" option.",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 45
         },
         "file": "src/features/workspaces/components/EditWorkspaceForm.js",
         "id": "settings.workspace.form.keepLoadedInfo",
@@ -6749,39 +6749,39 @@
         "defaultMessage": "!!!Services in this Workspace",
         "end": {
           "column": 3,
-          "line": 48
+          "line": 49
         },
         "file": "src/features/workspaces/components/EditWorkspaceForm.js",
         "id": "settings.workspace.form.servicesInWorkspaceHeadline",
         "start": {
           "column": 31,
-          "line": 45
+          "line": 46
         }
       },
       {
         "defaultMessage": "!!!Start by adding a service.",
         "end": {
           "column": 3,
-          "line": 52
+          "line": 53
         },
         "file": "src/features/workspaces/components/EditWorkspaceForm.js",
         "id": "settings.services.noServicesAdded",
         "start": {
           "column": 19,
-          "line": 49
+          "line": 50
         }
       },
       {
         "defaultMessage": "!!!Discover services",
         "end": {
           "column": 3,
-          "line": 56
+          "line": 57
         },
         "file": "src/features/workspaces/components/EditWorkspaceForm.js",
         "id": "settings.services.discoverServices",
         "start": {
           "column": 20,
-          "line": 53
+          "line": 54
         }
       }
     ],
