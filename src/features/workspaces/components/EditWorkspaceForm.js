@@ -88,10 +88,11 @@ class EditWorkspaceForm extends Component {
 
   form = this.prepareWorkspaceForm(this.props.workspace);
 
-  static getDerivedStateFromProps(props, state) {
-    const { workspace } = props;
-    if (workspace.id !== state.workspace.id) {
-      this.form = this.prepareWorkspaceForm(state.workspace);
+  // eslint-disable-next-line react/no-deprecated
+  componentWillReceiveProps(nextProps) {
+    const { workspace } = this.props;
+    if (workspace.id !== nextProps.workspace.id) {
+      this.form = this.prepareWorkspaceForm(nextProps.workspace);
     }
   }
 
