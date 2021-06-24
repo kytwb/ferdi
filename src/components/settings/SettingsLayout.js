@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
+import { defineMessages, intlShape } from 'react-intl';
 
 import ErrorBoundary from '../util/ErrorBoundary';
 import { oneOrManyChildElements } from '../../prop-types';
 import Appear from '../ui/effects/Appear';
+
+const messages = defineMessages({
+  closeSettings: {
+    id: 'settings.app.closeSettings',
+    defaultMessage: '!!!Close settings',
+  },
+});
 
 export default
 @observer
@@ -13,6 +21,10 @@ class SettingsLayout extends Component {
     navigation: PropTypes.element.isRequired,
     children: oneOrManyChildElements.isRequired,
     closeSettings: PropTypes.func.isRequired,
+  };
+
+  static contextTypes = {
+    intl: intlShape,
   };
 
   componentDidMount() {
@@ -37,6 +49,8 @@ class SettingsLayout extends Component {
   render() {
     const { navigation, children, closeSettings } = this.props;
 
+    const { intl } = this.context;
+
     return (
       <Appear transitionName="fadeIn-fast">
         <div className="settings-wrapper">
@@ -45,7 +59,7 @@ class SettingsLayout extends Component {
               type="button"
               className="settings-wrapper__action"
               onClick={closeSettings}
-              aria-label="Close Settings"
+              aria-label={intl.formatMessage(messages.closeSettings)}
             />
             <div className="settings franz-form">
               {navigation}
@@ -54,7 +68,7 @@ class SettingsLayout extends Component {
                 type="button"
                 className="settings__close mdi mdi-close"
                 onClick={closeSettings}
-                aria-label="Close Settings"
+                aria-label={intl.formatMessage(messages.closeSettings)}
               />
             </div>
           </ErrorBoundary>

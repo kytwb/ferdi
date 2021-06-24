@@ -3659,6 +3659,24 @@
   {
     "descriptors": [
       {
+        "defaultMessage": "!!!Close settings",
+        "end": {
+          "column": 3,
+          "line": 14
+        },
+        "file": "src/components/settings/SettingsLayout.js",
+        "id": "settings.app.closeSettings",
+        "start": {
+          "column": 17,
+          "line": 11
+        }
+      }
+    ],
+    "path": "src/components/settings/SettingsLayout.json"
+  },
+  {
+    "descriptors": [
+      {
         "defaultMessage": "!!!About Ferdi",
         "end": {
           "column": 3,
@@ -4558,6 +4576,60 @@
       }
     ],
     "path": "src/components/ui/FeatureList.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Hide",
+        "end": {
+          "column": 3,
+          "line": 15
+        },
+        "file": "src/components/ui/InfoBar.js",
+        "id": "infobar.hide",
+        "start": {
+          "column": 8,
+          "line": 12
+        }
+      }
+    ],
+    "path": "src/components/ui/InfoBar.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Dismiss",
+        "end": {
+          "column": 3,
+          "line": 12
+        },
+        "file": "src/components/ui/Infobox.js",
+        "id": "infobox.dismiss",
+        "start": {
+          "column": 11,
+          "line": 9
+        }
+      }
+    ],
+    "path": "src/components/ui/Infobox.json"
+  },
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "!!!Password toggle",
+        "end": {
+          "column": 3,
+          "line": 14
+        },
+        "file": "src/components/ui/Input.js",
+        "id": "settings.app.form.passwordToggle",
+        "start": {
+          "column": 18,
+          "line": 11
+        }
+      }
+    ],
+    "path": "src/components/ui/Input.json"
   },
   {
     "descriptors": [

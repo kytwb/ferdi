@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import classnames from 'classnames';
 import Loader from 'react-loader';
+import { defineMessages, intlShape } from 'react-intl';
+
+const messages = defineMessages({
+  dismiss: {
+    id: 'infobox.dismiss',
+    defaultMessage: '!!!Dismiss',
+  },
+});
 
 export default
 @observer
@@ -30,6 +38,10 @@ class Infobox extends Component {
     onSeen: () => null,
   };
 
+  static contextTypes = {
+    intl: intlShape,
+  };
+
   state = {
     dismissed: false,
   };
@@ -50,6 +62,8 @@ class Infobox extends Component {
       dismissable,
       onDismiss,
     } = this.props;
+
+    const { intl } = this.context;
 
     if (this.state.dismissed) {
       return null;
@@ -85,7 +99,7 @@ class Infobox extends Component {
               if (onDismiss) onDismiss();
             }}
             className="infobox__delete mdi mdi-close"
-            aria-label="Dismiss"
+            aria-label={intl.formatMessage(messages.dismiss)}
           />
         )}
       </div>

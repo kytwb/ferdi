@@ -3,8 +3,16 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import { Field } from 'mobx-react-form';
 import classnames from 'classnames';
+import { defineMessages, intlShape } from 'react-intl';
 
 import { scorePassword as scorePasswordFunc } from '../../helpers/password-helpers';
+
+const messages = defineMessages({
+  passwordToggle: {
+    id: 'settings.app.form.passwordToggle',
+    defaultMessage: '!!!Password toggle',
+  },
+});
 
 export default
 @observer
@@ -28,6 +36,10 @@ class Input extends Component {
     scorePassword: false,
     prefix: '',
     suffix: '',
+  };
+
+  static contextTypes = {
+    intl: intlShape,
   };
 
   state = {
@@ -69,6 +81,8 @@ class Input extends Component {
     } = this.props;
 
     const { passwordScore } = this.state;
+
+    const { intl } = this.context;
 
     let { type } = field;
     if (type === 'password' && this.state.showPassword) {
@@ -114,7 +128,7 @@ class Input extends Component {
                 showPassword: !prevState.showPassword,
               }))}
               tabIndex={-1}
-              aria-label="Password toggle"
+              aria-label={intl.formatMessage(messages.passwordToggle)}
             />
           )}
           {scorePassword && (
