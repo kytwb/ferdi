@@ -24,7 +24,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@mdi/react": "^1.1.0",
-    "@meetfranz/theme": "^1.0.14",
+    "@meetfranz/theme": "file:../theme",
     "react-loader": "2.4.7"
   },
   "peerDependencies": {

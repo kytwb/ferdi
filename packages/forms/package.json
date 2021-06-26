@@ -25,7 +25,7 @@
   "dependencies": {
     "@mdi/js": "^3.3.92",
     "@mdi/react": "^1.1.0",
-    "@meetfranz/theme": "^1.0.14",
+    "@meetfranz/theme": "file:../theme",
     "react-html-attributes": "^1.4.3",
     "react-loader": "2.4.7"
   },
