@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { defineMessages, intlShape } from 'react-intl';
 
 import Infobox from '../../ui/Infobox';
@@ -25,7 +25,9 @@ const messages = defineMessages({
   },
 });
 
-export default @observer class ServiceError extends Component {
+export default
+@observer
+class ServiceError extends Component {
   static contextTypes = {
     intl: intlShape,
   };
@@ -47,10 +49,7 @@ export default @observer class ServiceError extends Component {
           </span>
         </div>
         <div className="settings__body">
-          <Infobox
-            type="danger"
-            icon="alert"
-          >
+          <Infobox type="danger" icon="alert">
             {intl.formatMessage(messages.errorMessage)}
           </Infobox>
         </div>

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Input, Button } from '@meetfranz/forms';
 import injectSheet from 'react-jss';
 
@@ -40,7 +40,8 @@ const messages = defineMessages({
   },
   keepLoadedInfo: {
     id: 'settings.workspace.form.keepLoadedInfo',
-    defaultMessage: '!!!*This option will be overwritten by the global "Keep all workspaces loaded" option.',
+    defaultMessage:
+      '!!!*This option will be overwritten by the global "Keep all workspaces loaded" option.',
   },
   servicesInWorkspaceHeadline: {
     id: 'settings.workspace.form.servicesInWorkspaceHeadline',
@@ -68,7 +69,8 @@ const styles = () => ({
   },
 });
 
-@injectSheet(styles) @observer
+@injectSheet(styles)
+@observer
 class EditWorkspaceForm extends Component {
   static contextTypes = {
     intl: intlShape,
@@ -117,7 +119,7 @@ class EditWorkspaceForm extends Component {
 
   save(form) {
     form.submit({
-      onSuccess: async (f) => {
+      onSuccess: async f => {
         const { onSave } = this.props;
         const values = f.values();
         onSave(values);
@@ -164,16 +166,14 @@ class EditWorkspaceForm extends Component {
             </Link>
           </span>
           <span className="separator" />
-          <span className="settings__header-item">
-            {workspace.name}
-          </span>
+          <span className="settings__header-item">{workspace.name}</span>
         </div>
         <div className="settings__body">
           <div className={classes.nameInput}>
             <Input {...form.$('name').bind()} />
             <Toggle field={form.$('keepLoaded')} />
             <p className={`${classes.keepLoadedInfo} franz-form__label`}>
-              { intl.formatMessage(messages.keepLoadedInfo) }
+              {intl.formatMessage(messages.keepLoadedInfo)}
             </p>
           </div>
           <h2>{intl.formatMessage(messages.servicesInWorkspaceHeadline)}</h2>
@@ -187,7 +187,9 @@ class EditWorkspaceForm extends Component {
                   </span>
                   {intl.formatMessage(messages.noServicesAdded)}
                 </p>
-                <Link to="/settings/recipes" className="button">{intl.formatMessage(messages.discoverServices)}</Link>
+                <Link to="/settings/recipes" className="button">
+                  {intl.formatMessage(messages.discoverServices)}
+                </Link>
               </div>
             ) : (
               <Fragment>

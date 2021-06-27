@@ -47,7 +47,7 @@
       "column": 18
     },
     "end": {
-      "line": 31,
+      "line": 32,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Discover services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 32,
+      "line": 33,
       "column": 20
     },
     "end": {
-      "line": 35,
+      "line": 36,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Could not load your services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 36,
+      "line": 37,
       "column": 25
     },
     "end": {
-      "line": 39,
+      "line": 40,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Try again",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 40,
+      "line": 41,
       "column": 21
     },
     "end": {
-      "line": 43,
+      "line": 44,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Your changes have been saved",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 44,
+      "line": 45,
       "column": 15
     },
     "end": {
-      "line": 47,
+      "line": 48,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Service has been deleted",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 48,
+      "line": 49,
       "column": 15
     },
     "end": {
-      "line": 51,
+      "line": 52,
       "column": 3
     }
   }

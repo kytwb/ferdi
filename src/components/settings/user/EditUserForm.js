@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Input } from '@meetfranz/forms';
 
 import Form from '../../../lib/Form';
@@ -38,7 +38,9 @@ const messages = defineMessages({
   },
 });
 
-export default @observer class EditUserForm extends Component {
+export default
+@observer
+class EditUserForm extends Component {
   static propTypes = {
     status: MobxPropTypes.observableArray.isRequired,
     form: PropTypes.instanceOf(Form).isRequired,
@@ -53,7 +55,7 @@ export default @observer class EditUserForm extends Component {
   submit(e) {
     e.preventDefault();
     this.props.form.submit({
-      onSuccess: (form) => {
+      onSuccess: form => {
         const values = form.values();
         this.props.onSubmit(values);
       },
@@ -86,10 +88,7 @@ export default @observer class EditUserForm extends Component {
         <div className="settings__body">
           <form onSubmit={e => this.submit(e)} id="form">
             {status.length > 0 && status.includes('data-updated') && (
-              <Infobox
-                type="success"
-                icon="checkbox-marked-circle-outline"
-              >
+              <Infobox type="success" icon="checkbox-marked-circle-outline">
                 {intl.formatMessage(messages.successInfo)}
               </Infobox>
             )}
@@ -104,10 +103,7 @@ export default @observer class EditUserForm extends Component {
               <Input field={form.$('organization')} />
             )}
             <h2>{intl.formatMessage(messages.headlinePassword)}</h2>
-            <Input
-              {...form.$('oldPassword').bind()}
-              showPasswordToggle
-            />
+            <Input {...form.$('oldPassword').bind()} showPasswordToggle />
             <Input
               {...form.$('newPassword').bind()}
               showPasswordToggle

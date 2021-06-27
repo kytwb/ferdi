@@ -73,7 +73,7 @@
       "column": 18
     },
     "end": {
-      "line": 44,
+      "line": 45,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Services in this Workspace",
     "file": "src/features/workspaces/components/EditWorkspaceForm.js",
     "start": {
-      "line": 45,
+      "line": 46,
       "column": 31
     },
     "end": {
-      "line": 48,
+      "line": 49,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Start by adding a service.",
     "file": "src/features/workspaces/components/EditWorkspaceForm.js",
     "start": {
-      "line": 49,
+      "line": 50,
       "column": 19
     },
     "end": {
-      "line": 52,
+      "line": 53,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Discover services",
     "file": "src/features/workspaces/components/EditWorkspaceForm.js",
     "start": {
-      "line": 53,
+      "line": 54,
       "column": 20
     },
     "end": {
-      "line": 56,
+      "line": 57,
       "column": 3
     }
   }

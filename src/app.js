@@ -3,13 +3,11 @@ import { webFrame } from 'electron';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
-import { syncHistoryWithStore, RouterStore } from 'mobx-react-router';
-import {
-  hashHistory,
-} from 'react-router';
+import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 
 import '@babel/polyfill';
 import smoothScroll from 'smoothscroll-polyfill';
+import { createHashHistory } from 'history';
 
 import ServerApi from './api/server/ServerApi';
 import LocalApi from './api/server/LocalApi';
@@ -33,6 +31,7 @@ window.addEventListener('load', () => {
   const api = apiFactory(serverApi, new LocalApi());
   const router = new RouterStore();
   const stores = storeFactory(api, actions, router);
+  const hashHistory = createHashHistory();
   const history = syncHistoryWithStore(hashHistory, router);
   const menu = new MenuFactory(stores, actions);
   const touchBar = new TouchBarFactory(stores, actions);
