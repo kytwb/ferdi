@@ -37,12 +37,6 @@ jobs:
     outputs:
       should_run: ${{ steps.should_run.outputs.should_run }}
     steps:
-      - name: Set env vars
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        run: |
-          echo "NPM_CACHE=$HOME/.npm" >> $GITHUB_ENV
-          echo "ELECTRON_CACHE=$HOME/.cache/electron" >> $GITHUB_ENV
-          echo "ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder" >> $GITHUB_ENV
       - name: Checkout code along with submodules for the 'nightly' branch if the trigger event is 'scheduled'
         uses: actions/checkout@v2
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
@@ -50,66 +44,15 @@ jobs:
           ref: nightly
           submodules: recursive
           fetch-depth: 0
-      - name: Cache node modules
-        uses: actions/cache@v2
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Cache electron modules
-        uses: actions/cache@v2
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        env:
-          cache-name: cache-electron-modules
-        with:
-          key: ${{ runner.os }}-${{ env.cache-name }}
-          path: ${{ env.ELECTRON_CACHE }}
-      - name: Cache electron-builder modules
-        uses: actions/cache@v2
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        env:
-          cache-name: cache-electron-builder-modules
-        with:
-          key: ${{ runner.os }}-${{ env.cache-name }}
-          path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
-        uses: actions/setup-node@v2
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        with:
-          node-version: 14.16.1
-      - name: Uninstall locally and reinstall node-gyp globally
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        run: |
-          npm uninstall node-gyp
-          npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
-      - name: Install node dependencies recursively
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        run: npx lerna bootstrap
-      - name: Print latest commit
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        run: echo ${{ github.sha }}
-      - name: Setup git configs
+      - id: should_run
+        name: Check whether there are any commits since this run was last triggered and push them and/or set the output
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-      - name: Merge from 'origin/develop' (continue if errored)
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        continue-on-error: true
-        run: git merge --no-ff --no-verify --commit -m "Merge remote-tracking branch 'origin/develop' into HEAD" origin/develop
-      - id: should_run
-        name: Check whether there are any commits since this run was last triggered and either push or set the output
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        run: |
-          echo "Running linter and tests"
-          npm run lint && npm run test
-          git commit -am "Apply linter fixes" --no-verify || true
+
+          echo "Merge from 'origin/develop'"
+          git merge --no-ff --no-verify --commit -m "Merge remote-tracking branch 'origin/develop' into HEAD" origin/develop
 
           CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
           MANUAL_REBUILD="${{ github.event_name == 'workflow_dispatch' }}"

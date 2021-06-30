@@ -42,10 +42,6 @@ jobs:
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
-      - name: Setup git configs
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
       - name: Update submodules, dependencies and run tests
         run: |
           echo "Updating submodules"
@@ -59,5 +55,7 @@ jobs:
           npm run test
 
           echo "Committing and pushing submodules, dependency-updates and linter changes"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git commit -am "Update submodules, browserslist data updates and linter fixes [skip ci]" --no-verify || true
           git push origin nightly --no-verify
