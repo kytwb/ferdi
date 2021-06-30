@@ -24,7 +24,7 @@ on:
         description: 'Message for build'
         required: true
   schedule:
-    - cron: '0 0 * * *' # every night at 12 am
+    - cron: '0 1 * * *' # every night at 1 am (to allow for dependency builds to complete)
 
 env:
   USE_HARD_LINKS: false
@@ -103,25 +103,14 @@ jobs:
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
         continue-on-error: true
         run: git merge --no-ff --no-verify --commit -m "Merge remote-tracking branch 'origin/develop' into HEAD" origin/develop
-      - name: Update submodules (continue if errored)
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
-        continue-on-error: true
-        run: |
-          echo "Updating submodules"
-          git submodule update --remote -f
-          git commit -am "Update submodules" --no-verify || true
-
-          echo "Running linter and tests"
-          npm run lint && npm run test
-          git commit -am "Apply linter fixes" --no-verify || true
-
-          echo "Updating browserslist db"
-          npx browserslist@latest --update-db
-          git commit -am "Apply browserslist data updates" --no-verify || true
       - id: should_run
         name: Check whether there are any commits since this run was last triggered and either push or set the output
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
         run: |
+          echo "Running linter and tests"
+          npm run lint && npm run test
+          git commit -am "Apply linter fixes" --no-verify || true
+
           CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
           MANUAL_REBUILD="${{ github.event_name == 'workflow_dispatch' }}"
           echo "Number of changes: $CHANGES_COUNT"
