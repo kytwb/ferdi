@@ -330,17 +330,13 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
-          CSC_IDENTITY_AUTO_DISCOVERY: false
-          # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
-          # WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
-          # WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+          WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+          WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
       - name: Build Ferdi with publish for 'release' branch
         if: ${{ env.GIT_BRANCH_NAME == 'release' }}
         run: npm run build -- --publish always -c.publish.provider=github -c.publish.owner=${{ github.repository_owner }} -c.publish.repo=ferdi
         shell: bash
         env:
           GH_TOKEN: ${{ secrets.FERDI_PUBLISH_TOKEN }}
-          CSC_IDENTITY_AUTO_DISCOVERY: false
-          # TODO: Commented out the code signing process for now (so as to at least get unsigned nightlies available for testing)
-          # WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
-          # WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
+          WIN_CSC_LINK: ${{ secrets.WIN_CSC_LINK }}
+          WIN_CSC_KEY_PASSWORD: ${{ secrets.WIN_CSC_KEY_PASSWORD }}
