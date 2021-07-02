@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 import Infobox from '../ui/Infobox';
@@ -43,7 +43,9 @@ const messages = defineMessages({
   },
 });
 
-export default @observer class Invite extends Component {
+export default
+@observer
+class Invite extends Component {
   static propTypes = {
     onSubmit: PropTypes.func.isRequired,
     embed: PropTypes.bool,
@@ -70,26 +72,35 @@ export default @observer class Invite extends Component {
       },
     };
 
-    this.form = new Form({
-      fields: {
-        invite: [...Array(3).fill({
-          fields: {
-            name: {
-              label: this.context.intl.formatMessage(messages.nameLabel),
-              placeholder: this.context.intl.formatMessage(messages.nameLabel),
-              handlers,
-              // related: ['invite.0.email'], // path accepted but does not work
-            },
-            email: {
-              label: this.context.intl.formatMessage(messages.emailLabel),
-              placeholder: this.context.intl.formatMessage(messages.emailLabel),
-              handlers,
-              validators: [email],
-            },
-          },
-        })],
+    this.form = new Form(
+      {
+        fields: {
+          invite: [
+            ...Array(3).fill({
+              fields: {
+                name: {
+                  label: this.context.intl.formatMessage(messages.nameLabel),
+                  placeholder: this.context.intl.formatMessage(
+                    messages.nameLabel
+                  ),
+                  handlers,
+                  // related: ['invite.0.email'], // path accepted but does not work
+                },
+                email: {
+                  label: this.context.intl.formatMessage(messages.emailLabel),
+                  placeholder: this.context.intl.formatMessage(
+                    messages.emailLabel
+                  ),
+                  handlers,
+                  validators: [email],
+                },
+              },
+            }),
+          ],
+        },
       },
-    }, this.context.intl);
+      this.context.intl
+    );
   }
 
   componentDidMount() {
@@ -100,7 +111,7 @@ export default @observer class Invite extends Component {
     e.preventDefault();
 
     this.form.submit({
-      onSuccess: (form) => {
+      onSuccess: form => {
         this.props.onSubmit({ invites: form.values().invite });
 
         this.form.clear();
@@ -117,7 +128,8 @@ export default @observer class Invite extends Component {
     const { intl } = this.context;
     const { embed, isInviteSuccessful, isLoadingInvite } = this.props;
 
-    const atLeastOneEmailAddress = form.$('invite')
+    const atLeastOneEmailAddress = form
+      .$('invite')
       .map(invite => invite.$('email').value)
       .some(emailValue => emailValue.trim() !== '');
 
@@ -142,11 +154,7 @@ export default @observer class Invite extends Component {
 
         <form className="franz-form auth__form" onSubmit={e => this.submit(e)}>
           {!embed && (
-            <img
-              src="./assets/images/logo.svg"
-              className="auth__logo"
-              alt=""
-            />
+            <img src="./assets/images/logo.svg" className="auth__logo" alt="" />
           )}
           <h1 className={embed && 'invite__embed'}>
             {intl.formatMessage(messages.headline)}
@@ -179,13 +187,23 @@ export default @observer class Invite extends Component {
     );
 
     return (
-      <div className={!embed ? 'auth__container auth__container--signup' : 'settings__main'}>
+      <div
+        className={
+          !embed ? 'auth__container auth__container--signup' : 'settings__main'
+        }
+      >
         {embed && (
           <div className="settings__header">
-            <h1>{this.context.intl.formatMessage(messages.settingsHeadline)}</h1>
+            <h1>
+              {this.context.intl.formatMessage(messages.settingsHeadline)}
+            </h1>
           </div>
         )}
-        {!embed ? <div>{renderForm}</div> : <div className="settings__body invite__form">{renderForm}</div>}
+        {!embed ? (
+          <div>{renderForm}</div>
+        ) : (
+          <div className="settings__body invite__form">{renderForm}</div>
+        )}
       </div>
     );
   }
