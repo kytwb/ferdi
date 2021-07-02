@@ -14,7 +14,8 @@ import OrderModel from '../../models/Order';
 
 import { sleep } from '../../helpers/async-helpers';
 
-import { RECIPES_PATH, SERVER_NOT_LOADED } from '../../config';
+import { SERVER_NOT_LOADED } from '../../config';
+import { RECIPES_PATH } from '../../environment';
 import apiBase from '../apiBase';
 import { prepareAuthRequest, sendAuthRequest } from '../utils/auth';
 

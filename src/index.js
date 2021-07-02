@@ -16,34 +16,15 @@ import ms from 'ms';
 
 require('@electron/remote/main').initialize();
 
-import {
-  DEFAULT_APP_SETTINGS,
-  DEFAULT_WINDOW_OPTIONS,
-} from './config';
+import { DEFAULT_WINDOW_OPTIONS } from './config';
 
 import {
+  DEFAULT_APP_SETTINGS,
   isDevMode,
   isMac,
   isWindows,
   isLinux,
 } from './environment';
-
-// TODO: This seems to be duplicated between here and 'config.js'
-// Set app directory before loading user modules
-if (process.env.FERDI_APPDATA_DIR != null) {
-  app.setPath('appData', process.env.FERDI_APPDATA_DIR);
-  app.setPath('userData', path.join(app.getPath('appData')));
-} else if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
-  app.setPath('appData', process.env.PORTABLE_EXECUTABLE_DIR, `${app.name}AppData`);
-  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}AppData`));
-} else if (process.platform === 'win32') {
-  app.setPath('appData', process.env.APPDATA);
-  app.setPath('userData', path.join(app.getPath('appData'), app.name));
-}
-
-if (isDevMode) {
-  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
-}
 
 import { mainIpcHandler as basicAuthHandler } from './features/basicAuth';
 import ipcApi from './electron/ipc-api';

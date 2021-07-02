@@ -5,9 +5,9 @@ import {
 } from 'mobx';
 import localStorage from 'mobx-localstorage';
 import {
-  DEFAULT_APP_SETTINGS, FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER, SEARCH_ENGINE_DDG,
+  FILE_SYSTEM_SETTINGS_TYPES, LOCAL_SERVER, SEARCH_ENGINE_DDG,
 } from '../config';
-import { API } from '../environment';
+import { API, DEFAULT_APP_SETTINGS } from '../environment';
 import { getLocale } from '../helpers/i18n-helpers';
 import { hash } from '../helpers/password-helpers';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';

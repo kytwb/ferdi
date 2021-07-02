@@ -2,7 +2,7 @@ import { observable, toJS } from 'mobx';
 import { pathExistsSync, outputJsonSync, readJsonSync } from 'fs-extra';
 import path from 'path';
 
-import { SETTINGS_PATH } from '../config';
+import { SETTINGS_PATH } from '../environment';
 
 const debug = require('debug')('Ferdi:Settings');
 

@@ -1,7 +1,8 @@
 import color from 'color';
 import { reaction } from 'mobx';
 import themeInfo from '../../assets/themeInfo.json';
-import { DEFAULT_APP_SETTINGS, iconSizeBias } from '../../config';
+import { iconSizeBias } from '../../config';
+import { DEFAULT_APP_SETTINGS } from '../../environment';
 
 const STYLE_ELEMENT_ID = 'custom-appearance-style';
 

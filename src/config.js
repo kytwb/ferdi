@@ -1,9 +1,6 @@
-import ms from 'ms';
-import path from 'path';
-import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
-import { asarPath } from './helpers/asar-helpers';
+// Note: This file has now become devoid of all references to values deduced from the runtime process - all those now live in the `environment.js` file
 
-const { app, nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+import ms from 'ms';
 
 export const CHECK_INTERVAL = ms('1h'); // How often should we perform checks
 
@@ -122,61 +119,6 @@ export const ICON_SIZES = {
 // The bias should always be the "Normal icons" value
 export const iconSizeBias = 20;
 
-export const DEFAULT_APP_SETTINGS = {
-  autoLaunchInBackground: false,
-  runInBackground: true,
-  reloadAfterResume: true,
-  enableSystemTray: true,
-  startMinimized: false,
-  minimizeToSystemTray: false,
-  closeToSystemTray: false,
-  privateNotifications: false,
-  clipboardNotifications: true,
-  notifyTaskBarOnMessage: false,
-  showDisabledServices: true,
-  showMessageBadgeWhenMuted: true,
-  showDragArea: false,
-  enableSpellchecking: true,
-  spellcheckerLanguage: 'en-us',
-  darkMode: process.platform === 'darwin' ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
-  locale: '',
-  fallbackLocale: 'en-US',
-  beta: false,
-  isAppMuted: false,
-  enableGPUAcceleration: true,
-  serviceLimit: 5,
-
-  // Ferdi specific options
-  server: LIVE_FERDI_API,
-  predefinedTodoServer: DEFAULT_TODO_SERVICE,
-  autohideMenuBar: false,
-  lockingFeatureEnabled: false,
-  locked: false,
-  lockedPassword: '',
-  useTouchIdToUnlock: true,
-  scheduledDNDEnabled: false,
-  scheduledDNDStart: '17:00',
-  scheduledDNDEnd: '09:00',
-  hibernate: false,
-  hibernateOnStartup: true,
-  hibernationStrategy: 300,
-  inactivityLock: 0,
-  automaticUpdates: true,
-  showServiceNavigationBar: false,
-  universalDarkMode: true,
-  userAgentPref: '',
-  adaptableDarkMode: true,
-  accentColor: DEFAULT_ACCENT_COLOR,
-  serviceRibbonWidth: 68,
-  iconSize: iconSizeBias,
-  sentry: false,
-  nightly: false,
-  navigationBarBehaviour: 'custom',
-  searchEngine: SEARCH_ENGINE_DDG,
-  useVerticalStyle: false,
-  alwaysShowWorkspaces: false,
-};
-
 export const DEFAULT_FEATURES_CONFIG = {
   isSpellcheckerIncludedInCurrentPlan: true,
   needToWaitToProceed: false,
@@ -217,45 +159,6 @@ export const FILE_SYSTEM_SETTINGS_TYPES = [
 export const LOCAL_SERVER = 'You are using Ferdi without a server';
 export const SERVER_NOT_LOADED = 'Ferdi::SERVER_NOT_LOADED';
 
-// TODO: This seems to be duplicated between here and 'index.js'
-// Set app directory before loading user modules
-if (process.env.FERDI_APPDATA_DIR != null) {
-  app.setPath('appData', process.env.FERDI_APPDATA_DIR);
-  app.setPath('userData', path.join(app.getPath('appData')));
-} else if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
-  app.setPath('appData', process.env.PORTABLE_EXECUTABLE_DIR, `${app.name}AppData`);
-  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}AppData`));
-} else if (process.platform === 'win32') {
-  app.setPath('appData', process.env.APPDATA);
-  app.setPath('userData', path.join(app.getPath('appData'), app.name));
-}
-
-const ELECTRON_IS_DEV_VAR = 'ELECTRON_IS_DEV';
-const NODE_ENV_VAR = 'NODE_ENV';
-
-// TODO Move this to environment.js and remove the re-export from there.
-export const isDevMode = (() => {
-  const isEnvVarSet = name => name in process.env;
-  if (isEnvVarSet(ELECTRON_IS_DEV_VAR)) {
-    // Copied from https://github.com/sindresorhus/electron-is-dev/blob/f05330b856782dac7987b10859bfd95ea6a187a6/index.js
-    // but electron-is-dev breaks in a renderer process, so we use the app import from above instead.
-    const electronIsDev = process.env[ELECTRON_IS_DEV_VAR];
-    return electronIsDev === 'true' || Number.parseInt(electronIsDev, 10) === 1;
-  }
-  if (isEnvVarSet(NODE_ENV_VAR)) {
-    return process.env[NODE_ENV_VAR] === 'development';
-  }
-  return !app.isPackaged;
-})();
-if (isDevMode) {
-  app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
-}
-
-export const SETTINGS_PATH = path.join(app.getPath('userData'), 'config');
-
-// Replacing app.asar is not beautiful but unfortunately necessary
-export const RECIPES_PATH = asarPath(path.join(__dirname, 'recipes'));
-
 export const ALLOWED_PROTOCOLS = [
   'https:',
   'http:',
@@ -284,7 +187,6 @@ export const PLANS_MAPPING = {
   'franz-supporter-license-year-2019': PLANS.LEGACY,
   free: PLANS.FREE,
 };
-
 
 export const DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED = false;
 

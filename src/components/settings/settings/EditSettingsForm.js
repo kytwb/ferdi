@@ -14,11 +14,10 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
 import {
-  DEFAULT_APP_SETTINGS,
   FRANZ_TRANSLATION,
   GITHUB_FRANZ_URL,
 } from '../../../config';
-import { isMac, isWindows } from '../../../environment';
+import { DEFAULT_APP_SETTINGS, isMac, isWindows } from '../../../environment';
 
 const messages = defineMessages({
   headline: {

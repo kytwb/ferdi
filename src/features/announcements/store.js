@@ -13,7 +13,7 @@ import { announcementActions } from './actions';
 import { createActionBindings } from '../utils/ActionBinding';
 import { createReactions } from '../../stores/lib/Reaction';
 import { matchRoute } from '../../helpers/routing-helpers';
-import { DEFAULT_APP_SETTINGS } from '../../config';
+import { DEFAULT_APP_SETTINGS } from '../../environment';
 
 const LOCAL_STORAGE_KEY = 'announcements';
 

@@ -14,7 +14,8 @@ import UserStore from '../../stores/UserStore';
 
 import RecipesDashboard from '../../components/settings/recipes/RecipesDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-import { FRANZ_DEV_DOCS, RECIPES_PATH } from '../../config';
+import { FRANZ_DEV_DOCS } from '../../config';
+import { RECIPES_PATH } from '../../environment';
 import { communityRecipesStore } from '../../features/communityRecipes';
 import RecipePreview from '../../models/RecipePreview';
 import AppStore from '../../stores/AppStore';

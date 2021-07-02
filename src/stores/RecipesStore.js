@@ -7,7 +7,7 @@ import Store from './lib/Store';
 import CachedRequest from './lib/CachedRequest';
 import Request from './lib/Request';
 import { matchRoute } from '../helpers/routing-helpers';
-import { RECIPES_PATH } from '../config';
+import { RECIPES_PATH } from '../environment';
 
 const debug = require('debug')('Ferdi:RecipeStore');
 
