@@ -123,7 +123,7 @@ export const DEFAULT_APP_SETTINGS = {
   showDragArea: false,
   enableSpellchecking: true,
   spellcheckerLanguage: 'en-us',
-  darkMode: isMac ? nativeTheme.shouldUseDarkColors : false, // We can't use refs from `./environment` at this time
+  darkMode: isMac ? nativeTheme.shouldUseDarkColors : false,
   locale: '',
   fallbackLocale: 'en-US',
   beta: false,
