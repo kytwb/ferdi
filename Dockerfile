@@ -1,4 +1,22 @@
-FROM electronuserland/builder:14 as builder
+# Note: Before running this file, you should have already cloned the git repo + submodules on the host machine. This is used when actively developing on your local machine, but you want to build for a different architecture
+
+FROM node:fermium-buster as builder
+
+# TODO: Need to setup a non-root user for security purposes
+
+ENV PATH "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/lib:/usr/include:/usr/share"
+# This is added for building on ARM machines
+ENV USE_SYSTEM_FPM="true"
+
+# TODO: Need to verify and cleanup if not required
+ENV DEBIAN_FRONTEND noninteractive
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+ENV TERM xterm
+
+RUN apt-get update \
+  && apt-get install -y rpm ruby gem \
+  && gem install fpm --no-ri --no-rdoc --no-document
 
 WORKDIR /usr/src/ferdi
 
@@ -9,15 +27,25 @@ COPY lerna.json ./
 ENV PREVAL_BUILD_INFO_PLACEHOLDERS=true
 
 RUN npm i -g node-gyp@8.0.0 \
-    && npm config set node_gyp "$(which node-gyp)" \
-    && npx lerna bootstrap
+  && npm config set node_gyp "$(which node-gyp)"
 
 COPY . .
 
-RUN cd recipes && npm i && npm run package && cd ..
+# Note: Ideally this needs to be done before the COPY step - BUT moving this here resolves the issue with `preval-build-info-cli` not being found
+RUN npx lerna bootstrap
+
+RUN cd recipes \
+  && npm i \
+  && npm run package \
+  && cd ..
+
 RUN npm run build
 
+# --------------------------------------------------------------------------------------------
+
 FROM busybox
+
+# TODO: Need to setup a non-root user for security purposes
 
 WORKDIR /ferdi
 

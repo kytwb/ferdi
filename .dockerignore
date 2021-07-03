@@ -1,7 +1,11 @@
+.all-contributorsrc
+.devcontainer
 .dockerignore
+.editorconfig
 .husky/
 .stage
 .tmp
+.vscode
 **/.DS_Store
 **/.env
 **/.git*

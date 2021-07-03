@@ -137,7 +137,7 @@ cd recipes && npm i && npm run package
 ### Using Docker to build a linux-targetted packaged app
 
 ```bash
-docker build -t ferdi-package .
+docker build -t ferdi-package-`uname -m` .
 ```
 
 The above will place all the built artifacts into the `/ferdi` folder within the image.
