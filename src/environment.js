@@ -1,5 +1,7 @@
 import path from 'path';
 
+import { is, api as electronApi } from 'electron-util';
+
 import { DEFAULT_ACCENT_COLOR } from '@meetfranz/theme';
 
 import {
@@ -21,12 +23,16 @@ import {
 } from './config';
 
 import { asarPath } from './helpers/asar-helpers';
+import * as buildInfo from './buildInfo.json'; // eslint-disable-line import/no-unresolved
 
-// eslint-disable-next-line global-require
-export const { app } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
-const { nativeTheme } = process.type === 'renderer' ? require('@electron/remote') : require('electron');
+const osName = require('os-name');
 
-// TODO: This seems to be duplicated between here and 'index.js'
+export const { app } = electronApi;
+export const ferdiVersion = app.getVersion();
+export const electronVersion = process.versions.electron;
+export const chromeVersion = process.versions.chrome;
+export const nodeVersion = process.versions.node;
+
 // Set app directory before loading user modules
 if (process.env.FERDI_APPDATA_DIR != null) {
   app.setPath('appData', process.env.FERDI_APPDATA_DIR);
@@ -34,27 +40,12 @@ if (process.env.FERDI_APPDATA_DIR != null) {
 } else if (process.env.PORTABLE_EXECUTABLE_DIR != null) {
   app.setPath('appData', process.env.PORTABLE_EXECUTABLE_DIR, `${app.name}AppData`);
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}AppData`));
-} else if (process.platform === 'win32') {
+} else if (is.windows) {
   app.setPath('appData', process.env.APPDATA);
   app.setPath('userData', path.join(app.getPath('appData'), app.name));
 }
 
-const ELECTRON_IS_DEV_VAR = 'ELECTRON_IS_DEV';
-const NODE_ENV_VAR = 'NODE_ENV';
-
-export const isDevMode = (() => {
-  const isEnvVarSet = name => name in process.env;
-  if (isEnvVarSet(ELECTRON_IS_DEV_VAR)) {
-    // Copied from https://github.com/sindresorhus/electron-is-dev/blob/f05330b856782dac7987b10859bfd95ea6a187a6/index.js
-    // but electron-is-dev breaks in a renderer process, so we use the app import from above instead.
-    const electronIsDev = process.env[ELECTRON_IS_DEV_VAR];
-    return electronIsDev === 'true' || Number.parseInt(electronIsDev, 10) === 1;
-  }
-  if (isEnvVarSet(NODE_ENV_VAR)) {
-    return process.env[NODE_ENV_VAR] === 'development';
-  }
-  return !app.isPackaged;
-})();
+export const isDevMode = is.development;
 if (isDevMode) {
   app.setPath('userData', path.join(app.getPath('appData'), `${app.name}Dev`));
 }
@@ -66,14 +57,9 @@ export const RECIPES_PATH = asarPath(path.join(__dirname, 'recipes'));
 
 export const useLiveAPI = process.env.LIVE_API;
 
-let { platform } = process;
-if (process.env.OS_PLATFORM) {
-  platform = process.env.OS_PLATFORM;
-}
-
-export const isMac = platform === 'darwin';
-export const isWindows = platform === 'win32';
-export const isLinux = platform === 'linux';
+export const isMac = is.macos;
+export const isWindows = is.windows;
+export const isLinux = is.linux;
 
 export const ctrlKey = isMac ? '⌘' : 'Ctrl';
 export const cmdKey = isMac ? 'Cmd' : 'Ctrl';
@@ -123,7 +109,7 @@ export const DEFAULT_APP_SETTINGS = {
   showDragArea: false,
   enableSpellchecking: true,
   spellcheckerLanguage: 'en-us',
-  darkMode: isMac ? nativeTheme.shouldUseDarkColors : false,
+  darkMode: isMac && electronApi.nativeTheme.shouldUseDarkColors,
   locale: '',
   fallbackLocale: 'en-US',
   beta: false,
@@ -164,4 +150,18 @@ export const DEFAULT_APP_SETTINGS = {
 
 export function termsBase() {
   return window.ferdi.stores.settings.all.app.server !== LIVE_FRANZ_API ? window.ferdi.stores.settings.all.app.server : DEV_API_FRANZ_WEBSITE;
+}
+
+export function aboutAppDetails() {
+  return [
+    `Version: ${ferdiVersion}`,
+    `Electron: ${electronVersion}`,
+    `Chrome: ${chromeVersion}`,
+    `Node.js: ${nodeVersion}`,
+    `Platform: ${osName()}`,
+    `Arch: ${process.arch}`,
+    `Build date: ${new Date(Number(buildInfo.timestamp))}`,
+    `Git SHA: ${buildInfo.gitHashShort}`,
+    `Git branch: ${buildInfo.gitBranch}`,
+  ].join('\n');
 }

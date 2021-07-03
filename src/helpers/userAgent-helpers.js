@@ -1,8 +1,8 @@
 import os from 'os';
 import macosVersion from 'macos-version';
-import { app, isMac, isWindows } from '../environment';
-
-export const ferdiVersion = app.getVersion();
+import {
+  ferdiVersion, electronVersion, chromeVersion, isMac, isWindows,
+} from '../environment';
 
 function macOS() {
   const version = macosVersion();
@@ -34,17 +34,17 @@ export default function userAgent(removeChromeVersion = false, addFerdiVersion =
     platformString = linux();
   }
 
-  let chromeVersion = 'Chrome';
+  let chromeVersionString = 'Chrome';
   if (!removeChromeVersion) {
-    chromeVersion = `Chrome/${process.versions.chrome}`;
+    chromeVersionString = `Chrome/${chromeVersion}`;
   }
 
   let applicationString = '';
   if (addFerdiVersion) {
-    applicationString = ` Ferdi/${ferdiVersion} Electron/${process.versions.electron}`;
+    applicationString = ` Ferdi/${ferdiVersion} Electron/${electronVersion}`;
   }
 
   // Chrome is pinned to WebKit 537.36, the latest version before hard forking to Blink.
-  return `Mozilla/5.0 (${platformString}) AppleWebKit/537.36 (KHTML, like Gecko) ${chromeVersion} Safari/537.36${applicationString}`;
+  return `Mozilla/5.0 (${platformString}) AppleWebKit/537.36 (KHTML, like Gecko) ${chromeVersionString} Safari/537.36${applicationString}`;
   // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36 Ferdi/5.5.1-nightly.13 Electron/8.2.3
 }

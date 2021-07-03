@@ -24,6 +24,7 @@ import {
   isMac,
   isWindows,
   isLinux,
+  aboutAppDetails,
 } from './environment';
 
 import { mainIpcHandler as basicAuthHandler } from './features/basicAuth';
@@ -34,14 +35,12 @@ import Settings from './electron/Settings';
 import handleDeepLink from './electron/deepLinking';
 import { isPositionValid } from './electron/windowUtils';
 import { appId } from './package.json'; // eslint-disable-line import/no-unresolved
-import * as buildInfo from './buildInfo.json'; // eslint-disable-line import/no-unresolved
 import './electron/exception';
 
 import { asarPath } from './helpers/asar-helpers';
 import { isValidExternalURL } from './helpers/url-helpers';
-import userAgent, { ferdiVersion } from './helpers/userAgent-helpers';
+import userAgent from './helpers/userAgent-helpers';
 
-const osName = require('os-name');
 const debug = require('debug')('Ferdi:App');
 
 // From Electron 9 onwards, app.allowRendererProcessReuse = true by default. This causes the app to crash on Windows due to the
@@ -147,7 +146,7 @@ if (!settings.get('enableGPUAcceleration')) {
 }
 
 app.setAboutPanelOptions({
-  applicationVersion: `Version: ${ferdiVersion}\nElectron: ${process.versions.electron}\nChrome: ${process.versions.chrome}\nNode.js: ${process.versions.node}\nPlatform: ${osName()}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
+  applicationVersion: aboutAppDetails(),
   version: '',
 });
 
@@ -156,7 +155,7 @@ const createWindow = () => {
   const mainWindowState = windowStateKeeper({
     defaultWidth: DEFAULT_WINDOW_OPTIONS.width,
     defaultHeight: DEFAULT_WINDOW_OPTIONS.height,
-    maximize: true, // Automatically maximizes the window, if it was last clsoed maximized
+    maximize: true, // Automatically maximizes the window, if it was last closed maximized
     fullScreen: true, // Automatically restores the window to full screen, if it was last closed full screen
   });
 

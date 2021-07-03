@@ -14,7 +14,9 @@ import { readJsonSync } from 'fs-extra';
 import Store from './lib/Store';
 import Request from './lib/Request';
 import { CHECK_INTERVAL } from '../config';
-import { DEFAULT_APP_SETTINGS, isMac } from '../environment';
+import {
+  DEFAULT_APP_SETTINGS, isMac, ferdiVersion, electronVersion,
+} from '../environment';
 import locales from '../i18n/translations';
 import { onVisibilityChange } from '../helpers/visibility-helper';
 import { getLocale } from '../helpers/i18n-helpers';
@@ -263,8 +265,8 @@ export default class AppStore extends Store {
         screens: screen.getAllDisplays(),
       },
       ferdi: {
-        version: app.getVersion(),
-        electron: process.versions.electron,
+        version: ferdiVersion,
+        electron: electronVersion,
         installedRecipes: this.stores.recipes.all.map(recipe => ({
           id: recipe.id,
           version: recipe.version,

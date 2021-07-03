@@ -6,7 +6,7 @@ import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
 import { CUSTOM_WEBSITE_RECIPE_ID, GITHUB_FERDI_URL, LIVE_API_FERDI_WEBSITE } from '../config';
 import {
-  cmdKey, ctrlKey, isLinux, isMac, termsBase,
+  cmdKey, ctrlKey, isLinux, isMac, aboutAppDetails, termsBase,
 } from '../environment';
 import { announcementsStore } from '../features/announcements';
 import { announcementActions } from '../features/announcements/actions';
@@ -14,10 +14,6 @@ import { todosStore } from '../features/todos';
 import { todoActions } from '../features/todos/actions';
 import { workspaceActions } from '../features/workspaces/actions';
 import { workspaceStore } from '../features/workspaces/index';
-import * as buildInfo from '../buildInfo.json'; // eslint-disable-line import/no-unresolved
-import { ferdiVersion } from '../helpers/userAgent-helpers';
-
-const osName = require('os-name');
 
 const menuItems = defineMessages({
   edit: {
@@ -1025,7 +1021,7 @@ export default class FranzMenu {
           type: 'info',
           title: 'Franz Ferdinand',
           message: 'Ferdi',
-          detail: `Version: ${ferdiVersion}\nElectron: ${process.versions.electron}\nChrome: ${process.versions.chrome}\nNode.js: ${process.versions.node}\nPlatform: ${osName()}\nArch: ${process.arch}\nBuild date: ${new Date(Number(buildInfo.timestamp))}\nGit SHA: ${buildInfo.gitHashShort}\nGit branch: ${buildInfo.gitBranch}`,
+          detail: aboutAppDetails(),
         });
       },
     };
