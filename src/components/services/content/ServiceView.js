@@ -13,7 +13,7 @@ import ServiceDisabled from './ServiceDisabled';
 import ServiceWebview from './ServiceWebview';
 import SettingsStore from '../../../stores/SettingsStore';
 import WebControlsScreen from '../../../features/webControls/containers/WebControlsScreen';
-import { CUSTOM_WEBSITE_ID } from '../../../features/webControls/constants';
+import { CUSTOM_WEBSITE_RECIPE_ID } from '../../../config';
 
 export default @inject('stores', 'actions') @observer class ServiceView extends Component {
   static propTypes = {
@@ -90,7 +90,7 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
       navigationBarBehaviour,
     } = stores.settings.app;
 
-    const showNavBar = navigationBarBehaviour === 'always' || (navigationBarBehaviour === 'custom' && service.recipe.id === CUSTOM_WEBSITE_ID);
+    const showNavBar = navigationBarBehaviour === 'always' || (navigationBarBehaviour === 'custom' && service.recipe.id === CUSTOM_WEBSITE_RECIPE_ID);
 
     const webviewClasses = classnames({
       services__webview: true,

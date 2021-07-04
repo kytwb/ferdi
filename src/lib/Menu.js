@@ -4,7 +4,7 @@ import {
 } from '@electron/remote';
 import { autorun, observable } from 'mobx';
 import { defineMessages } from 'react-intl';
-import { GITHUB_FERDI_URL, LIVE_API_FERDI_WEBSITE } from '../config';
+import { CUSTOM_WEBSITE_RECIPE_ID, GITHUB_FERDI_URL, LIVE_API_FERDI_WEBSITE } from '../config';
 import {
   cmdKey, ctrlKey, isLinux, isMac, termsBase,
 } from '../environment';
@@ -12,7 +12,6 @@ import { announcementsStore } from '../features/announcements';
 import { announcementActions } from '../features/announcements/actions';
 import { todosStore } from '../features/todos';
 import { todoActions } from '../features/todos/actions';
-import { CUSTOM_WEBSITE_ID } from '../features/webControls/constants';
 import { workspaceActions } from '../features/workspaces/actions';
 import { workspaceStore } from '../features/workspaces/index';
 import * as buildInfo from '../buildInfo.json'; // eslint-disable-line import/no-unresolved
@@ -884,7 +883,7 @@ export default class FranzMenu {
         click: () => {
           if (this.stores.user.isLoggedIn
           && this.stores.services.enabled.length > 0) {
-            if (this.stores.services.active.recipe.id === CUSTOM_WEBSITE_ID) {
+            if (this.stores.services.active.recipe.id === CUSTOM_WEBSITE_RECIPE_ID) {
               this.stores.services.active.webview.reload();
             } else {
               this.actions.service.reloadActive();
@@ -1165,7 +1164,7 @@ export default class FranzMenu {
       },
     })));
 
-    if (services.active && services.active.recipe.id === CUSTOM_WEBSITE_ID) {
+    if (services.active && services.active.recipe.id === CUSTOM_WEBSITE_RECIPE_ID) {
       menu.push({
         type: 'separator',
       }, {

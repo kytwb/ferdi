@@ -197,3 +197,5 @@ export const TODOS_MIN_WIDTH = 200;
 export const DEFAULT_TODOS_VISIBLE = true;
 export const DEFAULT_IS_FEATURE_ENABLED_BY_USER = true;
 export const TODOS_PARTITION_ID = 'persist:todos';
+
+export const CUSTOM_WEBSITE_RECIPE_ID = 'franz-custom-website';

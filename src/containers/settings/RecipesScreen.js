@@ -14,12 +14,11 @@ import UserStore from '../../stores/UserStore';
 
 import RecipesDashboard from '../../components/settings/recipes/RecipesDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
-import { FRANZ_DEV_DOCS } from '../../config';
+import { CUSTOM_WEBSITE_RECIPE_ID, FRANZ_DEV_DOCS } from '../../config';
 import { RECIPES_PATH } from '../../environment';
 import { communityRecipesStore } from '../../features/communityRecipes';
 import RecipePreview from '../../models/RecipePreview';
 import AppStore from '../../stores/AppStore';
-import CUSTOM_WEBSITE_ID from '../../features/webControls/constants';
 
 export default @inject('stores', 'actions') @observer class RecipesScreen extends Component {
   static propTypes = {
@@ -140,7 +139,7 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       ),
     ]) : recipeFilter;
 
-    const customWebsiteRecipe = recipePreviews.all.find(service => service.id === CUSTOM_WEBSITE_ID);
+    const customWebsiteRecipe = recipePreviews.all.find(service => service.id === CUSTOM_WEBSITE_RECIPE_ID);
 
     const isLoading = recipePreviews.featuredRecipePreviewsRequest.isExecuting
       || recipePreviews.allRecipePreviewsRequest.isExecuting
