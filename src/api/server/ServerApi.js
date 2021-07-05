@@ -624,7 +624,6 @@ export default class ServerApi {
 
         recipe.icons = {
           svg: `${recipe.path}/icon.svg`,
-          png: `${recipe.path}/icon.png`,
         };
         recipe.local = true;
 

@@ -237,10 +237,6 @@ export default class Service {
     return Boolean(this.iconUrl);
   }
 
-  @computed get iconPNG() {
-    return path.join(this.recipe.path, 'icon.png');
-  }
-
   @computed get userAgent() {
     return this.userAgentModel.userAgent;
   }
