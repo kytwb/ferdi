@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Otomatik",
   "global.spellchecking.language": "İmla kontrol dili",
   "global.upgradeButton.upgradeToPro": "Ferdi Professional'a Yükselt",
+  "global.userAgentHelp": "Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
   "global.userAgentPref": "User Agent",
   "import.headline": "Ferdi 4 servislerinizi içeri aktarın",
   "import.notSupportedHeadline": "Henüz Ferdi 5'te desteklenmeyen servisler",
