@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "אוטומטי",
   "global.spellchecking.language": "שפה לבדיקת איות",
   "global.upgradeButton.upgradeToPro": "שדרג לגרסת פרדי מקצועית",
+  "global.userAgentHelp": "Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
   "global.userAgentPref": "User Agent",
   "import.headline": "ייבא את השירותים שלך מפרדי גרסה 4",
   "import.notSupportedHeadline": "השירות עדיין אינו נתמך בפרדי גרסה 5",
