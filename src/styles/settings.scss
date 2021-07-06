@@ -294,7 +294,10 @@
     color: $theme-gray-light;
     font-size: 12px;
     font-style: italic;
-    margin: -10px 0 20px 55px;;
+  }
+
+  .indented__help {
+    margin: -10px 0 20px 55px;
   }
 
   .settings__controls {

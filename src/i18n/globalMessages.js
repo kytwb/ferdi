@@ -29,6 +29,10 @@ export default defineMessages({
     id: 'global.userAgentPref',
     defaultMessage: '!!!User Agent',
   },
+  userAgentHelp: {
+    id: 'global.userAgentHelp',
+    defaultMessage: "!!!Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
+  },
   proRequired: {
     id: 'global.franzProRequired',
     defaultMessage: '!!!Franz Professional Required',
