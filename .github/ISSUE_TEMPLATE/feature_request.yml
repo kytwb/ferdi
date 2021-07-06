@@ -1,0 +1,48 @@
+name: Feature Request
+description: Suggest an idea for Ferdi
+title: "[Feature Request]: "
+labels: "enhancement :sparkles:"
+body:
+- type: markdown
+  attributes:
+  value: |
+  1. Please remember that if you are logging a bug for some service that has *stopped working*, please log the bug [here](https://github.com/getferdi/recipes/issues)
+  2. If you are requesting support for a new service in Ferdi, please log it [here](https://github.com/getferdi/recipes/pulls)
+  3. Please remember to read the [self-help documentation](https://github.com/getferdi/ferdi#troubleshooting-recipes-self-help) - in case it helps you unblock yourself for issues related to old recipes.
+  4. Please fill our form below, this way we can analyse and fix the problem as fast as possible.
+  5. Please consider supporting Ferdi!
+    👉  https://github.com/sponsors/getferdi
+    👉  https://opencollective.com/getferdi/donate
+- type: checkboxes
+  attributes:
+    label: Preflight Checklist
+    description: Please ensure you've completed all of the following.
+    options:
+      - label: I have read the [Contributing Guidelines](https://github.com/getferdi/ferdi/blob/develop/CONTRIBUTING.md) for this project.
+        required: true
+      - label: I agree to follow the [Code of Conduct](https://github.com/getferdi/ferdi/blob/develop/CODE_OF_CONDUCT.md) that this project adheres to.
+        required: true
+      - label: I have searched the [issue tracker](https://github.com/getferdi/ferdi/issues) for a feature request that matches the one I want to file, without success.
+        required: true
+- type: textarea
+  attributes:
+    label: Problem Description
+    description: A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Proposed Solution
+    description: A clear and concise description of what you want to happen.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Alternatives Considered
+    description: A clear and concise description of any alternative solutions or features you've considered.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Additional Information
+    description: Add any other context or screenshots about the feature request here.

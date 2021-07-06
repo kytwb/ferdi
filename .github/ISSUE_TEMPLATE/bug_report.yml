@@ -1,0 +1,121 @@
+name: Bug Report
+description: Report an Ferdi bug
+title: "[Bug]: "
+labels: "bug :beetle:"
+body:
+- type: markdown
+  attributes:
+  value: |
+  1. Please remember that if you are logging a bug for some service that has *stopped working*, please log the bug [here](https://github.com/getferdi/recipes/issues)
+  2. If you are requesting support for a new service in Ferdi, please log it [here](https://github.com/getferdi/recipes/pulls)
+  3. Please remember to read the [self-help documentation](https://github.com/getferdi/ferdi#troubleshooting-recipes-self-help) - in case it helps you unblock yourself for issues related to old recipes.
+  4. Please fill our form below, this way we can analyse and fix the problem as fast as possible.
+  5. Please consider supporting Ferdi!
+    👉  https://github.com/sponsors/getferdi
+    👉  https://opencollective.com/getferdi/donate
+- type: checkboxes
+  attributes:
+    label: Preflight Checklist
+    description: Please ensure you've completed all of the following.
+    options:
+      - label: I have read the [Contributing Guidelines](https://github.com/getferdi/ferdi/blob/develop/CONTRIBUTING.md) for this project.
+        required: true
+      - label: I agree to follow the [Code of Conduct](https://github.com/getferdi/ferdi/blob/develop/CODE_OF_CONDUCT.md) that this project adheres to.
+        required: true
+      - label: I have searched the [issue tracker](https://github.com/getferdi/ferdi/issues) for a feature request that matches the one I want to file, without success.
+        required: true
+- type: input
+  attributes:
+    label: Ferdi Version
+    description: What version of Ferdi are you using?
+    placeholder: 5.5.0
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: What operating system are you using?
+    options:
+      - Windows
+      - macOS
+      - Ubuntu
+      - Other Linux
+      - Other (specify below)
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Server
+    options:
+      - Ferdi
+      - Franz
+      - Using without an account
+      - Other server (please specify in the steps to reproduce)
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Operating System Version
+    description: What operating system version are you using? On Windows, click Start button > Settings > System > About. On macOS, click the Apple Menu > About This Mac. On Linux, inside a terminal session, use lsb_release or uname -a.
+    placeholder: "e.g. Windows 10 version 1909, macOS Catalina 10.15.7, or Ubuntu 20.04"
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: What arch are you using?
+    options:
+      - x64
+      - ia32
+      - arm64 (including Apple Silicon)
+      - Other (specify below)
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Last Known working version of Ferdi
+    description: What is the last version of Ferdi this worked in, if applicable?
+    placeholder: 5.5.0
+- type: input
+  attributes:
+    label: Git SHA and/or build date
+    description: In the latest versions of Ferdi, we now also expose the GIT SHA and the build date. IF you are running one such version, please include this information as well.
+    placeholder: 9b29f041 / Sun May 09 2021 12:35:48 GMT+0200
+- type: textarea
+  attributes:
+    label: Steps to reproduce
+    description: Explain to us how we can reproduce your bug on our computer
+    placeholder: |
+      1. Go to '...'
+      2. Click on '....'
+      3. Scroll down to '....'
+      4. See error
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: A clear and concise description of what you expected to happen.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Actual Behavior
+    description: A clear description of what actually happens.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Screenshots
+    description: If applicable, add screenshots to help explain your problem. You can simply drag and drop any image file into the editor to add it to the report
+- type: textarea
+  attributes:
+    label: Debug information
+    description: Get your debug information via Ferdi "Help" menu ("Copy/Publish Debug Information") then share a debug information file or your published link with us.
+- type: input
+  attributes:
+    label: Testcase Gist URL
+    description: If you can reproduce the issue in a standalone test case, please use [Electron Fiddle](https://github.com/electron/fiddle) to create one and to publish it as a [GitHub gist](https://gist.github.com) and put the gist URL here. This is **the best way** to ensure this issue is triaged quickly **and** does not regress in the future.
+    placeholder: https://gist.github.com/...
+- type: textarea
+  attributes:
+    label: Additional Information
+    description: If your problem needs further explanation, or if the issue you're seeing cannot be reproduced in a gist, please add more information here.
