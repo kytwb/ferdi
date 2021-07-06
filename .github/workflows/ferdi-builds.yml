@@ -53,8 +53,8 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-          echo "Rebase from 'origin/develop'"
-          git rebase origin/develop --no-verify
+          echo "Merge with fast-forward from 'origin/develop'"
+          git merge --ff-only origin/develop --no-verify
 
           CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
           MANUAL_REBUILD="${{ github.event_name == 'workflow_dispatch' }}"
