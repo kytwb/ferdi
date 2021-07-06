@@ -5,8 +5,10 @@
   # 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
   # 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
   # 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
-  # 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac and windows artifacts)
-  # 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac and windows artifacts)
+  # 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac artifacts)
+  # 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac artifacts)
+  # 'WIN_CSC_LINK' (The HTTPS link or local path to certificate - for code signing of windows artifacts)
+  # 'WIN_CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of windows artifacts)
 
 name: Ferdi Builds
 
@@ -51,8 +53,8 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-          echo "Merge from 'origin/develop'"
-          git merge --no-ff --no-verify --commit -m "Merge remote-tracking branch 'origin/develop' into HEAD" origin/develop
+          echo "Rebase from 'origin/develop'"
+          git rebase origin/develop
 
           CHANGES_COUNT=$(git diff --shortstat origin/nightly | wc -l)
           MANUAL_REBUILD="${{ github.event_name == 'workflow_dispatch' }}"
@@ -61,12 +63,7 @@ jobs:
             echo "No changes found - terminating the build"
             echo "::set-output name=should_run::false"
           else   # changes > 0 (or) MANUAL_REBUILD=true
-            if [ $MANUAL_REBUILD != "true" ] || [ "${{ contains(github.event.inputs.message, 'version bump') }}" == "true" ]; then
-              echo "Bumping version number"
-              npm version prerelease --preid=nightly
-            fi
-
-            echo "Pushing merge and version-bump commits"
+            echo "Pushing rebased commits"
             git push origin $(git rev-parse --abbrev-ref HEAD) --no-verify
           fi
 

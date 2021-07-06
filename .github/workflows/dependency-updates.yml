@@ -3,6 +3,12 @@
 name: Ferdi Dependency updates
 
 on:
+  # Manual trigger from the UI
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message for build'
+        required: true
   schedule:
     - cron: '0 0 * * *' # every night at 12 am
 
@@ -57,8 +63,20 @@ jobs:
           npm run apply-branding
           npm run test
 
-          echo "Committing and pushing submodules, dependency-updates and linter changes"
+          echo "Committing submodules, dependency-updates and linter changes"
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "Update submodules, browserslist data updates and linter fixes [skip ci]" --no-verify || true
-          git push origin $(git rev-parse --abbrev-ref HEAD) --no-verify
+
+          echo "Bumping version number"
+          GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+          CHANGES_COUNT=$(git diff --shortstat origin/$GIT_BRANCH_NAME | wc -l)
+          MANUAL_REBUILD="${{ github.event_name == 'workflow_dispatch' }}"
+          # if this is a scheduled build or has been manually triggered with 'version bump' in the text, then bump the version number
+          if [ $MANUAL_REBUILD != "true" ] || [ "${{ contains(github.event.inputs.message, 'version bump') }}" == "true" ]; then
+            echo "Bumping version number"
+            npm version prerelease --preid=nightly
+          fi
+
+          echo "Pushing all changes"
+          git push origin $GIT_BRANCH_NAME --no-verify
