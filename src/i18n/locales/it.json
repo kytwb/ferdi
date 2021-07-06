@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automatico",
   "global.spellchecking.language": "Lingua per controllo ortografico",
   "global.upgradeButton.upgradeToPro": "Aggiorna a Ferdi Professional",
+  "global.userAgentHelp": "Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
   "global.userAgentPref": "User Agent",
   "import.headline": "Importa i servizi di Ferdi 4",
   "import.notSupportedHeadline": "Servizi non ancora supportati in Ferdi 5",
