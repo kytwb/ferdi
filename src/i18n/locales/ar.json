@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "تلقائي",
   "global.spellchecking.language": "لغة التدقيق الإملائي",
   "global.upgradeButton.upgradeToPro": "الترقية إلى الخطة الإحترافية لفردي",
+  "global.userAgentHelp": "Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
   "global.userAgentPref": "User Agent",
   "import.headline": "استيراد خدمات فردي الأربع",
   "import.notSupportedHeadline": "الخدمات غير مدعومة بعد في فردي الإصدار 5",
