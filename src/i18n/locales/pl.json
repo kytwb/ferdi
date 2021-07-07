@@ -257,7 +257,7 @@
   "settings.account.account.editButton": "Modyfikuj konta",
   "settings.account.accountType.basic": "Podstawowe konto",
   "settings.account.accountType.premium": "Premium Supporter Account",
-  "settings.account.accountUnavailable": "Account is unavailable",
+  "settings.account.accountUnavailable": "Konto jest niedostępne",
   "settings.account.accountUnavailableInfo": "You are using Ferdi without an account. If you want to use Ferdi with an account and keep your services synchronized across installations, please select a server in the Settings tab then login.",
   "settings.account.buttonSave": "Uaktualnij profil",
   "settings.account.deleteAccount": "Usuń konto",
