@@ -3,6 +3,12 @@
 name: Ferdi Dependency updates
 
 on:
+  # Manual trigger from the UI
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Message for build'
+        required: true
   schedule:
     - cron: '0 0 * * *' # every night at 12 am
 
@@ -21,6 +27,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
+        run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+        shell: bash
       - name: Cache node modules
         uses: actions/cache@v2
         env:
@@ -42,23 +51,24 @@ jobs:
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
-      - name: Update submodules, dependencies and run tests
+      - name: Update submodules
+        run: git submodule update --remote -f
+      - name: Update browserslist db
+        run: npx browserslist@latest --update-db
+      - name: Run linter, reformatter, rebrander and tests
         run: |
-          echo "Updating submodules"
-          git submodule update --remote -f
-
-          echo "Updating browserslist db"
-          npx browserslist@latest --update-db
-
-          echo "Running linter, reformatter, rebrander and tests"
           npm run lint
           npm run reformat-files
           npm run manage-translations
           npm run apply-branding
           npm run test
-
-          echo "Committing and pushing submodules, dependency-updates and linter changes"
+      - name: Commit submodules, dependency-updates and linter changes
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "Update submodules, browserslist data updates and linter fixes [skip ci]" --no-verify || true
-          git push origin $(git rev-parse --abbrev-ref HEAD) --no-verify
+      - name: Bump version number if this is a scheduled build or has been manually triggered with 'version bump' in the text, then bump the version number
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'version bump')) }}
+        run: npm version prerelease --preid=nightly
+      - name: Push all changes
+        run: git push origin ${{ env.GIT_BRANCH_NAME }} --no-verify

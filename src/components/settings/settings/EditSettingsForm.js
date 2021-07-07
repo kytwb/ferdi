@@ -18,6 +18,7 @@ import {
   GITHUB_FRANZ_URL,
 } from '../../../config';
 import { DEFAULT_APP_SETTINGS, isMac, isWindows } from '../../../environment';
+import globalMessages from '../../../i18n/globalMessages';
 
 const messages = defineMessages({
   headline: {
@@ -595,7 +596,7 @@ export default @observer class EditSettingsForm extends Component {
             { this.state.activeSetttingsTab === 'advanced' && (
               <div>
                 <Toggle field={form.$('enableGPUAcceleration')} />
-                <p className="settings__help">{intl.formatMessage(messages.appRestartRequired)}</p>
+                <p className="settings__help indented__help">{intl.formatMessage(messages.appRestartRequired)}</p>
 
                 <Hr />
 
@@ -604,6 +605,7 @@ export default @observer class EditSettingsForm extends Component {
                   onChange={e => this.submit(e)}
                   field={form.$('userAgentPref')}
                 />
+                <p className="settings__help">{intl.formatMessage(globalMessages.userAgentHelp)}</p>
                 <p className="settings__help">{intl.formatMessage(messages.appRestartRequired)}</p>
 
                 <Hr />

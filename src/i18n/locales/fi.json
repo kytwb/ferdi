@@ -75,6 +75,7 @@
   "global.spellchecking.autodetect.short": "Automaattinen",
   "global.spellchecking.language": "Oikeinkirjoituksen tarkistuskieli",
   "global.upgradeButton.upgradeToPro": "Päivitä Ferdi Professionaliin",
+  "global.userAgentHelp": "Use 'https://whatmyuseragent.com/' (to discover) or 'https://developers.whatismybrowser.com/useragents/explore/' (to choose) your desired user agent and copy-paste it here.",
   "global.userAgentPref": "User Agent",
   "import.headline": "Tuo Ferdin 4 palveluasi",
   "import.notSupportedHeadline": "Palvelut eivät vielä tue Ferdi 5-versiota",

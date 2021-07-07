@@ -8,6 +8,11 @@ import { oneOrManyChildElements } from '../../../prop-types';
 export default
 @observer
 class Tab extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { active: this.props.active };
+  }
+
   static propTypes = {
     children: oneOrManyChildElements.isRequired,
     active: PropTypes.number,
@@ -17,17 +22,13 @@ class Tab extends Component {
     active: 0,
   };
 
-  componentDidMount() {
-    this.setState({ active: this.props.active });
-  }
-
   switchTab(index) {
     this.setState({ active: index });
   }
 
   render() {
     const { children: childElements } = this.props;
-    const children = childElements.filter((c) => !!c);
+    const children = childElements.filter(c => !!c);
 
     if (children.length === 1) {
       return <div>{children}</div>;

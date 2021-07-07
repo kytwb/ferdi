@@ -21,6 +21,7 @@ import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
 import { serviceLimitStore } from '../../../features/serviceLimit';
 import { isMac } from '../../../environment';
+import globalMessages from '../../../i18n/globalMessages';
 
 const messages = defineMessages({
   saveService: {
@@ -351,7 +352,7 @@ export default @observer class EditServiceForm extends Component {
                   <h3>{intl.formatMessage(messages.headlineNotifications)}</h3>
                   <Toggle field={form.$('isNotificationEnabled')} />
                   <Toggle field={form.$('isMuted')} />
-                  <p className="settings__help">
+                  <p className="settings__help indented__help">
                     {intl.formatMessage(messages.isMutedInfo)}
                   </p>
                 </div>
@@ -362,7 +363,7 @@ export default @observer class EditServiceForm extends Component {
                   {recipe.hasIndirectMessages && form.$('isBadgeEnabled').value && (
                     <>
                       <Toggle field={form.$('isIndirectMessageBadgeEnabled')} />
-                      <p className="settings__help">
+                      <p className="settings__help indented__help">
                         {intl.formatMessage(messages.indirectMessageInfo)}
                       </p>
                     </>
@@ -375,7 +376,7 @@ export default @observer class EditServiceForm extends Component {
                   {isHibernationFeatureActive && (
                     <>
                       <Toggle field={form.$('isHibernationEnabled')} />
-                      <p className="settings__help">
+                      <p className="settings__help indented__help">
                         {intl.formatMessage(messages.isHibernationEnabledInfo)}
                       </p>
                     </>
@@ -456,6 +457,7 @@ export default @observer class EditServiceForm extends Component {
 
             <div className="user-agent">
               <Input field={form.$('userAgentPref')} />
+              <p className="settings__help">{intl.formatMessage(globalMessages.userAgentHelp)}</p>
             </div>
           </form>
 
