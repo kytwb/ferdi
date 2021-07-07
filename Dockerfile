@@ -4,15 +4,13 @@ FROM node:fermium-buster as builder
 
 # TODO: Need to setup a non-root user for security purposes
 
-ENV PATH "/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/lib:/usr/include:/usr/share"
-# This is added for building on ARM machines
-ENV USE_SYSTEM_FPM="true"
+ENV PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/local/lib:/usr/include:/usr/share"
 
-# TODO: Need to verify and cleanup if not required
-ENV DEBIAN_FRONTEND noninteractive
-ENV LC_ALL C.UTF-8
-ENV LANG C.UTF-8
-ENV TERM xterm
+ARG DEBIAN_FRONTEND=noninteractive
+# Note: This is added for building on ARM machines
+ARG USE_SYSTEM_FPM="true"
+# Note: Added to bypass the error with missing git repo information for the 'preval-build-info' module
+ARG PREVAL_BUILD_INFO_PLACEHOLDERS=true
 
 RUN apt-get update \
   && apt-get install -y rpm ruby gem \
@@ -22,9 +20,6 @@ WORKDIR /usr/src/ferdi
 
 COPY package*.json ./
 COPY lerna.json ./
-
-# Note: This is being set to bypass the error with missing git repo information for the 'preval-build-info' module
-ENV PREVAL_BUILD_INFO_PLACEHOLDERS=true
 
 RUN npm i -g node-gyp@8.0.0 \
   && npm config set node_gyp "$(which node-gyp)"
