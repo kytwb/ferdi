@@ -1,0 +1,11 @@
+theme:
+  cwd: ./theme
+  cmd: npm run dev
+
+forms:
+  cwd: ./forms
+  cmd: npm run dev
+
+ui:
+  cwd: ./ui
+  cmd: npm run dev
