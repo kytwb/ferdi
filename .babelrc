@@ -4,7 +4,7 @@
       "@babel/preset-env",
       {
         "targets": {
-          "electron": 4
+          "electron": 11
         }
       }
     ],
@@ -26,11 +26,14 @@
     ],
     "@babel/proposal-throw-expressions",
     "@babel/syntax-dynamic-import",
-    ["react-intl", {
-      "messagesDir": "./src/i18n/messages/",
-      "enforceDescriptions": false,
-      "extractSourceLocation": true
-    }],
+    [
+      "react-intl",
+      {
+        "messagesDir": "./src/i18n/messages/",
+        "enforceDescriptions": false,
+        "extractSourceLocation": true
+      }
+    ],
     [
       "@babel/plugin-proposal-private-methods",
       {

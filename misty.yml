@@ -1,6 +1,0 @@
-code:
-  cmd: npm run dev
-
-app:
-  cmd: npm start
-  waitOn: http://localhost:8080

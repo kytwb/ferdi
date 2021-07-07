@@ -10,7 +10,10 @@ import { Error } from '../error';
 import { Label } from '../label';
 import { Wrapper } from '../wrapper';
 
-interface IProps extends React.InputHTMLAttributes<HTMLInputElement>, IFormField, IWithStyle {
+interface IProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    IFormField,
+    IWithStyle {
   className?: string;
 }
 
@@ -35,7 +38,7 @@ const styles = (theme: Theme) => ({
   },
   buttonActive: {
     background: theme.toggleButtonActive,
-    left: (theme.toggleWidth - theme.toggleHeight) + 1,
+    left: theme.toggleWidth - theme.toggleHeight + 1,
   },
   input: {
     visibility: 'hidden' as any,
@@ -77,27 +80,28 @@ class ToggleComponent extends Component<IProps> {
     } = this.props;
 
     return (
-      <Wrapper
-        className={className}
-        identifier="franz-toggle"
-      >
+      <Wrapper className={className} identifier="franz-toggle">
         <Label
           title={label}
           showLabel={showLabel}
           htmlFor={id}
           className={classes.toggleLabel}
         >
-          <div className={classnames({
-            [`${classes.toggle}`]: true,
-            [`${classes.disabled}`]: disabled,
-          })}>
-            <div className={classnames({
-              [`${classes.button}`]: true,
-              [`${classes.buttonActive}`]: checked,
-            })} />
+          <div
+            className={classnames({
+              [`${classes.toggle}`]: true,
+              [`${classes.disabled}`]: disabled,
+            })}
+          >
+            <div
+              className={classnames({
+                [`${classes.button}`]: true,
+                [`${classes.buttonActive}`]: checked,
+              })}
+            />
             <input
               className={classes.input}
-              id={id || name}
+              id={id}
               type="checkbox"
               checked={checked}
               value={value}
@@ -106,9 +110,7 @@ class ToggleComponent extends Component<IProps> {
             />
           </div>
         </Label>
-        {error && (
-          <Error message={error} />
-        )}
+        {error && <Error message={error} />}
       </Wrapper>
     );
   }

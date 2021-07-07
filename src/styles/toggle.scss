@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import './config.scss';
 
 $toggle-size: 14px;
@@ -6,11 +8,11 @@ $toggle-button-size: 22px;
 
 .theme__dark .franz-form .franz-form__toggle-wrapper .franz-form__toggle {
   background: $dark-theme-gray;
-  border-radius: $toggle-size / 2;
+  border-radius: math.div($toggle-size, 2);
 
   .franz-form__toggle-button {
     background: $dark-theme-gray-lighter;
-    box-shadow: 0 1px 4px rgba($dark-theme-black, .3);
+    box-shadow: 0 1px 4px rgba($dark-theme-black, 0.3);
   }
 }
 
@@ -18,7 +20,9 @@ $toggle-button-size: 22px;
   display: flex;
   flex-direction: row;
 
-  .franz-form__label { margin-left: 20px; }
+  .franz-form__label {
+    margin-left: 20px;
+  }
 
   .franz-form__toggle {
     background: $theme-gray-lighter;
@@ -30,12 +34,12 @@ $toggle-button-size: 22px;
     .franz-form__toggle-button {
       background: $theme-gray-light;
       border-radius: 100%;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
       height: $toggle-size - 2;
       left: 1px;
       top: 1px;
       position: absolute;
-      transition: all .5s;
+      transition: all 0.5s;
       width: $toggle-size - 2;
     }
 
@@ -44,6 +48,8 @@ $toggle-button-size: 22px;
       left: $toggle-width - $toggle-size - 3;
     }
 
-    input { display: none; }
+    input {
+      display: none;
+    }
   }
 }

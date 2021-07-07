@@ -1,8 +1,8 @@
-/* eslint max-len: 0 */
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import babel from 'gulp-babel';
-import sass from 'gulp-sass';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 import csso from 'gulp-csso';
 import terser from 'terser';
 import composer from 'gulp-uglify/composer';
@@ -22,19 +22,18 @@ import * as rawStyleConfig from './src/theme/default/legacy.js';
 
 dotenv.config();
 
+const sass = gulpSass(dartSass);
 const uglify = composer(terser, console);
 
 const isDevBuild = process.env.NODE_ENV === 'development';
 
 const getTargetEnv = isDevBuild ? 'development' : 'production';
 
-const styleConfig = Object.keys(rawStyleConfig).map((key) => {
+const styleConfig = Object.keys(rawStyleConfig).map(key => {
   const isHex = /^#[0-9A-F]{6}$/i.test(rawStyleConfig[key]);
   return {
     [`$raw_${kebabCase(key)}`]: isHex
-      ? hexRgb(rawStyleConfig[key], { format: 'array' })
-        .splice(0, 3)
-        .join(',')
+      ? hexRgb(rawStyleConfig[key], { format: 'array' }).splice(0, 3).join(',')
       : rawStyleConfig[key],
   };
 });
@@ -107,7 +106,7 @@ function _shell(cmd, cb) {
   );
 }
 
-const clean = (done) => {
+const clean = done => {
   removeSync(paths.tmp);
   removeSync(paths.dest);
   removeSync(paths.dist);
@@ -140,7 +139,7 @@ export function mvLernaPackages() {
 }
 
 export function exportBuildInfo() {
-  var buildInfoData = {
+  const buildInfoData = {
     timestamp: buildInfo.timestamp,
     gitHashShort: buildInfo.gitHashShort,
     gitBranch: buildInfo.gitBranch,
@@ -151,10 +150,16 @@ export function exportBuildInfo() {
 export function html() {
   return gulp
     .src(paths.html.src, { since: gulp.lastRun(html) })
-    .pipe(gulpIf(!isDevBuild, htmlMin({ // Only minify in production to speed up dev builds
-      collapseWhitespace: true,
-      removeComments: true,
-    })))
+    .pipe(
+      gulpIf(
+        !isDevBuild,
+        htmlMin({
+          // Only minify in production to speed up dev builds
+          collapseWhitespace: true,
+          removeComments: true,
+        }),
+      ),
+    )
     .pipe(gulp.dest(paths.html.dest))
     .pipe(connect.reload());
 }
@@ -177,9 +182,15 @@ export function styles() {
         includePaths: ['./node_modules', '../node_modules'],
       }).on('error', sass.logError),
     )
-    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
-      restructure: false, // Don't restructure CSS, otherwise it will break the styles
-    }))))
+    .pipe(
+      gulpIf(
+        !isDevBuild,
+        csso({
+          // Only minify in production to speed up dev builds
+          restructure: false, // Don't restructure CSS, otherwise it will break the styles
+        }),
+      ),
+    )
     .pipe(gulp.dest(paths.styles.dest))
     .pipe(connect.reload());
 }
@@ -202,9 +213,15 @@ export function verticalStyle() {
         includePaths: ['./node_modules', '../node_modules'],
       }).on('error', sass.logError),
     )
-    .pipe((gulpIf(!isDevBuild, csso({ // Only minify in production to speed up dev builds
-      restructure: false, // Don't restructure CSS, otherwise it will break the styles
-    }))))
+    .pipe(
+      gulpIf(
+        !isDevBuild,
+        csso({
+          // Only minify in production to speed up dev builds
+          restructure: false, // Don't restructure CSS, otherwise it will break the styles
+        }),
+      ),
+    )
     .pipe(gulp.dest(paths.verticalStyle.dest))
     .pipe(connect.reload());
 }
@@ -240,11 +257,13 @@ export function webserver() {
 }
 
 export function recipes() {
-  return gulp.src(paths.recipes.src, { since: gulp.lastRun(recipes) })
+  return gulp
+    .src(paths.recipes.src, { since: gulp.lastRun(recipes) })
     .pipe(gulp.dest(paths.recipes.dest));
 }
 export function recipeInfo() {
-  return gulp.src(paths.recipeInfo.src, { since: gulp.lastRun(recipeInfo) })
+  return gulp
+    .src(paths.recipeInfo.src, { since: gulp.lastRun(recipeInfo) })
     .pipe(gulp.dest(paths.recipeInfo.dest));
 }
 
