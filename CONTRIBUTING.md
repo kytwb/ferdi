@@ -213,15 +213,11 @@ Assets will be available in the `out` folder.
 
 ## Release
 
-Create a new [draft release](https://github.com/getferdi/ferdi/releases/new) that targets the `release` branch, then:
-
 ```bash
-git checkout develop && git pull -r
+git checkout nightly && git pull -r
 git checkout release
-git submodule update --remote --force
-git commit -am "Update submodules"
-git merge --no-ff develop
+git merge --no-ff nightly --no-verify
 git push
 ```
 
-Once the draft release assets are uploaded (13 assets), publish the release (you will need elevated permissions in GitHub for doing this). The last commit of the `release` branch will be tagged. You can then merge `release` into `master` and back into `develop` if needed
+This will automatically trigger the build, as part of which, a new, draft release will be created [here](https://github.com/getferdi/ferdi/releases/). Once all the assets are uploaded (19 assets in total), publish the release (you will need elevated permissions in GitHub for doing this). The last commit of the `release` branch will be tagged.
