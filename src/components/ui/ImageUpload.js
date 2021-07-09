@@ -25,17 +25,46 @@ export default @observer class ImageUpload extends Component {
 
   dropzoneRef = null;
 
+  imgPath = null;
+
   onDrop(acceptedFiles) {
-    const { field } = this.props;
+    const { field } = this.props; 
 
     acceptedFiles.forEach((file) => {
+      console.log(this.getOS());
+      
+      if(this.getOS() === "Windows"){
+        this.imgPath = file.path.replace(/\\/g,"/");
+      }else{
+        this.imgPath = file.path;
+      }
+
+      console.log(this.imgPath);
+      
       this.setState({
-        path: file.path,
+        path: this.imgPath,
       });
       this.props.field.onDrop(file);
     });
 
     field.set('');
+  }
+
+  getOS() {
+    var platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        os = null;
+  
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = 'Mac OS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = 'Windows';
+    } else if (!os && /Linux/.test(platform)) {
+      os = 'Linux';
+    }
+  
+    return os;
   }
 
   render() {
