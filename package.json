@@ -11,9 +11,9 @@
   "repository": "https://github.com/getferdi/ferdi.git",
   "private": true,
   "engines": {
-    "node": "^14.16",
-    "npm": "^6.14",
-    "node-gyp": "^8.0"
+    "node": ">=14",
+    "npm": ">=6",
+    "node-gyp": "^8"
   },
   "engine-strict": true,
   "scripts": {
