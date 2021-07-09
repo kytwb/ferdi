@@ -2,13 +2,13 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 # Note: This workflow requires some secrets setup, and set on this repo with the names:
-  # 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
-  # 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
-  # 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
-  # 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac artifacts)
-  # 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac artifacts)
-  # 'WIN_CSC_LINK' (The HTTPS link or local path to certificate - for code signing of windows artifacts)
-  # 'WIN_CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of windows artifacts)
+# 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
+# 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
+# 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
+# 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac artifacts)
+# 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac artifacts)
+# 'WIN_CSC_LINK' (The HTTPS link or local path to certificate - for code signing of windows artifacts)
+# 'WIN_CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of windows artifacts)
 
 name: Ferdi Builds
 
@@ -121,10 +121,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 16.4.2
       - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
         run: |
           sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
@@ -219,10 +219,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 16.4.2
       - name: Uninstall locally and reinstall node-gyp globally
         run: |
           npm uninstall node-gyp
@@ -309,10 +309,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 16.4.2
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes

@@ -41,10 +41,10 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 16.4.2
       - name: Uninstall locally and reinstall node-gyp globally
         run: |
           npm uninstall node-gyp
