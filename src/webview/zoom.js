@@ -1,4 +1,4 @@
-const electron = require('electron');
+import electron from 'electron';
 
 const { ipcRenderer, webFrame } = electron;
 

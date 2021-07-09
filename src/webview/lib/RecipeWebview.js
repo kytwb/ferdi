@@ -1,5 +1,5 @@
-const { ipcRenderer } = require('electron');
-const fs = require('fs-extra');
+import { ipcRenderer } from 'electron';
+import { pathExistsSync, readFile } from 'fs-extra';
 
 const debug = require('debug')('Ferdi:Plugin:RecipeWebview');
 
@@ -73,8 +73,8 @@ class RecipeWebview {
    */
   injectCSS(...files) {
     files.forEach(async (file) => {
-      if (fs.pathExistsSync(file)) {
-        const data = await fs.readFile(file, 'utf8');
+      if (pathExistsSync(file)) {
+        const data = await readFile(file, 'utf8');
         const styles = document.createElement('style');
         styles.innerHTML = data;
 
@@ -107,4 +107,4 @@ class RecipeWebview {
   }
 }
 
-module.exports = RecipeWebview;
+export default RecipeWebview;
