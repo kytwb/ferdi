@@ -28,19 +28,19 @@ export default @observer class ImageUpload extends Component {
   imgPath = null;
 
   onDrop(acceptedFiles) {
-    const { field } = this.props; 
+    const { field } = this.props;
 
     acceptedFiles.forEach((file) => {
       console.log(this.getOS());
-      
-      if(this.getOS() === "Windows"){
-        this.imgPath = file.path.replace(/\\/g,"/");
-      }else{
+
+      if (this.getOS() === 'Windows') {
+        this.imgPath = file.path.replace(/\\/g, '/');
+      } else {
         this.imgPath = file.path;
       }
 
       console.log(this.imgPath);
-      
+
       this.setState({
         path: this.imgPath,
       });
@@ -51,11 +51,11 @@ export default @observer class ImageUpload extends Component {
   }
 
   getOS() {
-    var platform = window.navigator.platform,
-        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-        os = null;
-  
+    const platform = window.navigator.platform;
+    const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+    const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
+    let os = null;
+
     if (macosPlatforms.indexOf(platform) !== -1) {
       os = 'Mac OS';
     } else if (windowsPlatforms.indexOf(platform) !== -1) {
@@ -63,7 +63,7 @@ export default @observer class ImageUpload extends Component {
     } else if (!os && /Linux/.test(platform)) {
       os = 'Linux';
     }
-  
+
     return os;
   }
 
