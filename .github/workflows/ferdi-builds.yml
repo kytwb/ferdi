@@ -227,10 +227,10 @@ jobs:
         run: |
           npm uninstall node-gyp
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
-      - name: Install apt packages
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y gcc-multilib
+      # - name: Install apt packages
+      #   run: |
+      #     sudo apt-get update -y
+      #     sudo apt-get install -y gcc-multilib
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
