@@ -74,7 +74,7 @@ _Note:_ This list can likely get outdated. If so, please refer to the specific v
 #### Debian/Ubuntu
 
 ```bash
-apt-get update -y && apt install -y gcc-multilib rpm
+apt-get update -y && apt install -y gcc-multilib rpm ruby gem && gem install fpm --no-ri --no-rdoc --no-document
 ```
 
 #### Fedora
