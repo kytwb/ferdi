@@ -74,7 +74,7 @@ _Note:_ This list can likely get outdated. If so, please refer to the specific v
 #### Debian/Ubuntu
 
 ```bash
-apt install ca-certificates curl netbase wget tzdata rpm
+apt-get update -y && apt install -y gcc-multilib rpm
 ```
 
 #### Fedora
