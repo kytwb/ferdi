@@ -8,7 +8,7 @@ ENV PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sna
 
 ARG DEBIAN_FRONTEND=noninteractive
 # Note: This is added for building on ARM machines
-ARG USE_SYSTEM_FPM="true"
+ARG USE_SYSTEM_FPM=true
 # Note: Added to bypass the error with missing git repo information for the 'preval-build-info' module
 ARG PREVAL_BUILD_INFO_PLACEHOLDERS=true
 
