@@ -275,11 +275,17 @@ export default class Service {
       debug(this.name, 'modifyRequestHeaders is not defined in the recipe');
     }
 
-    this.webview.addEventListener('ipc-message', e => handleIPCMessage({
-      serviceId: this.id,
-      channel: e.channel,
-      args: e.args,
-    }));
+    this.webview.addEventListener('ipc-message', async (e) => {
+      if (e.channel === 'inject-js-unsafe') {
+        await Promise.all(e.args.map(script => this.webview.executeJavaScript(`"use strict"; (() => { ${script} })();`)));
+      } else {
+        handleIPCMessage({
+          serviceId: this.id,
+          channel: e.channel,
+          args: e.args,
+        });
+      }
+    });
 
     this.webview.addEventListener('new-window', (event, url, frameName, options) => {
       debug('new-window', event, url, frameName, options);
@@ -332,6 +338,11 @@ export default class Service {
     this.webview.addEventListener('crashed', () => {
       debug('Service crashed', this.name);
       this.hasCrashed = true;
+    });
+
+    this.webview.addEventListener('found-in-page', ({ result }) => {
+      debug('Found in page', result);
+      this.webview.send('found-in-page', result);
     });
 
     webviewWebContents.on('login', (event, request, authInfo, callback) => {

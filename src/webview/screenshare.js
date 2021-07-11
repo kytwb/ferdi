@@ -2,6 +2,27 @@ import { desktopCapturer } from 'electron';
 
 const CANCEL_ID = 'desktop-capturer-selection__cancel';
 
+export async function getDisplayMediaSelector() {
+  const sources = await desktopCapturer.getSources({ types: ['screen', 'window'] });
+  return `<div class="desktop-capturer-selection__scroller">
+  <ul class="desktop-capturer-selection__list">
+    ${sources.map(({ id, name, thumbnail }) => `
+      <li class="desktop-capturer-selection__item">
+        <button class="desktop-capturer-selection__btn" data-id="${id}" title="${name}">
+          <img class="desktop-capturer-selection__thumbnail" src="${thumbnail.toDataURL()}" />
+          <span class="desktop-capturer-selection__name">${name}</span>
+        </button>
+      </li>
+    `).join('')}
+    <li class="desktop-capturer-selection__item">
+      <button class="desktop-capturer-selection__btn" data-id="${CANCEL_ID}" title="Cancel">
+        <span class="desktop-capturer-selection__name desktop-capturer-selection__name--cancel">Cancel</span>
+      </button>
+    </li>
+  </ul>
+</div>`;
+}
+
 export const screenShareCss = `
 .desktop-capturer-selection {
   position: fixed;
@@ -72,38 +93,12 @@ export const screenShareCss = `
 }
 `;
 
-// Patch getDisplayMedia for screen sharing
-window.navigator.mediaDevices.getDisplayMedia = () => async (resolve, reject) => {
+export const screenShareJs = `
+window.navigator.mediaDevices.getDisplayMedia = () => new Promise(async (resolve, reject) => {
   try {
-    const sources = await desktopCapturer.getSources({
-      types: ['screen', 'window'],
-    });
-
     const selectionElem = document.createElement('div');
-    selectionElem.classList = 'desktop-capturer-selection';
-    selectionElem.innerHTML = `
-        <div class="desktop-capturer-selection__scroller">
-          <ul class="desktop-capturer-selection__list">
-            ${sources
-    .map(
-      ({ id, name, thumbnail }) => `
-              <li class="desktop-capturer-selection__item">
-                <button class="desktop-capturer-selection__btn" data-id="${id}" title="${name}">
-                  <img class="desktop-capturer-selection__thumbnail" src="${thumbnail.toDataURL()}" />
-                  <span class="desktop-capturer-selection__name">${name}</span>
-                </button>
-              </li>
-            `,
-    )
-    .join('')}
-            <li class="desktop-capturer-selection__item">
-              <button class="desktop-capturer-selection__btn" data-id="${CANCEL_ID}" title="Cancel">
-                <span class="desktop-capturer-selection__name desktop-capturer-selection__name--cancel">Cancel</span>
-              </button>
-            </li>
-          </ul>
-        </div>
-      `;
+    selectionElem.classList = ['desktop-capturer-selection'];
+    selectionElem.innerHTML = await window.ferdi.getDisplayMediaSelector();
     document.body.appendChild(selectionElem);
 
     document
@@ -112,25 +107,18 @@ window.navigator.mediaDevices.getDisplayMedia = () => async (resolve, reject) =>
         button.addEventListener('click', async () => {
           try {
             const id = button.getAttribute('data-id');
-            if (id === CANCEL_ID) {
+            if (id === '${CANCEL_ID}') {
               reject(new Error('Cancelled by user'));
             } else {
-              const mediaSource = sources.find((source) => source.id === id);
-              if (!mediaSource) {
-                throw new Error(`Source with id ${id} does not exist`);
-              }
-
-              const stream = await window.navigator.mediaDevices.getUserMedia(
-                {
-                  audio: false,
-                  video: {
-                    mandatory: {
-                      chromeMediaSource: 'desktop',
-                      chromeMediaSourceId: mediaSource.id,
-                    },
+              const stream = await window.navigator.mediaDevices.getUserMedia({
+                audio: false,
+                video: {
+                  mandatory: {
+                    chromeMediaSource: 'desktop',
+                    chromeMediaSourceId: id,
                   },
                 },
-              );
+              });
               resolve(stream);
             }
           } catch (err) {
@@ -143,4 +131,5 @@ window.navigator.mediaDevices.getDisplayMedia = () => async (resolve, reject) =>
   } catch (err) {
     reject(err);
   }
-};
+});
+`;
