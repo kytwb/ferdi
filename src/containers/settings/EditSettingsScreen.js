@@ -87,10 +87,6 @@ const messages = defineMessages({
     id: 'settings.app.form.sentry',
     defaultMessage: '!!!Send telemetry data',
   },
-  hibernate: {
-    id: 'settings.app.form.hibernate',
-    defaultMessage: '!!!Enable service hibernation',
-  },
   hibernateOnStartup: {
     id: 'settings.app.form.hibernateOnStartup',
     defaultMessage: '!!!Keep services in hibernation on startup',
@@ -432,11 +428,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           value: settings.all.app.sentry,
           default: DEFAULT_APP_SETTINGS.sentry,
         },
-        hibernate: {
-          label: intl.formatMessage(messages.hibernate),
-          value: settings.all.app.hibernate,
-          default: DEFAULT_APP_SETTINGS.hibernate,
-        },
         hibernateOnStartup: {
           label: intl.formatMessage(messages.hibernateOnStartup),
           value: settings.all.app.hibernateOnStartup,
@@ -653,7 +644,7 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isWorkspaceEnabled={workspaces.isFeatureActive}
           lockingFeatureEnabled={lockingFeatureEnabled}
           automaticUpdates={this.props.stores.settings.app.automaticUpdates}
-          hibernationEnabled={this.props.stores.settings.app.hibernate}
+          hibernationEnabled={this.props.stores.services.isAnyServiceHibernationEnabled}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}

@@ -143,13 +143,10 @@ export default class Service {
     this.recipe = recipe;
 
     // Check if "Hibernate on Startup" is enabled and hibernate all services except active one
-    const {
-      hibernate,
-      hibernateOnStartup,
-    } = window.ferdi.stores.settings.app;
+    const { hibernateOnStartup } = window.ferdi.stores.settings.app;
     // The service store is probably not loaded yet so we need to use localStorage data to get active service
     const isActive = window.localStorage.service && JSON.parse(window.localStorage.service).activeService === this.id;
-    if (hibernate && hibernateOnStartup && !isActive) {
+    if (hibernateOnStartup && !isActive) {
       this.isHibernationRequested = true;
     }
 
@@ -184,7 +181,7 @@ export default class Service {
   }
 
   @computed get canHibernate() {
-    return window.ferdi.stores.settings.app.hibernate && this.isHibernationEnabled;
+    return this.isHibernationEnabled;
   }
 
   @computed get isHibernating() {

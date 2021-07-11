@@ -336,7 +336,6 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
-                <Toggle field={form.$('hibernate')} />
                 {hibernationEnabled && (
                   <>
                     <Select field={form.$('hibernationStrategy')} />

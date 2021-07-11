@@ -145,7 +145,6 @@ export default @observer class EditServiceForm extends Component {
     isSaving: PropTypes.bool.isRequired,
     isDeleting: PropTypes.bool.isRequired,
     isProxyFeatureEnabled: PropTypes.bool.isRequired,
-    isHibernationFeatureActive: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -208,7 +207,6 @@ export default @observer class EditServiceForm extends Component {
       onDelete,
       openRecipeFile,
       isProxyFeatureEnabled,
-      isHibernationFeatureActive,
     } = this.props;
     const { intl } = this.context;
 
@@ -341,14 +339,10 @@ export default @observer class EditServiceForm extends Component {
                 <div className="settings__settings-group">
                   <h3>{intl.formatMessage(messages.headlineGeneral)}</h3>
                   <Toggle field={form.$('isEnabled')} />
-                  {isHibernationFeatureActive && (
-                    <>
-                      <Toggle field={form.$('isHibernationEnabled')} />
-                      <p className="settings__help indented__help">
-                        {intl.formatMessage(messages.isHibernationEnabledInfo)}
-                      </p>
-                    </>
-                  )}
+                  <Toggle field={form.$('isHibernationEnabled')} />
+                  <p className="settings__help indented__help">
+                    {intl.formatMessage(messages.isHibernationEnabledInfo)}
+                  </p>
                   <Toggle field={form.$('isDarkModeEnabled')} />
                   {form.$('isDarkModeEnabled').value
                     && (
