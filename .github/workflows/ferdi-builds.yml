@@ -133,6 +133,8 @@ jobs:
         run: |
           npm uninstall node-gyp
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
@@ -227,6 +229,8 @@ jobs:
         run: |
           npm uninstall node-gyp
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
@@ -313,6 +317,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.17.3
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
