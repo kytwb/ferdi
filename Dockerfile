@@ -1,6 +1,6 @@
 # Note: Before running this file, you should have already cloned the git repo + submodules on the host machine. This is used when actively developing on your local machine, but you want to build for a different architecture
 
-FROM node:16.4.2 as builder
+FROM node:16.4-buster as builder
 
 # TODO: Need to setup a non-root user for security purposes
 
