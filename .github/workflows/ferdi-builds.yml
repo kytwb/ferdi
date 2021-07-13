@@ -319,13 +319,17 @@ jobs:
           node-version: 14.17.3
       - name: Fix corrupted node cache
         run: npm cache clean --force
+        shell: bash
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
+        shell: bash
       - name: Package recipes
         run: npm i && npm run package
         working-directory: ./recipes
+        shell: bash
       - name: Run linter and tests
         run: npm run lint && npm run test
+        shell: bash
       - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
         if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
         run: npm run build -- --publish never
