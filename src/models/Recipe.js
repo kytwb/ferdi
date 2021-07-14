@@ -24,8 +24,6 @@ export default class Recipe {
 
   hasTeamId = false;
 
-  hasPredefinedUrl = false;
-
   hasCustomUrl = false;
 
   hasHostedOption = false;
@@ -73,7 +71,6 @@ export default class Recipe {
     this.hasIndirectMessages = data.config.hasIndirectMessages || this.hasIndirectMessages;
     this.hasNotificationSound = data.config.hasNotificationSound || this.hasNotificationSound;
     this.hasTeamId = data.config.hasTeamId || this.hasTeamId;
-    this.hasPredefinedUrl = data.config.hasPredefinedUrl || this.hasPredefinedUrl;
     this.hasCustomUrl = data.config.hasCustomUrl || this.hasCustomUrl;
     this.hasHostedOption = data.config.hasHostedOption || this.hasHostedOption;
 

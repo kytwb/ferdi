@@ -1,29 +1,35 @@
 import os from 'os';
 import macosVersion from 'macos-version';
-import {
-  ferdiVersion, electronVersion, chromeVersion, isMac, isWindows,
-} from '../environment';
+import { chromeVersion, isMac, isWindows } from '../environment';
+
+const uaGenerator = require('useragent-generator');
+
+function is64Bit() {
+  return os.arch().match(/64/);
+}
 
 function macOS() {
   const version = macosVersion();
-  return `Macintosh; Intel Mac OS X ${version.replace(/\./g, '_')}`;
+  let cpuName = os.cpus()[0].model.split(' ')[0];
+  if (cpuName && cpuName.match(/\(/)) {
+    cpuName = cpuName.split('(')[0];
+  }
+  return `Macintosh; ${cpuName} Mac OS X ${version.replace(/\./g, '_')}`;
 }
 
 function windows() {
   const version = os.release();
   const [majorVersion, minorVersion] = version.split('.');
-  return `Windows NT ${majorVersion}.${minorVersion}; Win64; x64`;
+  const archString = is64Bit() ? 'Win64' : 'Win32';
+  return `Windows NT ${majorVersion}.${minorVersion}; ${archString}; ${os.arch()}`;
 }
 
 function linux() {
-  return 'X11; Ubuntu; Linux x86_64';
+  const archString = is64Bit() ? 'x86_64' : os.arch();
+  return `X11; Ubuntu; Linux ${archString}`;
 }
 
-export function isChromeless(url) {
-  return url.startsWith('https://accounts.google.com');
-}
-
-export default function userAgent(removeChromeVersion = false, addFerdiVersion = false) {
+export default function userAgent() {
   let platformString = '';
 
   if (isMac) {
@@ -34,17 +40,5 @@ export default function userAgent(removeChromeVersion = false, addFerdiVersion =
     platformString = linux();
   }
 
-  let chromeVersionString = 'Chrome';
-  if (!removeChromeVersion) {
-    chromeVersionString = `Chrome/${chromeVersion}`;
-  }
-
-  let applicationString = '';
-  if (addFerdiVersion) {
-    applicationString = ` Ferdi/${ferdiVersion} Electron/${electronVersion}`;
-  }
-
-  // Chrome is pinned to WebKit 537.36, the latest version before hard forking to Blink.
-  return `Mozilla/5.0 (${platformString}) AppleWebKit/537.36 (KHTML, like Gecko) ${chromeVersionString} Safari/537.36${applicationString}`;
-  // Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36 Ferdi/5.5.1-nightly.13 Electron/8.2.3
+  return uaGenerator.chrome({ os: platformString, version: chromeVersion });
 }

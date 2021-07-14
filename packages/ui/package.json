@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "dev": "tsc -w",
-    "prepare": "tsc"
+    "//prepare": "tsc"
   },
   "publishConfig": {
     "access": "public"

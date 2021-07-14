@@ -15,7 +15,7 @@
   },
   "scripts": {
     "dev": "tsc -w",
-    "prepare": "tsc",
+    "//prepare": "tsc",
     "//preprepare": "npm run test",
     "test": "npx mocha"
   },
