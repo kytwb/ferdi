@@ -11,9 +11,9 @@
   "repository": "https://github.com/getferdi/ferdi.git",
   "private": true,
   "engines": {
-    "node": "^14.17",
-    "npm": "^6.14",
-    "node-gyp": "^8.0"
+    "node": ">=14",
+    "npm": ">=6",
+    "node-gyp": "^8"
   },
   "engine-strict": true,
   "scripts": {
@@ -165,6 +165,7 @@
     "conventional-changelog-cli": "^2.1.1",
     "cross-env": "^5.0.5",
     "cz-conventional-changelog": "^2.1.0",
+    "dmg-license": "1.0.9",
     "dotenv": "10.0.0",
     "electron": "13.1.6",
     "electron-builder": "22.11.9",
@@ -193,6 +194,7 @@
     "mobx-react-devtools": "^6.1.1",
     "mocha": "9.0.1",
     "node-abi": "2.30.0",
+    "npm": "7.19.1",
     "prettier": "^2.3.1",
     "preval-build-info": "^1.0.3",
     "react-intl-translations-manager": "^5.0.3",
