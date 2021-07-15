@@ -4,6 +4,7 @@ import { observer } from 'mobx-react';
 import { Field } from 'mobx-react-form';
 import classnames from 'classnames';
 import Dropzone from 'react-dropzone';
+import { isWindows } from '../../environment';
 
 export default @observer class ImageUpload extends Component {
   static propTypes = {
@@ -24,47 +25,22 @@ export default @observer class ImageUpload extends Component {
   };
 
   dropzoneRef = null;
-
   imgPath = null;
 
   onDrop(acceptedFiles) {
     const { field } = this.props;
 
     acceptedFiles.forEach((file) => {
-      console.log(this.getOS());
-
-      if (this.getOS() === 'Windows') {
-        this.imgPath = file.path.replace(/\\/g, '/');
-      } else {
-        this.imgPath = file.path;
-      }
-
-      console.log(this.imgPath);
+      this.imgPath = isWindows ? file.path.replace(/\\/g, '/') : file.path;
 
       this.setState({
         path: this.imgPath,
       });
+
       this.props.field.onDrop(file);
     });
 
     field.set('');
-  }
-
-  getOS() {
-    const platform = window.navigator.platform;
-    const macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
-    const windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'];
-    let os = null;
-
-    if (macosPlatforms.indexOf(platform) !== -1) {
-      os = 'Mac OS';
-    } else if (windowsPlatforms.indexOf(platform) !== -1) {
-      os = 'Windows';
-    } else if (!os && /Linux/.test(platform)) {
-      os = 'Linux';
-    }
-
-    return os;
   }
 
   render() {
