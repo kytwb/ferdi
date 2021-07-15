@@ -5,7 +5,7 @@ import {
   observable,
 } from 'mobx';
 
-import defaultUserAgent, { isChromeless } from '../helpers/userAgent-helpers';
+import defaultUserAgent from '../helpers/userAgent-helpers';
 
 const debug = require('debug')('Ferdi:UserAgent');
 
@@ -76,7 +76,7 @@ export default class UserAgent {
   }
 
   @action _handleNavigate(url, forwardingHack = false) {
-    if (isChromeless(url)) {
+    if (url.startsWith('https://accounts.google.com')) {
       if (!this.chromelessUserAgent) {
         debug('Setting user agent to chromeless for url', url);
         this.chromelessUserAgent = true;

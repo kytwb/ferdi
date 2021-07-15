@@ -13,6 +13,8 @@ import { DEBUG_API } from '../../config';
 import AppStore from '../../stores/AppStore';
 import ServicesStore from '../../stores/ServicesStore';
 
+const debug = require('debug')('Ferdi:feature:publishDebugInfo');
+
 const messages = defineMessages({
   title: {
     id: 'feature.publishDebugInfo.title',
@@ -100,6 +102,7 @@ export default @injectSheet(styles) @inject('stores', 'actions') @observer class
   }
 
   async publishDebugInfo() {
+    debug('debugInfo: starting publish');
     this.setState({
       isSendingLog: true,
     });
@@ -112,17 +115,26 @@ export default @injectSheet(styles) @inject('stores', 'actions') @observer class
         log: debugInfo,
       }),
     }, false);
-    const response = await request.json();
 
-    if (response.id) {
-      this.setState({
-        log: response.id,
-      });
+    debug(`debugInfo: publishing status: ${request.status}`);
+    if (request.status === 200) {
+      const response = await request.json();
+      if (response.id) {
+        this.setState({
+          log: response.id,
+        });
+      } else {
+        this.setState({
+          error: true,
+        });
+      }
     } else {
       this.setState({
         error: true,
       });
     }
+
+    debug('debugInfo: finished publishing');
   }
 
   render() {

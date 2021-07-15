@@ -8,12 +8,12 @@ ENV PATH="/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sna
 
 ARG DEBIAN_FRONTEND=noninteractive
 # Note: This is added for building on ARM machines
-ARG USE_SYSTEM_FPM="true"
+ARG USE_SYSTEM_FPM=true
 # Note: Added to bypass the error with missing git repo information for the 'preval-build-info' module
 ARG PREVAL_BUILD_INFO_PLACEHOLDERS=true
 
-RUN apt-get update \
-  && apt-get install -y rpm ruby gem \
+RUN apt-get update -y \
+  && apt-get install --no-install-recommends -y rpm ruby gem \
   && gem install fpm --no-ri --no-rdoc --no-document
 
 WORKDIR /usr/src/ferdi

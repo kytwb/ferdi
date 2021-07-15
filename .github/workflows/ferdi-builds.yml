@@ -2,13 +2,13 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 # Note: This workflow requires some secrets setup, and set on this repo with the names:
-  # 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
-  # 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
-  # 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
-  # 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac artifacts)
-  # 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac artifacts)
-  # 'WIN_CSC_LINK' (The HTTPS link or local path to certificate - for code signing of windows artifacts)
-  # 'WIN_CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of windows artifacts)
+# 'FERDI_PUBLISH_TOKEN' (A GitHub Personal Access Token with appropriate permissions - for publishing the built artifacts)
+# 'APPLEID' (The username of your Apple developer account - for notarizing the mac artifacts)
+# 'APPLEID_PASSWORD' (An app-specific password - for notarizing the mac artifacts)
+# 'CSC_LINK' (The HTTPS link or local path to certificate - for code signing of mac artifacts)
+# 'CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of mac artifacts)
+# 'WIN_CSC_LINK' (The HTTPS link or local path to certificate - for code signing of windows artifacts)
+# 'WIN_CSC_KEY_PASSWORD' (The password to decrypt the certificate given in CSC_LINK - for code signing of windows artifacts)
 
 name: Ferdi Builds
 
@@ -102,11 +102,10 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-14.17-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-14.17-build-${{ env.cache-name }}-
+            ${{ runner.os }}-14.17-build-
       - name: Cache electron modules
         uses: actions/cache@v2
         env:
@@ -121,10 +120,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 14.17.3
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 14.17.3
       - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
         run: |
           sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
@@ -133,6 +132,8 @@ jobs:
         run: |
           npm uninstall node-gyp
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
@@ -200,11 +201,10 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-14.17-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-14.17-build-${{ env.cache-name }}-
+            ${{ runner.os }}-14.17-build-
       - name: Cache electron modules
         uses: actions/cache@v2
         env:
@@ -219,14 +219,16 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 14.17.3
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 14.17.3
       - name: Uninstall locally and reinstall node-gyp globally
         run: |
           npm uninstall node-gyp
           npm i -g node-gyp@8.0.0 && npm config set node_gyp "$(which node-gyp)"
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
       - name: Package recipes
@@ -290,11 +292,10 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-14.17-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-14.17-build-${{ env.cache-name }}-
+            ${{ runner.os }}-14.17-build-
       - name: Cache electron modules
         uses: actions/cache@v2
         env:
@@ -309,17 +310,23 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 14.17.3
         uses: actions/setup-node@v2
         with:
-          node-version: 14.16.1
+          node-version: 14.17.3
+      - name: Fix corrupted node cache
+        run: npm cache clean --force
+        shell: bash
       - name: Install node dependencies recursively
         run: npx lerna bootstrap
+        shell: bash
       - name: Package recipes
         run: npm i && npm run package
         working-directory: ./recipes
+        shell: bash
       - name: Run linter and tests
         run: npm run lint && npm run test
+        shell: bash
       - name: Build Ferdi without publish for any branch not 'nightly' and not 'release'
         if: ${{ env.GIT_BRANCH_NAME != 'nightly' && env.GIT_BRANCH_NAME != 'release' }}
         run: npm run build -- --publish never

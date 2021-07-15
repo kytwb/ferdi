@@ -12,9 +12,9 @@
   👉  https://github.com/sponsors/getferdi
   👉  https://opencollective.com/getferdi/donate
 5. Please ensure you've completed all of the following.
-    - [ ] I have read the [Contributing Guidelines](https://github.com/getferdi/ferdi/blob/develop/CONTRIBUTING.md) for this project.
-    - [ ] I agree to follow the [Code of Conduct](https://github.com/getferdi/ferdi/blob/develop/CODE_OF_CONDUCT.md) that this project adheres to.
-    - [ ] I have searched the [issue tracker](https://github.com/getferdi/ferdi/issues) for a feature request that matches the one I want to file, without success.
+- [ ] I have read the [Contributing Guidelines](https://github.com/getferdi/ferdi/blob/develop/CONTRIBUTING.md) for this project.
+- [ ] I agree to follow the [Code of Conduct](https://github.com/getferdi/ferdi/blob/develop/CODE_OF_CONDUCT.md) that this project adheres to.
+- [ ] I have searched the [issue tracker](https://github.com/getferdi/ferdi/issues) for a feature request that matches the one I want to file, without success.
 
 #### Description of Change
 <!-- Describe your changes in detail. -->
