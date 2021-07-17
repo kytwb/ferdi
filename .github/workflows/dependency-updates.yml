@@ -63,8 +63,9 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -am "Update submodules, browserslist data updates and linter fixes [skip ci]" --no-verify || true
-      - name: Bump version number if this is a scheduled build or has been manually triggered with 'version bump' in the text, then bump the version number
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'version bump')) }}
+          echo "CHANGES_COUNT=$(git diff --shortstat @{u} | wc -l)"
+      - name: Bump version number if this is a scheduled build with changes or has been manually triggered with 'version bump' in the text, then bump the version number
+        if: ${{ (github.event_name == 'schedule' && env.CHANGES_COUNT != '0') || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'version bump')) }}
         run: npm version prerelease --preid=nightly
       - name: Push all changes
         run: git push origin ${{ env.GIT_BRANCH_NAME }} --no-verify
