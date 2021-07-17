@@ -12,6 +12,7 @@ import RecipesStore from '../../stores/RecipesStore';
 import UserStore from '../../stores/UserStore';
 
 export default @inject('stores', 'actions') @observer class SetupAssistantScreen extends Component {
+  // TODO: Why are these hardcoded here? Do they need to conform to specific services in the packaged recipes? If so, its more important to fix this
   services = {
     whatsapp: {
       name: 'WhatsApp',
@@ -56,14 +57,14 @@ export default @inject('stores', 'actions') @observer class SetupAssistantScreen
   }
 
   async setupServices(serviceConfig) {
-    const { stores: { services, router, user } } = this.props;
+    const { stores: { services } } = this.props;
     console.log(serviceConfig);
 
     this.setState({
       isSettingUpServices: true,
     });
 
-    // The store requests are not build for paralell requests so we need to finish one request after another
+    // The store requests are not build for parallel requests so we need to finish one request after another
     for (const config of serviceConfig) {
       const serviceData = {
         name: this.services[config.id].name,
@@ -96,10 +97,6 @@ export default @inject('stores', 'actions') @observer class SetupAssistantScreen
     this.setState({
       isSettingUpServices: false,
     });
-
-    await sleep(100);
-
-    router.push(user.pricingRoute);
   }
 
   render() {

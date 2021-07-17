@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Your services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 16,
+      "line": 15,
       "column": 12
     },
     "end": {
-      "line": 19,
+      "line": 18,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Search service",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 20,
+      "line": 19,
       "column": 17
     },
     "end": {
-      "line": 23,
+      "line": 22,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Start by adding a service.",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 24,
+      "line": 23,
       "column": 19
     },
     "end": {
-      "line": 27,
+      "line": 26,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Sorry, but no service matched your search term. Please note that the website might show more services that have been added to Ferdi since the version that you are currently on. To get those new services, please consider upgrading to a newer version of Ferdi.",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 28,
+      "line": 27,
       "column": 18
     },
     "end": {
-      "line": 31,
+      "line": 30,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Discover services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 32,
+      "line": 31,
       "column": 20
     },
     "end": {
-      "line": 35,
+      "line": 34,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Could not load your services",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 36,
+      "line": 35,
       "column": 25
     },
     "end": {
-      "line": 39,
+      "line": 38,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Try again",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 40,
+      "line": 39,
       "column": 21
     },
     "end": {
-      "line": 43,
+      "line": 42,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Your changes have been saved",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 44,
+      "line": 43,
       "column": 15
     },
     "end": {
-      "line": 47,
+      "line": 46,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Service has been deleted",
     "file": "src/components/settings/services/ServicesDashboard.js",
     "start": {
-      "line": 48,
+      "line": 47,
       "column": 15
     },
     "end": {
-      "line": 51,
+      "line": 50,
       "column": 3
     }
   }

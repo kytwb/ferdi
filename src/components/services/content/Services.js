@@ -54,7 +54,6 @@ export default @injectSheet(styles) @inject('actions') @observer class Services 
     openSettings: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
     userHasCompletedSignup: PropTypes.bool.isRequired,
-    hasActivatedTrial: PropTypes.bool.isRequired,
     classes: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
     isSpellcheckerEnabled: PropTypes.bool.isRequired,
@@ -109,7 +108,6 @@ export default @injectSheet(styles) @inject('actions') @observer class Services 
       openSettings,
       update,
       userHasCompletedSignup,
-      hasActivatedTrial,
       classes,
       isSpellcheckerEnabled,
     } = this.props;
@@ -123,7 +121,7 @@ export default @injectSheet(styles) @inject('actions') @observer class Services 
 
     return (
       <div className="services">
-        {(userHasCompletedSignup || hasActivatedTrial) && (
+        {userHasCompletedSignup && (
           <div className={classes.confettiContainer}>
             <Confetti
               width={window.width}
@@ -186,7 +184,6 @@ export default @injectSheet(styles) @inject('actions') @observer class Services 
               },
               redirect: false,
             })}
-            upgrade={() => openSettings({ path: 'user' })}
             isSpellcheckerEnabled={isSpellcheckerEnabled}
           />
         ))}

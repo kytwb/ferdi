@@ -102,18 +102,5 @@
       "line": 35,
       "column": 3
     }
-  },
-  {
-    "id": "global.franzProRequired",
-    "defaultMessage": "!!!Franz Professional Required",
-    "file": "src/i18n/globalMessages.js",
-    "start": {
-      "line": 36,
-      "column": 15
-    },
-    "end": {
-      "line": 39,
-      "column": 3
-    }
   }
 ]

@@ -5,7 +5,6 @@ const debug = require('debug')('Ferdi:feature:serviceProxy');
 
 export const config = observable({
   isEnabled: true,
-  isPremium: true,
 });
 
 export default function init(stores) {
@@ -13,7 +12,6 @@ export default function init(stores) {
 
   autorun(() => {
     config.isEnabled = true;
-    config.isIncludedInCurrentPlan = true;
 
     const services = stores.services.enabled;
     const proxySettings = stores.settings.proxy;

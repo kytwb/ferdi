@@ -23,11 +23,9 @@ import PasswordScreen from './containers/auth/PasswordScreen';
 import ChangeServerScreen from './containers/auth/ChangeServerScreen';
 import SignupScreen from './containers/auth/SignupScreen';
 import ImportScreen from './containers/auth/ImportScreen';
-import PricingScreen from './containers/auth/PricingScreen';
 import SetupAssistentScreen from './containers/auth/SetupAssistantScreen';
 import InviteScreen from './containers/auth/InviteScreen';
 import AuthLayoutContainer from './containers/auth/AuthLayoutContainer';
-import SubscriptionPopupScreen from './containers/subscription/SubscriptionPopupScreen';
 import WorkspacesScreen from './features/workspaces/containers/WorkspacesScreen';
 import EditWorkspaceScreen from './features/workspaces/containers/EditWorkspaceScreen';
 import { WORKSPACES_ROUTES } from './features/workspaces/constants';
@@ -79,7 +77,6 @@ export default @inject('stores', 'actions') @observer class Routes extends Compo
           <Route path="/auth/signup">
             <IndexRedirect to="/auth/signup/form" />
             <Route path="/auth/signup/form" component={SignupScreen} />
-            <Route path="/auth/signup/pricing" component={PricingScreen} />
             <Route path="/auth/signup/import" component={ImportScreen} />
             <Route path="/auth/signup/setup" component={SetupAssistentScreen} />
             <Route path="/auth/signup/invite" component={InviteScreen} />
@@ -87,7 +84,6 @@ export default @inject('stores', 'actions') @observer class Routes extends Compo
           <Route path="/auth/password" component={PasswordScreen} />
           <Route path="/auth/logout" component={LoginScreen} />
         </Route>
-        <Route path="/payment/:url" component={SubscriptionPopupScreen} />
         <Route path="*" component={AppLayoutContainer} />
       </Router>
     );

@@ -831,8 +831,8 @@ export default class FranzMenu {
     // need to clone object so we don't modify computed (cached) object
     const serviceTpl = Object.assign([], this.serviceTpl());
 
-    // Don't initialize when window.franz is undefined or when we are on a payment window route
-    if (window.ferdi === undefined || this.stores.router.location.pathname.startsWith('/payment/')) {
+    // Don't initialize when window.ferdi is undefined
+    if (window.ferdi === undefined) {
       console.log('skipping menu init');
       return;
     }
@@ -1219,17 +1219,15 @@ export default class FranzMenu {
     });
 
     // Workspace items
-    if (this.stores.user.isPremium) {
-      workspaces.forEach((workspace, i) => menu.push({
-        label: workspace.name,
-        accelerator: i < 9 ? `${cmdKey}+Alt+${i + 1}` : null,
-        type: 'radio',
-        checked: activeWorkspace ? workspace.id === activeWorkspace.id : false,
-        click: () => {
-          workspaceActions.activate({ workspace });
-        },
-      }));
-    }
+    workspaces.forEach((workspace, i) => menu.push({
+      label: workspace.name,
+      accelerator: i < 9 ? `${cmdKey}+Alt+${i + 1}` : null,
+      type: 'radio',
+      checked: activeWorkspace ? workspace.id === activeWorkspace.id : false,
+      click: () => {
+        workspaceActions.activate({ workspace });
+      },
+    }));
 
     return menu;
   }

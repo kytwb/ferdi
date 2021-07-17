@@ -57,12 +57,6 @@
       .account__box { background: $dark-theme-gray-darker; }
     }
 
-    .premium-info {
-      background: $dark-theme-gray-darker;
-      border-width: 2px;
-      border-style: solid;
-      border-color: $theme-brand-primary;
-    }
     .legal { color: $theme-gray-light; }
   }
 
@@ -378,16 +372,6 @@
       .badge { margin-left: 10px; }
     }
 
-    .badge--premium {
-      margin-left: 1px;
-      position: relative;
-      top: -3px;
-      padding-top: 4px;
-      color: #FFF;
-      border-radius: 3px;
-    }
-
-
     .manage-user-links {
       margin-top: 20px;
       display: flex;
@@ -428,13 +412,7 @@
     img { width: 40px; }
   }
 
-  .premium-info {
-    background: lighten($theme-brand-primary, 40%);
-    border-radius: $theme-border-radius;
-    padding: 20px;
-  }
-
-  .content-tabs .premium-info {
+  .content-tabs {
     background: none;
     padding: 0;
   }

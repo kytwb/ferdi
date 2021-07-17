@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, intlShape } from 'react-intl';
 import { inject, observer } from 'mobx-react';
-import { ProBadge } from '@meetfranz/ui';
 import { RouterStore } from 'mobx-react-router';
 
 import { LOCAL_SERVER, LIVE_FERDI_API, LIVE_FRANZ_API } from '../../../config';
@@ -11,7 +10,6 @@ import { workspaceStore } from '../../../features/workspaces';
 import UIStore from '../../../stores/UIStore';
 import SettingsStore from '../../../stores/SettingsStore';
 import UserStore from '../../../stores/UserStore';
-import { serviceLimitStore } from '../../../features/serviceLimit';
 
 const messages = defineMessages({
   availableServices: {
@@ -98,8 +96,6 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
 
   render() {
     const { serviceCount, workspaceCount, stores } = this.props;
-    const { isDarkThemeActive } = stores.ui;
-    const { router, user } = stores;
     const { intl } = this.context;
     const isLoggedIn = Boolean(localStorage.getItem('authToken'));
     const isUsingWithoutAccount = stores.settings.app.server === LOCAL_SERVER;
@@ -124,9 +120,6 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
           {' '}
           <span className="badge">
             {serviceCount}
-            {serviceLimitStore.serviceLimit !== 0 && (
-              `/${serviceLimitStore.serviceLimit}`
-            )}
           </span>
         </Link>
         {workspaceStore.isFeatureEnabled ? (
@@ -138,11 +131,7 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
           >
             {intl.formatMessage(messages.yourWorkspaces)}
             {' '}
-            {workspaceStore.isPremiumUpgradeRequired ? (
-              <ProBadge inverted={!isDarkThemeActive && workspaceStore.isSettingsRouteActive} />
-            ) : (
-              <span className="badge">{workspaceCount}</span>
-            )}
+            <span className="badge">{workspaceCount}</span>
           </Link>
         ) : null}
         {!isUsingWithoutAccount && (
@@ -163,9 +152,6 @@ export default @inject('stores', 'actions') @observer class SettingsNavigation e
             disabled={!isLoggedIn}
           >
             {intl.formatMessage(messages.team)}
-            {!user.data.isPremium && (
-              <ProBadge inverted={!isDarkThemeActive && router.location.pathname === '/settings/team'} />
-            )}
           </Link>
         )}
         <Link

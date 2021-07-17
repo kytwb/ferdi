@@ -9,7 +9,6 @@ import SettingsStore from '../../stores/SettingsStore';
 import TeamDashboard from '../../components/settings/team/TeamDashboard';
 import ErrorBoundary from '../../components/util/ErrorBoundary';
 import { DEV_API_FRANZ_WEBSITE } from '../../config';
-import PaymentStore from '../../stores/PaymentStore';
 
 export default @inject('stores', 'actions') @observer class TeamScreen extends Component {
   handleWebsiteLink(route) {
@@ -33,7 +32,6 @@ export default @inject('stores', 'actions') @observer class TeamScreen extends C
           userInfoRequestFailed={user.getUserInfoRequest.wasExecuted && user.getUserInfoRequest.isError}
           retryUserInfoRequest={() => this.reloadData()}
           openTeamManagement={() => this.handleWebsiteLink('/user/team')}
-          isProUser={user.isPro}
           server={server}
         />
       </ErrorBoundary>
@@ -48,7 +46,6 @@ TeamScreen.wrappedComponent.propTypes = {
     settings: PropTypes.instanceOf(SettingsStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.instanceOf(PaymentStore).isRequired,
     app: PropTypes.instanceOf(AppStore).isRequired,
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,

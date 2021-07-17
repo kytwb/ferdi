@@ -20,7 +20,6 @@ import { FeatureStore } from '../utils/FeatureStore';
 import { createReactions } from '../../stores/lib/Reaction';
 import { createActionBindings } from '../utils/ActionBinding';
 import { IPC, TODOS_ROUTES } from './constants';
-import { state as delayAppState } from '../delayApp';
 import UserAgent from '../../models/UserAgent';
 
 const debug = require('debug')('Ferdi:feature:todos:store');
@@ -46,7 +45,7 @@ export default class TodoStore extends FeatureStore {
 
   @computed get isTodosPanelForceHidden() {
     const { isAnnouncementShown } = this.stores.announcements;
-    return delayAppState.isDelayAppScreenVisible || !this.isFeatureEnabledByUser || isAnnouncementShown;
+    return !this.isFeatureEnabledByUser || isAnnouncementShown;
   }
 
   @computed get isTodosPanelVisible() {

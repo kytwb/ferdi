@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Your services have been updated.",
     "file": "src/components/layout/AppLayout.js",
     "start": {
-      "line": 32,
+      "line": 29,
       "column": 19
     },
     "end": {
-      "line": 35,
+      "line": 32,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Reload services",
     "file": "src/components/layout/AppLayout.js",
     "start": {
-      "line": 36,
+      "line": 33,
       "column": 24
     },
     "end": {
-      "line": 39,
+      "line": 36,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Could not load services and user information",
     "file": "src/components/layout/AppLayout.js",
     "start": {
-      "line": 40,
+      "line": 37,
       "column": 26
     },
     "end": {
-      "line": 43,
+      "line": 40,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!There were errors while trying to perform an authenticated request. Please try logging out and back in if this error persists.",
     "file": "src/components/layout/AppLayout.js",
     "start": {
-      "line": 44,
+      "line": 41,
       "column": 21
     },
     "end": {
-      "line": 47,
+      "line": 44,
       "column": 3
     }
   }

@@ -36,11 +36,11 @@ const messages = defineMessages({
   },
   shareTextEmail: {
     id: 'feature.shareFranz.shareText.email',
-    defaultMessage: '!!! I\'ve added {count} services to Franz! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.meetfranz.com',
+    defaultMessage: '!!! I\'ve added {count} services to Ferdi! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.meetfranz.com',
   },
   shareTextTwitter: {
     id: 'feature.shareFranz.shareText.twitter',
-    defaultMessage: '!!! I\'ve added {count} services to Franz! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.meetfranz.com /cc @FranzMessenger',
+    defaultMessage: '!!! I\'ve added {count} services to Ferdi! Get the free app for WhatsApp, Messenger, Slack, Skype and co at www.meetfranz.com /cc @FranzMessenger',
   },
 });
 

@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
 import { defineMessages, intlShape } from 'react-intl';
 import ReactTooltip from 'react-tooltip';
-import { ProBadge, H1, H2 } from '@meetfranz/ui';
-import moment from 'moment';
+import { H1, H2 } from '@meetfranz/ui';
 
 import Loader from '../../ui/Loader';
 import Button from '../../ui/Button';
 import Infobox from '../../ui/Infobox';
-import SubscriptionForm from '../../../containers/subscription/SubscriptionFormScreen';
-import { i18nPlanName } from '../../../helpers/plan-helpers';
 import { LOCAL_SERVER, LIVE_FRANZ_API } from '../../../config';
 
 const messages = defineMessages({
@@ -29,18 +26,6 @@ const messages = defineMessages({
   manageSubscriptionButtonLabel: {
     id: 'settings.account.manageSubscription.label',
     defaultMessage: '!!!Manage your subscription',
-  },
-  upgradeAccountToPro: {
-    id: 'settings.account.upgradeToPro.label',
-    defaultMessage: '!!!Upgrade to Franz Professional',
-  },
-  accountTypeBasic: {
-    id: 'settings.account.accountType.basic',
-    defaultMessage: '!!!Basic Account',
-  },
-  accountTypePremium: {
-    id: 'settings.account.accountType.premium',
-    defaultMessage: '!!!Premium Supporter Account',
   },
   accountEditButton: {
     id: 'settings.account.account.editButton',
@@ -76,22 +61,9 @@ const messages = defineMessages({
     defaultMessage:
       '!!!You have received an email with a link to confirm your account deletion. Your account and data cannot be restored!',
   },
-  trial: {
-    id: 'settings.account.trial',
-    defaultMessage: '!!!Free Trial',
-  },
   yourLicense: {
     id: 'settings.account.yourLicense',
     defaultMessage: '!!!Your Franz License:',
-  },
-  trialEndsIn: {
-    id: 'settings.account.trialEndsIn',
-    defaultMessage: '!!!Your free trial ends in {duration}.',
-  },
-  trialUpdateBillingInformation: {
-    id: 'settings.account.trialUpdateBillingInfo',
-    defaultMessage:
-      '!!!Please update your billing info to continue using {license} after your trial period.',
   },
   accountUnavailable: {
     id: 'settings.account.accountUnavailable',
@@ -107,8 +79,6 @@ const messages = defineMessages({
 class AccountDashboard extends Component {
   static propTypes = {
     user: MobxPropTypes.observableObject.isRequired,
-    isPremiumOverrideUser: PropTypes.bool.isRequired,
-    isProUser: PropTypes.bool.isRequired,
     isLoading: PropTypes.bool.isRequired,
     userInfoRequestFailed: PropTypes.bool.isRequired,
     retryUserInfoRequest: PropTypes.func.isRequired,
@@ -116,10 +86,7 @@ class AccountDashboard extends Component {
     isLoadingDeleteAccount: PropTypes.bool.isRequired,
     isDeleteAccountSuccessful: PropTypes.bool.isRequired,
     openEditAccount: PropTypes.func.isRequired,
-    openBilling: PropTypes.func.isRequired,
-    upgradeToPro: PropTypes.func.isRequired,
     openInvoices: PropTypes.func.isRequired,
-    onCloseSubscriptionWindow: PropTypes.func.isRequired,
     server: PropTypes.string.isRequired,
   };
 
@@ -130,8 +97,6 @@ class AccountDashboard extends Component {
   render() {
     const {
       user,
-      isPremiumOverrideUser,
-      isProUser,
       isLoading,
       userInfoRequestFailed,
       retryUserInfoRequest,
@@ -139,19 +104,10 @@ class AccountDashboard extends Component {
       isLoadingDeleteAccount,
       isDeleteAccountSuccessful,
       openEditAccount,
-      openBilling,
-      upgradeToPro,
       openInvoices,
-      onCloseSubscriptionWindow,
       server,
     } = this.props;
     const { intl } = this.context;
-
-    let planName = '';
-
-    if (user.team && user.team.plan) {
-      planName = i18nPlanName(user.team.plan, intl);
-    }
 
     const isUsingWithoutAccount = server === LOCAL_SERVER;
     const isUsingFranzServer = server === LIVE_FRANZ_API;
@@ -210,96 +166,38 @@ class AccountDashboard extends Component {
                           <div className="account__info">
                             <H1>
                               <span className="username">{`${user.firstname} ${user.lastname}`}</span>
-                              {user.isPremium && (
-                                <>
-                                  {' '}
-                                  <ProBadge />
-                                </>
-                              )}
                             </H1>
                             <p>
                               {user.organization && `${user.organization}, `}
                               {user.email}
                             </p>
-                            {user.isPremium && (
-                              <div className="manage-user-links">
-                                <Button
-                                  label={intl.formatMessage(
-                                    messages.accountEditButton,
-                                  )}
-                                  className="franz-form__button--inverted"
-                                  onClick={openEditAccount}
-                                />
-                              </div>
-                            )}
+                            <div className="manage-user-links">
+                              <Button
+                                label={intl.formatMessage(
+                                  messages.accountEditButton,
+                                )}
+                                className="franz-form__button--inverted"
+                                onClick={openEditAccount}
+                              />
+                            </div>
                           </div>
-                          {!user.isPremium && (
-                            <Button
-                              label={intl.formatMessage(
-                                messages.accountEditButton,
-                              )}
-                              className="franz-form__button--inverted"
-                              onClick={openEditAccount}
-                            />
-                          )}
+                          <Button
+                            label={intl.formatMessage(
+                              messages.accountEditButton,
+                            )}
+                            className="franz-form__button--inverted"
+                            onClick={openEditAccount}
+                          />
                         </div>
                       </div>
-                      {user.isPremium && user.isSubscriptionOwner && isUsingFranzServer && (
+                      {user.isSubscriptionOwner && isUsingFranzServer && (
                         <div className="account">
                           <div className="account__box">
                             <H2>{intl.formatMessage(messages.yourLicense)}</H2>
                             <p>
                               Franz
-                              {' '}
-                              {isPremiumOverrideUser ? 'Premium' : planName}
-                              {user.team.isTrial && (
-                                <>
-                                  {' – '}
-                                  {intl.formatMessage(messages.trial)}
-                                </>
-                              )}
                             </p>
-                            {user.team.isTrial && (
-                              <>
-                                <br />
-                                <p>
-                                  {intl.formatMessage(messages.trialEndsIn, {
-                                    duration: moment
-                                      .duration(
-                                        moment().diff(user.team.trialEnd),
-                                      )
-                                      .humanize(),
-                                  })}
-                                </p>
-                                <p>
-                                  {intl.formatMessage(
-                                    messages.trialUpdateBillingInformation,
-                                    {
-                                      license: planName,
-                                    },
-                                  )}
-                                </p>
-                              </>
-                            )}
-                            {!isProUser && (
-                              <div className="manage-user-links">
-                                <Button
-                                  label={intl.formatMessage(
-                                    messages.upgradeAccountToPro,
-                                  )}
-                                  className="franz-form__button--primary"
-                                  onClick={upgradeToPro}
-                                />
-                              </div>
-                            )}
                             <div className="manage-user-links">
-                              <Button
-                                label={intl.formatMessage(
-                                  messages.manageSubscriptionButtonLabel,
-                                )}
-                                className="franz-form__button--inverted"
-                                onClick={openBilling}
-                              />
                               <Button
                                 label={intl.formatMessage(
                                   messages.invoicesButton,
@@ -308,15 +206,6 @@ class AccountDashboard extends Component {
                                 onClick={openInvoices}
                               />
                             </div>
-                          </div>
-                        </div>
-                      )}
-                      {!user.isPremium && (
-                        <div className="account franz-form">
-                          <div className="account__box">
-                            <SubscriptionForm
-                              onCloseWindow={onCloseSubscriptionWindow}
-                            />
                           </div>
                         </div>
                       )}

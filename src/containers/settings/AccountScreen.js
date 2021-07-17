@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 
-import PaymentStore from '../../stores/PaymentStore';
 import UserStore from '../../stores/UserStore';
 import AppStore from '../../stores/AppStore';
 import FeaturesStore from '../../stores/FeaturesStore';
@@ -24,10 +23,9 @@ class AccountScreen extends Component {
   }
 
   reloadData() {
-    const { user, payment } = this.props.stores;
+    const { user } = this.props.stores;
 
     user.getUserInfoRequest.reload();
-    payment.plansRequest.reload();
   }
 
   handleWebsiteLink(route) {
@@ -50,26 +48,18 @@ class AccountScreen extends Component {
   render() {
     const {
       user,
-      payment,
-      features,
       settings,
     } = this.props.stores;
-    const { user: userActions, payment: paymentActions } = this.props.actions;
+    const { user: userActions } = this.props.actions;
 
     const isLoadingUserInfo = user.getUserInfoRequest.isExecuting;
-    const isLoadingPlans = payment.plansRequest.isExecuting;
-
-    const { upgradeAccount } = paymentActions;
 
     return (
       <ErrorBoundary>
         <AccountDashboard
           server={settings.all.app.server}
           user={user.data}
-          isPremiumOverrideUser={user.isPremiumOverride}
-          isProUser={user.isPro}
           isLoading={isLoadingUserInfo}
-          isLoadingPlans={isLoadingPlans}
           userInfoRequestFailed={
             user.getUserInfoRequest.wasExecuted
             && user.getUserInfoRequest.isError
@@ -83,10 +73,6 @@ class AccountScreen extends Component {
             && !user.deleteAccountRequest.isError
           }
           openEditAccount={() => this.handleWebsiteLink('/user/profile')}
-          upgradeToPro={() => upgradeAccount({
-            planId: features.features.pricingConfig.plans.pro.yearly.id,
-          })}
-          openBilling={() => this.handleWebsiteLink('/user/billing')}
           openInvoices={() => this.handleWebsiteLink('/user/invoices')}
         />
       </ErrorBoundary>
@@ -98,12 +84,10 @@ AccountScreen.wrappedComponent.propTypes = {
   stores: PropTypes.shape({
     user: PropTypes.instanceOf(UserStore).isRequired,
     features: PropTypes.instanceOf(FeaturesStore).isRequired,
-    payment: PropTypes.instanceOf(PaymentStore).isRequired,
     settings: PropTypes.instanceOf(SettingsStore).isRequired,
     app: PropTypes.instanceOf(AppStore).isRequired,
   }).isRequired,
   actions: PropTypes.shape({
-    payment: PropTypes.instanceOf(PaymentStore).isRequired,
     app: PropTypes.instanceOf(AppStore).isRequired,
     user: PropTypes.instanceOf(UserStore).isRequired,
   }).isRequired,

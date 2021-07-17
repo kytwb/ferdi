@@ -19,10 +19,7 @@ import { isWindows } from '../../environment';
 import WorkspaceSwitchingIndicator from '../../features/workspaces/components/WorkspaceSwitchingIndicator';
 import { workspaceStore } from '../../features/workspaces';
 import AppUpdateInfoBar from '../AppUpdateInfoBar';
-import TrialActivationInfoBar from '../TrialActivationInfoBar';
 import Todos from '../../features/todos/containers/TodosScreen';
-import PlanSelection from '../../features/planSelection/containers/PlanSelectionScreen';
-import TrialStatusBar from '../../features/trialStatusBar/containers/TrialStatusBarScreen';
 
 function createMarkup(HTMLString) {
   return { __html: HTMLString };
@@ -79,7 +76,6 @@ class AppLayout extends Component {
     areRequiredRequestsSuccessful: PropTypes.bool.isRequired,
     retryRequiredRequests: PropTypes.func.isRequired,
     areRequiredRequestsLoading: PropTypes.bool.isRequired,
-    hasActivatedTrial: PropTypes.bool.isRequired,
   };
 
   state = {
@@ -115,7 +111,6 @@ class AppLayout extends Component {
       areRequiredRequestsSuccessful,
       retryRequiredRequests,
       areRequiredRequestsLoading,
-      hasActivatedTrial,
     } = this.props;
 
     const { intl } = this.context;
@@ -148,9 +143,6 @@ class AppLayout extends Component {
                   />
                 </InfoBar>
               ))}
-              {hasActivatedTrial && (
-                <TrialActivationInfoBar />
-              )}
               {!areRequiredRequestsSuccessful && showRequiredRequestsError && (
               <InfoBar
                 type="danger"
@@ -202,11 +194,9 @@ class AppLayout extends Component {
               <PublishDebugInfo />
               {services}
               {children}
-              <TrialStatusBar />
             </div>
             <Todos />
           </div>
-          <PlanSelection />
         </div>
       </ErrorBoundary>
     );

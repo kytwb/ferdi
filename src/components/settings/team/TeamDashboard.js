@@ -6,12 +6,9 @@ import ReactTooltip from 'react-tooltip';
 import injectSheet from 'react-jss';
 import classnames from 'classnames';
 
-import { Badge } from '@meetfranz/ui';
 import Loader from '../../ui/Loader';
 import Button from '../../ui/Button';
 import Infobox from '../../ui/Infobox';
-import globalMessages from '../../../i18n/globalMessages';
-import UpgradeButton from '../../ui/UpgradeButton';
 import { LIVE_FRANZ_API } from '../../../config';
 
 const messages = defineMessages({
@@ -34,10 +31,6 @@ const messages = defineMessages({
   manageButton: {
     id: 'settings.team.manageAction',
     defaultMessage: '!!!Manage your Team on meetfranz.com',
-  },
-  upgradeButton: {
-    id: 'settings.team.upgradeAction',
-    defaultMessage: '!!!Upgrade your Account',
   },
   teamsUnavailable: {
     id: 'settings.team.teamsUnavailable',
@@ -88,10 +81,6 @@ const styles = {
   headlineWithSpacing: {
     marginBottom: 'inherit',
   },
-  proRequired: {
-    margin: [10, 0, 40],
-    height: 'auto',
-  },
   buttonContainer: {
     display: 'flex',
     height: 'auto',
@@ -105,7 +94,6 @@ export default @injectSheet(styles) @observer class TeamDashboard extends Compon
     retryUserInfoRequest: PropTypes.func.isRequired,
     openTeamManagement: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
-    isProUser: PropTypes.bool.isRequired,
     server: PropTypes.string.isRequired,
   };
 
@@ -119,7 +107,6 @@ export default @injectSheet(styles) @observer class TeamDashboard extends Compon
       userInfoRequestFailed,
       retryUserInfoRequest,
       openTeamManagement,
-      isProUser,
       classes,
       server,
     } = this.props;
@@ -157,37 +144,25 @@ export default @injectSheet(styles) @observer class TeamDashboard extends Compon
                     <>
                       <h1 className={classnames({
                         [classes.headline]: true,
-                        [classes.headlineWithSpacing]: isProUser,
+                        [classes.headlineWithSpacing]: true,
                       })}
                       >
                         {intl.formatMessage(messages.contentHeadline)}
 
                       </h1>
-                      {!isProUser && (
-                        <Badge className={classes.proRequired}>{intl.formatMessage(globalMessages.proRequired)}</Badge>
-                      )}
                       <div className={classes.container}>
                         <div className={classes.content}>
                           <p>{intl.formatMessage(messages.intro)}</p>
                           <p>{intl.formatMessage(messages.copy)}</p>
                         </div>
-                        <img className={classes.image} src="https://cdn.franzinfra.com/announcements/assets/teams.png" alt="Franz for Teams" />
+                        <img className={classes.image} src="https://cdn.franzinfra.com/announcements/assets/teams.png" alt="Ferdi for Teams" />
                       </div>
                       <div className={classes.buttonContainer}>
-                        {!isProUser ? (
-                          <UpgradeButton
-                            className={classes.cta}
-                            gaEventInfo={{ category: 'Todos', event: 'upgrade' }}
-                            requiresPro
-                            short
-                          />
-                        ) : (
-                          <Button
-                            label={intl.formatMessage(messages.manageButton)}
-                            onClick={openTeamManagement}
-                            className={classes.cta}
-                          />
-                        )}
+                        <Button
+                          label={intl.formatMessage(messages.manageButton)}
+                          onClick={openTeamManagement}
+                          className={classes.cta}
+                        />
                       </div>
                     </>
                   </>

@@ -144,16 +144,6 @@ export default (brandPrimary: string) => {
       },
     }),
 
-    // Signup
-    signup: merge({}, defaultStyles.signup, {
-      pricing: {
-        feature: {
-          background: legacyStyles.darkThemeGrayLight,
-          border: color(legacyStyles.darkThemeGrayLight).lighten(0.2).hex(),
-        },
-      },
-    }),
-
     // Todos
     todos: merge({}, defaultStyles.todos, {
       todosLayer: {
@@ -166,17 +156,6 @@ export default (brandPrimary: string) => {
       },
       dragIndicator: {
         background: legacyStyles.themeGrayLight,
-      },
-    }),
-
-    // TrialStatusBar
-    trialStatusBar: merge({}, defaultStyles.trialStatusBar, {
-      bar: {
-        background: legacyStyles.darkThemeGray,
-      },
-      progressBar: {
-        background: legacyStyles.darkThemeGrayLighter,
-        progressIndicator: legacyStyles.darkThemeGrayLightest,
       },
     }),
   };

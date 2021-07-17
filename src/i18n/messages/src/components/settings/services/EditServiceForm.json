@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Save service",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 27,
+      "line": 23,
       "column": 15
     },
     "end": {
-      "line": 30,
+      "line": 26,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Delete Service",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 31,
+      "line": 27,
       "column": 17
     },
     "end": {
-      "line": 34,
+      "line": 30,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Open darkmode.css",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 35,
+      "line": 31,
       "column": 19
     },
     "end": {
-      "line": 38,
+      "line": 34,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Open user.css",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 39,
+      "line": 35,
       "column": 15
     },
     "end": {
-      "line": 42,
+      "line": 38,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Open user.js",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 43,
+      "line": 39,
       "column": 14
     },
     "end": {
-      "line": 46,
+      "line": 42,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Your user files will be inserted into the webpage so you can customize services in any way you like. User files are only stored locally and are not transferred to other computers using the same account.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 47,
+      "line": 43,
       "column": 18
     },
     "end": {
-      "line": 50,
+      "line": 46,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Available services",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 51,
+      "line": 47,
       "column": 21
     },
     "end": {
-      "line": 54,
+      "line": 50,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Your services",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 55,
+      "line": 51,
       "column": 16
     },
     "end": {
-      "line": 58,
+      "line": 54,
       "column": 3
     }
   },
@@ -108,11 +108,11 @@
     "defaultMessage": "!!!Add {name}",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 59,
+      "line": 55,
       "column": 22
     },
     "end": {
-      "line": 62,
+      "line": 58,
       "column": 3
     }
   },
@@ -121,11 +121,11 @@
     "defaultMessage": "!!!Edit {name}",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 63,
+      "line": 59,
       "column": 23
     },
     "end": {
-      "line": 66,
+      "line": 62,
       "column": 3
     }
   },
@@ -134,11 +134,11 @@
     "defaultMessage": "!!!Hosted",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 67,
+      "line": 63,
       "column": 13
     },
     "end": {
-      "line": 70,
+      "line": 66,
       "column": 3
     }
   },
@@ -147,11 +147,11 @@
     "defaultMessage": "!!!Self hosted ⭐️",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 71,
+      "line": 67,
       "column": 16
     },
     "end": {
-      "line": 74,
+      "line": 70,
       "column": 3
     }
   },
@@ -160,11 +160,11 @@
     "defaultMessage": "!!!Use the hosted {name} service.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 75,
+      "line": 71,
       "column": 20
     },
     "end": {
-      "line": 78,
+      "line": 74,
       "column": 3
     }
   },
@@ -173,37 +173,11 @@
     "defaultMessage": "!!!Could not validate custom {name} server.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 79,
+      "line": 75,
       "column": 28
     },
     "end": {
-      "line": 82,
-      "column": 3
-    }
-  },
-  {
-    "id": "settings.service.form.customUrlPremiumInfo",
-    "defaultMessage": "!!!To add self hosted services, you need a Ferdi Premium Supporter Account.",
-    "file": "src/components/settings/services/EditServiceForm.js",
-    "start": {
-      "line": 83,
-      "column": 24
-    },
-    "end": {
-      "line": 86,
-      "column": 3
-    }
-  },
-  {
-    "id": "settings.service.form.customUrlUpgradeAccount",
-    "defaultMessage": "!!!Upgrade your account",
-    "file": "src/components/settings/services/EditServiceForm.js",
-    "start": {
-      "line": 87,
-      "column": 27
-    },
-    "end": {
-      "line": 90,
+      "line": 78,
       "column": 3
     }
   },
@@ -212,11 +186,11 @@
     "defaultMessage": "!!!You will be notified about all new messages in a channel, not just @username, @channel, @here, ...",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 91,
+      "line": 79,
       "column": 23
     },
     "end": {
-      "line": 94,
+      "line": 82,
       "column": 3
     }
   },
@@ -225,11 +199,11 @@
     "defaultMessage": "!!!When disabled, all notification sounds and audio playback are muted",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 95,
+      "line": 83,
       "column": 15
     },
     "end": {
-      "line": 98,
+      "line": 86,
       "column": 3
     }
   },
@@ -238,11 +212,11 @@
     "defaultMessage": "!!!When enabled, a service will be shut down after a period of time to save system resources.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 99,
+      "line": 87,
       "column": 28
     },
     "end": {
-      "line": 102,
+      "line": 90,
       "column": 3
     }
   },
@@ -251,11 +225,11 @@
     "defaultMessage": "!!!Notifications",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 103,
+      "line": 91,
       "column": 25
     },
     "end": {
-      "line": 106,
+      "line": 94,
       "column": 3
     }
   },
@@ -264,11 +238,11 @@
     "defaultMessage": "!!!Unread message badges",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 107,
+      "line": 95,
       "column": 18
     },
     "end": {
-      "line": 110,
+      "line": 98,
       "column": 3
     }
   },
@@ -277,11 +251,11 @@
     "defaultMessage": "!!!General",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 111,
+      "line": 99,
       "column": 19
     },
     "end": {
-      "line": 114,
+      "line": 102,
       "column": 3
     }
   },
@@ -290,11 +264,11 @@
     "defaultMessage": "!!!Dark Reader Settings",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 115,
+      "line": 103,
       "column": 30
     },
     "end": {
-      "line": 118,
+      "line": 106,
       "column": 3
     }
   },
@@ -303,11 +277,11 @@
     "defaultMessage": "!!!Delete",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 119,
+      "line": 107,
       "column": 14
     },
     "end": {
-      "line": 122,
+      "line": 110,
       "column": 3
     }
   },
@@ -316,11 +290,11 @@
     "defaultMessage": "!!!Drop your image, or click here",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 123,
+      "line": 111,
       "column": 14
     },
     "end": {
-      "line": 126,
+      "line": 114,
       "column": 3
     }
   },
@@ -329,11 +303,11 @@
     "defaultMessage": "!!!HTTP/HTTPS Proxy Settings",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 127,
+      "line": 115,
       "column": 17
     },
     "end": {
-      "line": 130,
+      "line": 118,
       "column": 3
     }
   },
@@ -342,11 +316,11 @@
     "defaultMessage": "!!!Please restart Ferdi after changing proxy Settings.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 131,
+      "line": 119,
       "column": 20
     },
     "end": {
-      "line": 134,
+      "line": 122,
       "column": 3
     }
   },
@@ -355,11 +329,11 @@
     "defaultMessage": "!!!Proxy settings will not be synchronized with the Ferdi servers.",
     "file": "src/components/settings/services/EditServiceForm.js",
     "start": {
-      "line": 135,
+      "line": 123,
       "column": 13
     },
     "end": {
-      "line": 138,
+      "line": 126,
       "column": 3
     }
   }

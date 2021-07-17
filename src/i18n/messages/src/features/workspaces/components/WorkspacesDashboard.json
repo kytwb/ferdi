@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Your workspaces",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 20,
+      "line": 17,
       "column": 12
     },
     "end": {
-      "line": 23,
+      "line": 20,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!You haven't created any workspaces yet.",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 24,
+      "line": 21,
       "column": 19
     },
     "end": {
-      "line": 27,
+      "line": 24,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Could not load your workspaces",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 28,
+      "line": 25,
       "column": 27
     },
     "end": {
-      "line": 31,
+      "line": 28,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Try again",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 32,
+      "line": 29,
       "column": 23
     },
     "end": {
-      "line": 35,
+      "line": 32,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Your changes have been saved",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 36,
+      "line": 33,
       "column": 15
     },
     "end": {
-      "line": 39,
+      "line": 36,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Workspace has been deleted",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 40,
+      "line": 37,
       "column": 15
     },
     "end": {
-      "line": 43,
+      "line": 40,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!Info about workspace feature",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 44,
+      "line": 41,
       "column": 24
     },
     "end": {
-      "line": 47,
+      "line": 44,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Less is More: Introducing Ferdi Workspaces",
     "file": "src/features/workspaces/components/WorkspacesDashboard.js",
     "start": {
-      "line": 48,
+      "line": 45,
       "column": 28
     },
     "end": {
-      "line": 51,
+      "line": 48,
       "column": 3
     }
   }

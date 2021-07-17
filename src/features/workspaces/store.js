@@ -22,10 +22,6 @@ export default class WorkspacesStore extends FeatureStore {
 
   @observable isFeatureActive = false;
 
-  @observable isPremiumFeature = false;
-
-  @observable isPremiumUpgradeRequired = false;
-
   @observable activeWorkspace = null;
 
   @observable nextWorkspace = null;
@@ -58,7 +54,6 @@ export default class WorkspacesStore extends FeatureStore {
 
   @computed get isUserAllowedToUseFeature() {
     return true;
-    // return !this.isPremiumUpgradeRequired;
   }
 
   @computed get isAnyWorkspaceActive() {
@@ -69,15 +64,7 @@ export default class WorkspacesStore extends FeatureStore {
 
   _wasDrawerOpenBeforeSettingsRoute = null;
 
-  _freeUserActions = [];
-
-  _premiumUserActions = [];
-
   _allActions = [];
-
-  _freeUserReactions = [];
-
-  _premiumUserReactions = [];
 
   _allReactions = [];
 
@@ -90,11 +77,9 @@ export default class WorkspacesStore extends FeatureStore {
 
     // ACTIONS
 
-    this._freeUserActions = createActionBindings([
+    this._allActions = createActionBindings([
       [workspaceActions.toggleWorkspaceDrawer, this._toggleWorkspaceDrawer],
       [workspaceActions.openWorkspaceSettings, this._openWorkspaceSettings],
-    ]);
-    this._premiumUserActions = createActionBindings([
       [workspaceActions.edit, this._edit],
       [workspaceActions.create, this._create],
       [workspaceActions.delete, this._delete],
@@ -106,27 +91,18 @@ export default class WorkspacesStore extends FeatureStore {
         this._toggleKeepAllWorkspacesLoadedSetting,
       ],
     ]);
-    this._allActions = this._freeUserActions.concat(this._premiumUserActions);
     this._registerActions(this._allActions);
 
     // REACTIONS
 
-    this._freeUserReactions = createReactions([
-      this._disablePremiumFeatures,
+    this._allReactions = createReactions([
       this._openDrawerWithSettingsReaction,
       this._setFeatureEnabledReaction,
-      this._setIsPremiumFeatureReaction,
       this._cleanupInvalidServiceReferences,
-    ]);
-    this._premiumUserReactions = createReactions([
       this._setActiveServiceOnWorkspaceSwitchReaction,
       this._activateLastUsedWorkspaceReaction,
       this._setWorkspaceBeingEditedReaction,
     ]);
-    this._allReactions = this._freeUserReactions.concat(
-      this._premiumUserReactions,
-    );
-
     this._registerReactions(this._allReactions);
 
     getUserWorkspacesRequest.execute();
@@ -273,13 +249,6 @@ export default class WorkspacesStore extends FeatureStore {
     this.isFeatureEnabled = isWorkspaceEnabled;
   };
 
-  _setIsPremiumFeatureReaction = () => {
-    // const { features } = this.stores;
-    // const { isWorkspaceIncludedInCurrentPlan } = features.features;
-    // this.isPremiumFeature = !isWorkspaceIncludedInCurrentPlan;
-    // this.isPremiumUpgradeRequired = !isWorkspaceIncludedInCurrentPlan;
-  };
-
   _setWorkspaceBeingEditedReaction = () => {
     const { pathname } = this.stores.router.location;
     const match = matchRoute('/settings/workspaces/edit/:id', pathname);
@@ -356,17 +325,5 @@ export default class WorkspacesStore extends FeatureStore {
         }
       });
     });
-  };
-
-  _disablePremiumFeatures = () => {
-    if (!this.isUserAllowedToUseFeature) {
-      debug('_disablePremiumFeatures');
-      this._stopActions(this._premiumUserActions);
-      this._stopReactions(this._premiumUserReactions);
-      this.reset();
-    } else {
-      this._startActions(this._premiumUserActions);
-      this._startReactions(this._premiumUserReactions);
-    }
   };
 }

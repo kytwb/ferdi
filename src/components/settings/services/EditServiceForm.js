@@ -6,7 +6,6 @@ import { defineMessages, intlShape } from 'react-intl';
 import normalizeUrl from 'normalize-url';
 
 import Form from '../../../lib/Form';
-import User from '../../../models/User';
 import Recipe from '../../../models/Recipe';
 import Service from '../../../models/Service';
 import Tabs, { TabItem } from '../../ui/Tabs';
@@ -17,9 +16,6 @@ import Button from '../../ui/Button';
 import ImageUpload from '../../ui/ImageUpload';
 import Select from '../../ui/Select';
 
-import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
-import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
-import { serviceLimitStore } from '../../../features/serviceLimit';
 import { isMac } from '../../../environment';
 import globalMessages from '../../../i18n/globalMessages';
 
@@ -79,14 +75,6 @@ const messages = defineMessages({
   customUrlValidationError: {
     id: 'settings.service.form.customUrlValidationError',
     defaultMessage: '!!!Could not validate custom {name} server.',
-  },
-  customUrlPremiumInfo: {
-    id: 'settings.service.form.customUrlPremiumInfo',
-    defaultMessage: '!!!To add self hosted services, you need a Ferdi Premium Supporter Account.',
-  },
-  customUrlUpgradeAccount: {
-    id: 'settings.service.form.customUrlUpgradeAccount',
-    defaultMessage: '!!!Upgrade your account',
   },
   indirectMessageInfo: {
     id: 'settings.service.form.indirectMessageInfo',
@@ -149,7 +137,6 @@ export default @observer class EditServiceForm extends Component {
 
       return null;
     },
-    user: PropTypes.instanceOf(User).isRequired,
     action: PropTypes.string.isRequired,
     form: PropTypes.instanceOf(Form).isRequired,
     onSubmit: PropTypes.func.isRequired,
@@ -158,8 +145,6 @@ export default @observer class EditServiceForm extends Component {
     isSaving: PropTypes.bool.isRequired,
     isDeleting: PropTypes.bool.isRequired,
     isProxyFeatureEnabled: PropTypes.bool.isRequired,
-    isServiceProxyIncludedInCurrentPlan: PropTypes.bool.isRequired,
-    isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isHibernationFeatureActive: PropTypes.bool.isRequired,
   };
 
@@ -217,15 +202,12 @@ export default @observer class EditServiceForm extends Component {
       recipe,
       service,
       action,
-      user,
       form,
       isSaving,
       isDeleting,
       onDelete,
       openRecipeFile,
       isProxyFeatureEnabled,
-      isServiceProxyIncludedInCurrentPlan,
-      isSpellcheckerIncludedInCurrentPlan,
       isHibernationFeatureActive,
     } = this.props;
     const { intl } = this.context;
@@ -285,7 +267,6 @@ export default @observer class EditServiceForm extends Component {
             )}
           </span>
         </div>
-        <LimitReachedInfobox />
         <div className="settings__body">
           <form onSubmit={e => this.submit(e)} id="form">
             <div className="service-name">
@@ -311,24 +292,11 @@ export default @observer class EditServiceForm extends Component {
                 )}
                 {recipe.hasCustomUrl && (
                   <TabItem title={intl.formatMessage(messages.tabOnPremise)}>
-                    {user.isPremium || recipe.author.find(a => a.email === user.email) ? (
-                      <>
-                        <Input field={form.$('customUrl')} />
-                        {form.error === 'url-validation-error' && (
-                          <p className="franz-form__error">
-                            {intl.formatMessage(messages.customUrlValidationError, { name: recipe.name })}
-                          </p>
-                        )}
-                      </>
-                    ) : (
-                      <div className="center premium-info">
-                        <p>{intl.formatMessage(messages.customUrlPremiumInfo)}</p>
-                        <p>
-                          <Link to="/settings/user" className="button">
-                            {intl.formatMessage(messages.customUrlUpgradeAccount)}
-                          </Link>
-                        </p>
-                      </div>
+                    <Input field={form.$('customUrl')} />
+                    {form.error === 'url-validation-error' && (
+                      <p className="franz-form__error">
+                        {intl.formatMessage(messages.customUrlValidationError, { name: recipe.name })}
+                      </p>
                     )}
                   </TabItem>
                 )}
@@ -403,56 +371,46 @@ export default @observer class EditServiceForm extends Component {
             </div>
 
             {!isMac && (
-              <PremiumFeatureContainer
-                condition={!isSpellcheckerIncludedInCurrentPlan}
-                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
-              >
-                <div className="settings__settings-group">
-                  <Select field={form.$('spellcheckerLanguage')} />
-                </div>
-              </PremiumFeatureContainer>
+              <div className="settings__settings-group">
+                <Select field={form.$('spellcheckerLanguage')} />
+              </div>
             )}
 
             {isProxyFeatureEnabled && (
-              <PremiumFeatureContainer
-                condition={!isServiceProxyIncludedInCurrentPlan}
-                gaEventInfo={{ category: 'User', event: 'upgrade', label: 'proxy' }}
-              >
-                <div className="settings__settings-group">
-                  <h3>
-                    {intl.formatMessage(messages.headlineProxy)}
-                    <span className="badge badge--success">beta</span>
-                  </h3>
-                  <Toggle field={form.$('proxy.isEnabled')} />
-                  {form.$('proxy.isEnabled').value && (
-                    <>
-                      <div className="grid">
-                        <div className="grid__row">
-                          <Input field={form.$('proxy.host')} className="proxyHost" />
-                          <Input field={form.$('proxy.port')} />
-                        </div>
+              <div className="settings__settings-group">
+                <h3>
+                  {intl.formatMessage(messages.headlineProxy)}
+                  <span className="badge badge--success">beta</span>
+                </h3>
+                <Toggle field={form.$('proxy.isEnabled')} />
+                {form.$('proxy.isEnabled').value && (
+                  <>
+                    <div className="grid">
+                      <div className="grid__row">
+                        <Input field={form.$('proxy.host')} className="proxyHost" />
+                        <Input field={form.$('proxy.port')} />
                       </div>
-                      <div className="grid">
-                        <div className="grid__row">
-                          <Input field={form.$('proxy.user')} />
-                          <Input
-                            field={form.$('proxy.password')}
-                            showPasswordToggle
-                          />
-                        </div>
+                    </div>
+                    <div className="grid">
+                      <div className="grid__row">
+                        <Input field={form.$('proxy.user')} />
+                        <Input
+                          field={form.$('proxy.password')}
+                          showPasswordToggle
+                        />
                       </div>
-                      <p>
-                        <span className="mdi mdi-information" />
-                        {intl.formatMessage(messages.proxyRestartInfo)}
-                      </p>
-                      <p>
-                        <span className="mdi mdi-information" />
-                        {intl.formatMessage(messages.proxyInfo)}
-                      </p>
-                    </>
-                  )}
-                </div>
-              </PremiumFeatureContainer>
+                    </div>
+                    <p>
+                      <span className="mdi mdi-information" />
+                      {intl.formatMessage(messages.proxyRestartInfo)}
+                    </p>
+                    <p>
+                      <span className="mdi mdi-information" />
+                      {intl.formatMessage(messages.proxyInfo)}
+                    </p>
+                  </>
+                )}
+              </div>
             )}
 
             <div className="user-agent">
@@ -512,7 +470,7 @@ export default @observer class EditServiceForm extends Component {
               type="submit"
               label={intl.formatMessage(messages.saveService)}
               htmlForm="form"
-              disabled={action !== 'edit' && ((form.isPristine && requiresUserInput) || serviceLimitStore.userHasReachedServiceLimit)}
+              disabled={action !== 'edit' && (form.isPristine && requiresUserInput)}
             />
           )}
         </div>

@@ -35,26 +35,6 @@ const styles = (theme) => ({
     zIndex: 400,
     background: theme.todos.dragIndicator.background,
   },
-  premiumContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '80%',
-    maxWidth: 300,
-    margin: [0, 'auto'],
-    textAlign: 'center',
-  },
-  premiumIcon: {
-    marginBottom: 40,
-    background: theme.styleTypes.primary.accent,
-    fill: theme.styleTypes.primary.contrast,
-    padding: 10,
-    borderRadius: 10,
-  },
-  premiumCTA: {
-    marginTop: 40,
-  },
   isTodosServiceActive: {
     width: 'calc(100% - 368px)',
     position: 'absolute',

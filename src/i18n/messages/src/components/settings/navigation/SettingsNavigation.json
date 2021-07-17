@@ -4,11 +4,11 @@
     "defaultMessage": "!!!Available services",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 17,
+      "line": 15,
       "column": 21
     },
     "end": {
-      "line": 20,
+      "line": 18,
       "column": 3
     }
   },
@@ -17,11 +17,11 @@
     "defaultMessage": "!!!Your services",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 21,
+      "line": 19,
       "column": 16
     },
     "end": {
-      "line": 24,
+      "line": 22,
       "column": 3
     }
   },
@@ -30,11 +30,11 @@
     "defaultMessage": "!!!Your workspaces",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 25,
+      "line": 23,
       "column": 18
     },
     "end": {
-      "line": 28,
+      "line": 26,
       "column": 3
     }
   },
@@ -43,11 +43,11 @@
     "defaultMessage": "!!!Account",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 29,
+      "line": 27,
       "column": 11
     },
     "end": {
-      "line": 32,
+      "line": 30,
       "column": 3
     }
   },
@@ -56,11 +56,11 @@
     "defaultMessage": "!!!Manage Team",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 33,
+      "line": 31,
       "column": 8
     },
     "end": {
-      "line": 36,
+      "line": 34,
       "column": 3
     }
   },
@@ -69,11 +69,11 @@
     "defaultMessage": "!!!Settings",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 37,
+      "line": 35,
       "column": 12
     },
     "end": {
-      "line": 40,
+      "line": 38,
       "column": 3
     }
   },
@@ -82,11 +82,11 @@
     "defaultMessage": "!!!About Ferdi",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 41,
+      "line": 39,
       "column": 16
     },
     "end": {
-      "line": 44,
+      "line": 42,
       "column": 3
     }
   },
@@ -95,11 +95,11 @@
     "defaultMessage": "!!!Logout",
     "file": "src/components/settings/navigation/SettingsNavigation.js",
     "start": {
-      "line": 45,
+      "line": 43,
       "column": 10
     },
     "end": {
-      "line": 48,
+      "line": 46,
       "column": 3
     }
   }

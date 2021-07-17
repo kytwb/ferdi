@@ -107,7 +107,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
       recipePreviews,
       recipes,
       services,
-      user,
     } = this.props.stores;
 
     const {
@@ -155,7 +154,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
           customWebsiteRecipe={customWebsiteRecipe}
           isLoading={isLoading}
           addedServiceCount={services.all.length}
-          isPremium={user.data.isPremium}
           hasLoadedRecipes={recipePreviews.featuredRecipePreviewsRequest.wasExecuted}
           showAddServiceInterface={serviceActions.showAddServiceInterface}
           searchRecipes={e => this.searchRecipes(e)}
@@ -171,8 +169,6 @@ export default @inject('stores', 'actions') @observer class RecipesScreen extend
           openDevDocs={() => {
             appActions.openExternalUrl({ url: FRANZ_DEV_DOCS });
           }}
-          isCommunityRecipesIncludedInCurrentPlan={communityRecipesStore.isCommunityRecipesIncludedInCurrentPlan}
-          isUserPremiumUser={user.isPremium}
         />
       </ErrorBoundary>
     );

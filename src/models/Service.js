@@ -10,11 +10,6 @@ import UserAgent from './UserAgent';
 
 const debug = require('debug')('Ferdi:Service');
 
-export const RESTRICTION_TYPES = {
-  SERVICE_LIMIT: 0,
-  CUSTOM_URL: 1,
-};
-
 export default class Service {
   id = '';
 

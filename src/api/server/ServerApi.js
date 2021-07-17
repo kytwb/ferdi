@@ -6,7 +6,6 @@ import { app, require as remoteRequire } from '@electron/remote';
 import ServiceModel from '../../models/Service';
 import RecipePreviewModel from '../../models/RecipePreview';
 import RecipeModel from '../../models/Recipe';
-import PlanModel from '../../models/Plan';
 import NewsModel from '../../models/News';
 import UserModel from '../../models/User';
 import OrderModel from '../../models/Order';
@@ -71,20 +70,6 @@ export default class ServerApi {
 
     debug('ServerApi::signup resolves', u);
     return u.token;
-  }
-
-  async activateTrial(data) {
-    const request = await sendAuthRequest(`${apiBase()}/payment/trial`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-    });
-    if (!request.ok) {
-      throw request;
-    }
-    const trial = await request.json();
-
-    debug('ServerApi::activateTrial resolves', trial);
-    return true;
   }
 
   async inviteUser(data) {
@@ -425,32 +410,6 @@ export default class ServerApi {
 
       return false;
     }
-  }
-
-  // Payment
-  async getPlans() {
-    const request = await sendAuthRequest(`${apiBase()}/payment/plans`);
-    if (!request.ok) throw request;
-    const data = await request.json();
-    const plan = new PlanModel(data);
-    debug('ServerApi::getPlans resolves', plan);
-    return plan;
-  }
-
-  async getHostedPage(planId) {
-    const request = await sendAuthRequest(`${apiBase()}/payment/init`, {
-      method: 'POST',
-      body: JSON.stringify({
-        planId,
-      }),
-    });
-    if (!request.ok) {
-      throw request;
-    }
-    const data = await request.json();
-
-    debug('ServerApi::getHostedPage resolves', data);
-    return data;
   }
 
   // News

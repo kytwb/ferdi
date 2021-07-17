@@ -14,7 +14,6 @@ import {
   DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED, DEFAULT_IS_FEATURE_ENABLED_BY_USER,
 } from '../../config';
 import { DEFAULT_APP_SETTINGS, isMac } from '../../environment';
-import { config as spellcheckerConfig } from '../../features/spellchecker';
 
 import { getSelectOptions } from '../../helpers/i18n-helpers';
 import { hash } from '../../helpers/password-helpers';
@@ -516,8 +515,8 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
         },
         enableSpellchecking: {
           label: intl.formatMessage(messages.enableSpellchecking),
-          value: !this.props.stores.user.data.isPremium && !spellcheckerConfig.isIncludedInCurrentPlan ? false : settings.all.app.enableSpellchecking,
-          default: !this.props.stores.user.data.isPremium && !spellcheckerConfig.isIncludedInCurrentPlan ? false : DEFAULT_APP_SETTINGS.enableSpellchecking,
+          value: settings.all.app.enableSpellchecking,
+          default: DEFAULT_APP_SETTINGS.enableSpellchecking,
         },
         spellcheckerLanguage: {
           label: intl.formatMessage(globalMessages.spellcheckerLanguage),
@@ -650,7 +649,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           getCacheSize={() => app.cacheSize}
           isClearingAllCache={isClearingAllCache}
           onClearAllCache={clearAllCache}
-          isSpellcheckerIncludedInCurrentPlan={spellcheckerConfig.isIncludedInCurrentPlan}
           isTodosEnabled={todos.isFeatureActive}
           isWorkspaceEnabled={workspaces.isFeatureActive}
           lockingFeatureEnabled={lockingFeatureEnabled}

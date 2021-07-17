@@ -18,8 +18,6 @@ import { matchRoute } from '../helpers/routing-helpers';
 import { isInTimeframe } from '../helpers/schedule-helpers';
 import { getRecipeDirectory, getDevRecipeDirectory } from '../helpers/recipe-helpers';
 import { workspaceStore } from '../features/workspaces';
-import { serviceLimitStore } from '../features/serviceLimit';
-import { RESTRICTION_TYPES } from '../models/Service';
 import { KEEP_WS_LOADED_USID } from '../config';
 import { SPELLCHECKER_LOCALES } from '../i18n/languages';
 
@@ -94,7 +92,6 @@ export default class ServicesStore extends Store {
       this._saveActiveService.bind(this),
       this._logoutReaction.bind(this),
       this._handleMuteSettings.bind(this),
-      this._restrictServiceAccess.bind(this),
       this._checkForActiveService.bind(this),
     ]);
 
@@ -297,8 +294,6 @@ export default class ServicesStore extends Store {
   async _createService({
     recipeId, serviceData, redirect = true, skipCleanup = false,
   }) {
-    if (serviceLimitStore.userHasReachedServiceLimit) return;
-
     if (!this.stores.recipes.isInstalled(recipeId)) {
       debug(`Recipe "${recipeId}" is not installed, installing recipe`);
       await this.stores.recipes._install({ recipeId });
@@ -959,35 +954,6 @@ export default class ServicesStore extends Store {
     }
 
     return serviceData;
-  }
-
-  _restrictServiceAccess() {
-    const { features } = this.stores.features;
-    const { userHasReachedServiceLimit, serviceLimit } = this.stores.serviceLimit;
-
-    this.all.map((service, index) => {
-      if (userHasReachedServiceLimit) {
-        service.isServiceAccessRestricted = index >= serviceLimit;
-
-        if (service.isServiceAccessRestricted) {
-          service.restrictionType = RESTRICTION_TYPES.SERVICE_LIMIT;
-
-          debug('Restricting access to server due to service limit');
-        }
-      }
-
-      if (service.isUsingCustomUrl) {
-        service.isServiceAccessRestricted = !features.isCustomUrlIncludedInCurrentPlan;
-
-        if (service.isServiceAccessRestricted) {
-          service.restrictionType = RESTRICTION_TYPES.CUSTOM_URL;
-
-          debug('Restricting access to server due to custom url');
-        }
-      }
-
-      return service;
-    });
   }
 
   _checkForActiveService() {

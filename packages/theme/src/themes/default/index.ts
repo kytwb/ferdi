@@ -227,16 +227,6 @@ export default (brandPrimary: string) => {
       },
     },
 
-    // Signup
-    signup: {
-      pricing: {
-        feature: {
-          background: legacyStyles.themeGrayLightest,
-          border: legacyStyles.themeGrayLighter,
-        },
-      },
-    },
-
     // Todos
     todos: {
       todosLayer: {
@@ -252,17 +242,6 @@ export default (brandPrimary: string) => {
       },
       resizeHandler: {
         backgroundHover: styleTypes.primary.accent,
-      },
-    },
-
-    // TrialStatusBar
-    trialStatusBar: {
-      bar: {
-        background: legacyStyles.themeGrayLightest,
-      },
-      progressBar: {
-        background: color(legacyStyles.themeGrayLighter).darken(0.1).hex(),
-        progressIndicator: legacyStyles.themeGrayLight,
       },
     },
 

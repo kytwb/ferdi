@@ -120,18 +120,9 @@ export const ICON_SIZES = {
 export const iconSizeBias = 20;
 
 export const DEFAULT_FEATURES_CONFIG = {
-  isSpellcheckerIncludedInCurrentPlan: true,
-  needToWaitToProceed: false,
-  needToWaitToProceedConfig: {
-    delayOffset: ms('1h'),
-    wait: ms('10s'),
-  },
   isServiceProxyEnabled: false,
-  isServiceProxyIncludedInCurrentPlan: true,
   isAnnouncementsEnabled: true,
-  isWorkspaceIncludedInCurrentPlan: true,
   isWorkspaceEnabled: false,
-  isCommunityRecipesIncludedInCurrentPlan: true,
 };
 
 export const DEFAULT_WINDOW_OPTIONS = {
@@ -165,28 +156,6 @@ export const ALLOWED_PROTOCOLS = [
   'ftp:',
   'ferdi:',
 ];
-
-export const PLANS = {
-  PERSONAL: 'personal',
-  PRO: 'pro',
-  LEGACY: 'legacy',
-  FREE: 'free',
-};
-
-export const PLANS_MAPPING = {
-  'franz-personal-monthly': PLANS.PERSONAL,
-  'franz-personal-yearly': PLANS.PERSONAL,
-  'franz-pro-monthly': PLANS.PRO,
-  'franz-pro-yearly': PLANS.PRO,
-  'franz-supporter-license': PLANS.LEGACY,
-  'franz-supporter-license-x1': PLANS.LEGACY,
-  'franz-supporter-license-x2': PLANS.LEGACY,
-  'franz-supporter-license-year': PLANS.LEGACY,
-  'franz-supporter-license-year-x1': PLANS.LEGACY,
-  'franz-supporter-license-year-x2': PLANS.LEGACY,
-  'franz-supporter-license-year-2019': PLANS.LEGACY,
-  free: PLANS.FREE,
-};
 
 export const DEFAULT_SETTING_KEEP_ALL_WORKSPACES_LOADED = false;
 

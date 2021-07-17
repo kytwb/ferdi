@@ -24,8 +24,6 @@ export default class User {
 
   @observable hadSubscription = false;
 
-  @observable isPremium = true;
-
   @observable beta = false;
 
   @observable donor = {};
@@ -49,7 +47,6 @@ export default class User {
     this.lastname = data.lastname || this.lastname;
     this.organization = data.organization || this.organization;
     this.accountType = data.accountType || this.accountType;
-    this.isPremium = true;
     this.beta = data.beta || this.beta;
     this.donor = data.donor || this.donor;
     this.isDonor = data.isDonor || this.isDonor;

@@ -13,14 +13,10 @@ export default {
     password: PropTypes.string.isRequired,
     accountType: PropTypes.string,
     company: PropTypes.string,
-    plan: PropTypes.string,
     currency: PropTypes.string,
   },
   retrievePassword: {
     email: PropTypes.string.isRequired,
-  },
-  activateTrial: {
-    planId: PropTypes.string.isRequired,
   },
   invite: {
     invites: PropTypes.array.isRequired,

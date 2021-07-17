@@ -13,8 +13,6 @@ import RecipeItem from './RecipeItem';
 import Loader from '../../ui/Loader';
 import Appear from '../../ui/effects/Appear';
 import { FRANZ_SERVICE_REQUEST } from '../../../config';
-import LimitReachedInfobox from '../../../features/serviceLimit/components/LimitReachedInfobox';
-import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import RecipePreview from '../../../models/RecipePreview';
 
 const messages = defineMessages({
@@ -120,7 +118,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
     openRecipeDirectory: PropTypes.func.isRequired,
     openDevDocs: PropTypes.func.isRequired,
     classes: PropTypes.object.isRequired,
-    isCommunityRecipesIncludedInCurrentPlan: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -148,7 +145,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
       openRecipeDirectory,
       openDevDocs,
       classes,
-      isCommunityRecipesIncludedInCurrentPlan,
     } = this.props;
     const { intl } = this.context;
 
@@ -163,7 +159,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
         <div className="settings__header">
           <h1>{intl.formatMessage(messages.headline)}</h1>
         </div>
-        <LimitReachedInfobox />
         <div className="settings__body recipes">
           {serviceStatus.length > 0 && serviceStatus.includes('created') && (
             <Appear>
@@ -223,9 +218,6 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
                 <>
                   <H2>
                     {intl.formatMessage(messages.headlineCustomRecipes)}
-                    {!isCommunityRecipesIncludedInCurrentPlan && (
-                      <ProBadge className={classes.proBadge} />
-                    )}
                   </H2>
                   <div className={classes.devRecipeIntroContainer}>
                     <p>
@@ -251,37 +243,33 @@ export default @injectSheet(styles) @observer class RecipesDashboard extends Com
                   </div>
                 </>
               )}
-              <PremiumFeatureContainer
-                condition={(recipeFilter === 'dev' && communityRecipes.length > 0) && !isCommunityRecipesIncludedInCurrentPlan}
-              >
-                {recipeFilter === 'dev' && communityRecipes.length > 0 && (
-                  <H3>{intl.formatMessage(messages.headlineCommunityRecipes)}</H3>
-                )}
-                <div className="recipes__list">
-                  {hasLoadedRecipes && recipes.length === 0 && recipeFilter !== 'dev' && (
-                    <div className="align-middle settings__empty-state">
-                      <span className="emoji">
-                        <img src="./assets/images/emoji/dontknow.png" alt="" />
-                      </span>
+              {recipeFilter === 'dev' && communityRecipes.length > 0 && (
+                <H3>{intl.formatMessage(messages.headlineCommunityRecipes)}</H3>
+              )}
+              <div className="recipes__list">
+                {hasLoadedRecipes && recipes.length === 0 && recipeFilter !== 'dev' && (
+                  <div className="align-middle settings__empty-state">
+                    <span className="emoji">
+                      <img src="./assets/images/emoji/dontknow.png" alt="" />
+                    </span>
 
-                      <p className="settings__empty-state-text">{intl.formatMessage(messages.nothingFound)}</p>
+                    <p className="settings__empty-state-text">{intl.formatMessage(messages.nothingFound)}</p>
 
-                      <RecipeItem
-                        key={customWebsiteRecipe.id}
-                        recipe={customWebsiteRecipe}
-                        onClick={() => isLoggedIn && showAddServiceInterface({ recipeId: customWebsiteRecipe.id })}
-                      />
-                    </div>
-                  )}
-                  {communityRecipes.map(recipe => (
                     <RecipeItem
-                      key={recipe.id}
-                      recipe={recipe}
-                      onClick={() => isLoggedIn && showAddServiceInterface({ recipeId: recipe.id })}
+                      key={customWebsiteRecipe.id}
+                      recipe={customWebsiteRecipe}
+                      onClick={() => isLoggedIn && showAddServiceInterface({ recipeId: customWebsiteRecipe.id })}
                     />
-                  ))}
-                </div>
-              </PremiumFeatureContainer>
+                  </div>
+                )}
+                {communityRecipes.map(recipe => (
+                  <RecipeItem
+                    key={recipe.id}
+                    recipe={recipe}
+                    onClick={() => isLoggedIn && showAddServiceInterface({ recipeId: recipe.id })}
+                  />
+                ))}
+              </div>
               {recipeFilter === 'dev' && devRecipes.length > 0 && (
                 <div className={classes.devRecipeList}>
                   <H3>{intl.formatMessage(messages.headlineDevRecipes)}</H3>

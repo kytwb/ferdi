@@ -10,7 +10,6 @@ import Button from '../../ui/Button';
 import Toggle from '../../ui/Toggle';
 import ToggleRaw from '../../ui/ToggleRaw';
 import Select from '../../ui/Select';
-import PremiumFeatureContainer from '../../ui/PremiumFeatureContainer';
 import Input from '../../ui/Input';
 
 import {
@@ -168,7 +167,6 @@ export default @observer class EditSettingsForm extends Component {
     isClearingAllCache: PropTypes.bool.isRequired,
     onClearAllCache: PropTypes.func.isRequired,
     getCacheSize: PropTypes.func.isRequired,
-    isSpellcheckerIncludedInCurrentPlan: PropTypes.bool.isRequired,
     isTodosEnabled: PropTypes.bool.isRequired,
     isTodosActivated: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
@@ -224,7 +222,6 @@ export default @observer class EditSettingsForm extends Component {
       isClearingAllCache,
       onClearAllCache,
       getCacheSize,
-      isSpellcheckerIncludedInCurrentPlan,
       isTodosEnabled,
       isWorkspaceEnabled,
       automaticUpdates,
@@ -564,22 +561,16 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
-                <PremiumFeatureContainer
-                  condition={!isSpellcheckerIncludedInCurrentPlan}
-                  gaEventInfo={{ category: 'User', event: 'upgrade', label: 'spellchecker' }}
-                >
-                  <>
-                    <Toggle
-                      field={form.$('enableSpellchecking')}
-                    />
-                    {!isMac && form.$('enableSpellchecking').value && (
-                      <Select field={form.$('spellcheckerLanguage')} />
-                    )}
-                    {isMac && form.$('enableSpellchecking').value && (
-                      <p>{intl.formatMessage(messages.spellCheckerLanguageInfo)}</p>
-                    )}
-                  </>
-                </PremiumFeatureContainer>
+                <Toggle
+                  field={form.$('enableSpellchecking')}
+                />
+                {!isMac && form.$('enableSpellchecking').value && (
+                  <Select field={form.$('spellcheckerLanguage')} />
+                )}
+                {isMac && form.$('enableSpellchecking').value && (
+                  <p>{intl.formatMessage(messages.spellCheckerLanguageInfo)}</p>
+                )}
+
                 <a
                   href={FRANZ_TRANSLATION}
                   target="_blank"

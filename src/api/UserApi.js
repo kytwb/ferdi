@@ -25,10 +25,6 @@ export default class UserApi {
     return this.server.retrievePassword(email);
   }
 
-  activateTrial(data) {
-    return this.server.activateTrial(data);
-  }
-
   invite(data) {
     return this.server.inviteUser(data);
   }

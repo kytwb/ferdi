@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { defineMessages, intlShape } from 'react-intl';
 
 import { FeatureItem } from './FeatureItem';
-import { PLANS } from '../../config';
 
 const messages = defineMessages({
   availableRecipes: {
     id: 'pricing.features.recipes',
-    defaultMessage: '!!!Choose from more than 70 Services',
+    defaultMessage: '!!!Choose from more than 70 Services', // TODO: Make this dynamic
   },
   accountSync: {
     id: 'pricing.features.accountSync',
@@ -21,14 +20,6 @@ const messages = defineMessages({
   unlimitedServices: {
     id: 'pricing.features.unlimitedServices',
     defaultMessage: '!!!Add unlimited services',
-  },
-  upToThreeServices: {
-    id: 'pricing.features.upToThreeServices',
-    defaultMessage: '!!!Add up to 3 services',
-  },
-  upToSixServices: {
-    id: 'pricing.features.upToSixServices',
-    defaultMessage: '!!!Add up to 6 services',
   },
   spellchecker: {
     id: 'pricing.features.spellchecker',
@@ -58,31 +49,17 @@ const messages = defineMessages({
     id: 'pricing.features.teamManagement',
     defaultMessage: '!!!Team Management',
   },
-  appDelays: {
-    id: 'pricing.features.appDelays',
-    defaultMessage: '!!!No Waiting Screens',
-  },
-  adFree: {
-    id: 'pricing.features.adFree',
-    defaultMessage: '!!!Forever ad-free',
-  },
-  appDelayEnabled: {
-    id: 'pricing.features.appDelaysEnabled',
-    defaultMessage: '!!!Occasional Waiting Screens',
-  },
 });
 
 export class FeatureList extends Component {
   static propTypes = {
     className: PropTypes.string,
     featureClassName: PropTypes.string,
-    plan: PropTypes.oneOf(Object.keys(PLANS)),
   };
 
   static defaultProps = {
     className: '',
     featureClassName: '',
-    plan: false,
   }
 
   static contextTypes = {
@@ -93,49 +70,25 @@ export class FeatureList extends Component {
     const {
       className,
       featureClassName,
-      plan,
     } = this.props;
     const { intl } = this.context;
 
-    const features = [];
-    if (plan === PLANS.FREE) {
-      features.push(
-        messages.appDelayEnabled,
-        messages.upToThreeServices,
-        messages.availableRecipes,
-        messages.accountSync,
-        messages.desktopNotifications,
-      );
-    } else if (plan === PLANS.PERSONAL) {
-      features.push(
-        messages.upToSixServices,
-        messages.spellchecker,
-        messages.appDelays,
-        messages.adFree,
-      );
-    } else if (plan === PLANS.PRO) {
-      features.push(
-        messages.unlimitedServices,
-        messages.workspaces,
-        messages.customWebsites,
-        // messages.onPremise,
-        messages.thirdPartyServices,
-        // messages.serviceProxies,
-      );
-    } else {
-      features.push(
-        messages.unlimitedServices,
-        messages.spellchecker,
-        messages.workspaces,
-        messages.customWebsites,
-        messages.onPremise,
-        messages.thirdPartyServices,
-        messages.serviceProxies,
-        messages.teamManagement,
-        messages.appDelays,
-        messages.adFree,
-      );
-    }
+    const features = [
+      messages.availableRecipes,
+      messages.accountSync,
+      messages.desktopNotifications,
+
+      messages.spellchecker,
+
+      messages.workspaces,
+      messages.customWebsites,
+      messages.thirdPartyServices,
+
+      messages.unlimitedServices,
+      messages.onPremise,
+      messages.serviceProxies,
+      messages.teamManagement,
+    ];
 
     return (
       <ul className={className}>
