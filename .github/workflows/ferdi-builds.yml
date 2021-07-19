@@ -45,7 +45,7 @@ jobs:
         with:
           ref: nightly
           submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 0    # Note: Needed to be able to pull the 'develop' branch as well for merging
       - id: should_run
         name: Check whether there are any commits since this run was last triggered and push them and/or set the output
         if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && contains(github.event.inputs.message, 'nightly branch')) }}
@@ -86,13 +86,11 @@ jobs:
         with:
           submodules: recursive
           ref: nightly
-          fetch-depth: 0
       - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
         uses: actions/checkout@v2
         if: ${{ github.event_name != 'schedule' && env.MANUAL_REBUILD_ON_NIGHTLY != 'true' }}
         with:
           submodules: recursive
-          fetch-depth: 0
       - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
         run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
         shell: bash
@@ -185,13 +183,11 @@ jobs:
         with:
           submodules: recursive
           ref: nightly
-          fetch-depth: 0
       - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
         uses: actions/checkout@v2
         if: ${{ github.event_name != 'schedule' && env.MANUAL_REBUILD_ON_NIGHTLY != 'true' }}
         with:
           submodules: recursive
-          fetch-depth: 0
       - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
         run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
         shell: bash
@@ -276,13 +272,11 @@ jobs:
         with:
           submodules: recursive
           ref: nightly
-          fetch-depth: 0
       - name: Checkout code along with submodules for any branch if the trigger event is NOT 'scheduled' and this is NOT a forced rebuild on the nightly branch
         uses: actions/checkout@v2
         if: ${{ github.event_name != 'schedule' && env.MANUAL_REBUILD_ON_NIGHTLY != 'true' }}
         with:
           submodules: recursive
-          fetch-depth: 0
       - name: Extract Git branch name from the currently checked out branch (not from the branch where this run was kicked off)
         run: echo "GIT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
         shell: bash

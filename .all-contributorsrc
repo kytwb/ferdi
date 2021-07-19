@@ -6,10 +6,11 @@
   "files": [
     "README.md"
   ],
-  "imageSize": 40,
+  "imageSize": 42,
   "commit": true,
   "commitConvention": "none",
   "badgeTemplate": "<a href='#contributors-'><img src='https://img.shields.io/badge/contributors-<%= contributors.length %>-default.svg?logo=github' alt='Contributors'/></a>",
+  "contributorTemplate": "<a href='<%= contributor.profile %>' title='<%= contributor.name %>: <%= contributor.contributions.join(', ') %>'><img src='<%= contributor.avatar_url %>' alt='<%= contributor.login %>' style='border-radius:<%= options.imageSize %>px;width:<%= options.imageSize %>px;height:<%= options.imageSize %>px;'/></a>",
   "contributors": [
     {
       "login": "vantezzen",
@@ -845,7 +846,12 @@
         "code",
         "mentoring",
         "review",
-        "infra"
+        "infra",
+        "ideas",
+        "bug",
+        "content",
+        "userTesting",
+        "projectManagement"
       ]
     },
     {
@@ -892,8 +898,71 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "sergiughf",
+      "name": "Sergiu Ghitea",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28300158?v=4",
+      "profile": "https://sergiu.dev/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ArviTheMan",
+      "name": "ArviTheMan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/73516201?v=4",
+      "profile": "https://github.com/ArviTheMan",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "eltociear",
+      "name": "Ikko Ashimine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22633385?v=4",
+      "profile": "https://bandism.net/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "madsmtm",
+      "name": "Mads Marquart",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10577181?v=4",
+      "profile": "https://github.com/madsmtm",
+      "contributions": [
+        "translation"
+      ]
+    },
+    {
+      "login": "mloskot",
+      "name": "Mateusz Łoskot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80741?v=4",
+      "profile": "http://mateusz.loskot.net/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "skoshy",
+      "name": "Stefan K",
+      "avatar_url": "https://avatars.githubusercontent.com/u/369825?v=4",
+      "profile": "https://github.com/skoshy",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "graves501",
+      "name": "graves501",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11211125?v=4",
+      "profile": "https://github.com/graves501",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
-  "contributorsPerLine": 6,
+  "contributorsPerLine": 16,
   "skipCi": true
 }

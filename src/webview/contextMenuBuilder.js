@@ -22,6 +22,7 @@ function matchesWord(string) {
   return string.match(regex);
 }
 
+// TODO: Need to externalize for i18n
 const contextMenuStringTable = {
   lookUpDefinition: ({ word }) => `Look Up "${word}"`,
   cut: () => 'Cut',
@@ -217,7 +218,7 @@ module.exports = class ContextMenuBuilder {
     this.addSeparator(menu);
     this.goBack(menu);
     this.goForward(menu);
-    this.copyPageUrl(menu);
+    this.copyPageUrl(menu, menuInfo);
     this.goToHomePage(menu, menuInfo);
     this.openInBrowser(menu, menuInfo);
 
@@ -514,13 +515,13 @@ module.exports = class ContextMenuBuilder {
   /**
    * Adds the 'copy page url' menu item.
    */
-  copyPageUrl(menu) {
+  copyPageUrl(menu, menuInfo) {
     menu.append(new MenuItem({
       label: this.stringTable.copyPageUrl(),
       enabled: true,
       click: () => {
         clipboard.writeText(window.location.href);
-        this._sendNotificationOnClipboardEvent(menu.clipboardNotifications, () => `Page URL copied: ${window.location.href}`);
+        this._sendNotificationOnClipboardEvent(menuInfo.clipboardNotifications, () => `Page URL copied: ${window.location.href}`);
       },
     }));
 

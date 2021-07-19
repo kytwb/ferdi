@@ -4,6 +4,7 @@ import { observer } from 'mobx-react';
 import { Field } from 'mobx-react-form';
 import classnames from 'classnames';
 import Dropzone from 'react-dropzone';
+import { isWindows } from '../../environment';
 
 export default @observer class ImageUpload extends Component {
   static propTypes = {
@@ -29,9 +30,11 @@ export default @observer class ImageUpload extends Component {
     const { field } = this.props;
 
     acceptedFiles.forEach((file) => {
+      const imgPath = isWindows ? file.path.replace(/\\/g, '/') : file.path;
       this.setState({
-        path: file.path,
+        path: imgPath,
       });
+
       this.props.field.onDrop(file);
     });
 

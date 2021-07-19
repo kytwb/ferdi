@@ -1,9 +1,8 @@
-import os from 'os';
 import semver from 'semver';
 import { TouchBar, getCurrentWindow } from '@electron/remote';
 import { autorun } from 'mobx';
 
-import { isMac } from '../environment';
+import { isMac, osRelease } from '../environment';
 
 export default class FranzTouchBar {
   constructor(stores, actions) {
@@ -13,7 +12,7 @@ export default class FranzTouchBar {
     // Temporary fix for https://github.com/electron/electron/issues/10442
     // TODO: remove when we upgrade to electron 1.8.2 or later
     try {
-      if (isMac && semver.gt(os.release(), '16.6.0')) {
+      if (isMac && semver.gt(osRelease, '16.6.0')) {
         this.build = autorun(this._build.bind(this));
       }
     } catch (err) {

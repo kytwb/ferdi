@@ -28,9 +28,10 @@ export default (params) => {
           }
 
           if (args.action === 'check') {
+            debug('checking for update');
             autoUpdater.checkForUpdates();
           } else if (args.action === 'install') {
-            debug('install update');
+            debug('installing update');
             autoUpdater.quitAndInstall();
             // we need to send a quit event
             setTimeout(() => {

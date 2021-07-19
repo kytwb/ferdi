@@ -1,4 +1,3 @@
-import os from 'os';
 import path from 'path';
 import tar from 'tar';
 import fs from 'fs-extra';
@@ -15,7 +14,7 @@ import OrderModel from '../../models/Order';
 import { sleep } from '../../helpers/async-helpers';
 
 import { SERVER_NOT_LOADED } from '../../config';
-import { RECIPES_PATH } from '../../environment';
+import { osArch, osPlatform, RECIPES_PATH } from '../../environment';
 import apiBase from '../apiBase';
 import { prepareAuthRequest, sendAuthRequest } from '../utils/auth';
 
@@ -456,7 +455,7 @@ export default class ServerApi {
 
   // News
   async getLatestNews() {
-    const url = `${apiBase(true)}/news?platform=${os.platform()}&arch=${os.arch()}&version=${app.getVersion()}`;
+    const url = `${apiBase(true)}/news?platform=${osPlatform}&arch=${osArch}&version=${app.getVersion()}`;
     const request = await sendAuthRequest(url);
     if (!request.ok) throw request;
     const data = await request.json();

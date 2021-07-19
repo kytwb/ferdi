@@ -6142,91 +6142,91 @@
         "defaultMessage": "!!!Publish debug information",
         "end": {
           "column": 3,
-          "line": 20
+          "line": 22
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.title",
         "start": {
           "column": 9,
-          "line": 17
+          "line": 19
         }
       },
       {
         "defaultMessage": "!!!Publishing your debug information helps us find issues and errors in Ferdi. By publishing your debug information you accept Ferdi Debugger's privacy policy and terms of service",
         "end": {
           "column": 3,
-          "line": 24
+          "line": 26
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.info",
         "start": {
           "column": 8,
-          "line": 21
+          "line": 23
         }
       },
       {
         "defaultMessage": "!!!There was an error while trying to publish the debug information. Please try again later or view the console for more information.",
         "end": {
           "column": 3,
-          "line": 28
+          "line": 30
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.error",
         "start": {
           "column": 9,
-          "line": 25
+          "line": 27
         }
       },
       {
         "defaultMessage": "!!!Privacy policy",
         "end": {
           "column": 3,
-          "line": 32
+          "line": 34
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.privacy",
         "start": {
           "column": 11,
-          "line": 29
+          "line": 31
         }
       },
       {
         "defaultMessage": "!!!Terms of service",
         "end": {
           "column": 3,
-          "line": 36
+          "line": 38
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.terms",
         "start": {
           "column": 9,
-          "line": 33
+          "line": 35
         }
       },
       {
         "defaultMessage": "!!!Accept and publish",
         "end": {
           "column": 3,
-          "line": 40
+          "line": 42
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.publish",
         "start": {
           "column": 11,
-          "line": 37
+          "line": 39
         }
       },
       {
         "defaultMessage": "!!!Your debug log was published and is now availible at",
         "end": {
           "column": 3,
-          "line": 44
+          "line": 46
         },
         "file": "src/features/publishDebugInfo/Component.js",
         "id": "feature.publishDebugInfo.published",
         "start": {
           "column": 13,
-          "line": 41
+          "line": 43
         }
       }
     ],

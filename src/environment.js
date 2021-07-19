@@ -1,3 +1,4 @@
+import os from 'os';
 import path from 'path';
 
 import { is, api as electronApi } from 'electron-util';
@@ -60,6 +61,10 @@ export const useLiveAPI = process.env.LIVE_API;
 export const isMac = is.macos;
 export const isWindows = is.windows;
 export const isLinux = is.linux;
+export const osPlatform = os.platform();
+export const osArch = os.arch();
+export const osRelease = os.release();
+export const is64Bit = osArch.match(/64/);
 
 export const ctrlKey = isMac ? '⌘' : 'Ctrl';
 export const cmdKey = isMac ? 'Cmd' : 'Ctrl';

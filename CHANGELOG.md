@@ -1,3 +1,32 @@
+# [5.6.0-beta.8](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.7...v5.6.0-beta.8) (2021-07-16)
+
+- Upgraded electron to '13.1.7' 💖 @vraravam
+- Turned on other h/w architectures (arm64, armv7l) for linux builds. (#1633) 💖 @vraravam
+- chore: run security audit on node modules 💖 @mhatvan
+- Upgraded nodejs to '14.17.3' 💖 @vraravam
+- Use 'useragent-generator' to generate the user-agent string 💖 @vraravam
+
+# [5.6.0-beta.7](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.6...v5.6.0-beta.7) (2021-07-07)
+
+- Upgraded electron to '13.1.5'. 💖 @vraravam
+- Adjust link opening behavior 💖 @stnkl
+- Fix color adjustments in Settings screen 💖 @kris7t
+- Expose Chrome version to todos webview (fix #1211) (#1478) 💖 @kris7t
+- Added ability to turn off notifications for clipboard events generated from the context menu 💖 @vraravam
+- Build Ferdi for freeBSD 💖 @vraravam
+- CI Builds moved to using GitHub actions 💖 @vraravam
+- Bump electron-builder to 22.11.7 (fix #1469) 💖 @kris7t, @vraravam
+- Fix active Todos service behaviour (#1481) 💖 @kytwb, @kris7t
+- Removed the cyclical dependency in workspaces and announcement 💖 @markandan
+- Added ability to run specific OS builds for manual trigger 💖 @vraravam
+- Exposed User agent as a user-preference both globally as well as per-service overrides (#1535) 💖 @vraravam, @kris7t
+- Added new message when the user doesn't find a service (but that is present in the website) 💖 @vraravam
+- Upgrade various dependencies to latest, remove unnecessary electron-hunspell 💖 @mhatvan, @vraravam
+- Enforce strict adherence to node, npm and node-gyp versions (mainly for contributors) 💖 @vraravam
+- Refactored all runtime configs: moved from 'config.js' into 'environment.js' 💖 @vraravam
+- Removed references to png images since they were not being used anyways. Results in smaller installer file 💖 @vraravam
+- Building ferdi on an ARM machine (#1611) 💖 @vraravam
+
 # [5.6.0-beta.6](https://github.com/getferdi/ferdi/compare/v5.6.0-beta.5...v5.6.0-beta.6) (2021-05-31)
 
 ### Features
@@ -142,7 +171,7 @@
 # [5.5.0](https://github.com/getferdi/ferdi/compare/v5.4.3...v5.5.0) (2020-04-26)
 ### Features
 - Merge Franz 5.5.0-beta.2
-- Add modifyRequestHeaders, enable properly setting headers for services (#639), 💖 @mahadevans87 @sampathBlam 
+- Add modifyRequestHeaders, enable properly setting headers for services (#639), 💖 @mahadevans87 @sampathBlam
 - Add dropdown list to choose Todo service (#418, #477), 💖 @yourcontact
 - Add hotkey for darkmode (#530, #537), 💖 @Room4O4 & @mahadevans87
 - Add option to start Ferdi minimized (#490, #534)
@@ -173,7 +202,7 @@
 - Improve navigation bar behaviour setting (#270)
 - Ferdi is now available as Flatpak on Flathub (#323), 💖 @lhw
 - Add automatic local recipe updates
-- Add option to start Ferdi in system tray (#331), 💖 @jereksel 
+- Add option to start Ferdi in system tray (#331), 💖 @jereksel
 - Add better support for macOS dark mode
 - Add better seperation in settings
 - Change Sentry telemetry to be opt-in only (#160)
@@ -458,7 +487,7 @@ Merge Franz v5.3.1 into Ferdi.
 * **App:** Added [Team Management](https://meetfranz.com/user/team) 🎉 ([47c1c99](https://github.com/meetfranz/franz/commit/47c1c99))
 * **App:** Added Kerberos Support via Command Line Switches ([#1331](https://github.com/meetfranz/franz/issues/1331)) ([@frumania](https://github.com/frumania)) ([a1950d7](https://github.com/meetfranz/franz/commit/a1950d7))
 * **App:** Open changelog in app
-* **App:** Various small fixes and improvements 
+* **App:** Various small fixes and improvements
 
 ### General
 
@@ -609,7 +638,7 @@ Merge Franz v5.3.1 into Ferdi.
 ### Features
 
 * **App:** 👉 Dark Mode 👈 ([fd7954f](https://github.com/meetfranz/franz/commit/fd7954f)) 🙌 [@guillecura](https://github.com/guillecura)
-* **App:** Add proxy support for services ([6297274](https://github.com/meetfranz/franz/commit/6297274)) 
+* **App:** Add proxy support for services ([6297274](https://github.com/meetfranz/franz/commit/6297274))
 * **App:** New spell checker ([3d87c0e](https://github.com/meetfranz/franz/commit/3d87c0e))
 * **App:** New context menu ([3d87c0e](https://github.com/meetfranz/franz/commit/3d87c0e))
 * **App:** Lay groundwork for general themeing support ([4ea044a](https://github.com/meetfranz/franz/commit/4ea044a))

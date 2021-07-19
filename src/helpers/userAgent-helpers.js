@@ -1,12 +1,10 @@
 import os from 'os';
 import macosVersion from 'macos-version';
-import { chromeVersion, isMac, isWindows } from '../environment';
+import {
+  chromeVersion, isMac, isWindows, is64Bit, osArch, osRelease,
+} from '../environment';
 
 const uaGenerator = require('useragent-generator');
-
-function is64Bit() {
-  return os.arch().match(/64/);
-}
 
 function macOS() {
   const version = macosVersion();
@@ -18,14 +16,14 @@ function macOS() {
 }
 
 function windows() {
-  const version = os.release();
+  const version = osRelease;
   const [majorVersion, minorVersion] = version.split('.');
-  const archString = is64Bit() ? 'Win64' : 'Win32';
-  return `Windows NT ${majorVersion}.${minorVersion}; ${archString}; ${os.arch()}`;
+  const archString = is64Bit ? 'Win64' : 'Win32';
+  return `Windows NT ${majorVersion}.${minorVersion}; ${archString}; ${osArch}`;
 }
 
 function linux() {
-  const archString = is64Bit() ? 'x86_64' : os.arch();
+  const archString = is64Bit ? 'x86_64' : osArch;
   return `X11; Ubuntu; Linux ${archString}`;
 }
 
