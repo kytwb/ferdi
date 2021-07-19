@@ -35,14 +35,14 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}-14.17-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-16.4-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-14.17-build-${{ env.cache-name }}-
-            ${{ runner.os }}-14.17-build-
-      - name: Use Node.js 14.17.3
+            ${{ runner.os }}-16.4-build-${{ env.cache-name }}-
+            ${{ runner.os }}-16.4-build-
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.17.3
+          node-version: 16.4.2
       - name: Uninstall locally and reinstall node-gyp globally
         run: |
           npm uninstall node-gyp

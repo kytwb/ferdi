@@ -11,9 +11,9 @@
   "repository": "https://github.com/getferdi/ferdi.git",
   "private": true,
   "engines": {
-    "node": "^14.17",
-    "npm": "^6.14",
-    "node-gyp": "^8.0"
+    "node": ">=14",
+    "npm": ">=6",
+    "node-gyp": "^8"
   },
   "engine-strict": true,
   "scripts": {
@@ -193,6 +193,7 @@
     "mobx-react-devtools": "^6.1.1",
     "mocha": "9.0.1",
     "node-abi": "2.30.0",
+    "npm": "7.19.1",
     "prettier": "^2.3.1",
     "preval-build-info": "^1.0.3",
     "react-intl-translations-manager": "^5.0.3",
@@ -206,6 +207,9 @@
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "^3.11.2",
     "webpack-node-externals": "^1.7.2"
+  },
+  "optionalDependencies": {
+    "dmg-license": "1.0.9"
   },
   "config": {
     "commitizen": {

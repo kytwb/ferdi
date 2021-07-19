@@ -118,10 +118,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.17.3
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.17.3
+          node-version: 16.4.2
       - name: Upgrade Xcode version on the macOS 10.15 default runners provided by GH Actions
         run: |
           sudo rm -Rf /Library/Developer/CommandLineTools/SDKs/*
@@ -215,10 +215,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.17.3
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.17.3
+          node-version: 16.4.2
       - name: Uninstall locally and reinstall node-gyp globally
         run: |
           npm uninstall node-gyp
@@ -304,10 +304,10 @@ jobs:
         with:
           key: ${{ runner.os }}-${{ env.cache-name }}
           path: ${{ env.ELECTRON_BUILDER_CACHE }}
-      - name: Use Node.js 14.17.3
+      - name: Use Node.js 16.4.2
         uses: actions/setup-node@v2
         with:
-          node-version: 14.17.3
+          node-version: 16.4.2
       - name: Fix corrupted node cache
         run: npm cache clean --force
         shell: bash
