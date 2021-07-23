@@ -282,10 +282,6 @@ export default class ServicesStore extends Store {
     return this.active && this.active.isTodosService;
   }
 
-  @computed get isAnyServiceHibernationEnabled() {
-    return this.all.some(service => service.isHibernationEnabled);
-  }
-
   one(id) {
     return this.all.find(service => service.id === id);
   }

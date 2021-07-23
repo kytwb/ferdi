@@ -644,7 +644,6 @@ export default @inject('stores', 'actions') @observer class EditSettingsScreen e
           isWorkspaceEnabled={workspaces.isFeatureActive}
           lockingFeatureEnabled={lockingFeatureEnabled}
           automaticUpdates={this.props.stores.settings.app.automaticUpdates}
-          hibernationEnabled={this.props.stores.services.isAnyServiceHibernationEnabled}
           isDarkmodeEnabled={this.props.stores.settings.app.darkMode}
           isAdaptableDarkModeEnabled={this.props.stores.settings.app.adaptableDarkMode}
           isTodosActivated={this.props.stores.todos.isFeatureEnabledByUser}
