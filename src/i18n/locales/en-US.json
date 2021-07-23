@@ -452,6 +452,8 @@
   "tabs.item.enableAudio": "Enable audio",
   "tabs.item.enableNotification": "Enable notifications",
   "tabs.item.enableService": "Enable service",
+  "tabs.item.hibernateService": "Hibernate service",
+  "tabs.item.wakeUpService": "Wake up service",
   "tabs.item.reload": "Reload",
   "validation.email": "{field} is not valid",
   "validation.minLength": "{field} should be at least {length} characters long",

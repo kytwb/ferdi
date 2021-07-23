@@ -17,6 +17,8 @@ export default @observer class TabBar extends Component {
     toggleAudio: PropTypes.func.isRequired,
     deleteService: PropTypes.func.isRequired,
     updateService: PropTypes.func.isRequired,
+    hibernateService: PropTypes.func.isRequired,
+    wakeUpService: PropTypes.func.isRequired,
     showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
     showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
   };
@@ -55,6 +57,18 @@ export default @observer class TabBar extends Component {
     this.toggleService({ serviceId, isEnabled: true });
   }
 
+  hibernateService({ serviceId }) {
+    if (serviceId) {
+      this.props.hibernateService({ serviceId });
+    }
+  }
+
+  wakeUpService({ serviceId }) {
+    if (serviceId) {
+      this.props.wakeUpService({ serviceId });
+    }
+  }
+
   render() {
     const {
       services,
@@ -83,6 +97,8 @@ export default @observer class TabBar extends Component {
           deleteService={deleteService}
           disableService={args => this.disableService(args)}
           enableService={args => this.enableService(args)}
+          hibernateService={args => this.hibernateService(args)}
+          wakeUpService={args => this.wakeUpService(args)}
           openSettings={openSettings}
           distance={20}
           axis="y"

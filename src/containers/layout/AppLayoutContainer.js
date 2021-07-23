@@ -56,6 +56,8 @@ export default @inject('stores', 'actions') @observer class AppLayoutContainer e
       toggleAudio,
       deleteService,
       updateService,
+      hibernate,
+      awake,
     } = this.props.actions.service;
 
     const { hide } = this.props.actions.news;
@@ -109,6 +111,8 @@ export default @inject('stores', 'actions') @observer class AppLayoutContainer e
         toggleAudio={toggleAudio}
         deleteService={deleteService}
         updateService={updateService}
+        hibernateService={hibernate}
+        wakeUpService={awake}
         toggleMuteApp={toggleMuteApp}
         toggleWorkspaceDrawer={workspaceActions.toggleWorkspaceDrawer}
         isWorkspaceDrawerOpen={workspaceStore.isWorkspaceDrawerOpen}

@@ -1867,6 +1867,32 @@
         }
       },
       {
+        "defaultMessage": "!!!Hibernate Service",
+        "end": {
+          "column": 3,
+          "line": 51
+        },
+        "file": "src/components/services/tabs/TabItem.js",
+        "id": "tabs.item.hibernateService",
+        "start": {
+          "column": 17,
+          "line": 48
+        }
+      },
+      {
+        "defaultMessage": "!!!Wake up Service",
+        "end": {
+          "column": 3,
+          "line": 51
+        },
+        "file": "src/components/services/tabs/TabItem.js",
+        "id": "tabs.item.wakeUpService",
+        "start": {
+          "column": 17,
+          "line": 48
+        }
+      },
+      {
         "defaultMessage": "!!!Delete Service",
         "end": {
           "column": 3,

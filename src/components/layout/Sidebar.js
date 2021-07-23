@@ -58,6 +58,18 @@ const messages = defineMessages({
 export default @inject('stores', 'actions') @observer class Sidebar extends Component {
   static propTypes = {
     openSettings: PropTypes.func.isRequired,
+    closeSettings: PropTypes.func.isRequired,
+    setActive: PropTypes.func.isRequired,
+    reorder: PropTypes.func.isRequired,
+    reload: PropTypes.func.isRequired,
+    toggleNotifications: PropTypes.func.isRequired,
+    toggleAudio: PropTypes.func.isRequired,
+    showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
+    showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
+    deleteService: PropTypes.func.isRequired,
+    updateService: PropTypes.func.isRequired,
+    hibernateService: PropTypes.func.isRequired,
+    wakeUpService: PropTypes.func.isRequired,
     toggleMuteApp: PropTypes.func.isRequired,
     isAppMuted: PropTypes.bool.isRequired,
     isWorkspaceDrawerOpen: PropTypes.bool.isRequired,

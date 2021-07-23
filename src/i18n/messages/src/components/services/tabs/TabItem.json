@@ -104,15 +104,41 @@
     }
   },
   {
+    "id": "tabs.item.hibernateService",
+    "defaultMessage": "!!!Hibernate Service",
+    "file": "src/components/services/tabs/TabItem.js",
+    "start": {
+      "line": 52,
+      "column": 20
+    },
+    "end": {
+      "line": 55,
+      "column": 3
+    }
+  },
+  {
+    "id": "tabs.item.wakeUpService",
+    "defaultMessage": "!!!Wake Up Service",
+    "file": "src/components/services/tabs/TabItem.js",
+    "start": {
+      "line": 56,
+      "column": 17
+    },
+    "end": {
+      "line": 59,
+      "column": 3
+    }
+  },
+  {
     "id": "tabs.item.deleteService",
     "defaultMessage": "!!!Delete Service",
     "file": "src/components/services/tabs/TabItem.js",
     "start": {
-      "line": 52,
+      "line": 60,
       "column": 17
     },
     "end": {
-      "line": 55,
+      "line": 63,
       "column": 3
     }
   },
@@ -121,11 +147,11 @@
     "defaultMessage": "!!!Do you really want to delete the {serviceName} service?",
     "file": "src/components/services/tabs/TabItem.js",
     "start": {
-      "line": 56,
+      "line": 64,
       "column": 24
     },
     "end": {
-      "line": 59,
+      "line": 67,
       "column": 3
     }
   }

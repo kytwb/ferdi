@@ -17,6 +17,8 @@ class TabBarSortableList extends Component {
     deleteService: PropTypes.func.isRequired,
     disableService: PropTypes.func.isRequired,
     enableService: PropTypes.func.isRequired,
+    hibernateService: PropTypes.func.isRequired,
+    wakeUpService: PropTypes.func.isRequired,
     showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
     showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
   }
@@ -31,6 +33,8 @@ class TabBarSortableList extends Component {
       deleteService,
       disableService,
       enableService,
+      hibernateService,
+      wakeUpService,
       openSettings,
       showMessageBadgeWhenMutedSetting,
       showMessageBadgesEvenWhenMuted,
@@ -53,6 +57,8 @@ class TabBarSortableList extends Component {
             deleteService={() => deleteService({ serviceId: service.id })}
             disableService={() => disableService({ serviceId: service.id })}
             enableService={() => enableService({ serviceId: service.id })}
+            hibernateService={() => hibernateService({ serviceId: service.id })}
+            wakeUpService={() => wakeUpService({ serviceId: service.id })}
             openSettings={openSettings}
             showMessageBadgeWhenMutedSetting={showMessageBadgeWhenMutedSetting}
             showMessageBadgesEvenWhenMuted={showMessageBadgesEvenWhenMuted}

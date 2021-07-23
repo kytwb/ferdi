@@ -838,6 +838,7 @@ export default class ServicesStore extends Store {
   }
 
   @action _awake({ serviceId }) {
+    debug('Waking up from service hibernation');
     const service = this.one(serviceId);
     service.isHibernationRequested = false;
     service.liveFrom = Date.now();
