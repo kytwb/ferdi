@@ -345,7 +345,7 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
 
   render() {
     const {
-      recipes, services, user, settings,
+      recipes, services, user,
     } = this.props.stores;
     const { action } = this.props.router.params;
 
@@ -398,7 +398,6 @@ export default @inject('stores', 'actions') @observer class EditServiceScreen ex
           onDelete={() => this.deleteService()}
           openRecipeFile={file => this.openRecipeFile(file)}
           isProxyFeatureEnabled={proxyFeature.isEnabled}
-          isHibernationFeatureActive={settings.app.hibernate}
         />
       </ErrorBoundary>
     );

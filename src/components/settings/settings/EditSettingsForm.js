@@ -171,7 +171,6 @@ export default @observer class EditSettingsForm extends Component {
     isTodosActivated: PropTypes.bool.isRequired,
     isWorkspaceEnabled: PropTypes.bool.isRequired,
     automaticUpdates: PropTypes.bool.isRequired,
-    hibernationEnabled: PropTypes.bool.isRequired,
     isDarkmodeEnabled: PropTypes.bool.isRequired,
     isAdaptableDarkModeEnabled: PropTypes.bool.isRequired,
     isNightlyEnabled: PropTypes.bool.isRequired,
@@ -225,7 +224,6 @@ export default @observer class EditSettingsForm extends Component {
       isTodosEnabled,
       isWorkspaceEnabled,
       automaticUpdates,
-      hibernationEnabled,
       isDarkmodeEnabled,
       isTodosActivated,
       isNightlyEnabled,
@@ -336,13 +334,8 @@ export default @observer class EditSettingsForm extends Component {
 
                 <Hr />
 
-                <Toggle field={form.$('hibernate')} />
-                {hibernationEnabled && (
-                  <>
-                    <Select field={form.$('hibernationStrategy')} />
-                    <Toggle field={form.$('hibernateOnStartup')} />
-                  </>
-                )}
+                <Select field={form.$('hibernationStrategy')} />
+                <Toggle field={form.$('hibernateOnStartup')} />
                 <p
                   className="settings__message"
                   style={{

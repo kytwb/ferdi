@@ -49,6 +49,14 @@ const messages = defineMessages({
     id: 'tabs.item.enableService',
     defaultMessage: '!!!Enable Service',
   },
+  hibernateService: {
+    id: 'tabs.item.hibernateService',
+    defaultMessage: '!!!Hibernate Service',
+  },
+  wakeUpService: {
+    id: 'tabs.item.wakeUpService',
+    defaultMessage: '!!!Wake Up Service',
+  },
   deleteService: {
     id: 'tabs.item.deleteService',
     defaultMessage: '!!!Delete Service',
@@ -101,6 +109,8 @@ const styles = {
     deleteService: PropTypes.func.isRequired,
     disableService: PropTypes.func.isRequired,
     enableService: PropTypes.func.isRequired,
+    hibernateService: PropTypes.func.isRequired,
+    wakeUpService: PropTypes.func.isRequired,
     showMessageBadgeWhenMutedSetting: PropTypes.bool.isRequired,
     showMessageBadgesEvenWhenMuted: PropTypes.bool.isRequired,
   };
@@ -145,6 +155,8 @@ const styles = {
       deleteService,
       disableService,
       enableService,
+      hibernateService,
+      wakeUpService,
       openSettings,
       showMessageBadgeWhenMutedSetting,
       showMessageBadgesEvenWhenMuted,
@@ -180,6 +192,10 @@ const styles = {
     }, {
       label: intl.formatMessage(service.isEnabled ? messages.disableService : messages.enableService),
       click: () => (service.isEnabled ? disableService() : enableService()),
+    }, {
+      label: intl.formatMessage(service.isHibernating ? messages.wakeUpService : messages.hibernateService),
+      click: () => (service.isHibernating ? wakeUpService() : hibernateService()),
+      enabled: service.canHibernate,
     }, {
       type: 'separator',
     }, {
@@ -217,7 +233,7 @@ const styles = {
               •
             </span>
           )}
-          {service.isHibernating && !service.isHibernationEnabled && (
+          {service.isHibernating && (
             <span className="tab-item__message-count hibernating">
               •
             </span>

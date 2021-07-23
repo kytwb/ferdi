@@ -145,19 +145,17 @@ export default @inject('stores', 'actions') @observer class ServiceView extends 
           </>
         ) : (
           <>
-            {(!service.isHibernating || service.isHibernationEnabled) ? (
+            {!service.isHibernating ? (
               <>
                 {showNavBar && (
                   <WebControlsScreen service={service} />
                 )}
-                {!service.isHibernating && (
-                  <ServiceWebview
-                    service={service}
-                    setWebviewReference={setWebviewReference}
-                    detachService={detachService}
-                    isSpellcheckerEnabled={isSpellcheckerEnabled}
-                  />
-                )}
+                <ServiceWebview
+                  service={service}
+                  setWebviewReference={setWebviewReference}
+                  detachService={detachService}
+                  isSpellcheckerEnabled={isSpellcheckerEnabled}
+                />
               </>
             ) : (
               <div>

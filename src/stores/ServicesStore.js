@@ -166,8 +166,8 @@ export default class ServicesStore extends Store {
   _serviceMaintenance() {
     this.all.forEach((service) => {
       // Defines which services should be hibernated.
-      if (!service.isActive && (Date.now() - service.lastUsed > ms('5m'))) {
-        // If service is stale for 5 min, hibernate it.
+      if (!service.isActive && (Date.now() - service.lastUsed > ms(`${this.stores.settings.all.app.hibernationStrategy}s`))) {
+        // If service is stale, hibernate it.
         this._hibernate({ serviceId: service.id });
       }
 
@@ -820,19 +820,23 @@ export default class ServicesStore extends Store {
 
   @action _hibernate({ serviceId }) {
     const service = this.one(serviceId);
-    if (service.isActive || !service.isHibernationEnabled) {
+    if (!service.canHibernate) {
+      return;
+    }
+    if (service.isActive) {
       debug('Skipping service hibernation');
       return;
     }
 
     debug(`Hibernate ${service.name}`);
 
-    service.isHibernating = true;
+    service.isHibernationRequested = true;
   }
 
   @action _awake({ serviceId }) {
+    debug('Waking up from service hibernation');
     const service = this.one(serviceId);
-    service.isHibernating = false;
+    service.isHibernationRequested = false;
     service.liveFrom = Date.now();
   }
 
